@@ -1,0 +1,110 @@
+Master in DevOps Engineering
+=========================================
+Introduction
+- Rajesh
+- Kamran
+- Jigar Desai
+- Neha
+- Raghu
+=========================================
+Scope of Master in DevOps Engineering?
+=======================================
+This is NOT a training
+=======================
+We are a TEAM
+                DevOps Team
+Product
+Plan -> Design -> Develop -> Test -> PreProd -> Prod -> Monitoring
+=====================================================================
+DevOps -> DevSecOps -> SRE
+
+Plan?
+===============================================
+Product - MDEx
+---------------
+Design
+===============================================
+How to design a software?
+Monolithic -> SOA -> Microservices (6)
+                        Concept
+                        Design Principal
+                        Design Approach
+                        Design Technology
+
+Develop
+================================
+IDE -> Git -> Code Analysis -> UT -> Package -> Archive -> Dep2QA - AT -
+
+=============Foundation MS by Rajesh Python ===============
+- Rajesh -> Go [ HTML - CSS - JS ] - mongo
+- Kamran -> Python 0 [ HTML - CSS - JS ] - mysql
+- Jigar Desai - Node 7 [ HTML - CSS - JS ] - mongo
+- Neha - Python 0 [ HTML - CSS - JS ] - mysql
+- Raghu - Python 0  [ HTML - CSS - JS ] - mysql
+    
+==================================================
+
+
+Objectives of MDE
+=========================================
+- Co - Dev a Prod by following all 
+    BEST practices in Software Dev
+    BEST principal in Software Dev
+    BEST tool in Software Dev
+    BEST Methodology in Software Dev
+    Real DevOps 
+    To the Market
+    Confidence
+    Expert in Design Pattern
+    CICD
+    Architect
+    Automation   
+    TDD (TEST DRIVEN DEV)
+        BDD
+-   Design Infra
+
+Expectations
+=========================================
+Why we are spending so much of time for this?
+=========================================================
+Design Principal = Monolithic      ->      SOA      -> Microservices
+Dev Model        = Waterfall Model ->   Agile/Scrum -> DevOps       -> DevSecOps
+==========================================================
+Answer - INTERNET
+================================================
+====================RUNNING APP ==================
+Platform  - PHYSCIAL -> VITRUAL --> Containers
+====================================================================
+NO INTERNET - 
+===================
+ONE BOX - ONE SOFT(50)
+
+WITH INTERNET - 
+=========================
+More BOX  - ONE SOFT(50)
+===========COST HIGHER==============================================
+PHYSCIAL -> VITRUAL
+
+DISTRUBUTED MODEL - TO RUN APP.
+=========SOA=======================
+LB -> WS -> AS -> BL -> DB
+---------------------------------
+4      40    50   30     10
+=================================================
+Problems-
+        Change in 1 code ---> NEW RELEASE OF WHOLE PRO
+        ===================================================
+                        1 y - 6m - 3m - 1m - 2weeks
+                        ================================
+What you wants?
+============================
+Reduce a COST of Soft Dev and Running a APP
+Improve a QUALITY?
+Immediate Release
+
+        Microservices - DevOps - Containers
+
+==============================================================
+https://www.devopsschool.com/lms
+        -- git --  https://www.devopsschool.com/lms/mod/page/view.php?id=367
+
