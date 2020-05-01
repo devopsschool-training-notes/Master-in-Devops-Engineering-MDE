@@ -1,0 +1,77 @@
+- Git branching and Merging strategy
+=========================================
+- New feature
+- Bug Fixing
+- Team
+- Region wide
+https://docs.microsoft.com/en-us/azure/devops/repos/tfvc/branching-strategies-with-tfvc?view=azure-devops
+
+devopsinpocket
+
+DevOpsInPocket
+		devopsinpocket-fs
+		devopsinpocket-mycommands
+		myvideotutorials
+		myslides
+		mywebreference
+		mywebtutorials
+		mynotes
+
+Release Pattern
+==============================
+	Major 	SNAPSHOT	Minor 	pathch/servicepack
+	1	-snapshot	1.1	1.1.1
+	v1	alpha|beta|	v1.1	v1.1.1
+	rel1			rel1.1	rel1.1
+
+===========================================
+alpha	beta	v1	v1.1 	v1.1.1
+===========================================
+
+
+master
+	alpha
+	beta
+	v1
+	v1.1
+	v1.1.1
+	
+
+GROUP ID	org.services.devopsschool
+ArtifactId	devopsinpocket-fs
+version		v1-SNAPSHOT
+
+mvn archetype:generate -DgroupId=org.services.devopsschool -DartifactId=devopsinpocket-fs -DarchetypeArtifactId=maven-archetype-webapp -DinteractiveMode=false
+
+==============================
+WORKFLOW
+
+
+TODO	PENDING	 INPROG 	DONE
+=========================================
+
+ProdName-
+	
+
+naming contension
+
+
+- We would push we have a code
+- Team Meeting
+		Agile Module - SCRUM
+- JIRA - CLOUD
+================================================================
+Kamran - Please learn Git and Push your code skelaton
+Jigar Desai  - Please learn Git and Push your code skelaton
+Neha - Please learn Git and Push your code skelaton
+Raghu  - Please learn Git and Push your code skelaton
+Vamshi - Please learn Git and Push your code skelaton
+
+Kamran - Please learn build mgmt tool
+Jigar Desai  - Please learn build mgmt tool
+Neha - Please learn build mgmt tool
+Raghu  - Please learn build mgmt tool
+Vamshi - Please learn build mgmt tool
+
+
+
