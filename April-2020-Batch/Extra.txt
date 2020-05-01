@@ -75,3 +75,111 @@ Vamshi - Please learn build mgmt tool
 
 
 
+microservice 0 - Rajesh - Java  - Foundation Microservice 0
+Microservice 1 - Rajesh - Go  - MyCommands
+Microservice 2 - Kamran - Python - MyVideoTutorials
+Microservice 3 - Jigar Desai - Node  - MySlides
+Microservice 4 - Neha  - Python - MyWebReference
+Microservice 5 - Raghu - Python - MyWebTutorials
+Microservice 6 - Ram - Python - MyNotes
+
+
+
+PLAN ->
+JAVA
+Go
+Python
+\
+
+Code Review
+	Peer Code Review
+		Code Collaba
+		Gerrit by Google
+		Gitlab
+		Github
+		
+	Static Code Review
+
+	Python
+	- PyCharm – Cross-platform Python IDE with code inspections available for analyzing code on-the-fly in the editor and bulk 	analysis of the whole project.
+	- PyDev – Eclipse-based Python IDE with code analysis available on-the-fly in the editor or at save time.
+	- Pylint – Static code analyzer. Quite stringent; includes many stylistic warnings as well.
+	Node
+		ESLint
+		JSPrime
+		NodeJsScan
+	Java
+		emma, checkstylce, findbugs
+	Go
+		GolangCI
+	==================================
+	Quality Management Tool
+		Code Quality
+			Peer Code Review
+			Static Code Review
+		Test Quality 
+
+===============SONARQUBE=====================
+Ops --
+===================
+===================================================
+
+Plan -> Code -> Test -> Release(Prod) --> Ops
+
+=================
+DevOps - Code -> test -> release
+Auto infra through Terraform
+------------------------
+
+Containization
+======================
+dockerfile
+	comverting app - image -> regitry
+	docker-compsoe
+
+Kubernetes->Docker->Container->Docker-compose-Dockerfile-App
+Ops
+
+
+
+Ops
+===============================
+Infra setup - terraforn
+		DEV - QA - PROD
+		WEB - QAP - Db
+		LB
+		STORAGE
+		NETOWKRING
+
+Monitoring
+	Log monitong - 1 hours
+		Matrix -> App ->
+	Per mongi
+
+	Infra - 
+
+	Secut
+
+
+
+
+DevOps
+===============
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
