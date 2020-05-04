@@ -1,0 +1,133 @@
+
+
+Dev Model - DevOps
+Software Arch - Microservices
+-------
+Dev
+	Coding - 
+		IDE
+		Coding
+		Code Review
+		Unit Testing
+------------------------------------
+What is Code Review?
+	--------------------
+	Reviewing a code for 
+
+Who would find out all these 7 Axis of issues.???
+
+Ways to do Code Reviews
+	Peer Code Review
+		Tools
+			Gerrit by Google
+			Gitlab
+`			Github			
+			Code Collab	
+	Static Code Review
+			https://en.wikipedia.org/wiki/List_of_tools_for_static_code_analysis
+			
+
+Why Code Reviews?
+=======================
+	70% of the bUGS found in a products post release due to
+			Lack of CODE REVIEW Process.
+	---------------------------
+	Company - Prodx - 100 Rs + 20 Rs = 120 Rs
+	-------------------------------------------
+			1 Months
+	---------------------------------------------
+	100 + 70 = 170 - 120 = 50 RS LOSS
+	
+----------------------------------------------------------
+WHat is Static Code Review?
+------------------------------------------
+Its tools - Tool has rules - Rules get applied onto the code.
+							--- Results or Review.
+=================================================================================================
+
+Ops Level or Org Level
+======================
+Quality Management Tool
+==================================
+Quality
+	Code Quality
+	Test Quality
+
+tools - 
+	SonarQube
+	Fortify
+===================================
+What is SonarQube?
+=====================================
+	Quality Management Tool
+	Free
+	Open Source
+	Written in Java
+	From SonarSource
+	Release
+		Community -------->
+		Professional
+		Enterprise
+	Version 
+		8.X
+========================
+3.7.66.242
+
+How to install SonarQube?
+=================================
+http://3.7.66.242:9000/
+admin
+admin
+
+
+
+============================
+SonarQube Architecture
+=================================
+SonarQube Server
+	Web
+		Projects
+		Issues
+		Rules
+		Quality Profiles
+		Quality Gate
+		
+	Database
+		H2
+		RDBMS
+
+
+Soure Code
+	Any code
+		SonarProp file.
+https://github.com/devopsschool-demo-labs-projects/java-sonar-runner-simple
+
+
+Scanner
+	
+
+How SOnarQube works!!!
+----------------------------------
+
+
+
+/home/ec2-user/scanner/bin/sonar-scanner
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
