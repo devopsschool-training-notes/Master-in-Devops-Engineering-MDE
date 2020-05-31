@@ -1,0 +1,293 @@
+
+FULL STACK DEV - Master in DevOps Engineering DEVOPS 
+
+=========================================
+Introduction
+- Rajesh
+- Kamran
+- Jigar Desai
+- Neha
+- Raghu
+=========================================
+Scope of Master in DevOps Engineering?
+=======================================
+This is NOT a training
+=======================
+We are a TEAM
+                DevOps Team
+Product
+Plan -> Design -> Develop -> Test -> PreProd -> Prod -> Monitoring
+=====================================================================
+DevOps -> DevSecOps -> SRE
+
+Plan?
+===============================================
+Product - MDEx
+---------------
+Design
+===============================================
+How to design a software?
+Monolithic -> SOA -> Microservices (6)
+                        Concept
+                        Design Principal
+                        Design Approach
+                        Design Technology
+
+Develop
+================================
+IDE -> Git -> Code Analysis -> UT -> Package -> Archive -> Dep2QA - AT -
+
+=============Foundation MS by Rajesh Python ===============
+- Rajesh -> Go [ HTML - CSS - JS ] - mongo
+- Kamran -> Python 0 [ HTML - CSS - JS ] - mysql
+- Jigar Desai - Node 7 [ HTML - CSS - JS ] - mongo
+- Neha - Python 0 [ HTML - CSS - JS ] - mysql
+- Raghu - Python 0  [ HTML - CSS - JS ] - mysql
+    
+==================================================
+
+
+Objectives of MDE
+=========================================
+- Co - Dev a Prod by following all 
+    BEST practices in Software Dev
+    BEST principal in Software Dev
+    BEST tool in Software Dev
+    BEST Methodology in Software Dev
+    Real DevOps 
+    To the Market
+    Confidence
+    Expert in Design Pattern
+    CICD
+    Architect
+    Automation   
+    TDD (TEST DRIVEN DEV)
+        BDD
+-   Design Infra
+
+Expectations
+=========================================
+Why we are spending so much of time for this?
+=========================================================
+Design Principal = Monolithic      ->      SOA      -> Microservices
+Dev Model        = Waterfall Model ->   Agile/Scrum -> DevOps       -> DevSecOps
+==========================================================
+Answer - INTERNET
+================================================
+====================RUNNING APP ==================
+Platform  - PHYSCIAL -> VITRUAL --> Containers
+====================================================================
+NO INTERNET - 
+===================
+ONE BOX - ONE SOFT(50)
+
+WITH INTERNET - 
+=========================
+More BOX  - ONE SOFT(50)
+===========COST HIGHER==============================================
+PHYSCIAL -> VITRUAL
+
+DISTRUBUTED MODEL - TO RUN APP.
+=========SOA=======================
+LB -> WS -> AS -> BL -> DB
+---------------------------------
+4      40    50   30     10
+=================================================
+Problems-
+        Change in 1 code ---> NEW RELEASE OF WHOLE PRO
+        ===================================================
+                        1 y - 6m - 3m - 1m - 2weeks
+                        ================================
+What you wants?
+============================
+Reduce a COST of Soft Dev and Running a APP
+Improve a QUALITY?
+Immediate Release
+
+        Microservices - DevOps - Containers
+
+==============================================================
+https://www.devopsschool.com/lms
+        -- git --  https://www.devopsschool.com/lms/mod/page/view.php?id=367
+
+
+==========================================================
+DevOpsInPocket
+        - A software which can RUN in your LAPTOP in 1 SEC.
+        - ALL DB must be portable - easily - 5 sec.
+==========================================================
+- Rajesh - Java - Gradle -[ HTML - CSS - JS ] - ps - Spring 
+- Rajesh -> Go - build - [ HTML - CSS - JS ] - mongo - Gin 
+- Kamran -> Python - PyBuilder - [ HTML - CSS - JS ] - mysql - Django
+- Jigar Desai - Node - npm - [ HTML - CSS - JS ] - mongo - Express
+- Neha - Python - PyBuilder - [ HTML - CSS - JS ] - mysql - Flask 
+- Raghu - Python - PyBuilder - [ HTML - CSS - JS ] - mysql  - Django
+==========================================================
+==========Foundation Microservice 0 - Rajesh - Java Spring ==========
+microservice 0 - Rajesh - Java  - Foundation Microservice 0
+Microservice 1 - Rajesh - Go  - MyCommands
+Microservice 2 - Kamran - Python - MyVideoTutorials
+Microservice 3 - Jigar Desai - Node  - MySlides
+Microservice 4 - Neha  - Python - MyWebReference
+Microservice 5 - Raghu - Python - MyWebTutorials
+Microservice 6 - Ram - Python - MyNotes
+
+Foundation Microservice 0
+        - Login
+        - Account Setting
+        - Registration
+        - Dashboard
+        - FLASH DEVOPS News
+        - Top 5 FAV MyWebTutorials | - Top 5 FAV MyCommands        
+        - Top 5 FAV MyWebReference | - Top 5 FAV MyVideoTutorials
+        - Top 5 FAV MySlides       | - Top 5 FAV MySlides
+
+
+Microservice 1 - CRUD (CREATE READ UPDATE DELETE)
+======================================
+MyWebTutorials
+        MAIN Page  | Add WebTutorials | Add Category | 
+        ------------------------------
+        FILTER
+        Category - Date - Title
+        ----------------------------------------
+        Cat-Name - Date - Title - Click here    <EDIT><Delete>
+
+
+        Add WebTutorials form
+        ------------------------------
+        Select Category -> Select List
+        Date -> Automatically  
+        Enter Title --> Text Box
+        Enter URL --> Text Box
+        Fav -> YES/NO
+                SUBMIT
+
+Microservice 2 - CRUD (CREATE READ UPDATE DELETE)
+====================================== 
+MyCommands
+        MAIN Page  | Add MyCommands | Add Category | 
+        ------------------------------
+        FILTER
+        Category - Date - Title
+        ----------------------------------------
+        Cat-Name - Date - Title - Click here to see in Pop up  <EDIT><Delete>
+
+
+        Add MyCommands
+        ------------------------------
+        Select Category -> Select List
+        Date -> Automatically  
+        Enter Title --> Text Box
+        Enter Commands --> Text AREA
+        Fav -> YES/NO
+                SUBMIT
+
+Microservice 3 - CRUD (CREATE READ UPDATE DELETE)
+====================================== 
+MyWebReference
+        MAIN Page  | Add WebReference | Add Category |   
+        ------------------------------
+        FILTER
+        Category - Date - Title
+        ----------------------------------------
+        Cat-Name - Date - Title - Click here <EDIT><Delete>
+ 
+
+        Add WebReference
+        ------------------------------
+        Select Category -> Select List
+        Date -> Automatically  
+        Enter Title --> Text Box
+        Enter URL --> Text Box
+        Fav -> YES/NO
+                SUBMIT
+
+Microservice 4 - CRUD (CREATE READ UPDATE DELETE)
+====================================== 
+MyVideoTutorials
+        MAIN Page  | Add VideoTutorials | Add Category |  
+        ------------------------------
+        FILTER
+        Category - Date - Title
+        ----------------------------------------
+        Cat-Name - Date - Title - Click here to pop video <EDIT><Delete> 
+
+
+        Add VideoTutorials
+        ------------------------------
+        Select Category -> Select List
+        Date -> Automatically  
+        Enter Title --> Text Box
+        Enter URL --> Text Box
+        Fav -> YES/NO
+                SUBMIT
+
+Microservice 5 - CRUD (CREATE READ UPDATE DELETE)
+====================================== 
+MySlides
+        MAIN Page  | Add MySlides | Add Category |  
+        ------------------------------
+        FILTER
+        Category - Date - Title
+        ----------------------------------------
+        Cat-Name - Date - Title - Click here to see PDF  <EDIT><Delete>
+
+
+        Add MySlides
+        ------------------------------
+        Select Category -> Select List
+        Date -> Automatically  
+        Enter Title --> Text Box
+        Upload PDF --> UPLOAD AREA
+        Fav -> YES/NO
+                SUBMIT
+
+Microservice 6 - CRUD (CREATE READ UPDATE DELETE)
+====================================== 
+MyNotes
+        MAIN Page  | Add MyNotes | Add Category |  
+        ------------------------------
+        FILTER
+        Category - Date - Title
+        ----------------------------------------
+        Cat-Name - Date - Title - Click here to see PDF  <EDIT><Delete>
+
+
+        Add MyNotes
+        ------------------------------
+        Select Category -> Select List
+        Date -> Automatically  
+        Enter Title --> Text Box
+        Upload GIST/Snippet url --> Text Box
+        Fav -> YES/NO
+                SUBMIT
+
+
+Duration For Code -> 15 Days
+========================================
+First meeting - 5th    Second meeting - 10th  third - 15th...
+
+
+========================================
+========================================
+Why SHOULD BE DONE? ------> Today
+What SHOULD BE DONE?  ------> Tomorow
+How SHOULD BE DONE?  ------> Day after Tomorow
+========================================
+========================================
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
