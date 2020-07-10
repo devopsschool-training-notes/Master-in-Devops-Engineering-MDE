@@ -1,0 +1,90 @@
+World Without Internet
+-------------------------------------
+Consumer         Paid First - CDs -> Desktop -> 2 Year
+Company - Microsoft-Adobe
+        Objective
+        - Fast Release AKA Immediate release
+        - Improve Quality
+        - Reduce a Cost of Software Dev + Running
+        100 Rs + 30Rs  - 110Rs
+        -------
+        130 - 110 = 20 (Technical Debt) 
+------
+Software Dev Model      - Waterfall (6 monhths release cycle)
+Sottware Architecture   - Monilithic 
+Software Platform       - Desktop
+
+World With Internet
+-------------------------------------
+Software run in Datacenter
+Consumer - NO Payment - Browsers -> Laptop -> Shorter release(2 weeks)
+Company - Google, facebook, Amazon
+        Objective
+        - Fast Release AKA Immediate release
+        - Improve Quality
+        - Reduce a Cost of Software Dev + Running
+------
+Software Dev Model      - Agile Model (2 Weeks)
+Sottware Architecture   - SOA 
+Software Platform       - Vms
+                        PVT Cloud - Vmware, VirtualBox
+                        Pub Cloud - AWS, Azure, GC
+======================================
+World With Internet but with Device
+-------------------------------------
+Software run in Datacenter
+Consumer - NO Payment - Device -> Mobile -> NOW release
+Company - Ola , Uber, Flipkart
+        Objective
+        - Fast Release AKA Immediate release
+        - Improve Quality
+        - Reduce a Cost of Software Dev + Running
+------
+Software Dev Model      - DevOps
+Sottware Architecture   - Microservices
+Software Platform       - Container
+=========================================================
+World has changed in terms of consuming a software from Desktop Based to broswers and now APP based Devices.
+With that Many things chnaged. e.g 
+Platform - Desktop -> Vm -> Container.
+Architecture - Monolithich to SOA to Microservices. 
+So soft dev model also has changed. from Waterfall to Agile and Now, DevOps.
+
+So Basically, with a help a help of DevOps, we are getting ready our engineering(Plan+Dev+QA+Ops)togther. and work 
+togther with right mindset and then greate bring automation in place for following objectives and integrate eveything togther.
+
+For following Objective.....  
+        - Fast Release AKA Immediate release
+        - Improve Quality
+        - Reduce a Cost of Software Dev + Running
+
+So DevOps is a way to Integrate.
+- Dev+QA+Ops Team
+- Dev+QA+Ops Culture
+- Dev+QA+Ops mindset
+- Dev+QA+Ops Process
+- Dev+QA+Ops Practices
+thus 
+===================================================================
+Tools - So we have so many Tools which enable DevOps transitions.
+===================================================================
+
+DevOps
+Azure DevOps 
+===================================================================
+Azure DevOps Means - To Practice DevOps at Azure, there are many tools which is exist  in Azure Cloud Only. 
+Thats call Azure DevOps.
+
+Aws DevOps Means- To Practice DevOps at AWS, there are many tools which is exist  in AWS Cloud Only. 
+Thats call aws DevOps.
+===================================================================
+                                        Google
+Waterfall -> Agile -> DevOps    
+                     --------           Dev+QA  + Ops->SRE
+                      Failed            --------------
+                                        1 Team + 2 Team
+                                        -----------------
+                                           Enginerring
+
+                                        Ops - Platform
+                Become Infra automation
