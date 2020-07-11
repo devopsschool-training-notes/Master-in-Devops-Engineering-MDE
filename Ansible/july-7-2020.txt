@@ -1,0 +1,241 @@
+=======
+What is Ansible?
+=================
+	Config mgmt tool
+		For Server(S)
+			file
+			directory
+			packages
+			services
+			user
+			group
+			apt
+			yum
+	Written in Python
+	Release
+		Ansible		- CMD  - FREE
+		Ansible Tower	- CMD + GUI + PAID - Free only till 10 + Stable Release
+		Ansible AWX 	- CMD + GUI + FREE + Latest NON QA Release
+	From Redhat
+==========================================
+www.DevOpsSchool.com/
+==========================================
+Why We use Ansible?
+	Config mgmt for Servers
+	Easy to learn - test - debug - extend - share 
+	Ideompotent
+		Desire in Server == Actual - no changes
+	Community driven
+	Huge number of free modules + roles
+
+Other tools ->
+	Ansible -> Puppet -> Chef -> Salt -> Cfengine
+
+Architecture of Ansible
+==========================
+- Ansible Control Server
+- Ansible Remote Server
+
+	ACS			ARS
+	========================================
+	Linux			WINDOWS + LINUX
+	64 BIT ONLY		ANY BIT
+	Ansible			NA
+	Python			Windows - DOTNET + PS + WINRM
+				Linux - SSH + Python 2.7
+	Protocol 		WIn - http
+				SSH - SSH
+	Communication		---WIN--> WINRM
+				--- LINUX  - SSH
+	===========================================
+Components of ACS
+	Ansible
+		Ansible Engine - Its a application
+		Ansible Plugins - Code - All Feature of Ansible comes from plugins
+		Ansible Modules - Code - But for Users to do ONE thing. Copy, delete, install
+		Ansible Config file - Change a behaviour of Ansible through this
+	Human 
+		Playbook
+			yaml file
+			Has multiple Play
+		Play
+		  	Hosts: Group [ List of Server from a inventory] All or web or dev
+			Tasks:
+				- Module1 with param
+				- Module2 with param
+				- Module3 with param
+		Inventoryfile
+			a file which has list of IP address
+
+	List of Modules === 3000+
+	============================
+	https://docs.ansible.com/ansible/latest/modules/modules_by_category.html
+
+=======================================================================
+Ansible 	VS  		Terraform
+=====================================
+ONE Programing Lang - CAN DO everything.
+============
+SERVER(S) Config mgmt		Entire stake in Infra
+mgmt Servers			Managing entire infra
+Coding Server			Coding for infra
+-----------------------------------------------------
+Manage Config
+Create OR Edit Or Delete	Create AND Edit AND Delete
+=====================================================
+Python				Go
+Redhat				Hashcorp
+Plugins				Providers
+Module				Resources
+	
+https://www.devopsschool.com/blog/how-to-install-ansible-in-centos-7-rhel-7/
+
+ACS 
+13.233.197.152
+
+$ sudo yum install wget -y
+$ wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+$ yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+$ sudo rpm -i epel-release-latest-7.noarch.rpm
+$ sudo yum update -y 
+$ sudo yum install ansible -y
+$ systemctl stop firewalld
+$ systemctl disable firewalld
+
+ARS
+13.233.197.152
+13.232.234.50
+
+[root@ip-172-31-26-53 centos]# ansible --version
+ansible 2.9.10
+  config file = /etc/ansible/ansible.cfg
+  configured module search path = [u'/root/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python2.7/site-packages/ansible
+  executable location = /bin/ansible
+  python version = 2.7.5 (default, Apr  2 2020, 13:16:51) [GCC 4.8.5 20150623 (Red Hat 4.8.5-39)]
+
+======================================================
+Project 
+===========
+Setup a webserver
+
+Step - 1 Install httpd 	https://docs.ansible.com/ansible/latest/modules/yum_module.html	
+Step - 2 Copy index.html to /var/www/html	https://docs.ansible.com/ansible/latest/modules/copy_module.html
+Step - 3 Start a service	https://docs.ansible.com/ansible/latest/modules/service_module.html
+
+
+
+- name: install the latest version of Apache
+  yum:
+    name: httpd
+    state: latest
+
+- name: Copy file with owner and permissions
+  copy:
+    src: index.html
+    dest: /var/www/html
+
+- name: Restart service httpd, in all cases
+  service:
+    name: httpd
+    state: started
+
+
+
+---
+- hosts: web
+  tasks:
+  - name: install the latest version of Apache
+    yum:
+      name: httpd
+      state: latest
+  - name: Copy file with owner and permissions
+    copy:
+      src: index.html
+      dest: /var/www/html
+  - name: Restart service httpd, in all cases
+    service:
+      name: httpd
+      state: started
+
+ansible-playbook -i inventory playbook.yaml
+
+Windows using WINRAM - 
+	user id n pass
+Linux using SSH
+	user id n pass
+	user id n key
+
+
+ansible-playbook -i inventory playbook.yaml -u centos --key-file=remote.pem -b
+
+
+
+---
+- hosts: web
+  vars:
+    myname: rajeshkumar
+    port: 8080
+
+  tasks:
+  - name: install the latest version of Apache
+    yum:
+      name: httpd
+      state: latest
+  - name: Copy file with owner and permissions
+    copy:
+      src: index.html
+      dest: /var/www/html
+  - debug:
+      msg: Myname is {{ myname }} 
+  - name: Template a file to /etc/files.conf
+    template:
+      src: httpd.conf.j2
+      dest: /etc/httpd/conf/httpd.conf
+    notify:
+    - restart apache
+  - name: Restart service httpd, in all cases
+    service:
+      name: httpd
+      state: started
+
+  handlers:
+    - name: restart apache
+      service:
+        name: httpd
+        state: restarted
+
+ansible-playbook -i inventory web.yaml -u centos --key-file=remote.pem -b
+==================================================
+
+roles
+=============
+dir structure
+managing following
+		tasks
+		template
+		vars
+		handlers
+
+
+
+---
+- hosts: web
+  roles:
+    - web
+
+ansible-playbook -i inventory site.yaml -u centos --key-file=remote.pem -b
+
+Var
+	custom - Human
+	fact - 
+		system var
+			set_fact
+
+# Example setting host facts using key=value pairs, note that this always creates strings or booleans
+- set_fact: one_fact="something" other_fact="{{ local_var }}"
+
+
+
+
+
