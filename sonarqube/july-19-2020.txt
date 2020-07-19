@@ -1,0 +1,255 @@
+What is SonarQube?
+=======================
+	Quality Management tool.
+	from SonarSource
+	Written in Java
+	Release
+		Community  - Free	= Part of our Program
+		Professional - Paid
+		DataCenter - Paid	
+		Developer - Free	= Part of our Program
+	Version
+		8.X
+	27 Lang - 
+	https://www.sonarqube.org/features/multi-languages/
+
+tool
+	Save Time
+	Save cost
+	Improve ur productvity
+
+What is Quality?
+===============================
+	Code Quality
+		Peer Code Review - Mantual
+		Static Code Review - Automated 
+	Test Quality 
+		Coverage 
+
+What is Static Code Review?
+-------------------------------
+	Automated way to find a issues in code.
+		- Bugs
+		- Bad Code
+		- Security
+		- Best practices is not been followed.
+	what are the tools for SCA
+	https://en.wikipedia.org/wiki/List_of_tools_for_static_code_analysis
+
+Product
+	Module1 - Java
+			5 Tools
+	Module2 - CPP
+			2 Tools
+	Module3 - DOt NEt
+			5 Tools
+	Module4 - Python
+			5 Tools
+	Module5 - Ruby
+			5 Tools
+	---------------------------------------
+			22 Tools
+	
+	How do we Manage 22 SCA tool?
+	==============================
+
+	What it contains in EACH tools?
+	------------------------------
+	RULE(S)
+	SCA Tool 1 - 50 Rules
+	SCA Tool 2 - 60 Rules 
+	SCA Tool 3 - 100 Rules
+	
+	Rules = Rules are nothing but a compiled code which run on SRC code to find a posible bugs/etc.
+
+	
+	How do we Manage CUSTOM rules sets for your project???
+	==============================
+
+	Each Code SCAN with a help of SCA tool - you get REPORTS.
+	Reports contains..
+			What is the issues?
+			when this isues was intro
+			Who has intro this issues?
+			How to fix it
+			Etc
+			etc
+	5 Module X 22 Tools = 110 Reports......
+	
+	How do we manage all reports at one place??????	
+	======================================================
+
+
+	How do we Manage 22 SCA tool?
+	How do we Manage CUSTOM rules sets for your project???	
+	How do we manage all reports at one place??????	
+	========================================
+	SonarQUBE
+	We call it - QUALITY management tool.
+===============================================================================
+How SonarQube Works??
+	SonarQube Server = 9000
+		Rules - Which comes from various SCA tools.
+		DB - RDMBS
+		WEB
+		ElasticSearch
+
+	Dev Desk or CI Desk
+		Source Code
+		Scanner - jar
+====================================================
+How to install SonarQube Server?
+	JRE / JDk 11
+	Download
+	Extract
+	Run
+	Access
+
+============================
+SonarQUBE DO NOT REQUIRE ROOT
+============================
+
+15.207.55.45
+ sudo yum -y install java-11-openjdk java-11-openjdk-devel
+
+  1  sudo -s
+    2  clear
+    3  ls
+    4  sudo yum -y install java-11-openjdk java-11-openjdk-devel
+    5  clear
+    6  ls
+    7  clear
+    8  cd
+    9  ls
+   10  wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-8.4.1.35646.zip
+   11  yum install wget
+   12  sudo yum install wget
+   13  clear
+   14  wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-8.4.1.35646.zip
+   15  clear
+   16  ls
+   17  sudo yum install unzip
+   18  clear
+   19  ls
+   20  unzip sonarqube-8.4.1.35646.zip
+   21  clear
+   22  ls
+   23  java --version
+   24  clear
+   25  ls
+   26  cd sonarqube-8.4.1.35646
+   27  ls
+   28  ls -1
+   29  history
+
+
+[centos@ip-172-31-13-50 sonarqube-8.4.1.35646]$ ls -1
+bin			- START STOP
+conf			- Config file os SonarQube
+COPYING
+data			- H2 DB - For Trial
+elasticsearch		- es for searching and indexing
+extensions		- INstall plugins
+lib			- SonarQube App Jars
+logs
+temp
+web			- HTML CSS JS
+
+  25  ls
+   26  cd sonarqube-8.4.1.35646
+   27  ls
+   28  ls -1
+   29  history
+   30  clear
+   31  ls
+   32  cd conf/
+   33  ls
+   34  more sonar.properties  wrapper.conf
+   35  clear
+   36  ls
+   37  cd ..
+   38  ls
+   39  cd bin/
+   40  ls
+   41  cd linux-x86-64
+   42  clear
+   43  ls
+   44  ./sonar.sh start
+   45  ./sonar.sh status
+   46  history
+
+
+http://15.207.55.45:9000/
+admin
+admin
+
+SOURCE - 
+JAVA - https://github.com/devopsschool-demo-labs-projects/java-sonarqube-helloworld-src
+
+MANUAL - RUN SCANNER ON THE SOURCE CODE WHERE "sonar-project.properties" prop file is there.
+/home/centos/scanner/bin/sonar-scanner
+=================================
+
+How to config any RDBMS? aka ps.
+--------------------------------------
+1. Stop SonarQube Server
+2. Go to prop of "SonarQube Server"
+3. /home/centos/sonarqube-8.4.1.35646/conf
+
+vi sonar.properties
+-----------------------------------
+#----- PostgreSQL 9.3 or greater
+# By default the schema named "public" is used. It can be overridden with the parameter "currentSchema"
+.
+#sonar.jdbc.url=jdbc:postgresql://localhost/sonarqube?currentSchema=my_schema
+
+- uncomment 
+- localhost = IP 
+- sonarqube - DB name
+
+#sonar.jdbc.username=
+#sonar.jdbc.password=
+
+1. Start SonarQube Server
+======================
+IT WOULD MIGRATE ALL REPORT FROM H2 to PS.
+=========================================================
+SonarQube Authentication and Authrization
+=================================================
+Authentication 
+	User ID n Password
+		
+	Permission -> Group --> User
+
+	LDAP
+	1. Stop SonarQube Server
+	2. Go to prop of "SonarQube Server"
+	3. /home/centos/sonarqube-8.4.1.35646/conf
+	vi sonar.properties
+# LDAP CONFIGURATION
+
+# Enable the LDAP feature
+# sonar.security.realm=LDAP
+
+# Set to true when connecting to a LDAP server using a case-insensitive setup.
+# sonar.authenticator.downcase=true
+
+# URL of the LDAP server. Note that if you are using ldaps, then you should install the server certific
+ate into the Java truststore.
+# ldap.url=ldap://localhost:10389
+
+# Bind DN is the username of an LDAP user to connect (or bind) with. Leave this blank for anonymous acc
+ess to the LDAP directory (optional)
+# ldap.bindDn=cn=sonar,ou=users,o=mycompany
+
+# Bind Password is the password of the user to connect with. Leave this blank for anonymous access to t
+he LDAP directory (optional)
+# ldap.bindPassword=secret
+
+# Possible values: simple | CRAM-MD5 | DIGEST-MD5 | GSSAPI See http://java.sun.com/products/jndi/tutori
+al/ldap/security/auth.html (default: simple)
+
+
+
+
+
