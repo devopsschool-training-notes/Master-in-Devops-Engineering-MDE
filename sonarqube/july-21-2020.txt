@@ -1,0 +1,158 @@
+What is SonarQube?				DONE
+Benefits of SonarQube?				DONE
+Alternative of SonarQube			DONE
+Undertanding Various License of SonarQube	DONE
+Architecture of SonarQube			DONE
+How SonarQube works?				DONE
+Components of SonarQube				DONE
+
+SonarQube runtime requirements			DONE	
+Installing and configuring SonarQube in Linux	DONE	
+Basic Workflow in SonarQube using Command line	DONE
+Working with Issues in SonarQube		DONE
+Working with Rules in SonarQube			DONE
+Working with Quality Profiles in SonarQube	DONE
+Working with Quality Gates in SonarQube		DONE
+
+
+Deep Dive into SonarQube Dashboad		DONE
+Undertanding Seven Axis of SonarQube Quality	DONE
+Workflow in SonarQube with Maven Project	DONE
+Workflow in SonarQube with Gradle Project	DONE
+Workflow in SonarQube with MsBuild Project	DONE
+Workflow in SonarQube with Jenkins (CI Integration)	DONE
+Working with Codecoverage(Jacoco) and SonarQube	DONE
+
+Working with Codecoverage(NCover) and SonarQube	DONE
+
+Working with IDE with SonarQube Lint	
+
+Installing More rules using SonarQube Plugins	DONE
+Workking with Project Settings			DONE
+Basic workflow with Sonarqube Owasp
+Adding Custom Sonarqube rules
+
+SonarQube with PS
+================================================================
+Workflow in SonarQube with Maven Project
+13.127.166.63
+==================================
+Pre 
+	- Maven
+	https://www.devopsschool.com/videos/show/maven?type=video
+
+ - One Project based on Maven - DONE
+ - Maven plugins for SonaRQube
+ - SonarQube Server
+ - Commands
+	- mvn install sonar:sonar
+
+
+==========================
+Step 1 - Download and Install JAVA(JDK) and set JAVA_HOME		DONE
+Step 2 - Download and Install Maven and set maven into PATH		DONE
+Step 3 - Get a SOURCE COde enabled in java and Maven...			DONE
+Step 4 - Make sure that pom.xml has a SonarQube Scanner Plugins		DONE
+Step 5 - Make sure that setting.xmls has SonarQube Server location	DONE
+Step 6 - rUN A SCANNER ( a place where you have pom.xml)
+
+		mvn plugins:goal
+		mvn clean sonar:sonar
+		mvn verify sonar:sonar
+ 		mvn sonar:sonar
+
+
+        <profile>
+            <id>sonar</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <!-- Optional URL to server. Default value is http://localhost:9000 -->
+                <sonar.host.url>
+                  http://localhost:9000
+                </sonar.host.url>
+            </properties>
+        </profile>
+
+=================================
+SonarQube with MsBuild Project
+=======================================
+
+Step 1 - Download and Install JAVA(JDK) and set JAVA_HOME		DONE
+Step 2 - .NET Framework v4.6+
+Step 3 - Build Tools for Visual Studio 2017
+Step 4 - .NET Core 2.0
+
+15.206.210.252
+Public DNS	ec2-15-206-210-252.ap-south-1.compute.amazonaws.com
+User name	Administrator
+Password	
+lwPp9cdh3&Cm8UuGNw7uuOCr!i%CYdUU 
+
+SonarQube.Integratio
+n.targets(231,5): error MSB4062: The "IsTestFileByName" task could not be loaded from the assembly C:\sonar-scanning-ex
+amples-master\sonarqube-scanner-msbuild\CSharpProject\.sonarqube\bin\SonarScanner.MSBuild.Tasks.dll. Could not load fil
+e or assembly 'Microsoft.Build.Utilities.Core, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a' or o
+ne of its dependencies. The system cannot find the file specified. Confirm that the <UsingTask> declaration is correct,
+ that the assembly and all its dependencies are available, and that the task contains a public class that implements Mi
+crosoft.Build.Framework.ITask. [C:\sonar-scanning-examples-master\sonarqube-scanner-msbuild\CSharpProject\SomeConsoleAp
+
+===============================
+Workflow in SonarQube with Jenkins (CI Integration)
+================================
+
+Step 1- Install jenkins server				DONE
+step 2 - Install SonarQube Plugins			DONE
+Step 3- Config SonarQube Server in Jenkins Config	DONE
+Stp 4 - Setup scanner in jenkins Tools			DONE
+Step 5 - Download src code using jenkins job and run.
+
+http://13.127.166.63:8080/m
+
+Working with Codecoverage(Jacoco) and SonarQube
+====================================================
+JAVA - jacoco
+DOTNET - nCOver.
+
+
+psql -U postgres -h 15.206.210.252 -p 5432 postgres
+psql -h 15.206.210.252 -U postgres -p 5432 
+
+
+
+centos  -  nofile  65535
+============================================
+How to setup POST gress in SOnarQube
+========================================
+Step 1 - Install POStgress DB server
+Step 2 - Enabled POstgress to access from remote machine
+https://stackoverflow.com/questions/1406025/no-pg-hba-conf-entry-for-host
+
+Step 3 - Create a Database
+Step 4 - You can create new user and set a permission to DB or use Super users.
+Step 5 - ES changes.
+	1. https://www.devopsschool.com/blog/elastic-search-error-max-virtual-memory-areas-vm-max_map_count-65530-is-too-low-increase-to-at-least-262144/
+	2. https://www.devopsschool.com/blog/elastic-search-error-max-file-descriptors-4096-for-elasticsearch-process-is-too-low-increase-to-at-least-65535/
+Step 4 - SonarQube Config changes...
+
+Step 5 . Start a SOnarQube.
+
+https://docs.sonarqube.org/latest/setup/install-server/
+
+
+
+
+Remarks - 
+https://www.postgresql.org/docs/9.1/tutorial-accessdb.html
+https://dunterov.github.io/sq-psql/
+https://flaviocopes.com/postgres-how-to-list-tables-database/#:~:text=To%20list%20the%20tables%20in,SELECT%20table_name%20FROM%20information_schema.
+
+
+
+
+
+
+
+
+
