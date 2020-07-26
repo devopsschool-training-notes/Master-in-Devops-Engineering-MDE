@@ -1,0 +1,107 @@
+Deep Dive into SonarQube Dashboad
+Undertanding Seven Axis of SonarQube Quality
+Workflow in SonarQube with Maven Project
+
+Workflow in SonarQube with MsBuild Project
+Workflow in SonarQube with Jenkins (CI Integration)
+
+Working with Codecoverage(NCover) and SonarQube
+Working with IDE with SonarQube Lint
+Installing More rules using SonarQube Plugins
+Workking with Project Settings
+Basic workflow with Sonarqube Owasp
+Adding Custom Sonarqube rules
+
+SonarQube Authentications
+SonarQube Authorization
+Project Management
+SonarQube Setting up with mySql
+Security Reports
+User Account & User Token
+Project Setting
+Sonarqube Site Settings.
+
+
+
+=============================
+Sonarqube Site Settings.
+Sonarqube Webhooks
+Sonarqube Plugins development
+Sonarqube Notification
+Sonarqube Backup and Restore
+License Administration
+Sonarqube Upgrade and Migrations
+=============================
+Multiple Lang - 
+DO not SPeCIFY LANg IN Prop FILE.
+
+Maven
+
+Gradle - C++ 
+
+
+MSBULD - DO NET
+
+commandline - 
+
+Adding Custom Sonarqube rules
+===============================
+Buy or Download or Get it - JAR file Custom Sonarqube rules
+- put in exten dir
+- stop - start 
+===================
+Workflow in SonarQube with Gradle Project
+Working with Codecoverage(Jacoco) and SonarQube
+Sonarqube Webhooks
+Sonarqube Notification
+Sonarqube Backup and Restore
+License Administration
+Sonarqube Upgrade and Migrations
+Sonarqube Plugins development
+===================
+13.235.78.72
+
+Workflow in SonarQube with Gradle Project
+============================================
+Step 1 - Gradle install and create gradle project
+Step 2 - Add sonarqube plugins
+Step 3 - Add sonar.projectName
+Step 4 - gradle.bat -Dsonar.host.url=http://localhost:9000 sonarqube
+
+Covergage - Jacoco
+----------------------
+Step 1 - Run test cases against ur software.			NOT NEEDED
+Step 2 - Have your jacoco jar file in JVM run time env		NOT NEEDED
+Step 3 - Stop testing - jacoco would generate *.exec		We need .exec file.
+Step 4 - Create a HTML report					Needed
+		Store in the SonarQube
+
+
+overage report 'C:\tools\srccode-sonar\sonarqube-scanner-gradle\build\jacoco\test.exec' could not be read/imported. Error: {}
+java.lang.IllegalStateException: Failed to parse JaCoCo XML report: C:\tools\srccode-sonar\sonarqube-scanner-gradle\build\jacoco\test.exec
+        at org.sonar.plugins.jacoco.XmlReportParser.parse(XmlReportParser.java:108)
+        at org.sonar.plugins.jacoco.JacocoSensor.importReport(JacocoSensor.java:70)
+        at org.sonar.plugins.jacoco.JacocoSensor.importReports(JacocoSensor.java:62)
+        at org.sonar.plugins.jacoco.JacocoSensor.execute(JacocoSensor.java:47)
+        at org.sonar.scanner.sensor.AbstractSensorWrapper.analyse(AbstractSensorWrapper.java:48)
+
+========================
+Sonarqube Notification
+
+
+Sonarqube Backup and Restore
+==============================
+- DB backup
+C:\tools\sonarqube-8.4.1.35646\conf
+C:\tools\sonarqube-8.4.1.35646\extensions
+
+
+
+
+
+
+
+
+
+
+
