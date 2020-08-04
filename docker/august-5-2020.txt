@@ -1,0 +1,488 @@
+What is Docker?
+=====================
+	Container mgmt tool.
+	release
+		ce - community edi - free - os
+		ee - ent edit....- paid - 
+	Written in Golang
+	written by soloman hykes
+
+	
+
+What is Container?
+===========================
+	Container is a light weight independent App run time env.
+	container is a user namespace with their own
+		- mount
+		- pid
+		- net
+			powered by docker
+				docker is taking from kernal.
+===================================================================
+
+mgmt
+
+
+tool
+	Save cost
+	Save time
+	imp eff*
+==========================
+How Any apps run? what are the requirement for running apps?
+===========================================================
+OS --> KERNAL ->
+	Namespace
+		USER - Initialize user session
+		PID - Initialize process map
+		NET - Initialize networking
+		MNT - Initialize mount aka filesystem(rootfs)
+	Cgroups
+		Allocating CPU to PID
+	Capabilties
+		ROOT
+		Non-root
+=======================================================
+30 years
+=======================================================
+Physical -> OS -> KERNAL -->>> YOU CAN RUN APP.
+
+=======================================================
+15 years
+=======================================================
+Virtual -> OS -> KERNAL -->>> YOU CAN RUN APP.
+========================================================
+
+
+How to install Docker?
+=========================
+13.233.155.54
+https://www.devopsschool.com/tutorial/docker/install-config/docker-install-commuityedition-centos-rhel.html
+
+docker Components
+=====================================
+Docker Engine ---tool
+	Human -> Docker Client -> docker Deamon -> ContainerD ->Kernal
+Docker Image
+	ROOTfs + USERfs + AppFs
+	========================
+	BaseImage+USER + Apps
+Docker Registry
+	Pub 
+		hub.docker.com
+		google registry
+	pVt 
+		- artifactory - nexus - ecr
+Docker container
+	The moment you run image...
+		One user ns get initaited with one pid and one net and mounted from the image.
+		From one Image - you can create as many container.
+===================================================
+Docker workflow
+===================================
+hume -> client -> deamon
+		would check if image is in local registry..
+			If yes - creeate a container
+			If not - download from hub and copy into local and then create a container.
+
+=========================================================
+container workflow
+================================================
+create -> start -> stop -> start -> restart -> pause -> unpause -> kill -> remove
+
+ 23  rpm -ivh epel-release-latest-7.noarch.rpm
+   24  sudo yum-config-manager --enable rhui-REGION-rhel-server-extras
+   25  sudo yum install -y docker-ce
+   26  sudo systemctl enable docker
+   27  sudo systemctl start docker
+   28  docker info
+   29  clear
+   30  wji
+   31  lear
+   32  clear
+   33  ls
+   34  ls
+   35  which docker
+   36  ps -eaf | grep docker
+   37  docker info
+   38  docker images
+   39  clear
+   40  docker pull jenkins
+   41  clear
+   42  docker images
+   43  ps -eaf | grep docker
+   44  docker images
+   45  ckear
+   46  clear
+   47  docker ps
+   48  docker ps -a
+   49  docker create jenkins
+   50  docker ps
+   51  docker ps -a
+   52  docker start  ba8dbea9e16a
+   53  docker ps -a
+   54  clear
+   55  docker stop  ba8dbea9e16a
+   56  docker ps -a
+   57  docker start  ba8dbea9e16a
+   58  docker ps -a
+   59  docker restart  ba8dbea9e16a
+   60  docker ps -a
+   61  clear
+   62  docker pause  ba8dbea9e16a
+   63  docker ps -a
+   64  docker stats
+   65  docker unpause  ba8dbea9e16a
+   66  docker stats
+   67  docker kill ba8dbea9e16a
+   68  docker ps -a
+   69  docker rm ba8dbea9e16a
+   70  history
+
+
+RUN == pull -> create -> start  --> become(attached)
+RUN -d == pull -> create -> start  --> do not become(deattached)
+=======================================================
+Rules of PID1
+--------------------------------------------------------
+PHYSCIAL 		VIRUTAL 		Container
+============================================================
+is running 		is running		is running
+as long as 		as long as		as long as
+PID 1			PID 1			PID 1
+
+PID 1 is systemd	PID 1 is systemd	PID 1 can be anything
+
+
+How to consume continer
+=====================================
+how to go inside a container.
+exec
+	would execute an executables inside a container
+	you can use with -it with exec and /bin/bash to go inside a container.
+attach
+	would get attached to PID1
+
+How to come out of the container without exiting?
+cntl + p + q
+
+-------------------------------------
+
+docker run -d -p 8080:8080 jenkins
+docker run -d -p 8090:8080 jenkins
+================================================
+How to create docker image?
+=============================
+Docker Image
+	ROOTfs + USERfs + AppFs
+	========================
+	BaseImage+USER + jenkins
+
+	Collection of file systems
+			rootfs
+			userfs
+			appfs
+			----
+	Each file system - we call layer.
+	============================
+	When you run image....ALL LAYERS OF THE IMAGE GET MERGED INTO ONE LAYER.
+							this ONE LAYER.get mounted to container.
+
+==============================
+2 method
+============
+using exiting container
+
+using dockerfile
+=======================
+FROM ubuntu
+MAINTAINER Rajesh kumar
+RUN apt-get update
+RUN apt-get install git -y
+
+ubuntu + jdk + git + apache2
+
+How to share an image?
+tar ball
+hub.docker.com
+
+
+269  vi dockerfile
+  270  docker build -t myfff .
+  271  history
+  272  clear
+  273  ls
+  274  clear
+  275  docker images
+  276  docker save -o myfff.tar myfff
+  277  l
+  278  ;s
+  279  clear
+  280  ls
+  281  docker log
+  282  docker login
+  283  docker images
+  284  docker tag myfff devopsschools/myimagsss
+  285  clear
+  286  docker images
+  287  docker push devopsschools/m
+
+
+ 32  clear
+   33  ls
+   34  ls
+   35  which docker
+   36  ps -eaf | grep docker
+   37  docker info
+   38  docker images
+   39  clear
+   40  docker pull jenkins
+   41  clear
+   42  docker images
+   43  ps -eaf | grep docker
+   44  docker images
+   45  ckear
+   46  clear
+   47  docker ps
+   48  docker ps -a
+   49  docker create jenkins
+   50  docker ps
+   51  docker ps -a
+   52  docker start  ba8dbea9e16a
+   53  docker ps -a
+   54  clear
+   55  docker stop  ba8dbea9e16a
+   56  docker ps -a
+   57  docker start  ba8dbea9e16a
+   58  docker ps -a
+   59  docker restart  ba8dbea9e16a
+   60  docker ps -a
+   61  clear
+   62  docker pause  ba8dbea9e16a
+   63  docker ps -a
+   64  docker stats
+   65  docker unpause  ba8dbea9e16a
+   66  docker stats
+   67  docker kill ba8dbea9e16a
+   68  docker ps -a
+   69  docker rm ba8dbea9e16a
+   70  history
+   71  clear
+   72  docker ps
+   73  docker ps -a
+   74  docker create jenkins
+   75  docker start 264d0fc7426f486d68e1ad69da8a4beb32830f373f5ba6c325871d0201bab64e
+   76  docker ps -a
+   77  clear
+   78  l
+   79  clear
+   80  ehco $SHELL
+   81  echo $SHELL
+   82  docker run jenkins
+   83  clear
+   84  docker ps -a
+   85  clear
+   86  docker ps
+   87  docker run -d jenkins
+   88  docker ps
+   89  docker run jenkins
+   90  clear
+   91  docker run -d jenkins
+   92  docker run jenkins
+   93  clear
+   94  docker run jenkins
+   95  clear
+   96  ps -eaf
+   97  clear
+   98  docker ps
+   99  docker ps -a
+  100  clear
+  101  ls
+  102  docker ps -a
+  103  docker ps
+  104  clear
+  105  docker ps
+  106  docker exec f54101f0d7f3 ps -eaf
+  107  ps -eaf
+  108  clear
+  109  docker ps
+  110  docker exec f54101f0d7f3 ls
+  111  docker exec f54101f0d7f3 df -kh
+  112  clear
+  113  docker exec f54101f0d7f3 ls
+  114  docker exec f54101f0d7f3 df -kh
+  115  clear
+  116  docker exec f54101f0d7f3 df -kh
+  117  docker exec f54101f0d7f3 df -kh
+  118  df -h
+  119  clear
+  120  clear
+  121  docker ps
+  122  docker exec -it f54101f0d7f3 /bin/bash
+  123  exit
+  124  clear
+
+
+
+  127  ls
+  128  docker ps
+  129  docker exec f54101f0d7f3 ps -eaf
+  130  docker attach f54101f0d7f3
+  131  docker ps
+  132  clear
+  133  ls
+  134  docker pull ubuntu
+  135  docker images
+  136  docker run ubuntu
+  137  docker ps
+  138  docker ps -a
+  139  clear
+  140  ls
+  141  ls
+  142  docker run ubuntu
+  143  docker ps -a
+  144  clear
+  145  ls
+  146  docker run -it ubuntu /bin/bash
+  147  docker ps -a
+  148  clear
+  149  docker run -it ubuntu /bin/bash
+  150  docker ps
+  151  uhistory
+  152  history
+
+
+
+  150  docker ps
+  151  uhistory
+  152  history
+  153  clear
+  154  ls
+  155  docker ps
+  156  docker inspect 413b9cefa8c6
+  157  clear
+  158  curl http://172.17.0.3:8080
+  159  docker inspect 413b9cefa8c6
+  160  lear
+  161  clear
+  162  ls
+  163  docker ps
+  164  docker inspect 1a8539f2b54c | grep -i ip
+  165  ping 172.17.0.4
+  166  clear
+  167  clear
+  168  docker run -d -p 8080:8080 jenkins
+  169  docker ps
+  170  docker run -d -p 8090:8080 jenkins
+  171  clear
+  172  docker stop $(docker ps -a -q)
+  173  docker rm $(docker ps -a -q)
+  174  docker rmi $(docker images -q)
+  175  clear
+  176  docker images
+  177  docker ps -a
+  178  history
+  179  clear
+  180  ls
+  181  cd /var/lib/docker/
+  182  ls
+  183  docker info
+  184  clear
+  185  ls
+  186  cd overlay2
+  187  ls
+  188  du -sh
+  189  docker pull ubuntu
+  190  ls
+  191  cd 3146ba6c9c4c13b52218d28296515206b466126f48db4d2a3b66eec82dd8b179
+  192  clear
+  193  ls
+  194  cd diff/
+  195  ls
+  196  cd ..
+  197  ls
+  198  cd ..
+  199  ls
+  200  cd 352a7510a7234ae479d4d4368cf9f22381e4bbd58aa0d63322a889ff68913b35
+  201  ls
+  202  cd diff/
+  203  clear
+  204  ls
+  205  cd ..
+  206  ls
+  207  cd ..
+  208  ls
+  209  cd 51133d709b6055574d74fef8b794f793f441d812cf8963bdc9032610b9c66bfd
+  210  ls
+  211  cd diff/
+  212  ls
+  213  cd ..
+  214  lcea
+  215  clear
+  216  ls
+  217  cd ..
+  218  ls
+  219  cd d6622f4dada783502799d5bc8383e1b7bd4fe6f85a28e57b5039698089a90982
+  220  ls
+  221  celar
+  222  ls
+  223  clear
+  224  ls
+  225  cd diff/
+  226  ls
+  227  cd ..
+  228  clear
+  229  cd ..
+  230  ls
+  231  docker run -itd ubuntu
+  232  docker ps
+  233  ls
+  234  du -sh a558f8bd57d194ae1c964d12bd545c62baaefe48d49c6d6d3bb8cd6b7564d9fa-init
+  235  du -sh a558f8bd57d194ae1c964d12bd545c62baaefe48d49c6d6d3bb8cd6b7564d9fa
+  236  clear
+  237  ldf -kh
+  238  df -kh
+  239  docker run -itd ubuntu
+  240  df -kh
+  241  ls
+  242  clear
+  243  df -kh
+  244  pwd
+  245  ls
+  246  clear
+  247  docker run -it ubuntu
+  248  clear
+  249  docker ps
+  250  docker exec ebb3ce74fbb5 git
+  251  clear
+  252  docker exec ebb3ce74fbb5 git
+  253  docker ps
+  254  clear
+  255  docker ps
+  256  docker commit -m"myimae" -a "rajesh" ebb3ce74fbb5 myimae1
+  257  docker images
+  258  docker run -itd myimae1
+  259  docke rps
+  260  clear
+  261  docker ps
+  262  docker exec 425fd1bb893a java
+  263  clear
+  264  history
+
+
+256  docker commit -m"myimae" -a "rajesh" ebb3ce74fbb5 myimae1
+  257  docker images
+  258  docker run -itd myimae1
+  259  docke rps
+  260  clear
+  261  docker ps
+  262  docker exec 425fd1bb893a java
+  263  clear
+  264  history
+  265  clear
+  266  ls
+  267  cd
+  268  ls
+  269  vi dockerfile
+  270  docker build -t myfff .
+  271  history
+
