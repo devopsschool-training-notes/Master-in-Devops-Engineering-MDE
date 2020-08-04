@@ -1,0 +1,419 @@
+What is Docker?
+=======================
+	container mgmt tool
+	A Platform for container
+	Release
+		Community - CE
+			Open Source - FREE
+		Enterprise - EE
+			Paid
+	2014 july
+	Soloman Hyke
+	Initially for Linux 64 only
+		Later Windows 2019 - Support
+	written in golang.
+----------------------------
+mgmt
+	managing entire workflow
+
+tool
+	save time
+	save cost
+	impor eff*
+
+What is container?
+---------------------------------------
+is nothing but a userspace with their own
+				Process map
+				network
+				mnt - rootfs
+				powered by docker...
+					Docker takes from KERNAL NS
+Complete Independent Runtime env for APP.
+
+
+How we were running apps?
+===============================
+30 year		15 Years	NOW
+=================================================
+PHYSCIAL	VIRTUAL		Container
+
+OS		OS		rootfs - 
+Kernal		Kernal		user
+NS+CG+Cap	NS+CG+Cap	net - cg - cap - mnt	
+APP		APP		app
+
+
+what are the things which is required to RUN apps?
+==================================================
+HARDWARE
+	--> OS -> Kernal
+			Namespaces [Group of lib]
+				- USER	- Can create MULTIPLE isolated user space.
+				- PMAP	- ONE Process Map
+				- NET	- ONE NETwork
+				- MNT	- ONE ROOTFS
+			Cgroups
+				Allocating CPU to PID
+			Capabilities
+				root
+				non-root
+
+PC ---> Personal Computing.
+
+MNT == filesystem(s).			
+BOOTFS ---> ROOTFS --> USERFS --> APP FS
+===============================================
+KERNAL ---> OS Flavour-> 
+==================================================
+Other Container runtime - 
+https://www.devopsschool.com/blog/list-of-top-container-runtime-interface-projects/
+=====================
+How to install Docker?
+https://www.devopsschool.com/tutorial/docker/install-config/docker-install-commuityedition-centos-rhel.html
+
+13.126.68.124
+
+
+   1  sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+    2  sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+    3  sudo yum install –y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+    4  sudo yum-config-manager --enable rhui-REGION-rhel-server-extras
+    5  sudo yum install -y docker-ce
+    6  clear
+    7  docker -v
+    8  sudo systemctl enable docker
+    9  sudo systemctl start docker
+   10  docker info
+   11  clear
+   12  history
+============================
+What are components of Docker?
+===============================
+	Docker Engine - Platform....
+		Human --> Docker Client --RESTAPI --> Docker Deamon --> ContainerD --> Kernal
+	Docker Image
+		Complete Package for ONE APP runtime env.
+		rootfs + userfs + appfs
+		ubuntu + user + apache
+		centos  + user + apache
+		=============================
+		jenkins == ROOTFS -> JDK --> Jenkins
+			    ONE	      ONE    ONE
+
+	Docker Registry
+		Public
+			hub.docker.com
+				jenkins
+				ubuntu
+		Pvt
+			ecr
+			azure registry
+
+	Docker Container.
+		A moment you run IMAGE.
+			- one userspace get created with one mnt from image
+			- one pmap attached
+			- one network attached.
+
+======================================
+Docker workflow  when running container.
+========================================
+Human -> Docker Client -> Docker Deamon 
+			Check IF image is there in Local Registry.
+				If found
+					create container from image from LR
+				If NOT found
+					Download from HUB to LR and create container from LR
+=============================================================
+Container workflow
+=====================================
+Create -> Start -> stop -> start -> restart -> pause -> unpause -> kill -> remove
+===============
+
+RUN  = PULL + Create -> Start + become
+RUN with -d = PULL + Create -> Start + do not become
+
+ 10  docker info
+   11  clear
+   12  history
+   13  clear
+   14  clear
+   15  which docker
+   16  ps -eaf | grep docker
+   17  clear
+   18  docker images
+   19  docker info
+   20  clear
+   21  docker pull jenkins	||| docker pull http://3.4.4.4/jenkins
+   22  clear
+   23  ls
+   24  clear
+   25  docker images
+   26  clear
+   27  docker ps
+   28  docker ps -a
+   29  docker create jenkins
+   30  docker ps
+   31  docker ps -a
+   32  docker start 94f7dde5c3e0
+   33  clear
+   34  docker ps
+   35  docker stop 94f7dde5c3e0
+   36  docker ps -a
+   37  docker start 94f7dde5c3e0
+   38  docker ps -a
+   39  clear
+   40  docker ps -a
+   41  docker restart 94f7dde5c3e0
+   42  docker ps -a
+   43  clear
+   44  docker pause 94f7dde5c3e0
+   45  docker ps -a
+   46  docker stats 94f7dde5c3e0
+   47  docker unpause 94f7dde5c3e0
+   48  docker stats 94f7dde5c3e0
+   49  clear
+   50  docker ps
+   51  docker kill 94f7dde5c3e0
+   52  docker ps -a
+   53  clear
+   54  docker rm 94f7dde5c3e0
+   55  docker ps -a
+   56  history
+================================================
+How to consume container?
+=====================================
+
+Concept of PID 1
+==================================
+PM		VM		Container
+--------------------------------------------
+running		running		running
+IF PID1		If PID1		If PID1
+
+SYSTEMD		SYSTEMD		ANYTHING which is running.
+
+How to get inside a container?
+- exec way
+	you can run an executables inside a container
+	but you can use this for getting inside also using -it and /bin/bash
+- attach way
+	you can go and become PID1.
+
+
+How to access an app of container from outside?
+=============================================
+
+docker run -d -p 8080:8080 jenkins
+docker run -d -p 8090:8080 jenkins
+
+How to come out of the container without killing? if you are on bash///
+CTRL + P + Q
+====================================================================
+=======================================================
+
+How to develop Image??
+=============================
+What is an Image?
+		Complete Package for ONE APP runtime env.
+		rootfs + userfs + appfs
+		ubuntu + user + apache
+		centos  + user + apache
+		=============================
+		jenkins == ROOTFS -> JDK --> Jenkins
+			    ONE	      ONE    ONE
+
+	Combination of file system(s)
+	Each file system - we call it Layer.
+	when you create a container - All Layers of the image -mergeed into ONE layer and mount at Container
+
+2 Mehtod - 
+	using existing container?
+	using dockerfile?
+
+FROM ubuntu
+MAINTAINER Rajesh kumar devops@rajeshkumar.xyz
+RUN apt-get update
+RUN apt-get install -y tzdata
+RUN apt-get install git -y tzdata && apt-get install openjdk-8-jre -y tzdata
+ENV JAVA_HOME=/44/4/4/
+https://github.com/jenkinsci/docker/blob/587b2856cd225bb152c4abeeaaa24934c75aa460/Dockerfile
+
+
+Create an image
+	base - ubuntu
+	jdk
+	git
+	apache2
+	------------
+	image....
+	
+
+How to share image?
+==========================
+	tarball
+	hub.docker.com
+
+
+
+
+ 1  docker ps
+    2  docker exec bf59d2d0bdda ps -eaf
+    3  clear
+    4  ls
+    5  ifconfig
+    6  dockr ps
+    7  docker ps
+    8  clear
+    9  ls
+   10  docker ps
+   11  docker inspect fcb1f51b7104
+   12  docker ps
+   13  docker inspect 4da154aef447
+   14  ping 172.17.0.2
+   15  ping 172.17.0.3
+   16  lear
+   17  clear
+   18  docker ps
+   19  docker -a
+   20  clear
+   21  docker ps -a
+   22  docker starts bf59d2d0bdda
+   23  docker start bf59d2d0bdda
+   24  docker ps
+   25  clear
+   26  docker run -d -p 8080:8080 jenkins
+   27  docker ps
+   28  docker run -d -p 8090:8080 jenkins
+   29  docker ps
+   30  clear
+   31  docker docker stop $(docker ps -a -q)
+   32  docker stop $(docker ps -a -q)
+   33  docker rm $(docker ps -a -q)
+   34  docker rmi $(docker images -q)
+   35  clear
+   36  ls
+   37  docker ps
+   38  docker ps -a
+   39  docker images
+   40  cd /var/lib/docker/
+   41  ls
+   42  cd overlay2/
+   43  clear
+   44  ls
+   45  du -sh
+   46  docker pull ubuntu
+   47  ls
+   48  df -kh
+   49  docker run -itd ubuntu
+   50  ls
+   51  du -sh 18980d20bc6c35b491d9779c2784eb556e5b97b5925cf097c3c5e38a0a00b7fb
+   52  docker images
+   53  clear
+   54  df -kh
+   55  clear
+   56  cd
+   57  ls
+   58  docker run -itd ubuntu
+   59  docker ps
+   60  docker attach 1145f155839d
+   61  clear
+   62  docker ps
+   63  docker commit -m"up-ub-git-apache-java" -a Rajesh 1145f155839d up-ub-git-apache-java
+   64  docker images
+   65  docker run -it up-ub-git-apache-java
+   66  clear
+   67  ls
+   68  docker images
+   69  history
+
+
+
+ 28  docker run -d -p 8090:8080 jenkins
+   29  docker ps
+   30  clear
+   31  docker docker stop $(docker ps -a -q)
+   32  docker stop $(docker ps -a -q)
+   33  docker rm $(docker ps -a -q)
+   34  docker rmi $(docker images -q)
+   35  clear
+   36  ls
+   37  docker ps
+   38  docker ps -a
+   39  docker images
+   40  cd /var/lib/docker/
+   41  ls
+   42  cd overlay2/
+   43  clear
+   44  ls
+   45  du -sh
+   46  docker pull ubuntu
+   47  ls
+   48  df -kh
+   49  docker run -itd ubuntu
+   50  ls
+   51  du -sh 18980d20bc6c35b491d9779c2784eb556e5b97b5925cf097c3c5e38a0a00b7fb
+   52  docker images
+   53  clear
+   54  df -kh
+   55  clear
+   56  cd
+   57  ls
+   58  docker run -itd ubuntu
+   59  docker ps
+   60  docker attach 1145f155839d
+   61  clear
+   62  docker ps
+   63  docker commit -m"up-ub-git-apache-java" -a Rajesh 1145f155839d up-ub-git-apache-java
+   64  docker images
+   65  docker run -it up-ub-git-apache-java
+   66  clear
+   67  ls
+   68  docker images
+   69  history
+   70  clear
+   71  ls
+   72  cd
+   73  l
+   74  vi dockerfile
+   75  docker build -t up-ub-git-apache-java-doc .
+   76  vi dockerfile
+   77  clear
+   78  docker build -t up-ub-git-apache-java-doc .
+   79  vi dockerfile
+   80  docker build -t up-ub-git-apache-java-doc .
+   81  clear
+   82  vi dockerfile
+   83  docker build -t up-ub-git-apache-java-doc .
+   84  clear
+   85  vi dockerfile
+   86  docker build -t up-ub-git-apache-java-doc .
+   87  vi dockerfile
+   88  docker build -t up-ub-git-apache-java-doc .
+   89  clear
+   90  docker images
+   91  docker save -o up-ub-git-apache-java-doc.tar up-ub-git-apache-java-doc
+   92  ls
+   93  docker load -i up-ub-git-apache-java-doc.tar
+   94  docker login
+   95  docker login
+   96  clear
+   97  ls
+   98  docker images
+   99  docker push up-ub-git-apache-java
+  100  docker images
+  101  docker tag up-ub-git-apache-java devopsschools/xyz
+  102  docker images
+  103  clear
+  104  docker images
+  105  docker push devopsschools/xyz
+  106  history
+
+
+
+
+
+
+
+			
