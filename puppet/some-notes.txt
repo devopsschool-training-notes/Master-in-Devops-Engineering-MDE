@@ -1,0 +1,255 @@
+How to install and configure Puppet server and agent in Ubuntu?
+
+Puppet Server is configured to use 2 GB of RAM by default. The Puppet platform bundles the components needed for a successful deployment. The Puppet platform is available only for Linux, because most of its components can run only on Linux. The puppet-agent component is available independently for Windows and macOS.
+
+
+Puppet Sever - 3.8.191.180	172.31.4.108
+Puppet Agent - 3.8.91.216	172.31.5.57
+
+
+Step 1 - Install and Enable NTP
+$ sudo apt-get install ntp -y
+$ systemctl stop ntp
+$ systemctl start ntp
+$ systemctl status ntp
+$ sudo ntpq -p
+
+Step 2 - fully qualified domain name
+
+$ hostnamectl set-hostname puppet.example.vm
+$ hostnamectl
+$ sudo vi /etc/hosts
+As this is our primary hostname
+
+127.0.0.1  puppet.example.vm puppet localhost
+3.8.191.180 puppet.example.vm #public ip
+172.31.4.108 puppet.example.vm #private ip
+
+Step 3- On Puppet Server Machine: Enable the Puppet Server package repositories
+$ wget https://apt.puppetlabs.com/puppet6-release-xenial.deb
+$ sudo dpkg -i puppet6-release-xenial.deb
+$ apt-get update
+
+Step 4- On Puppet Server Machine:  Install the Puppet Server 
+$ apt-get install puppetserver
+
+Step 5 - On Puppet Server Machine: Enable and disable the firewall on Ubuntu 16.04
+$ sudo ufw disable
+$ sudo ufw stop
+$ sudo ufw status
+
+Step 6 - On Puppet Server Machine: Change Puppet Java process memory allocation
+It is recommended to change Puppet Java process memory allocation Infrastructure size. I’ll assign my Puppet server 1gb of ram. This is done by editing environment file located on /etc/default/puppet-master
+
+Step 7 - On Puppet Server Machine: Set a JAVA HEAP Size for Agent to work prop.
+$ sudo vi /etc/default/puppet
+# Alternative file /etc/default/puppet-master
+JAVA_ARGS="-Xms1024m -Xmx1024m"
+
+Step 8 - On Puppet Server Machine: Start a Puppet Server
+$ service puppetserver start
+$ service puppetserver status
+
+Step 9 - Lets know a SKELATON
+/opt/puppetlabs/ - Would contain all executables required for pupper server.
+/etc/puppetlabs/ - Would contain all config / env / modules / heira all such data.
+
+$ cd /opt/puppetlabs/bin
+$ ./puppetserver -h
+usage: puppetserver ([--help] | [--version]) <command> [<args>]
+
+The most commonly used puppetserver commands are:
+   ca
+   foreground
+   gem
+   irb
+   reload
+   ruby
+   start
+   stop
+
+See 'puppetserver <command> -h' for more information on a specific command.
+
+
+$ ./puppet -h
+
+Usage: puppet <subcommand> [options] <action> [options]
+
+Available subcommands:
+
+  Common:
+    agent             The puppet agent daemon
+    apply             Apply Puppet manifests locally
+    config            Interact with Puppet's settings.
+    help              Display Puppet help.
+    lookup            Interactive Hiera lookup
+    module            Creates, installs and searches for modules on the Puppet Forge.
+    resource          The resource abstraction layer shell
+
+
+  Specialized:
+    catalog           Compile, save, view, and convert catalogs.
+    describe          Display help about resource types
+    device            Manage remote network devices
+    doc               Generate Puppet references
+    epp               Interact directly with the EPP template parser/renderer.
+    facts             Retrieve and store facts.
+    filebucket        Store and retrieve files in a filebucket
+    generate          Generates Puppet code from Ruby definitions.
+    node              View and manage node definitions.
+    parser            Interact directly with the parser.
+    plugin            Interact with the Puppet plugin system.
+    script            Run a puppet manifests as a script without compiling a catalog
+    ssl               Manage SSL keys and certificates for puppet SSL clients
+
+See 'puppet help <subcommand> <action>' for help on a specific subcommand action.
+See 'puppet help <subcommand>' for help on a specific subcommand.
+
+
+How to install and configure Puppet agent in Ubuntu?
+==============================================================
+Puppet Agent - 3.8.91.216	172.31.5.57
+
+
+Step 1 - Install and Enable NTP
+$ sudo apt-get install ntp -y
+$ systemctl stop ntp
+$ systemctl start ntp
+$ systemctl status ntp
+$ sudo ntpq -p
+
+Step 2 - fully qualified domain name
+
+$ hostnamectl set-hostname agent1.example.vm
+$ hostnamectl
+$ sudo vi /etc/hosts
+As this is our primary hostname
+
+# Puppet Agent Entry
+127.0.0.1  agent1.example.vm localhost
+3.8.91.216 agent1.example.vm #public ip
+172.31.5.57 agent1.example.vm #private ip
+
+# Puppet Server Entry
+3.8.191.180 puppet.example.vm
+
+Step 3 - On Puppet Agent Machine: Enable the Puppet Agent package repositories
+
+$ wget https://apt.puppetlabs.com/puppet6-release-xenial.deb
+$ sudo dpkg -i puppet6-release-xenial.deb
+$ apt-get update
+
+Step 4 - On Puppet Agent Machine: Install the Puppet Agent and Re-login to server.
+$ sudo apt-get install puppet-agent
+
+Step 5 - On Puppet Agent Machine: Lets know a SKELATON
+$ apt-get install tree
+
+$ cd /etc/puppetlabs
+$ tree
+.
+├── code
+│   ├── environments
+│   │   └── production
+│   │       ├── data
+│   │       ├── environment.conf
+│   │       ├── hiera.yaml
+│   │       ├── manifests
+│   │       └── modules
+│   └── modules
+├── puppet
+│   ├── auth.conf
+│   ├── hiera.yaml
+│   └── puppet.conf
+└── pxp-agent
+    └── modules
+
+10 directories, 5 files
+
+
+Step 6 - On Puppet Agent Machine: Configure a Puppet Agent
+sudo vi /etc/puppetlabs/puppet/puppet.conf
+
+[main]
+certname = agent1.example.vm
+server = puppet.example.vm
+
+Step 7 - Start and Enable a puppet Agent Configuration
+$ service puppet start
+$ sudo systemctl start puppet
+
+================================================================================
+On Puppet Server Machine
+
+Since this is a Client-Server Architecture, the master must approve a certificate request for each agent node before it can configure it. Check certs list using:
+
+$ export PATH=$PATH:/opt/puppetlabs/bin
+$ puppetserver ca list
+$ puppetserver ca sign --certname agent1.example.vm
+# To sign certificate requests for multiple nodes at once, use:
+$ puppetserver ca sign --all
+$ puppetserver ca list --all
+
+================================================================================
+On Puppet Agent Machine
+# The Puppet Master should now be able to communicate with agent node and to control it
+$ export PATH=$PATH:/opt/puppetlabs/bin
+$ puppet agent --test
+
+================================================================================
+On Puppet Server Machine - BECOME A DEVELOPER.
+
+Step 1 - Install PDK
+wget https://apt.puppet.com/puppet-tools-release-xenial.deb
+sudo dpkg -i puppet-tools-release-xenial.deb
+sudo apt-get update 
+sudo apt-get install pdk
+
+Step 2 - Create a Module Ske.
+$ cd /etc/puppetlabs/code/environments/production/modules
+$ pdk new module webserver
+$ vi webserver/manifests/init.pp
+
+package { 'apache2':
+  ensure               => present
+}
+
+file { '/var/www/html/index.html':
+  ensure                  => present,
+  content                 => "<h1> Welcome to DevOpsSchool.com Puppet Class"
+}
+
+service { 'apache2':
+  ensure     => running
+}
+
+Step 2 - Create a site.pp under /etc/puppetlabs/code/environments/production
+$ vi /etc/puppetlabs/code/environments/production/site.pp
+node default { 
+include webserver
+}
+
+node 'lamp-1' {
+
+}
+
+================================================================================
+On Puppet Server Machine 
+$ puppet apply /etc/puppetlabs/code/environments/production/manifests/site.pp
+
+================================================================================
+On Puppet Agent Machine 
+$ puppet agent --test
+
+# If you want to this to autoamte and run every 5 second, then
+$ vi /etc/puppetlabs/puppet/puppet.conf
+[main]
+certname = agent1.example.vm
+server = puppet.example.vm
+runinterval = 5s
+
+
+
+
+Reference
+https://puppet.com/docs/puppetserver/latest/install_from_packages.html
