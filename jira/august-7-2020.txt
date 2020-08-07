@@ -1,0 +1,120 @@
+What is Jira?
+=====================
+	Issue tracking tool
+	Bug Management tool
+	Feature mgmt tool
+	Tasks mgmt tool
+	Project mgmt tool
+	Scrum tool
+	Kanbaan tool
+	==================================
+	Written in Java
+	From Atlassion
+		Jira
+		Bamboo
+		Bitbucket
+		Confulence
+		Fisheye
+	Version
+		8.X
+	Varaint
+		Hosted - Behind a firewall
+		Database
+			Derby - Default(Trial)
+			mysql
+			ps
+			mssql
+			oracle
+		Cloud - 
+	
+===========================================
+Other tool
+https://www.devopsschool.com/blog/top-10-bug-issue-tracking-tool/
+
+How to install jira?
+=============================
+3.7.65.156
+centos
+
+Pre
+		Java 8
+		Java 11
+	
+
+
+Packge
+	BIN - iNstaller
+	tar - extract
+	RPM - RHEL/CENTOS
+	EXE - WINDOWS
+
+
+ 1  wget
+    2  yum install wget -y
+    3  clear
+    4  ls
+    5  wget https://product-downloads.atlassian.com/software/jira/downloads/atlassian-jira-software-8.5.6-x64.bin
+    6  ls
+    7  clear
+    8  ls
+    9  chmod 755 atlassian-jira-software-8.5.6-x64.bin
+   10  clear
+   11  ls
+   12  ./atlassian-jira-software-8.5.6-x64.bin
+   13  yum install openjdk-8-jdk
+   14  yum install java-1.8.0-openjdk-devel
+   15  ./atlassian-jira-software-8.5.6-x64.bin
+   16  history
+
+=================================
+Admin - Workflow in Jira
+=================================
+Step 4 - Create a Project
+Step 1 - Setup Authentication
+		Internal DB
+		LDAP
+		AD
+		JIRA
+		CROWD 
+		
+Step 2 - Setup Authorization
+		GROUPS
+		USER
+
+Step 3 - Setup email server
+	
+
+
+=================================
+User - Workflow in Jira
+=================================
+Step 1 - Create a issues
+Step 2 - work with a issues
+
+=================================
+Admin - Advanace Workflow in Jira
+=================================
+Step 1 - 
+Step 2 - 
+Step 3 - 
+Step 4 - 
+
+
+How to integrate 
+Github/Bitbucket with Jira.
+Step1 - Attached your account with JIRA using Credentials
+Step2 - Make sure you commit and keep it valida jira ticket in message
+
+How to take up a ackup
+= APP DIR
+= DB backup
+=============> jiRA
+
+Documenting
+=================
+How to creare page - office documents-
+===========================================
+https://www.atlassian.com/software/confluence/free
+
+
+
