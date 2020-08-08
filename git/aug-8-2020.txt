@@ -1,0 +1,354 @@
+What is Git?
+	Version Control System 
+		For What?
+			- versioining Source Code
+	Free 
+	Open Source
+	Written in C
+	Compat with all OS
+	Written by Linus Tovarld
+	Source Code mgmt aka SCM
+	----------------------
+	Distributed
+	----------------------
+
+
+What is Source - If you can open and read with notepad - vi...
+What is NOT source Code - Img - Doc - PDF - movie - xls
+
+Why Git?
+	Coz we want to know?
+		WHEN the code was modified?
+		Who has modified?
+		What modification
+		Where this modifiction
+		Why this changes were made?
+
+Other tools
+===========================
+RCS -> CVS -> SVN - > GIT == FREE
+VSS --> TFS -> AzureDevOps
+Perforce - Clearcase - Mercury
+----------------------------------------
+All these tool are based on SERVER - CLIENT model except GIT.
+			Git is Distributed.
+
+
+OPS - Addition - MOdifiction - Deletion
+
+Server-Client Model-
+Distributed Model
+===============================
+How to install git?
+	Windows - EXE - git-scm.com
+			git bash - Basic bash command in windows using git-bash
+			git cmd
+			git gui
+	RHEL - yum 
+		sudo yum install git -y
+	UB - apt
+		sudo apt-get install git -y
+	Mac - DMG
+
+	GUI -
+		SouceTree by Atlassion
+		Tortoise GIT
+===========================================================
+Basic workflow in Git
+===========================================
+Step 1 - Create a repo					DONE
+$ git init
+
+Step 2 - Write a source code using ur fav editor	DONE
+
+Step 3 - Add source code into git repo	[ Add files from Working dir to Staging Area ]		
+
+ONE TIME
+----------
+git config user.name "Rajesh Kumar"
+git config user.email "devops@rajeshkumar.xyz"
+git config --list
+
+Step 4 - Commit source code into git repo	[ Commit files from Staging to Repo ]
+git commit -m"adding first time file1."
+
+Step 5 - see a commited log
+		WHEN the code was modified?		DONE
+		Who has modified?			DONE
+		What modification			DONE
+		Where this modifiction			DONE
+		Why this changes were made?		DONE
+
+
+Rajesh Kumar@DESKTOP-6KRAAR8 MINGW64 /e/saturday/repo1 (master)
+$ git log
+commit 3df1ed203448f6259524639b3f40f39ac31e48db (HEAD -> master)
+Author: Rajesh Kumar <devops@rajeshkumar.xyz>
+Date:   Sat Aug 8 21:12:59 2020 +0530
+
+    adding first time file1.
+
+$ git show 3df1ed203448f6259524639b3f40f39ac31e48db
+commit 3df1ed203448f6259524639b3f40f39ac31e48db (HEAD -> master)
+Author: Rajesh Kumar <devops@rajeshkumar.xyz>
+Date:   Sat Aug 8 21:12:59 2020 +0530
+
+    adding first time file1.
+
+diff --git a/file1.txt b/file1.txt
+new file mode 100644
+index 0000000..e69de29
+
+commit 3df1ed203448f6259524639b3f40f39ac31e48db
+Author: Rajesh Kumar <devops@rajeshkumar.xyz>
+Date:   Sat Aug 8 21:12:59 2020 +0530
+
+    adding first time file1.
+
+3df1ed203448f6259524639b3f40f39ac31e48db == Commit ID AKA Checksum.
+	this is a identification a file changes/content of file
+	universal unque
+	created by SHA1
+=============================================================================
+rename file
+add directory
+move a file from one location to another
+how to delete
+how to file before delete
+===============================
+How do we collab our changes with other people?
+===================================================
+
+
+github server
+		Cloud
+		Enterprise
+gitlab server
+		Cloud
+		Enterprise
+bitbucket server
+		Cloud
+		Enterprise
+gerrit server
+
+=====================================================
+
+
+
+503  cd /e
+  504  pwd
+  505  ls
+  506  mkdir saturday
+  507  cd saturday/
+  508  clear
+  509  ls
+  510  pwd
+  511  start .
+  512  clear
+  513  ls
+  514  pwd
+  515  mkdir repo1
+  516  clear
+  517  ls
+  518  cd repo1/
+  519  clear
+  520  pwd
+  521  git init
+  522  history
+  523  clear
+  524  start .
+  525  touch file3.txt file4.txt file5.txt
+  526  ls
+  527  start .
+  528  ls
+  529  clear
+  530  ls
+  531  ls
+  532  ls -la
+  533  clear
+  534  ls
+  535  git add  file1.txt
+  536  git config user.name "Rajesh Kumar"
+  537  git config user.email "devops@rajeshkumar.xyz"
+  538  Rajesh Kumar@DESKTOP-6KRAAR8 MINGW64 /e/saturday/repo1 (master)
+  539  $ ls
+  540  file1.txt  file2.txt  file3.txt  file4.txt  file5.txt
+  541  Rajesh Kumar@DESKTOP-6KRAAR8 MINGW64 /e/saturday/repo1 (master)
+  542  $ git add  file1.txt
+  543  Rajesh Kumar@DESKTOP-6KRAAR8 MINGW64 /e/saturday/repo1 (master)
+  544  $ git config user.name "Rajesh Kumar"
+  545  Rajesh Kumar@DESKTOP-6KRAAR8 MINGW64 /e/saturday/repo1 (master)
+  546  $ git config user.email "devops@rajeshkumar.xyz"
+  547  Rajesh Kumar@DESKTOP-6KRAAR8 MINGW64 /e/saturday/repo1 (master)
+  548  $
+  549  clear
+  550  git config --list
+  551  clear
+  552  clear
+  553  git commit -m"adding first time file1."
+  554  git log
+  555  git show 3df1ed203448f6259524639b3f40f39ac31e48db
+  556  clear
+  557  start .
+  558  git show 3df1ed203448f6259524639b3f40f39ac31e48db
+  559  clear
+  560  history
+562  git status
+  563  ls
+  564  git add .
+  565  git status
+  566  clear
+  567  git status
+  568  git commit -m"file2 only" file2.txt
+  569  git status
+  570  clear
+  571  git commit -m"file2 only"
+  572  git status
+  573  ls
+  574  clear
+  575  ls
+  576  vi file1.txt
+  577  git status
+  578  git add .
+  579  clear
+  580  git status
+  581  git commit -m"modified"
+  582  git status
+  583  clear
+  584  git log
+  585  cler
+  586  clear
+  587  git show 37c6b1ca55ae1c9e535e7a8da8f9123a03228e25
+  588  clear
+  589  history
+ 590  clear
+  591  git log
+  592  clear
+  593  git log --oneline
+  594  clear
+  595  git log
+  596  clear
+  597  ls
+  598  git mv file1.txt file11.txt
+  599  git status
+  600  git commit -m"rename"
+  601  clear
+  602  ls
+  603  git log --oneline
+  604  ls
+  605  clear
+  606  mkdir src
+  607  ls
+  608  git status
+  609  git status
+  610  start .
+  611  clear
+  612  git status
+  613  git add .
+  614  git status
+  615  clear
+  616  git commit -m"adding dir"
+  617  git status
+  618  clear
+  619  ls
+  620  git mv file2.txt src/
+  621  git statsu
+  622  git status
+  623  clear
+  624  git commit -m"moving"
+  625  ls
+  626  git status
+  627  clear
+  628  ls
+  629  clear
+  630  ls
+  631  git rm file5.txt
+  632  git status
+  633  git add .
+  634  cler
+  635  clear
+  636  git commit -m"deleting"
+  637  clear
+  638  git status
+  639  git log --oneline
+  640  git status
+  641  clear
+  642  git log --oneline
+  643  git checkout 1308391
+  644  clear
+  645  ls
+  646  git checkout master
+  647  clear
+  648  ls
+  649  clear
+  650  ls
+  651  git push https://github.com/devopsschool-demo-temporary/aug-saturday.git master
+  652  clear
+  653  git log --oneline
+  654  ls
+  655  git remote add origin https://github.com/devopsschool-demo-temporary/aug-saturday.git
+  656  git pull origin master
+  657  clear
+  658  ls
+  659  history
+======================================================
+
+Branching and Merging
+=============================
+	- BUg fixing
+	- Feature	
+	- team
+	- Geog
+==============================
+Types 
+	Local - A place where you work...master (default) - R W
+	Remote - A place for getting changes into Remote Repo. - R o
+
+
+
+ 517  git branch
+  518  git branch -a
+  519  git branch -r
+  520  clear
+  521  git branch -a
+  522  git branch fea1
+  523  git branch -a
+  524  clear
+  525  git checkout fea1
+  526  ls
+  527  touch fea1.txt;git add .;git commit -m"adding"
+  528  clear
+  529  ls
+  530  git checkout master
+  531  ;sclear
+  532  clear
+  533  ls
+  534  git merge fea1
+  535  ls
+  536  history
+  537  clear
+  538  history
+
+
+========================
+github
+===================
+
+
+Org
+	project
+	repo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
