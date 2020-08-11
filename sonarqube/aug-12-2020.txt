@@ -1,0 +1,83 @@
+What is SonarQube?
+	Quality mgmt tool.
+	Security Mangement
+		Code Security mgmt
+			By SonarQube OWASP - Paid - Cloud Trials
+	Quality 
+	- Source Code Quality 
+		- Peer Code Review - human dependent
+			- Gerrit
+			- SonarQube lint  - Ide
+		- Static Code Review - Tool driven
+			https://en.wikipedia.org/wiki/List_of_tools_for_static_code_analysis#Java
+	- Test Code Quality 
+		- Code Coverage
+			- Jacoco - Cobertura
+			- Ncover
+
+	Kind of Reviews = 7 Axes of Quality
+	https://subscription.packtpub.com/book/application_development/9781849517867/1/ch01lvl1sec03/covering-software-quality-on-seven-axes
+====================================================
+	From SonarSource
+	Release
+		Community  - FREE
+		Professional - Paid
+		Developer - Paid
+		Datacenter - Paid
+	Version 
+		8.X
+	Written in Java
+	
+Architecture
+======================
+Backend - Java
+Front - JSP - servlet - Css - Html + js
+DB - All RDBMS - Default H2.
+Index and Search - ElasticSearch.
+=========================================
+How to install it?
+================================
+	JRE + JDK 
+	NO ROOT USER ALLOWED
+	H2 default
+	
+======================================
+How SonarQube Works!!!!
+
+- SonarQube Server - DONE
+- Source code  - DONE
+- Scanner
+
+https://github.com/SonarSource/sonar-scanning-examples
+https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-8.4.1.35646.zip
+
+http://15.207.109.62:9000/
+admin
+admin
+
+/home/centos/scanner/bin/sonar-scanner
+=================
+Auth
+Auth
+
+Stop SQ
+sonar.properties 
+	db name
+	host
+	port
+	user 
+	pass
+start..
+--0---------
+
+install sonar qube
+proper- db
+Exentions - 
+
+
+
+
+
+
+
+	
