@@ -74,7 +74,51 @@ install sonar qube
 proper- db
 Exentions - 
 
+15.206.147.56
 
+ 1  ls
+    2  yum install wget unzip -y
+    3  sudo yum install wget unzip -y
+    4  clear
+    5  wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-8.4.1.35646.zip
+    6  clear
+    7  ls
+    8  unzip sonarqube-8.4.1.35646.zip
+    9  clear
+   10  ls
+   11  rm -rf sonarqube-8.4.1.35646.zip
+   12  clear
+   13  ls
+   14  cd sonarqube-8.4.1.35646/
+   15  ls
+   16  clear
+   17  ls -1
+   18  ls conf
+   19  cd bin
+   20  clear
+   21  l
+   22  s
+   23  ls
+   24  cd linux-x86-64
+   25  ls
+   26  clear
+   27  ls
+   28  sudo yum install java-11-openjdk-devel
+   29  clear
+   30  ls
+   31  ./sonar.sh start
+   32  ./sonar.sh status
+   33  history
+
+
+http://15.206.147.56:9000/
+admin
+admin
+
+https://github.com/devopsschool-demo-labs-projects/java-sonarqube-helloworld-src
+
+
+/home/centos/scanner/bin/sonar-scanner
 
 
 
