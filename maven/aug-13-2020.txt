@@ -1,0 +1,157 @@
+What is Maven?
+==============
+
+	Its Build tool.
+	- automating
+		- Build
+		- Test
+		- Packaging
+		- Archiving
+	Dependency mgmt tool
+		internal
+		external
+	Written in Java
+	For java
+	Open Source	
+	Free
+	From Apache
+==========================='
+Other tool
+============================
+Ant, Nnat, Maven, Gradle, Makefile, Msbuild
+===============================================
+How to install it?
+		JDK - JAVA_HOME
+		Download a zip file https://maven.apache.org/download.cgi		
+		Extract to one location
+		and Add that location/bin to PATH env variable
+		ie. C:\tools\maven\bin to PATH env variable
+How to verify?
+$ mvn
+
+
+How Maven works!!!
+
+
+
+[ERROR] No goals have been specified for this build. You must specify a valid lifecycle phase or a goal in the format <plugin-prefix>:<goal> or <plugin-group-id>:<plugin-artifact-id>[:<plugin-version>]:<goal>. Available lifecycle phases are: validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy, pre-clean, clean, post-clean, pre-site, site, post-site, site-deploy. ->
+
+
+What is goals?
+What is lifecycle ?
+	<plugin-prefix>:<goal>
+	<plugin-group-id>:<plugin-artifact-id>[:<plugin-version>]:<goal>
+============================================================================================
+Architecture of Maven
+	- plugins
+	
+Every feature of maven comes from Plugins.
+
+	Maven Core
+		 Plugins
+			Core Plugins - Built in by Apache
+			External plugins - Need to add based on need - dev by comm
+
+LifeCycle in Maven 
+		For what?
+			Managing Project.
+---------------------------------------------
+Lifecyle of human
+---------------------------------------------
+born -> kid -> teen -> young -> mid -> old -> die		1 Lifecycle
+--------------------------------------------------	
+			PHASES
+
+Lifecycle of Software Project
+==============================================
+Code -> Analysze -> Compile -> UT -> Package - Test- Install	10 times in a day
+--------------------------------------------------	
+			PHASES
+
+Maven gives 3 lifecycle to manage software project.
+https://maven.apache.org/ref/3.6.3/maven-core/lifecycles.html
+
+default Lifecycle
+clean Lifecycle
+site Lifecycle
+===========================================
+
+
+PHASE			GOAL		FROM PLUGINS
+-------------------------------------------------------------------
+compile			compile
+test			test	
+package			package
+install			install		WILL COPY PACKAGE to Local Repo
+deploy			deploy		WILL COPY PACKAGE to Remote Repo
+
+Project - 
+
+mvn archetype:generate
+
+-DgroupId=com.devopsschool.software
+-DartifactId=chat
+-DarchetypeArtifactId=maven-archetype-quickstart
+-DinteractiveMode=false
+==========================================
+Workflow in Maven for ONE project from Scratch to END.
+=======================================================
+What is groupId?
+What is artifactId?
+What is archetypeArtifactId?
+https://maven.apache.org/guides/introduction/introduction-to-archetypes.html
+
+What is version?
+	SNAPSHOT	1.0-SNAPSHOT	1.1.1-SNAPSHOT	- NOT STABLE
+	Release		1.0	1.1.1 - STABLE
+
+Package
+	jar - default
+	war
+	ear
+	pom
+
+How can u give PACKAGE Structure..to solve internal/external dep well
+-------------------------------
+microsoft
+	msoffice
+		word
+		excel
+		powerpoint
+		access
+		common
+
+groupId=microsoft.msoffice
+artifactid: word
+
+excel
+===========================
+import microsoft.msoffice.common
+
+
+
+mvn archetype:generate -DgroupId=com.devopsschool.softwar -DartifactId=chat -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+
+What is pom.xml?
+============================
+Project
+	name
+	groupid
+	artid
+	version
+	company info
+	dependencies
+	proper
+	plugins
+	etc.
+
+=============================================================
+How maven manage a dependency?
+
+
+
+
+
+
+
