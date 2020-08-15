@@ -1,0 +1,109 @@
+===============================
+PLAN => Coding => ANA => BUILD => UT => Package => Archiving => Dep2qA => at => cc =>  rRELESE
+
+jira     GIT      sONARq  mAVEN
+			   GRALDE JUNIT	 JAR	ARTIFACTORY     ANSIBLE  - SEL  - JACOC ---
+
+========================
+Gradle
+Artifactory
+==================================
+CHECK Audio Setting of urs those who can not hear me?
+
+=========================================================================
+What is Gradle?
+-------------------
+	Free
+	OS
+	Written in Groovy
+	For Build Automatation
+	Supports
+		JAVA
+		SCALA
+		C++
+		Python
+		Android
+Why Gradle?
+	- It support multiple tech
+	- It is Decalrative and Procedurals
+	- Written in way - 
+			faster
+			Extentions 
+			Better than other 
+			Easy to Read - write - debug - share - extend compare to others
+
+Declarative
+--------------------
+YAML
+JSON
+XML
+
+Declare VS Process
+======================================================
+You need to automate SoftX build process?
+		App 1 - Build Engineer would use their own logic to write script and do automation
+			 			----------------
+		Apache ANT + MSBuild + Nant + Makefile
+			Declare
+
+		App 2 - DO NOT use own logic & follow process
+			Compile		UT		Package		AT
+		----------------------------------------------------------------
+		 SRC			CLASSS		CLASSS
+		 DEST			UT TC		FILENAME
+		 DEP					JAR
+		 Compile
+		Maven 
+			Process
+==============================================================================
+Architecture of Gradle
+	== Based on Plugins
+	= Write a script in Groovy or KOTLIN DSL
+	= build.file
+====================================================
+ANT				MAVEN			Gradle
+build.xml			pom.xml			build.gradle
+target				goal			task
+				mvn goal		gradle hello
+				setting.xml		setting.gradle
+DSL
+=================
+Domain Specific Lang
+===================
+build.gradle
+		tasks						== GOALS
+			Custom		- YOU Need to write
+			Built-in	- Plugins - in Built
+				Lifecycle changes as per Plugins
+			has LifeCycle
+				Initialization	
+					setting.gradle
+					https://www.devopsschool.com/blog/what-is-settings-gradle-in-gradle/
+				Configuration
+				Executions
+			prop
+				- custom
+				- by gradle or plugins
+			Actions
+				first	- dofirst
+				last	- dolast
+			Dependencies
+				on another task
+		plugins
+			- extend feature of gradle
+		depend*
+			- 
+		prop
+			- custom
+			- by gradle or plugins
+
+How to install gradle?
+
+
+
+
+
+
+
+
+How to use gradle for Build Automation?
