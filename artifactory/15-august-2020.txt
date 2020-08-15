@@ -1,0 +1,164 @@
+What is Artifactory
+=====================
+	Has Repositories
+		Each Has Packages of Binary
+	From Jfrog
+	Release
+		Community - Free - But only for JAVA package
+		Profesional - Paid for all
+	Written in JAVA
+
+Why Artifactory
+	Package versioing
+	All types of Packages can be stored?
+	Easily Download - UPload
+	Role based access for 
+			Download - UPload
+	Easy maintainance
+	Who understand your BUILD TOOL??
+	Package Integrity
+	Package Durability
+==============================
+Packages Types
+==================
+	Jar
+	war
+	ear
+	exe
+	python
+	yum
+	rpm
+	apt
+	nuget
+	docker
+	ruby
+
+Other tools - Nexus - Archiva
+======================================
+How to install it?
+
+
+Artifactory Architecure
+=========================
+Backend - JAVA
+Db - RDB
+	Derby (the default embedded database, no additional configuration needed)
+	MySQL v5.5 to v5.7 with InnoDB
+	Oracle version 11g (11.2) to 19c (19.3)
+	Microsoft SQL Server 2008 (10.5) and above
+	PostgreSQL v9.5 and above
+	MariaDB v10.2.9 and above
+
+13.233.4.125
+centos
+
+7  yum install wget -y
+    8  wget https://akamai.bintray.com/c9/c9566cd7164e7750a809e4bc3065da12e174c6cb7082ae76b7a5f64784c0494b?__gda__=exp=1597514449~hmac=3fa4dcb36313d1b5d18becdb3f8818e324a92162f62b3432aa2b9e588d57831a&response-content-disposition=attachment%3Bfilename%3D%22jfrog-artifactory-pro-7.7.3-linux.tar.gz%22&response-content-type=application%2Foctet-stream&requestInfo=U2FsdGVkX19pbfKGWelXN3fvKLbbMAwxIWScL-XWevK913_8gX4iG06m5fJIuXTeQvoCwnUTO4pzN-6_GQBNXPA71Y7lNDDbewJE56JReMhbzlKrEWpgOlzIETDrLYGc-J_rLxfhsVhmWp_RDqRUdnGFAF0JtGn5xwDLF4Z-bzgoW8BZkcfDLFxNj4CfllrXyyqL0KrRXKWzBCMu3DPKuQ&response-X-Checksum-Sha1=de2885419efdbb9e33071abd8b0b5fe58cc1f381&response-X-Checksum-Sha2=c9566cd7164e7750a809e4bc3065da12e174c6cb7082ae76b7a5f64784c0494b
+    9  clear
+   10  ls
+   11  mv c9566cd7164e7750a809e4bc3065da12e174c6cb7082ae76b7a5f64784c0494b\?__gda__\=exp\=1597514449~hmac\=3fa4dcb36313d1b5d18becdb3f8818e324a92162f62b3432aa2b9e588d57831a jfrog-artifactory-pro-7.7.3-linux.tar.gz
+   12  ls
+   13  tar -zxvf jfrog-artifactory-pro-7.7.3-linux.tar.gz
+   14  clear
+   15  ls
+   16  mv artifactory-pro-7.7.3 artifactory-pro
+   17  ls
+   18  yum install java-1.8.0-openjdk-devel -y
+   19  clear
+   20  ls
+   21  cd artifactory-pro/
+   22  ls
+   23  cd app/
+   24  ls
+   25  cd bin/
+   26  ls
+   27  clear
+   28  ls
+   29  ./artifactory.sh start
+   30  ./artifactory.sh status
+   31  history
+
+
+
+http://13.233.4.125:8082/ui/
+admin
+password
+===================================
+repo TYPES in Artifactory
+====================================
+
+
+How to upload? Via what? using Maven?
+============================
+Step 1 - Create a repo
+	Local	- Local - RW - Hosted in the Same Artifactory Server.
+		Snapshot	http://13.233.4.125:8082/artifactory/devops-local-snapshot/
+		Release		http://13.233.4.125:8082/artifactory/devops-local-release/
+	Remote - Cache copy of Remote - Readonly - Copy is hosted in local art server.
+		http://13.233.4.125:8082/artifactory/central/
+	Virtual - Group of Local and Remote ---ONE URL
+		http://13.233.4.125:8082/artifactory/group/
+
+Step 2 - Edit your pom.xml with repo location 
+https://github.com/devopsschool-demo-labs-projects/helloworld-java-maven
+
+<distributionManagement>
+    <repository>
+        <id>devops</id>
+        <name>release softx</name>
+        <url>http://13.233.4.125:8081/artifactory/list/devops-local-release/</url>
+    </repository>
+    <snapshotRepository>
+        <id>devops</id>
+        <name>snapshot softx</name>
+        <url>http://13.233.4.125:8081/artifactory/list/devops-local-snapshot/</url>
+    </snapshotRepository>
+</distributionManagement>
+
+
+
+Step 3 - Edit your setting.xml with User id n password
+
+  <server>
+		<id>devops</id>
+		<username>deploy</username>
+		<password>deploy123</password>
+</server>
+
+
+Step 4 - mvn deploy
+
+
+
+
+
+
+
+
+How to download?
+=======================
+Step 1 - ProjectX Package should be in Artifactory
+
+Step 2 - ProjectY is dependent on ProjectX 
+
+Step 3 -Setting.xml mirror elements must be Virtual from where maven can download
+
+Step 4 - ProjectY - compile or test or packege
+
+
+How to upload into Artifactory using Gradle
+https://github.com/devopsschool-demo-labs-projects/gradle-artifactory-upload-example
+
+
+
+
+
+
+
+
+
+
+
+
+
+
