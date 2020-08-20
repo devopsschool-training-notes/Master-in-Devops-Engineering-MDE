@@ -1,0 +1,194 @@
+What is Ansible?
+=====================
+	Config mgmt tool.
+		of whats
+			SERVER(S)
+	Aka Deployment tool
+	Written in Python
+	From Redhat
+	Release
+		Community - Ansible - CMD - Free - Open Source
+		Enterprise - 
+				TOWER - Same - CMD plus Gui - Paid
+				AWX  - Same - - CMD plus Gui - Free BUT LATEST NOT PROD VERSION
+	Ansible Feature is powered by Plugins
+	Ansible has 1000s of Module
+	Ansible has 1000s of role
+	Version - 2.X
+
+Config?
+	Config of server (Resources of Server)
+mgmt	
+	Server(S)
+Tools 
+	Save time
+	Saving cost
+	Imrove eff
+
+-------------------------Resources of Server------------------
+Resources			Property/parameters		Action 
+----------------
+file								C D 
+dir								C D 
+user								A D E
+group								A D E
+bash								run command
+batch								run command
+ps
+yum								i r 
+apt
+service								s s e d 
+package								i r u
+================================================
+Why Ansible?
+		Manage multiple server and their config parrell
+		Its DSL for server config mgmt 
+			So its easy to Learn - test - extend - debug - share - 
+
+		Ansible is IDEOMPOTENT
+
+		Ansible is CROSS Platform
+
+Other tools
+	Ansible - Puppet - Chef - Salt - Cfengine
+
+Ansible Architecuture
+=====================================
+Human ---> ACS ---> ARS
+
+ACS -- Ansible Control Server
+ARS -- Ansible Remote Server
+
+
+ACS			ARS
+=======================================
+Linux 64 Bit		ANY
+PYTHON			LINUX - Python.2.7 | Windows PS3.0 + DOT NET4.5
+Ansible			NO AGENT
+-------------------------------
+Communication		ARS
+			WINDOWS ---> HTTP by WinRm(I E)
+			LINUX ----> SSH
+
+===============
+What is Domain Specific Lang
+===================
+Compiled - Interpret 		-> 	Declarative ---> Domain Specific
+--------------------------------------------------------
+C		Pyth			
+JAVA		PHP
+C++
+--------------------------------------------------------------------
+1 YEAR		5 Month			1 week		1 day
+=============================================================================
+
+
+What are the components of Ansible Control Server?
+===================================================================
+Ansible
+	Ansible Executable - SDK
+	Ansible Plugins - Feature in Ansible - In Built
+	Ansible Modules
+			- 1000+
+			- Its a way to do ONE THING in ARS
+			- Unit of work to be done by module in ARS
+			- Such as COPY , delete, install, service start 
+	ansible Config	
+			/etc/ansible/ansible.cfg 
+				- U can modify a Default behaviour of "Ansible Executable"
+				- Custom param of "Ansible Executable"
+	
+Ansible Inventory
+	List of IP add of ARS server
+			- Command line
+			- file
+				group
+			- script
+
+Ansible Playbook
+	- Script which u execute for chnages in ARS
+	- yaml
+	- has play(s)
+	-------------
+	Each play has
+		hosts: localhost OR all OR group of ARS OR ungroup [ WHERE u want to run tasks ]
+		tasks:
+			WHAT you want to do in ARS
+			task 1 - Module 1 and its param	 e.g install httpd
+			task 2 - Module 2 and its param  e.g Copy index.html
+			task 3 - Module 3 and its param  e.g Start httpd
+
+========================================================
+How to install Ansible
+============================
+ACS - 13.232.77.6
+ARS 1 - 13.127.129.72
+ARS 2 - 13.232.237.252
+https://www.devopsschool.com/blog/how-to-install-ansible-in-centos-7-rhel-7/
+
+ $ sudo yum install wget -y
+$ wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+$ yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+$ sudo rpm -i epel-release-latest-7.noarch.rpm 
+$ sudo yum install ansible -y
+
+
+
+
+---
+- name: Start the Play          
+  hosts: web
+  tasks:
+  - name: install the latest version of Apache
+    yum: name=httpd state=present
+      
+  - name: Copy file with owner and permissions
+    copy:
+      src: index.html
+      dest: /var/www/html/
+
+  - name: Start service httpd, if not started
+    service:
+      name: httpd
+      state: started
+
+
+=====================
+Access authentication
+	SSH 
+		user id & pass
+		user id & key
+
+Access authorization
+	sudo 
+
+
+
+
+
+=================================
+DevOps => Write a playbook to deploy SOftX.
+======================================
+	Install SOftX manuall
+	Know each n every things
+	Document it flow - dependency - first - last 
+	
+	Jumping to Writing Playbook.
+
+
+https://www.devopsschool.com/blog/?s=ansible+lab
+
+------------------
+Ansible variable
+Ansible tasks 
+ansible handlers
+Ansible Template
+Ansible File
+=========================
+
+
+
+
+
+
+	
