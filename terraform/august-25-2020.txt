@@ -1,0 +1,151 @@
+What is Terraform?
+===================
+	Coding for Infra
+		ONE Lang for all tools. Terraform Configuration Lang.
+					EASY TO LEARN - WRITE - DEBUG  - SHARE - TEST etc
+	From Hashicorp
+	Release
+		Terraform - CMD - FREE
+		Terraform Enterprise - - CMD+GUI - PAID
+	Written in Golang
+	
+					
+
+Whats there in Infra??
+=======================
+github
+maven
+gradle
+selen
+jenkins
+ansible
+puppet
+aws
+azure
+googlecloud
+mysql
+apache
+....
+....
+=============================
+AWS(100s)		CREATED - UPDATED - DESTROYED(ONE CLICK) - CF  - YAML --> API
+Azure(100s)		CREATED - UPDATED - DESTROYED(ONE CLICK) - RM  - JSON --> API
+Google(100s)		CREATED - UPDATED - DESTROYED(ONE CLICK)
+Github(10s)		CREATED - UPDATED - DESTROYED(ONE CLICK) - CLI  - PS  --> API
+Jenkins(100s)		CREATED - UPDATED - DESTROYED(ONE CLICK) - CLI  - SHELL  --> API
+Puppet(100s)		CREATED - UPDATED - DESTROYED(ONE CLICK) - PP  - RUBY --> API
+========================
+WHAT ABOUT ALL TOOLS OF INFRA?????
+				ONE PROGRAMMING LANG??
+			CREATED - UPDATED - DESTROYED(ONE CLICK)
+		=============================================================
+					Terraform
+
+How terraform works!!!!! aka architecture
+=====================================
+terraform		DONE
+=============================
+	WINDOWS
+	LINUX
+	MAC
+
+Providers		DONE
+=============================
+https://www.terraform.io/docs/providers/index.html
+
+TCL 
+==============
+Where to store terraform config lang?
+- .tf
+
+What is your projects?
+===============================
+Step 1 
+		- First Build it E:\maven\chat
+		- git add 
+		- git commit
+		 
+		
+Step 2 - Create a repo in github
+	- git push
+
+Step 3 - 
+	create a ec2 instance
+	install git
+	clone a repo
+	call ansible script.
+=========================================
+How to write terraform TCL?
+
+Provider
+	Resources(Aka feature)
+		Argument
+
+resource "aws_instance" "web" {
+  ami           = data.aws_ami.ubuntu.id
+  instance_type = "t3.micro"
+
+  tags = {
+    Name = "HelloWorld"
+  }
+}
+
+State file
+=============================
+
+
+===========================
+LifeCycle aka workflow of Working with Terraform"
+https://www.devopsschool.com/blog/terraform-basics-workflow-loop-explained/
+https://www.devopsschool.com/blog/terraform-advance-workflow-loop-explained/
+
+================================================
+What to do with that Instance?
+=================================================
+Answer - Provisonar
+
+https://www.terraform.io/docs/provisioners/index.html
+https://www.devopsschool.com/blog/terraform-provisioners-tutorials-and-complete-guide/
+
+file
+	Copy latest Package 	
+local
+	Sanity test
+remote
+	DB server
+	App server
+	web server
+
+=====================================
+Provider
+TF
+Resources
+Provisonar
+variables
+=================
+Modules
+Workspace
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
