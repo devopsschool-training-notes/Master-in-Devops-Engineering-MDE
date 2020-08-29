@@ -1,0 +1,259 @@
+What is Kubernetes?
+========================
+	Container Orch*
+	FREE and Open Source
+	From Google but dontated to CNCF
+	First 2014...
+	Written in Golang
+	Version - 1.19X
+
+What is Container? - Docker
+Why K8S?
+==============
+	
+
+
+Other Tools -
+Swram - Mesos - Nomad
+
+Architecture?
+=================================
+Flow
+
+
+Human --> API SERVER  -----> DOES THE REST
+	 (using Kubectl)
+
+-----------------------------------------------
+-------------K8s Clustor----------------------
+Master(S)
+	API SERVER  - Front End of Entire Clustor
+		POD -> Container -> Docker IMage -> Google Registry
+	ETCD - Persistence Storage
+		POD -> Container -> IMage -> Google Registry
+	Controller mgr - This control and monitor entire k8s.
+		POD -> Container -> IMage -> Google Registry
+	Schedular - schedule work to worker based on request from API SERVER
+		POD -> Container -> IMage -> Google Registry]
+
+	Kubelet 
+	Docker
+	kube proxy 	POD -> Container -> IMage -> Google Registry]
+
+
+Worker(S)
+	Kubelet - its a agent running in each worker.
+			Manage PODs
+	Docker - Its a container Interface
+			Manage Container
+	kube proxy - Networking services
+
+-------------Workstation------------------------
+Human --> kubectl
+		 config (Address + Access of API SERVER)
+		$CURR_DIR/.kube
+		$USER_HOME/.kube  [ RECOMMEND ]
+		KUBECONFIG=ANY/.kube/
+
+
+What do you wants?
+==============================
+APPS 
+	PM -> VMs -> Container -> POD
+	-------------------------------
+	     HYPER   Docker       kubelet
+
+POD is a Atomic unit of scheduling in k8s for Holding 
+		Container(S)
+		Pod may have 1 or multiple containers.
+		Pod gets a IP addreess from "kube proxy"
+
+========================================================================
+How to setup a clustor?
+=========================
+https://www.devopsschool.com/blog/setting-up-kubernetes-clusters-using-kubeadm-manual-way-in-rhel-7-centos7/
+https://www.devopsschool.com/tutorial/docker/install-config/docker-install-commuityedition-centos-rhel.html
+
+Master - 13.232.226.30
+Worker - 13.232.61.101
+-------------------------------
+kubelet
+kubeadm
+kubectl
+docker
+
+-----------------------------------------------------
+-----------------WORKSTATION------------------------------------
+To start using your cluster, you need to run the following as a regular user:
+
+  mkdir -p $HOME/.kube
+  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+-----------------------------------------------------
+-----------------------------------------------------
+You should now deploy a pod network to the cluster.
+Run "kubectl apply -f [podnetwork].yaml" with one of the options listed at:
+  https://kubernetes.io/docs/concepts/cluster-administration/addons/
+
+
+$ kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
+
+-----------------------------------------------------
+-----------------------------------------------------
+Then you can join any number of worker nodes by running the following on each as root:
+
+kubeadm join 172.31.9.53:6443 --token 4qvnl1.g58vuox1sgx6mysu \
+    --discovery-token-ca-cert-hash sha256:370bd6c39ae7ae20884b71062b8462783cca90d5f56900a410c514d9e5c21bb6
+
+===========================================================
+================================================================
+I need 1 POD							POD
+I need multiple POD						ReplicationController
+I need multiple POD but with Rollout newversion/rollback 	Deployment
+I need loadBalancers for POD					Service
+======================================================
+I need POD BUT WHERE????
+	NAMESPACE
+
+========================================================
+What are things which you can create in k8s?
+		- Namespace
+		- Pod
+		- ReplicationController
+		- Deployment
+		- Service
+		BLAB BLAB BLAB BLAB
+=================================================================
+CRUD
+		CREATE
+			CMD
+				create
+			YAML
+				create
+		READ	
+			CMD
+				get
+				describe
+				logs	[with container]
+				attach	[with container]
+				exec	[with container]
+		UPDATE
+			CMD
+				edit
+			YAML
+				apply
+		DELETE
+			CMD
+				delete
+			CMD
+				delete
+
+
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hello-pod-rajesh
+  labels: 
+    app: webserver
+    software: rajesh
+spec:
+  containers:
+  - name: hello-ctr
+    image: nginx
+    ports:
+    - containerPort: 80
+
+
+ 84  kubectl explain ns
+   85  clear
+   86  kubectl explain pod
+   87  clear
+   88  kubectl explain pod.spec
+   89  clear
+   90  kubectl explain pod.spec.containers
+   91  clear
+
+
+ReplicationController
+	Replicate - 1 Pod to Many POD
+	Controller  - Desire === Actual
+
+
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: hello-rc
+spec:
+  replicas: 2   
+  template:
+    metadata:
+      labels:
+        app: hello-world
+    spec:
+      containers:
+      - name: hello-ctr
+        image: scmgalaxy/nginx-devopsschoolv1
+        ports:
+        - containerPort: 80
+
+
+Deployment
+===========================
+kubectl create deployment my-dep --image=scmgalaxy/nginx-devopsschoolv1
+
+Replication	DONE
+Controller	DONE
+Rollout 
+Rollback
+Versioning
+
+
+ # Rollback to the previous deployment
+  kubectl rollout undo deployment/abc
+
+  # Check the rollout status of a daemonset
+  kubectl rollout status daemonset/foo
+
+Available Commands:
+  history     View rollout history
+  pause       Mark the provided resource as paused
+  restart     Restart a resource
+  resume      Resume a paused resource
+  status      Show the status of the rollout
+  undo        Undo a previous rollout
+
+kubectl rollout history deployment/my-dep 
+kubectl apply -f dep.yaml
+kubectl rollout status deployment/my-dep
+
+kubectl rollout history deployment/my-dep 
+kubectl rollout undo deployment/my-dep --to-revision=1
+
+
+=================================
+
+I need loadBalancers for POD					
+Service
+======================
+What is Service?
+Types of Service?
+How Service works?
+Create a Service
+Validates a service?
+========================
+kubectl create service clusterip my-cs --tcp=5678:80
+-------------
+??? SOMTHING?????????
+
+
+kubectl expose deploy my-dep --port=80 --target-port=80
+
+
+
+
+
+
+
+
