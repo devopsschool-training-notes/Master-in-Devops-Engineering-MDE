@@ -1,0 +1,145 @@
+What is Jira?
+======================
+https://www.devopsschool.com/tutorial/jira/
+	a Tools for 
+	for 
+		Issues Tracking = 
+		Bugs Tracking
+		Tasks management
+		Sprint Agile
+		Project manage
+		Service/process mgmt
+		ServiceDesk
+	
+		Tasks	
+			Bugs in Software
+			Feature in *
+			Generic Tasks 
+	
+			Agile
+				Sprint
+					Backlog
+					----------
+	From Atlassion
+		Bamboo - Confulence - Fisheye'
+	Written in JAVA
+		WINDOWS - LINUX - MAC
+		Pre - Java 8 
+	Release 
+		8.X
+		
+	PAID
+		30 Days trial
+	============================================
+	Dasboard - Reports - AUthen - Athorization - Addon.
+
+	Database 
+		MYSQL - MSSQL - ORACLE - H2 database
+
+How to install it?
+=================================
+65.0.108.232:8080
+
+Public DNS	ec2-65-0-108-232.ap-south-1.compute.amazonaws.com
+User name	Administrator
+Password	
+vqTh5G6nkW28YTEOE*s%R8R3*JVampws
+
+=======================================================
+			
+http://65.0.108.232:8080/
+rajesh
+rajesh123
+
+ramu
+ramu123
+=======================================
+DONE by Jira Admin
+=======================================
+Step 1 - Add MAIL server details - SMTP server
+		Emails---
+	http://65.0.108.232:8080/secure/admin/AddSmtpMailServer!default.jspa
+
+Step 2 - Enable and setup Authenticiation
+Authenticiation  - Who/How should log in to JIRA?
+		- LDAP 
+		- Internal Database
+		- Other's Jira
+		- Crowd
+		- Active Directory
+
+Step 3 - Enable and Authorization
+Authorization = What you are allowed to do?
+
+	GROUPS
+	USER
+	
+
+	ROLE
+
+Step 4 - Create Project
+=======================================
+
+Become a Project Manager
+=========================================
+- Create Project
+- 
+
+Become a Dev or QA
+===============================
+
+
+
+Project Manger
+Dev
+QA
+System Admin
+==================================
+Scrum
+==================================
+	Backlog(S) --- TASKS which need to be finished for the soft dev.
+
+	Backlog
+	================
+	Spirint - 1 WEEK
+		  2 WEEK
+
+
+This is SECOND backlog Task 1
+Login and Registration page of DevOpsSchool.com is not working.
+
+
+This is SECOND backlog Task 1
+
+==============================================
+-How to customize Project
+==============================================
+ISSUES TYPES
+WORKFLOWS
+SCREENS
+CUSTOME FIELDs
+NOTIFICATION and PERMISSION SCHEME - ROLE
+==============================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
