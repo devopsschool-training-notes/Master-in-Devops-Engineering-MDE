@@ -1,0 +1,459 @@
+Rajesh Kumar
+--------------------
+www.Rajeshkumar.xyz
+TheDevOpsSchool
+======================
+What is Docker?
+===========================
+	Container mgmt tool.
+	Release 
+		CE	- FREE
+		EE
+	version - 19.X
+	in Golang
+	by SOlomkan Hykes
+
+other 
+https://www.devopsschool.com/blog/list-of-top-container-runtime-interface-projects/
+
+
+
+	What is Container?
+	APP RUN TIME ENV with his own resoources
+
+	ONE USER 
+		with own
+				ONE NET
+				ONE MNT FROM COPY OF IMAGE
+				ONE PID
+
+	What is mgmt?
+
+	What is tool?
+		- Saving time
+		- Saving Cost
+		- Improving a Quality
+		-------------------------------
+			TO RUN APPs
+				in DATA CENTER
+================================================================
+What are the components which needed to RUN APP?
+What are the Resources which needed to RUN APP?
+================================================================
+Hardware
+	  OS
+		Kernal
+			Namespace
+	
+				NEED IT		OS IS ALLOWING		CAN CREATE	
+	USER NS		USER	1		MULTIPLE		MULTIPLE		
+	MNT NS		MNT	1		1			MULTIPLE
+	PID NS		PID	1		1			MULTIPLE	
+	NET NS		NET	1		1			MULTIPLE
+======================================================
+Evolution of Computing
+=====================================================
+1990s			2000			2020
+--------------------------------------------------------------------------
+PHYSCIAL --Internet	Virtual	
+
+	
+
+OS IS NOT ALLOWING to create
+------
+Resources required to RUN APP in inde*
+WHY??????
+==============================
+PC - Personal Computing.
+=
+====================================================================
+Docker Architec*
+	
+Human --> Docker Client --> Docker Server(Deamon) --> ContainerD --> Kernal
+       ============================================
+			Docker Engine
+
+How to install it?
+=============================
+https://www.devopsschool.com/tutorial/docker/install-config/docker-install-commuityedition-centos-rhel.html
+=======================
+Component Of docker
+-----------------------------
+Docker Engine - DONE
+
+Docker Image
+----------------------------
+- ROOT File System +  USER File System + 
+			ubuntu
+			centos
+			rhel
+- ROOT File System +  USER File System + APP File System
+	ONE COPY of Image - Get MOUNTED to USER(Container)
+	ONE image can be used for multiple container.
+	
+			ubuntu + JDK + JENKINS
+			centos + JDK + TOMCAT + WAR(APP)
+			rhel
+
+OS IMAGE
+---------------------------
+File System(s)
+		- Collection of files/dir for specific purpose.
+
+- BOOT File System (KERNAL)
+- ROOT File System
+- USER File System
+- APP File System
+
+Docker Registry
+---------------------------
+	a place from where you get Docker image.
+	hub.docker.com
+
+Docker Container
+==============================================
+	The moment you RUN DOcker image....
+			ONE USER Get created
+			ONE COPY OF IMAGE 
+					GET MOUNTED to USER aka container
+			ONE NETWORK get created and Mounted to user
+			ONE PID get created and mounted to user
+			
+
+
+Workflow of Dockerflow
+--------------------
+65.0.17.176
+-----------------------------------------
+=====================================================================
+Container Lifecycle
+-------------------------------------------
+Born -> Kid -> Teen -< Young -> Old -> Die
+VMS -
+Create -> Start -> stop -> start -> restart -> pause -> unpuase > kill -> remove	
+
+Container
+Create -> Start -> stop -> start -> restart -> pause -> unpuase > kill -> remove
+
+  1  clear
+    2  ls
+    3  sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+    4  sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+    5  sudo yum install –y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+    6  sudo yum-config-manager --enable rhui-REGION-rhel-server-extras
+    7  stall -y docker-ce
+    8  history
+    9  sudo yum install –y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+   10  sudo yum install -y docker-ce
+   11  sudo systemctl enable docker
+   12  sudo systemctl start docker
+   13  clear
+   14  docker info
+   15  clear
+   16  docker images
+   17  docker ps
+   18  docker ps -a
+   19  docker version
+   20  clear
+   21  which docker
+   22  ps -eaf | grep docker
+   23  which contained
+   24  which containers
+   25  which containerd
+   26  ps -eaf | grep containerd
+   27  clear
+   28  ls
+   29  docker images
+   30  docker pull jenkins
+   31  clear
+   32  docker images
+   33  docker create jenkins
+   34  docker ps
+   35  docker ps -a
+   36  clear
+   37  docker create jenkins
+   38  docker create jenkins
+   39  docker create jenkins
+   40  docker ps -a
+   41  docker start d37ee610f788
+   42  docker ps -a
+   43  docker start 11f4967fb091
+   44  docker ps -a
+   45  clear
+   46  docker ps
+   47  docker ps -a
+   48  clear
+   49  docker images
+   50  docker ps -a
+   51  docker stop d37ee610f788
+   52  docker ps -a
+   53  docker start d37ee610f788
+   54  docker ps -a
+   55  clear
+   56  docker ps -a
+   57  docker restart 11f4967fb091
+   58  docker ps -a
+   59  clear
+   60  docker pause 11f4967fb091
+   61  clear
+   62  docker ps -a
+   63  docker unpause 11f4967fb091
+   64  docker ps -a
+   65  clear
+   66  docker ps -a
+   67  docker kill d37ee610f788 11f4967fb091
+   68  docker ps -a
+   69  clear
+   70  docker ps -a
+   71  docker rm f5f19c4c2293 11f4967fb091
+   72  docker ps -a
+   73  history
+
+=====================================================================================
+
+  73  history
+   74  clear
+   75  docker ps
+   76  docker ps -a
+   77  docker start d37ee610f788
+   78  clear
+   79  docker ps -a
+   80  docker
+   81  clear
+   82  docker ps
+   83  docker exec -it 37ee610f788 /bin/bash
+   84  docker exec -it d37ee610f788 /bin/bash
+   85  ls /
+   86  touch /opt/rajesh.txt
+   87  ls /opt
+   88  docker exec -it d37ee610f788 /bin/bash
+   89  ls /tmp/
+   90  xclear
+   91  clear
+   92  docker ps
+   93  docker ps -a
+   94  docker start b6649f49784e
+   95  docker ps
+   96  clear
+   97  docker ps
+   98  docker inspect d37ee610f788 | grep -i ip
+   99  docker inspect b6649f49784e | grep -i ip
+  100  clear
+  101  ifconfig
+  102  clear
+  103  clear
+  104  ps -eaf
+  105  clear
+  106  docker ps
+  107  docker exec d37ee610f788 ps -eaf
+  108  docker exec b6649f49784e ps -eaf
+  109  history
+
+====================================================================
+How to use container?
+[=================================
+How to use VM ? Laptop?
+--------------------------------------
+Go inside a container?
+
+EXEC WAY
+	this would execute an executable inside a container.
+ 	interact with -it and /bin/bash -you can go inside
+ATTACH
+	attached to a PID 1 of the contaier
+
+
+or
+Access a APP through network?
+
+==================================================
+RUN
+==================================================
+pull -> create --> start -> Become or ATtACHed to container
+
+
+==================================================
+RUN -d 
+==================================================
+pull -> create --> start -> DO NOT Become or DO NOT  ATtACHed to container
+
+ 103  clear
+  104  ps -eaf
+  105  clear
+  106  docker ps
+  107  docker exec d37ee610f788 ps -eaf
+  108  docker exec b6649f49784e ps -eaf
+  109  history
+  110  clear
+  111  docker ps
+  112  docker exec d37ee610f788 ls
+  113  docker exec d37ee610f788 df -kh
+  114  clear
+  115  docker exec d37ee610f788 java
+  116  clear
+  117  docker exec d37ee610f788 git
+  118  clerar
+  119  clear
+  120  clear
+  121  ps
+  122  clear
+  123  docker ps
+  124  docker exec -it d37ee610f788 /bin/bash
+  125  docker exec -it d37ee610f788 /bin/bash
+  126  dcoker ps
+  127  docker ps
+  128  docker exec d37ee610f788 ps -eaf
+  129  cleart
+  130  clear
+  131  docker ps
+  132  docker attach d37ee610f788
+  133  clear
+  134  docker ps -a
+  135  docker inspect b6649f49784e | grep -i ip
+  136  clear
+  137  curl http://172.17.0.3:8080
+  138  clear
+  139  docker ps -a
+  140  docker run jenkins
+  141  clear
+  142  docker run -d jenkins
+  143  docker ps
+  144  docker run -d jenkins
+  145  docker run -d jenkins
+  146  docker run -d jenkins
+  147  docker run -d jenkins
+  148  clear
+  149  docker ps
+  150  docker stop b561dcd89309 f431a1d5ba14 817db2cfb592 92e4bf992a56 e621e2615dc7 b6649f49784e
+  151  docker rm b561dcd89309 f431a1d5ba14 817db2cfb592 92e4bf992a56 e621e2615dc7 b6649f49784e
+  152  clear
+  153  docker ps -a
+  154  docker rm fad9c504b400 d37ee610f788
+  155  docker ps -eaf
+  156  docker ps
+  157  docker ps -a
+  158  docker run -d -p 8080:8080 jenkins
+  159  docker ps
+  160  docker run -d -p 8080:8080 jenkins
+  161  clear
+  162  docker run -d -p 8090:8080 jenkins
+  163  docker ps
+  164  history
+
+=================================================================
+
+WINDOWS 10 
+	Docker for WIndows
+	-----------------
+	VRITUAQL - LINUX VM	- LINUX
+	HYPE - WINDOWS VM	- WINDOWS
+================================================================
+DEVOPS - SRE - MS - 
+	DOCKER
+	LINUX
+	AWS
+----------------------------------------
+=========================================================
+ONE Image - 
+	UBUNTU + JDK + Git + Apache2 + /opt/index.html
+-------------------------------------------------------------
+Method 1 - Exising container 
+
+  1  docker ps -a
+    2  docker ps -a
+    3  clear
+    4  docker ps -a
+    5  docker stop 22804322c0e9 8075cecc6b1d 4816bdeda92d
+    6  docker rm 22804322c0e9 8075cecc6b1d 4816bdeda92d
+    7  clear
+    8  docker ps -a
+    9  docker run -itd ubuntu
+   10  docker ps
+   11  clear
+   12  ls
+   13  docker ps
+   14  docker attach f887ba40b500
+   15  docker ps
+   16  vi index.html
+   17  ls
+   18  docker cp index.html f887ba40b500:/opt
+   19  clear
+   20  docker ps
+   21  docker attach f887ba40b500
+   22  clear
+   23  docker ps -a
+   24  docker commit -m"ub-up-git-apache-jdk" -a"Rajeshkumar" f887ba40b500 ub-up-git-apache-jdk
+   25  docker imageas
+   26  lear
+   27  clear
+   28  docker images
+   29  docker run -itd ub-up-git-apache-jdk
+   30  docker ps
+   31  docker exec 7b867d9deb12 java
+   32  clear
+   33  docker exec 7b867d9deb12 git
+   34  clear
+   35  docker exec 7b867d9deb12 which apache2
+   36  docker exec 7b867d9deb12 ls /opt
+   37  docker images
+   38  docker tag ub-up-git-apache-jdk devopsschools/sundaydec2020
+   39  docker images
+   40  docker login
+   41  docker push devopsschools/sundaydec2020
+   42  dhistory
+
+
+Method 2 - Dockerfile.
+=============================================
+ONE Image - 
+	UBUNTU + JDK + Git + Apache2 + /opt/index.html
+-------------------------------------------------------------
+EACH LINE IS ONE LAYER == FILESYETEM...
+
+FROM ubuntu
+MAINTAINER Rajesh Kumar
+RUN apt-get update
+RUN apt-get install git -y
+COPY apache2 /opt/apache2
+
+ENV		- SET container
+VOLUME		- Ext Vole
+ARG		- Sett a var can be used anytime 
+EXPOSE		- port
+CMD		- PID 1
+ENTRYPOINT	- PID 1
+USER		- YOU WANT TO RUN CONTAINER WITH THAT USER
+
+
+18 hours ---- LMS
+devops@rajeshkumar.xyz
+=================================================
+Step 1 -- WINDOWS 10
+
+Step 2 -- Install VirtualBOX
+
+Step 3 -- Create VM Centos
+
+Step 4 -- Logn to Vm and Install docker.
+
+Step 5 -- FOLLOW RECORDINGS
+		- Working with container
+		- Access a container
+		- How to create an image
+		- Share an image using docker hub
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
