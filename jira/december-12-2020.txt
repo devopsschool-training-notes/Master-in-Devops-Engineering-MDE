@@ -1,0 +1,93 @@
+What is Jira?
+-------------------
+	Plan mgmt for the Project
+	Issue Tracking
+	Bug management
+	Project mgmt
+	Process mgmt
+	Agile Dashboarding
+	Service Desk
+-------------------------
+	Dev in Java
+	By Atlassion
+
+Other - Zendesk - ServiceNow - Trello - 
+
+Plan -> Code -> Analyze -> Build -> Archive -> Deploy2QA -> AT -> CC -<=
+-----------------------------------------------------------------------
+JIRA	GIT	SONARQ		MAVEN	ART	Ansible	    SEL	  JACOCO
+
+----------------------
+Architecture of Jira
+- Web Based
+APP Server - DB server
+----------------------
+Packaged
+Tomcat		ANY RDBMS - Trial(Derby or H2)
+=====================================
+8080 port
+
+How to install it?
+IP  - 13.232.186.30
+===============================================
+Are you ADMIN?
+---------------------
+- Set Authentication
+	- How to login JIRA
+		USER NAME & PASSWORD (Default)
+		LDAP
+		ACTIVE DIR
+		OTHER JIRA
+- Set Authorization
+	- Create USERS & Group
+- Set Notification Server
+- Create Group and users with their required perm
+
+--------------CUZTOMIZE --------------
+- FEA 1	- How to customize workflow?	DONE
+- FEA 2 - How to add new Issues Types?	DONE
+- FEA 3 - Adding a Custome Field	DONE
+
+
+Are you Manager or Scrum Master?
+----------------------------
+- Create Project
+- Set Release
+- Set a roles
+- Set Version
+- Create Backlog and Assign
+
+Are you Engineer?
+- Create a ticket and work on ticket
+
+[root@ip-172-31-2-222 opt]# history
+    1  clear
+    2  ls
+    3  yum install wget -y
+    4  clear
+    5  yum install java-1.8.0-openjdk-devel
+    6  clear
+    7  cd /opt/
+    8  ls
+    9  wget https://product-downloads.atlassian.com/software/jira/downloads/atlassian-jira-software-8.5.6-x64.bin
+   10  ls
+   11  clear
+   12  ls
+   13  chmod 755 atlassian-jira-software-8.5.6-x64.bin
+   14  ./atlassian-jira-software-8.5.6-x64.bin
+   15  history
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
