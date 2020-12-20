@@ -1,0 +1,116 @@
+
+
+Plan -> Code -> Code Analysys -> Build+UT+pack -> Archive -> Dep2Qa -> AT -> Release
+--------------------------------------------------------------------------------
+Jira -- Git --- SonarQube.....
+
+
+What is SonarQube?
+=======================
+	Quality mgmt tool.
+	- Code Quality		===== FOCUS
+	- test Quality Aka Quality of tesing
+	Release
+	- Community	Free and OS	== FOcus
+	- Dev		PAID
+	- Ennterprse	PAID
+	- Data center	PAID
+
+	Dev in Java
+		---
+		Platform indp.
+	By SonarSource
+	version
+		8.X
+'
+Why we need it SonarQube?
+================================
+70% of the bugs is Found - Coz of Bad Programming.		== Code Quality
+30% of the bugs is Found coz of missing testing scnario.	== test Quality
+-----------------------------------------
+		Technical Debt... Leads Org Die.
+100 --> SoftX
+	--- 120
+--------------------
+	30 for bugs..
+	------------
+	130
+	120
+	---
+	10...
+==================================
+How can we get a Code Quality?
+	- Peer code Review
+	- Static Code Analsys ---
+'				Code would review your code.
+				Rule would review your code
+				Rule(S) would review your code
+				Tool would review your code
+				===================
+				Report....To Dev
+				- WHat
+				- where
+				- How
+
+https://en.wikipedia.org/wiki/List_of_tools_for_static_code_analysis
+
+=========================
+How SonarQube works!!! Aka SonarQube Arch.
+
+======================
+SonarQube Server
+		WEB
+		RULES
+		DB	- H2
+Scanner
+Source Code
+----------------------
+Scanner run on the Source Code
+-------------------------------
+
+35.154.206.209
+centos
+
+
+How to install SonarQube in Linux?
+=========================================
+Step 1 - Install JAVA
+$ sudo yum list installed
+$ sudo yum list installed | grep java
+$ sudo yum remove <<all java7&8>
+$ yum install java-11-openjdk-devel
+$ systemctl stop firewalld
+$ systemctl disable firewalld
+
+Step 2 - Download and Install and run SonarQube server
+$ yum install wget unzip -y
+$ su centos1
+$ cd
+$ wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-8.4.1.35646.zip
+$ unzip sonarqube-8.4.1.35646.zip
+$ mv sonarqube-8.4.1.35646 sonarqube-server
+$ cd sonarqube-server/bin/linux-x86-64
+$ ./sonar.sh start
+$ ./sonar.sh status
+
+Step 3 - Download and Install Scanner
+$ cd 
+$ wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.5.0.2216-linux.zip
+$ unzip sonar-scanner-cli-4.5.0.2216-linux.zip
+$ cd sonar-scanner-cli-4.5.0.2216-linux/bin
+### Copy a FULL PATH OF SCANNER == Make a FULL PATH OF SCANNER
+
+Step 4 - Clone git repo
+$ cd 
+$ git clone https://github.com/devopsschool-demo-labs-projects/java-sonarqube-helloworld-src
+$ mv java-sonarqube-helloworld-src src
+$ cd src
+### Change Projetname - key if you want it in sonar-project.properties
+#### RUN a FULL PATH OF SCANNER
+
+C:\tools\sonarqube\scanner\sonar-scanner-4.4.0.2170-windows\bin\sonar-scanner.bat
+
+
+
+
+
