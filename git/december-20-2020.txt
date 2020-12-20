@@ -1,0 +1,202 @@
+- GIT - 
+==================================
+What is Git?
+----------------------
+	Version Control System
+	But for what?
+	- Source Code
+	Source Code mgmt tool.
+	Free and Open Source
+	Dev by Linus Tovarld
+	Compt with all OS
+Why?
+--------------------------
+	We write code through out our life...
+	We want to know
+		- Who 
+		- What code
+		- What time
+		- Why ?
+		- Where?
+		- History.........
+		of the code......
+-------------------------------------
+RCS -> CVS -> SVN -> Git
+---------------------------------
+Mercury - Perforce - ClearCase - VSS - TFS
+
+========================================
+Why Git is SO important n Diff from others?
+	- DISTRIBUTED
+	Where as all other are Server-Client based.
+
+
+===========================
+How to install git?
+-----------------------------
+	Windows
+		exe from git-scm.com
+		------------------
+		git cmd(dep)
+		git bash	==== Basic linux in widnows u can run + git cmd + colors
+		git gui
+	Linux 
+		apt-get install git -y
+		yum install git -y
+===================================================
+How git works!!! Architecture |||| Workflow
+
+
+503  cd /e
+  504  clear
+  505  pwd
+  506  start .
+  507  mkdir repo1
+  508  cd repo1/
+  509  start .
+  510  clear
+  511  git init
+  512  tree
+  513  start .
+  514  CLEAR
+  515  LS
+  516  ls
+  517  clear
+  518  ls
+  519  git status
+  520  clear
+  521  git add file1.java
+  522  git status
+  523  ls
+  524  clear
+  525  ls
+  526  start .
+  527  clear
+  528  git commit -m"First Commit "
+  529  git log
+  530  git show e9cc4cd8f9deb58efe6e8ddc25bc8caeeb97d40a
+  531  clear
+  532  start .
+  533  clear
+  534  git status
+  535  git add file2.java
+  536  git status
+  537  clear
+  538  git add .
+  539  git status
+  540  git commit -m"2nd one " file2.java
+  541  git status
+  542  clear
+  543  l;s
+  544  ls
+  545  git status
+  546  clear
+  547  ls
+  548  git log
+  549  git show 553ecf7e0f3465094c08839f1d28127e886b321d
+  550  clear
+  551  git log
+  552  clear
+  553  ls
+  554  git status
+  555  ls
+  556  vi file1.java
+  557  git status
+  558  git add .
+  559  git status
+  560  git commit -m"all"
+  561  git log
+  562  clear
+  563  ls
+  564  ls
+  565  git status
+  566  cl;ear
+  567  clear
+  568  vi file1.java
+  569  git status
+  570  git add .
+  571  git status
+  572  clear
+  573  vi file1.java
+  574  git status
+  575  git add .
+  576  git status
+  577  history
+
+
+  579  git log
+  580  clear
+  581  git config user.name "Rajesh kumar"
+  582  git config user.email "rajesh@scmgalaxy.com"
+  583  git config --list
+  584  clear
+  585  ls
+  586  touch ramukaka.txt
+  587  git add .
+  588  git commit -m"adding"
+  589  git log
+  590  history
+==============================================================
+Delete a file
+rename
+move a file
+
+  590  history
+  591  clear
+  592  clear
+  593  git log
+  594  clwear
+  595  clear
+  596  ls
+  597  clear
+  598  ls
+  599  git log --oneline
+  600  git checkout 553ecf7
+  601  clear
+  602  ls
+  603  git checkout master
+  604  ls
+  605  clear
+  606  ls
+  607  git rm file1.java
+  608  git status
+  609  ls
+  610  git commit -m"delete"
+  611  clear
+  612  ls
+  613  git log --online
+  614  git log --oneline
+  615  ls
+  616  git checkout cd88f5f
+  617  ls
+  618  git checkout master
+  619  ls
+  620  clear
+  621  ls
+  622  git mv file2.java
+  623  git mv file2.java file3.java
+  624  clear
+  625  ls
+  626  git mv file2.java file3.java
+  627  git mv file2.java file5.java
+  628  ls
+  629  mkdir src
+  630  git mv ramukaka.txt src/
+  631  clear
+  632  git status
+  633  ls
+  634  git commit -m"renaming n moving"
+  635  clear
+  636  ls
+  637  history
+===================================
+git push https://github.com/devopsschool-demo-temporary/saturday-dec master
+git remote add origin https://github.com/devopsschool-demo-temporary/saturday-dec
+git push origin master
+
+git pull https://github.com/devopsschool-demo-temporary/saturday-dec master
+
+rajesh@devopsschool.com
+
+
+
