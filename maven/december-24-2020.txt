@@ -1,0 +1,233 @@
+Apache Maven
+=============================
+What is Maven?
+-------------------------
+	Build tool
+	- it can compile your code automated way
+	But
+		its project lifecycle mgmt tool.
+	
+	compile-UT-package-install-verify-report-documents-etcetc
+
+	From Apache
+	Free and Open Source
+	Written in Java and For JAVA
+	Automating a java Project ....
+	
+Why Maven?
+---------------------------------------
+	Automate entire build process
+	
+	Procedural
+		-- You dont need to write a code for automation,
+		-- Just follow procedure and build automation is done.
+
+	Powered by Rich set of plugins.
+
+Other tools
+----------------------------------------
+makefile -> Ant -> nant -> msbuild -> maven -> Gradle
+--------------------------------------------------------
+Gradle - Java - Python + C++
+==================================================================
+How to install maven?
+--------------------------
+min req - JAVA 8+ JDK
+			- OpenJDK
+			- Oracle
+	- Download and Extract JDK to one location
+	- Same location set to JAVA_HOME
+	- Add JAVA_HOME/bin into PATH
+
+https://jdk.java.net/
+https://openjdk.java.net/projects/jdk/
+
+Maven
+	- Download a ZIP file and extrat to one Location
+	- Same-Location/bin add to the path.
+
+How to verify?
+---
+mvn -version
+mvn -help
+
+============================================
+How to get started?
+
+E:\build>mvn
+[WARNING]
+[WARNING] Some problems were encountered while building the effective settings
+[WARNING] 'servers.server.id' must be unique but found duplicate server with id central @ C:\tools\maven\bin\..\conf\settings.xml
+[WARNING] 'servers.server.id' must be unique but found duplicate server with id broad @ C:\tools\maven\bin\..\conf\settings.xml
+[WARNING]
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.639 s
+[INFO] Finished at: 2020-12-24T07:32:33+05:30
+[INFO] ------------------------------------------------------------------------
+[ERROR] No goals have been specified for this build. You must specify a valid lifecycle phase or a goal in the format <plugin-prefix>:<goal> or <plugin-group-id>:<plugin-artifact-id>[:<plugin-version>]:<goal>. Available lifecycle phases are: validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy, pre-clean, clean, post-clean, pre-site, site, post-site, site-deploy. -> [Help 1]
+[ERROR]
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR]
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/NoGoalSpecifiedException
+
+What is LifeCycle?
+What is Phase?
+What is Goal?
+What is Plugins?
+========================================================
+Mavens 
+	Maven Core
+	Maven Plugins
+		- Core Plugins - in Built
+		- Community Plugins - Not in Built.
+
+
+plugins means == Feature in Maven
+		= Its jar file.
+		= Which need to be loaded.
+
+C:\tools\maven\lib
+		Maven Core
+C:\Users\Rajesh Kumar\.m2\repository
+		Maven Plugins
+========================================================
+What is LifeCycle?
+
+
+Human Lifecycle?
+---------------------SCOPE---------------------------------
+--------------------PHASES------------------------
+born -> Kid -> Teen -> Young -> Mid -> Old -> Die
+-------------------------------------------------
+Controlled by GOD.
+
+Software Project
+---------------------------------------
+- God - YOU
+- Controlled by You
+
+Software Project LifeCycle
+-------------------------------------------------------
+START ------------------------------------------> END
+
+Maven, to manage Software Project LifeCycle
+- 3 LifeCYCLE
+https://maven.apache.org/ref/3.6.3/maven-core/lifecycles.html
+
+compile -> test -> package -> verify -> install
+-----------------------------------------------------
+			Repeat
+
+			Mantra	
+Phases			Goal		Plugins
+------------------------------------------
+compile			compile		C:\Users\Rajesh Kumar\.m2\repository\org\apache\maven\plugins		
+test			test		C:\Users\Rajesh Kumar\.m2\repository\org\apache\maven\plugins
+package			package		C:\Users\Rajesh Kumar\.m2\repository\org\apache\maven\plugins
+verify			verify		C:\Users\Rajesh Kumar\.m2\repository\org\apache\maven\plugins
+install			install		C:\Users\Rajesh Kumar\.m2\repository\org\apache\maven\plugins
+
+=========================================================================================================
+Step 1 - Create a Ske* of the Project === ONE firs day of Project.
+Using Archtype plugins
+- https://maven.apache.org/guides/introduction/introduction-to-archetypes.html
+
+
+mvn archetype:generate
+
+-DgroupId=com.devopsschool.software
+-DartifactId=chat
+-DarchetypeArtifactId=maven-archetype-quickstart
+-DinteractiveMode=false
+
+what is groupId?
+	org.ske of the package.
+	com.microsoft.software
+what is artifactId?
+	com.microsoft.software.word
+	com.microsoft.software.excel
+	com.microsoft.software.powerpoint
+what is version?
+	of Software
+	- Release	- 3.0 or 3.0.1
+	- Snapshot	- 3.0-SNAPSHOT or 3.0.1-SNAPSHOT
+============================================
+PROGRAMMER
+	-- LAZY
+	--- YOU WOULD USE other Written CODE in your code and complete your func*
+		- Your Tema mate's
+		- 3rd party lib - from community
+ARCHITECT
+-------------
+project 
+		chat
+			ref of login code and extending
+		mail
+			ref of login code and extending
+		login
+		register
+			ref of login code and extending
+----------------------------------------------------------------
+package concepts.
+-----------------------------
+myprg.java
+	chat
+		com.devopsschool.chat
+		import com.devopsschool.login.login
+	mail
+		com.devopsschool.mail
+	login
+		com.devopsschool.login
+	register
+		com.devopsschool.register
+
+mvn archetype:generate -DgroupId=com.devopsschool.software -DartifactId=chat -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+==================================================
+Phases			Goal		Plugins
+------------------------------------------
+compile			compile		C:\Users\Rajesh Kumar\.m2\repository\org\apache\maven\plugins		
+test			test		C:\Users\Rajesh Kumar\.m2\repository\org\apache\maven\plugins
+package			package		C:\Users\Rajesh Kumar\.m2\repository\org\apache\maven\plugins
+verify			verify		C:\Users\Rajesh Kumar\.m2\repository\org\apache\maven\plugins
+install			install		C:\Users\Rajesh Kumar\.m2\repository\org\apache\maven\plugins
+
+========================================
+Content of pom.xml
+====================================
+Co-ordinates
+-------------
+  <groupId>com.devopsschool.software</groupId>
+  <artifactId>chat</artifactId>
+  <packaging>jar</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <name>chat</name>
+  <url>http://maven.apache.org</url>
+
+
+dependencies
+==================
+
+Properties
+
+Plugins
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
