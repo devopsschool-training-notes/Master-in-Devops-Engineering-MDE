@@ -1,0 +1,278 @@
+What is Artifactory?
+	is a registry
+	contains
+		Repository
+		Contains 
+			Your Packages & its version	
+	What kind of Packages?
+	https://www.jfrog.com/confluence/display/JFROG/Package+Management
+	Package Manager Tool
+	Package Archive tool
+	Package Repository
+	Release
+		Community		FREE and Open Source- Limited Package Type
+		professional		Paid and Support All package type
+		Enterprise
+	Written in Java
+	From Jfrog
+
+Why We need it?
+	We want store all Packages - All types of package at ONE PLACE
+	Lots of 3rd Party - Lots of Sources
+	You generate also lots of package
+	Package Versioning - Built it
+	Package Integrity & Security	
+			CHECKSUM & MD5
+	Role Based Access
+	Backup and Cleanup and Archvial -
+	Artifactory understand your build tool
+		- maven
+		- gradle
+
+Other tools
+	Nexus by SonaType
+	Archiva by Apache
+		Respected Mentioned
+		- Nuget Gallery
+
+How to install it?
+65.0.107.114
+centos
+----
+yum install java-11-openjdk-devel
+
+
+65.0.107.114:8081
+admin
+password
+
+---
+Admin123
+
+
+
+base URL - http://65.0.107.114:8082/
+
+=========================================================
+Step 1 - Authentication  and Authorization and 
+
+Authentication = Who should access?	
+		LDAP
+		SAML SSO
+		OAuth SSO
+		HTTP SSP
+		CROWD / JIRA
+Authorization  = What u r allowed to access
+		Permission(S)
+				Group
+					User(s)
+	
+Step 2 - Create a repo
+		repo TYPES
+			Local Repo ---- READ and WRITE
+			Remote Repo - --- Read only
+			Virtual ---- Group of multiple Local Repo + Remote Repo
+
+Maven Version Types
+- Release	- Production - 4.0
+- SNAPSHOT	- Non Production	4.0-SNAPSHOT
+
+		Local Repo --- Format - Maven
+		Remote Repo
+
+Step 3 - How to deploy your package using Maven?
+
+1. Modify pom.xml with your repo Location 		DONE
+2. Modify setting.xml with your repo access	
+	username - deploy
+	pass - Deploy123
+
+      <server>
+		<id>central</id>
+		<username>deploy</username>
+		<password>Deploy123</password>
+	  </server>
+  
+
+3. mvn deploy
+-------------------------------
+install vs deploy
+
+install
+----------------
+compile -> test -> package -> verify ---> Copy a package to Local Repo(.m2)
+					 -----------------------------------
+							Install
+
+deploy
+	Copy a package FROM Local Repo(.m2) to Remote Repo(Mentioned in pom.xml)
+	-----------------------------------------------------------------------		
+					deploy
+
+
+setting.xml
+	config file of maven and located at C:\tools\maven\conf
+
+
+
+
+
+
+
+
+<distributionManagement>
+    <repository>
+        <id>central</id>
+        <name>ip-172-31-15-91.ap-south-1.compute.internal-releases</name>
+        <url>http://65.0.107.114:8081/artifactory/devops-release-local</url>
+    </repository>
+    <snapshotRepository>
+        <id>snapshots</id>
+        <name>ip-172-31-15-91.ap-south-1.compute.internal-snapshots</name>
+        <url>http://65.0.107.114:8081/artifactory/devops-snap-local</url>
+    </snapshotRepository>
+</distributionManagement>
+
+
+
+
+
+==========================setting.xml=====remote===============
+
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.1.0 http://maven.apache.org/xsd/settings-1.1.0.xsd" xmlns="http://maven.apache.org/SETTINGS/1.1.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <servers>
+    <server>
+      <username>${security.getCurrentUsername()}</username>
+      <password>${security.getEscapedEncryptedPassword()!"*** Insert encrypted password here ***"}</password>
+      <id>central</id>
+    </server>
+    <server>
+      <username>${security.getCurrentUsername()}</username>
+      <password>${security.getEscapedEncryptedPassword()!"*** Insert encrypted password here ***"}</password>
+      <id>snapshots</id>
+    </server>
+  </servers>
+  <profiles>
+    <profile>
+      <repositories>
+        <repository>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+          <id>central</id>
+          <name>group</name>
+          <url>http://65.0.107.114:8081/artifactory/group</url>
+        </repository>
+        <repository>
+          <snapshots />
+          <id>snapshots</id>
+          <name>group</name>
+          <url>http://65.0.107.114:8081/artifactory/group</url>
+        </repository>
+      </repositories>
+      <pluginRepositories>
+        <pluginRepository>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+          <id>central</id>
+          <name>group</name>
+          <url>http://65.0.107.114:8081/artifactory/group</url>
+        </pluginRepository>
+        <pluginRepository>
+          <snapshots />
+          <id>snapshots</id>
+          <name>group</name>
+          <url>http://65.0.107.114:8081/artifactory/group</url>
+        </pluginRepository>
+      </pluginRepositories>
+      <id>artifactory</id>
+    </profile>
+  </profiles>
+  <activeProfiles>
+    <activeProfile>artifactory</activeProfile>
+  </activeProfiles>
+</settings>
+
+
+
+
+==========================setting.xml=====group===============
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.1.0 http://maven.apache.org/xsd/settings-1.1.0.xsd" xmlns="http://maven.apache.org/SETTINGS/1.1.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <servers>
+    <server>
+      <username>${security.getCurrentUsername()}</username>
+      <password>${security.getEscapedEncryptedPassword()!"*** Insert encrypted password here ***"}</password>
+      <id>central</id>
+    </server>
+    <server>
+      <username>${security.getCurrentUsername()}</username>
+      <password>${security.getEscapedEncryptedPassword()!"*** Insert encrypted password here ***"}</password>
+      <id>snapshots</id>
+    </server>
+  </servers>
+  <profiles>
+    <profile>
+      <repositories>
+        <repository>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+          <id>central</id>
+          <name>group</name>
+          <url>http://65.0.107.114:8081/artifactory/group</url>
+        </repository>
+        <repository>
+          <snapshots />
+          <id>snapshots</id>
+          <name>group</name>
+          <url>http://65.0.107.114:8081/artifactory/group</url>
+        </repository>
+      </repositories>
+      <pluginRepositories>
+        <pluginRepository>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+          <id>central</id>
+          <name>group</name>
+          <url>http://65.0.107.114:8081/artifactory/group</url>
+        </pluginRepository>
+        <pluginRepository>
+          <snapshots />
+          <id>snapshots</id>
+          <name>group</name>
+          <url>http://65.0.107.114:8081/artifactory/group</url>
+        </pluginRepository>
+      </pluginRepositories>
+      <id>artifactory</id>
+    </profile>
+  </profiles>
+  <activeProfiles>
+    <activeProfile>artifactory</activeProfile>
+  </activeProfiles>
+</settings>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		 
