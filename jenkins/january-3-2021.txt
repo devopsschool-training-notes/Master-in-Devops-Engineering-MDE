@@ -1,0 +1,228 @@
+Rajesh Kumar
+================
+rajesh@devopsschool.com
+
+What is Jenkins?
+	CI tool.
+	Release
+	- Jenkins	
+		- FOCUS
+		- Free and Open Source
+	- Enterprise Jenkins
+		- Paid by Cloudbees
+	- Blue Ocean
+		- Free and Paid
+	- Jenkins X
+		- CICD - For Containers world
+	Written in JAVA
+		- Platform indep*
+		- Dependency - JRE or JDK 8.X min.
+	Earlier Name was Hudson
+
+	Powered by Plugins - STRONG Point.
+		   --- Means more feature
+		   --- 1500 + Plugins
+
+What is CI?
+	Continous Integ Tool.
+
+What is Continous Integ?
+	Integ Continously.
+		everything in SDLC cycle.
+
+Auto Build -> Auto Testing
+--------------------------
+	Imm Feedback
+
+https://www.devopsschool.com/path/
+
+Plan -> Code -> Analyze -> Build -> UT -> Pack -> Archive -> Dep2QA -> AT -> CC
+--------------------------------------------------------------------------------
+Jira -> Git -> SonarQube -> Maven -> Junit -> Jar -> Artifactory -> Ansible -> Selenium - Jacoco
+------------------------------------------------------------------------------------------------
+					Integrate ALL TEAM?
+					Integrate ALL SDLC Process
+					Integrate ALL Tools
+-----------------------------------------------------------------------------------------------------
+						Jenkins
+							Automate SDLC Manual steps	DONE
+							Imm Feedback
+							Schedluing			DONE
+							Integ all tools			DONE
+----------------------------------------------------------------------------------------------------
+						ALL PASSES - Release
+						ONE FAILED - Repeat
+
+
+Other tools - 
+- Teamcity by Jetbrains
+- Bamboo by Atlassion
+- Travis CI
+- Gitlab CI
+- Azure DevOps
+- AWS DevOps
+- UBuild 
+
+How to install it?
+-----------------------------
+13.127.163.131
+user - centos
+Key - ppk
+
+https://www.devopsschool.com/tutorial/jenkins/jenkins-installation-and-configuration.html
+
+===================================
+What to do???
+
+Architecuture of Jenkins?
+--------------------------------------
+Jenkins Server
+	- WEB		- run on 8080 Used by Human to automating Project
+	- Agent aka Node - Steps of the Project RUNS and display a output on WEB '
+		- AKA Node
+		- AKA Slave
+-----------------------------------------------------------------------------
+EVERYTHING IS OPTIONAL.
+--------------------------
+Project AKA Job AKA Item
+--------------------------
+Phases
+	Initial Tab
+	Schedule Tab
+	Environement
+	Build Tab
+		Step 1 -- call maven
+		Step 1 -- call Gradle	 
+		Step 1 -- call Scriptng
+		Step 1 -- call this and that
+
+	Post Build
+============================================================================
+Secret formula to setup Jobs Jenkins?
+----------------------------------------
+Q1 - What is your technology? Java - python - ruby - dotnet
+		- is it installed in agent
+		- version
+		
+Q2 - Where is source code? Git - SVN - 
+		- URL 
+		- ACCESS - BRANCH
+		
+Q3 - WHAT IS YOur Builder?? - maven - gradle- msbuild - bash - shell 
+		- is it installed in agent?
+		- command to call builder
+
+Q4 - How often you want to trigger this project?
+
+Q5 - Whom you want to send imm feedback and how?
+---------------------------------
+
+Q1 - What is your technology? Java - python - ruby - dotnet		DONE
+		- is it installed in agent
+		- version
+		JAVA
+		1.8
+		
+Q2 - Where is source code? Git - SVN - 					DONE
+		- URL 
+		- ACCESS - BRANCH
+		git
+		https://github.com/devops-school/helloworld-java-maven	
+		
+Q3 - WHAT IS YOur Builder?? - maven - gradle- msbuild - bash - shell 
+		- is it installed in agent?
+		- command to call builder
+		maven
+		$ mvn compile
+
+Q4 - How often you want to trigger this project?			DONE
+		@hourly
+
+Q5 - Whom you want to send imm feedback and how?
+		rajesh@devopsschool.com
+
+=====================================================================
+How can we schedule jobs in jenkins?
+============================================================
+Trigger a JOB 
+https://www.devopsschool.com/blog/how-to-schedule-and-trigger-a-jenkins-job-automatically/
+		@Fixed TIME		= Build periodically
+		@Fixed TIME BUT only If SCM changes	= Poll SCM
+		@Build this job when other Job are build.	= Build after other projects are built
+		@Build this jobs using Remote Script	= Trigger builds remotely (e.g., from scripts)
+		@Build this job when someone Pushes code into github/bitbucket = GitHub hook trigger for GITScm polling
+		https://www.devopsschool.com/blog/how-to-build-when-a-change-is-pushed-to-github-in-jenkins/
+
+		@Build THAT job after This job build
+		--> post build action -> Build another job
+
+curl -X POST http://devops:118cf1be9ec0fda25ed0da0b4465e9618f@13.127.163.131:8080/job/job1/build?
+
+
+http://13.127.163.131:8080/job/job1/
+
+==========================================================================
+How to Integ all other tools
+-------------------------------
+Rule 1 - You should know a tool which you are integrating	DONE
+Rule 2 - Install a plugins					DONE			
+Rule 3 - Config a plugins in "Configure System"			DONE
+Rule 4 - Use a plugins in JOB
+-----------------------------------
+SonarQube - Junit 
+
+SonarQube
+	Server		DONE
+
+	Scanner
+	Code
+
+===============================================
+Imm Feedback
+		Email
+			Mailer Plugin - Basic one
+				- Configure? with SMTP and other
+				- Use it on job
+			Email Extension Plugin - Advance	
+				- Configure? with SMTP and other	http://13.127.163.131:8080/configure
+				- Use it on job
+		Chat
+			- Install plugins
+			- config plugins
+			- use plugins
+				Slack
+				Team
+				Skype
+		Dashboard === PIPELINE
+				Manual - Build Pipeline - Using Existing jobs
+				Automated - Pipeline - Using Coding - Recommm
+						jenkinsfile
+						- Groovy DSL
+
+CI  - Cont Inter
+CD	
+	Continous Delivery vs Continous Deployment
+	
+===================================================================
+Parametirzed
+
+How to add Node
+	- VMS		
+		- Demo
+		- JRE install
+		IP 	13.127.163.131
+		USER	centos
+		PASS	key
+		workdir	/tmp/jenkins
+	- Cloud
+	- Container
+================================================================
+
+Rajesh Kumar
+================
+rajesh@devopsschool.com
+
+=================================================================
+
+
+
