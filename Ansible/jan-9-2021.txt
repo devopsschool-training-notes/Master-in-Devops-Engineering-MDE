@@ -1,0 +1,408 @@
+What is Ansible?
+-------------------
+	Config mgmt tool
+	Written in Python
+	From Redhat
+	Release
+		Ansible - Community - Free - Open Source - Command
+		Ansible Tower - GUI - Paid
+		Ansible AWX - Free - GUI but most latest NOT tested version of Ansible Tower- no support
+
+	Version
+		2.X
+	Ansible is agent less
+
+
+Config mgmt
+-------------------
+	Server(S) config mgmt
+
+What is there in the SERVER?
+-----------------------------------
+HARDWARE
+	CPU + RAM + STORAGE
+	HYPERVISOR
+		Ansible	
+SOFTWARE			Change a config aka properties using some action	
+	OS + APP(S)
+	file			C | D | E ---
+	directory		C | D | E ---
+	package			I R U 	
+	services		S S R E D 
+	yum			I R U
+	apt			I R U
+	apache			
+
+PEOPLE 
+	USERS + GROUPS
+PROCESS
+	APPLICATION WHICH IS RUNNING
+	SYSTEM POLICIES
+
+
+PHYSCIAL ---> VIRTUAL -> Container
+----------------------------------
+	  RUN TIME ENV
+----------------------------------------------------
+Why Ansible?
+	We manage 100s of server.
+	ENV = DEV + QA + Preprod + Prod
+	------------------------------------
+			PROD
+	--------------------------------------
+	LB(S) + WEBS(S) + APP(S) + DB(S) + Cache(S)  + QUEQUE(S)  + FS(S)  + CDN (S) 
+	-------------------------------------------------------------------------------
+	10  -- 100 --- 100 ---- 10 ------ 10 ----- 5 --- 5 - -2
+		    
+	APP
+	1 Dep Takes ---- 30 mins
+	100 X 30 ===== 3000 mins
+	---------------------
+	WE NEED A TOOL FOR PARALLEL Deployment for MULTIPLE SERVERS
+
+	BASH --> WINDOWS - NO 	= 5 VERSION
+	PS --> LINUX -- NO  	= 5 VERSION
+
+	WE NEED A TOOL PLATFORM INDEPENTDENT
+	----------------------------
+	JAVA  - PYTHON
+	Ansible is EASY TO LEARN - TEST - DEBUG - EXTEND - SHARE 
+
+	Ansible is IDEOMPOTENT
+	--------------------
+	DESIRE ==EQ== ACTUAL === NO change
+
+	DESIRE ==NEQ== ACTUAL === change
+
+	1 Deployment ---> 10 THINGS --- 10 mins ------
+	2 Deployment ---> 1 things --> 1 mins
+
+Other tools?
+	Programming - Ansible --> Puppet --> Chef --> Cfengine -> Salt
+	GUI -> Udeploy -> Octopus Deploy
+===============================================================
+Architecture of Ansible
+---------------------------------------------------------------
+Human ===> Ansible control Server(ACS) ====> Ansible Remote Server(S)
+
+==========================================================
+===ACS ==============================================> ARS
+Linux 64 BIT						ANY
+Python							LINUX - PYTHON | WIn - DOTNET - PS3
+Ansible							NO Ansible install req - NOTHING
+	Executable
+	Plugins	  --- FEATURE IN ANSIBLE
+	Modules
+	Config
+
+ACS		----------------------------->		LINUX - SSH (default)
+							WINDOWS - WINRM (default)
+
+=================================================================================
+Components of ACS
+----------------------------------------------------------------------------------
+Ansible							
+	Executable
+	Plugins	  --- FEATURE IN ANSIBLE - PYTHON PROGRAM
+	Modules	------ PYTHON PROGRAM
+			BUT ITS A UNIT OF TASK TO BE DONE(Execute) in ARS
+			Require Parameter
+			copy (module)
+				- source 
+				- destination
+			delete (module)
+				- filename
+			yum (module)
+				- install
+				- httpd
+			----
+			3000 +
+			https://docs.ansible.com/ansible/2.8/modules/modules_by_category.html
+	Config
+		Change a behaviour of ansible Executable
+		ansible.cfg
+
+inventory	
+	-- LIST	of IP addresss of ARS
+           ----	
+	-- Command Line
+	-- file
+		group [ default -- all ]]
+	-- Script
+
+filnane - inventory
+
+10.4.5.6
+10.4.5.7
+10.4.5.8
+10.4.5.9
+10.4.5.1
+--------------------
+filnane - inventory
+
+[web]
+10.4.5.6
+10.4.5.7
+
+[db]
+10.4.5.8
+10.4.5.9
+10.4.5.1
+--------------------
+
+Playbook
+--------------------------------------------------
+	- its a YAML FILE
+	- Contain
+		Plays
+
+	- Play Contents
+		- HOST:	group name of inventory
+		- Tasks:
+			TASK 1 - Module and Its param.
+			TASK 2 - Module and Its param.
+			TASK 3 - Module and Its param.
+	- Play Contents
+		- HOST:	group name  of inventory
+		- Tasks:
+			TASK 1 - Module and Its param.
+			TASK 2 - Module and Its param.
+			TASK 3 - Module and Its param.
+
+==========================================================
+What you want to deploy?
+--------------------------------
+ - install httpd in centos	== yum (name & state - present)
+ - copy index.html in centos	= copy ( dest & src )
+ - start httpd in centos	= service ( name and state)
+
+"ansible module for"
+==========================================================================
+ACS - 13.234.186.90
+https://www.devopsschool.com/blog/how-to-install-ansible-in-centos-7-rhel-7/
+
+ 1  clear
+    2  ls
+    3  sudo yum install wget -y
+    4  wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+    5  yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+    6  sudo rpm -i epel-release-latest-7.noarch.rpm
+    7  sudo yum install ansible -y
+    8  clear
+    9  ansible --version
+   10  cd /bin
+   11  ls ansi*
+   12  history
+
+https://www.devopsschool.com/blog/anatomy-of-ansible-play-defined/
+
+ARS
+13.234.186.90
+3.6.88.246
+
+
+Authentication 
+	USER NAME and PASS
+	USER and KEy
+Authorization
+	sudo
+	
+=========================================================
+
+---
+- name: update web servers
+  hosts: app
+  vars:
+    myname: "rajesh kumar"
+    package: "httpd"
+    service: "httpd"
+
+  tasks:
+  - name: Install the latest version of Apache
+    yum: name={{ package }}      
+  - name: Copy file with owner and permissions
+    copy:
+      src: index.html
+      dest: /var/www/html/index.html
+  - name: Start service httpd, if not started
+    service: name={{ service }} state=started            
+  - name: Ansible debug example
+    debug:
+      msg: "{{ myname }}"
+  - name: Template work
+    template: src=second.html.j2 dest=/var/www/html/second.html
+
+========================================================================
+
+PRB --- HARDCODING VALUES in the YAML - 40 
+https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html#variable-precedence-where-should-i-put-a-variable
+https://www.devopsschool.com/tutorial/ansible/variables/index.html
+
+PRB --- Manage Multiple Playbook
+
+PRB --- templating
+		introl var based some cond with dif value
+====================================================
+https://www.devopsschool.com/tutorial/ansible/
+Rule 2 - template file must be in .j2
+Rule 2 - Use Module name "template"
+
+
+---
+- name: update web servers
+  hosts: app
+  vars:
+    myname: "rajesh kumar"
+    package: "httpd"
+    service: "httpd"
+
+  tasks:
+  - name: Install the latest version of Apache
+    yum: name={{ package }}      
+  - name: Copy file with owner and permissions
+    copy:
+      src: index.html
+      dest: /var/www/html/index.html
+  - name: Start service httpd, if not started
+    service: name={{ service }} state=started            
+  - name: Ansible debug example
+    debug:
+      msg: "{{ myname }}"
+  - name: Template work
+    template: src=second.html.j2 dest=/var/www/html/second.html
+
+https://www.devopsschool.com/blog/ansible-include-scnario-with-list-of-plays-or-tasks/
+
+FIRST
+--------------
+---
+- name: update web servers
+  hosts: app
+  vars:
+    myname: "rajesh kumar"
+    package: "httpd"
+    service: "httpd"
+
+  tasks:
+  - name: Install the latest version of Apache
+    yum: name={{ package }}      
+  - name: Copy file with owner and permissions
+    copy:
+      src: index.html
+      dest: /var/www/html/index.html
+
+SECOND
+--------------
+---
+- name: update web servers
+  hosts: app
+  vars:
+    myname: "rajesh kumar"
+    package: "httpd"
+    service: "httpd"
+
+  tasks:
+  - name: Start service httpd, if not started
+    service: name={{ service }} state=started            
+  - name: Ansible debug example
+    debug:
+      msg: "{{ myname }}"
+  - name: Template work
+    template: src=second.html.j2 dest=/var/www/html/second.html
+
+
+
+------main.yaml------------
+- include: first.yaml
+- include: second.yaml
+
+
+
+FIRST
+--------------
+---
+- name: update web servers
+  hosts: app
+  vars:
+    myname: "rajesh kumar"
+    package: "httpd"
+    service: "httpd"
+
+  tasks:
+  - name: Install the latest version of Apache
+    yum: name={{ package }}      
+  - name: Copy file with owner and permissions
+    copy:
+      src: index.html
+      dest: /var/www/html/index.html
+  - include: sometasks.yaml
+
+----------sometasks.yaml-----
+  - name: Start service httpd, if not started
+    service: name={{ service }} state=started            
+  - name: Ansible debug example
+    debug:
+      msg: "{{ myname }}"
+  - name: Template work
+    template: src=second.html.j2 dest=/var/www/html/second.html
+
+=========================================================================================================
+role
+===========================
+directory structure To manage - share with world
+	Multiple TASK(S) file
+	Multiple VARs(S) file
+	Multiple template(S) file	
+	Multiple file(S) used in a playobok
+	Handlers
+	lib
+============================
+	AT ONE PLACE.
+
+
+
+
+====================site.yaml======================
+
+---
+- name: update web servers
+  hosts: app
+
+  roles:
+  - web
+  - geerlingguy.java
+
+
+====================================
+What is Ansible?
+Why Ansible?
+Other tools?
+Ansible Arch?
+How to install Ansible
+Components of ACS - ARS
+Inventory
+	group
+playbook
+	--var
+	--tasks
+	template
+	
+role.
+===============================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
