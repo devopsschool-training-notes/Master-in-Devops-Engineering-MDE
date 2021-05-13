@@ -1,0 +1,57 @@
+Master - 
+13.233.5.141
+
+Worker 
+65.2.121.98
+
+Workstation 
+13.233.5.141
+========================================
+How to setup k8s clustors?
+
+Master
+----------------------------
+- API Server -> POD -> Container -> Docker Image -> Google Registry
+- ETCD -> POD -> Container -> Docker Image -> Google Registry 
+- Controller Mgr -> POD -> Container -> Docker Image -> Google Registry
+- Schedular -> POD -> Container -> Docker Image -> Google Registry
+
+- Kubelet
+- Docker
+- Kubeclt
+- Kube Proxy -> POD -> Container -> Docker Image -> Google Registry
+
+Worker
+----------------------------
+- Kubelet
+- Docker
+- Kubeclt
+- Kube Proxy -> POD -> Container -> Docker Image -> Google Registry
+
+Workstation
+---------------------------
+kubectl 
+
+Manual Way using kubeadm
+========================
+https://www.devopsschool.com/blog/setting-up-kubernetes-clusters-using-kubeadm-manual-way-in-rhel-7-centos7/
+
+
+To start using your cluster, you need to run the following as a regular user:
+
+  mkdir -p $HOME/.kube
+  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+Alternatively, if you are the root user, you can run:
+
+  export KUBECONFIG=/etc/kubernetes/admin.conf
+
+You should now deploy a pod network to the cluster.
+Run "kubectl apply -f [podnetwork].yaml" with one of the options listed at:
+  https://kubernetes.io/docs/concepts/cluster-administration/addons/
+
+Then you can join any number of worker nodes by running the following on each as root:
+
+kubeadm join 172.31.9.62:6443 --token l17d5x.4cgl857udbfau9ac \
+        --discovery-token-ca-cert-hash sha256:44df17e164ace569949c6937234cdf86a7efc8aca9f64b2e64053d0037bc5925
