@@ -1,0 +1,137 @@
+Agenda
+=====================================
+Day01: Friday
+========================
+Gitlab  - 03-04 hours
+Jenkin  - 5 hours
+ 
+Day02 - Saturday
+========================
+Docker – 1 day
+=====================================
+10 AM - 6 PM
+-----------------
+2 BREAK - 15 mins
+	11:30
+	3:30
+1 LUNCH - 1:00 - 2:00
+=====================================
+======================================
+GIT using Gitlab
+======================================
+Branching & merging Strategy
+Undoing
+CICD using Git(Gitlab)
+	---
+SourceTree
+Code Review in gitlab
+Code Review using Gerrit
+Gitlab - HA
+======================================
+What is git?
+	Versioning tool
+	For what?
+		- Source Code
+	Distributed
+	------------
+	Linus Tovald
+	Free & Open Source
+	Playtform Inde
+Why git?
+	Versioning of Source Code
+	- Who
+	- What
+	- When
+	- Why
+	- Where
+
+Other tool
+	RCS -> CVS -> SVN -> GIT
+
+How to work with git?
+---------------------
+How to install a git?
+	--------------------
+	Windows
+		EXE -> git-scm.com
+			gitbash
+			- tool where u can run basic of linux commands being in windows
+			GUI - SourceTree by Atlassion
+	Linux - Rhel
+		yum install git -y
+	Linux - Ub
+		apt-get install git -y
+	Mac 
+		DMG -> git-scm.com
+=====================================
+Working with Git - Git work flow
+--------------------------------------------------
+Step 1 - Create a repo
+$ git init
+
+### git config user.name "Rajesh Kumar"
+### git config user.email "rajesh@devopsschool.com"
+### git config --list
+
+Step 2 - Version ur file. -- Create ur file
+
+Step 3 - Add a file into git repo
+- git add filename
+
+Step 4 - commit a file into git repo
+- git commit -m"first commit"
+
+Step 5 - How to see a commit -
+$ git log
+commit 2d3a5a9c1defada82c39f5fc18ee493ccca38afd (HEAD -> master)
+Author: Rajesh Kumar <rajesh@devopsschool.com>
+Date:   Fri May 14 10:58:53 2021 +0530
+
+    first commit
+
+$ git show 2d3a5a9c1defada82c39f5fc18ee493ccca38afd
+commit 2d3a5a9c1defada82c39f5fc18ee493ccca38afd (HEAD -> master)
+Author: Rajesh Kumar <rajesh@devopsschool.com>
+Date:   Fri May 14 10:58:53 2021 +0530
+
+    first commit
+
+diff --git a/file1.java b/file1.java
+new file mode 100644
+index 0000000..cb63ede
+--- /dev/null
++++ b/file1.java
+@@ -0,0 +1 @@
++This is Line#1
+\ No newline at end of file
+==========================
+===================================================================
+
+How do we collobrate?
+===========================
+
+PVT
+	ONLY ALLOWED PERSON CAN SEE
+	OWNER AND ALLOWED PERSON CAN PUSH
+
+PUB 
+	ANYONE CAN SEE
+	ONLY OWNER CAN PUSH
+
+=============================================
+git clone url
+===============================================
+Entire Repo copied to local
+	- add file
+	- commit
+	- push
+
+
+
+
+
+
+
+
+
+
