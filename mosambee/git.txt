@@ -21,12 +21,16 @@ GIT using Gitlab
 ======================================
 Branching & merging Strategy
 Undoing
-CICD using Git(Gitlab)
+
+CICD using Git(Gitlab)	-  YOUTUBE - TheDevOpsSchool | scmGalaxy | Debug.school
 	---
 SourceTree
-Code Review in gitlab
-Code Review using Gerrit
-Gitlab - HA
+Code Review in gitlab	- SKIP
+Code Review using Gerrit - YOUTUBE - TheDevOpsSchool | scmGalaxy | Debug.school
+Gitlab - HA - Refer doc.
+		SITE
+		DB
+		FS - repo
 ======================================
 What is git?
 	Versioning tool
@@ -125,6 +129,42 @@ Entire Repo copied to local
 	- add file
 	- commit
 	- push
+================================================================
+Branching & merging Strategy
+Conflict
+Undoing
+	Git revert &
+	Git rebase
+Git checkout
+ 
+========================================
+Branching & merging Strategy
+https://docs.microsoft.com/en-us/azure/devops/repos/tfvc/branching-strategies-with-tfvc?view=azure-devops
+
+Branch Kind in git
+	- Local	= READ + WRITE
+	- Remote = ONLY READ
+
+Types of merging in git
+=============================
+- Fast Forwarding
+- 3Way Merge == Recursive
+- cherry pick
+
+
+
+
+
+
+THIS IS LINE#11
+THIS IS LINE#2
+
+Undoing
+---- How to get rid of file which is in Working Dir.
+
+
+
+
 
 
 
