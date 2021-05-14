@@ -1,0 +1,108 @@
+What is jenkins?
+-------------------
+	CI tool
+	Free
+	Open Source
+	Dev in java
+	Community driven
+
+What is CI?
+--------------
+Auto Build + Auto Test
+----------------------
+     Imm Feedback
+
+Plan -> Code -> Analyze -> Build -> Pack -> Archiva -> Deploy2QA  -> AT --> CC 
+=================================================================================
+jira -  git   - sonarq   -- maven -- jar --- nexus -- ansible --- selenium -- jaococ
+
+					ALL PASSES = RELEASE
+					IF ONE FAILED - REPEAT 
+===================================================================================
+					Jenkins
+						Integ
+						Schedule
+						Automate
+						Imm Feedback
+
+========================
+How to install it?
+https://www.devopsschool.com/tutorial/jenkins/jenkins-installation-and-configuration.html
+
+
+============================
+http://15.206.81.210:8080/
+rajesh
+rajesh123
+======================================================================
+How to get started? Jenkins work flow?
+
+Project == Job == Item
+	Step 1
+	Step 2 
+	Step 4 
+==================================================
+============================================================================
+Secret formula to setup Jobs Jenkins?
+----------------------------------------
+Q1 - What is your technology? Java - python - ruby - dotnet
+		- is it installed in agent
+		- version
+		
+Q2 - Where is source code? Git - SVN - 
+		- URL 
+		- ACCESS - BRANCH
+		
+Q3 - WHAT IS YOur Builder?? - maven - gradle- msbuild - bash - shell 
+		- is it installed in agent?
+		- command to call builder
+
+Q4 - How often you want to trigger this project?
+
+Q5 - Whom you want to send imm feedback and how?
+---------------------------------
+
+Q1 - What is your technology? Java - python - ruby - dotnet		DONE
+		- is it installed in agent
+		- version
+		JAVA
+		1.8
+		
+Q2 - Where is source code? Git - SVN - 					DONE
+		- URL 
+		- ACCESS - BRANCH
+		git
+		https://github.com/devops-school/helloworld-java-maven	
+		
+Q3 - WHAT IS YOur Builder?? - maven - gradle- msbuild - bash - shell 
+		- is it installed in agent?
+		- command to call builder
+		maven
+		$ mvn compile
+
+Q4 - How often you want to trigger this project?			DONE
+		@hourly
+
+Q5 - Whom you want to send imm feedback and how?
+		rajesh@devopsschool.com
+
+
+
+
+Excercise -
+https://www.devopsschool.com/blog/configure-jenkins-first-job-of-java-code-base-with-maven-build-tool/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
