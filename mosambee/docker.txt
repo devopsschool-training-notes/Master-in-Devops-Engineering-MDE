@@ -1,0 +1,217 @@
+http://15.206.81.210:8080/
+rajesh
+rajesh
+===================
+What is Pipeline?
+-----------------------
+https://devopsschool.com/path/
+Build -> Test -> Package -> Deploy
+==========================================
+LAZY - TAKE MORE TIME - Existing
+Intel - TAKE LESS TIME - Coding
+=================================================
+=================================================================================
+
+What is Docker?
+------------------
+	Container Mgmt tool/platform
+	Codded in Golang
+	by Soloman
+	Release
+			Docker Community - FREE
+			Docker Enter - FREE
+	20.X
+	2014....
+
+
+	Tool
+		Save time
+		Save cost
+		Impro Quality
+		------------------------
+		WHILE RUNNING APPS in DATACENTER
+
+	What is Container?
+	=========================================
+	HAS 
+		1 NET
+		1 PID
+		1 MNT	- Comes from ONE COPY of image & get attached to USER
+			ATTACHED to 1 USER
+
+What are the resources need to run 1 APP?
+	     ---------
+
+HARDWARE
+	OS				NEED	CAN GET		ALLOWED	
+	  	USER			1	INFINITE	INFINITE			
+	 	ROOT FILESYSTEM		1	INFINITE	1	
+		PID MAP			1	INFINITE	1	
+		NETWORK 		1	INFINITE	1	
+===========================================================
+OS
+	KERNAL
+		
+
+kernel
+The kernel is a computer program at the core of a computer's operating system that has complete control over everything in the system.
+	NAMESPACE
+		USER NS  - Initiate 1 - U get 1 user
+		MNT NS	 - Initiate 1 - U get 1 ROOT FS
+		PID NS   - Initiate 1 - U get 1 PID MAP
+		NET NS	 - Initiate 1 - U get 1 NET 
+	CRGOUPS
+	CAPABILITES	- ROOT OR NOT ROOT
+		
+FILESYSTEM
+	Collection of files/dir for some purpose.
+		
+	BOOT FS	
+		KERNEL
+	ROOT FS
+	USER FS
+	APP FS
+
+Why 1 is ALLOWED by OS
+================================
+Ans - PC
+
+Are you running App in PC?????? NOW?
+=====================================
+	CPU 
+	RAM
+	STORAGE
+==============================================================
+What is Container?
+===============================================
+EVOUTION OF COMPUTING
+===============================================
+2000			INTERNET
+
+PHYSICAL SERVER		VIRTUAL SERVER
+
+=============================
+How to install docker
+https://devopsschool.com/tutorial/docker/install-config/docker-install-commuityedition-centos-rhel.html
+
+docker Arch?
+=========================
+Human -> Docker Client ----> Docker Deamon(Server) ---> ContainerD -- Kernal 
+       ============================================
+			Docker Engine
+
+ 566  docker -v
+  567   docker -h
+  568  clear
+  569   docker -h
+  570  clear
+  571  docker info
+  572  history
+
+
+
+
+Docker ComponentS
+=============================
+Docker Engine
+
+Docker Images
+	ROOT FS 	+ U FS + A FS
+	ubuntu		+ root  + tomcat/jira/apc/
+	centos
+	windows 2019
+	
+ubuntu === ub rfs
+apache ==== rootfs + user + apache	
+------------------------
+One copy of image get attached to each container
+From Image - you can get as many containers.
+
+VM Images - OS Image -
+	BOOT FS + ROOT FS + U FS + A FS
+	LINUX
+	WINDOWs
+====================================
+
+Registry
+	repository
+		containers IMAGE FS
+	PUBLIC
+		hub.docker.com
+	PVT
+		artifactory
+
+Container
+	I ask "Client" to create a container
+	Client Ask Server
+	Server CHECK
+		IMAGE Exist - YES
+			Ask - ContainerD
+					1 MNT from Image+1NET+1PID attached to 1 user
+		IMAGE EXIST - NO
+		- Download - 1 MNT from Image+1NET+1PID attached to 1 user
+			
+
+Working with container - Lifecycle of container
+=======================================
+Create -> Start -> Stop -> Start -> Restart -> Pause -> Unpause -> kill --> Remove
+
+
+Working With Vms - Lifecycle
+-----------------------
+Create -> Start -> Stop -> Start -> Restart -> Pause -> Unpause -> kill --> Remove
+
+ 580  docker images
+  581  docker pull httpd
+  582  docker images
+  583  clear
+  584  docker ps
+  585  docker ps -a
+  586  clear
+  587  docker images
+  588  docker create httpd
+  589  docker ps
+  590  docker ps -a
+  591  clear
+  592  docker ps -a
+  593  docker start 8a510cc29427
+  594  docker ps
+  595  docker stop 8a510cc29427
+  596  docker ps -a
+  597  clear
+  598  docker start 8a510cc29427
+  599  docker ps
+  600  docker restart 8a510cc29427
+  601  docker ps
+  602  docker pause 8a510cc29427
+  603  docker ps
+  604  docker unpause 8a510cc29427
+  605  docker ps
+  606  clear
+  607  docker kill 8a510cc29427
+  608  docker ps
+  609  docker ps -a
+  610  docker rm 8a510cc29427
+  611  docker ps -a
+  612  history
+=========================================
+
+How to login lab machine
+=======================
+15.206.81.210
+centos
+centos123
+
+$ sudo -s
+
+
+
+
+
+
+
+
+
+
+
+
