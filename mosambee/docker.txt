@@ -205,13 +205,62 @@ centos123
 $ sudo -s
 
 
+RUN
+========================
+PULL + CREATE + START + GET INSIDE a Container
+
+RUN -d
+========================
+PULL + CREATE + START + DO NOT GET INSIDE a Container
+
+========================================================
+How to use container?
+
+How to use VM?
+===================
+1. Go inside
+
+exec
+	You can execute an Executable inside a container.
+	docker exec e25e52d54b23 /bin/bash
+	docker exec -it e25e52d54b23 /bin/bash
+		
+attach
+	it attached to PID 1 exeutables
+
+	When u have PID1 === SHELL
+	you can go inside
+
+2. Access from Outside through network
+
+docker run -d -p 80:80 httpd
+		EXT:INT
+docker run -d -p 81:80 httpd
 
 
 
-
-
-
-
-
+49  docker exec b912450942b1 ps -eaf
+  650  which ps
+  651  docker run -d jenkins
+  652  docker run -d jenkins/jenkins
+  653  clear
+  654  docker ps
+  655  docker exec e25e52d54b23 ps -eaf
+  656  clear
+  657  ls /
+  658  docker exec e25e52d54b23 ls /
+  659  docker exec e25e52d54b23 mkdir /rajesh
+  660  docker exec e25e52d54b23 mkdir /tmp/rajesh
+  661  ls /tmp
+  662  cleatr
+  663  clear
+  664  docker exec e25e52d54b23 ls /tmp/
+  665  clear
+  666  docker exec e25e52d54b23 more /etc/passwd
+  667  docker exec e25e52d54b23 ps -eaf
+  668  clear
+  669  more /etc/passwd
+  670  clear
+  671  ls
 
 
