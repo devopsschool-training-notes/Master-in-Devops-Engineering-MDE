@@ -1,0 +1,286 @@
+Project - DevopsX
+
+- Dev
+	coding for the product
+- QA
+	coding for testing a prod
+- IT/Ops
+	coding for infra
+- Network
+	coding for infra
+- Manager
+- Client 
+- Prod Owner
+=====================================
+Plan - Architect -> Jira
+Coding - Dev-QA-Ops -> Git (JAVA)
+Code Analysis -	SonarQube
+Build - Maven
+Unit Testing - Junit 
+Package - Jar - war
+Archive - Artifactory
+Deploy2Qa - Ansible
+A Tesing - Selenium
+Code Coverage - Jacoco
+=====================================================
+PLAN -> Code -> Ana -> Build -> UT -> Pack -> Arch -> Dep2Qa -> AT ->CC
+========================================================================
+Jira - Git - Sonar - Maven - Junit - Jar - Arti - Ansible - Sele - jacoc
+=========================================================================
+				Jenkins
+					CI - Cont Integ
+
+Working with Git? Versioning ur file.
+=======================================
+
+Step 1 - install git in your laptop
+		Windows - .exe
+				git bash = can run basic linux commands as well. 
+		Linux   - 
+			centos/rhel - sudo yum install git
+			ub - sudo apt-get install git
+		Mac - .dmg
+		GUI - sourcetree
+
+Step 2 - Create your own repo (files + history)
+  501  cd /e
+  502  pwd
+  503  start .
+  504  mkdir gitrepos
+  505  cd gitrepos/
+  506  clear
+  507  pwd
+  508  history
+ 511  mkdir repo1
+  512  cd repo1/1
+  513  cd repo1/
+  514  clear
+  515  start .
+  516  git init	================>
+  517  history
+	
+
+Step 3 - Create your code
+
+
+Step 4 - Add a files into GIT
+git add file1.java
+
+
+ONE TIME
+====================
+git config user.name "Rajesh Kumar"
+git config user.email "rajesh@devopsschool.com"
+git config --list
+
+Step 5 - Committing a files into GIT
+git commit -m"This is my first file"
+
+$ git commit -m"This is my first file"
+[master (root-commit) cd92002] This is my first file
+ 1 file changed, 4 insertions(+)
+ create mode 100644 file1.java
+
+
+Step 5 - How to see lits of commits - history of repo
+git log
+
+cd920021c0565d1182b31f2dda4717cb7d258d7b
+SHA OBJECT ID
+OR 
+COMMIT ID
+OR 
+CHECK SUM
+
+$ git show cd920021c0565d1182b31f2dda4717cb7d258d7b
+commit cd920021c0565d1182b31f2dda4717cb7d258d7b (HEAD -> master)
+Author: Rajesh Kumar <rajesh@devopsschool.com>
+Date:   Mon May 17 14:53:39 2021 +0530
+
+    This is my first file
+
+diff --git a/file1.java b/file1.java
+new file mode 100644
+index 0000000..db45065
+--- /dev/null
++++ b/file1.java
+@@ -0,0 +1,4 @@
++This is JAVA CODE. LINE # 1
++This is JAVA CODE. LINE # 2
++This is JAVA CODE. LINE # 3
++This is JAVA CODE. LINE # 4
+\ No newline at end of file
+==================================================================
+ 526  git commit -m"This is my first file"
+  527  history
+  528  cleart
+  529  clear
+  530  git log
+  531  git show cd920021c0565d1182b31f2dda4717cb7d258d7b
+  532  clear
+  533  history
+  534  git show cd920021c0565d1182b31f2dda4717cb7d258d7b
+  535  clear
+  536  ls
+  537  git status
+  538  git add file2.java
+  539  git status
+  540  clear
+  541  ls
+  542  vi file1.java
+  543  github
+  544  git status
+  545  git add file1.java
+  546  git status
+  547  git commit -m"this is second commit" file1.java
+  548  git log
+  549  git show d128805ffd07cde85cc1de1cccd6047af1f04af4
+  550  clear
+  551  touch file3.txt
+  552  ls
+  553  git status
+  554  git add .
+  555  git status
+  556  git commit -m"all"
+  557  git status
+  558  ls
+  559  git log
+  560  history
+========================================
+
+
+Add 
+Editing
+Deleting 
+Rename a file
+Working a dir
+Moving a file
+
+ 566  git rm file3.txt
+  567  ls
+  568  git status
+  569  git commit -m"deleting this file"
+  570  ls
+  571  clear
+  572  git log
+  573  clear
+  574  git log --oneline
+  575  git checkout 87aac19
+  576  clear
+  577  ls
+  578  pwd
+  579  git checkout master
+  580  clear
+  581  ls
+  582  git log --oneline
+  583  clear
+  584  ls
+  585  git mv file1.java file11.java
+  586  git status
+  587  git commit -m"renming"
+  588  ls
+  589  git status
+  590  clear
+  591  mkdir src
+  592  ls
+  593  git status
+  594  vi src/devops1.java
+  595  git status
+  596  git add .;git commit -m"adding dir"
+  597  git status
+  598  git log
+  599  '
+  600  git log --oneline
+  601  ls
+  602  git mv file2.java src/
+  603  git add .;git commit -m"moving a file"
+  604  git log --oneline
+  605  history
+
+===============================================================================================
+Github'
+	- Manage multiple Repos	DONE
+	- GUI			DONE
+	- WIKI			DONE
+	- iSSUES		DONE
+	- ROLES BASED		DONE
+				ORG - TEAM - USER --> ASSIGN ACCES TO A TEAM
+	- Integ with other tools
+	======
+	
+
+How to use SSH based auth?
+]=============================
+generate a key
+$ ssh-keygen
+
+
+
+
+622  ls
+  623  git clone git@github.com:devopsschool-demo-temporary/17-may-2021.git
+  624  clear
+  625  ls
+  626  cd 17-may-2021/
+  627  start .
+  628  git add .
+  629  git commit -m"adding login issues"
+  630  git push origin master
+  631  history
+
+
+ 501  ls
+  502  git pull origin master
+  503  git remote add origin git@github.com:devopsschool-demo-temporary/17-may-2021.git
+  504  clear
+  505  git pull origin master
+  506  ls
+  507  clear
+  508  history
+
+could you please provide us the youtube channel link ?
+TheDevOpsSchool  scmgalaxy - Debug School
+---------------------------------------------
+from Gora Ravi Kumar to everyone:    5:12 PM
+ssh key ? how to generate it?
+from yashwanth (privately):    5:12 PM
+sir can u create thr whatspp group fot gitup for all the students
+from yashwanth (privately):    5:13 PM
+for github
+from Divyanshu Kishan to everyone:    5:13 PM
+ssh jeys
+from Neha to everyone:    5:13 PM
+what are ssh keys?
+from sateesh to everyone:    5:13 PM
+how it will be useful for 3rd yesr ece students
+from Ankur Bhardwaj to everyone:    5:15 PM
+Can we hide the git repo
+from Rajesh Kumar to everyone:    5:16 PM
+
+
+================================================================
+What is Branching?
+Why ???
+How to create?
+
+What is merging?
+Why we need it?
+How to merge?
+
+
+https://devopsschool-demo-temporary.github.io/rajeshkumar.xyz/
+https://devopsschool-demo-temporary.github.io/rajeshkumar.xyz/
+https://rajeshkumargithub.io/home/index.html
+https://rajeshkumar.github.io/home/
+
+
+
+
+
+
+
+
+
+
+
+
