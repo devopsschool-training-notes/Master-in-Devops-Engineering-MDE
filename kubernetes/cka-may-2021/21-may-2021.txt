@@ -1,0 +1,233 @@
+65.2.79.11
+==========================
+Working with POD
+==========================
+CRUD		
+	CREATE
+		CMD
+			create
+		YAML
+			apply -f
+
+	READ
+		CMD
+			get
+			describe
+
+	UDPDATE
+		CMD
+			edit
+		YAML
+			apply -f
+	
+	DELETE
+		CMD
+			delete
+		YAML
+			delete -f
+
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hello-pod
+  labels:
+    raj: dev
+spec:
+  containers:
+  - name: hello-ctr
+    image: nginx
+    ports:
+    - containerPort: 80
+  - name: hello-ctr
+    image: jenkins/jenkins
+    ports:
+    - containerPort: 8080
+
+
+
+
+ 174  kuebeclt get nodes
+  175  kubectl get nodes
+  176  clear
+  177  kubectl get ns
+  178  kubectl create ns rajesh
+  179  kubectl get ns
+  180  clear
+  181  kubectl create -h
+  182  clear
+  183  kubeclt
+  184  kubectl
+  185  clear
+  186  kubectl api-resources
+  187  .clear'
+  188  clear
+  189  kubectl api-resources
+  190  clear
+  191  ls
+  192  cd k8s/
+  193  ls
+  194  vi pod.yaml
+  195  kubectl create -f pod.yaml
+  196  kubectl get pods
+  197  kubectl get pods -n=rajesh
+  198  kubectl create -f pod.yaml -n=rajesh
+  199  kubectl get pods -n=rajesh
+  200  kubectl get pods -n=rajesh -o wide
+  201  cleart
+  202  clear
+  203  kubectl get -h
+  204  kubectl get pods -h
+  205  clear
+  206  ls
+  207  kubectl get pods --all-namespaces
+  208  clear
+  209  kubectl get pods -n=rajesh
+  210  kubectl describe pod hello-pod -n=rajesh
+  211  clear
+  212  kubectl edit pod hello-pod -n=rajesh
+  213  kubectl describe pod hello-pod -n=rajesh
+  214  q!
+  215  clear
+  216  ls
+  217  vi pod.yaml
+  218  kubectl describe pod hello-pod -n=rajesh
+  219  wq
+  220  clear
+  221  ls
+  222  kubectl apply -f pod.yaml -n=rajesh
+  223  kubectl describe pod hello-pod -n=rajesh
+  224  q!
+  225  clear
+  226  kubectl get pods
+  227  kubectl delete pod hello-pod
+  228  kubectl delete -f pod.yaml -n=rajesh
+  229  clear
+========================================================
+
+How do we use pod?
+=======================================================
+GO INSIDE?
+
+ACCESS FROM OUTSIDE??
+
+
+
+Troubleshooting and Debugging Commands:
+  describe      Show details of a specific resource or group of resources
+  logs          Print the logs for a container in a pod
+  attach        Attach to a running container
+  exec          Execute a command in a container
+  port-forward  Forward one or more local ports to a pod
+  cp            Copy files and directories to and from containers.
+  auth          Inspect authorization
+ 
+
+ 
+
+kubectl port-forward --address 0.0.0.0 pod/hello-pod 8888:80
+
+ debug         Create debugging sessions for troubleshooting workloads and nodes
+ proxy         Run a proxy to the Kubernetes API server
+
+
+
+
+ 230  history
+  231  clear
+  232  kubectl
+  233  clear
+  234  kubectl get pods
+  235  kubectl create -f pod.yaml
+  236  kubectl get pods
+  237  kubectl get pods -o wide
+  238  curl http://10.44.0.5
+  239  clear
+  240  ls
+  241  curl http://10.44.0.5
+  242  clear
+  243  kubectl get pods
+  244  kubectl logs hello-pod
+  245  watch kubectl get pods -o wide
+  246  kubectl logs hello-pod
+  247  watch kubectl logs hello-pod
+  248  clear
+  249  kubectl get pods
+  250  kubectl exec hello-pod ps -eaf
+  251  kubectl exec hello-pod ls
+  252  clear
+  253  kubectl attach hello-pod
+  254  clear
+  255  kubectl exec hello-pod ls
+  256  clear
+  257  kubectl exec -it hello-pod /bin/bash
+  258  clear
+  259  kubectl get pods --o
+  260  kubectl get pods -0
+  261  kubectl get pods -o
+  262  kubectl get pods
+  263  kubectl get pods -o wide
+  264  ping 10.44.0.5
+  265  clear
+  266  kubectl port-forward -h
+  267  clear
+  268  kubectl port-forward --address 0.0.0.0 pod/hello-pod 8888:80
+  269  clear
+  270  ls
+  271  kubectl get pods
+  272  kubectl exec hello-pod ls /tmp
+  273  kubectl cp pod.yaml hello-pod:/tmp
+  274  kubectl exec hello-pod ls /tmp
+  275  ls
+  276  rm -rf pod.yaml
+  277  ls
+  278  clear
+  279  kubectl cp hello-pod:/tmp/pod.yaml .
+  280  ls
+  281  kubectl cp hello-pod:/tmp/pod.yaml .
+  282  kubectl cp -h
+  283  clear
+  284* kubectl cp hello-pod:/tmp/pod./home/centos/
+  285  ks
+  286  ls
+  287  kubectl cp hello-pod:/tmp/ /home/centos/
+  288  kubectl cp -h
+  289  clear
+  290  kubectl exec hello-pod ls /tmp
+  291  kubectl cp hello-pod:/tml/pod.yaml .
+  292  kubectl cp hello-pod:/tmp/pod.yaml .
+  293  ls
+  294  history
+  295  clear
+  296  kubectl cp -h
+  297  clear
+  298  kubectl cp -h
+  299  clear
+  300  kubectl cp hello-pod:/tmp/pod.yaml .
+  301  kubectl cp hello-pod:/tmp/pod.yaml /tmp
+  302  kubectl cp hello-pod:tmp/pod.yaml /tmp
+  303  kubectl cp hello-pod/tmp/pod.yaml /tmp
+  304  ls
+  305  clear
+  306  kubectl auth
+  307  kubectl auth can-i create pod
+  308  kubectl auth can-i delete pod
+  309  kubectl auth can-i delete svc
+  310  kubectl auth can-i delete ns
+  311  kubectl auth can-i delete namespaces
+  312  kubectl auth can-i delete namespace
+  313  clear
+  314  kubectl dbug'
+  315  kubectl bebug
+  316  kubectl debug
+  317  kubectl debug -h
+  318  clear
+  319  history
+
+
+
+
+
+
+
+
