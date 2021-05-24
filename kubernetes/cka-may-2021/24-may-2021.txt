@@ -1,0 +1,440 @@
+Workstation - 65.0.108.98
+=====================================
+Namespace -> POD
+=========================================
+How can we get multiple POD?
+	ONE POD TO MULTIPLE?
+	My Desire#OfPOD ==== Actual#ofPOD
+===============================================
+ReplicationController == rc === DEPrected === ReplicaSets
+===============================================
+Replicate 1 POD to Multiple
+Control The # of PODS must MACTH Desire#OfPOD ==== Actual#ofPO
+======================================================
+CRUD
+
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: hello-rc
+spec:
+  replicas: 5
+  selector:
+    app: hello-world
+  template:
+    metadata:
+      labels:
+        app: hello-world
+    spec:
+      containers:
+      - name: hello-ctr
+        image: nginx
+        ports:
+        - containerPort: 80
+=========================================================
+
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: frontend
+  labels:
+    app: guestbook
+    tier: frontend
+spec:
+  # modify replicas according to your case
+  replicas: 3
+  selector:
+    matchLabels:
+      tier: frontend
+  template:
+    metadata:
+      labels:
+        tier: frontend
+    spec:
+      containers:
+      - name: php-redis
+        image: gcr.io/google_samples/gb-frontend:v3
+
+
+
+
+387  kubectl api-resources
+  388  clear
+  389  kubectl api-resources
+  390  clear
+  391  vi rs.yaml
+  392  kubectl get rs
+  393  kubectl create -f rs.yaml
+  394  kubectl get rs
+  395  kubectl get pods
+  396  clear
+  397  kubectl delete rc hello-rc
+  398  kubectl get pods
+  399  clear
+  400  kubectl get pods
+  401  cler
+  402  clear
+  403  watch kubectl get pods
+  404  kubectl get pods
+  405  kubectl delete pod frontend-hnj6s
+  406  kubectl get pods
+  407  kubectl describe pod frontend-pc7kq
+  408  clear
+  409  history
+
+
+===================================================================================
+
+Deployment
+===============================
+	To Deploy STATIC POD
+	-------------------------
+
+	Replication - 1 TO MANY POD POWERED by ReplicaSets
+	Controller POWERED by ReplicaSets
+	
+	Versioning
+	Rollout New Version without Downtime
+	Rollback to old version without Downtime
+
+
+kubectl create deployment my-dep --image=nginx
+
+
+
+kubectl scale --replicas=8 deploy/my-dep
+
+
+=====================================
+scmgalaxy/nginx-devopsschoolv1
+scmgalaxy/nginx-devopsschoolv2
+
+kubectl create deployment my-dep --image=scmgalaxy/nginx-devopsschoolv1 --replicas=3
+
+kubectl rollout history deploy/my-dep 
+kubectl rollout status deploy/my-dep   
+kubectl rollout undo deploy/my-dep --to-revision=1
+
+
+  history     View rollout history
+
+  pause       Mark the provided resource as paused
+  restart     Restart a resource
+  resume      Resume a paused resource
+
+  status      Show the status of the rollout
+  undo        Undo a previous rollout
+
+
+
+
+
+  232  kubectl
+  233  clear
+  234  kubectl get pods
+  235  kubectl create -f pod.yaml
+  236  kubectl get pods
+  237  kubectl get pods -o wide
+  238  curl http://10.44.0.5
+  239  clear
+  240  ls
+  241  curl http://10.44.0.5
+  242  clear
+  243  kubectl get pods
+  244  kubectl logs hello-pod
+  245  watch kubectl get pods -o wide
+  246  kubectl logs hello-pod
+  247  watch kubectl logs hello-pod
+  248  clear
+  249  kubectl get pods
+  250  kubectl exec hello-pod ps -eaf
+  251  kubectl exec hello-pod ls
+  252  clear
+  253  kubectl attach hello-pod
+  254  clear
+  255  kubectl exec hello-pod ls
+  256  clear
+  257  kubectl exec -it hello-pod /bin/bash
+  258  clear
+  259  kubectl get pods --o
+  260  kubectl get pods -0
+  261  kubectl get pods -o
+  262  kubectl get pods
+  263  kubectl get pods -o wide
+  264  ping 10.44.0.5
+  265  clear
+  266  kubectl port-forward -h
+  267  clear
+  268  kubectl port-forward --address 0.0.0.0 pod/hello-pod 8888:80
+  269  clear
+  270  ls
+  271  kubectl get pods
+  272  kubectl exec hello-pod ls /tmp
+  273  kubectl cp pod.yaml hello-pod:/tmp
+  274  kubectl exec hello-pod ls /tmp
+  275  ls
+  276  rm -rf pod.yaml
+  277  ls
+  278  clear
+  279  kubectl cp hello-pod:/tmp/pod.yaml .
+  280  ls
+  281  kubectl cp hello-pod:/tmp/pod.yaml .
+  282  kubectl cp -h
+  283  clear
+  284  kubectl cp hello-pod:/tmp/pod./home/centos/
+  285  ks
+  286  ls
+  287  kubectl cp hello-pod:/tmp/ /home/centos/
+  288  kubectl cp -h
+  289  clear
+  290  kubectl exec hello-pod ls /tmp
+  291  kubectl cp hello-pod:/tml/pod.yaml .
+  292  kubectl cp hello-pod:/tmp/pod.yaml .
+  293  ls
+  294  history
+  295  clear
+  296  kubectl cp -h
+  297  clear
+  298  kubectl cp -h
+  299  clear
+  300  kubectl cp hello-pod:/tmp/pod.yaml .
+  301  kubectl cp hello-pod:/tmp/pod.yaml /tmp
+  302  kubectl cp hello-pod:tmp/pod.yaml /tmp
+  303  kubectl cp hello-pod/tmp/pod.yaml /tmp
+  304  ls
+  305  clear
+  306  kubectl auth
+  307  kubectl auth can-i create pod
+  308  kubectl auth can-i delete pod
+  309  kubectl auth can-i delete svc
+  310  kubectl auth can-i delete ns
+  311  kubectl auth can-i delete namespaces
+  312  kubectl auth can-i delete namespace
+  313  clear
+  314  kubectl dbug'
+  315  kubectl bebug
+  316  kubectl debug
+  317  kubectl debug -h
+  318  clear
+  319  history
+  320  kubectl
+  321  watch curl http://10.44.0.5
+  322  kubectl get pods
+  323  kubectl get nodes
+  324  clear
+  325  kubectl get rc
+  326  kubectl create -h
+  327  clear
+  328  ls
+  329  vi rc.yaml
+  330  kubectl create -f rc.yaml
+  331  kubectl get pods
+  332  clear
+  333  kubectl get pods
+  334  clear
+  335  kubectl get pods
+  336  kubectl get pods -o wide
+  337  curl http://10.44.0.5
+  338  cler
+  339  clear
+  340  ls
+  341  kubectl get rc
+  342  kubectl describe rc hello-rc
+  343  clear
+  344  kubectl get pods
+  345  kubectl describe pod newrelic-bundle-nri-metadata-injection-admission-create-ppzkm
+  346  clear
+  347  ls
+  348  kubectl create -f pod.yaml
+  349  kubectl get pods
+  350  kubectl describe pod hello-pod
+  351  clear
+  352  kubectl get pods
+  353  kubectl describe pod hello-rc-5rcsf
+  354  clear
+  355  ls
+  356  kubectl get pods
+  357  clear
+  358  ls
+  359  vi rc.yaml
+  360  kubectl apply -f rc.yaml
+  361  kubectl get pods
+  362  clear
+  363  kubectl get pods
+  364  kubectl edit rc hello-rc
+  365  kubectl get pods
+  366  clear
+  367  kubectl get pods
+  368  kubectl edit rc hello-rc
+  369  kubectl get pods
+  370  clear
+  371  kubectl get pods
+  372  clear
+  373  kubectl get pods
+  374  clear
+  375  kubectl get pods
+  376  clear
+  377  kubectl get pods
+  378  clear
+  379  kubectl get pods
+  380  kubectl delete pod hello-rc-55g8f hello-rc-95chv hello-rc-bjlxv hello-rc-czxzc hello-rc-jmnfh hello-rc-ldtw9 hello-rc-m4h9t
+  381  kubectl get pods
+  382  clear
+  383  kubectl get pods
+  384  clear
+  385  kubectl
+  386  clear
+  387  kubectl api-resources
+  388  clear
+  389  kubectl api-resources
+  390  clear
+  391  vi rs.yaml
+  392  kubectl get rs
+  393  kubectl create -f rs.yaml
+  394  kubectl get rs
+  395  kubectl get pods
+  396  clear
+  397  kubectl delete rc hello-rc
+  398  kubectl get pods
+  399  clear
+  400  kubectl get pods
+  401  cler
+  402  clear
+  403  watch kubectl get pods
+  404  kubectl get pods
+  405  kubectl delete pod frontend-hnj6s
+  406  kubectl get pods
+  407  kubectl describe pod frontend-pc7kq
+  408  clear
+  409  history
+  410  clear
+  411  kubectl
+  412  clear
+  413  kubectl create -h
+  414  clear
+  415  kubectl create deployment -h
+  416  clear
+  417  kubectl create deployment my-dep --image=nginx
+  418   kubectl get deploy
+  419  kubectl create deployment -h
+  420  clear
+  421   kubectl get deploy
+  422   kubectl edit deploy my-dep
+  423   kubectl get deploy
+  424   kubectl get pods
+  425  clear
+  426  kubectl delete rs frontend
+  427   kubectl get pods
+  428   kubectl
+  429  clear
+  430   kubectl scale -h
+  431  clear
+  432   kubectl get pods
+  433  clear
+  434  kubectl scale --replicas=8 deploy/my-dep
+  435   kubectl get pods
+  436  clear
+  437  ls
+  438   kubectl get deploy
+  439   kubectl edit deploy my-dep
+  440  clear
+  441   kubectl get deploy
+  442   kubectl get pods
+  443   kubectl describe pod my-dep-5b7868d854-8x5gg
+  444  clear
+  445  kubectl get rs
+  446   kubectl describe pod my-dep-5b7868d854-8x5gg
+  447  clear
+  448  kubectl get deploy
+  449  kubectl describe deploy my-dep
+  450  clear
+  451  kubectl get pods
+  452  kubectl delete pod my-dep-5b7868d854-8x5gg my-dep-5b7868d854-glwlx my-dep-5b7868d854-vzm6b
+  453  kubectl get pods
+  454  clear
+  455  ckear
+  456  clear
+  457  kubectl
+  458  clear
+  459  kubectl rollout -h
+  460  kubectl rollout history -h
+  461  clear
+  462  kubectl get deploy
+  463  kubectl delete deploy my-dep
+  464  clear
+  465  ls
+  466  kubectl create deploy -h
+  467  clear
+  468  kubectl create deployment my-dep --image=scmgalaxy/nginx-devopsschoolv1 --replicas=3
+  469  kubectl get deploy
+  470  kubectl rollout history deploy/my-dep
+  471  kubectl get deploy -o wide
+  472  kubectl get pod -o wide
+  473  clear
+  474  kubectl get pod -o wide
+  475  curl http://10.44.0.6
+  476  kubectl scale deploy/my-dep --replicas=15
+  477  clear
+  478  kubectl scale deploy/my-dep --replicas=15
+  479  kubectl rollout history deploy/my-dep
+  480  kubectl get pod
+  481  clear
+  482  kubectl get pod
+  483  clear
+  484  kubectl get pod
+  485  clear
+  486* l
+  487  kubectl get deploy
+  488  kubectl describe deploy my-dep
+  489  clear
+  490  kubectl rollout history deploy/my-dep
+  491  kubectl
+  492  clear
+  493  kubectl patch -h
+  494  clear
+  495  kubectl patch deploy -h
+  496  clear
+  497  kubectl
+  498  clear
+  499  kubectl rollout -h
+  500  clear
+  501  kubectl get deploy
+  502  clear
+  503  kubectl rollout status deploy/my-dep
+  504  kubectl rollout undo -h
+  505  clear
+  506  kubectl get pods -o wide
+  507*
+  508  curl http://10.44.0.13
+  509  clear
+  510  kubectl get deploy
+  511  kubectl edit deploy my-dep
+  512  kubectl rollout history deploy/my-dep
+  513  kubectl rollout status deploy/my-dep
+  514  clear
+  515  kubectl rollout status deploy/my-dep
+  516  kubectl rollout history deploy/my-dep
+  517  kubectl get pod -o wide
+  518  clear
+  519  curl http://10.44.0.17
+  520  kubectl rollout undo deploy/my-dep --to-revision=1
+  521  kubectl rollout status deploy/my-dep
+  522  clear
+  523  kubectl get pod -o wide
+  524  clear
+  525  curl http://10.44.0.22
+  526  kubectl path deploy -h
+  527  kubectl patch deploy -h
+  528  clear
+  529  history
+
+
+
+
+
+
+
+
+
+
+
