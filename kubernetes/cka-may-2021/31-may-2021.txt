@@ -1,0 +1,192 @@
+Workstation - 65.2.82.11
+
+
+Worker - 13.127.64.214
+
+kubeadm join 172.31.9.62:6443 --token dcyeoh.g1kp0stdxa335i8b --discovery-token-ca-cert-hash sha256:44df17e164ace569949c6937234cdf86a7efc8aca9f64b2e64053d0037bc5925
+
+
+openssl x509 -in /etc/kubernetes/pki/ca.crt -pubkey -noout | openssl pkey -pubin -outform DER | openssl dgst -sha256
+
+  561  kubectl get pods
+  562  kubectl create -f pod.yaml
+  563  kubectl get pods
+  564  kubectl get pods -o wide
+  565  kubectl get pods -o wide --show-lables
+  566  kubectl get pods -o wide --show-labels
+  567  kubectl create service -h
+  568  clear
+  569  kubectl create service clusterip -h
+  570  clear
+  571  kubectl create service clusterip my-cs --tcp=5678:80
+  572  kubectl get svc
+  573  kubectl describe svc my-cs
+  574  clear
+  575  kubectl describe svc my-cs --show-labels
+  576  kubectl get svc my-cs --show-labe
+  577  kubectl get svc my-cs --show-labels
+  578  curl http://10.102.15.37:5678
+  579  clear
+  580  kubectl get svc my-cs --show-labels
+  581  kubectl get pods -o wide --show-labels
+  582  curl http://10.36.0.2
+  583  clear
+  584  kubectl get svc my-cs --show-labels
+  585  kubectl get pods -o wide --show-labels
+  586  kubectl label -h
+  587  clear
+  588  kubectl get svc my-cs --show-labels
+  589  kubectl get pods -o wide --show-labels
+  590  kubectl label pods hello-pod app=my-cs
+  591  kubectl get svc my-cs --show-labels
+  592  kubectl label pods hello-pod app=my-cs
+  593  kubectl get pods -o wide --show-labels
+  594  kubectl describe svc my-cs --show-labels
+  595  kubectl describe svc my-cs
+  596  clear
+  597  curl http://10.102.15.37:5678
+  598  clear
+  599  kubectl get svc my-cs --show-labels
+  600  kubectl get pods -o wide --show-labels
+  601  kubectl describe svc my-cs
+  602  kubectl edit svc my-cs
+  603  clear
+  604  kubectl describe svc my-cs
+  605  kubectl edit pod hello-pod
+  606  kubectl get pods -o wide --show-labels
+  607  kubectl get svc my-cs --show-labels
+  608  kubectl describe svc my-cs
+  609  clear
+  610  kubectl get svc
+  611  kubectl port-forward -h
+  612  clear
+  613  kubectl create svc -h
+  614  kubectl create svc nodeport -h
+  615  clear
+  616  kubectl create service nodeport my-ns --tcp=5678:80
+  617  kubectl get svc
+  618  kubectl descirbe svc my-ns
+  619  kubectl describe svc my-ns
+  620  clear
+  621  kubectl get pods -o wide --show-labels
+  622  kubectl edit svc my-ns
+  623  clear
+  624  kubectl descirbe svc my-ns
+  625  kubectl describe svc my-ns
+  626  kubectl get svc
+  627  clear
+  628  kubectl get svc
+  629  curl http://10.106.171.141:5678
+  630  clear
+  631  kubectl get svc
+  632  kubectl create service loadbalancer my-lb --tcp=5678:80
+  633  kubectl get svc
+  634  kubectl describe svc my-lb
+  635  kubectl edit svc my-lb
+  636  clear
+  637  kubectl describe svc my-lb
+  638  kubectl get svc
+  639  curl http://10.100.32.135:5678
+  640  clear
+  641  kubectl get svc
+  642  clear
+  643  ls
+  644  history
+
+scmgalaxy/nginx-devopsschoolv1
+scmgalaxy/nginx-devopsschoolv2
+
+
+kubectl expose deploy my-dep --port=80 --target-port=80 
+
+
+ 645  clear
+  646  kubectl create deployment my-dep --image=nginx --replicas=10
+  647  kubectl get pods --show-labels
+  648  kubectl get svc
+  649  kubectl get svc my-ns --show-lables
+  650  kubectl describe svc my-ns
+  651  clear
+  652  kubectl get pods --show-labels
+  653* kubectl edit svc my
+  654  clear
+  655  kubectl describe svc my-ns
+  656  clear
+  657  kubectl get svc
+  658  curl http://10.106.171.141:5678
+  659  clear
+  660  watch curl http://10.106.171.141:5678
+  661  clear
+  662  ls
+  663  kubectl get pods
+  664  kubectl delete deloy my-dep
+  665  clear
+  666  kubectl delete deloy my-dep
+  667  kubectl delete deploy my-dep
+  668  kubectl get pods
+  669  kubectl delete pod hello-pod
+  670  cleaer
+  671  clear
+  672  kubectl get svc
+  673  ls
+  674  cp pod.yaml pod2.yaml
+  675  ls
+  676  kubectl get svc --show-lables
+  677  kubectl get svc --show-labels
+  678  clear
+  679  ls
+  680  vi pod.yaml
+  681  vi pod1.yaml
+  682  vi pod2.yaml
+  683  vi pod.yaml
+  684  vi pod2.yaml
+  685  clear
+  686  ls
+  687  vi pod.yaml
+  688  vi pod2.yaml
+  689  clear
+  690  more pod.yaml
+  691  more pod2.yaml
+  692  clear
+  693  ls
+  694  kubectl create -f
+  695  kubectl create -f pod.yaml
+  696  kubectl create -f pod2.yaml
+  697  kubectl get pods --show-labels
+  698  kubectl get svc --show-labels
+  699  kubectl decribe svc my-ns
+  700  kubectl describe svc my-ns
+  701  clear
+  702  kubectl edit svc my-ns
+  703  kubectl describe svc my-ns
+  704  curl http://10.106.171.141:5678
+  705  clear
+  706  wacth curl http://10.106.171.141:5678
+  707  watch curl http://10.106.171.141:5678
+  708  clear
+  709  history | grep deploy
+  710  clear
+  711  kubectl create deployment my-dep --image=scmgalaxy/nginx-devopsschoolv1 --replicas=10
+  712  kubectl get pods
+  713  kubectl expose -h
+  714  clear
+  715  kubectl create deployment my-dep --image=scmgalaxy/nginx-devopsschoolv1 --replicas=10clear
+  716  clear
+  717  kubectl get svc
+  718  kubectl expose deploy my-dep --port=80 --target-port=80
+  719  kubectl get svc
+  720  kubectl describe svc my-dep
+  721  clear
+  722  curl http://10.101.107.199
+  723  kubectl get svc
+
+
+
+
+
+
+
+
+
+
+
