@@ -1,0 +1,59 @@
+Kubectl 
+================================================
+Cluster Management Commands:
+  certificate   Modify certificate resources.
+  cluster-info  Display cluster info
+
+  top           Display Resource (CPU/Memory) usage.
+
+  cordon        Mark node as unschedulable
+
+  uncordon      Mark node as schedulable
+
+  drain         Drain node in preparation for maintenance	noexecute
+
+  taint         Update the taints on one or more nodes
+
+
+kubeadm
+==================================================
+Usage:
+  kubeadm [command]
+
+Available Commands:
+  certs       Commands related to handling kubernetes certificates
+  completion  Output shell completion code for the specified shell (bash or zsh)
+  config      Manage configuration for a kubeadm cluster persisted in a ConfigMap in the cluster
+  help        Help about any command
+  init        Run this command in order to set up the Kubernetes control plane
+  join        Run this on any machine you wish to join an existing cluster
+  kubeconfig  Kubeconfig file utilities
+  reset       Performs a best effort revert of changes made to this host by 'kubeadm init' or 'kubeadm join'
+  token       Manage bootstrap tokens
+  upgrade     Upgrade your cluster smoothly to a newer version with this command
+  version     Print the version of kubeadm
+================================================================================
+
+Taint
+https://www.devopsschool.com/blog/deep-dive-into-kubernetes-taint-with-node/
+https://www.devopsschool.com/blog/schedulable-unschedulable-kubernetes-node-using-kubectl-cordon-uncordon-commands/
+
+Taint and tolerations
+https://www.devopsschool.com/blog/understanding-kubernetess-taints-and-tolerations-in-easy-way/
+
+
+  nodeselector
+  nodeaffinity
+  pod affinity
+==========================================
+with pod.spec
+with pod.spec
+================================
+https://www.devopsschool.com/blog/understanding-node-selector-and-node-affinity-in-kubernetes/
+
+
+
+
+
+
+
