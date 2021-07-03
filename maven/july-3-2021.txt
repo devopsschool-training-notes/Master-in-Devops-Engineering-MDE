@@ -1,0 +1,188 @@
+Rajesh Kumar
+----------------------
+
+Topic - Maven
+======================
+
+What is Maven?
+---------------------
+	Build automation tool.
+	Project mgmt tool
+	- compile - test - package - install - deploy
+	From Apache
+	Open Source and Free
+	Written in Java
+	Latest - 3.X
+	In Built Dep mgmt tool
+
+What is Build tool?
+---------------------------------
+
+
+Plan -> Code -> Analyze -> Build -> UT -> Pack -> Archive -> Dep2QA -> AT -> CC --> Release
+	        Sonarqube   JAVA    JUNIT  WAR    ARTIFACTORY
+		 -------------------------------------------
+				Maven
+----------------------------------
+Make -> Ant -> Maven -> Gradle
+MSBUILD - Nant 
+PyBuilder
+------------------------------------
+
+How maven works? Maven Arch?
+-----------------------
+Core Maven
+	Plugins
+	- Core Plugins 
+	- Community plugins 
+
+=================================================================
+Why Maven?
+------------------------------
+This can AUTOMATE EVERYTHING
+---------------------------------
+	How maven works?
+
+=========================================================================
+	   Project Lifecycle
+-------------------------------
+START ---------------------> END
+
+HUMAN -> BORN --> KID -> TEEN - YOUN - MID - OLD - DIE
+
+
+Maven has 3 lifecycle for managing a project.
+
+	Lifecycle	Phases		GOAL		POWERED by Core plugins		
+----------------------------------------------------------------------
+	- default
+			compile		compile		jar file
+			test		test		jar file
+			package		package		jar file
+			install		install		jar file
+			
+	- site
+	- clean
+https://maven.apache.org/ref/3.8.1/maven-core/lifecycles.html
+===============================================================================
+Step 1- Install Java JDK & JAVA_HOME
+	C:\tools\Java\jdk1.8.0_231
+	JAVA_HOME = C:\tools\Java\jdk1.8.0_231
+	https://www.devopsschool.com/blog/complete-guide-of-java-installation-in-linux/
+
+
+Step 2 - Download and Install Maven
+	- https://maven.apache.org/download.cgi
+	- Extract and Copy to C:\tools\maven
+	- C:\tools\maven\bin --> ADD into PATH
+
+STEP 3 - verify
+C:\Users\Rajesh Kumar>mvn -v
+Apache Maven 3.6.2 (40f52333136460af0dc0d7232c0dc0bcf0d9e117; 2019-08-27T20:36:16+05:30)
+Maven home: C:\tools\maven\bin\..
+Java version: 1.8.0_231, vendor: Oracle Corporation, runtime: C:\tools\Java\jdk1.8.0_231\jre
+Default locale: en_US, platform encoding: Cp1252
+OS name: "windows 10", version: "10.0", arch: "amd64", family: "windows"
+
+STEP 3 - Decide project CO-ORDINATES
+
+Decide Your Project Name?		- devopsschool	====  groupid == com.devopsschool.software
+Decide your component name?		- chat 		==== ArtifactID
+Decide Version of the component?	
+					Release	- 1.0, 1.0.1
+					Snapshot - 1.0-SNAPSHOT, 1.0.1-SNAPSHOT (NOT READY 4 PROD)
+Decide packaging format?
+					jar - war - ear - pom
+==============================================================================
+mvn archetype:generate 
+     plugins: goal
+
+Param:
+"-DarchetypeGroupId=org.apache.maven.archetypes" "-DgroupId=com.mycompany.app" "-DartifactId=my-app"
+
+
+mvn archetype:generate -DgroupId=com.devopsschool.software -DartifactId=chat -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+
+mvn compile
+
+mvn test
+
+mvn package
+
+
+What is POM
+-----------------------------
+	PROJECT OBJECT MODEL
+	XML
+	Contains
+		-- Maven Co-ordinates
+		-- Project Dependency
+		-- Project EXT plugins
+		-- Properties
+		-- MAny
+
+
+---------------------------------------------
+How maven works in terms of DEPENDENCY MGMT..
+-------------------------------
+MyPrj
+	--- Ext lib	--------- https://repo.maven.apache.org/maven2/
+	--- Int lib	--- NEXUS - ARTIFACTORY
+
+
+
+mvn goal --> pom.xml -> read dep* --> Would Get it from LOCAL repo --->
+					FOUND - LOAD INTO JVM
+					NOT FOUND -----------> central repo---> Download to LR  - LOAD INTO JVM
+---------------
+Local Repo - C:\Users\Rajesh Kumar\.m2\repository
+Central repo -  https://repo.maven.apache.org/maven2/
+
+
+=====================================================
+Parent POM use case
+------------------------
+Adobe - 
+		200+
+		-----------------
+		Org name
+		copyright
+		websitename
+
+pom.xml
+---------------
+Org name
+copyright
+websitename
+		photoshop
+			pom.xml
+================================================
+======================================================
+pom.xml
+
+mvn compile-->
+
+
+mvn has some default config [ IN BUILT ]
+	     custome config [ setting.xml ] C:\tools\maven\conf
+	-------------------------------------------
+	mvn compile
+	------------
+	DIFF PROPERTY + PLUGINS == DEV 	= mvn compile -P dev
+	DIFF PROPERTY + PLUGINS == QA	= mvn compile -P qa
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
