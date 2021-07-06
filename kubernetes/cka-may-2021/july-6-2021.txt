@@ -1,0 +1,170 @@
+Your Kubernetes control-plane has initialized successfully!
+
+To start using your cluster, you need to run the following as a regular user:
+
+  mkdir -p $HOME/.kube
+  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+Alternatively, if you are the root user, you can run:
+
+  export KUBECONFIG=/etc/kubernetes/admin.conf
+
+You should now deploy a pod network to the cluster.
+Run "kubectl apply -f [podnetwork].yaml" with one of the options listed at:
+  https://kubernetes.io/docs/concepts/cluster-administration/addons/
+
+Then you can join any number of worker nodes by running the following on each as root:
+
+kubeadm join 172.31.12.77:6443 --token n596sr.zkn6etsmgcork5ch \
+        --discovery-token-ca-cert-hash sha256:a5f77057739112a2f90a2b00f18848c904b28d67d424fa10479262526779f98f
+
+
+
+
+kubectl delete -f https://docs.projectcalico.org/manifests/tigera-operator.yaml
+
+
+kubectl delete -f https://docs.projectcalico.org/manifests/custom-resources.yaml
+https://docs.projectcalico.org/getting-started/kubernetes/self-managed-onprem/onpremises
+
+
+Available Commands:
+  certs       Commands related to handling kubernetes certificates
+  completion  Output shell completion code for the specified shell (bash or zsh)
+ 
+  help        Help about any command
+  init        Run this command in order to set up the Kubernetes control plane
+
+  kubeconfig  Kubeconfig file utilities
+  reset       Performs a best effort revert of changes made to this host by 'kubeadm init' or 'kubeadm join'
+
+
+
+
+
+ config      Manage configuration for a kubeadm cluster persisted in a ConfigMap in the cluster
+
+   35  clear
+   36  kubectl get cm --all-namespaces
+   37  exit
+   38  clear
+   39  kubeadm config
+   40  kubeadm config -h
+   41  clear
+   42  kubeadm config images
+   43  kubeadm config print
+   44  kubeadm config images print
+   45  kubeadm config -h
+   46  clear
+   47  kubeadm config print
+   48  kubeadm config images print
+   49  kubeadm config images
+   50  clear
+   51  kubeadm config print join-defaults
+   52  clear
+   53  kubeadm config images -h
+   54  clear
+   55  kubeadm config images list
+   56  kubeadm config images -h
+   57  clear
+   58  kubeadm config images pull
+   59  clear
+   60  kubeadm config -h
+   61  clear
+   62  kubeadm config print -h
+   63  clear
+   64  kubeadm config print -h
+   65  clear
+   66  kubeadm config print init-defaults
+   67  clear
+   68  kubeadm config print -h
+   69  clear
+   70  kubeadm config print join-defaults
+
+  token       Manage bootstrap tokens
+https://www.devopsschool.com/blog/detailed-explaination-of-joining-kubernetes-nodes-aka-workers-in-kubernetes-master/
+
+  upgrade     Upgrade your cluster smoothly to a newer version with this command
+  version     Print the version of kubeadm
+
+
+  73  history
+   74  clear
+   75  kubeadm token -h
+   76  clear
+   77  kubeadm token list
+   78  clear
+   79  kubeadm token list
+   80  kubeadm token generate -h
+   81  clear
+   82  kubeadm token generate
+   83  kubeadm token list
+   84  kubeadm token generate
+   85  kubeadm token create -h
+   86  clear
+   87  kubeadm token create -ttyl 0
+   88  kubeadm token create h
+   89  kubeadm token create -h
+   90  clear
+   91  kubeadm token create --ttl 0
+   92  kubeadm token list
+
+
+ 94  clear
+   95  kubeadm version
+   96  kubeadm upgrade -h
+   97  kubeadm upgrade apply -h
+   98  kubeadm upgrade plan
+   99  kubeadm upgrade apply v1.21.2
+  100  kubectl get nodes
+  101  exit
+  102  kubeadm upgrade -h
+  103  kubeadm upgrade apply --dry-run
+  104  clear
+  105  kubeadm upgrade -h
+  106  kubeadm upgrade node -h
+  107  clear
+  108  kubeadm upgrade node phase
+  109  kubeadm upgrade node phase preflight
+  110  kubeadm upgrade node phase kubelet-config
+  111  kubeadm upgrade node phase control-plane
+  112  clear
+  113  kubeadm upgrade -h
+  114  history
+
+  join        Run this on any machine you wish to join an existing cluster
+  115  clear
+  116  kubeadm join -h
+  117  kubeadm join phase
+  118  history
+  119  kubeadm join phase
+  120  clear
+  121  history
+
+root@ip-172-31-12-77:/home/ubuntu# kubeadm join phase
+Use this command to invoke single phase of the join workflow
+
+Usage:
+  kubeadm join phase [command]
+
+Available Commands:
+  control-plane-join    Join a machine as a control plane instance
+  control-plane-prepare Prepare the machine for serving a control plane
+  kubelet-start         Write kubelet settings, certificates and (re)start the kubelet
+  preflight             Run join pre-flight checks
+
+Flags:
+  -h, --help   help for phase
+
+
+  121  history
+  122  clear
+  123  kubeadm reset
+  124  ipvsadm --clear
+  125  exit
+  126  clear
+  127  kubeadm init
+  128  history
+
+
