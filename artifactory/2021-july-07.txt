@@ -1,0 +1,338 @@
+1 - Artifactory 
+2 - Packer
+----------------------------------------------
+
+
+What is Artifactory?
+----------------------------
+	Pvt Repo mgmt tool
+	- Package mgmt
+	From - Jfrog
+	Written - Java
+	Release
+		OSS		FREE 
+		Professional	PAID
+		https://www.jfrog.com/confluence/display/JFROG/Artifactory+Comparison+Matrix
+	
+
+What kind of repo === what kind of Packages?
+----------------------------------------
+https://www.jfrog.com/confluence/display/JFROG/Package+Management
+
+Why Do we need it?
+---------------------------------
+You would store package in - SHARED DRIVE
+------------------------------------
+WATERFALL 			DevOps
+- Max 1 - 2 build /Day === 	30+/Day
+sk				30 MS - 30 Pack X 10 = 300 package
+				Automated Package versioning
+
+				3rd Party LIB --???? - Versioning
+
+Integration with DevOps Tools
+Role Based Access mgmt & User mgmt
+Package Security - 
+Intgrity of Package
+Easy Clean up 
+Backup and Arhive
+Centralized - WEB 
+
+Other Tools -> Nexus --> Archiva -> Nuget --> Choclate
+===================================================================
+github		artifactory
+------------------------------
+code		binary
+git repo	yum repo
+		apt repo
+		maven repo
+		docker repo
+		
+
+--------------------------------
+How to install git?
+$ docker run -d -p 8081:8081 jfrog/art7.6 
+https://www.devopsschool.com/blog/setup-artifactory-pro-6-1-0-using-docker-containtainer/
+
+How to install Art* manually
+
+
+https://releases-cdn.jfrog.io/filestore/a3/a3e80daa520ad19011827f792380c407be77a45d?response-content-type=application/x-gzip&response-content-disposition=attachment%3Bfilename%3D%22jfrog-artifactory-pro-7.21.5-linux.tar.gz%22&x-jf-traceId=4b71a20413b138b7&Expires=1626016216&Signature=OjBbIRpWcuFkZtrHS9iSg7MqtWbJyAIZQCEx3PkV3qjD-M7Y~rbUQD0EWjwpcmTXPdLpbtC9DmBy066QLnLXq1iCxLseugF02fWrZJ~4J4wLguoDQYsOJ3w5yi-A69w2JbkRBGq~ew0OQfS3Ajwzbme22w4MY37VLLXv9PnouiQ4-Rh~ffYABAPqig6s6mBgOKGa9436Z4JWY~uCD10k4f-GtoBn--11P6dMzYxTnxJWc38ArN1SwV1eQ9Pn1OdXRudebMOKsxgBm5pPIapM6YK4F0~eeIjlG0UL99C0u7PiZ1UmSY2swzz2QQF1DTzMh0X9crGzC7sP3kFWb2HAeQ__&Key-Pair-Id=APKAJ6NHFWMVU3M6DPBA
+
+wget tarfile
+extract tar file
+cd /bin/
+start artifactory
+
+docker pull releases-docker.jfrog.io/jfrog/artifactory-pro:latest
+
+
+# To determine your distribution, run lsb_release -c or cat /etc/os-release
+# Example:echo "deb https://releases.jfrog.io/artifactory/artifactory-pro-debs xenial main" | sudo tee -a /etc/apt/sources.list;
+wget -qO - https://releases.jfrog.io/artifactory/api/gpg/key/public | sudo apt-key add -;
+echo "deb https://releases.jfrog.io/artifactory/artifactory-pro-debs xenial main" | sudo tee -a /etc/apt/sources.list;
+sudo apt-get update && sudo apt-get install jfrog-artifactory-pro
+deb https://releases.jfrog.io/artifactory/artifactory-pro-debs xenial main
+
+The Installation of Artifactory has completed successfully.
+
+NOTE: It is highly recommended to use Artifactory with an external database (MySQL, Oracle, Microsoft SQL Server, PostgreSQL, MariaDB).
+      For details about how to configure the database, refer to https://service.jfrog.org/installer/Configuring+the+Database
+
+Start Artifactory with:
+> systemctl start artifactory.service
+
+Check Artifactory status with:
+> systemctl status artifactory.service
+
+
+Installation directory was set to /opt/jfrog/artifactory
+You can find more information in the log directory /opt/jfrog/artifactory/var/log
+System configuration templates can be found under /opt/jfrog/artifactory/var/etc
+Copy any configuration you want to modify from the template to /opt/jfrog/artifactory/var/etc/system.yaml
+
+Triggering migration script, this will migrate if needed ...
+Processing triggers for man-db (2.9.1-1) ...
+Processing triggers for systemd (245.4-4ubuntu3.6) ...
+
+
+http://15.207.221.219:8082/ui/login/
+admin
+Rajesh$123
+
+
+docker pull releases-docker.jfrog.io/jfrog/artifactory-oss:latest
+
+docker run -p 8081:8081 -p 8082:8082 -d releases-docker.jfrog.io/jfrog/artifactory-oss:latest
+
+
+-d -p 8081:8081 -p 8082:8082
+==================================================
+
+Type of Repo you are going to store your packages?
+- Maven
+- Docker
+
+admin
+Rajesh$123
+
+http://ec2-15-207-221-219.ap-south-1.compute.amazonaws.com
+
+=====================================================================
+Workflow in Artifactory?
+
+Step 1 - Create a Repo
+		- Local -- Hosted	== Read & Write
+		- remote 		== Read Only Copy OF remote repo
+
+
+		- Group			== COllection of Local(S) and Remote(S)
+	
+		pack1 - LR1
+		pack2 - LR2
+		pack3 - RR1
+		pack4 - RR2
+		------------
+		url - group
+
+
+		Maven Release Type
+		-----------
+		- Release
+		- Snapshot
+
+		Remote - https://repo.maven.apache.org/maven2/
+
+		http://ec2-15-207-221-219.ap-south-1.compute.amazonaws.com/artifactory/devopsschool-local-snapshot/
+		http://ec2-15-207-221-219.ap-south-1.compute.amazonaws.com/artifactory/devopsschool-local-release/
+		http://ec2-15-207-221-219.ap-south-1.compute.amazonaws.com/artifactory/devopsschool-remote-repo/
+		http://ec2-15-207-221-219.ap-south-1.compute.amazonaws.com/artifactory/devops-school-group/
+Step 2- Create User and Password
+
+User
+Roles
+
+
+
+
+Step 3 - Modify pom.xml and add Distribution Element which contains a add of Repo to be deployed
+https://github.com/devops-school/helloworld-java-maven
+
+
+<distributionManagement>
+	<repository>
+		<id>rajesh</id>
+		<name>Internal Releases</name>
+		<url>15.207.221.219:8081/artifactory/list/devopsschool-local-release/</url>
+	</repository>
+ 
+	<snapshotRepository>
+		<id>rajesh</id>
+		<name>Internal Releases</name>
+		<url>15.207.221.219:8081/artifactory/list/devopsschool-local-snapshot/</url>
+	</snapshotRepository>
+</distributionManagement>
+
+
+<distributionManagement>
+	<repository>
+		<id>artifact</id>
+		<name>Internal Releases</name>
+		<url>http://15.207.221.219:8082/artifactory/devopsschool-local-release/</url>
+	</repository>
+ 
+	<snapshotRepository>
+		<id>artifact</id>
+		<name>Internal Releases</name>
+		<url>http://15.207.221.219:8082/artifactory/devopsschool-local-snapshot/</url>
+	</snapshotRepository>
+</distributionManagement>
+
+
+
+Step 4 - Modify setting.xml and add server element of Accessing a repo
+
+https://github.com/devops-school/helloworld-java-maven
+
+   <server>
+		<id>artifact</id>
+		<username>admin</username>
+		<password>Rajesh$123</password>
+   </server>
+
+
+admin
+Rajesh$123
+
+
+
+Step 5 - mvn deploy
+
+
+
+
+
+
+
+
+
+
+<distributionManagement>
+    <snapshotRepository>
+        <id>snapshots</id>
+        <name>ae997cdb7a14-snapshots</name>
+        <url>http://15.207.221.219:8081/artifactory/devopsschool-local-snapshot</url>
+    </snapshotRepository>
+</distributionManagement>
+
+=================================================================
+Avoid - Custom Base URL
+
+OLD							NEW
+------------
+WEB UI PORT | Upload PORT			WEB UI PORT | Upload PORT			
+-----------------------------------------------------------------------------------------
+	8081					8082		8081
+
+===============================================================
+mvn install
+mvn deploy
+============================================
+
+
+mvn -> pom.xml
+	      	DOWNLOAD A PACKAGE ---> setting.xml(mirror)
+		UPLOAD A PACK  ----> pom.xml (distributionManagement)
+
+
+
+mvn install
+compile -> test -> package --> copy to Local repo(.m2)		 copy from Local repo to remote repo(pom.xml)
+				-----------------		------------------------
+				     install				deploy	
+
+
+How to download package using Artifactory in Maven?
+=========================================================
+Step 1 - Create a Group repo which contains all the repo from where you are downling a packeg
+
+http://15.207.221.219:8081/artifactory/devops-school-group
+		local
+		remote
+
+Step 2 - Did u locate which package you want to download?
+		- Remote package
+		- Local Package
+
+  <dependencies>
+    <dependency>
+		<groupId>com.devopsschool.software</groupId>
+		<artifactId>chat</artifactId>
+		<version>1.0</version>
+	</dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+Step 3 - Delete from the local maven repo
+Why ? Maven would download from art.
+
+
+Step 4 - Modify setting.xml and add mirror element  with GROUP repo
+
+
+
+    <mirror>
+      <id>rajesh</id>
+      <name>Maven Repository Manager running on repo.mycompany.com</name>
+      <url>http://15.207.221.219:8081/artifactory/devops-school-group</url>
+      <mirrorOf>*</mirrorOf>
+    </mirror>
+    
+Step 5 
+mvn package
+
+===================================================================================
+Gradle
+--------------------
+https://github.com/devopsschool-demo-labs-projects/gradle-artifactory-upload-example
+https://github.com/devopsschool-demo-labs-projects/gradle-artifactory-upload-example
+
+
+Docker
+=======================================
+https://www.devopsschool.com/blog/how-to-setup-docker-repository-in-artifactory-and-push-pull-images/
+
+
+Docker image
+---------------
+collection of Layers. - files system
+			
+		
+	FIRST - dfhskfhsdjhfkjhsj			dfhskfhsdjhfkjhsj		- PUSH 
+	SECOND -- sdlfjsdlkfjsdlkjfldsjflkj		 sdlfjsdlkfjsdlkjfldsjflkj	
+	THIRS - sdfjdskljfklsdjfljdslkf			--- latest
+
+-----------------------------
+commit - CREATE A image	
+		--- using container
+
+build - CREATE A image
+		---- using dockerfile
+				--create container
+
+---------------------------
+contact@devopsschool.com
+----------------------------
+
+devopsschool.com/lms
+
+
+
+
+
+
