@@ -1,0 +1,183 @@
+------------------
+Tool - Docker
+------------------
+Where to run Software? Aka APPS?
+
+1970 - 2000		2000 - 2015		2016 ---
+--------------------------------------------------------------------
+PHYSICAL MACHINE	Virutal Machine		Container
+-------------------------------------------------------------------
+1 DAY			5 mins			1 sec
+
+Virutal Machine
+------------------------
+HYPERVIOR
+		Manage VMS	
+	
+virutalbox 
+		windows vm
+		linux vm
+		ubuntu vm
+		centos
+
+What is Docker?
+	Manages Containers
+
+What is Container?
+--------------------
+SKIP.
+	IS YOUR APPS.
+	==================================
+	Windows + XAMPP + Laravel + APPS
+	Linux + + LAMPP + Laravel + APPS
+	        --------------
+		APACHE+PHP+MYSQL
+	Windows + PYTHON + MYSQL + Django + APP
+	==========================================
+			Container
+
+====================================================
+Pradeep -> 15 Days
+	------------------------
+	LINUX - APCHE - TROUBEL - DEPENDENCY
+Sushant -> 5 hours 
+======================================
+	1 SECOND
+	==================================
+
+How to create Container?
+================================
+1. Docker Engine ( A Software need to be installed)		DONE
+2. Docker Image							DONE
+		Windows + PYTHON + MYSQL + Django + APP
+		Linux +  LAMPP + Laravel + APPS
+	
+Registry		Repostory
+------------------------------------------------------------------
+google playstore	Repository		
+github			Repository		
+pypi			Repository		
+packalyst.com		Repository		
+packagist.org		Repository
+
+hub.docker.com		Repository		
+			- Docker image
+3. RUN DOCKER IMAGE with a help of Docker.
+	--------- You get container
+
+65.0.122.99
+=======================
+httpd 		(linux + httpd)
+lammp/xampp 	(linux + lampp)
+python		(linux + python)
+
+
+----------------------------------------------
+ANY ERROR and SOLUTION - STORE AT devopsschool/scmgalaxy/DataOps/
+ANY COMMANDS \ SHORTCUT ---> documents LIVE
+
+----------------------------------------------
+Container LifeCycle
+---------------------------------------------------
+craete -> start -> stop -> start -> restart -> pause -> unpuase -> kill -> remove
+
+
+  3  docker ps -a
+    4  docker create httpd
+    5  docker ps -a
+    6  docker start 68bd4d542a62
+    7  docker ps -a
+    8  docker stop 68bd4d542a62
+    9  docker ps -a
+   10  docker start 68bd4d542a62
+   11  docker ps -a
+   12  docker restart 68bd4d542a62
+   13  clear
+   14  docker restart 68bd4d542a62
+   15  docker ps -a
+   16  docker kill 68bd4d542a62
+   17  docker ps -a
+   18  docker rm 68bd4d542a62
+
+
+
+RUN
+--------------------------------
+pull + create -> start 
+
+
+
+docker run -d httpd
+
+docker -> docker compsoe  --> kubernetes -> isti -> envoy -> linker
+-----------------------------------------------------------------------
+			AWS
+==========================================
+ubuntu
+httpd
+mysql
+
+   31  docker images
+   32  docker pull robsonggade/lampp-server
+   33  clear
+   34  docker run -d
+   35  docker images
+   36  docker run -d robsonggade/lampp-server
+   37  docker ps
+   38  docker inspect e1e0d7efbd25
+   39  clear
+   40  curl http://172.17.0.3
+   41  clear
+   42  ls
+   43  docker run -d python
+   44  docker ps
+   45  docker ps -a
+   46  clear
+   47  ps
+   48  docker run  python
+   49  docker ps -a
+   50  clear
+   51  docker run xampp/app
+   52  docke rps -a
+   53  clear
+   54  docker ps -a
+   55  clear
+   56  ls
+   57  docker run --name myXampp -p 41061:22 -p 41062:80 -d -v ~/my_web_pages:/www tomsik68/xampp:8
+   58  docker ps
+   59  docker run -d mysql
+   60  clear
+   61  history
+===================================================================
+Linux + PYTHON + MYSQL + Django + APP
+Linux +  LAMPP + Laravel + APPS
+=============================================================
+Docker Image = Linux (ubuntu)
+
+Docker Image = ubuntu + Xampp  (tomsik68/xampp)
+
+Docker Image = ubuntu + Xampp + holidaylandmark app  (rakesh/holidaylandmark)
+
+docker run rakesh/holidaylandmark
+---------------------------------
+	holidaylandmark.com
+
+
+
+httpd + index.html = Welcome to Cotocus
+===========================================
+======================================================================'
+YOU SHOULD CODE FOR THE PRODUCT ? - PHP-LAravel-ptyhon		= 10 
+YOU SHOULD CODE FOR TESTING THE PRODUCT ? - Selenium - jemter
+YOU SHOULD CODE FOR INFRA for RUNNING THE PRODUCT  - AWS - terraform - dockr - kub - ansible
+
+
+
+
+
+
+
+
+
+
+
