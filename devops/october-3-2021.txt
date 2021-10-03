@@ -1,0 +1,128 @@
+===========================================
+Rajesh Kumar
+===========================================
+www.RajeshKumar.xyz
+----------------------------------
+When we would be having training - Training Calendar -
+https://www.devopsschool.com/calender/ 
+contact@devopsschool.com
+=====================================
+Videos - 
+1. Download within 24 hours
+2. LMS - https://www.devopsschool.com/lms/
+
+Tutorials
+- https://devopsschool.com/tutorial
+- https://devopsschool.com/blog
+
+Slides
+- https://www.devopsschool.com/slides/
+- https://www.devopsschool.com/slide/
+- https://www.devopsschool.com/pdf/
+
+Commands
+- https://www.devopsschool.com/commands/
+
+Sample Source Code - 
+- https://www.devopsschool.com/blog/devopsschool-github-referenece/
+
+KIT
+https://www.devopsschool.com/kit/master-in-devops-engineering.html
+========================================================================
+Overview of DevOps - SRE - DevSecOps - Microservices
+=================================================================
+What is DevOps?
+================================================================
+Collection of 
+		Right Culture (ARCH + DEV + QA + OPS)
+		Evolving Mindset (Each Engineer)
+		Effective Process
+		Suitable Practices
+		Best Tools Sets
+		-----------------
+		INTO ONE === DEVOPS
+
+A DevOps Engineer
+-------------------		
+	WHO WOULD CODE For SOFTWARE			SPRINGBOOT
+	WHO WOULD CODE For TESING of a SOFTWARE		SELENIUM
+	WHO WOULD CODE For OPS of a SOFTWARE		Ansible-terraform
+
+WHY DEVOPS?
+------------------	
+	IMM RELEASE
+	COST Reductions
+		- During Software Dev
+		- During Software running
+	Improving a Quality
+
+==========================================================================
+Consumptions	
+		Laptop			vms			Container		
+		Monolitic		SOA			Microservices		
+		e.g msoffice
+		60 mins			5mins			1 Second
+---------------------------------------------------------------------------
+		WATERFALL		AGILE			DEVOPS	
+
+DevOps - 4 Hours - https://www.devopsschool.com/lms/course/view.php?id=101
+MS - https://www.devopsschool.com/lms/enrol/index.php?id=26
+SRE - https://www.devopsschool.com/lms/course/view.php?id=142
+DevSecOps - https://www.devopsschool.com/lms/course/view.php?id=153
+ac
+
+- SRE
+- DEVSECOPS
+=========================
+
+===============================ENGINEERING ============================================
+PLAN -> CODE -> ANALYZE -> BUILD -> UT -> PACKAGE -> ARCHIVE -> DEP2QA -> AT -> CC -
+========================================================================================
+JIRA -> GIT --> SONARQUBE -> MAVEN -> JUNUT -> WAR -> ARTIFACTORY -> ANSIBLE -> SELENIUM -> JACOCO
+															
+										IF ALL PASSED - RELEASE
+										IF ONE FAILED - REPEAT
+
+
+	DEVOPS
+======================
+PLAN + DEV + QA + OPS
+================ + =========
+Engineering	      SRE
+
+
+https://www.devopsschool.com/blog/what-should-i-learn-for-devops-vs-devsecops-vs-sre/
+
+DevSecOps
+--------------------
+DevOps+ Security
+==============================
+
+DevOps + SRE + DevSecOps
+==============================
+Master in DevOps
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
