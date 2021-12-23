@@ -1,0 +1,155 @@
+What is	SonarQube?
+---------------------------------------
+	For Enterprise.....
+	For Dev - QA - Release Team
+	Quality mgmt tool.
+		COde Quality   
+		test Quality 
+	Dev in JAVA
+		- JRE
+		- PLATFORM INDPE
+	From SonarSource
+	Release
+	- Community [FOCUS]	
+	- Dev
+	- Enterprise
+	- Data Center
+	https://www.sonarqube.org/downloads/
+	Version
+		9.X
+
+
+	What is Quality?
+	- Code Quality
+		
+	How can i do Code Quality?
+	------------------------
+	 - Peers Code Review
+	 - Static Code Review
+		Code Would Review Code 
+		Rule Would Review Code
+		Rule(S) Would Review Code
+		Tool  Would Review Code
+		SCA Tool Would Review Code
+		https://en.wikipedia.org/wiki/List_of_tools_for_static_code_analysis
+
+
+	- Test Quality
+		Some tools would test your testing process
+		- Code Coverage or Test Coverage
+			---- Reports
+			Jacoco - Coberturta - NCover
+			https://stackify.com/code-coverage-tools/
+
+Other Tools - 
+Coberity - Fortify
+
+
+How it works????
+================================
+HUMAN >> SONARQUBE SERVER ----> SCANNER ---> CoDE
+-------------------
+RUN SCANNER ON CODE 
+------------------
+
+Server
+	Rules
+		All Open Source Rules can found here.
+	Dashboard
+		9000 port
+		Dev in JAVA
+	Database
+		ALL RDMBS
+		MYSQL
+		PS
+		MS
+		ORACLE
+	Quality Profile
+	Quality Gates
+	Admin
+	
+	ElasticSearch
+
+Workstation Aka Laptop or Build Agent
+	
+	Code
+	- https://github.com/devopsschool-demo-labs-projects/java-sonarqube-helloworld-src
+	- https://github.com/devopsschool-demo-labs-projects/sonar-scanning-examples
+
+	Scanner
+	CMD
+	- https://docs.sonarqube.org/latest/analysis/scan/sonarscanner/	
+
+
+
+How to install SonarQube Server?
+-----------------------------
+YOU NEED TO INSTALL SONARQUBE USING NORMAL USER
+- https://www.devopsschool.com/blog/complete-guide-of-java-installation-in-linux/
+3.111.40.5
+
+
+ubuntu@ip-172-31-3-35:~/sonarqube-9.2.4.50792$ ls -1
+COPYING
+bin				- Start Stop 
+conf				- Conf file for SonarQube
+data				- DEFAULT DB h2
+dependency-license.json
+elasticsearch			- Search and Index
+extensions			- Plugins
+lib				- SonarQube Jar file
+logs
+temp
+web			
+
+
+  1  clear
+    2  java
+    3  sudo apt install openjdk-11-jdk-headless -y
+    4  sudo apt-get update
+    5  sudo apt install openjdk-11-jdk-headless -y
+    6  ls
+    7  clear
+    8  wd
+    9  pwd
+   10  wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-9.2.4.50792.zip
+   11  clear
+   12  ls
+   13  unzip sonarqube-9.2.4.50792.zip
+   14  sudo apt install unzip
+   15  clear
+   16  unzip sonarqube-9.2.4.50792.zip
+   17  clear
+   18  ls
+   19  cd sonarqube-9.2.4.50792/
+   20  ls -1
+   21  clear
+   22  ls conf/
+   23  ls
+   24  cd bin/
+   25  ls
+   26  cd linux-x86-64/
+   27  ls
+   28  ./sonar.sh start
+   29  ./sonar.sh status
+
+http://3.111.40.5:9000/
+admin
+admin
+
+Step 1- Setup a SonarQube Server
+
+Step 2- Download a Code
+
+Step 3 - Download Scanner
+
+Step 4 - Modify Scanner prop file for Server
+
+Step 5 - Modify COde Project prop file for Code.
+
+Step 6 - RUN SCANNER ON THE CODE.
+E:\demo\scanner\bin\sonar-scanner.bat
+
+sonar-scanner
+
+
