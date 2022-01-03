@@ -1,0 +1,344 @@
+=================Ansible Tutorial=========================
+
+Agenda for todays session:
+
+1.Overview of Configuration Management
+2.Introduction of Ansible
+3.Ansible Architecture
+4.Let's get started with Ansible
+5.Ansible Authentication & Authorization
+6.Let's start with Ansible Adhoc commands
+7.Let's write Ansible Inventory
+9.Working with Popular Modules in Ansible
+8.Let's write Ansible Playbook
+10.Deep Dive into Ansible Playbooks
+12.Working with Ansible Template
+11.Working with Ansible Variables
+13.Working with Ansible Handlers
+14.Roles in Ansible
+15.Ansible Galaxy
+
+----------------- ################------------------------------
+
+
+----------------------------------------------------------
+1.Overview of Configuration Management
+
+https://www.redhat.com/en/topics/automation/what-is-configuration-management
+
+Configuration management is a process for maintaining computer systems, servers, and software in a desired, consistent state. It’s a way to make sure that a system performs as it’s expected to as changes are made over time
+
+
+Misconfigurations can lead to poor performance, inconsistencies, or noncompliance and negatively impact business operations and security. 
+
+Proper configuration management tools:
+
+- Classify and manage systems by groups and subgroups. 
+- Centrally modify base configurations.
+- Roll out new settings to all applicable systems. 
+- Automate system identification, patches, and updates
+- Identify outdated, poor performing, and noncompliant configurations. 
+- Prioritize actions. 
+- Access and apply prescriptive remediation.
+
+----------------------------------------------------------
+
+2.Introduction of Ansible
+3.Ansible Architecture
+
+CMDB (configuration management database) 
+
+Refer to page no: 1-11
+
+- Agentless
+- Idempotent behaviour
+---------------------------------------------------------
+
+4.Let's get started with Ansible
+
+Step1: Create EC2 Instance
+
+Step2: Install Ansible
+
+#########################################################
+Installing the Ansible: Commands
+
+https://docs.ansible.com/ansible/2.9/installation_guide/intro_installation.html#
+
+1. Setting Up the epel-repo
+
+$ sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+
+2. Installing Ansible
+$ sudo dnf install ansible
+
+##########################################################
+
+---------------------------------------------------------
+
+5.Ansible Authentication & Authorization
+
+ Create password-less ssh between controller and worker nodes.
+
+$ ssh-keygen   /// to be run on master node/controller node
+
+--------------------------------------------------------
+
+6.Let's start with Ansible Adhoc commands
+
+Page no: 14-18
+
+https://docs.ansible.com/ansible/latest/user_guide/intro_adhoc.html
+
+
+$ ansible -i inventory all -m ping
+
+$ ansible -i inventory all  -m ansible.builtin.yum -a "name=httpd state=present" --become
+
+$ ansible -i inventory all  -m ansible.builtin.service -a "name=httpd state=started" --become
+
+$ ansible -i inventory all  -m ansible.builtin.copy -a "content='hello world' dest=/var/www/html/index.html" --become
+
+$ ansible -i inventory all  -m ansible.builtin.command -a "curl localhost:80"
+
+
+Deletion:
+
+$ ansible -i inventory all  -m ansible.builtin.file -a "dest=/var/www/html/index.html  state=absent" --become
+
+
+$ ansible -i inventory all  -m ansible.builtin.yum -a "name=httpd state=absent" --become
+
+
+
+https://devopscube.com/setup-ansible-aws-dynamic-inventory/
+
+---------------------------------------------------------
+7. Let's write Ansible Inventory
+
+Page no: 23-26
+
+
+
+---------------------------------------------------------
+
+8.Working with Popular Modules in Ansible
+
+https://docs.ansible.com/ansible/latest/user_guide/intro_adhoc.html#managing-files
+
+- ping
+Check the connectivity
+
+- setup
+$ ansible -i inventory all -m setup
+
+to collect the information from clients/slaves -detailed - IP's server interfaces, storage
+
+- yum
+
+To Manage the packages - install or remove the packages 
+
+- service
+
+- copy
+
+- file
+
+ansible -i inventory all  -m ansible.builtin.file -a "dest=/home/ec2-user/new.txt mode=600 state=touch"
+
+
+
+---------------------------------------------------------
+
+9.Let's write Ansible Playbook
+10.Deep Dive into Ansible Playbooks
+
+---------------------------------------------------------
+11.Working with Ansible Variables
+
+Defining Variables:
+- 1. Inventory files - Host variable
+- 2. Inventory file - Group variable
+- 3. Playbook -------> top level global declaration before tasks
+- 4. Playbook -------> Inside task
+- 5. Register variable ==> storing some value to variable
+- 6. Use loops - while -> inside playbook.
+- 7. On command line while executing the playbook. 
+- 8. Can be defined using external files - file should be created under the same directory where we are running the ansible.
+
+Note: Variable name can be random. But you have to avoid predefined paterns like add format centre split--> predefined. 
+
+Note2:While defining the variables Command line has least priority of all. 
+
+--> Perform task:
+
+1.Create the directory:
+
+$ mkdir -p  ansible-training/variable-playbook
+
+2. Create Files:
+
+ touch file_vars.yaml
+ touch include_var.yaml
+ touch inventory
+ touch playbook.yaml
+
+3. Update the inventory with file content:
+
+$ cat inventory
+
+[web]
+ip-172-31-46-241
+
+[db]
+ip-172-31-25-186
+
+4. Create the ansible-playbook.
+
+- hosts: all
+  gather_facts: no
+  vars:
+          play_var: "PLAY Variable"
+  vars_files:
+          - file_vars.yaml
+  tasks:
+          - set_fact:
+                  task_var: "TASK VARIABLE"
+          - include_vars: include_var.yaml
+          - debug:
+                  msg:
+                          - "{{ play_var }}"
+                          - "{{ task_var }}"
+                          - "{{ include1 }}"
+                          - "{{ cmd_line_var }}"
+                          - "{{ file1 }}"
+
+
+ 5. Update file_var:
+
+$ cat file_vars.yaml
+file1: var1
+file2: var2
+
+6. Update include_var.yaml:
+
+$ cat include_var.yaml
+include1: var1
+include2: var2
+
+7. Updating the inventory file:
+
+$ cat inventory
+
+[web]
+ip-172-31-46-241 http_port=80
+
+[db]
+ip-172-31-25-186 http_port=80
+
+[app]
+web
+db
+
+[app:vars]
+app1=var1	
+
+8. Run the ansible command:
+
+$ ansible-playbook playbook.yaml -i inventory -e "cmd_line_var='Command line variable'"
+
+
+---------------------------------------------------------
+
+12.Working with Ansible Template
+
+
+$ cat main.yaml
+---
+- hosts: all
+  become: yes
+  vars:
+    page_title: My Landing Page
+    page_description: This is my landing page description.
+  tasks:
+    - name: Install Nginx
+      yum:
+        name: nginx
+        state: latest
+
+    - name: Apply Page Template
+      template:
+        src: files/landing-page.html.j2
+        dest: /var/www/html/index.html
+
+
+
+$ cat files/landing-page.html.j2
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{ page_title }}</title>
+  <meta name="description" content="Created with Ansible">
+</head>
+<body>
+    <h1>{{ page_title }}</h1>
+    <p>{{ page_description }}</p>
+</body>
+</html>
+
+
+       
+--------------------------------------------------------
+13.Working with Ansible Handlers
+
+- hosts: all
+  tasks:
+   - name: Install httpd
+     yum: name=nginx state=latest
+     notify :
+       - Start Httpd
+  handlers :
+   - name: Start httpd
+     service : name=httpd state=started
+---------------------------------------------------------
+14.Roles in Ansible
+
+
+1. ansible-galaxy init roles/httpd
+
+2. cat main.yaml
+
+---
+- hosts : all
+  become: yes
+  roles :
+    - { role : httpd }
+
+3. $ cat roles/httpd/tasks/main.yml
+---
+-
+  name: "install httpd package"
+  yum:
+    name: httpd
+    state: latest
+-
+  name: "Start httpd service"
+  service:
+    name: httpd
+    state: started
+-
+  name: "Create index.html"
+  copy:
+    content: "HELLO"
+    dest: /var/www/html/index.html
+
+
+
+--------------------------------------------------------
+15.Ansible Galaxy
+
+
+
+
+

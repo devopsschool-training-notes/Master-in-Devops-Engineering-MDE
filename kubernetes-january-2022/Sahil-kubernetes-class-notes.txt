@@ -1,0 +1,179 @@
+
+
+docker --> container runtime software --> which helps in running the containers --> container is nothing but linux process 
+--> linux process is a piece of code/software (running instance).
+
+
+amazon big billion sale --> there will lots of customers hitting the application url.
+
+docker --> implement the infrastructure ---> we need to have multiple replicas of application ---> production environment
+       --> infra will be distributed --> running on multiple hosts.
+
+
+orchestration tool  --> orchestration --> managing the distriubuted docker container from a single place 
+         
+Parameters that orchestration tool will be using:
+          
+1. Scale:
+--> we are managing scale 50 replicas --> 500 containers distributed 
+2. Networking:
+---> docker provides networking for the spawned container --> but orchestration tool will provide networking for all of your cluster components like nodes, pods, service.
+3. Storage
+4. security - role based access
+
+what is kubernetes: Kubernetes is nothing but an orchestration tool --> it will help to manage distributed containers across the prod environment.
+
+
+
+----> Kuberntes architecture   ----------- 1. control plane (Master nodes) ---> set of machines/nodes which will be responsible to manage the cluster --> cluster means set of nodes/machines those are working colloborately to provide infrastructure/prod platform.
+                                           2. worker plane (worker ndoes) ---> Set of machines/nodes  which will run the workload/appllication replicas.
+
+
+Control plane have following major components:  
+                                  1. api-server
+                                  2. scheduler
+                                  3. controller
+                                  4. etcd - database
+
+5. kube-proxy
+6. kubelet
+
+
+Worker plane components:
+
+1. kube-proxy
+2. kubelet
+
+
+=================> what is pod?   --> pod is nothing but a container or a group of container running to achieve the same goal.
+                                  ---> pod is a smallest entity in kubernetes and we do not directly talk with containers but with pods.
+                                  ---> pod have single ip (even when there are multiple container inside your pod) i.e we dont directly communicate with containers using IP.
+
+
+
+=================> what is node? --> node is nothing but a virtual machine instance/physical machines instance that is participating inside cluster.
+
+==================> service ===> service is nothing but the abstraction(virtual IP) network layer required to loadbalance the traffic to the pods. 
+                                 ---> service dont have the physical interface but still carry the IP.
+                                 ---> Service usage label selector to loadbalance the backend pods.
+===================> persistent storage ==> providing external storage to your pod.
+
+===================> Networking==> kubernetes usage the container network interface using the plugins like flannel.
+
+===================> Namespace ===> like project used for isolation of pods.
+
+
+
+##################################################################################
+
+Kubernetes pod -how it works:
+
+init container --> once the application is deployed the init container initialised the application container and side container.
+application container --> container that contains the application code.
+sidecar container --> helps main application container to run the application.
+
+Probes: 1. liveness probe ==> is the application container running properly?
+        2. readiness probe ==> is the application is ready to serve the clients?
+
+#######################################################################################
+
+Microservice: 
+
+Chopping down the multiple services of single application to gain the application reliabilty and maintain each service seperately.
+
+what is container --> linux process --> each microservice as a container --> kubernetes is orchestration tool it will help in managing those microservices running as a pod.
+
+
+
+###############################################################################
+
+Understand the master node components:
+
+1. Api-server ---> 1. It manages the api-requests.
+                   2. Authentication: checking if the user is a valid user and available inside the cluster.
+                   3. Authorisation: How much access the authenticated user should have --> admin / developer 
+
+2. Etcd: --> it is a Consistent and highly-available key value store key:value pair database --> it maintains all the resources of kubernetes in yaml format --> everything like pods,deployement,service,namespace etc will be  called a resource inside kubernetes 
+
+yaml format: it has the key:value pair syntax --> human friendly/readable in nature
+
+3. Scheduler: It helps in scheduling the pods on nodes. you can use node selector to schdule the pod to the specific node.
+
+3. Controllers: keep watching the cluster state and take appropriate actions to maintain the state of cluster:
+
+
+                 5 pods (desired state)  ---> 2 pods died ---> current pods 3 (current state) --> replicaset/replication controller --> automatically spawns 2 more pods 
+
+                           desired state = current state
+
+
+** kubernetes have the property of self healing --> if some pod fails --> kubernetes will automatically spawns exactly the same pod automatically.
+
+######################################################################################
+
+
+Node Components: 
+
+1. Kubelet: Kubelet is service that runs on all the nodes (including the masters) . 
+            --> responsible to manage the pods on the node 
+            --> it communicates with container runtime like docker to spawn up the pods.
+
+2. kube-proxy: kube-proxy is also a service that runs on all the nodes (including the masters)
+            ---> like a firewall or iptables for the container networks.
+            ---> service that manages the cluster networking.
+
+#######################################################################################
+
+Kubernetes addons:
+
+1. DNS --> DNS is required for pods and services for communication purpose.
+2. Dashboard --> Dashboard is UI for your cluster management  -- create pods, services.
+3. logging
+4. monitoring
+
+####################################################################################
+
+Kubernetes terminology:
+
+1.pod
+2.Node
+3.Service
+4.label ---> label is key:value pair --> attached to the kubernetes resource like nodes/pods/namespaces.
+5.label -selector 
+
+
+6. Deployment: it is used to deploy the pod ---> whenever you want to deploy the pod you will create the deployment.
+
+7. Quota/resource quota: kubernetes/orchestration tool helps in managing the resource consumption like cpu/ram by pod.
+
+you can restrict the pod how much resource one pod can utilise.
+
+8. secret and config map:
+
+config map: config map is resource inside k8s to provide files/data inside the pod.
+secret: encrypted way to share data to the pod: share the credentials --> confidential data.
+
+10. job: reoccuring task that you can create as a resource inside the k8s cluster.
+
+
+
+
+=============================================================================
+
+$ kubectl version ==> shows the client and server version.
+
+$ kubectl get nodes ==> shows the node information.
+
+$ kubectl get pods ==> shows the pod information
+
+$ kubect get namespace ==>
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,10 @@
+Installing the Ansible: Commands
+
+https://docs.ansible.com/ansible/2.9/installation_guide/intro_installation.html#
+
+1. Setting Up the epel-repo
+
+$ sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+
+2. Installing Ansible
+$ sudo dnf install ansible
