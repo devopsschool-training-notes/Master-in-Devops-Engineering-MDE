@@ -1,0 +1,239 @@
+Rajesh Kumar
+-------------
+www.RajeshKumar.xyz
+===========================
+DevOps - DevSecOps - SRE - MDE
+=================================
+https://www.devopsschool.com/blog/what-should-i-learn-for-devops-vs-devsecops-vs-sre/
+
+What is DevOps?
+What is DevSecOps?
+What is SRE?
+What is MDE?
+=================================
+Complete Videos - https://www.devopsschool.com/lms/
+
+Slides - 
+- https://devopsschool.com/slides/
+- https://www.devopsschool.com/slide/
+- https://www.devopsschool.com/pdf/
+
+Notes - 
+https://github.com/devopsschool-training-notes/Master-in-Devops-Engineering-MDE
+
+Tutorials
+- https://www.devopsschool.com/blog/
+- https://www.devopsschool.com/certificates/
+
+contact@devopsschool.com
+https://www.devopsschool.com/kit/master-in-devops-engineering.html
+==============================================
+https://www.devopsschool.com/interview/
+====================================================
+https://www.devopsschool.com/path/
+
+
+What is DevOps?
+What is DevSecOps?
+What is SRE?
+What is MDE?
+
+What is CI/CD?
+What is Microservices?
+=================================
+What is DevOps?
+---------------------------------
+What we do? -> Software Dev.
+=================================
+1980s-----
+=================================
+What are objectives of Software org.
+=================================
+- Quality Software
+	- Code Quality
+	- Test Quality
+- Reduction in Cost
+	- Software Dev
+	- Software running
+- Immediate release
+	- CI
+	- CD
+=================================
+How can we do all above?
+=================================
+				
+					Internet		
+Year 			1990s		2000		2020
+
+Release Cycle		1/Year		2 Weeks		10 mins
+
+Software Dev Model	Waterfall	Agile		DevOps???
+
+Software Arch		Monolithic	SOA		Microservices
+
+Platform		Desktop		Data Center	Container		
+					VMs
+			--------------------------------------------
+			1 Day		10 mins		1 SEC
+
+
+1 MS == 2 PEOPLE
+----------------------------
+DEV + ARCH + QA + OPS + MGMR
+------------------------------
+	DevOps
+
+
+DevOps
+================================================================
+I am a devOps Engineer
+- I do coding for the Product		- JAVA
+- I do coding for the testing a Product	- Selenium
+- I do coding for the Infra and Ops for running a prod - Ansible - AWS - Jenkins - Terraform
+---------------------------------------------------
+		I do everything. I am devOps Eng.
+======================================================
+Mindset Issues
+Culture Issues
+New tools
+==================
+DevOps Training
+------------------
+Theory - https://www.devopsschool.com/lms/course/view.php?id=101
+
+What is DevOps?
+---------------------
+DevOps is culture/mindset change
+	Best Mindset & Culture
+	- I do coding for the Product		- JAVA
+	- I do coding for the testing a Product	- Selenium
+	- I do coding for the Infra and Ops for running a prod - Ansible - AWS - Jenkins - Terraform
+	=======================
+	Best Tools
+	https://www.devopsschool.com/blog/what-should-i-learn-for-devops-vs-devsecops-vs-sre/	
+	https://www.devopsschool.com/path/
+
+	Best practices
+	- CI 
+	- CD
+
+	Best Process
+	- 
+
+	Best 
+	- Container
+	===================================================
+			DevOps
+	
+	
+	Lets find a MID Path by Google
+	--------------------
+	- SRE
+
+	Engineering team
+	- I do coding for the Product		- JAVA
+	- I do coding for the testing a Product	- Selenium
+	+ SRE team
+
+	SRE Team
+	- I do coding for the Infra and Ops for running a prod - Ansible - AWS - Jenkins - Terraform
+	+ Engineering team
+
+	DevSecOps
+	====================
+	DevOps + Security
+
+	- I do coding for the Product & Security		- JAVA
+	- I do coding for the testing a Product	& testing a security - Selenium
+	- I do coding for the Infra and Ops for running a prod & Secured env - Ansible - AWS - Jenkins - Terraform
+	=======================
+
+	MDE
+	-------------------
+	DevOpsSchool
+	- Master in DevOps Eng.
+	==================================
+	DEV + QA + DevOps + SRE + DevSecOps
+	-----------------------------------
+			MDE
+	
+
+
+
+
+What is CI/CD?
+-------------------------
+	CI - Cont Intg	
+	CD - Cont Delivery & Cont Deployment
+	
+	 Cont Intg
+	===============================================================
+	Cont - 
+	Integ - 
+	
+	SDLC 
+	-----------------------------------------------------------------
+	PLAN -> Code -> Analyze -> Build -> UT -> Pack -> Archive -> Dep2QA -> AT -> CC 
+	-------------------------------------------------------------------------------
+	Jira -> Git --> SonarQube -> Maven -> Junit-> War-> Nexus -> Ansible -> Selenium -> Jacoco
+	=================================================================================================
+											
+						Jenkins
+											ALL PASSED - Release
+											ONE FAILED - Repeat
+	
+
+	What is CI?
+	--- AUTO BUILD + AUTO test
+	============================
+		imm feedback
+
+	
+
+	 Cont Delivery  ----->    A POINT where you have package ready to prod after CI.
+
+
+	& Cont Deployment ---> That package in prod
+
+
+
+
+
+
+
+
+	
+
+
+
+What is Microservices?
+
+	Monoltic 	to 	Microservices
+	===========================================
+	Big Code		Small Code
+	One Tech		Multiple tech
+	One Version		Mul;tiple Version
+	Big team		Small Team
+	One DB			Each mS have their DB
+	==========================================		
+
+
+Ms1 ---> http://devopsschool.com/app1	Rajesh
+						DEV + QA + OPS
+			- CREATE - READ - UP - DEL (POST - PUT - READ - DELETE)
+			========================
+			1 DB
+Ms2 ---> http://devopsschool.com/app2	Joseoh
+			- CREATE - READ - UP - DEE (POST - PUT - READ - DELETE)	
+Ms3 ---> http://devopsschool.com/app3	Ravi
+			- CREATE - READ - UP - DEE (POST - PUT - READ - DELETE)
+
+	(APP1+APP2+App3) == API GATEWAY
+
+
+
+
+
+
+
+
