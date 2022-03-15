@@ -1,0 +1,17 @@
+---
+ - name: demo of Handlers
+   hosts: all
+   gather_facts: false
+   tasks:
+     - name: Install httpd latest version
+       yum:
+         name: httpd
+         state: present
+       become: true
+       notify: restart_httpd
+   handlers:
+     - name: restart_httpd
+       become: true
+       service:
+         name: httpd
+         state: started

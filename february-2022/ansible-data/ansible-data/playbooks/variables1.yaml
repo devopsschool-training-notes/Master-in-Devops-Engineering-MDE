@@ -1,0 +1,9 @@
+- hosts: all
+  vars:
+    greeting: Enjoy Learning
+    name: Jack 
+
+  tasks:
+  - name: This is an example for using Variable in ansible
+    debug:
+      msg: "{{ greeting }} {{ name }}"

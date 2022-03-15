@@ -1,0 +1,9 @@
+---
+- hosts: all
+  vars:
+    - fname: test2
+  tasks:
+  - name: create empty file
+    file:
+      path: $HOME/{{ fname }}
+      state: absent

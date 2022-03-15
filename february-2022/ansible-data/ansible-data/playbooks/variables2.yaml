@@ -1,0 +1,9 @@
+---
+- hosts: all
+  vars:
+    - username: jack
+    - home: /home/jack   
+  tasks:
+    - name: print variables
+      debug:
+        msg: "Username is : {{ username }}, Home dir: {{ home }}"

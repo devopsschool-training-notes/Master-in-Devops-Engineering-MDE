@@ -1,0 +1,5 @@
+---
+- hosts: all
+  tasks:
+  - name: Execute a command on managed nodes
+    command: rmdir /home/ec2-user/test

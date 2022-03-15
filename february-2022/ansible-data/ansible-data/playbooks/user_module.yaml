@@ -1,0 +1,14 @@
+---
+- hosts: all
+  become: true
+  tasks:
+   - name: Create a login user
+     user:
+       name: user1
+       groups: # Empty by default, here we give it some groups
+        - wheel
+       state: absent        # present or absent
+       #shell: /bin/bash       # Defaults to /bin/bash
+       #system: no             # Defaults to no
+       #createhome: yes        # Defaults to yes
+       #home: /home/user1  # Defaults to /home/<username>

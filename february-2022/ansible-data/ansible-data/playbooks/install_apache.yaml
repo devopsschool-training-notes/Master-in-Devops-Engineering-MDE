@@ -1,0 +1,22 @@
+- name: Install and start Apache HTTPD
+  hosts: mywebserver
+  become: true
+  tasks:
+   - name: httpd package install
+     yum: 
+       name: httpd
+       state: absent
+
+   - name: copying html file
+     copy: 
+       src: /home/ec2-user/index.html
+       dest: /var/www/html/index.html
+
+   - name: start httpd 
+     service:
+      name: httpd
+      state: started
+      enabled: true 
+
+  
+   

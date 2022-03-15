@@ -1,0 +1,23 @@
+---
+- hosts: all
+  become: yes
+  vars:
+    page_title:  Working with Jinja2 templates in Ansible
+    page_description: We are learning how to implement Jinga2 templates in ansible
+  tasks:
+    - name: Install Apache
+      yum:
+        name: httpd
+        state: latest
+
+    - name: Apply Page Template
+      template:
+        src: landing-page.html.j2
+        dest: /var/www/html/index.html
+
+    - name: starting httpd service
+      service:
+        name: httpd
+        state: started
+        enabled: true
+
