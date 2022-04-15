@@ -1,0 +1,114 @@
+What is SonarQube?
+	Quality mgmt tool.
+	From SonarSource
+	Release 
+			Community		- FREE
+			Devloper		- PAID
+			Enterprise		- PAID
+	Version 
+	7.x + 8.X + 9.x
+
+	powered by plugins 
+	- https://www.sonarplugins.com/
+
+	Written in JAVA
+	8.X 11.X
+
+	tool
+	- Save cost
+		- 
+	- Save time
+	- Improve work Quality
+
+	Quality 
+	- Code Quality
+			- Peers code Review
+			- Automated Code Review == Static Code Analysis
+	- Test Quality
+			- ON HOLD
+
+
+Static Code Analysis Process
+-----------------------------
+SCA Tools Review the Quality of the CODE
+Rules Review the Quality of the CODE
+CODE(S) Review the Quality of the CODE
+
+
+Static Code Analysis tools
+-----------------------------
+https://en.wikipedia.org/wiki/List_of_tools_for_static_code_analysis
+================================================
+WShere in SDLC SONARQUBE FITS?
+-------------------------------------------
+PLAN -> Code -> Analyze -> Build -> Pack -> Archive -> Dep2QA -> AT -> CC -->
+												IF ALL PASSED - RELEASE
+												IF 1 FAILED - Repeat
+==================================================================================
+JIRA -> GIT -> SONARQUBE --> Maven -> EXE -> NEXUS -> ANSIBLE -> SEL -> JACOCO
+
+												Sonarqube
+
+=====================================================================
+How SonarQube works??
+--------------------------------------------
+
+
+
+HUMAN ---> SONARQUBE SERVER ---> DB
+		   JAVA
+
+DB
+- oracle
+- h2
+- derby
+- mssql
+- ps
+
+Site Search 
+-------------------
+elasticsearch
+	- 
+------------------------------
+SONAQUBE CANT BE RUN USING ROOT ACCOUNT
+---------------------------------
+
+WHY WE NEED SONARQUBE?
+
+=================================
+How to install?
+--------------------
+SonarQube Server		DONE
+
+Scanner				DONE
+
+Source Code			DONE
+https://github.com/devopsschool-demo-labs-projects/java-sonarqube-helloworld-src
+
+
+bin		- START STOP SCRIPT
+conf		- SONARQUBE CONFIG FILE
+COPYING
+data		- contains h2 db
+dependency-license.json
+elasticsearch  - es	
+extensions		- plugins
+lib				- sonarqube jar
+logs
+temp
+web				- Sonar Dashboard
+
+==========================================
+sonar-project.properties
+sonar.properties
+sonar-scanner.properties
+
+RUN A SCANNER ON THE SOURCE CODE
+-------------------------------------
+C:\tools\sonarqube\scanner\bin\sonar-scanner.bat
+C:\tools\sonarqube\java-sonarqube-helloworld-src
+
+
+http://3.109.203.99:9000/
+
+					
