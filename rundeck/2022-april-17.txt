@@ -1,0 +1,56 @@
+Demo Time
+=======================
+S1 - Install & Config Rundeck - Community
+		- H2
+		- 
+S2 - Create a Project	_ DONE
+S3 - Create a job	- DONE
+S4 - Create a Step - DONE
+S5 - Run A Job
+
+Project - 1
+	JOB - 1	- CAN RUN IN NODE
+		Step 1 - COMMAND OR SCIPPT OR API
+		Step 2 - COMMAND OR SCIPPT OR API
+		Step 3 - COMMAND OR SCIPPT OR API
+	JOB - 2 - - CAN RUN IN NODE
+		Step 1 - COMMAND OR SCIPPT OR API 
+		Step 2 - COMMAND OR SCIPPT OR API
+		Step 3 - COMMAND OR SCIPPT OR API
+	JOB - 3
+	JOB - 4
+Project - 2
+	JOB - 1
+	JOB - 2
+	JOB - 3
+	JOB - 4
+Project - 3
+	JOB - 1
+	JOB - 2
+	JOB - 3
+	JOB - 4
+Project - 4
+
+$ ssh -i rajesh-mumbai.pem centos@3.111.53.239	# KEY
+$ ssh centos@3.111.53.239						# PASSWORD
+
+Docker Insatall - 
+https://www.devopsschool.com/blog/docker-installation-and-configurations/
+
+RunDeck Install using Docker
+https://www.devopsschool.com/blog/how-to-install-and-configure-rundeck/
+
+
+docker run --name rundeck-opensource -d -e RUNDECK_GRAILS_URL=http://3.111.53.239:4440 -e RUNDECK_SERVER_ADDRESS=0.0.0.0 -p 4440:4440 -v data:/home/rundeck/server/data rundeck/rundeck:4.0.1
+
+http://3.111.53.239:4440
+admin/admin
+
+
+
+
+
+
+
+
+
