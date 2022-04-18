@@ -1,0 +1,90 @@
+Tasks
+------------
+- What is obserbability?
+
+Email -  datadog1333@devopsschool.com
+pass - GHSFD$5sss63
+
+Demo: INFRA
+1. How to register at Datadog
+2. How to install Datadog Agent in Linux
+- https://www.devopsschool.com/blog/how-to-install-datadog-agent-in-ubuntu/
+- https://www.devopsschool.com/blog/how-to-install-datadog-agent-in-centos/
+
+3. How to install Datadog Agent in Windows
+- https://www.devopsschool.com/blog/datadog-agent-setup-in-windows-step-by-step-guide/
+4. How to monitor Docker/Container using Datadog
+https://www.devopsschool.com/blog/how-to-enable-docker-container-monitoring-in-datadog-agent/
+
+5. How to monitor Apache using Datadog
+
+Process Monitoring
+- https://www.devopsschool.com/blog/how-to-enable-live-process-monitoring-in-datadog-agent/
+
+
+DD_SITE="datadoghq.com" bash -c "$(curl -L https://s3.amazonaws.com/dd-agent/scripts/install_script.sh)"
+
+If you ever want to stop the Datadog Agent, run:
+
+     systemctl stop datadog-agent
+
+And to run it again run:
+
+     systemctl start datadog-agent
+================
+ec2-13-233-101-94.ap-south-1.compute.amazonaws.com
+administrator
+&h-SJbxttc=FL)@pH2$XemT8RTk)aWB4
+===============================================
+What is Datadog?
+		INFRA - LOG - APM - SYN* - UX - Security
+		-----------------------------------------
+						obser*
+Why we need it?
+Datadog Agent
+-------------
+datadog-agent - for us
+ddagent - agent
+
+Datadog Agent
+-----------------
+
+Use Default value		===> datadog.yaml  --> ENV
+----------------
+built-in with agent
+
+Process Monitoring
+Windows 
+Docker container
+============================
+datadog agent is running with which - user ddagent
+
+docker commands can be run only by 2 users
+- root
+- BY a user who is a part of group called "docker"
+
+
+======================================
+HTTP
+MYSQL
+Kubernetes
+=========================
+APM
+
+LOG
+
+SYN
+
+ALERTING
+
+DASH
+
+
+
+
+
+
+
+
+
+
