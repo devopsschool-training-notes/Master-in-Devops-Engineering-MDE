@@ -1,0 +1,72 @@
+=============================================================
+Your Kubernetes control-plane has initialized successfully!
+
+To start using your cluster, you need to run the following as a regular user:
+
+  mkdir -p $HOME/.kube
+  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+Alternatively, if you are the root user, you can run:
+
+  export KUBECONFIG=/etc/kubernetes/admin.conf
+
+You should now deploy a pod network to the cluster.
+Run "kubectl apply -f [podnetwork].yaml" with one of the options listed at:
+  https://kubernetes.io/docs/concepts/cluster-administration/addons/
+
+Then you can join any number of worker nodes by running the following on each as root:
+
+kubeadm join 172.31.9.17:6443 --token 72zxrg.t6gb15bf44nuqtz3 \
+        --discovery-token-ca-cert-hash sha256:d2ebe66e9b2eae1548b32574a2459feb252b083bd53d38fb7a4ae9839e8d3820
+=============================================================
+
+Master + Workstation - 13.233.96.146
+Worker - 13.233.77.86
+
+=================================================
+How to deploy Rancher into Kubernetes Clustor?
+- https://www.devopsschool.com/blog/rancher-installation-deployment-in-kubernetes-clustor/
+- https://rancher.com/docs/rancher/v2.5/en/installation/install-rancher-on-k8s/
+
+- https://www.devopsschool.com/blog/a-quick-tutorial-of-helm/.
+ 13  sudo yum install wget -y
+   14  clear
+   15  wget https://get.helm.sh/helm-v3.6.2-linux-amd64.tar.gz
+   16  tar -zxvf helm-v3.6.2-linux-amd64.tar.gz
+   17  cd linux-amd64
+   18  echo $PATH
+   19  sudo mv helm /usr/local/bin
+   20  helm version
+   21  clear
+
+
+
+
+kubectl patch svc rancher -p '{"spec": {"type": "NodePort"}}' -n cattle-system 
+
+
+
+
+13.233.96.146:30347
+
+https://13.233.96.146:30347/
+
+admin
+jfbr5vg6v8h9drjkcs828znfvcwmml4x9lgwlf4flbxv8njwpt2gwn
+rtd2OPk9OmhQ3Teu
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
