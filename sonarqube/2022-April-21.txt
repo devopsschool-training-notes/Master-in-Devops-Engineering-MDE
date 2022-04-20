@@ -1,0 +1,52 @@
+http://13.233.25.127:9000/maintenance?return_to=%2F
+
+
+sonar.login=admin
+sonar.password=Admin$123
+=============================================================
+Issues		DONE
+Rules		DONE
+profiles	DONE
+Admin
+--------------------------------
+Maven
+- Step 1 - Install Maven		DONE
+- Step 2 - Install JDK		DONE
+- Step 3 - Download your Maven Project
+- Step 4 - Do Config chnages in pom.xml & setting.xml
+- Step 5 - run mvn sonar:sonar -Dsonar.login=9f5f61aa361eb8a85412aad8e12beea6579b4ee8
+
+https://github.com/devopsschool-demo-labs-projects/sonar-scanning-examples
+
+
+Jenkins
+-------------------------------
+Step 1 - Install 
+
+
+
+
+Gradle
+
+- Step 1 - Install Gradle
+- Step 2 - Install JDK
+- Step 3 - Download your Gradle Project
+- Step 4 - Do Config chnages in build.gradle
+- Step 5 - run gradle tasks
+
+==========================================
+COD
+
+
+
+
+
+
+
+
+
+
+
+
+
+
