@@ -1,0 +1,48 @@
+Step 1 - Create a k8s clustor - CENTOS 7
+Workstation	-> Master 			-> Worker
+kubectl  ---->
+				API SERVER			kube proxy
+				etcd					docker
+				controller mgr		kubelet
+				Schedular				kubectl 
+
+				kube proxy
+				docker
+				kubelet
+				kubectl 
+
+Master + Workstation
+3.111.30.126
+- https://www.devopsschool.com/blog/setting-up-kubernetes-clusters-using-kubeadm-manual-way-in-rhel-7-centos7/
+
+
+Your Kubernetes control-plane has initialized successfully!
+
+To start using your cluster, you need to run the following as a regular user:
+
+  mkdir -p $HOME/.kube
+  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+Alternatively, if you are the root user, you can run:
+
+  export KUBECONFIG=/etc/kubernetes/admin.conf
+
+You should now deploy a pod network to the cluster.
+Run "kubectl apply -f [podnetwork].yaml" with one of the options listed at:
+  https://kubernetes.io/docs/concepts/cluster-administration/addons/
+
+Then you can join any number of worker nodes by running the following on each as root:
+
+kubeadm join 172.31.5.126:6443 --token audwx6.p17yqu10asdw6saj \
+        --discovery-token-ca-cert-hash sha256:b86fd0e6e8370eef882021e1e2e19c799e6e4c054d6c4992108eacd9cae67947
+
+
+Worker
+65.1.248.246
+
+
+
+Step 2 - Install Rancher server using
+		- helm
+		- lets Encrypt
