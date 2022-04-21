@@ -1,0 +1,34 @@
+Email -  datadog1333@devopsschool.com
+pass - GHSFD$5sss63
+======================================
+Linux
+Windows
+Process
+Docker 
+---------------
+apache
+=================================
+https://www.devopsschool.com/blog/how-to-install-configure-datadog-integration-with-apache-httpd/
+
+mysql
+https://www.devopsschool.com/blog/how-to-setup-datadog-agent-integration-with-mysql-to-collect-many-metrics-from-mysql-databases/
+
+
+ROOT
+HSG#dss%ds4sSdss
+
+kubernetes
+
+http://13.232.176.13/
+-----------------------------
+PHYSICAL SERVER --> Virtual Servers -> Container
+-----------------------------------------------------
+					   AWS						kubernetes -> UR LAP - UR DS - 
+						GC
+						VSphe
+						Azure
+
+
+------------------------------
+Legacy App - Which do not publish mertices by default
+New gen app - publish mertices by default
