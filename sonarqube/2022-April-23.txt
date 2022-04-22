@@ -1,0 +1,83 @@
+- Jenkins
+
+
+- Gradle
+
+
+http://13.127.125.37:9000/
+admin
+Admin$123
+
+http://65.0.21.114:8080/
+rajesh
+rajesh123
+
+Jenkinsfile
+https://github.com/devopsschool-demo-labs-projects/gradle-hello-world-Jenkinsfile
+https://github.com/devopsschool-sample-programs/jenkins-groovy-scripts-collection
+https://github.com/devopsschool-sample-programs/jenkins-jenkinsfile-example-collection
+========================================
+
+Step 1 - Install Sonarqube plugins in Jenkins				[JENKINS ]		DONE
+Step 2 - Configure SonarQube Plugins					[JENKINS ]		DONE
+Step 3 - Install Jenkins Sonarqube Scanner under a tool		[JENKINS ]		DONE
+Step 4 - Create a job and call a source and run a scanner on the source [JENKINS ]
+https://github.com/devopsschool-demo-labs-projects/java-sonarqube-helloworld-src
+
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                def scannerHome = tool 'rajeshscanner'
+                withSonarQubeEnv('sonar1') {
+                    sh "${scannerHome}/bin/sonar-scanner"
+                }
+            }
+        }
+    }
+}
+
+
+- Gradle
+=================================
+Step 1 - Install Gradle					DONE
+Step 2 - Get a project which is Gradle		DONE
+Step 3 - Add Sonarqube config
+Step 4 - RUN gradle Scan task
+
+Ant			maven			gradle			msbuild
+---------
+target			goal			task			target
+
+
+https://github.com/devopsschool-demo-labs-projects/sonar-scanning-examples
+
+
+compile
+---------
+src
+dest
+
+package
+- src
+- dest
+
+deploy
+- src
+- dest
+
+How can i scan my source code using sonarqube &&&
+- Maven		sonar:sonar
+- Ant		target scan
+- Msbuild
+- jenkins	plugins
+- Gradle		tasks
+
+
+./gradlew -Dsonar.host.url=http://13.127.125.37:9000/ -Dsonar.login=admin -Dsonar.password=Admin$123 sonarqube
+
+
+
+
+
