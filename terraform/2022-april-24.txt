@@ -1,0 +1,275 @@
+What is Terraform?
+	  -- Coding for Infra
+	  Written in Golang
+	  Release
+	- community - free - os - cmd
+	- enterprise - WEB
+	
+	1.19
+	Hashicorp
+	- Vagrant
+    - terraform
+	- packer
+	- consul
+	- vault
+	- nomad
+
+In order to Run Any Soft in prod - Tools??
+
+
+Write a code for everything
+- Prod
+- testing a prod
+- All CI/CD - Dep - Security  - Ops - infra
+=======================================================
+
+YOU 	--> .TF --> Terraform --> Provider  -> API  --> Statefile
+	==========================================================
+			
+	terraform plan | terraform apply | terraform destory
+
+Provisonar
+===================================================
+CREATE INFRA - Terraform
+Changes infra resources - Config mgt tool - 
+
+
+
+Step 1 - Install terraform		- DONE
+- golang
+
+
+Step 2 - Decide for which infra you want to code? == PROVIDER	- DONE
+			- AWS
+			- github
+
+$ terraform init - TO Download provider
+
+
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 3.0"
+    }
+  }
+}
+
+# Configure the AWS Provider
+provider "aws" {
+  region = "ap-south-1"
+  access_key = ""
+  secret_key = ""
+}
+
+
+  
+  
+
+provider "github" {}
+
+
+
+Step 3 - Decide what resources you want to create using Terraform
+.tf
+AWS  - WEB Service - Provider
+		aws_instance -  resource
+				required param
+				default param
+				optional param
+
+Provider
+	resources
+		Argument Reference
+		- number
+		- text
+		- boolean
+		- list
+		- 
+
+AWS
+	aws_instance
+			ami
+			instance_type 
+
+
+		Attributes Reference
+
+- Choose an Amazon Machine Image (AMI)
+- Instance Type
+
+
+resource "aws_instance" "web" {
+  ami           = ami-0851b76e8b1bce90b
+  instance_type = "t3.micro"
+
+  tags = {
+    Name = "HelloWorld"
+  }
+}
+
+resource "aws_instance" "web" {
+  ami           = ami-0851b76e8b1bce90b
+  instance_type = "t3.micro"
+
+  tags = {
+    Name = "HelloWorld"
+  }
+}
+
+i-073558e01a656bf92
+Step 4 - terraform plan
+
+
+provider "github" {
+  token = "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"
+  owner = "devopsschool-demo-temporary"
+}
+
+
+resource "github_repository" "github-repo-666" {
+  name        = "terraform-demo-1"
+  description = "My awesome codebase"
+
+  visibility = "public"
+}
+
+
+-var 'reponame=terraform-var-commandline'
+=============================
+.tf ---- day3-broadyyyyyyy
+cmd - terraform-var-commandline
+
+
+================
+
+Step 5 - terraform apply
+
+
+Step 6 - terraform destroy
+
+====================================================
+Program
+
+terraform variables
+https://www.devopsschool.com/blog/terraform-variables-complete-reference-guide/
+
+
+terraform condition
+
+terraform looping
+
+terraform module
+===========================================
+Collection of .tf programs INTO 1 folder
+----------
+root module
+
+Why module?
+-------------
+ONE FOLDER === 100.tf for everything
+10 folder === each 10.tf and 1 folder do 1 thing
+
+rootdir
+	master.tf
+	----------------
+	module ./dir1 
+	module ./dir2
+	module ./dir3
+
+	dir1 - func1
+	x.tf
+
+	dir2 - func2
+	y.tf
+
+	dir3 - func3
+	z.tf
+	m.tf
+
+	dir4 - func4
+
+
+module "func1" {
+  source      = "./mod1"
+}
+
+
+
+Code for ENTIRE INFRA
+---------------
+	module1
+	mode2
+	mode3
+	mode4
+	
+
+Create AWS infra
+create VMs
+Deploy Software
+
+
+terraform workspace
+====================
+What is terraform?
+Why Terraform?
+How Terraform works?
+Basic workflow of terraform?
+How to write a code in terraform?
+Variables
+Conditioniong
+Looping
+Module
+Workspace
+Backend
+==============================
+AWS
+	VPC
+		Subnet
+		routetables
+		nat
+		igw
+		security
+		elastic ips
+	----------------
+	ec2 
+	esg
+	ebs
+	efs
+	s3
+	------
+	db
+	--------
+	sqs
+	sns
+	ses
+
+====================================================
+Provisionar
+================================
+
+EC2 instance using terraform
+------------------------------
+	run commnad
+	run script
+	run services
+--------------
+into ec2-instance using terraform
+
+resources aws_instance {
+
+Provisionar {
+	run commnad
+	run script
+	run services
+}
+
+
+}
+
+
+
+
+
+
+
