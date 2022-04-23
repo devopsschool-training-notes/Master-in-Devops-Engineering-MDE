@@ -1,0 +1,69 @@
+Rajesh Kumar
+=======================
+www.Rajeshkumar.xyz
+==========================
+https://www.devopsschool.com/kit/master-in-devops-engineering.html
+==========================
+Slides - https://devopsschool.com/slides/
+Notes - https://github.com/devopsschool-training-notes/Master-in-Devops-Engineering-MDE
+Videos - https://www.devopsschool.com/lms/
+Tutorial - https://www.devopsschool.com/blog/
+================================================
+			1980 - 2000				2000 - 2015					2015 - 2022
+			---------------------------------------------------------------
+
+Platform		pHYSICAL SER				Virtualization				Container
+			1 day					5 mins							1 Sec
+Timeline	-------------------------		Internet-------------------------------
+									 
+Apps			EXE - Console			Browsers						APP (24/7)				
+
+Duration		1 year					2 Weeks						5 mins
+
+Soft Arch	Monolitic				SOA								Microservices	
+	
+SD Model		Waterfall				Agile						DevOps
+
+
+
+Objective of Soft org
+-----------------------------
+Reduce in Cost	(Dev + Running)
+Impro Quality (Software)
+Imm Release	
+
+
+PLAN	-> CODE  -> TEST ---> PROD
+==================================
+ARCH		DEV		QA			OPS
+======================================
+			EVERYTHING
+			DEVOPS
+
+What is DevOps?
+==========================
+Culture & Mindset
+
+-----------------------
+I am doing a CODING for the Product - Dev
+I am doing a CODING for the testing a Product - Qa
+I am doing a CODING for the infra/ops/cicd/inte for a Product - Ops
+------------------------------
+DevOps guys would do CODING for
+- the Product 
+- the testing a Product
+- the infra/ops/cicd/inte for a Product
+==================================================
+What is DevSecOps?
+
+DevOps + Security
+====================
+	DevSecOps
+
+SRE?
+-------------------
+
+
+
+
+
