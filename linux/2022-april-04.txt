@@ -1,0 +1,209 @@
+Linux - Virtualbox -Vagrant
+====================================
+
+Windows
+
+DevOps - DevsecOps - SRE
+=========================
+Linux
+
+How can we get linux server?
+=============================
+Install in physcial box
+Get a Linux VM in 
+			- Hypervisor		- Manage VMS
+				- vmware
+				- virtualbox
+				- hyper-v
+				- 
+			- Cloud				- Manage VMS
+				- aws
+				- azure
+				- gc
+
+what is virtualbox?
+- managing vms.
+		- create vm
+		- start a vm
+		- stop a vm
+		- remove vm
+==================================================================
+What is VM?
+
+Physical Server
+=========================
+Hardware --> Kernal
+
+
+OS IMAGE Contains
+=========================
+boot filesystem		kernel 
+root filesystem		what you see...
+user filesystem
+app filesystem
+
+
+kernel 
+The kernel is a computer program at the core of a computer's operating system and generally has complete control over everything in the system
+
+kernel 
+		namespace			Create		ALLOWED		CAN 
+			user			user		UN			UN				
+			mnt				root fs		1			UN
+			net				net			1			UN
+			pid				pid tree	1			UN
+		cgroups
+			managing cpu+ram for the pid
+		capabilites
+			givng a root/non-root access to user
+
+
+Class -> object unlimited 
+
+what is filesystem?
+---------------------
+collection of files/dir for certain purpose
+
+Types of fs
+----------------------
+boot filesystem		kernel 
+root filesystem		what you see...
+user filesystem
+app filesystem
+======================================
+Step 1- Install Virtualbox
+https://www.virtualbox.org/wiki/Downloads
+
+Step 2 - create a vm
+=================================================================
+
+Start working on
+============================================
+Vagrant?
+
+https://www.devopsschool.com/blog/bash-aliases-for-git/
+
+
+Registry			Repository		Contain(package)	- I - U - R
+=========================================================================
+playsore			Bhangra Paa Le						- I - U - R
+github				Master-in-Devops-Engineering-MDE	- c lone
+
+
+yum					package									i - U R
+---------------------------------------------------------------------------
+
+
+repostory
+
+
+
+
+mkdir vm1
+cd vm1
+vagrant init
+vagrant up
+
+mkdir vm2
+cd vm2
+vagrant init
+vagrant up
+
+
+service
+systemctl start apache
+systemctl stop apache
+systemctl restart apache
+systemctl enable apache
+systemctl disble apache
+====================================================
+How to troubleshoot?
+==================================
+Step 1 - READ All Error messages
+Step 2 - Divide error message into mulitple
+
+CODE
+----
+	lib path
+	permission
+	file missing
+	tool missing
+
+APP
+	jenkins 
+	plugins
+	java
+	heap
+	config
+			Process or not
+			cpu consuption
+			latest version
+
+SYSTEM
+	disk
+	ram
+	cpu
+	net	
+	i/op
+	permission
+	ownership
+			du
+		df
+		free
+	uptime
+		vmstate
+		iostat
+		mpstat
+		ping
+	netstat
+		ifoconfig
+
+Dependent services
+	email
+	ldap
+	api gatway
+	aws
+	azure
+	kuber
+	docker
+	jira
+	github
+
+curl htp
+
+
+========================================
+Linux - Bash Scripting - 
+
+vagrant boxx add
+vagrant init
+vagrant up
+vagrant ssh
+
+vagarnt winrm 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
