@@ -1,0 +1,224 @@
+What is AWS?
+	- Amazon Web Services
+
+Services
+- Compute
+- Storage
+- Networking
+- Security
+- APPS
+
+Others
+==========
+AWS
+Azure
+Google C
+=======================================================
+AWS
+	Region - 17
+	Az - min 2
+============================
+IAM
+------------------
+You Logged into AWS - root account (COTOCUS) - Have access for everything
+---------------------
+
+Project 1
+- Dev
+	Eng 1
+	Eng 1
+- QA
+- OPS
+
+Project 2
+- Dev
+- QA
+- OPS
+
+Project 3
+- Dev
+- QA
+- OPS
+
+IAM
+------------------
+User - Who
+Policies - What access?
+Group -> WHO + WHAT
+===============================================
+
+
+
+Services
+- Compute
+------------- EC2 === Virtual Machine
+						- LINUX	- ACCESS
+						- WINDOWS - ACCESS
+
+- Storage
+- Networking
+- Security
+- APPS
+
+PUB				PVT
+3.108.67.41 | 172.31.19.182
+
+ssh -i "demo-session.pem" ubuntu@ec2-3-108-67-41.ap-south-1.compute.amazonaws.com
+ssh -i "demo-session.pem" ubuntu@3.108.67.41
+
+
+SSH - CMD - pem
+SSH - putty - ppk
+
+pem - ppk ===> puttygen
+https://www.devopsschool.com/blog/how-to-login-linux-server-of-aws-from-windows-using-putty/
+
+13.233.255.72
+administrator
+qJHwR9O%$muGb.y5nOZHWfp&48CAS@H$
+
+===========================================================
+- Storage
+=============================================================
+Block 	- Ur Laptop		- using SYSTEM
+	========== EBS
+Object	- Google Drive - using HTTP
+	========== S3
+
+Network - NFS			- Using Network
+	========= EFS
+https://www.devopsschool.com/blog/?s=nfs
+
+Database - 
+			
+Linux - ap-south-1a
+Windows - ap-south-1b
+
+Network - NFS			- Using Network
+	========= EFS
+
+efs endpoint
+---------------
+Mount inside a EC2
+
+fs-0813100f2d812ebc7.efs.ap-south-1.amazonaws.com
+
+sudo mount -t nfs -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport mount-target-DNS:/   ~/efs-mount-point  
+
+
+sudo mount -t nfs -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport mount-target-ip:/  ~/efs-mount-point
+
+ec2
+ebs
+
+s3
+efs
+
+IAAS | PAAS | FAAS
+------------------------
+- Networking
+==============================================================
+VPC
+	SUB1 - PUB
+	SUB2 - PVT
+	Internet Gateway
+	Route Table
+
+
+LOADBALANCER
+===============
+
+
+
+
+
+xyz.devopsschool.com
+
+http://demo-d0435feed8177257.elb.ap-south-1.amazonaws.com/
+
+
+EC2
+
+									- linux
+									- windows
+
+
+YOU --->>>
+
+
+=======================================================================
+IDE -> SCAN -> COMMIT -> BUILD -> ARCHIVE -> DEPLOY
+-------------------------------------------------
+eclip -> sonar -> git -> jenkins -> art  -> ansible
+-------------------------------------------------
+Cloud9 -> CodeStar CodeCommit - CodeBuild - CodeArtifact - CodeDeploy
+										CodePipeline
+
+A Cloud IDE for Writing, Running, and Debugging Code
+
+CloudShell
+A browser-based shell with AWS CLI access from the AWS Management Console
+
+CodeArtifact
+Secure, scalable, and cost-effective artifact management for software development
+
+CodeBuild
+Build and Test Code
+
+CodeCommit
+Store Code in Private Git Repositories
+
+CodeDeploy
+Automate Code Deployments
+
+CodePipeline
+Release Software using Continuous Delivery
+
+CodeStar
+Quickly develop, build, and deploy applications
+
+AWS FIS
+Improve resiliency and performance with controlled experiments.
+
+X-Ray
+Analyze and Debug Your Applications
+
+=============================================
+Dev Tools
+=====================
+Queqe Server	- SQS
+Notification	- SNS
+Email Server	- SES
+===============
+
+Auto Scaling
+================
+Cloud Watch
+-----------------------
+IAM
+Ec2
+EBS
+EFS
+S3
+VPC
+LB
+ASG
+-----
+DevOps Tools
+Dev Tool
+-------
+AWS CloudWATCH
+
+CloudFormation --> All AWS SERVICES
+------------------
+Terraform - AWS - AZURE - GC - 100s
+
+
+
+
+
+
+
+
+
+
