@@ -1,0 +1,826 @@
+- https://devopsschool.com/slides/
+================================
+Session - Docker Advance
+By - Rajesh
+www.RajeshKumar.xyz
+================================
+What is Docker?
+---------------------------
+- Container Mgmt Tool/Platform
+- Release
+			Community  - FREE - OpenSource
+			Enterprise - FREE - NOT OPenSource
+- From Docker
+- 20.X
+- Written in Golang
+
+
+Tool
+- Save Cost
+			= Container consume less cpu+ram+no-lic cost COMPARE to VMs
+- Save Time
+			= RUNNING a APP in VM(5mins) ---> RUNNING a APP in Container(1 SEC)
+- Improve a Quality
+			= Quality of Software
+						- Quality of Coding
+						- Quality of Testing 
+
+Mgmt 
+- Create - start - stop - remove
+
+Container 
+
+What is Container?
+---------------------------------------------------
+Container is running ur APP but with their independent resoures. its lightweight
+
+Container is having
+				1 user from USER NS
+					1 net fron NET NS
+					1 mnt from MNT NS
+					1 PID from PID NS
+			----------------------------------
+						container
+						requested by Docker ---> ContainerD --> Kernal
+
+
+-> What are the components required to RUN any APP?
+
+
+
+EXAMPLE - APACHE
+
+HARDWARE
+(CPU+RAM+HDD)
+			--> OS (KERNAL)			NEED4APP		ALLOWED				CAN		
+					Namespaces
+									- 1 USER		N USER				N USER
+									- 1 PID			1 PIDTREE			N PIDTREE
+									- 1 NETWORK		1 NET				N NET		
+									- 1 MNT 		1 MNT					N MNT
+					
+					CPU+Ram -> cgroup
+					User's Perm -> Capabilities
+
+MNT - FILESYSTEM == ROOTFILESYSTEM
+------------------------------------
+Collection of files/dir for some purpose...
+
+BOOT FILESYSTEM		= Kernal
+ROOT FILESYSTEM		
+USER FILESYSTEM
+APP FILESYSTEM
+
+=======================================================================================
+Artchitecture of Docker?
+====================================
+HUMAN -> Docker Clinet(docker) -> API --> Docker Server(Dockerd) -> ContainerD --> Kernal
+		========================================================
+						Docker Engine
+
+How to install Docker?
+==============================
+https://www.devopsschool.com/blog/docker-installation-and-configurations/
+
+    1  clear
+    2  ls
+    3  docker info
+    4  clear
+    5  docker version
+    6  docker help
+    7  cledar
+    8  clear
+    9  history
+   10  clear
+   11  which docker
+   12  which dockerd
+   13  ps -eaf| grep docker
+   14  which containerd
+   15  ps -eaf| grep containerd
+
+Components of Docker?
+=============================================
+Docker Engine - DONE
+
+Docker Images
+========================
+VM image = BOOT FS  + ROOTfS + USERFS + APPFS
+Docker Image = ROOTfS + USERFS + APPFS
+			ubuntu + root + http
+			centos + mysql + mysql
+
+ubuntu image= ubuntu ROOTfS 
+centos image= centos ROOTfS 
+
+- Every Container would GET 1 MNT == 1 copy of docker image attached to uSr container
+- Whatevr u have in an image - u see inside a container
+
+Image is having "multiple version of filesystem"
+ex. 
+ubuntu -> java -> tomcat -> app
+ROOTFS  - AFS --> AFS --> 1AFS
+
+Docker Registry
+---------------------
+	PUB
+		docker hubs
+		google registry
+		aws ecr
+
+		Contains Repository
+					Contains "VERSION OF FILESYSTEM"
+					ubuntu -> java -> tomcat -> app
+					ROOTFS  - AFS --> AFS --> 1AFS
+					-------------------------------
+							Image
+
+	PVT
+		artifactory
+		nexus
+
+Docker Container
+
+HUMAN -> Docker Clinet(docker) -> API --> Docker Server(Dockerd) -> ContainerD --> Kernal
+---
+docker run httpd
+																1 USER
+																1 MNT aka rfs
+																1 NET
+																1 PID
+													ATTACH 1 MNT + 1 NT + 1 PID to 1 USER ==Container
+
+
+
+Workflow of Docker?
+==================================================
+
+HUMAN -> Docker Clinet(docker) -> API --> Docker Server(Dockerd) 
+---
+								-- CHECK httpd image exist
+								YES - -> ContainerD --> Kernal
+								
+								NO ---> Download from HUb to local 
+								> ContainerD --> Kernal
+docker run httpd
+[ Go to Dockerhub]
+
+docker run http://10.2.2.2.2:/httpd
+
+
+
+Lifecycle of Container?
+==============================================================
+Lifecycle of Human? -> born -> kid -> teen -> young -> mid -> old -> die
+Lifecycle of vms? -> create + start -> stop -> start -> restart -> pause -> unpause -> kill -> remove
+Lifecycle of container? -> create + start -> stop -> start -> restart -> pause -> unpause -> kill -> remove
+
+
+ 11  which docker
+   12  which dockerd
+   13  ps -eaf| grep docker
+   14  which containerd
+   15  ps -eaf| grep containerd
+   16  history
+   17  clear
+   18  docker info
+   19  clear
+   20  docker images
+   21  docker ps
+   22  docker ps -a
+   23  docker pull httpd
+   24  clear
+   25  docker images
+   26  clear
+   27  ls
+   28  docker images
+   29  docker create httpd
+   30  docker ps -a
+   31  docker create httpd
+   32  docker ps -a
+   33  docker create httpd
+   34  clear
+   35  docker ps -a
+   36  docker start 9d57dfdcc592
+   37  docker ps -a
+   38  docker start e56db1a0032f
+   39  clear
+   40  docker start e56db1a0032f
+   41  docker ps -a
+   42  docker stop 9d57dfdcc592
+   43  docker ps -a
+   44  docker start 9d57dfdcc592
+   45  clear
+   46  docker ps -a
+   47  docker restart e56db1a0032f
+   48  docker ps -a
+   49  clear
+   50  docker ps -a
+   51  docker pause 9d57dfdcc592
+   52  docker ps -a
+   53  docker unpause 9d57dfdcc592
+   54  docker ps -a
+   55  clear
+   56  docker ps -a
+   57  docker kill 9d57dfdcc592
+   58  docker ps -a
+   59  docker rm 9d57dfdcc592
+   60  docker ps -a
+===================================================
+PHYSICAL SERVER
+is 
+runnning
+as long as 
+PID 1(first process) is running
+
+VIRUTAL SERVER
+is 
+runnning
+as long as 
+PID 1(first process) is running
+
+CONTAINER
+is 
+runnning
+as long as 
+PID 1(first process) is running
+
+
+How do i use container?
+===================================================
+1. go inside
+			SHELL 
+- exec
+		You can execute any executable inside a container
+		You can execute /bin/bash with -it mode - you can do inside a container
+
+- attach
+		using attach command - you can get attached to PID 1 session.
+
+CONTROL + P + Q
+------------------
+Saftly exit from container
+
+2. access from outside using 
+				SSH using network
+				http using network
+
+run
+--------------------------------------------
+pull + create + start + attach
+
+run -d
+--------------------------------------------
+pull + create + start + do not attach
+
+docker run httpd
+docker run -d httpd
+
+
+docker run -p 80:80 -d httpd
+docker run -p 81:80 -d httpd
+docker run -p 82:80 -d httpd
+docker run -p 83:80 -d httpd
+
+docker run -p 80808:80 -d httpd
+
+-p 80:80 
+--------------
+80:nodeport
+80:cont port
+
+-p 81:80 
+--------------
+81:nodeport
+80:cont port
+
+
+
+
+Docker Desktop For Windows OR MAC
+------------------
+docker client + dockern
+gui
+docker compose
+
+Desktop For Windows  --> VM(hyperv + virtualbox
+
+httpd
+
+rootfs + user + httpd
+=============================================
+
+
+  1  clear
+    2  ls
+    3  docker info
+    4  clear
+    5  docker version
+    6  docker help
+    7  cledar
+    8  clear
+    9  history
+   10  clear
+   11  which docker
+   12  which dockerd
+   13  ps -eaf| grep docker
+   14  which containerd
+   15  ps -eaf| grep containerd
+   16  history
+   17  clear
+   18  docker info
+   19  clear
+   20  docker images
+   21  docker ps
+   22  docker ps -a
+   23  docker pull httpd
+   24  clear
+   25  docker images
+   26  clear
+   27  ls
+   28  docker images
+   29  docker create httpd
+   30  docker ps -a
+   31  docker create httpd
+   32  docker ps -a
+   33  docker create httpd
+   34  clear
+   35  docker ps -a
+   36  docker start 9d57dfdcc592
+   37  docker ps -a
+   38  docker start e56db1a0032f
+   39  clear
+   40  docker start e56db1a0032f
+   41  docker ps -a
+   42  docker stop 9d57dfdcc592
+   43  docker ps -a
+   44  docker start 9d57dfdcc592
+   45  clear
+   46  docker ps -a
+   47  docker restart e56db1a0032f
+   48  docker ps -a
+   49  clear
+   50  docker ps -a
+   51  docker pause 9d57dfdcc592
+   52  docker ps -a
+   53  docker unpause 9d57dfdcc592
+   54  docker ps -a
+   55  clear
+   56  docker ps -a
+   57  docker kill 9d57dfdcc592
+   58  docker ps -a
+   59  docker rm 9d57dfdcc592
+   60  docker ps -a
+   61  history
+   62  clear
+   63  clear
+   64  ps -eaf
+   65  clear
+   66  ps -eaf
+   67  clear
+   68  ls
+   69  docker ps
+   70  docker exec e56db1a0032f ps -eaf
+   71  docker run -itd ubuntu
+   72  clear
+   73  docker ps
+   74  docker exec f29d2bccf687 ps -eaf
+   75  docker exec f29d2bccf687 df -kh
+   76  df -kh
+   77  clear
+   78  docker exec f29d2bccf687 ls /
+   79  ls /
+   80  clear
+   81  ls
+   82  df -kh
+   83  docker ps
+   84  clear
+   85  docker run -itd ubuntu
+   86  docker ps
+   87  df -kh
+   88  clear
+   89  docker exec f29d2bccf687 ls /
+   90  docker exec f29d2bccf687 ps -eaf
+   91  clear
+   92  docker exec f29d2bccf687 ip a
+   93  docker exec f29d2bccf687 ifconfig
+   94  docker exec f29d2bccf687 ip
+   95  lear
+   96  clear
+   97  ls
+   98  docker ps
+   99  docker exec a500d88e1273 kill -9 1
+  100  docker ps
+  101  docker exec a500d88e1273 ps -eaf
+  102  docker attach a500d88e1273
+  103  docker ps
+  104  clear
+  105  docker ps
+  106  docker exec f29d2bccf687 ls
+  107  clear
+  108  docker exec f29d2bccf687 ps -eaf
+  109  docker ps
+  110  docker exec e56db1a0032f ps -eaf
+  111  clear
+  112  docker ps
+  113  docker exec -it f29d2bccf687 /bin/bash
+  114  clear
+  115  docker ps
+  116  docker attach f29d2bccf687
+  117  clear
+  118  docker ps
+  119  docker start f29d2bccf687
+  120  docker ps
+  121  docker attach f29d2bccf687
+  122  docker ps
+  123  clear
+  124  docker ps
+  125  docker attach e56db1a0032f
+  126  ls
+  127  sdf
+  128  fds
+  129  docker ps
+  130  clear
+  131  clear
+  132  ls
+  133  docker ps
+  134  docker ps -a
+  135  clear
+  136  docker start e56db1a0032f
+  137  docker ps
+  138  clear
+  139  docker ps
+  140  clear
+  141  docker run httpd
+  142  clear
+  143  docker ps -a
+  144  clear
+  145  docker run -d httpd
+  146  docker run -d httpd
+  147  docker run -d httpd
+  148  docker run -d httpd
+  149  docker run -d httpd
+  150  docker run -d httpd
+  151  docker run -d httpd
+  152  docker run -d httpd
+  153  docker run -d httpd
+  154  docker run -d httpd
+  155  docker run -d httpd
+  156  clear
+  157  docker ps
+  158  docker run -d httpd
+  159  docker run -d httpd
+  160  docker run -d httpd
+  161  docker run -d httpd
+  162  docker run -d httpd
+  163  docker run -d httpd
+  164  clear
+  165  docker ps
+  166  clear
+  167  docker run -p 80:80 -d httpd
+  168  docker run -p 81:80 -d httpd
+  169  docker run -p 82:80 -d httpd
+  170  docker run -p 83:80 -d httpd
+  171  clear
+  172  docker network ls
+  173  docker help
+  174  clear
+  175  ls
+  176  docker ps
+  177  clear
+  178  docker stop $(docker ps -a -q)
+  179  clear
+  180  docker rm $(docker ps -a -q)
+  181  clear
+  182  docker ps -a
+  183  clear
+  184  dcoker run -itd ubuntu
+  185  docker run -itd ubuntu
+  186  clear
+  187  dcoker ps
+  188  docker ps
+  189  ls
+  190  docker cp get-docker.sh 596080f14edf:/tmp
+  191  docker exec 596080f14edf ls /tmp
+  192  ls
+  193  rm -rf get-docker.sh
+  194  clear
+  195  ls
+  196  docker cp 596080f14edf:/tmp/get-docker.sh .
+  197  ls
+  198  clear
+  199  docker ps
+  200  docker diff 596080f14edf
+  201  docker inspect 596080f14edf
+  202  clear
+  203  docker port 596080f14edf
+  204  docker ps
+  205  docker rename 596080f14edf dev1
+  206  docker ps
+  207  clear
+  208  docker ps
+  209  docker logs 596080f14edf
+  210  docker inspect 596080f14edf
+  211  clear
+  212  curl http://172.17.0.2
+  213  curl http://172.17.0.2
+  214  curl http://172.17.0.2
+  215  docker ps
+  216  curl http://172.17.0.2
+  217  curl http://172.17.0.2
+  218  clear
+  219  curl http://172.17.0.2
+  220  docker inspect 596080f14edf
+  221  clear
+  222  ping 172.17.0.2
+  223  curl http://172.17.0.2
+  224  docker restart 596080f14edf
+  225  clear
+  226  docker ps
+  227  docker inspect 596080f14edf
+  228  clear
+  229  docker logs 596080f14edf
+  230  docker attach 596080f14edf
+  231  c
+  232  clear
+  233  docker logs 596080f14edf
+  234  clear
+  235  clear
+  236  docker stats
+  237  docker ps
+  238  docker top 596080f14edf
+  239  ps -eaf |
+  240  ps -eaf | grep 23352
+  241  ps -eaf | grep 23333
+  242  clear
+  243  ls
+  244  clear
+  245  docker events
+  246  clear
+  247  ls
+  248  history
+
+
+
+[root@ip-172-31-2-188 centos]# history
+    1  clear
+    2  docker ps
+    3  docker inspect e56db1a0032f
+    4  clear
+    5  curl http://172.17.0.
+    6  docker inspect e56db1a0032f
+    7  clear
+    8  curl http://172.17.0.3
+    9  curl http://172.17.0.3
+   10  curl http://172.17.0.3
+   11  curl http://172.17.0.3
+   12  curl http://172.17.0.3
+   13  curl http://172.17.0.3
+   14  clear
+   15  curl http://172.17.0.3
+   16  docker run -d httpd
+   17  history
+==============================================================
+==============================================================
+
+Docker Images
+========================
+- Collection of filesystem. ROOTfS + USERFS + APPFS
+		ubuntu rfs + root + http
+			centos  rfs + mysql + mysql
+
+ubuntu image= ubuntu ROOTfS 
+centos image= centos ROOTfS 
+
+- Every Container would GET 1 MNT == 1 copy of docker image attached to uSr container
+- Whatevr u have in an image - u see inside a container
+
+Image is having "multiple version of filesystem"
+ex. 
+ubuntu -> java -> tomcat -> app
+ROOTFS  - AFS --> AFS --> 1AFS
+
+
+========================
+
+How to create an image?
+----------------------------------------
+Using existing container
+-------------------------------------
+base - ubuntu + git + apache + java = 5 mns
+
+
+Using Dockerfile
+
+
+FROM ubuntu
+MAINTAINER Rajesh Kumar rajesh@devopsschool.com
+RUN apt-get update
+RUN apt-get install git -y
+RUN apt-get install apache2 -y
+RUN apt-get install install openjdk-11-jdk -y
+
+FROM ubuntu
+MAINTAINER Rajesh Kumar rajesh@devopsschool.com
+RUN apt-get update && apt-get install git -y
+RUN apt-get install apache2 -y && apt-get install install openjdk-11-jdk -y
+
+
+How to share an images?
+-------------------------
+tar ball
+dcoker hub
+
+
+ 244  clear
+  245  docker events
+  246  clear
+  247  ls
+  248  history
+  249  clear
+  250  docker ps
+  251  df -kh
+  252  clear
+  253  docker images
+  254  docker history httpd
+  255  clerar
+  256  clear
+  257  docker images
+  258  docker history ubuntu
+  259  docker inspect ubuntu
+  260  clea
+  261  clear
+  262  docker ps
+  263  df -kh
+  264  docker stop d2f88f6539cb 596080f14edf
+  265  clear
+  266  docker rm d2f88f6539cb 596080f14edf
+  267  docker ps -a
+  268  docker images
+  269  docker rmi ubuntu
+  270  docker rmi httpd
+  271  clear
+  272  docker images
+  273  cd /var/lib/docker/
+  274  cd overlay2/
+  275  ls
+  276  pwd
+  277  docker info
+  278  clear
+  279  ls
+  280  du -sh .
+  281  docker pull ubuntu
+  282  ls
+  283  ls
+  284  clear
+  285  ls
+  286  cd 0c3f76dbd7cec8980327a10eb869914284f5957f675c789c168ccffe02b12272
+  287  ls
+  288  cd diff/
+  289  ls
+  290  clear
+  291  ls
+  292  pwd
+  293  pwd
+  294  ls
+  295  ls /
+  296  docker run -itd ubuntu
+  297  ls
+  298  cd ..
+  299  clear
+  300  cd ..
+  301  ls
+  302  du -sh e5aac77e9b554ea4497814f4b674d72e5cdd6499cb9ea54d99559447856e7554-init
+  303  du -sh e5aac77e9b554ea4497814f4b674d72e5cdd6499cb9ea54d99559447856e7554
+  304  df -kh
+  305  clear
+  306  ls
+  307  cd e5aac77e9b554ea4497814f4b674d72e5cdd6499cb9ea54d99559447856e7554
+  308  ls
+  309  clear
+  310  ls
+  311  docker ps
+  312  docker stop 3ad10b08a235
+  313  ls
+  314  clear
+  315  df -kh
+  316  docker start 3ad10b08a235
+  317  ls
+  318  df -kh
+  319  cd
+  320  ls
+  321  clear
+  322  ls
+  323  clear
+  324  ls
+  325  pwd
+  326  vi dockerfile
+  327  docker bulld -t rajesh1 .
+  328  clear
+  329  docker bulld -t rajesh1 .
+  330  clear
+  331  ls
+  332  docker build -t rajesh1 .
+  333  vi dockerfile
+  334  clear
+  335  docker build -t rajesh1 .
+  336  docker images
+  337  docker run -it ubuntu
+  338  clear
+  339  docker ps
+  340  history | grep commit
+  341  history | grep commit
+  342  clear
+  343  docker ps
+  344  docker commit -m"ub-up-java-git-apache2" -a"Rajesh Kumar" 3ad10b08a235 raju2
+  345  docker commit -m"ub-up-java-git-apache2" -a"Rajesh Kumar" d61c01ce8071 raju3
+  346  clear
+  347  docker images
+  348  ls
+  349  pwd
+  350  ls
+  351  docker save raju3.tar raju3
+  352  docker save -i raju3.tar raju3
+  353  clear
+  354  docker help save
+  355  docker save -o raju3.tar raju3
+  356  ls
+  357  docker ps -a
+  358  docker stop d61c01ce8071 cbe9bdaacf24 3ad10b08a235
+  359  docker rm, d61c01ce8071 cbe9bdaacf24 3ad10b08a235
+  360  docker rm d61c01ce8071 cbe9bdaacf24 3ad10b08a235
+  361  docker images
+  362  docker rmi raju3 raju2 rajesh1 ub-up-java-git-apache2
+  363  clear
+  364  ls
+  365  docker images
+  366  docker load -i raju3.tar
+  367  docker images
+  368  docker run -itd raju3
+  369  docker ps
+  370  docker exec 63bb592f6205 ls /tmp
+  371  docker images
+  372  clear
+  373  docker login
+  374  docker login
+  375  clear
+  376  docker images
+  377  docker push devopsschools/raju3
+  378  docker tag raju3 devopsschools/raju3
+  379  docker push devopsschools/raju3
+  380  history
+
+
+
+
+ 12  curl http://172.17.0.3
+   13  curl http://172.17.0.3
+   14  clear
+   15  curl http://172.17.0.3
+   16  docker run -d httpd
+   17  history
+   18  clear
+   19  ls
+   20  docker ps
+   21  docker attach 3ad10b08a235
+   22  clear
+   23  docker ps
+   24  docker exec 3ad10b08a235 java
+   25  docker exec 3ad10b08a235 git
+   26  clear
+   27  docker exec 3ad10b08a235 which apache2
+   28  docker ps
+   29  docker images
+   30  docker commit -m"ub-up-java-git-apache2" -a"Rajesh Kumar" 3ad10b08a235 ub-up-java-git-apache2
+   31  docker images
+   32  docker history ubuntu
+   33  docker history ub-up-java-git-apache2
+   34  clear
+   35  docker history ubuntu
+   36  docker history ub-up-java-git-apache2
+   37  docker history ub-up-java-git-apache2
+   38  history | grep commit
+   39  history
+
+==========================================================
+What is Docker?
+Why Docker?
+What Container?
+How container works?
+Docker installation
+Docker workflow
+Container lifecycle
+All - the commands
+https://www.devopsschool.com/blog/the-docker-command-line-complete-referenece/
+=====================================
+Docker networking
+Docker volume
+Docker Compose
+=====================
+rajesh@devopsschool.com
+www.Rajeshkumar.xyz
+
+
+
+
+
+
