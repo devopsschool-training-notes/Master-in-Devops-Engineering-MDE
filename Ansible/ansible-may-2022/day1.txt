@@ -1,0 +1,159 @@
+What is Ansible?
+------------------------
+		Config mgmt tool.
+		of  what?
+		----> Server(S)
+
+		Deployment tool
+
+		Release
+		- Ansible - CMD - Free - Open Source
+		- Ansible Tower - GUI - Paid
+		- AWX - GUI - Latest version of Tower which is not tested
+
+		Written - in Python
+
+		From - Redhat --> IBM
+
+
+What config?
+		files
+		directory
+		services
+		users
+		packages
+
+Why Ansible?
+		Easy to learn
+		- debug
+		- share 
+		- write
+		- test 
+		- extend 
+	Compare all programming lang FOR (DOMAIN) -- Deployment & Config
+
+	IDEOMPOTENT
+	DESIRE ===== ACTUAL
+			1st Time - 10 Steps - 1 mins ====== 10 mins
+2 change	2nd time - 2 steps - 1 mins ===== 2min
+
+	Platform Independent
+
+Other -----> Chef - Puppet - Salt 
+=======================================================================
+
+Ansible Arch
+==================
+ACS --- Ansible Control Server
+ARS --- Ansible Remote Server(S)
+
+Human -----> 		ACS -----> 				ARS(S)
+--------------------------------------------------------
+				- LINUX						- ANY
+				- Python					- Linux - Python + SSH
+											- Windows - Winrm(HTTP) + PS 3.0
+				- Ansible					-- NA
+				- inventory
+				- Playbook
+
+Authentication
+-- SSH
+		USER & PASS
+		USER & KEY
+-- WINRM
+	Basic Authentication. ...
+	Digest Authentication. ...
+	Negotiate Authentication. ...
+	Kerberos Authentication. ...
+	Client Certificate-based Authentication.
+-- Cert
+		
+Authorization
+- USER Name 
+- USER Name with SUDO without password
+- USER Name with SUDO with password
+- USER Name with SUDO with another user
+=============================================
+How to install ansible?
+-----------------------------
+CENTOS - https://www.devopsschool.com/blog/how-to-install-ansible-in-centos-7-rhel-7/
+Components of Ansible
+------------------------------------------
+- Ansible executables			DONE
+- Ansible Modules				- CODE(py+ps+etc) which would run in ARS- ACCEPT PARAM			
+- Ansible plugins				- CODE(py+ps+etc) Which Empower a FUNC of Ansible
+- Ansible Config file			- /etc/ansible/ansible.cfg		
+		
+Python 2.7			Python 3.0
+------------------------------------
+Ansible 2.X			Ansible 3.X
+
+
+IP - 13.235.83.213
+
+Default value
+=================================
+Ansible			----> /etc/ansible/ansible.cfg --> ENV --> VARS 
+							~/.ansible/ansible.cfg 
+
+------------------------------
+inventory
+			LIST OF IP Address of ARS. 10.4.5.6,
+				
+			CMD		10.4.5.6,4.5.5.5,
+			file		
+					10.4.5.6
+					4.5.5.5
+			directory
+					dir/inventory-file
+						10.4.5.6
+						4.5.5.5
+			Script
+					script.py
+			
+
+Playbook
+			- its a Deployment SCRIPT in YAML FORMAT which would run in ARS	
+			- Contains MODULES
+======================================================================
+CMD	 - 1 things 
+SCRIPT - 10 things
+
+Ansible Adhoc CMD
+Ansible Playbook
+
+1-  
+2- 
+3- 
+4- 
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
