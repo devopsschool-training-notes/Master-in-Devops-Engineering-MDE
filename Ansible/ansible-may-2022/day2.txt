@@ -1,0 +1,138 @@
+Playbook
+			- its a Deployment SCRIPT in YAML FORMAT which would run in ARS	
+			- Contains MODULES
+======================================================================
+CMD	 - 1 things 
+SCRIPT - 10 things
+
+Ansible Adhoc CMD
+Ansible Playbook
+
+1-  
+2- 
+3- 
+4- 
+===========================================================================
+Project = Requirement
+===========================================================================
+Setup up a Webserver in centos
+
+
+PSUCODE											Module
+------------------------------	
+Step 1 - Install httpd in centos						yum		I | R | U
+Step 2 - Copy index.html files into /var/lib/www/html		copy
+Step 3 - Start a httpds								service 
+
+ansible localhost -m yum -a"name=httpd state=present"
+ansible localhost -m yum -a"name=httpd state=absent"
+
+ansible localhost -m copy -a"src=index.html dest=/var/lib/www/html/"
+
+ansible localhost -m service -a"name=httpd state=started"
+
+
+
+
+ansible -i 192.168.1.9, -m yum -a"name=httpd state=present"
+ansible -i 192.168.1.9,4.5.6.7,6.7.8.9,,4.5.6.7,6.7.8.9,,4.5.6.7,6.7.8.9,,4.5.6.7,6.7.8.9, -m yum -a"name=httpd state=present"
+
+
+ansible -i 192.168.1.9, -m yum -a"name=httpd state=present" -u root -k
+ansible -i 192.168.1.9, -m yum -a"name=httpd state=present" -u root --private-key=node.pem
+
+
+ansible -i 192.168.1.9, -m yum -a"name=httpd state=present" -u ec2-user -k		# PASS
+ansible -i 192.168.1.9, -m yum -a"name=httpd state=present" -u ec2-user --private-key=node.pem ## KEY
+ansible -i 192.168.1.9, -m yum -a"name=httpd state=present" -u ec2-user --private-key=node.pem -b ## SUDO W/o PASS
+ansible -i 192.168.1.9, -m yum -a"name=httpd state=present" -u ec2-user --private-key=node.pem -b -K ## SUDO W PASS
+ansible -i 192.168.1.9, -m yum -a"name=httpd state=present" -u ec2-user --private-key=node.pem -b -K --become-user=deploy
+
+
+ansible all -i 192.168.1.9, -m yum -a"name=httpd state=present" -u ec2-user -k
+
+======================
+ansible all -i 192.168.1.9, -m yum -a"name=httpd state=present" -u root -k
+ansible all -i 192.168.1.9, -m copy -a"src=index.html dest=/var/www/html/" -u root -k
+ansible all -i 192.168.1.9, -m service -a"name=httpd state=started" -u root -k
+======================
+
+/var/www/html
+
+
+GROUP - all
+C G - web | db | aa
+
+ansible localhost -m copy -a"src=index.html dest=/var/lib/www/html/"
+
+ansible localhost -m service -a"name=httpd state=started"
+
+
+
+======================
+ansible all -i 192.168.1.9, -m yum -a"name=httpd state=present" -u root -k
+ansible all -i 192.168.1.9, -m copy -a"src=index.html dest=/var/www/html/" -u root -k
+ansible all -i 192.168.1.9,192.168.1.9,192.168.1.9,192.168.1.9,192.168.1.9,192.168.1.9,192.168.1.9,192.168.1.9,192.168.1.9,192.168.1.9,192.168.1.9,192.168.1.9,192.168.1.9,192.168.1.9,192.168.1.9,192.168.1.9,192.168.1.9,192.168.1.9,192.168.1.9,192.168.1.9,192.168.1.9,192.168.1.9,192.168.1.9,192.168.1.9,192.168.1.9,192.168.1.9,192.168.1.9,192.168.1.9,192.168.1.9, -m service -a"name=httpd state=started" -u root -k
+======================
+
+
+
+======================
+ansible all -i inventory -m yum -a"name=httpd state=present" -u root -k
+ansible all -i inventory -m copy -a"src=index.html dest=/var/www/html/" -u root -k
+ansible all -i inventory -m service -a"name=httpd state=started" -u root -k
+======================
+
+WHAT IS GROUP
+------------------------
+Default - 3 
+- all
+- ungrouped
+
+Custom group
+----------------
+dev
+web
+app
+
+[dev]
+192.168.1.9
+
+[web]
+192.168.1.9
+192.168.1.10
+192.168.1.11
+
+[app]
+192.168.1.9
+192.168.1.10
+192.168.1.11
+
+
+
+192.168.1.9
+192.168.1.10
+192.168.1.11
+
+
+======================
+ansible dev -i inventory -m yum -a"name=httpd state=present" -u root -k
+ansible dev -i inventory -m copy -a"src=index.html dest=/var/www/html/" -u root -k
+ansible dev -i inventory -m service -a"name=httpd state=started" -u root -k
+======================
+ansible dev -i inventory -m user -a"name=ramukaka append=yes group=wheel" -u root -k
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
