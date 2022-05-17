@@ -1,0 +1,88 @@
+======================
+ansible dev -i inventory -m yum -a"name=httpd state=present" -u root -k
+ansible dev -i inventory -m copy -a"src=index.html dest=/var/www/html/" -u root -k
+ansible dev -i inventory -m service -a"name=httpd state=started" -u root -k
+======================
+
+What is Playbook?
+- Its a Yaml file
+- It has Multiple 
+	- Play			FOCUS
+	- Vars
+	- Handlers
+	- roles
+	- tasks
+	- post_tasks:
+	- pre_tasks:
+	- environment:
+
+What is Play?
+- It has some param. - https://www.devopsschool.com/blog/anatomy-of-ansible-play-defined/
+- It has Task(S)
+
+What is Task?
+- Each Task == 1 Module and Its param
+
+Summary - Playbook has multiple play and Play has multiple task(s).
+
+
+---
+- name: Hello World Play   
+  hosts: dev
+  remote_user: root          
+
+  tasks:
+    - name: Install the latest version of Apache
+      yum:
+        name: httpd
+        state: latest
+    - name: Copy file with owner and permissions
+      ansible.builtin.copy:
+        src: index.html
+        dest: /var/www/html/index.html
+    - name: Start service httpd, if not started
+      ansible.builtin.service:
+        name: httpd
+        state: started
+
+$ ansible-playbook -i inventory web.yaml -u root -k
+
+ 43  vi web.yaml
+   44  ansible-playbook -i inventory web.yaml -u root -k
+   45  clear
+   46  ls
+   47  ansible-playbook -h
+   48  ansible-playbook --syntax-check web.yaml
+   49  clear
+   50  ansible-playbook -h\
+   51  ansible-playbook -h
+   52  ansible-playbook -C -i inventory web.yaml -u root -k
+   53  clear
+   54  ls
+   55  vi web.yaml
+   56  ansible-playbook -i inventory web.yaml -u root -k
+   57  clear
+   58  vi web.yaml
+   59  ansible-playbook -i inventory web.yaml -k
+
+
+---
+- name: Hello World Play   
+  hosts: dev
+  remote_user: root          
+
+  tasks:
+    - yum:
+        name: httpd
+        state: latest
+    - name: Copy file with owner and permissions
+      ansible.builtin.copy:
+        src: index.html
+        dest: /var/www/html/index.html
+    - name: Start service httpd, if not started
+      ansible.builtin.service:
+        name: httpd
+        state: started
+=================================================================
+
+
