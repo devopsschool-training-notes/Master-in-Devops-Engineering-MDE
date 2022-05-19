@@ -1,0 +1,97 @@
+Variables
+=============================
+- Playbook
+	- Embed in Playbook
+	- external files in playbook
+	- vars prompt
+	- include vars into task
+	- another variable using register in Ansible
+
+- Inventory
+	- inventory
+	- group_var
+	- host_vars
+
+- ansible playbook in the command line?
+
+
+---
+- name: Hello World Play
+  hosts: dev
+  remote_user: root
+
+  vars:
+    myname: ramukaka
+    myage: 18
+    package: httpd
+    service: httpd
+  vars_files:
+    - "varfile.yaml"
+  vars_prompt:
+    - name: "myname1"
+      prompt: "What is your name? = "
+
+  tasks:
+    - name: Install the latest version of Apache
+      yum: name={{ package }} state=latest        
+    - name: Copy file with owner and permissions
+      ansible.builtin.copy:
+        src: index.html
+        dest: /var/www/html/index.html
+    - name: Start service httpd, if not started
+      ansible.builtin.service: name={{ service }} state=started
+    - name: include default step variables
+      include_vars: default_step.yml
+    - debug:
+        msg: "my Name is {{myname}} and my age is {{myage}}."
+    - debug:
+        msg: "my Name is {{myname1}} and my age is {{myage}}."
+    - name: Execute the command in remote shell
+      ansible.builtin.shell: ls
+      register: record
+    - debug:
+        msg: "Output of record is {{ record.stdout }}"
+    - debug:
+        msg: "my Name is {{myname2}} and my age is {{myage}}."
+
+List of Behavioral Inventory Parameters
+
+===========================
+[dev]
+192.168.1.9 ansible_user=root ansible_ssh_pass=rajesh123
+
+[dev:vars]
+myname2="IamSuperDon"
+myage=21
+
+[web]
+192.168.1.9
+192.168.1.10
+192.168.1.11
+
+[web:vars]
+ansible_user=root 
+ansible_ssh_pass=rajesh123
+
+[app]
+192.168.1.9 ansible_ssh_private_key_file=key.pem ansible_user=root
+192.168.1.10 ansible_user=centos ansible_ssh_pass=rajesh123 ansible_become=yes
+192.168.1.11 ansible_user=centos ansible_ssh_pass=rajesh123 ansible_become=yes ansible_become_pass=yes
+
+==============================
+group_vars
+- is a directory BUT at a place where inventory file is there
+- contains file 
+- file name MUST match with "Groupname" of inventory
+
+host_vars
+- is a directory BUT at a place where inventory file is there
+- contains file 
+- file name MUST match with "hostname" of inventory
+
+
+
+
+
+
+
