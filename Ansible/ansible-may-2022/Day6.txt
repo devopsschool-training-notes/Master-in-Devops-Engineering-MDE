@@ -1,0 +1,293 @@
+-------------------------
+Multiple Playbook file
+Multiple Tasks file
+
+How to run Script in Playbook?
+group of group
+
+Roles
+---------------------
+---
+- name: Hello World Play
+  hosts: localhost
+  remote_user: root
+
+  vars:
+    myname: "Rajesh Kumar"
+    myage: 18
+    package: httpd
+    service: httpd
+
+  tasks:
+    - name: Install the latest version of Apache
+      yum: name={{ package }} state=latest   
+    - name: Install the latest version of Apache
+      apt: name={{ package }} state=latest
+      when: ansible_os_family == "Debian"     
+    - name: Copy file with owner and permissions
+      ansible.builtin.copy:
+        src: index.html
+        dest: /var/www/html/index1.html
+  handlers:
+    - name: restart on template change
+      ansible.builtin.service: name={{ service }} state=restarted
+
+
+---------------------
+---
+- name: Hello World Play
+  hosts: localhost
+  remote_user: root
+
+  vars:
+    myname: "Rajesh Kumar"
+    myage: 18
+    package: httpd
+    service: httpd
+
+  tasks:
+    - name: template intro
+      template: src=index.html.j2 dest=/var/www/html/index.html
+      notify:
+        - restart on template change
+    - name: Start service httpd, if not started
+      ansible.builtin.service: name={{ service }} state=started
+
+  handlers:
+    - name: restart on template change
+      ansible.builtin.service: name={{ service }} state=restarted
+
+
+===========================================================
+master.yaml
+-----------------------------------------------
+- include: playbook1.yaml
+- include: playbook2.yaml
+
+master.yaml
+-----------------------------------------------
+---
+- name: Hello World Play
+  hosts: localhost
+  remote_user: root
+
+  vars:
+    myname: "Rajesh Kumar"
+    myage: 18
+    package: httpd
+    service: httpd
+
+  tasks:
+    - name: Install the latest version of Apache
+      yum: name={{ package }} state=latest   
+    - name: Install the latest version of Apache
+      apt: name={{ package }} state=latest
+      when: ansible_os_family == "Debian"     
+    - name: Copy file with owner and permissions
+      ansible.builtin.copy:
+        src: index.html
+        dest: /var/www/html/index1.html
+  handlers:
+    - name: restart on template change
+      ansible.builtin.service: name={{ service }} state=restarted
+
+- include: playbook2.yaml
+
+
+
+Multiple Tasks file
+==============================================
+
+
+tasks.yaml
+----------------------
+
+  
+    - name: Install the latest version of Apache
+      yum: name={{ package }} state=latest   
+    - name: Install the latest version of Apache
+      apt: name={{ package }} state=latest
+      when: ansible_os_family == "Debian"     
+    - name: Copy file with owner and permissions
+      ansible.builtin.copy:
+        src: index.html
+        dest: /var/www/html/index1.html
+
+
+
+master.yaml
+=--------------------------------------------
+---
+- name: Hello World Play
+  hosts: localhost
+  remote_user: root
+
+  vars:
+    myname: "Rajesh Kumar"
+    myage: 18
+    package: httpd
+    service: httpd
+
+  tasks:
+    - name: Install the latest version of Apache
+      yum: name={{ package }} state=latest   
+    - name: Install the latest version of Apache
+      apt: name={{ package }} state=latest
+      when: ansible_os_family == "Debian"     
+    - name: Copy file with owner and permissions
+      ansible.builtin.copy:
+        src: index.html
+        dest: /var/www/html/index1.html
+    - include: tasks.yaml
+
+  handlers:
+    - include: handerls.yaml
+
+===========================================
+How to run Script in Playbook?
+
+command
+shell
+script
+bash
+
+- name: Change the working directory to somedir/ before executing the command
+  ansible.builtin.shell: somescript.sh >> somelog.txt
+  args:
+    chdir: somedir/
+
+# You can also use the 'cmd' parameter instead of free form format.
+- name: This command will change the working directory to somedir/
+  ansible.builtin.shell:
+    cmd: ls -l | grep log
+    chdir: somedir/
+
+- name: Run command if /path/to/database does not exist (without 'args')
+  ansible.builtin.command: /usr/bin/make_database.sh db_user db_name creates=/path/to/database
+
+- name: Run a script with arguments (using 'cmd' parameter)
+  ansible.builtin.script:
+    cmd: deploy.sh
+
+group of group
+============================================
+
+10.4.5.6
+4.5.6.7
+
+[web]
+5.6.7.8
+8.7.6.5
+
+[db]
+dbserver1
+dbserver2
+dbserver3
+
+[gog:children]
+web
+db
+
+WEB ---> 2
+DB ---> 3
+ALL ---> 7
+gog --> 5
+============================================================
+Roles
+-------------------------------------------------------------
+- Fixed Dir Structure
+- for Managing 
+			- vars
+			- tasks
+			- handlers
+			- template file .j2
+			- files 
+			USED in Playbook
+
+WHY????
+	GLOBAL COMMUNITY CAN WORK IN THE SYNC
+
+
+HOW ? Vars in Playbook?
+HOW ? Tasks in Playbook?
+HOW ? Handlers in Playbook?
+Templates in Playbook?
+how to execute script OR use ext files in Playbook?
+
+ansible
+ansible-playbook
+ansible-galaxy
+
+$ ansible-galaxy init web
+
+[root@localhost web]# tree
+.
+├── defaults							=== VARS
+│   └── main.yml
+├── files							=== Script and files used in Tasks n Handlers
+├── handlers							==== Handlers
+│   └── main.yml
+├── meta							===role name - email - author -copyright - depdending on other role --version of ansible
+│   └── main.yml
+├── README.md
+├── tasks							=== Tasks
+│   └── main.yml
+├── templates						=== Store .j2
+├── tests
+│   ├── inventory
+│   └── test.yml
+└── vars							=== VARS
+    └── main.yml
+
+8 directories, 8 files
+[root@localhost web]#
+
+
+
+
+-------------------------
+Multiple Playbook file
+Multiple play file
+Multiple Tasks file
+
+Use file in playbook
+Roles
+---------------------
+
+site.yaml
+
+---
+- name: Hello World Play
+  hosts: localhost
+  remote_user: root
+
+  vars:
+  vars_files:
+  tasks:
+  handlers:
+  roles:
+
+
+site.yaml
+
+---
+- name: Hello World role
+  hosts: localhost
+  remote_user: root
+
+  roles:
+    - web
+
+------------------------------------
+Package	GENERIC module
+----------
+			yum 
+			apt
+
+  
+
+
+
+
+
+
