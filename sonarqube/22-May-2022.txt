@@ -1,0 +1,68 @@
+What is SonarQube?
+----------------------------
+Quality Management tool
+Written in Java
+From SonarSource
+Release
+		COmmunity		FREE
+		Dev				PAID
+		Enterprise		PAID
+Version
+		8.X
+
+What is Quality?
+-------------------
+- Code Quality
+- Test Quality
+
+Why Sonarqube?
+------------------------------
+- How org can manage all SCA tools at 1 Place?
+- How org would control which rules should run on what?
+- WHO did a bad coding
+	When
+	Why this is bad code?
+	How to fix it?
+- Proj coding standard is imp or red...
+	store all the reports?
+
+PLAN -> Code -> Code Analysis -> Build -> Pack -> Archive -> Dep2QA -> AT -> CC ---> RELEASE
+---------------------------------------------------------------------------
+JIRA -> Git  -> SonarQube  ->> 
+
+Code Analysis Process?
+1 DEV ---> CODE ---> Review
+			-----> Peer Code Review
+			-----> Static Code Review
+			-------------------------------------
+			CODE would Review CODE
+			Rule would Review CODE
+			Rule(S) would Review CODE
+			Tool would Review CODE
+			SCA Tool would Review CODE
+			https://en.wikipedia.org/wiki/List_of_tools_for_static_code_analysis
+=============================================
+SonarQube Architecture
+==================================================
+SonarServer					DONE
+			WEB
+			DB  - h2
+			ES 
+
+Scanner							DONE
+		maven
+		ant
+		msbuild
+		command-line
+Code							DONE
+		java
+			sonar.project.prop
+https://github.com/devopsschool-demo-labs-projects/java-sonarqube-helloworld-src
+
+=============================================================
+- RUN Scanner ON THE SOURCE CODE
+
+
+SCANNER = C:\tools\sonarqube\scanner\bin\sonar-scanner.bat
+
+
