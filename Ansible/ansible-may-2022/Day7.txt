@@ -1,0 +1,89 @@
+Ansible Vault
+--------------------------
+ 264  ansible-vault
+  265  ansible-vault encrypt inventory1
+  266  more inventory1
+  267  clear
+  268  ls
+  269  clear
+  270  ansible-playbook -i inventory web.yaml
+  271  ansible-playbook -i inventory1 web.yaml
+  272  ansible-playbook -h
+  273  clear
+  274  ansible-playbook -i inventory1 web.yaml --ask-vault-pass
+  275  vi inventory1
+  276  clear
+  277  ls
+  278  ansible-vault deencrypt inventory1
+  279  clear
+  280  ansible-vault decrypt inventory1
+  281  more inventory1
+  282  clear
+  283  ansible-vault encrypt inventory1
+  284  more inventory
+  285  more inventory1
+  286  clear
+  287  ansible-vault view inventory1
+  288  more inventory1
+  289  clear
+  290  ansible-vault edit inventory1
+  291  ansible-vault view inventory1
+  292  clear
+  293  ansible-vault
+  294  ansible-vault rekey inventory1
+  295  ansible-vault create
+  296  ansible-vault create raju
+  297  ls
+  298  more raju
+  299  ansible-vault
+  300  ansible-vault encrypt_string rajesh
+  301  vi web.yaml
+  302  ansible-vault -h
+  303  ansible-playbook -h
+  304  clear
+  305  ls
+
+
+Ansible Dynamic Inventory
+---------------------------------------------------
+Inventory
+LIST of IP ADDRESS
+	 - CMD
+	 - file
+	 - script
+			shell
+			python
+			perl
+
+$ ansible-playbook -i 10.1.2.2,2.3.4.5, web.yaml
+$ ansible-playbook -i inventory web.yaml
+$ ansible-playbook -i server.py web.yaml
+
+
+Various Options Available for 
+- PLAY
+
+
+connection
+----------------------------------
+SSH 
+
+Connection type to the host. This can be the name of any of ansible’s connection plugins. SSH protocol types are smart, ssh or paramiko. The default is smart. 
+
+SSH BASED
+-----------
+smart
+ssh
+paramiko	===== AGENT
+
+NON SSH BASED
+-----------
+local
+docker		DOCKER
+winrm		WINDOWS
+
+ansible_connection=ssh|smart |paramiko | local | docker | winrm
+
+
+
+
