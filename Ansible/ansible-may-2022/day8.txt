@@ -1,0 +1,132 @@
+Jinja template
+----------------------------				
+Ansible with Windows	
+-- the Expect Module
+-- the RAW Module
+-- the File Module
+-- the SELinux Module
+-- the SEBoolean Module
+-- the Cron Module
+-- the Mount Module
+-- the Mail Module
+Plugins
+-- Lookups
+Blocks in Ansible Playbook
+Tags in Roles/Playbook
+Ansible 2.9 Vs Ansible 3.0
+Paramiko
+
+
+
+
+
+Handlers and Notify			COVERED
+Register Module				COVERED
+
+
+Modules
+--------------------------
+-- the Setup Module			COVERED		
+-- the Command Module		COVERED
+-- the Script Module			COVERED
+-- the Include Module		COVERED
+-- the Git Module			COVERED
+
+
+
+4.Deep Dive into Ansible Inventory			COVERED
+--Groups of Group Variables				COVERED
+--Splitting Out Host and Group Specific Data	COVERED
+
+
+5.Roles in Ansible
+-- Ansible Role Duplication and Execution	
+-- Embedding Modules and Plugins In Roles		COVERED
+-- Ansible Role Search Path				COVERED
+
+
+
+
+9.Deep Dive into Ansible Playbooks		COVERED
+
+-- Includes vs. Imports in Ansible		COVERED
+
+10.Servers Managment in Ansible
+-- SSL and Certificates in Ansibles			COVERED
+-- Access and Permission Management			COVERED
+
+11.Ansible Vault						COVERED
+12.Ansible Galaxy						COVERED
+
+PYTHON PROG NEEDED
+------------------------
+Developing Ansible Modules  <i think did not get it so he should put some lights on this topic>
+Plugins	
+
+6.Ansible Tower
+-Ansible Tower Installation and Configuration
+-Ansible Tower Licensing, Updates, and Support
+-Starting, Stopping, and Restarting Tower
+-Ansible Tower Organization
+-Ansible Tower Projects
+-Ansible Tower Templates
+-Ansible Tower Jobs
+-Ansible Tower Inventory
+-Inventory File Importing
+-Tower Logfiles
+-Tower Logging and Aggregation
+-Tower Configuration
+-Setting up LDAP Authentication
+-Changing the Default Timeout for Authentication
+-User Authentication with Kerberos
+-Working with Session Limits
+-Backing Up and Restoring Tower
+-Troubleshooting Tower
+-Tower Tips and Tricks
+-Introduction to tower-cli
+
+
+==============================================
+Jinja template in Ansbile
+----------------------------
+- vars in playbook - get intrp* but not in FILE.
+											INDEX.hmml
+---------------------------------
+- file name should be - index.html.j2
+- & some vars {{ }}
+- use template module
+
+==========================================
+Ansible with Windows
+==========================================
+
+Connection - winrm
+				----- https or httml
+Authentication - 
+				userid/pass - basic
+				ssl	
+				keybrose
+Authorization - 
+=======================================
+How to set in ansible WINDOWS setting?
+---------------------------------------
+inventory
+------------------
+
+[windows]
+10.2.2.2
+
+[windows:vars]
+ansible_user=usernmae 
+ansible_password=password
+ansible_connection=winrm
+auth=basic
+
+
+ansible-playbook -i invent windows.yaml
+-----------------------
+windows.yaml
+-----------------------
+
+
+
