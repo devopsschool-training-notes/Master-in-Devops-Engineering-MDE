@@ -1,0 +1,337 @@
+What is Ansible?
+---------------------
+		We manage config of server(S)
+		Config mgmt tool
+		------ ---- -----
+		Server(S)
+		----------------------
+		file		c r 
+		dir			c r d 
+		service		s s e d 
+		package		i r
+		bash		cmd script
+		batch		cmd script
+		apt			i r 
+		yum
+
+		Deploy mgmt tool
+		From Redhat
+		Written in Python
+		Release
+			Ansible - cmd
+			Tower		- ui
+			AWX				- ui but last code of Tower which is not tested
+		Version - 2.X 3.X
+---------------------------------------------------
+WHY ANSIBLE?
+
+Other tools
+---------------------------
+Ansible Arch
+----------------------------
+Human ---> ACS --> ARS (S)
+
+Ansible Control Server
+Ansible Remote Server
+
+ACS						ARS
+-------------------------------------
+LINUX					ANY
+64 BIT					ANY
+Ansible					NOTHING
+		---------------- Windows (Winrm)
+		---------------- Linux (SSH)
+Python					 Linux - Python
+						Windows - DOTNET - PS3
+
+Component of ACS
+-------------------------------------
+Ansible
+	Plugins	- Python Code - Enable multiple Fun of Ansible
+	Module 
+				Code which run in ARS
+				LINUX - Python Code 	
+				Windows - PS code
+				copy - src - dest
+				module arg	arg
+	Config
+				/etc/ansible/ansible.cfg
+	Tools
+				ansible exe
+				ansible-playbook exe
+
+Inventory | hostsfile
+				IP add of ARS
+				- cmd
+				- file
+Playbook
+			yaml
+			script which run in the ARS
+			contains
+					Module n its param
+================================================================
+using ADHOC command 	===================== ansible
+-------------------------
+Do one task in ONE MACHINE(localhost) 
+Do one task in ONE REMOTE MACHINE 
+Do one task in MULTIPLE REMOTE MACHINES using Inventory 
+Do one task in MULTIPLE REMOTE MACHINES using group in Inventory 
+
+using Playbook(Program)  ===================== ansible-playbook
+Do Multiple tasks(Playbook) in ONE MACHINE(localhost) DONE 
+Do Multiple tasks(Playbook) in ONE REMOTE MACHINE DONE 
+Do Multiple tasks(Playbook) in MULTIPLE REMOTE MACHINE using Inventory DONE 
+Do Multiple tasks(Playbook) in MULTIPLE REMOTE MACHINE using group in Inventory DONE 
+Do Multiple tasks(Playbook) in MULTIPLE REMOTE MACHINE using group of group in Inventory DONE Do 
+
+Multiple tasks(Playbook) in MULTIPLE REMOTE MACHINE using environment directory Inventory using Role(Program) Do One Role in in ONE MACHINE(localhost) Do Multiple Roles in ONE REMOTE MACHINE Do Multiple Roles in MULTIPLE REMOTE MACHINE using Inventory Do Multiple Roles in MULTIPLE REMOTE MACHINE using group in Inventory Do Multiple Roles in MULTIPLE REMOTE MACHINE using group of group in Inventory Do Multiple Roles in MULTIPLE REMOTE MACHINE using environment directory Inventory
+
+
+============================
+Project - setup a webserver
+
+Step 1 - install httpd		- yum - name=httpd state=name 
+Step 2 - copy index.html top /var/www/html		copy src dest
+Step 3 - Start a server		service name state
+
+ansible localhost -m yum -a"name=httpd state=present"
+ansible localhost -m copy -a"src=index.html dest=/var/www/html/index.html"
+ansible localhost -m service -a"name=httpd state=started"
+
+
+ansible all -i 192.168.1.11,192.168.1.13, -m yum -a"name=httpd state=present" -u root -k 
+ansible all -i 192.168.1.11,192.168.1.13, -m copy -a"src=index.html dest=/var/www/html/index.html" -u root -k 
+ansible all -i 192.168.1.11,192.168.1.13, -m service -a"name=httpd state=started" -u root -k 
+
+ansible all -i inventory -m yum -a"name=httpd state=present" -u root -k 
+ansible all -i inventory -m copy -a"src=index.html dest=/var/www/html/index.html" -u root -k 
+ansible all -i inventory -m service -a"name=httpd state=started" -u root -k 
+
+ansible web -i inventory -m yum -a"name=httpd state=present" -u root -k 
+ansible web -i inventory -m copy -a"src=index.html dest=/var/www/html/index.html" -u root -k 
+ansible web -i inventory -m service -a"name=httpd state=started" -u root -k 
+------------------------------------------------------------
+What is playbook?
+-----------------------
+		yaml
+
+		play1
+			hosts: groupname
+			tasks:
+				module and its param
+				module and its param
+				module and its param
+	
+		play2
+			hosts
+			tasks
+
+		play3			
+			hosts
+			tasks
+		
+
+---
+- name: sample1
+  hosts: web
+  tasks:
+    - name: sample_task1
+      debug:
+        msg: "sample 1 task 1"
+    - name: Install the latest version of Apache
+      yum:
+        name: httpd
+        state: latest
+    - name: Copy file with owner and permissions
+      ansible.builtin.copy:
+        src: index.html
+        dest: /var/www/html/index.html
+    - name: Start service httpd, if not started
+      ansible.builtin.service:
+        name: httpd
+        state: started
+
+
+ansible-playbook -i inventory web.yaml -u root -k 
+======================================
+vars
+-------------------------
+myname: rajeshkumar
+myage: 18
+
+
+---
+- name: sample1
+  hosts: web
+  vars:
+    myname: rajeshkumar
+    myage: 18
+    package: httpd
+
+  tasks:
+    - name: sample_task1
+      debug:
+        msg: "Your age is {{ myage }} "
+    - name: Install the latest version of Apache
+      yum:
+        name={{ package }} state=latest
+    - name: Copy file with owner and permissions
+      ansible.builtin.copy:
+        src: index.html
+        dest: /var/www/html/index.html
+    - name: Start service httpd, if not started
+      ansible.builtin.service:
+        name: httpd
+        state: started
+
+  - name: Install Apache in centos7
+    ansible.builtin.yum:
+      name: "{{ item }}"
+      state: latest
+    with_items:
+      - git
+      - httpd
+      - ntp
+
+
+=====================================================
+
+
+---
+- name: sample1
+  hosts: web
+  vars:
+    myname: rajeshkumar
+    myage: 18
+    package: httpd
+
+  tasks:
+    - name: sample_task1
+      debug:
+        msg: "Your age is {{ myage }} "
+    - name: Install the latest version of Apache
+      yum:
+        name={{ package }} state=latest
+    - name: Copy file with owner and permissions - STATIC
+      ansible.builtin.copy:
+        src: index.html
+        dest: /var/www/html/index.html
+    - name: Copy file with owner and permissions - DYN
+      ansible.builtin.copy:
+        src: app.html
+        dest: /var/www/html/app.html
+      notify: Restart httpd
+    - name: Start service httpd, if not started
+      ansible.builtin.service:
+        name: httpd
+        state: started
+
+
+  handlers:
+    - name: Restart httpd
+      service:
+        name: httpd
+        state: restarted
+
+=============================================
+template
+- convert that file to .j2
+- use template module
+
+
+  - name: Template a file to app.html
+    ansible.builtin.template:
+      src: app.html.j2
+      dest: /var/www/html/app.html
+
+
+
+---
+- name: sample1
+  hosts: web
+  vars:
+    myname: rajeshkumar
+    myage: 18
+    package: httpd
+
+  tasks:
+    - name: sample_task1
+      debug:
+        msg: "Your age is {{ myage }} "
+    - name: Install the latest version of Apache
+      yum:
+        name={{ package }} state=latest
+    - name: Copy file with owner and permissions - STATIC
+      ansible.builtin.copy:
+        src: index.html
+        dest: /var/www/html/index.html
+    - name: Template a file to app.html
+      ansible.builtin.template:
+        src: app.html.j2
+        dest: /var/www/html/app.html
+      notify: Restart httpd
+    - name: Start service httpd, if not started
+      ansible.builtin.service:
+        name: httpd
+        state: started
+
+
+  handlers:
+    - name: Restart httpd
+      service:
+        name: httpd
+        state: restarted
+=================================================================================
+
+role
+----------------------
+	directory ske
+	- tasks
+	- handlers
+	- templates
+	- files
+	- vars
+
+[root@localhost web]# tree
+.
+├── defaults				=== for vars by Dev of role
+│   └── main.yml
+├── files					=== files used in task/handlers
+├── handlers
+│   └── main.yml				=== all handlers tasks
+├── meta
+│   └── main.yml				==== name - author
+├── README.md
+├── tasks
+│   └── main.yml				=== for all tasks
+├── templates				=== all templates
+├── tests
+│   ├── inventory
+│   └── test.yml
+└── vars
+    └── main.yml				=== for vars by user of role
+
+8 directories, 8 files
+[root@localhost web]#
+
+
+
+---
+- name: role
+  hosts: web
+  roles:
+    web
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
