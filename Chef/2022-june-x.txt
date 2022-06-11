@@ -1,0 +1,167 @@
+====================================
+Conditioning
+		Custom Vars
+		Fact Vars
+		- All the system info gather by facter.
+
+			Chef - Ohai
+			Ansible - facter
+			Puppet - facter
+https://www.devopsschool.com/tutorial/ansible/ansible-conditional-programming-playbooks.html
+If os=Redhat
+	run redhat module
+if os=windows
+	run windows
+
+Looping
+Templates
+Handles
+-----------------
+Multiple Playbook file
+Multiple play file
+Multiple Tasks file
+---------------------
+
+
+---
+- name: Hello World Play
+  hosts: localhost
+  remote_user: root
+
+  vars:
+    myname: ramukaka
+    myage: 18
+    package: httpd
+    service: httpd
+
+  tasks:
+    - name: Install the latest version of Apache
+      yum: name={{ package }} state=latest
+      when: ansible_os_family == "RedHat"
+    - name: Install the latest version of Apache
+      apt: name={{ package }} state=latest
+      when: ansible_os_family == "Debian"     
+    - name: Copy file with owner and permissions
+      ansible.builtin.copy:
+        src: index.html
+        dest: /var/www/html/index.html
+    - name: Start service httpd, if not started
+      ansible.builtin.service: name={{ service }} state=started
+    - debug:
+        msg: "my Name is {{myname}} and my age is {{myage}}."
+    - shell: echo "I've got '{{ foo }}' and am not afraid to use it!"
+      when: foo is defined
+
+
+- name: Install common software requirements
+  apt: pkg={{ item }} state=installed
+  with_items:
+     - git
+     - htop
+     - vim
+
+---
+- name: Hello World Play
+  hosts: localhost
+  remote_user: root
+
+  vars:
+    myname: ramukaka
+    myage: 18
+    package: httpd
+    service: httpd
+
+  tasks:
+    - name: Install the latest version of Apache
+      yum: name={{ item }} state=latest
+      when: ansible_os_family == "RedHat"
+      with_items:
+        - git
+        - vim
+    - name: Install the latest version of Apache
+      apt: name={{ package }} state=latest
+      when: ansible_os_family == "Debian"     
+    - name: Copy file with owner and permissions
+      ansible.builtin.copy:
+        src: index.html
+        dest: /var/www/html/index.html
+    - name: Start service httpd, if not started
+      ansible.builtin.service: name={{ service }} state=started
+
+
+Template Module
+----------------------------
+- use template module
+- source file must be ending with .j2
+
+---
+- name: Hello World Play
+  hosts: localhost
+  remote_user: root
+
+  vars:
+    myname: ramukaka
+    myage: 18
+    package: httpd
+    service: httpd
+
+  tasks:
+    - name: Install the latest version of Apache
+      yum: name={{ package }} state=latest   
+    - name: Install the latest version of Apache
+      apt: name={{ package }} state=latest
+      when: ansible_os_family == "Debian"     
+    - name: Copy file with owner and permissions
+      ansible.builtin.copy:
+        src: index.html
+        dest: /var/www/html/index1.html
+    - name: Start service httpd, if not started
+      ansible.builtin.service: name={{ service }} state=started
+    - name: Copy Site Files
+      template: src=index.html.j2 dest=/var/www/html/index.html
+
+Handler
+=======================
+
+---
+- name: Hello World Play
+  hosts: localhost
+  remote_user: root
+
+  vars:
+    myname: "Rajesh Kumar"
+    myage: 18
+    package: httpd
+    service: httpd
+
+  tasks:
+    - name: Install the latest version of Apache
+      yum: name={{ package }} state=latest   
+    - name: Install the latest version of Apache
+      apt: name={{ package }} state=latest
+      when: ansible_os_family == "Debian"     
+    - name: Copy file with owner and permissions
+      ansible.builtin.copy:
+        src: index.html
+        dest: /var/www/html/index1.html
+    - name: template intro
+      template: src=index.html.j2 dest=/var/www/html/index.html
+      notify:
+        - restart on template change
+    - name: Start service httpd, if not started
+      ansible.builtin.service: name={{ service }} state=started
+
+  handlers:
+    - name: restart on template change
+      ansible.builtin.service: name={{ service }} state=restarted
+
+-------------------------
+Multiple Playbook file
+Multiple play file
+Multiple Tasks file
+
+Use file in playbook
+Roles
+---------------------
+
+
