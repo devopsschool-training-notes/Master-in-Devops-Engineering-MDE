@@ -1,0 +1,207 @@
+https://www.devopsschool.com/blog/setting-up-kubernetes-clusters-using-kubeadm-manual-way-in-rhel-7-centos7/
+
+Docker
+--------------------------
+
+Kubernetes
+----------------------------
+What is Kubernetes?
+- Containers orch
+- Manages multiple docker host --> Cont
+- Dev in Go
+- Open Source
+- Dev by Google But donated to CNCF
+
+-------------------------------------
+WHY Kubernetes?
+---------------------------------------
+SCALIBILITY
+
+How it works?  - Kubernetes Arch.
+======================================================================
+
+HUMAN(Laptop) =========>	Kubernetes Master(MACHINE)	==========> K8 Worker(S)(MACHINE)
+				   			---------------------------------------------
+											k8 Clustor
+
+HUMAN(Laptop) == Workstation
+=====================
+kubectl
+
+Kubernetes Master (LINUX)
+================================
+- docker			For Containers
+- kubectl		For API connection
+- kubelet		k8 Agent & init POD
+- kubeadm				For all Components of K8 and Admin tool
+	----> API Server		For All the Services(Function | Resources) of K8
+	----> Etcd			For Stroing all Data of k8 clustor
+	----> Schedular		For Assinging work(Container) to worker
+	----> Controller mgmr	For Controlling all the worker state
+	----> kube proxy		Networking services
+	----> Network Driver	Networking driver
+
+Kubernetes Worker (LINUX and WINDOWS)
+================================
+- docker			For Containers
+- kubectl		k8 Agent & init POD
+- kubelet		k8 Agent & init POD
+- kubeadm			For all Components of K8 and Admin tool
+	----> kube proxy
+	----> Network Driver
+
+
+===================================================
+Write 1 post notes for which has following topics.
+
+- What is kubernetes?
+- 5 reasons of using kubernetes
+- Each kubernetes Components & write 2-3 mins about each one of them.
+===============================================
+https://www.devopsschool.com/blog/setting-up-kubernetes-clusters-using-kubeadm-manual-way-in-rhel-7-centos7/
+
+
+======================================
+How to use the master node as worker node in Kubernetes cluster?
+-------------------------------------------------
+kubectl taint nodes --all node-role.kubernetes.io/master-
+-------------------------------------------------
+
+
+Your Kubernetes control-plane has initialized successfully!
+
+To start using your cluster, you need to run the following as a regular user:
+
+  mkdir -p $HOME/.kube
+  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+Alternatively, if you are the root user, you can run:
+
+  export KUBECONFIG=/etc/kubernetes/admin.conf
+
+You should now deploy a pod network to the cluster.
+Run "kubectl apply -f [podnetwork].yaml" with one of the options listed at:
+  https://kubernetes.io/docs/concepts/cluster-administration/addons/
+
+Then you can join any number of worker nodes by running the following on each as root:
+
+kubeadm join 192.168.1.11:6443 --token 32s4e5.tp82donn8mkgvt85 \
+        --discovery-token-ca-cert-hash sha256:f0a8579ac758f61c1030e1355bd67170be02a0819dd805441221898e29aa6aa6
+[root@rajesh ~]#
+
+
+===============================================================================
+C
+	create
+		CMD
+		YAML
+
+R	
+	get 
+		CMD
+		YAML
+
+U 
+	EDIT
+		cmd
+		yaml
+
+D
+	delete
+		cmd 
+		yaml
+
+
+Namespace ---->
+POD
+	Container(S)
+			- Docker Image
+	IP
+
+
+\
+  75  ls
+   76  kubectl get nodes
+   77  clear
+   78  kubectl
+   79  kubectl api-resources
+   80  clear
+   81  kubectl
+   82  clear
+   83  kubectl api-resources
+   84  clear
+   85  kubectl
+   86  clear
+   87  kubectl get ns
+   88  kubectl create ns rajesh
+   89  kubectl get ns
+   90  kubectl create ns raj1
+   91  kubectl create ns dev
+   92  kubectl get ns
+   93  clear
+   94  kubectl get ns
+   95  kubectl edit ns rajesh
+   96  kubectl delete ns rajesh
+   97  kubectl get ns
+   98  history
+
+
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nodehelloworld.example.com
+  labels:
+    app: helloworld
+spec:
+  containers:
+  - name: devopsschool1
+    image: scmgalaxy/nginx-devopsschoolv1
+    ports:
+    - name: nginx-port
+      containerPort: 80
+
+
+ 100  ls
+  101  vi pod.yaml
+  102  ls
+  103  clear
+  104  kubectl get ns
+  105  kubectl get pods -n=raj1
+  106  kubectl get pods
+  107  kubectl create -f pod.yaml -n=raj1
+  108  kubectl get pods -n=raj1
+  109  clear
+  110  kubectl get pods -n=raj1
+  111  ls
+  112  kubectl create -f pod.yaml -n=raj1
+  113  vi pod.yaml
+  114  kubectl create -f pod.yaml -n=raj1
+  115  kubectl get pods -n=raj1
+  116  kubectl edit pod nodehelloworld.example.com -n=raj1
+  117  kubectl get pods -n=raj1 --show-labels
+  118  kubectl delete pod nodehelloworld.example.com -n=raj1
+  119  kubectl get pods -n=raj1 --show-labels
+  120  vi pod.yaml
+  121  kubectl apply -f pod.yaml -n=raj1
+  122  kubectl get pods -n=raj1 --show-labels
+  123  kubectl delete -f pod.yaml -n=raj1
+  124  kubectl get pods -n=raj1 --show-labels
+
+Deployment
+Service
+
+
+
+
+
+
+
+
+
+
+
+
+
+
