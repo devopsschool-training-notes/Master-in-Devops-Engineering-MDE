@@ -1,0 +1,96 @@
+
+PLAN -> Code -> Analysis -> Build -> UT -> Pack -> Archive -> Dep2QA
+--------------------------------------------------------------------
+How can we store all the packages geneared?
+it should be available for all on Demand.
+Security of package
+Integ with build tools + other 
+Admin - 
+		User mgmt | access mgmt | Backup | Restore
+==============================================
+packages
+		zip - tar - exe - rpm - docker - war - jar - ear - 
+=============================================================
+Artifactory - Nexus - Archiva
+
+What is artifactory
+		Repo mgmt tool (Package)
+			Package version
+
+
+Repo Package TYPE 
+- maven 
+- yum 
+- apt
+- docker
+
+		From JFROG
+		Dev in JAVA
+		
+		Release
+		OSS
+		COMMUNITY
+		Profession
+		https://www.jfrog.com/confluence/display/RTF5X/Artifactory+Comparison+Matrix
+
+Feature -
+Role based access control
+	Auth -
+			user & pass
+			ldap		
+		     
+	AUthorization
+			group
+			roles
+			permission
+
+--------------------------------------------------
+How it works??
+-------------------------
+HUMAN -> WEB (JAVA ) --> DB(RDBMS) -> Storage
+							- local filesystem
+							- aws s3
+--------------------------------------------------------
+
+How to install ?
+
+https://www.devopsschool.com/blog/complete-guide-of-java-installation-in-linux/
+https://www.devopsschool.com/blog/artifactory-install-and-configurations-guide/
+
+Step 1 - Create a repo		DONE
+
+Step 2 - Create a Access	DONE
+deploy
+Deploy123
+
+Step 3 - Upload
+--------------------------
+maven
+
+Step 4 - Download
+
+==========================================================
+How to upload package using maven?
+Step 1 - Add repo to pom.xml				DONE
+Step 2 - Add Access to setting.xml			DONE
+Step 3 - Make sure ID of pom and setting must match
+Step 4 - mvn deploy
+
+
+
+==========================================================
+How to download package using maven?
+
+Step 1 - Write Dependency in pom.xml		DONE
+Step 2 - Modify setting.xml with Mirror (Remote repo from where download happen?
+Step 3 - any goal where 
+
+
+
+
+
+
+
+
+
+
