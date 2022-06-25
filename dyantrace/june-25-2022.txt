@@ -1,0 +1,34 @@
+How to do obe* using Dynatrace
+=====================================
+Infra Monitoring --- Metrices		- DONE
+	docker
+APM Monitoring --- Traces			- DONE
+Log Monitoring --- Logs			- DONE
+Syn* Monitoring --- Metrices		- DONE
+RUM Monitoring --- Metrices
+======================================
+Alerts & Dashabord
+
+Arch of Dynatrace?
+===================================
+- Enterprise - Hosted
+- Cloud  - SAAS - Trial 
+---------------------------------
+app2@devopsschool.com
+
+
+DYNATRACE<-------------ONE AGENT
+
+
+ wget  -O Dynatrace-OneAgent-Linux-1.241.223.sh "https://hbt24109.live.dynatrace.com/api/v1/deployment/installer/agent/unix/default/latest?arch=x86&flavor=default" --header="Authorization: Api-Token dt0c01.6L4TVI36R6KT42LLTXHRQUUF.TM377DDBWA635KBJ5OCB2LQVNJBNYNJCGT65C5AGEML36Y2HRCGCYQN6CPR422MA"
+
+https://www.devopsschool.com/blog/dynatrace-tutorial-how-to-install-one-agent-in-linux-windows/
+
+https://www.devopsschool.com/blog/tomcat-install-and-configuration-tutorial-and-guide/
+
+
+http://192.168.1.9:8080/examples/jsp/jsp2/el/basic-arithmetic.jsp
+
+https://www.devopsschool.com/blog/docker-installation-and-configurations/
+
+https://www.devopsschool.com/blog/how-to-enable-log-monitoring-in-dynatrace/
