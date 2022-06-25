@@ -1,0 +1,113 @@
+What is Puppet?
+-----------------------------
+- Config mgmt tool
+- Change mgmt of servers or infra
+- Dev by Puppet --> Perforce
+- Dev in RUBY
+- version - 2021
+
+What is Config mgmt?
+----------------------------
+We are doing Config mgmt of SERVER(S)
+
+What's there in SERVER of which we modify a config?
+-----------------------------------------------
+Server Resources
+- files
+- directories
+- servcies
+- packages
+- users
+- group
+
+Using puppet - we manage a config of Server(S) Resources.
+=============================================================
+Why We need this tool?
+--------------------------------
+1. Puppet is easy to 
+				- Learn
+				- debug
+				- test
+				- extend
+				- share
+		------------------------------
+		java - python - perl - Ruby
+		---------------------------------
+		BASH - POWER SCHELL SCRIPTING
+		----------------------------
+			Platform independent
+		What we need? DSL -- DOMAIN SPEFIC LANG
+
+2. IDEOMPOTENT
+		CODE (DESIRE) -----APPLY IN SERVER ----- Server(ACTUAL)
+Puppet - Check - If desire === actual --NO Change
+Puppet - Check - If desire =NOT= actual -- Change
+
+		1 Server
+		10 Steps ------ 10 mins ------- 
+		1 Chnage ------- 1 mins ------- 1mins
+
+===============================================
+Other tools -> 
+Ansible ---> Puppet -> Chef -> Salt -> Cfegine -> SCCM
+-------------------------------------------------------
+					Terraform
+
+=============================================================
+Puppet Architecture
+=============================================================
+You ----> Puppet Server|Enterprise ----> Server(Puppet Agent)
+
+Puppet Server|Enterprise
+==============================
+Puppet server
+Enterprise = Puppet server + UI
+Desire Code ==> Puppet Module ==> Puppet Program (.pp)
+---------------------------------------------------
+					JAR 				CLASS
+
+======================================================
+What are the roles you are going to play in Puppet?
+------------------------------------------------------
+Puppet Developer
+Puppet Program (.pp) ---> Puppet Module ---> TEST it Local --> Send to Puppet Admin
+
+Puppet Admin
+- manage Puppet Server|Enterprise
+- manage SERVER(S)
+- Manager Puppet Module
+- Apply "Puppet Module" to Servers
+=========================================
+
+How to become Puppet Developer?
+=================================
+Step 1 - Install Puppet Agent		- DONE
+
+Step 2 - Write Puppet Program .pp
+
+Step 3 - test Puppet Program .pp
+
+Step 4 - More Puppet Program .pp and Create Puppet Module
+
+Step 5 - test Puppet Module
+
+
+How to install puppet Agent?
+https://www.devopsschool.com/blog/how-to-install-puppet-agent/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
