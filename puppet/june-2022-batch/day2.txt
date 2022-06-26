@@ -1,0 +1,124 @@
+Write Puppet Program .pp
+test Puppet Program .pp
+==================================
+
+What is Puppet program?
+------------------------------
+- its file
+- ext with .pp
+- Contains resource definition.
+
+===========================================
+project - Write a pp for install webserver
+
+pseudocode
+--------------------------
+Step 1 - install webserver
+Step 2 - copy a index.html /var/www/html
+Step 3 - start a svc
+Step 4 - run some script
+
+
+resource definition.
+
+Resource Type Reference (Single-Page)
+Core types cheat sheet
+Optional resource types for Windows
+Resource Type: exec
+Using exec on Windows
+Resource Type: file
+Using file on Windows
+Resource Type: filebucket
+Resource Type: group
+Using user and group on Windows
+Resource types overview
+Resource Type: notify
+Resource Type: package
+Using package on Windows
+Resource Type: resources
+Resource Type: schedule
+Resource Type: service
+Using service
+Resource Type: stage
+Resource Type: tidy
+Resource Type: user
+
+
+file
+package
+service
+----------------first.pp------------------------
+TYPE title
+	attributes
+	provider
+
+TYPE title
+	attributes
+	provider
+
+TYPE title
+	attributes
+	provider
+
+
+
+--------------------------------------------------
+
+----------------first.pp------------------------
+what which
+	prop & action
+
+file /opt/raju.txt
+	attributes
+	provider
+
+package 'httpd'
+	attributes
+	provider
+
+service 'httpd'
+	attributes
+	provider
+
+exec 'ls'
+	attributes
+	provider
+
+--------------------------------------------------
+
+file { '/opt/raju.txt':
+        content => "This is my content",
+    mode => "755",
+    ensure => present
+}
+
+file { '/root/pp/index.html':
+        content => "<h1> This is Puppet Class idddd</h1>",
+    ensure => file
+}
+
+package { 'httpd':
+        ensure => latest
+}
+
+file { '/var/www/html/index.html':
+    ensure => present,
+    source  => "/root/pp/index.html"
+}
+
+service { 'httpd':
+        ensure => running
+}
+
+exec { 'touch /tmp/raju.txt':
+  cwd     => '/tmp',
+  path    => ['/usr/bin', '/usr/sbin',],
+}
+
+
+$ puppet apply --noop first.pp
+$ puppet apply first.pp
+$ puppet apply --verbose first.pp
+$ puppet apply -l manifest.log first.pp
+$ puppet apply -l /tmp/manifest.log manifest.pp
+$ puppet apply -help
