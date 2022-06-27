@@ -1,0 +1,88 @@
+Monitoring Domain
+=========================
+1. INFRA MONITORING		DATADOG
+2. LOG MONITORING		Splunk
+3. PERFORMANCE MONITORING	NewRelic
+4. SECURITY MONITORING		SonarQube + Splunk
+
+https://www.devopsschool.com/path/
+
+Splunk...
+	Log Monitoring......
+
+READ LOG + STORE LOG + PARSE LOG + ANALYSE
+					REPORT
+					ALERTS
+-----------------------------------------------
+		Splunk
+
+What is Splunk
+	Log analsys tool
+	Version
+		Enterprise
+		Cloud
+		Light
+Why Splunk
+	s
+
+How can we start with splunk?
+
+Architecture of Splunk...
+
+Spluk Enterprise
+Installation
+-----------
+cd /opt
+yum install wget -y
+yum install git -y
+wget https://s3.ap-south-1.amazonaws.com/scmgalaxy/splunk-7.2.5-088f49762779-Linux-x86_64.tgz 
+tar -zxvf splunk-7.2.5-088f49762779-Linux-x86_64.tgz 
+
+Start a Indexer
+-----------
+cd /opt
+cd splunk
+cd bin
+./splunk start --accept-license
+			admin/admin123
+./splunk enable boot-start
+
+-------------------
+1. Settings => Monitoring console => Setting => Forwarder Monitoring Setup => Forwarder Monitoring (ENABLE with 15 mins)
+2. Settings => Forwarding and Recieving => Receive data => Add New ==> Listen on this port (For example, 9997 will receive data on TCP port 9997)
+3. Restart a Splunk Instance
+Settings => Server Controls => Restart Splunk
+
+--------------------------
+
+Universal Forwarder	
+==================================
+Installation
+-----------
+cd /opt
+yum install wget -y
+wget https://s3.ap-south-1.amazonaws.com/scmgalaxy/splunkforwarder-7.2.3-06d57c595b80-Linux-x86_64.tgz
+tar -zxvf splunkforwarder-7.2.3-06d57c595b80-Linux-x86_64.tgz
+ 
+how to send raw data to heavy forwarder
+--------------------
+cd /opt/splunkforwarder/bin/
+./splunk start --accept-license 
+./splunk enable boot-start
+
+How to add a SPLUNK Enterprise??
+cd /opt/splunkforwarder/bin/
+./splunk add forward-server 172.31.30.50:9997 -auth admin:admin123
+./splunk list forward-server
+
+&&&&
+LAST
+
+./splunk add monitor /var/log
+	index = main(Default)
+
+earliest=-12h@m latest=now() Index=main sourcetype=winevent:security EventCode=528 OR EventCode=540 OR EventCode=4624 | table _time,Account_Name
+
+	
+https://www.devopsschool.com/tutorial/splunk/labs/fundamental/index.html
+	

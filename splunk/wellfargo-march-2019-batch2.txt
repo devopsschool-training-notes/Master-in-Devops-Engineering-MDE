@@ -1,0 +1,409 @@
+Where Splunk Stands in SDLC?
+==================================
+Prod - WellX
+Mgr - Mgrx
+-----------------------
+	DEVOPS
+		Immediate Release
+		Cost Reduction
+		Quality
+--------------------------------
+Hire a Team
+-----------------------
+Architect - 2 - Planning - JIRA, Confluence, Trello [SERVERS ==> APPS]
+Dev - 10 Module - 10 Dev
+	Code Integ --> Git				[SERVERS ==> APPS]
+	Code Analysis -> SonarQube			[SERVERS ==> APPS ==> RAW(Code Review)]
+	Build Mgmt -> Maven, ANT, MSBUILD		[SERVERS ==> BUILD LOG ]
+	UT - Junit					[SERVERS ==> UT LOG ]
+	Pack - JAR
+	Dep2Repo - Artifactory				[SERVERS ==> APPS]
+	Deployment
+		200 SERVERS....
+	50 W 100 L 50 M
+	50 MY 50 MS 50ORA 50 PS
+	50 J 50 T 50 WL 50 WS
+	100 A 100 N 50 II
+	100 DFFF
+------------------------------				[SERVERS ==> APPS]
+	1 - Dep - 9 mins
+	200 Dep - 9 mins(10mins)
+	
+	Puppet, Ansible, Chef, Salt
+	Udeploy, Octopus Dep
+	
+	200 SERVERS in 1 mins? -
+-------------------------------------
+	10 mins 200 dep...
+	1 SECOND>>...... 
+	----
+	Docker - Kubernetes....
+
+-----------------------
+	AT  ===> Results					[SERVERS ==> AT LOG ]
+---------------------------------------------------
+	Code Coverage - JACOCOO..
+------------------------------------------------------------------
+IF ALL PASSED - RELEASE
+=================================================================
+				JENKINS
+						INTEG
+						SCHEDULE
+						DASHBOARD
+						NOTIFICATION
+						
+		
+===========================================================
+PRODUCTION
+	SERVERS	
+		DNS SERVER	APPS
+		LB SERVER	APPS
+		WEB SERVER	APPS
+		APP SERVER	APPS
+		DB SERVER	APPS
+
+-------------------------
+Splunk 
+	LOG -> pARSE -> INDEXED -> ANALYZE -> REPORTS(REAL USE cASES)
+
+
+
+
+Why we should not use SVN for stroing a package?	
+TRUNK - 
+	100MB X 20 = 2GB /DAY
+	2GB X 30 Days = 6GB...
+
+	100MB  COPY and DEPLOY 
+               5 Mins    10 mins == 15MIN
+	6B  
+=============================================================
+=============================================================
+Splunk Server includes....
+		SplunD - C++			8089
+		SlunkWeb - Python		8000
+
+How to install Splunk Server in Linux?
+13.233.67.182
+
+cd /opt
+yum install wget -y
+yum install git -y
+wget https://s3.ap-south-1.amazonaws.com/scmgalaxy/splunk-7.2.5-088f49762779-Linux-x86_64.tgz 
+tar -zxvf splunk-7.2.5-088f49762779-Linux-x86_64.tgz 
+
+How to start ?
+-------------------
+
+cd /opt
+cd splunk
+cd bin
+./splunk start --accept-license
+			admin/admin123
+./splunk enable boot-start
+
+
+
+How to install Splunk Server in Windows?
+35.154.228.128		
+administrator
+IK;42nm?peCI6*it86me6Pt(8PD-TC@b
+https://s3.ap-south-1.amazonaws.com/scmgalaxy/splunk-7.2.4.2-fb30470262e3-x64-release.msi	
+	
+=======================================================
+How to install Universal forwarder in Linux?	
+
+cd /opt
+yum install wget -y
+wget https://s3.ap-south-1.amazonaws.com/scmgalaxy/splunkforwarder-7.2.3-06d57c595b80-Linux-x86_64.tgz
+tar -zxvf splunkforwarder-7.2.3-06d57c595b80-Linux-x86_64.tgz
+ 
+how to send raw data to heavy forwarder
+--------------------
+cd /opt/splunkforwarder/bin/
+./splunk start --accept-license 
+./splunk enable boot-start
+
+---------
+1. Settings => Monitoring console => Setting => Forwarder Monitoring Setup => Forwarder Monitoring (ENABLE with 15 mins)
+2. Settings => Forwarding and Recieving => Receive data => Add New ==> Listen on this port (For example, 9997 will receive data on TCP port 9997)
+3. Restart a Splunk Instance
+Settings => Server Controls => Restart Splunk
+-------------
+./splunk list forward-server
+./splunk add forward-server 172.31.18.217:9997 -auth admin:admin123
+./splunk list forward-server
+
+[root@ip-172-31-22-199 etc]# find . -name outputs.conf
+/opt/splunkforwarder/etc/system/default/outputs.conf
+/opt/splunkforwarder/etc/system/local/outputs.conf
+/opt/splunkforwarder/etc/apps/SplunkUniversalForwarder/default/outputs.conf
+
+cd /opt/splunkforwarder/bin
+--------------------------
+
+How to forward data?
+cd /opt/splunkforwarder/bin
+./splunk list monitor
+./splunk add monitor /var/log/anaconda
+
+
+	
+How to install Universal forwarder in Windows?
+	
+Public DNS	ec2-13-233-82-28.ap-south-1.compute.amazonaws.com
+User name	Administrator
+Password	
+%M3wQ2c&En!2s8Z@qWxrjOl&J(%Od&.b
+
+splunk list monitor
+splunk list forward-server
+splunk add monitor C:\log\dummy.txt
+
+
+https://s3.ap-south-1.amazonaws.com/scmgalaxy/splunkforwarder-7.2.5-088f49762779-x64-release.msi
+=========================================================================
+How to clean up ?
+Method 1 - Events Clean
+
+host="ip-172-31-22-199.ap-south-1.compute.internal" source="/var/log/anaconda/program.log"	[before 3/26/19 5:46:23.000 AM] 
+host="ip-172-31-22-199.ap-south-1.compute.internal" source="/var/log/anaconda/program.log" | delete	[before 3/26/19 5:46:20.000 AM] 
+host="ip-172-31-22-199.ap-south-1.compute.internal" source="/var/log/anaconda/program.log"	[before 3/26/19 5:46:12.000 AM] 
+host="ip-172-31-22-199.ap-south-1.compute.internal" source="/var/log/anaconda/anaconda.log" | delete	[before 3/26/19 5:46:02.000 AM] 
+
+Method 2 - Delete sources & Sourcetypes
+
+Method 3 - Clean up a index
+$ splunk help clean
+$ splunk clean eventdata	
+$ splunk clean eventdata -index <index_name>
+$ splunk stop
+$ splunk clean eventdata 	# To permanently remove data from all indexes
+$ splunk stop
+$ splunk clean eventdata -index _internal -f # To permanently remove data from _internal
+
+Method 4 - Delete a index
+
+Remove all data from one or all indexes
+
+Remove an index entirely
+$ splunk stop
+$ splunk remove index <index_name>
+
+Disable an index without removing it
+$ splunk disable index <index_name>
+
+==============LAB 1======================
+=====================================================
+Basic SPL Commands...
+file - all_month.csv
+https://www.devopsschool.com/notes/splunk/sample-data/earthquake/
+
+
+source="all_month.csv" host="Earth" index="earth" sourcetype="earthquake" 
+source="all_month.csv" host="Earth" index="earth" sourcetype="earthquake" | dedup locationSource
+source="all_month.csv" host="Earth" index="earth" sourcetype="earthquake" | dedup locationSource | table locationSource
+source="all_month.csv" host="Earth" index="earth" sourcetype="earthquake" | dedup locationSource | table locationSource | sort locationSource
+
+source="all_month.csv" host="Earth" index="earth" sourcetype="earthquake" | fields locationSource,mag,place
+
+source="all_month.csv" host="Earth" index="earth" sourcetype="earthquake" | fields locationSource,mag,place | table locationSource,mag,place
+
+source="all_month.csv" host="Earth" index="earth" sourcetype="earthquake" | fields locationSource,mag,place | table locationSource,mag,place | stats avg(mag)
+
+source="all_month.csv" host="Earth" index="earth" sourcetype="earthquake" | fields locationSource,mag,place | table locationSource,mag,place | stats avg(mag) by locationSource
+
+source="all_month.csv" host="Earth" index="earth" sourcetype="earthquake" | fields locationSource,mag,place | table locationSource,mag,place | stats avg(mag) 
+
+source="all_month.csv" host="Earth" index="earth" sourcetype="earthquake" | fields locationSource,mag,place | table locationSource,mag,place | stats avg(mag) as "Average of Magnitude" by locationSource | rename locationSource as "US State Name"    
+
+dedup locationSource | table locationSource | sort locationSource | stats avg(mag)
+
+
+search terms | dedup
+search terms | head
+search terms | reverse
+search terms | sort 
+search terms | tail
+search terms | table
+
+==============LAB 2======================
+=====================================================
+Important - Download sample data for lab - https://www.DevOpsSchool.com/tutorial/splunk/labs/fundamental/Splunk_f1_Data.zip
+
+Lab 1 - https://www.devopsschool.com/tutorial/splunk/labs/fundamental/SplunkFundamentals1_module6.html
+
+==============LAB 3======================
+=====================================================
+Important - Download sample data for lab - https://www.DevOpsSchool.com/tutorial/splunk/labs/fundamental/Splunk_f1_Data.zip
+Lab 2 - https://www.devopsschool.com/tutorial/splunk/labs/fundamental/SplunkFundamentals1_module8.html
+
+
+==============LAB 4======================
+=====================================================
+Important - Download sample data for lab - https://www.DevOpsSchool.com/tutorial/splunk/labs/fundamental/Splunk_f1_Data.zips
+https://www.devopsschool.com/tutorial/splunk/labs/fundamental/SplunkFundamentals1_module9.html
+
+
+==============LAB 5======================
+=====================================================
+Important - Download sample data for lab - https://www.DevOpsSchool.com/tutorial/splunk/labs/fundamental/Splunk_f1_Data.zips
+https://www.devopsschool.com/tutorial/splunk/labs/fundamental/SplunkFundamentals1_module10.html
+
+
+================================================================================================
+================================================================================================
+
+Step 1 - We need one FULL SPLUNK INSTANCE (HOST - WINDOWS)
+
+Step 2 - Make sure that the EVENTS ARE CLEANED...
+
+Step 3 - UPLOAD ONLY THESE EVENTS
+		sample-data\earthquake
+			all_month.csv
+		sample-data
+			Splunk_f1_Data.zip
+				access_30DAY.log
+				db_audit_30DAY.csv
+				linux_s_30DAY.log
+		sample-data\tutorialdata
+			mailsv
+			vendor_sales
+			www1
+		sample-data\
+			homeworkdataset.csv
+		WINDOWS => MONITORING
+				EVENTS
+
+		What is Index name
+		What is SourceType
+		
+https://www.devopsschool.com/tutorial/splunk/commands/index.html
+
+
+-------------------------
+REPORTS
+DASHBOARD
+	PANEL
+ALERTS
+DATA MODEL
+	DATA SETS
+		PIVOT
+LOOKUPS
+
+=========================
+Reports
+
+======Reports========
+index=* sourcetype=* action=purchase status!=200
+
+=>> Select field productid
+
+==> Top 10 report
+
+Total Failed Transaction by productid
+
+Assignment is - 
+I want to know the List of earthquake has happended which is more than mag=3 and list by locationSource
+=====================================
+Dashboard
+index=* sourcetype=* "failed password" | top limit=20 src_ip
+index=* sourcetype=security-rajesh "failed password" | top limit=20 clientip
+
+index=* sourcetype=* "california" | top limit=20 mag
+index=* sourcetype=* "california" | top limit=20 mag | stats min(mag)
+index=* sourcetype=* "california" | top limit=20 mag | stats max(mag)
+index=* sourcetype=* "california" | top limit=20 mag | stats avg(mag)
+index=* sourcetype=* "california" | top limit=20 mag | stats count(mag)
+index=* sourcetype=* "california" | top limit=20 mag
+index=* sourcetype=* "california" | top limit=20 mag
+
+===================================================
+BY SPL ENGINER
+Data Models
+	Data Sets - 1 Set for one Source....
+
+How mgmt is going to use this DATASET?
+	pivot
+
+Datsets
+======================
+host=homework
+
+& Create it & Add a field
+
+
+backupduration
+backupvolume
+date
+destip
+level
+phyaddr
+systemid
+....
+....
+	
+====================
+Lookups
+
+1.create a csv file
+
+colname1,colname2
+<val1>,<val1> has been converted
+<val2>,<val2> has been converted
+
+index=_internal*
+--------
+log_level,colname2
+INFO,INFO has been converted
+WARN,WARN has been converted
+-----
+add this csv file to lookup table
+& Give all Permission
+---
+
+index=_internal* log_level=* | lookup test.csv log_level OUTPUT colname2 | table log_level colname2 
+
+
+====
+index=_internal* log_level=* | lookup lookup.csv log_level OUTPUT colname2 | table log_level colname2
+
+================================
+How to contact me?
+http://rajeshkumar.xyz/
+
+Where to get Course Matertails?
+	SLIDES
+	QUIZ
+	EXAMPLES
+	REPOS
+	https://www.devopsschool.com/lms
+		1 - ONLY USING GMAIL ID
+		2 - ADMIN WILL GRANT ACCESS TO LMS IN 2 DAYS
+	SPLUNK
+
+=======================
+About DevOpsSchool.com
+==========================
+Certification
+http://devopscertification.co/
+
+How can we release a Certification?
+
+Subject  - Splunk Certified Engineer
+
+Full Name
+GMAIL ID 
+Phone
+Company - WellsFargo
+City - Bangalore
+
+contact@DevopsSchool.com
+
+
+
+
+
+
+
+

@@ -1,0 +1,12 @@
+DevOpsSchool100@gmail.com
+
+Linux
+wget -O splunkforwarder-7.2.3-06d57c595b80-Linux-x86_64.tgz 'https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&platform=linux&version=7.2.3&product=universalforwarder&filename=splunkforwarder-7.2.3-06d57c595b80-Linux-x86_64.tgz&wget=true'
+
+./splunk edit user admin -password mynewpassword -auth admin:Password$123
+./splunk restart
+./splunk install app ./splunkclouduf.spl -auth admin:Password$123
+./splunk install app /opt/splunkforwarder/bin/splunkclouduf.spl -auth admin:mynewpassword
+./splunk install app ./splunkclouduf.spl -auth admin:changeme
+
+./splunk install app /opt/splunkforwarder/bin/splunkclouduf.spl -auth admin:changeme

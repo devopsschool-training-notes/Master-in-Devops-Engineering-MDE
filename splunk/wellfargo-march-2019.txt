@@ -1,0 +1,663 @@
+SDLC CYCLE
+===============================
+Prod - WellX
+	
+	- DevOps
+		Imm Release
+		Cost Reduction
+		Quality 
+https://www.devopsschool.com/video/devops/
+
+Mgr - Mgrx - Hiring
+Planning - Architect - 2 - Jira,SNC, Trell, Confluence	# NO SPLUNK
+Dev - 10 People  - 10 Module
+	Code Integ - Git/Github	
+			Unathrized Access 		# YES SPLUNK
+
+
+	Code Analysis - SonarQube			# YES MAY BE SPLUNK
+	https://en.wikipedia.org/wiki/List_of_tools_for_static_code_analysis	
+
+	
+	Build the Code --- Ant -Maven - MSbuild - Nant - pybuider - Gradle
+							# YES MAY BE SPLUNK
+
+	Unit Testing  - Junit | NUnit			# YES SPLUNK
+
+	
+	Packing						# NO SPLUNK
+
+	Dep 2 Repo	- Artifactory 			# YES SPLUNK
+				Downloading
+				Uploading
+
+	Dep 2 						# YES SPLUNK
+		QA	==> AT
+		Staging ==> AT
+		Prod	==> AT
+		
+		Tools - 
+		 Pro - Ansible, Chef, Puppet
+		 GUI - uDeploy, OctopusDeply
+						FOR TEST RESULTS ANALYSIS
+===========================================================================
+Pre Pro Server
+	Github
+	Artifactory
+	SonarQube
+	Test Log
+	Analysis log
+	Unit Test Log
+
+Prod Server
+	Web Server APP
+	App Server APP
+	DB server APP
+	NETWORK
+	PORT
+	CPU/RAM/HDD
+================================================
+Installing as a non-root user
+
+Splunk in Windows
+13.127.254.71
+
+Splunk in Linux
+52.66.203.8
+
+
+$ yum install wget -y 
+$ cd /opt
+$ wget -O splunk-7.2.5-088f49762779-Linux-x86_64.tgz 'https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&platform=linux&version=7.2.5&product=splunk&filename=splunk-7.2.5-088f49762779-Linux-x86_64.tgz&wget=true'
+$ tar -zxvf splunk-7.2.5-088f49762779-Linux-x86_64.tgz
+$ cd splunk
+$ cd bin
+
+[root@ip-172-31-19-160 bin]# ./splunk
+
+Not enough arguments.  Please specify a valid command from this list:
+
+
+  Welcome to Splunk's Command Line Interface (CLI).
+
+  Type these commands for more help:
+
+    help simple, cheatsheet    display a list of common commands with syntax
+    help commands              display a full list of CLI commands
+    help [command]             type a command name to access its help page
+    help clustering            commands that can be used to configure the clustering setup
+    help shclustering          commands that can be used to configure the shclustering setup
+    help control, controls     tools to start, stop, manage Splunk processes
+    help [object]              type an object name to access its help page
+    help [topic]               type a topic keyword to get help on a topic
+    help datastore             manage Splunk's local filesystem use
+    help distributed           manage distributed configurations such as
+                               data cloning, routing, and distributed search
+    help forwarding            manage deployments
+    help input, inputs         manage data inputs
+    help licensing             manage licenses for your Splunk server
+    help settings              manage settings for your Splunk server
+    help tools                 tools to help your Splunk server
+    help search                help with Splunk searches
+
+  Universal Parameters:
+
+    The following parameters are usable by any command. For more details on each
+    parameter, type "help [parameter]".
+
+    Parameter syntax:
+
+      [command] [object] [-parameter <value> | <value>]... [-uri][-auth]
+
+      app        specify the app or namespace to run the command; for search, defaults to
+                 the Search app
+
+      auth       specify login credentials to execute commands that require you to be logged in
+
+      owner      specify the owner/user context associated with an object; if not specified,
+                 defaults to the currently logged in user
+
+      uri        execute a command on any specified Splunk server. Use the
+                 format: <ip>:<port>
+
+     Note: IPv4 (127.0.0.1:80) and IPv6 ([2001:db8::1]:80) formats are both supported for specifying IP addresses.
+           By default, splunkd listens on IPv4 only. To enable IPv6 support, refer to the instructions in:
+           http://docs.splunk.com/Documentation/Splunk/latest/Admin/ConfigureSplunkforIPv6
+
+
+     Type "help [object|topic]" to get help on a specific object or topic.
+
+     Complete documentation is available online at: http://docs.splunk.com/Documentation
+
+$ ./splunk stop		
+	
+$ ./splunk start --accept-license 
+
+$ ./splunk enable boot-start
+
+LINUX
+http://127.0.0.1:8000
+http://52.66.203.8:8000
+admin / admin123
+
+WINDOWS
+http://13.127.254.71:8000
+admin / admin123
+=================================
+
+
+Module 1- Upload A csv file 
+Module 2 - Website
+		JOB
+		Event Sampling
+		Mode
+			Fast
+			Smart
+			Verbose
+		Selected Field
+		Interesting Fields
+		Custom Field
+			Regular Express
+			Delimitor
+
+
+	The logon attempt failed
+	Bad Password
+	Failed Login
+	How many times Failed Login
+	How many times successful Login
+	How many time system rebooted
+	How many times system got shutdown
+	How many times login using "Administrator"
+		
+PHP - Apache | MySql | PHP --> WAMP + WordPress
+http://www.wampserver.com/
+
+JAVA - Jenkins with tomcat
+DOTNET - IIS 
+
+
+================================================================
+Step 1 - XAMP + WORDPRESS = 80
+13.233.4.187
+
+> yum install wget -y 
+$ cd /opt
+> wget https://www.apachefriends.org/xampp-files/5.6.32/xampp-linux-x64-5.6.32-0-installer.run
+> chmod 755 xampp-linux-x64-5.6.32-0-installer.run
+> ./xampp-linux-x64-5.6.32-0-installer.run
+
+> sudo /opt/lampp/lampp start
+http://X.X.X.X/dashboard/
+
+============mysql==============================
+cd /opt/lampp/bin
+./mysql
+mysql > use mysql;
+mysql > update user set password=PASSWORD("root123") where User='root';
+mysql > flush privileges;
+
+mysql > create database wordpress;
+mysql > quit
+
+===================WORDPRESS ===================
+wget https://wordpress.org/latest.zip
+yum install unzip
+unzip latest.zip
+cp -rf wordpress /opt/lampp/htdocs/
+chown -R daemon:daemon /opt/lampp/htdocs/wordpress
+http://X.X.X.X/dashboard/wordpress
+
+==========================================
+
+
+Step 2 - JENKINS - 8080
+=========================================
+$ yum install wget -y
+$ wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+$ rpm -ivh jdk-8u131-linux-x64.rpm
+$ java -version
+
+
+$ sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+$ sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+$ yum install jenkins 
+$ systemctl start jenkins 
+http://13.233.4.187:8080/
+
+
+Splunk - 8000 | 9997
+
+=============================================
+How to Setup a Forwarder in Linux?
+How to Setup a Forwarder in Windows?
+
+Splunk Server (13.234.32.244) - Windows
+
+Splunk Server (13.233.4.187) - Linux
+
+Setup 1 - Linux Forwarder to Windwos
+===============PHASE 1 ========================
+$ cd /opt/
+$ wget wget -O splunkforwarder-7.2.5-088f49762779-Linux-x86_64.tgz 'https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&platform=linux&version=7.2.5&product=universalforwarder&filename=splunkforwarder-7.2.5-088f49762779-Linux-x86_64.tgz&wget=true'
+
+$ tar -zxvf splunkforwarder-7.2.5-088f49762779-Linux-x86_64.tgz
+$ cd /opt/splunkforwarder/bin/ 
+3. cd  /opt/splunkforwarder/bin	
+	./splunk start
+	./splunk stop
+	./splunk restart
+	./splunk help
+4. sudo ./splunk start --accept-license 
+5. sudo ./splunk enable boot-start
+===============PHASE 2 in SPLUNK SERVER========================
+Pre-Requisite to add forwarders
+----------------------------------	
+1. Settings => Monitoring console => Setting => Forwarder Monitoring Setup => Forwarder Monitoring (ENABLE with 15 mins)
+2. Settings => Forwarding and Recieving => Receive data => Add New ==> Listen on this port (For example, 9997 will receive data on TCP port 9997)
+3. Restart a Splunk Instance
+Settings => Server Controls => Restart Splunk
+
+===============PHASE 3 in FORWARDER MACHINE========================
+jenkins - /var/log/jenkins		hostname=linux-rajesh	
+wamp/Apache - /opt/lampp/logs		hostname=linux-rajesh	
+mysql - /opt/lampp/var/mysql		hostname=linux-rajesh	
+linux - /var/log			hostname=linux-rajesh	
+
+
+sudo ./splunk add forward-server 13.234.32.244:9997
+more ../etc/system/local/outputs.conf
+
+==OR sudo ./splunk add forward-server X.X.X.X:9997 -auth admin:goodpass
+
+sudo ./splunk list forward-server
+sudo ./splunk list monitor 
+sudo ./splunk add monitor /var/log/jenkins 
+sudo ./splunk list monitor 
+sudo ./splunk add monitor /opt/lampp/logs
+sudo ./splunk list monitor
+sudo ./splunk add monitor /opt/lampp/var/mysql
+sudo ./splunk list monitor
+sudo ./splunk add monitor /var/log
+sudo ./splunk list monitor
+sudo ./splunk list forward-server
+sudo ./splunk restart
+sudo ./splunk list forward-server
+
+Where "ADD monitor is getting added"
+cd /opt/splunkforwarder/etc
+
+[root@ip-172-31-19-160 etc]# grep -r "lampp" .
+./apps/search/metadata/local.meta:[inputs/monitor%3A%2F%2F%2Fopt%2Flampp%2Flogs]
+./apps/search/metadata/local.meta:[inputs/monitor%3A%2F%2F%2Fopt%2Flampp%2Fvar%2Fmysql]
+./apps/search/local/inputs.conf:[monitor:///opt/lampp/logs]
+./apps/search/local/inputs.conf:[monitor:///opt/lampp/var/mysql]
+./apps/learned/metadata/local.meta:[sourcetypes/%2Fopt%2Flampp%2Fvar%2Fmysql%2Fmysql%2Fhelp_topic.MYD_Wed_Mar_20_05%3A55%3A37_2019_362485006]
+./apps/learned/local/sourcetypes.conf:[/opt/lampp/var/mysql/mysql/help_topic.MYD_Wed_Mar_20_05:55:37_2019_362485006]
+./apps/learned/local/sourcetypes.conf:_source = /opt/lampp/var/mysql/mysql/help_topic.MYD
+
+===============PHASE 4 ========================
+3. Restart a Splunk Instance
+Settings => Server Controls => Restart Splunk
+
+===============PHASE 5 =======================
+========== In Splunk Web Servers=============================	
+1. Go to "Settings" and click on "Monitoring console"
+2. On the Second Top Menu --
+		Click on the "Forwarders Deployment" and Visualize
+		Click on the "Forwarders Instance" and Visualize
+3. Run a Search
+
+==========================================================
+==========================================================
+
+
+
+==========================================================
+==========================================================
+==========================================================
+==========================================================
+Setup 2 - Windows Forwarder to Linux
+
+
+jenkins - 8080
+mysql - 3036
+apache - 80
+[ Splunk Server ]
+Checking http port [8000]: open
+Checking mgmt port [8089]: open	====== Splunkd
+Checking appserver port [127.0.0.1:8065]: open
+Checking kvstore port [8191]: open
+
+[ Splunk Forwarder ]
+9000
+===========================================
+time				action	age life name num index
+Wed Mar 20 06:49:14 UTC 2019	web1 444 555 raj1 331 41
+Wed Mar 20 06:50:14 UTC 2019	web2 444 555 raj2 332 42
+Wed Mar 20 06:51:14 UTC 2019	web3 444 555 raj3 333 43
+Wed Mar 20 06:52:14 UTC 2019	web4 444 555 raj4 334 44
+Wed Mar 20 06:53:14 UTC 2019	web5 444 555 raj5 335 45
+
+app.log			index=app-rajesh		hostnname=appserver
+database.log		index=database-rajesh		hostnname=dataserver
+webserver.log		index=weberver-rajesh		hostnname=webserver
+
+
+
+How to remove monitor?
+sudo ./splunk remove monitor /var/log/jenkins
+
+How to set hostname
+sudo ./splunk add monitor /opt/devopsschool.com/app.log -hostname appserver -index app-rajesh
+sudo ./splunk add monitor /opt/devopsschool.com/database.log -hostname dataserver -index database-rajesh
+sudo ./splunk add monitor /opt/devopsschool.com/webserver.log -hostname webserver -index weberver-rajesh
+
+
+
+How to upload a file
+
+sudo ./splunk add oneshot /var/log/applog	
+sudo ./splunk add oneshot C:\Program Files\AppLog\log.txt
+
+This command below will also show which apps each setting is coming from.
+sudo ./splunk cmd btool --debug inputs list
+
+How to remove a monitoring?
+ 144  sudo ./splunk remove monitor /var/log/jenkins
+  145  sudo ./splunk remove monitor /opt/lampp/logs
+  146  sudo ./splunk remove monitor /opt/lampp/var/mysql
+
+======================================================
+======================================================
+How to add Window Forwarder to Indexer(Splunk Server)
+
+$ splunk add monitor C:\raj\raj.txt -hostname appserver -index app-rajesh
+$ splunk list monitor 
+$ splunk list forward-server
+$ splunk add forward-server 13.234.32.244:9998 -auth admin:admin123
+[[[
+
+]]]
+
+How to remove a data from Splunk?
+===============================================
+The delete command can only be run by a user with the "delete_by_keyword" capability. By default, Splunk Enterprise ships with a special role, "can_delete" that has this capability (and no others). 
+
+UserName	- cleanup
+Password  - cleanup123
+
+Delete events from subsequent searches
+source="/var/log/openlmi-install.log" | delete
+source="/var/log/messages-20181119" | delete
+
+Remove all data from one or all indexes
+$ splunk help clean
+$ splunk clean eventdata	
+$ splunk clean eventdata -index <index_name>
+$ splunk stop
+$ splunk clean eventdata 	# To permanently remove data from all indexes
+$ splunk stop
+$ splunk clean eventdata -index _internal -f # To permanently remove data from _internal
+
+Remove an index entirely
+$ splunk stop
+$ splunk remove index <index_name>
+
+Disable an index without removing it
+$ splunk disable index <index_name>
+
+=========================================
+=========================================
+
+BASIC SPL
+=======================================
+
+The Splunk Search Language
+------------------------
+Seach Terms
+Commads
+Functions
+Arguments
+Clauses
+
+fields Command
+Useful to limit field displayed and can make search faster
+
+Source 				SoureType		 	index
+access_30DAY.log		access_combined_wcookie		main
+linux_s_30DAY.log		linuxlog			main
+db_audit_30DAY.csv		csv				main
+			
+
+
+# To Include a field
+index=main sourcetype=access_combined_wcookie |
+
+field status clientip
+# To exclude a field
+-index=web sourcetype=access_combines |
+field - status clientip
+
+The Table Command
+=========================
+Retain searched data in a tabulated format
+
+index=main sourcetype=access_combined_wcookie status=200 productid
+index=main sourcetype=access_combined_wcookie status=200 productid | table JSESSIONID, req_time
+
+The rename Command
+=========================
+To rename can rename a field
+index=main sourcetype=access_combined_wcookie status=200 productid | table JSESSIONID, req_time | rename JSESSIONID as "User Session"
+
+index=main sourcetype=access_combined_wcookie status=200 productid | table JSESSIONID, req_time | rename JSESSIONID as "User Session" req_time as "Requst Time" 
+
+Dedup Command
+=========================
+index=main sourcetype=access_combined_wcookie status=200 productid | table JSESSIONID, req_time | rename JSESSIONID as "User Session" req_time as "Requst Time" | dedup "User Session"
+
+Sort Command
+=========================
+sourcetype=access_combined_wcookie | table file | sort file
+sourcetype=access_combined_wcookie | table file | sort -file
+
+====================================================
+SPL
+Reports
+Dashboard
+Panel
+PIVOT
+ALERTS
+-------
+HEAVY FORWARDER
+
+=================Sample Data================= 
+
+all_month.csv			csv
+prices.csv			
+tutorialdata/mailsv/secure.log			secure
+tutorialdata/vendor_sales/vendor_sales.log	vendor_sales
+tutorialdata/www1/access.log 			access_combined_wcookies
+tutorialdata/www1/secure.log			www-secure
+homeworkdataset.csv				homeworkdataset
+-----LAB-------
+access_30DAY.log				access_30		
+db_audit_30DAY.csv				db_audit
+linux_s_30DAY.log				linux30day
+====================================================
+host="RAJESH"
+
+Table
+===============
+index=main source=all_month.csv place=*California 
+index=main source=all_month.csv place=*California | table time, place, mag, depth
+index=main source=all_month.csv place=*California | table time, place, mag, depth, latitude, longitude
+
+
+index=main source=all_month.csv place=*California | table time, place, lat*, lon*, mag
+index=main source=all_month.csv place=*California | table time, place, lat*, lon*, mag | rename latitude as Latitude longitude as Longitude  
+
+Eval & Table
+===============
+sourcetype=access* | dedup clientip | eval network=if(cidrmatch("192.0.0.0/16", clientip), "local", "other") | table clientip, network
+
+------
+
+
+Rename & Table
+===============
+index=* source="access.log"| top limit=20 productId
+index=* source="access.log" status=200 productId=*  | table JSESSIONID, productId, price | rename JSESSIONID as "User Session" 
+index=* source="access.log" status=200 productId=*  | table JSESSIONID, productId, price | rename JSESSIONID as "User Session" 
+
+uniq - Removes any search that is an exact duplicate with a previous result.
+
+table - Creates a table using the specified fields.
+http://devopsschool.com/tutorial/splunk/commands/results-filtering/table.html
+
+delete - Delete specific events or search results.
+
+rename - Renames a specified field. Use wildcards to specify multiple fields.
+
+replace - Replaces values of specified fields with a specified new value.
+
+top - Displays the most common values of a field.
+http://devopsschool.com/tutorial/splunk/commands/reports/top.html
+	
+rare - Displays the least common values of a field.
+http://devopsschool.com/tutorial/splunk/commands/reports/rare.html
+
+chart	Returns results in a tabular output for charting.
+http://devopsschool.com/tutorial/splunk/commands/reports/chart.html 
+
+eventcount - Returns the number of events in an index.
+
+dedup - Removes subsequent results that match a specified criteria
+https://www.devopsschool.com/tutorial/splunk/commands/results-filtering/dedup.html
+
+head - Returns the first number n of specified results.
+
+reverse - Reverses the order of the results.
+
+sort - Sorts search results by the specified fields.
+http://devopsschool.com/tutorial/splunk/commands/results-reordering/sort.html
+
+tail - Returns the last number N of specified results
+
+search - Searches indexes for matching events. This command is implicit at the start of every search pipeline that does not begin with another generating command.
+
+eval - Calculates an expression and puts the value into a field
+
+timechart - Create a time series chart and corresponding table of statistics
+http://devopsschool.com/tutorial/splunk/commands/reports/timechart.html
+
+stats
+http://devopsschool.com/tutorial/splunk/commands/reports/stats.html
+=======================================================
+Replace only with Conditiong
+ ... | where dest like "88ea2fb8-b579-11e7-8239-ce584c37994e" | replace 127.0.0.1 WITH 37.139.29.33 IN dest|
+
+or
+
+ ... |where dest like "88ea2fb8-b579-11e7-8239-ce584c37994e" | eval dest=replace(dest, "127\.0\.0\.1", "37\.139\.29\.33") |...
+
+
+.
+Lab 1  - 
+Sample Data = Splunk_f1_Data.zip
+https://www.devopsschool.com/tutorial/splunk/labs/fundamental/SplunkFundamentals1_module8.html
+
+Lab 2 - 
+Lab 3  - 
+
+Transaction
+
+======================================================
+Scanrio 
+
+Project - 
+
+transaction_id in multiple apps....
+	--- DATA MODEL
+		---- SPL using JOIN
+
+======================================================
+======================================================
+Lab 2  - Transforming Commands.....
+
+Sample Data = Splunk_f1_Data.zip
+https://www.devopsschool.com/tutorial/splunk/labs/fundamental/SplunkFundamentals1_module9.html
+
+======================================================
+======================================================
+
+Using the transaction command to identify session spoofing
+sourcetype="access_combined_wcookie"  | transaction JSESSIONID | where mvcount(clientip) > 1| table JSESSIONID clientip 
+
+sourcetype=access_* | transaction JSESSIONID clientip startswith="view" endswith="purchase" | where duration>0
+https://docs.splunk.com/Documentation/Splunk/7.2.4/Search/Abouttransactions 
+
+======================================================
+======================================================
+Lab 3  - Reports and Dashbord
+
+Sample Data = Splunk_f1_Data.zip
+https://www.devopsschool.com/tutorial/splunk/labs/fundamental/SplunkFundamentals1_module10.html
+
+======================================================
+======================================================
+Project
+https://www.devopsschool.com/tutorial/splunk/labs/assignment/dashboard.html
+
+====================
+https://www.devopsschool.com/tutorial/splunk/labs/fundamental/SplunkFundamentals1_module11.html
+http://devopsschool.com/tutorial/splunk/labs/fundamental/SplunkFundamentals1_module12.html
+https://www.devopsschool.com/tutorial/splunk/labs/fundamental/SplunkFundamentals1_module13.html
+
+
+===============================================
+===============================================
+Certification - Splunk Certified Engineer
+	By http://devopscertification.co/
+
+How to get certification?
+--------------------------------
+Subject  - Splunk Certified Engineer
+
+BODY
+
+Full Name - 
+Personal Email ID 
+Office Email ID
+Phone number - 
+Role 
+City - Hyderabad
+Company - WellsFargo
+
+Contact@DevOpsSchool.com
+================================
+How to get a course materials?
+	Slides
+	Web
+	Quiz
+https://www.devopsschool.com/lms/	
+
+==============================
+http://rajeshkumar.xyz
+
+===========================================
+Feedback?
+	
+
+
+
+
+
+
+
+
+
+
+
+
