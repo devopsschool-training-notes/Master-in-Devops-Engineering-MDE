@@ -1,0 +1,117 @@
+Project Name - CitX
+Mgm - MgrX
+========================
+Architect - JIRA, TRELLO
+
+MODULE 10 - DEV
+
+Dev -
+Source Code Integ - GIT			- 3
+Static Code Analysis - SonarQube	- 2
+BUILD -> Maven				- 100
+UT --JNUT NUNIT				
+PACKING - jar		
+Repos - Nexus 				- 5
+Deploy - 			
+		100 SERVERS		- 100	
+-----------------------------------
+		50 LINUX
+		50 WIN
+		
+		25 MSQL
+		25 MYSL
+		25 ORACLe
+		25 POSQ
+		
+		25 TOMCAT | 25 jboss | 25 wl | 25 ws
+	---------------------------
+		5 mins
+	1 mins - Getting the server - PUB(AWS-AUZUE-GC)  PVT(vmware)
+	4 mins - PUPPET, CHEF, ANSIBLE, SALT
+
+	AT - 
+
+	CODE COVERGAE - JACOCO, COBERTURA, N COVER
+
+	RELEASE ===>
+
+	PRODUCTION
+		INTERNET GATEWAY - 2
+		LOAD BALANCERSS - 4
+		WEB SERVERS- 100
+		APP SERVERS - 1000
+		DATABASE SERVERS - 100
+
+		CACHE SEVER - 40
+		SESSION MGMT - 5
+		COOKIES SERVERS - 10
+		LIB SERVERS
+=================================================
+1000 SERVERS
+	OFFLINE MONITORING
+	LIVE MONITORING
+
+APPLICATION SERVICE MONTORING = 1 million in one houe
+APP LOG MONITORING	24 MILLIONS OF LINE on ONE MIN	
+SYS LOG MONIORING	20 MILLIONS OF LINE on ONE MIN
+Networking Log
+Security Log
+
+LOG STORING
+LOG PROCESSING
+
+STORE THE LOG --> INDEXED --> PROCESS(QUERY) --> REPORTS-
+
+
+
+SERVERS MONITORING FOR DOWNTIME
+APP UP & DOWN
+LOG MONITORNG
+=================================================
+
+
+LAB INFRA
+==================================
+34.224.173.4.  54.164.42.82
+Public DNS            ec2-34-224-173-4.compute-1.amazonaws.com
+User name            Administrator
+Password             
+NQf-hj4B$P.P$B(Jo)EoN-Admen=jC8@
+ 
+34.207.116.4. 54.85.140.199
+Public DNS            ec2-34-207-116-4.compute-1.amazonaws.com
+User name            Administrator
+Password             
+bjawp@)2XpS=hU!&fx-eYAHlJdrX3E$P
+ 
+ 
+34.201.105.249 52.91.170.85
+Public DNS            ec2-34-201-105-249.compute-1.amazonaws.com
+User name            Administrator
+Password             
+Un(O6Xk2qqSE=z)EKJBqM6D4RpaEZY5J
+ 
+54.221.56.210 52.90.165.197
+Public DNS            ec2-54-221-56-210.compute-1.amazonaws.com
+User name            Administrator
+Password             
+C?F$!7s?LC-jJ&I$c4hW&EJq;LC!W5D@
+
+http://www.devopsschool.com/notes/splunk/
+
+
+
+
+	
+
+		
+
+
+
+ 
+IT
+QA
+DB
+OPS
+BR
+DEVOPS
