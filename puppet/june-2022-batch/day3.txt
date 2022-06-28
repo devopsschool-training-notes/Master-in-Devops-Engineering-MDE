@@ -1,0 +1,79 @@
+What is Puppet Module?
+============================
+- Directory structure
+- Contains following
+	- puppet program(s)	= manifests
+	- attributes
+	- files
+	- templates
+	- handlers
+	--------------------------
+
+Use of Modules?
+--------------------
+- 100 Resource Declartion - 1 .pp or 10 .pp file
+- variable(s) === attributes
+- to store a files at one place which is being used in .pp
+- ITS EASY TO SHARE
+			- https://forge.puppet.com/
+
+https://devopsschool.com/slides/puppet/
+
+
+  17  mkdir modules
+   18  mkdir -p modules/motd/{manifests,files,examples}
+   19  ls modules/
+   20  ls modules/motd/
+   21  vi modules/motd/manifests/init.pp
+   22  puppet module list
+   23  ls
+   24  pwd
+   25  clear
+   26  pwd
+   27  ls
+   28  clear
+   29  puppet apply -e 'include /root/pp/modules/motd'
+   30  pwd
+   31  ls
+   32  clear
+   33  puppet apply -e 'include ./modules/motd'
+   34  puppet apply -e 'include modules/motd'
+   35  clear
+   36  ls
+   37  cd modules/
+   38  ls
+   39  puppet module list
+   40  mv motd/ /etc/puppetlabs/code/environments/production/modules
+   41  ls /etc/puppetlabs/code/environments/production/modules
+   42  clear
+   43  puppet apply -e 'include motd'
+   44  vi /etc/puppetlabs/code/environments/production/modules/motd/manifests/init.pp
+   45  puppet apply -e 'include motd'
+   46  more /opt/raju.txt
+   47  clear
+   48  ls
+   49  java
+   50  puppet module help
+   51  puppet help module
+   52  puppet module list
+   53  puppet module install puppetlabs-java
+   54  clear
+   55  puppet module list
+   56  cd /etc/puppetlabs/code/environments/production/modules
+   57  ls
+   58  cd java
+   59  ls
+   60  more metadata.json
+   61  ls
+   62  cd ..
+   63  ls
+   64  puppet module list
+   65  puppet apply -e 'include puppetlabs-java'
+   66  more /etc/puppetlabs/code/environments/production/modules/puppetlabs-java/
+   67  ls /etc/puppetlabs/code/environments/production/modules/puppetlabs-java
+   68  cd /etc/puppetlabs/code/environments/production/modules/
+   69  ls
+   70  puppet apply -e 'include java'
+   71  java
+   72  clear
+
