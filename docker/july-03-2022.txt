@@ -1,0 +1,486 @@
+What is Docker?
+--------------------
+	Container mgmt tool
+	Written in Go
+	by solomon hykes
+	Release
+			community
+			enterprise
+	https://www.devopsschool.com/blog/difference-between-docker-community-edition-ce-vs-docker-enterprise-edition-ee-in-2020/
+	version 
+		20.X
+
+Tool
+-----------
+Save Cost
+- CPU - RAM - Storage - OS during running apps
+Reduce time
+- 5 mins ---> 1 Second
+Improve Quality
+- 
+
+mgmt
+--------------------------------
+create -> start -> stop -> removing
+
+what is Container?
+----------------------------
+	--- Container is running ur app
+	--- it has all resources requiured in it.
+					-------------------
+					Net
+					pid
+					mnt == rootfs + usrfs + appfs
+					user
+What are the resources required to run any APPS?
+--------------------------------------------------
+Hardware
+		Software
+				OS
+					Kernal
+							Namespaces
+								USER	- init 1 USER	
+								NET		- init 1 NET
+								PID		- init 1 PID TREE
+								MNT		- init 1 ROOT FILESYSTEM
+							Cgroups
+								Allocates CPU+RAM to a PID
+							Capability
+								Assign perm to user
+							
+
+
+
+The kernel is a computer program at the core of a computer's operating system and generally has complete control over everything in the system.
+
+FILESYSTEM
+---------------------------
+BOOTFILESYSTEM === Kernal
+ROOT FILESYSTEM == 
+USER FILESYSTEM
+APP FILESYSTEM
+
+
+Other tools
+---
+https://www.devopsschool.com/blog/list-of-top-container-runtime-interface-projects/
+
+Docker Architecture
+--------------------------
+Human --> Docker client --> Docker Server(dockerd) ----> ContainerD --> Kernal
+			=======================================
+					docker engine
+
+										- Create 1 NS
+										- Create 1 MNT
+										- Create 1 USER
+										- Create 1 PID
+		---------------------------------------------------------
+					ATTACH USER with NS + MNT + PID == Container
+
+How to install docker?
+https://www.devopsschool.com/blog/docker-installation-and-configurations/
+
+Docker Workflow
+==============================
+
+Human --> Docker client --> Docker Server(dockerd) ----> ContainerD --> Kernal
+			=======================================
+					docker engine
+
+							CHECK IF DOCKER IMAGE EXIST LOCAL
+
+										- Create 1 NS
+										- Create 1 MNT
+										- Create 1 USER
+										- Create 1 PID
+		---------------------------------------------------------
+					ATTACH USER with NS + MNT + PID == Container
+
+
+DOCKER COMPONENTNS
+==============================
+Docker engine
+
+vm image = BOOTFS + Rootfs + userfs + apps
+		 ----------------------------------------
+			kernal + /    + raju + apache+java
+Docker images
+			Rootfs + userfs + apps
+			 /    + raju + apache+java
+
+		WHEN we create 1 container ---> 1 COPY Of Image Get Mounted into Container
+
+Docker registry
+			contains repository
+					contains version of FILESYSTEm
+							Rootfs + userfs + apps
+
+				docker hub
+				google registry
+				artifactory
+				nexus
+				ecr
+
+Docker container
+
+Container Lifecycle
+=============================
+create -> start -> stop -> start -> restart -> kill -> start -> pause -> unpuase -> stop -> rm
+
+
+ 43  curl -fsSL get.docker.com -o get-docker.sh
+   44  sudo sh get-docker.sh
+   45  sudo systemctl enable docker
+   46  sudo systemctl start docker
+   47  clear
+   48  which docker
+   49  which dockerd
+   50  ps -eaf | grep dockerd
+   51  which containerd
+   52  ps -eaf | grep containerd
+   53  clear
+   54  docker
+   55  clear
+   56  docker
+   57  clear
+   58  docker help
+   59  clear
+   60  docker help
+   61  docker --version
+   62  docker images
+   63  docker ps
+   64  docker ps -a
+   65  clear
+   66  history
+   67  clear
+   68  docker info
+   69  history
+
+
+ 70  clear
+   71  docker pull httpd
+   72  clear
+   73  docker images
+   74  docker create httpd
+   75  docker ps
+   76  docker ps -a
+   77  docker create --name raju1 httpd
+   78  docker ps -a
+   79  clear
+   80  docker create --name raju2 httpd
+   81  docker ps -a
+   82  docker start 46c152792bcf
+   83  docker ps -a
+   84  clear
+   85  docker ps -a
+   86  docker start raju2
+   87  docker ps -a
+   88  docker stop raju1
+   89  docker ps -a
+   90  clear
+   91  docker ps -a
+   92  docker start raju1
+   93  docker ps -a
+   94  docker restart raju2
+   95  docker ps -a
+   96  docker kill raju1
+   97  docker ps -a
+   98  clear
+   99  docker ps -a
+  100  docker start raju1
+  101  docker ps -a
+  102  docker pause raju2
+  103  docker ps -a
+  104  docker unpause raju2
+  105  docker ps -a
+  106  clear
+  107  docker stop[ raju1 raju2
+  108  docker stop raju1 raju2
+  109  docker ps -a
+  110  docker rm raju1 raju2
+  111  docker ps -a
+  112  history
+
+================================
+How to go inside a container and interact with it?
+
+exec
+		u can execute any executable inside a container
+		u can exec bash with -it - u can go inside a container
+attach
+		attach to PID 1 of the container
+
+ 112  history
+  113  clear
+  114  docker ps -a
+  115  docker start c2178aa745e2
+  116  docker ps -a
+  117  docker exec c2178aa745e2 ls
+  118  ls
+  119  clear
+  120  docker exec c2178aa745e2 lsssss\
+  121  docker exec c2178aa745e2 lsssss
+  122  docker exec c2178aa745e2 df
+  123  docker exec c2178aa745e2 ps
+  124  clear
+  125  docker ps -a
+  126  docker exec -it c2178aa745e2 /bin/bash
+  127  clear
+  128  ls
+  129  df
+  130  du
+  131  ps
+  132  clear
+  133  ps -eaf
+  134  clear
+  135  docker exec -it c2178aa745e2 /bin/bash
+  136  clear
+  137  docker ps -a
+  138  docker attach c2178aa745e2
+  139  docker ps -a
+
+
+  39  ls
+   40  ls secrets
+   41  docker ps -a
+   42  docker inspect c2178aa745e2
+   43  curl http://172.17.0.2
+   44  docker inspect c2178aa745e2
+
+
+How to acccess a container from outside?
+
+-------------------------------
+RUN
+-----------------------------------
+Pull + create + start + attach
+
+-------------------------------
+RUN -d
+-----------------------------------
+Pull + create + start + do not attach
+
+docker run -d httpd
+docker run -d httpd
+docker run -d sonarqube
+
+docker run -d -p 80:80 httpd
+docker run -d -p 81:80 httpd
+docker run -d -p 82:9000 sonarqube
+
+ 142  docker run httpd
+  143  docker ps -a
+  144  clear
+  145  docker run -d httpd
+  146  docker ps
+  147  docker run -d sonarqube
+  148  clear
+  149  docker ps
+  150  docker run -d sonarqube
+  151  docker ps
+  152  docker run -d ubuntu
+  153  clear
+  154  docker ps
+  155  docker ps -a
+  156  clear
+  157  docker run -d ubuntu ls
+  158  docker run ubuntu ls
+  159  docker ps -a
+  160  clear
+  161  docker run -itd ubuntu
+  162  docker ps -a
+  163  clear
+  164  docker ps
+  165  docker stop $(docker ps -a -q)
+  166  docker rm $(docker ps -a -q)
+  167  clear
+  168  docker ps -a
+  169  docker run -d -p 80:80 httpd
+  170  docker run -d -p 81:80 httpd
+  171  docker run -d -p 82:9000 sonarqube
+  172  docker ps -a
+  173  ip a
+  174  systemctl stop firewalld
+  175  systemctl disable firewalld
+  176  docker ps
+===================================================
+
+How to create an Image?
+==============================================
+Existing container
+Dockerfile
+
+What is a Docker Image?
+==============================
+ROOT FS + USER FS + APP FS
+-----------------------------
+ubuntu  + jenkins + java+jenkins
+centos  + username + jdk + tomcat + app
+
+==========================================================
+My mgr - Jami
+-------------------------------
+ubuntu + git + apache + java
+------- ---------------------
+1  + 1
+
+
+-------------------------------------------
+FROM ubuntu
+MAINTAINER Rajesh Kumar devops@rajeshkumar.xyz
+RUN apt-get update 
+RUN apt-get install git -y
+COPY index.html /tmp
+ENV JAVA_HOME /opt/java
+RUN useradd raju
+USER raju
+==============================
+
+How to set PID 1???
+========================================
+
+cmd
+entrypoint
+
+
+ 217  du -sh 727e695f928b885de23598e5abcc4cfdb28c9ee0f9c586b86286f669a46d0e3a-init
+  218  df -kh
+  219  docker run -d httpd
+  220  df -kh
+  221  docker ps
+  222  docker stop e6f2e6620743 0ebf4e1ec125
+  223  df -kh
+  224  ls
+  225  docker start e6f2e6620743 0ebf4e1ec125
+  226  df -kh
+  227  clear
+  228  docker ps -a
+  229  docker stop e6f2e6620743 0ebf4e1ec125 e1ca1203696a
+  230  docker ps -a
+  231  docker rm e6f2e6620743 0ebf4e1ec125 e1ca1203696a
+  232  clear
+  233  docker ps -a
+  234  docker images
+  235  docker run -itd ubuntu
+  236  docker ps
+  237  docker exec -it a101f0b9d858 /bin/bash
+  238  docker ps
+  239  git
+  240  docker exec a101f0b9d858 git
+  241  docker exec a101f0b9d858 java
+  242  docker ps
+  243  docker history ubuntu
+  244  docker ps
+  245  docker commit -"up-up-git-apache-java" -a "Rajesh Kumar" a101f0b9d858 up-up-git-apache-java
+  246  clear
+  247  docker commit m-"up-up-git-apache-java" -a "Rajesh Kumar" a101f0b9d858 up-up-git-apache-java
+  248  docker commit -m"up-up-git-apache-java" -a "Rajesh Kumar" a101f0b9d858 up-up-git-apache-java
+  249  docker images
+  250  docker history ubuntu
+  251  docker history up-up-git-apache-java
+  252  docker run -itd up-up-git-apache-java
+  253  docker ps
+  254  clear
+  255  docker ps
+  256  docker exec c0f6f9f54b79 git
+  257  docker exec c0f6f9f54b79 java
+  258  docker exec c0f6f9f54b79 which apache2
+  259  clear
+  260  docker images
+  261  docker run -itd --name raju ubuntu
+  262  docker ps
+  263  docker exec -it raju /bin/bash
+  264  clear
+  265  docker ps
+  266  docker exec raju ls /opt
+  267  docker commit -m"raju" -a"rajesh" raju raju
+  268  docker images
+  269  docker save -o raju.tar raju
+  270  ls
+  271  mv raju.tar /opt/
+  272  exit
+  273  cd /opt/
+  274  clear
+  275  ls
+  276  docker images
+  277  docker ps -a
+  278  docker stop a72cf6505f13 c0f6f9f54b79 a101f0b9d858
+  279  docker rm a72cf6505f13 c0f6f9f54b79 a101f0b9d858
+  280  clear
+  281  docker images
+  282  docker rmi raju
+  283  clear
+  284  docker images
+  285  ls
+  286  docker load -i raju.tar
+  287  docker images
+  288  docker run -itd raju
+  289  docker ps
+  290  clear
+  291  docker ps
+  292  docker exec 5f6e7241d014 ls /opt
+  293  clea
+  294  clear
+  295  docker images
+  296  docker tag raju devopsschools/raju
+  297  docker images
+  298  docker login
+  299  docker push devopsschools/raju
+  300  docker tag raju devopsschools/raju:22
+  301  docker images
+  302  docker push devopsschools/raju:22
+  303  ls
+  304  touch index.html
+  305  ls
+  306  vi dockerfile
+  307  docker build -t raju1 .
+  308  vi dockerfile
+  309  docker build -t raju1 .
+  310  docker images
+  311  docker run -itd raju1
+  312  docker ps
+  313  docker exec ps -eaf
+  314  docker exec c141347555d9 ps -eaf
+  315  clea
+  316  clear
+  317  ls
+  318  vi dockerfile
+  319  docker build -t raju1 .
+  320  vi dockerfile
+  321  docker build -t raju1 .
+  322  docker images
+  323  docker run -itd raju1
+  324  docker ps
+  325  docker exec bb6846890e2e ps -eaf
+  326  clear
+  327  docker ps -eaf
+  328  docker ps -a
+  329  docker images
+  330  docker run -d httpd
+  331  docker ps
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
