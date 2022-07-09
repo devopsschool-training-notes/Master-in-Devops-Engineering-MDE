@@ -1,0 +1,223 @@
+Linux
+====================================
+	OS
+	Kernal + Apps for Human
+	================================
+	OS Image
+			Physical server
+			Virtual Server
+			--------------------------------
+			BOOT + ROOT + USER + APP Filesystem
+			Kernal + Flavour of Linux/win + Root/Admin + ls/ps/df
+================================================================
+What is Virtual Machine?
+---------------------------------------
+is Machine which we create on top of Physcial server with a help of hypervisor
+		- vmware
+		- virtualbox
+		- hyperv
+		- kvm
+		- xen
+========================================================
+Step 1 - install virtualbox
+- https://www.virtualbox.org/wiki/Downloads
+
+Step 2 - Download Image
+- http://isoredirect.centos.org/centos/7/isos/x86_64/
+- https://ubuntu.com/download/server
+- https://ubuntu.com/download/desktop
+
+Step 3 - create a VM
+
+Step 4 - Install OS using Image	
+
+Step 5 - Select disk source
+
+Step 6 - Select root password
+---------------------------------------
+Step 7 - Select Networking - Bridge Node
+
+Step 8 - Enable and Activate network using nmtui
+==============================================
+How to connect Linux VMS
+			------------- SSH
+How to conntect Windows Vms
+			-------------- Winrm | RDP
+
+What are the SSH client?
+- putty 
+- https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
+https://www.devopsschool.com/blog/list-of-free-tools-for-tabbed-multiple-linux-ssh-putty-sessions/
+https://www.devopsschool.com/blog/how-to-login-linux-server-using-ssh/
+https://www.devopsschool.com/blog/how-to-configure-and-access-linux-vms-using-virtualbox-for-local-lab-and-practice/
+https://www.devopsschool.com/blog/how-to-login-linux-server-of-aws-from-windows-using-putty/
+=========================================
+Editor
+- vi
+- vim
+- nano
+
+ls
+cat
+more
+less
+cut
+find
+grep
+sed
+
+chown
+chmod
+useradd
+userdel
+
+su
+sudo
+
+ps
+df
+du
+
+ping
+netstat
+trace
+
+Assignment
+================================
+https://www.devopsschool.com/blog/linux-commands-for-user/
+https://www.devopsschool.com/blog/linux-commands-for-administrator/
+
+SEA of Commands
+-------------------
+https://www.devopsschool.com/commands
+
+Shortcuts
+--------------------
+https://www.devopsschool.com/shortcuts/
+
+Cheatsheets
+-----------------
+https://www.devopsschool.com/cheatsheets/
+=========================================================
+Vagrant
+----------------------------------------------------
+- to automate Vms for dev
+- dev by - hashicorp
+- written in go
+- version - 2.x
+- OS
+
+
+How to install Vagrant in Windows?
+https://www.devopsschool.com/blog/vagrant-installation-in-centos-ubuntu-and-windows/
+
+
+What is Box?
+------------------------------
+
+OS Image --> ISO
+VM Package - ova - ovf = for Virtual box
+
+Box is package Type in Vagrant for Vms..
+----------------------------------------
+Download box - https://www.vagrantbox.es/
+
+
+===============================================================
+		use Basic linux command + SSH ops using git bash.
+		How to install git bash  - https://git-scm.com/
+
+
+CHMOD
+------------
+rw- 		rw- 		r--
+42			42			4
+6			6			4
+664
+421		421		421
+777
+421		42			0
+760
+421		41			41
+755		
+user		group	others
+
+r - read  = 	4
+w - write	 = 	2
+x - execute = 1
+
+chmod -R 755 rajesh
+------------------
+CHOWN
+SUDO
+troubleshooting
+linux stru
+
+troubleshooting
+----------------------------------
+RULE - 1 - READ a Error 5 times.
+----------------------------------
+Create a Cate for Error
+-------------------------------
+SYSTEM
+-------------------------
+- CPU
+- RAM
+- DISK
+- NETWORK
+- PERMISSION
+
+APPS
+- Service
+	https://www.geeksforgeeks.org/journalctl-command-in-linux-with-examples/
+- Logs of apps
+- Logs of System	/var/log
+
+RUNTIME
+- JAVA 
+- PYTHON
+- TOMCAT
+- IIS
+- Apache
+--------------------
+	permission
+	version
+	logs OF APPS
+	LIBRARY
+	
+
+DEPENDENT SERVICE
+- LDAP
+- 3rd party tool
+- mail sever
+- queue
+- Notication
+- chat server
+
+
+linux stru
+=========================
+
+vi 
+==================================================
+READ MODE	(press esc)
+
+INSERT MODE (press i)
+------------------------
+
+------------------------
+READ MODE
+:q!		-Exit without saving
+:wq		-Exit with saving
+
+
+
+
+
+
+
+
+
+
+
+
