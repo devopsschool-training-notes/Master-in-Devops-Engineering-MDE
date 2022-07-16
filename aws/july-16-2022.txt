@@ -1,0 +1,206 @@
+https://www.devopsschool.com/blog/how-to-configure-xampp-and-wordpress-in-linux/
+https://devopsschool.com/tutorial/aws/
+https://www.devopsschool.com/blog/what-is-dns-records-most-common-dns-records/
+https://www.devopsschool.com/blog/?s=aws
+https://www.devopsschool.com/blog/setup-nfs-server-and-use-inside-a-kubernetes-pods-in-rhel-centos7/
+https://www.devopsschool.com/blog/common-popular-ports-number-used-in-os/
+https://www.devopsschool.com/blog/how-to-login-linux-server-of-aws-from-windows-using-putty/
+
+
+AWS
+--------------------------------
+Amazon 	Web		Services
+			www
+-------------------------------
+Service(S)
+-- Some Feature which u can get using web
+==================IAAS=====================================
+Computing		- vms (CPU+RAM)
+Storage		- 
+Networking	-
+DNS service	
+--------------------PAAS------------------------
+Database		
+SNS
+SQS
+==================SAAS==============================
+SES
+Dev Tool	
+=====================FAAS=============================
+=====================CAAS=============================
+
+How to get started?
+------------------------
+12 Months Trial Period
+https://aws.amazon.com/free/
+
+==========================================================
+Region			- min 2 AZ 		- 
+----------------------------------------------------------
+ANIL 
+		Software ---> AWS
+		--------
+		GLOBAL
+--------------------------------------
+USA - Europe - JAPAN - India - China
+--------------------------------------
+				DATACENTER
+====================================================
+VM = EC2
+--------------------
+On Demand EC2	---->
+Spot EC2
+Reserved EC2		---->
+Dedicated EC2	-----
+
+================================
+OS level
+Network level
+
+Security Group === Network level Firewall
+
+65.0.104.137
+Administrator
+ytehl9QWQ5VbgfoUO;Ov)yv5ywm5l6Mn
+
+================================================================
+Storage
+--------------------------------------------
+---> BLOCK 	=== Laptop Storage == EC2 Vms	=== EBS
+---> OBJECT	=== Google drive					=== S3
+							http
+---> Network ===									=== EFS
+===================================================
+HDD --> ATTACHED to LAPTOP --> DiskMgr
+										===== FORMAT
+													===== Mount D/E/F
+-----------------------------------------------------
+ADD a VOLUME -- attached to ec2
+
+=======================================================
+VPC
+	Subnet	PUBLIC - Would have internet - WEB
+
+	Subnet	PVT - no pvt			-- APP - DB
+
+	Internet gateway  -- Attached to public subnet
+
+	route table
+
+	Nat gateway	 -- Giving internet to pvt submit ec2
+
+	vpn
+
+IDE 		-> GITHUB 	--> -> Maven
+Cloud9 	-> CodeCommit -> CodeStar -> CodeBuild -> CodeArtifact -> CodeDeploy -> CodePipeline
+
+
+Cloud9
+A Cloud IDE for Writing, Running, and Debugging Code
+
+
+CloudShell
+A browser-based shell with AWS CLI access from the AWS Management Console
+
+
+CodeArtifact
+Secure, scalable, and cost-effective artifact management for software development
+
+
+CodeBuild
+Build and Test Code
+
+
+CodeCommit
+Store Code in Private Git Repositories
+
+
+CodeDeploy
+Automate Code Deployments
+
+
+CodePipeline
+Release Software using Continuous Delivery
+
+
+CodeStar
+Quickly develop, build, and deploy applications
+
+
+AWS FIS
+Improve resiliency and performance with controlled experiments.
+
+
+X-Ray
+Analyze and Debug Your Applications
+
+
+===============================DEV TOOL=================================
+SMTP Server ---> Sending an Email -- SES
+Notification Server -->	SNS
+
+Queue Server	- SQS		IP_Pass
+
+-------------WEB--------------------
+code
+		request is coming
+					send to SQS endpoint
+
+APP
+---------------------------------
+
+
+		Take it form 
+					send to SQS endpoint
+
+Auto Scaling
+		- UP		- What to UP??  - When to ADD
+		- Down
+LoadBalancer
+		Network 		- TCP
+			 Algo
+		APP				- HTTP
+			Algo
+		Hybrid
+			Algo
+
+raju-1813300794.ap-south-1.elb.amazonaws.com
+					linux 80
+					windows 80
+
+IAM
+--------------
+
+
+
+
+
+
+
+
+
+
+sunil-mishra.com ---LB---> ec2 ----> wordpress
+										--------------
+										DEVOPS
+--------------------------------------------------
+					$150/year
+					$10000
+					INR 30L
+=====================================================
+
+IAM
+================
+
+
+
+
+
+
+
+
+
+
+
+
+
