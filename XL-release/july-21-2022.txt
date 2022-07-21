@@ -1,0 +1,69 @@
+PHASES | STAGES of SDLC Cycles
+-------------------
+https://www.devopsschool.com/path/
+
+PLAN -> CODE -> SCAN --> BUILD -> UT -> PACK -> ARCHIVE -> DEP2QA -> AT --> CC
+------------------------------------------------------------------------------
+JIRA -> GIT -> Sonarqube->maven->Junit-> WAR -> Artifactory-> Ansible-> Selenium-> jacoco
+==========================================================================================
+							CI - Jenkins	
+		
+
+																	ALL PASSED - Release
+																	ONE FAILED - repeat
+=================================================================================================
+								XL RELEASE
+
+
+How to install XL release?
+==========================
+
+https://www.devopsschool.com/blog/install-configure-xebialabs-xl-release/
+
+$ docker run -d -e "ADMIN_PASSWORD=devopsschool" -e "ACCEPT_EULA=Y" -p 5516:5516 --name xlrelease xebialabs/xl-release:22.2
+
+https://legacydocs.xebialabs.com/xl-release/concept/requirements-for-installing-xl-release.html
+
+
+http://192.168.1.9:5516/
+admin
+devopsschool
+=====================XL Release====================================
+ORG - infosys - 100 Clients
+------------------------------------
+1 CLIENT == 3 ENV
+					- COTOCUS
+				DEV - QA - PROD
+				----------------------
+				dev servers - qa servers - prod servers
+				dev team - qa team - ops team
+
+		- Release Name
+		- Release version
+				Major - Minor - Patch
+		- Package repostory
+		- 1 Release Manager
+======================================
+Step 1 - create a folder for CLIENT (COTOCUS)
+		
+	Template
+	Releases
+	Patterns
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+																	
