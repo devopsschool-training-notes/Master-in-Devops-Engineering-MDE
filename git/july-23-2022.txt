@@ -1,0 +1,280 @@
+Server - Client?
+------------------------
+cvs - svn - perforce - tfs 
+
+Repo 
+-----------------
+files + DB OR Meta
+		  ---------------
+			WHO - WhAT - WHEN 
+
+Distributed Model
+-----------------------
+git 
+==========================================
+Git Basic Workflow
+------------------------------
+Step 1 - Install git client 	[ONE TIME]
+				- git-scm.com
+					Windows - exe
+							git bash ----> basic Linux cmd in windows + git + ssh
+					Linux 
+						apt-get install git -y
+						yum install git -y
+
+				- IDE
+						VS Code - https://code.visualstudio.com/docs/editor/versioncontrol
+						Eclipse
+				- GUI - SourceTree - https://www.sourcetreeapp.com/
+
+Step 2 - Create git repo		[ONE TIME]
+
+$ git init
+
+
+Step 3 - Decide which files you want to version| write code
+
+-------------------ONE TIME-----------------------
+git config user.name "Rajesh Kumar"
+git config user.email "devops@rajeshkumar.xyz"
+git config --list
+-------------------------------------------
+Step 4 - Add these files to Git [ Add ur files from workspace to git staging ]
+$ git add index.html
+
+Step 5 - Commit files  [ From git staging to repo area ]
+$ git commit -m"This is my commit" 
+
+Step 6 - How to see commited history
+$ git log
+
+Step - 7 How to see what was commited?
+$ git show f8cfdfa0c96adaffec9e16bf0257ca1fd85d1b1f
+
+
+=====================================================================
+ 487  git init
+  488  git config user.name "Rajesh"
+  489  git config user.email "devops@rajeshkumar.xyz"
+  490  git add --all
+  491  git commit -m"adding"
+  492  git remote add origin git@github.com:devops-school-com/devopssupport.in.git
+  493  git push origin master
+  494  git pull origin master
+  495  git status
+  496  git add --all
+  497  git commit -m"adding"
+  498  git push origin master
+  499  git pull origin master
+  500  git log
+  501  git
+  502  clear
+  503  pwd
+  504  cd /c
+  505  pwd
+  506  mkdir demo
+  507  cd demo
+  508  clear
+  509  pwd
+  510  mkdir repo1
+  511  cd repo1/
+  512  pwd
+  513  start .
+  514  clear
+  515  git init
+  516  start .
+  517  git config user.name "Rajesh Kumar"
+  518  git config user.email "devops@rajeshkumar.xyz"
+  519  git config --list
+  520  clear
+  521  git add index.html
+  522  git commit -m"This is my commit"
+  523  git log
+  524  git show f8cfdfa0c96adaffec9e16bf0257ca1fd85d1b1f
+  525  clear
+  526  history
+
+
+==================================================
+$ git log
+commit 017246981f95b7b8f87db3f81a362e88a9c75a43 (HEAD -> master)
+Author: Rajesh Kumar <devops@rajeshkumar.xyz>
+Date:   Sat Jul 23 11:23:27 2022 +0530
+
+    adding 3rd
+
+commit 0cf59cad89c363b535dd1130607fb4cbf4eeb1ad
+Author: Rajesh Kumar <devops@rajeshkumar.xyz>
+Date:   Sat Jul 23 11:20:46 2022 +0530
+
+    Commit 2nd
+
+commit f8cfdfa0c96adaffec9e16bf0257ca1fd85d1b1f
+Author: Rajesh Kumar <devops@rajeshkumar.xyz>
+Date:   Sat Jul 23 11:01:07 2022 +0530
+
+    This is my commit
+
+====================================
+What is 017246981f95b7b8f87db3f81a362e88a9c75a43?
+
+Each COMMIT
+		- 1 file
+		- 100s files | mul dir
+		===========================
+		store as a object
+						Call it CHECKSUM 
+						Algo - sha1
+		--------------------
+				Each OBJECT assigned with 40 CHAR uniq - 017246981f95b7b8f87db3f81a362e88a9c75a43
+				Call it - Commit ID
+	
+-------------------------------
+ 526  history
+  527  clear
+  528  ls
+  529  git status
+  530  git add file1.java
+  531  clear
+  532  git status
+  533  ls
+  534  git add hellp.php e
+  535  git add hellp.php
+  536  clear
+  537  git status
+  538  git commit -m"Commit 2nd"
+  539  clear
+  540  git status
+  541  ls
+  542  git log
+  543  vi hellp.php
+  544  git status
+  545  git add .
+  546  git status
+  547  git commit -m"adding 3rd"
+  548  git status
+  549  ls
+  550  git log
+  551  git show 017246981f95b7b8f87db3f81a362e88a9c75a43
+  552  clear
+  553  git log
+  554  clear
+  555  touch file1;git add --all;git commit -m"file1"
+  556  touch file2;git add --all;git commit -m"file2"
+  557  touch file3;git add --all;git commit -m"file3"
+  558  touch file4;git add --all;git commit -m"file4"
+  559  clear
+  560  git log
+  561  git log --oneline
+  562  clear
+  563  ls
+  564  git log --oneline
+  565  git checkout 8ed4494
+  566  ls
+  567  git log --oneline
+  568  git checkout 0172469
+  569  ls
+  570  git checkout master
+  571  clear
+  572  git log --oneline
+  573  history
+------------------------------
+Add Multiples files
+folder
+rename
+delete
+move
+
+574  cleae
+  575  clear
+  576  ls
+  577  clear
+  578  touch file5 file6 file7
+  579  git status
+  580  git add --all
+  581  git status
+  582  clear
+  583  git status
+  584  git commit -m"selective" file7
+  585  git status
+  586  clear
+  587  mkdir src
+  588  git status
+  589  touch src/ramu.txt
+  590  git status
+  591  git add .
+  592  git status
+  593  git commit -m"files+dir"
+  594  clear
+  595  ls
+  596  git mv file1 file11
+  597  git status
+  598  git commit -m"rename"
+  599  git status
+  600  clear
+  601  ls
+  602  git rm file2
+  603  git status
+  604  git commit -m"delete"
+  605  clear
+  606  ls
+  607  git log --oneline
+  608  git checkout f285726
+  609  ls
+  610  git checkout master
+  611  clear
+  612  ls
+  613  git mv index.html src/
+  614  git status
+  615  git commit -m"moving a file"
+  616  ls
+  617  ls src/
+  618  history
+
+=====================================================================
+==========================================
+Git Advance Remote Workflow 
+------------------------------
+RICH UI around Central repo
+Issues mgmt 
+Wiki
+RBAC
+Manage multiple
+
+
+Github
+Gitlab
+Bitbucket
+======================================
+LAPTOP							GITHUB						OTHER LAPTOP
+--------------------------------------------------------------------------
+Code --> ADD -> COMMIT        --- PUSH 						PULL A CODE - ADD - COMMIT
+=======================================================================================
+
+BRANCHING & MERGING
+------------------------
+master
+		fea1
+		bug1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
