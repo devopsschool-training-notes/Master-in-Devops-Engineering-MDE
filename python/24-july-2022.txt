@@ -1,0 +1,182 @@
+Compiled Language - JAVA + C++ + C# == STRONG TYPED Lang
+Interpreted Lang - Python + PHP + PERL
+Declarative Lang - XML + YAML + JSON
+===============================================
+JAVA ---> Python ---> YAML
+-----------------------------------------------
+How to install compiler + Interpreter?
+How to store a code? .java .py .yaml 
+How to compile?   javac .java |  ant + maven + gradle
+How to run code?	java .class | python file.python
+========================================================
+How to write code?
+---------------------------
+- types variable used in lang
+
+num 12
+name = "Rajesh Kumar"
+list = [12, szdsad, 23, 22333, 333]
+dict = {age=22,name=34,city=56}	
+
+- Operators
+	Arth			+ - X
+	comp			== != > < 
+- Conditioning
+		If 
+			do this
+		else
+			do this
+- Looping 
+		for i=0    i>20
+				do this
+		while
+--------------------------------------------
+Management Skills
+--------------------------------------------
+5000 lines of code in 1 FILE
+-----------------------------------------------
+entire file at once - all code would run on each call
+--------------------------------------------
+Function == Method == ramukaka
+{
+----------
+---------
+100-----------
+}
+
+INPUT to Function 
+OUTPUT from Function
+
+ramukaka(name=raj)
+output = complete det of raj
+-----------------------------------------
+--------------------------------------------
+5000 lines of code in 1 FILE
+-----------------------------------------------	
+100 functions in 1 FILE
+--------------------------------
+
+HUMAN MIND === 
+1 FILE === 100 FUNCTION
+10 FILE === Each 10 FUNCTION
+==========================================================
+
+
+Convert 1 FILE TO MULTIPLE FILE
+===================================
+RUN A SOFTWARE = WHICH FILE TO CALL???
+			Mainfile
+				file2
+				file3
+				file4
+						file5
+						file6
+							file7
+							file8
+--------------------------------------
+import
+include
+=======================================================
+How to package a program?
+	JAVA ----->	JAR + WAR ===> TOMCAT
+	Python ----> tar + zip 
+	
+============================================================================
+FRAMEWORK --->
+			FOllow Best Coding Standard
+			Follow Best mgmt 
+						- Consitent Directory struc
+			Reuse a code
+			Integ with Unit Testing
+			Integ with DB connection
+			Integ with Queque + notification + email
+			Integ with web server + app server
+
+JAVA 		Spring
+PYTHON		Flask + django
+PHP			laravel
+RUBY			Ruby on Rails
+GO			Gin
+==================================================
+PLATFORM			PACKAGE REGISTRY			Repo(S)		Package			CLIENT
+=====================================================================
+RHEL				url redhat				git			git				yum
+DEB				url deb					git			git				apt
+ANDROID			https://play.google.com/	whatsapp		whatsapp			playstore
+IOS				url													appstore						
+-------------------------------------------------------------------------
+
+LANG
+
+JAVA				Maven central											mvn
+PYTHON			https://pypi.org/										pip
+PHP				packagist.org											composer
+
+windows			nuget.org											nuget
+				chocolatey.org										choco
+mac																	brew
+
+================================================================================================
+================================================================================================
+OOPS
+-----------------------------------
+OBJECT ORIENTED PROGRAMMING SPEC
+-----------------------------------
+GOD
+	-------------Creator-----------------
+	BRAHMA 					(YOU)
+			UNIVERVSE			SOFTWARE (UNIVERSITY)
+--------------------------------------------------
+	CLASS					CLASS
+		33 crore - SPECIES			500 CLASS
+		1 HUMAN						STUDENT | PRO | HOD | MGMT
+------------------------------------------------------------	
+		UN							UNLMITED
+------------------------------------------------------------
+		Rajesh(OBJECT)				Peter
+		BORN - DIE	
+============================INHERITANCE======================
+		OBJECT PROPERTIES			OBJECT
+		----------------			
+		HANDS=2 					vars = ldj
+		LEG=2 						vars = 555
+		EYE=2
+=============================================================
+		DOCTOR						CONSTRUCTOR
+		ENGINEER					POLY
+
+
+======================================================================
+Python 
+----------------------------------------------
+Variable types
+Operators
+Conditioning
+Looping
+function
+filehandling
+--------------------------------
+
+Class
+Module
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
