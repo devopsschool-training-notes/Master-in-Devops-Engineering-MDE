@@ -1,0 +1,142 @@
+What is Ansible?
+----------------
+		config mgmt tool.
+		Dev in Python
+		By Redhat
+		Version
+			python
+					2.X	---> 3.x
+			ansible
+					2.X ---> 3.X
+		Release
+			Ansible			- cmd - free - os
+			ansible awx		- GUI - Free - Latest NON-tested version of Tower
+			ansible tower	- GUI - PAID 
+
+tool
+	save cost
+	save time
+	imp quality
+
+what is config mgmt?
+		- Server(S) config mgmt
+
+What is there in server? so we mgm their config?
+		Change mgmt to following componets
+		----------------------------------
+Hardware
+		Hypervisor(Software)
+						Ansible
+Software
+- files
+- directories
+- services
+- packages
+- cmd | shell
+
+People
+- users
+- group
+
+Processs
+- policy
+==============================================================
+Why Ansible?
+----------------------------
+1. Parrell config mgmt(deploy)
+2. Easy to learn - read - write - share - debug - extend
+3. Cross platform - Windows - linux
+4. Agent less
+5. idempotent
+
+Other tools
+-----------------------------------------------------
+Chef - Puppet - Salt - cfengine
+-----------------------------------------------------
+How ansible work???
+------------------------------------
+YOU		-> Ansible Control Server(ACS) -> Ansible Remote Server (ARS)
+
+YOU -> ACS 								-> ARS
+---------------------------------------------------
+LINUX 64 BIT							- ANY
+Ansible									- NA
+	Ansible
+	tools
+	Plugins
+	Modules
+	configfile
+Playbooks
+Inventory
+-------------------COMMUNICATION------------------------
+
+LINUX					SSH						LINUX
+														python
+LINUX					WINRM					WINDOWS
+														ps3.x + dotnet 4.5
+--------------------------------------------------------------
+Ansible Plugins - CODE written in python in ACS For Adding a feature of Ansible.
+Ansible Modules - CODE written in python++ in ACS BUT run in ARS
+Ansible config - if you want to change DEFAULT setting of ansible. u use this.
+
+/etc/ansible/config - 500 lines
+---------------------------------------------------------------------------
+https://www.devopsschool.com/blog/installing-python-3-on-linux-centos-ubuntu-windows/
+ 1  clear
+    2  ls
+    3  ansiblke
+    4  ansible
+    5  python -version
+    6  python --version
+    7  sudo yum install yum-utils
+    8  sudo yum-builddep python3
+    9  python3 --version
+   10  curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py
+   11  sudo yum remove python-pip
+   12  python3 get-pip.py
+   13  python3 -m pip install --upgrade --user ansible
+   14  ansible --version
+   15  ansible
+   16  history
+   17  python3 -m pip install ansible
+   18  ansible
+   19  exit
+   20  ansible
+   21  python3 -m pip install ansible
+   22  ansible
+   23  yum install ansible
+   24  clear
+   25  wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+   26  yum install wget
+   27  yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+   28  sudo rpm -i epel-release-latest-7.noarch.rpm
+   29  sudo yum install ansible -y
+   30  ansible version
+   31  ansible --version
+   32  cd
+   33  ls -la
+   34  cd .ansible
+   35  ls
+   36  cd tmp/
+   37  ls
+   38  cd ..
+   39  ls
+   40  cd ..
+   41  ls
+   42  ls -la
+   43  python3 -m pip -V
+   44  python3 -m pip remove --user ansible
+   45  python3 -m pip uninstall --user ansible
+   46  python3 -m pip uninstall ansible
+   47  which ansible
+   48  python3 -m pip install ansible
+   49  ansible
+   50  ansible --version
+   51  history
+
+https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html
+https://www.devopsschool.com/blog/how-to-install-ansible-in-centos-7-rhel-7/
+https://www.devopsschool.com/blog/install-pip-2-7-for-python-and-ansible/
+
+------------------------------------------------
+What is idempotent and how its implemtened in Ansible?
