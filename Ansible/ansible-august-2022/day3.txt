@@ -1,0 +1,140 @@
+ansible web -i inventory -m package -a"name=httpd state=latest" -u root -k
+ansible web -i inventory -m copy -a"src=index.html dest=/var/www/html" -u root -k
+ansible web -i inventory -m service -a"name=httpd state=started" -u root -k 
+ansible web -i inventory -m service -a"name=firewalld state=stopped enabled=false" -u root -k
+ansible web -i inventory -m package -a"name=httpd state=latest" -u root -k
+ansible web -i inventory -m copy -a"src=index.html dest=/var/www/html" -u root -k
+ansible web -i inventory -m service -a"name=httpd state=started" -u root -k 
+ansible web -i inventory -m service -a"name=firewalld state=stopped enabled=false" -u root -k
+ansible web -i inventory -m package -a"name=httpd state=latest" -u root -k
+ansible web -i inventory -m copy -a"src=index.html dest=/var/www/html" -u root -k
+ansible web -i inventory -m service -a"name=httpd state=started" -u root -k 
+ansible web -i inventory -m service -a"name=firewalld state=stopped enabled=false" -u root -k
+ansible web -i inventory -m package -a"name=httpd state=latest" -u root -k
+ansible web -i inventory -m copy -a"src=index.html dest=/var/www/html" -u root -k
+ansible web -i inventory -m service -a"name=httpd state=started" -u root -k 
+ansible web -i inventory -m service -a"name=firewalld state=stopped enabled=false" -u root -k
+ansible web -i inventory -m package -a"name=httpd state=latest" -u root -k
+ansible web -i inventory -m copy -a"src=index.html dest=/var/www/html" -u root -k
+ansible web -i inventory -m service -a"name=httpd state=started" -u root -k 
+ansible web -i inventory -m service -a"name=firewalld state=stopped enabled=false" -u root -k
+ansible web -i inventory -m service -a"name=firewalld state=stopped enabled=false" -u root -k
+ansible web -i inventory -m package -a"name=httpd state=latest" -u root -k
+ansible web -i inventory -m copy -a"src=index.html dest=/var/www/html" -u root -k
+ansible web -i inventory -m service -a"name=httpd state=started" -u root -k 
+ansible web -i inventory -m service -a"name=firewalld state=stopped enabled=false" -u root -k
+ansible web -i inventory -m package -a"name=httpd state=latest" -u root -k
+ansible web -i inventory -m copy -a"src=index.html dest=/var/www/html" -u root -k
+ansible web -i inventory -m service -a"name=httpd state=started" -u root -k 
+ansible web -i inventory -m service -a"name=firewalld state=stopped enabled=false" -u root -k
+--------------------------------
+
+Playbook
+-----------------------
+	YAML file
+	Contains
+		Play(s)
+
+What is Play?
+---------------
+	Mapping of multiples Tasks with Group ++++
+
+what is Tasks
+	- Multiple Module & its Arguments
+
+
+---
+- name: Update web servers
+  hosts: web
+
+  tasks:
+  - name: Install Apache in centos7
+    ansible.builtin.yum:
+      name: httpd
+      state: latest
+  - name: Copy index.html
+    ansible.builtin.copy:
+      src: index.html
+      dest: /var/www/html/index.html
+  - name: Starting a Apache Server
+    ansible.builtin.service:
+      name: httpd
+      state: started
+
+
+---
+- name: Update web servers
+  hosts: web
+
+  tasks:
+  - name: Install Apache in centos7
+    ansible.builtin.yum:
+      name: httpd
+      state: latest
+  - name: Copy index.html
+    ansible.builtin.copy:
+      src: index.html
+      dest: /var/www/html/index.html
+  - name: Starting a Apache Server
+    ansible.builtin.service:
+      name: httpd
+      state: started
+  - name: Install Apache in centos7
+    ansible.builtin.yum:
+      name: httpd
+      state: latest
+  - name: Copy index.html
+    ansible.builtin.copy:
+      src: index.html
+      dest: /var/www/html/index.html
+
+
+
+https://www.devopsschool.com/blog/ansible-include-scnario-with-list-of-plays-or-tasks/
+
+How to call another playbook from one playbook?
+How to call another tasks from one playbook?
+
+--ONE------------
+
+---
+- name: Update web servers
+  hosts: web
+
+  tasks:
+  - name: Install Apache in centos7
+    ansible.builtin.yum:
+      name: httpd
+      state: latest
+
+--TWO------------
+
+---
+- name: Update web servers
+  hosts: web
+
+  tasks:
+  - name: Copy index.html
+    ansible.builtin.copy:
+      src: index.html
+      dest: /var/www/html/index.html
+  - name: Starting a Apache Server
+    ansible.builtin.service:
+      name: httpd
+      state: started
+
+
+--third------------
+
+- include: one.yaml
+- include: two.yaml
+
+
+- import_playbook: one.yaml
+
+
+tasks.yaml
+
+Play Anatomy
+
+https://www.devopsschool.com/blog/anatomy-of-ansible-play-defined/
