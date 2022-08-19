@@ -1,0 +1,135 @@
+using ADHOC command 
+		Do one task in ONE MACHINE(localhost)													
+		Do one task in ONE REMOTE MACHINE																
+		Do one task in MULTIPLE REMOTE MACHINES using Inventory					  
+		Do one task in MULTIPLE REMOTE MACHINES using group in Inventory	 
+		
+	using Playbook(Program)
+		Do Multiple tasks(Playbook) in ONE MACHINE(localhost) DONE
+		Do Multiple tasks(Playbook) in ONE REMOTE MACHINE		DONE
+		Do Multiple tasks(Playbook) in MULTIPLE REMOTE MACHINE using Inventory DONE
+		Do Multiple tasks(Playbook) in MULTIPLE REMOTE MACHINE using group in Inventory DONE
+		Do Multiple tasks(Playbook) in MULTIPLE REMOTE MACHINE using group of group in Inventory DONE
+		Do Multiple tasks(Playbook) in MULTIPLE REMOTE MACHINE using environment directory Inventory 
+		
+	using Role(Program)
+		Do One Role in in ONE MACHINE(localhost)
+		Do Multiple Roles in ONE REMOTE MACHINE
+		Do Multiple Roles in MULTIPLE REMOTE MACHINE using Inventory
+		Do Multiple Roles in MULTIPLE REMOTE MACHINE using group in Inventory
+		Do Multiple Roles in MULTIPLE REMOTE MACHINE using group of group in Inventory
+		Do Multiple Roles in MULTIPLE REMOTE MACHINE using environment directory Inventory
+
+---------------------------------------------------------------------
+
+project
+----------------------
+setup a web server
+
+Psucode
+-------------
+install a package httpd					Module	package
+copy a file index.html into /var/www/html	Module	copy
+start a service							Module	service
+
+ansible
+
+
+
+anisble-playbook
+
+
+acs ---> ars
+-------------------
+linux		linux
+		ssh
+		username - pass
+		username - key
+
+ansible -u username -k
+ansible -u username --private-key
+
+Sudo without password					-b
+Sudo with password					-b -K	
+Sudo with another user n his pass		-b -K --become-user=username
+
+ansible -u username -k -b
+ansible -u username --private-key
+
+===========================================
+ansible localhost -m package -a"name=httpd state=latest"
+ansible localhost -m copy -a"src=index.html dest=/var/www/html"
+ansible localhost -m service -a"name=httpd state=started"
+ansible localhost -m service -a"name=firewalld state=stopped enabled=false"
+
+INVENTORY
+		list of IP address
+				CMD	18.1.1.1,
+					18.1.1.1,18.1.1.2
+				FILE 
+						- INI FORMAT
+						- JSON FORMAT
+				SCRIPT
+						Dynamic Inventory
+
+
+ansible all -i 192.168.1.11, -m package -a"name=httpd state=latest" -u root -k
+ansible all -i 192.168.1.11, -m copy -a"src=index.html dest=/var/www/html" -u root -k
+ansible all -i 192.168.1.11, -m service -a"name=httpd state=started" -u root -k 
+ansible all -i 192.168.1.11, -m service -a"name=firewalld state=stopped enabled=false" -u root -k
+
+Inventory Group
+-----------------------
+
+DEFAULT GROUP 
+-----all
+----- ungrouped
+
+---------------------------
+192.168.1.11
+
+Group1
+192.168.1.11
+192.168.1.11
+192.168.1.11
+
+GROUP2
+192.168.1.11
+192.168.1.11
+192.168.1.11
+
+ansible all -i 192.168.1.11, -m package -a"name=httpd state=latest" -u root -k
+ansible all -i 192.168.1.11, -m copy -a"src=index.html dest=/var/www/html" -u root -k
+ansible all -i 192.168.1.11, -m service -a"name=httpd state=started" -u root -k 
+ansible all -i 192.168.1.11, -m service -a"name=firewalld state=stopped enabled=false" -u root -k
+
+
+
+iventory
+----------------------
+192.168.1.11
+192.168.1.10
+
+
+ansible all -i inventory -m package -a"name=httpd state=latest" -u root -k
+ansible all -i inventory -m copy -a"src=index.html dest=/var/www/html" -u root -k
+ansible all -i inventory -m service -a"name=httpd state=started" -u root -k 
+ansible all -i inventory -m service -a"name=firewalld state=stopped enabled=false" -u root -k
+
+
+ansible all -i inventory -m package -a"name=httpd state=latest" -u root -k -vvvvv
+
+iventory
+----------------------
+[db]
+192.168.1.11
+
+[web]
+192.168.1.10
+192.168.1.11
+
+ansible web -i inventory -m package -a"name=httpd state=latest" -u root -k
+ansible web -i inventory -m copy -a"src=index.html dest=/var/www/html" -u root -k
+ansible web -i inventory -m service -a"name=httpd state=started" -u root -k 
+ansible web -i inventory -m service -a"name=firewalld state=stopped enabled=false" -u root -k
+
