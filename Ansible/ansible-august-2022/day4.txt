@@ -1,0 +1,249 @@
+1st 
+- Variables
+- Templates
+- Handlers
+-----------------
+ACS
+192.168.1.17
+
+ARS 
+192.168.1.16
+=======================================================
+Variable
+------------
+PLAYBOOK
+- https://devopsschool.com/tutorial/ansible/variables/index.html	
+- https://www.devopsschool.com/blog/example-code-of-ansible-variable-with-playbook/
+
+1. Embed in Playbook			DONE
+2. Call a var file in Playbooks	DONE
+3. Var user interactive			DONE
+4. Embed vars at Task level			DONE
+5. CMD line
+6. Output of Task - can set as values for var
+
+
+	
+
+---
+- name: Update web servers
+  hosts: web
+  vars:
+    myname: "Rajeshkumar"
+    age: "18"
+    packagename: "httpd"
+    servicename: "httpd"
+  vars_files:
+    - "vars-ext.yaml"
+  vars_prompt:
+    - name: "version"
+      prompt: "Which version Do you want to install?"
+      private: no
+
+  tasks:
+  - name: Install Apache in centos7
+    ansible.builtin.yum:
+      name: "{{ packagename }}"
+      state: latest
+  - name: Copy index.html
+    ansible.builtin.copy:
+      src: index.html
+      dest: /var/www/html/index.html
+  - name: Starting a Apache Server
+    ansible.builtin.service:
+      name: "{{ servicename }}"
+      state: started
+  - name: include default step variables
+    include_vars: tasks_var.yaml
+  - name: Print return information from the previous task
+    ansible.builtin.debug:
+      var: myname
+  - name: Print version
+    ansible.builtin.debug:
+      var: version
+  - name: Print cmd var
+    ansible.builtin.debug:
+      var: country
+  - name: Ansible register variable basic example
+    shell: "find *.txt"
+    args:
+      chdir: "/root/daanish"
+    register: find_output
+  - debug:
+      var: find_output
+  - debug:
+      var: find_output.stdout_lines
+  - debug:
+      var: find_output.stdout_lines[0]
+
+---
+- name: Update web servers
+  hosts: web
+  vars:
+    myname: "Rajeshkumar"
+    age: "18"
+    packagename: "httpd"
+    servicename: "httpd"
+  vars_files:
+    - "vars.yaml"
+  vars_prompt:
+    - name: "version"
+      prompt: "Which version Do you want to install?"
+      private: no
+
+  tasks:
+  - name: Install Apache in centos7
+    ansible.builtin.yum:
+      name: "{{ packagename }}"
+      state: latest
+  - name: Copy index.html
+    ansible.builtin.copy:
+      src: index.html
+      dest: /var/www/html/index.html
+  - name: Starting a Apache Server
+    ansible.builtin.service:
+      name: "{{ servicename }}"
+      state: started
+  - name: Print return information from the previous task
+    ansible.builtin.debug:
+      var: myname
+  - name: include default step variables
+    include_vars: tasks_var.yaml
+  - name: Print return information from the previous task
+    ansible.builtin.debug:
+      msg: "My Name is {{ myname }} and My age is {{ age }}"
+  - name: Print return information from the previous task
+    ansible.builtin.debug:
+      var: version
+  - name: Ansible register variable basic example
+    shell: "find *.txt"
+    args:
+      chdir: "/home/azureuser/rajesh"
+    register: find_output
+  - debug:
+      var: find_output
+  - debug:
+      var: find_output.stdout_lines
+  - debug:
+      var: find_output.stdout_lines[0]
+
+
+Inventory	
+================================================
+-- behavioural param 
+-- embed in inventory
+
+-- groups vars
+-- host var
+
+192.168.1.15	ansible_connection=ssh
+192.168.1.16 ansible_connection=winrm
+192.168.1.17 ansible_user=root
+192.168.1.18 ansible_user=user ansible_become=yes 
+192.168.1.19 ansible_user=user ansible_become=yes ansible_ssh_pass=rajesh123 	 		
+192.168.1.19 ansible_user=user ansible_become=yes ansible_ssh_pass=rajesh123 ansible_become_user=ramu ansible_become_pass=rak1233	 
+
+
+[web]
+192.168.1.17 ansible_user=root ansible_ssh_pass=rajesh123	
+192.168.1.16 ansible_user=root ansible_ssh_pass=rajesh123
+
+[web]
+192.168.1.17
+192.168.1.16
+
+[web:vars]
+ansible_user=root 
+ansible_ssh_pass=rajesh123
+myname=rajuinventory
+
+
+2nd -
+- Templates
+		- source file - .j2
+		- mode name - template
+- Handlers
+https://www.devopsschool.com/blog/ansible-template-and-handlers-explained-with-example/
+
+
+---
+- name: Update web servers
+  hosts: web
+  vars:
+    myname: "Rajesh Kumar"
+
+  tasks:
+  - name: Install Apache in centos7
+    ansible.builtin.yum:
+      name: httpd
+      state: latest
+  - name: Copy index.html
+    ansible.builtin.copy:
+      src: index.html
+      dest: /var/www/html/index.html
+  - name: Starting a Apache Server
+    ansible.builtin.service:
+      name: httpd
+      state: started
+  - name: Starting a Apache Server
+    ansible.builtin.service:
+      name: firewalld
+      state: stopped
+  - debug:
+      var: myname
+
+
+
+---
+- name: Update web servers
+  hosts: web
+  vars:
+    myname: "Rajesh Kumar"
+    port: 81
+
+  tasks:
+  - name: Install Apache in centos7
+    ansible.builtin.yum:
+      name: httpd
+      state: latest
+  - name: Copy index.html
+    ansible.builtin.copy:
+      src: index.html
+      dest: /var/www/html/index.html
+  - name: Template index.html
+    template:
+      src: httpd.conf.j2
+      dest: /etc/httpd/conf/httpd.conf
+    notify:
+      - ReStarting a Apache Server
+  - name: Starting a Apache Server
+    ansible.builtin.service:
+      name: httpd
+      state: started
+
+  handlers:
+  - name: ReStarting a Apache Server
+    ansible.builtin.service:
+      name: httpd
+      state: restarted
+
+=========================================================================================
+TASKS
+VARS
+TEMPLATE
+HANDLERS
+-----------------
+FACT VARIABLE	=== setup module
+
+  148  ansible-playbook -i inventory hand.yaml
+  149  clear
+  150  ls
+  151  ansible localhost -m setup
+  152  clear
+  153  ansible localhost -m setup  | grep os
+
+
+
+
+
+- Roles
