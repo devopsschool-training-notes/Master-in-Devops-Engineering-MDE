@@ -1,0 +1,151 @@
+What is Jenkins?
+---------------------------
+		CI tool
+		Dev in JAVA
+		Release
+			Jenkins				-----> OS - FREE - Community
+			Jenkins X			-----> OS - FREE - Community - FOr Container
+			Blue OCean			-----> OS - FREE - Community - For Dedicated pipeline
+			Jenkins Enterprise	PAID by CloudBees	
+		Version - 2.X
+		Earlier - Hudson
+
+
+What is CI?
+- Cont Integ*
+
+Auto Build + Auto Test
+----------------------
+	Imm Feedback
+============================================
+Arch		Dev				BR					QA			Release
+--------------------------------------------------------------------
+JIRA 	- GIT		Sonar	Maven	 Junit --> WAR -> Artifactory-> Ansible - Selenium - Jacoco
+---------------------------------------------------------------------------------
+PLAN -> Code -> Ana -> Build -> UT -> Pack -> Archive -> Dep2Qa -> AT -> CC
+======================================================================================
+							Integ
+							jenkins 
+	-------------------------------------------------------------------------
+										Integ
+										Scheduling
+										Feedback
+
+
+
+Other ---- Teamcity - Bamboo - Ubuild - Circle CI
+
+How to install Jenkins?
+------------------------
+
+
+43.205.103.200
+https://www.devopsschool.com/blog/complete-tutorial-of-jenkins-installation-and-configuration/
+
+Architecture
+-------------------
+
+
+Secret Formula
+===============================
+
+====================================================================
+Basic workflow
+--------------------------------------------------------------------
+What is your tech?	java dotnet python ruby???
+						--which version?
+						-- need to installed in Build server
+
+Where is your code?	git 
+				- which version
+				- need to be installed in build server
+
+						access?? url?
+
+What is your builder?
+				maven gradle ant msbuild shell cmd bash perl python
+
+				- which version
+				- need to be installed in build server
+
+How often you want to trigger this job?
+					@daily
+
+Whom u want to deliver Feedback
+					rajesh@devopsschool.com
+========================================================================
+ANT		MAVEn		GRADLE				MSBuid	
+-------------------------------------------------
+build.xml	pom.xml		build.gradle
+
+	
+https://github.com/devopsschool-demo-labs-projects/helloworld-java-maven
+maven
+		mvn compile
+		mvn test
+		mvn package
+
+--------------------------
+Any Integ
+-------------------------
+1. Install plugins
+2. Config plugins
+3. use plugins
+			Scanner
+			code
+
+
+docker run -d -p 9000:9000 sonarqube
+=========================================================
+Scheduling
+
+https://www.devopsschool.com/blog/how-to-schedule-and-trigger-a-jenkins-job-automatically/
+
+Method 1 – AT CERTAIN TIME AKA Build periodically
+Method 2 – AT CERTAIN TIME BUT Build only when there is Code changes AKA Poll SCM
+Method 3 – Trigger using command line or script AKA Trigger builds remotely (e.g., from scripts)
+Method 4 – Trigger this job if other job is triggerred AKA Build after other projects are built
+
+Method 5 – Trigger a job when there is PUSH into Github AKA GitHub hook trigger for GITScm polling
+Method 6 – Trigger a job when there is PUSH into Bitbucket AKA GitHub hook trigger for GITScm polling
+
+Method 7 – Trigger another job after this Job AKA Post Build Action => Build Other project
+Method 8 – Trigger a Jenkins jobs using Jenkins command line jar file
+
+
+
+java -jar jenkins-cli.jar -s http://43.205.103.200:8080/ -webSocket help
+
+java -jar jenkins-cli.jar -s http://43.205.103.200:8080/ -auth rajesh:1189ca41bddcd8541d3ab9d0fcfcacb809 build TEST
+
+
+
+curl -X POST --user rajesh:1189ca41bddcd8541d3ab9d0fcfcacb809 http://43.205.103.200:8080/job/DevOpsSchool/job/FAKE/build?delay=0sec
+
+Feedback
+===================
+	Email
+	Chat
+	Pipeline
+
+https://www.devopsschool.com/blog/jenkins-pipeline-complete-reference-tutorials/
+
+
+
+LAB TIME:
+-------------------------
+http://43.205.103.200:8080/
+rajesh
+rajesh123
+https://www.devopsschool.com/blog/
+
+
+
+
+
+
+
+
+
+
+
