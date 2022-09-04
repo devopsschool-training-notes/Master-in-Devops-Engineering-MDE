@@ -1,0 +1,249 @@
+Terraform
+================================================
+What is Terraform?
+-------------------------------------
+		Coding for Infra AKA IAAC
+		From Hashicorp
+			https://www.hashicorp.com/
+		Written in Go
+				Platform independent
+		Release
+				Terraform				- cmd - free
+				Terraform Enterprise	- gui - not free
+				Terraform Cloud			- gui - not free - Hosted by Terraform
+				- https://app.terraform.io/session
+		Version - 1.2.8
+
+Whats in Infra?
+-----------------------
+AWS + AZure + GCP + Kubernetes + OpenStake + OpenShift + Docker 
+https://registry.terraform.io/browse/providers
+
+
+Why we need it?
+----------------------------
+Coding for the product
+Coding for the testing a product
+Coding for the infra
+Coding for the cicd
+Coding for the security
+
+--------------------------------
+How Terraform can code for Entire Infra?
+
+ONE CODE - ONE STANADARD - ONE SPECIFICATION
+=============================================
+				2424 Platforms
+
+
+
+How to download
+---------------------
+https://www.terraform.io/downloads
+-------------------------------------------
+Write a code to create ec2 instance in AWS 	- AWS
+Write a code to create network in AWS 		- AWS
+Write a code to create repo at github		- github
+Write a code to vm at gcp						- gcp
+=================================================
+
+How to write a tf code?
+---------------------------
+Store - .tf
+File name - any
+------------------
+Multiple .tf code in ONE dir == is considered ONE CODE
+
+.tf
+-------------
+resource1 (ec2)
+	Argument1
+	Argument2
+	Argument3
+	Argument4
+
+resource1 (ec2)
+	Argument1
+	Argument2
+	Argument3
+	Argument4
+
+resource1 (ec2)
+	Argument1
+	Argument2
+	Argument3
+	Argument4
+
+resource1 (ec2)
+	Argument1
+	Argument2
+	Argument3
+	Argument4
+
+
+resource "aws_instance" "web" {
+  ami           = ami-068257025f72f470d
+  instance_type = "t3.micro"
+
+  tags = {
+    Name = "HelloWorld"
+  }
+}
+
+==============================================
+Variables
+https://www.devopsschool.com/blog/terraform-variables-complete-reference-guide/
+
+Operators
+https://www.terraform.io/language/expressions/operators
+
+Conditioning
+https://www.devopsschool.com/blog/terraform-conditioning-example-program/
+
+resource1
+		arguments
+		Global arguments for all resc = Meta Arguments
+		- count	= 0
+		- dependson
+		- 
+
+Iterators
+https://www.devopsschool.com/blog/how-to-do-looping-iterations-in-terraform/
+https://www.devopsschool.com/blog/terraform-looping-using-for-each-for-resources-with-example/
+
+count
+foreach
+
+variable "repo-name" {
+   type = map
+  default = {
+      "repo1" = "devops1"
+      "repo2" = "devops2"
+      "repo3" = "devops3"
+}
+
+}
+
+resource "github_repository" "repogithub" {
+  for_each = var.repo-name
+  name = "${each.value}-devopsschool"
+}
+
+each.value
+each.key
+
+resource "aws_instance" "example" {
+  count = 3
+  ami = "ami-2d39803a"
+  instance_type = "t2.micro"
+}
+
+
+
+
+
+Depends
+
+
+
+
+resource "aws_instance" "example_c" {
+  ami           = data.aws_ami.amazon_linux.id
+  instance_type = "t2.micro"
+
+  depends_on = [aws_s3_bucket.example]
+}
+
+resource "aws_s3_bucket" "example" {
+  acl    = "private"
+}
+
+Dependencies mgmt
+- Provider - implicit
+- Explicity - depends_on
+
+
+https://blog.jcorioland.io/archives/2020/05/12/terraform-implicit-explicit-dependencies-between-resources.html
+
+Functions
+input ===> function ===> output
+
+rajesh ==> upper ===> RAJESH
+
+
+2+2 ===> sum ==> 4
+
+var set=2
+
+resource "aws_instance" "example" {
+  count = sum(var.set+1)
+  ami = "ami-2d39803a"
+  instance_type = "t2.micro"
+  size = lookup(var.storage_sizes, 1xCPU-1GB}"
+}
+
+
+Modules == Packaging
+Workspace
+Backend
+===========================
+
+Loopup(key) - Map
+=========================================================
+Modules == Packaging
+===========================================
+- All tf Code in one DIR == one module
+
+/root/workspace/prj2 - Root module
+
+https://www.devopsschool.com/blog/terraform-modules-explained/	
+
+
+module "awsmode" {
+  source = "./module1"
+}
+
+module "githubmode" {
+  source = "./module2"
+}
+
+
+
+
+
+
+
+module "vpc" {
+  source = "terraform-aws-modules/vpc/aws"
+
+  name = "my-vpc"
+  cidr = "10.0.0.0/16"
+
+  azs             = ["eu-west-1a", "eu-west-1b", "eu-west-1c"]
+  private_subnets = ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24"]
+  public_subnets  = ["10.0.101.0/24", "10.0.102.0/24", "10.0.103.0/24"]
+
+  enable_nat_gateway = true
+  enable_vpn_gateway = true
+
+  tags = {
+    Terraform = "true"
+    Environment = "dev"
+  }
+}
+
+------------------------------------
+
+
+------------------------------------
+
+Workspace
+
+Backend
+=============================================================
+
+Workspace
+
+
+
+
