@@ -1,0 +1,33 @@
+What is Role?
+---------------------
+Managing a resources of Ansible
+
+	Tasks
+	Variables
+	Handlers
+	Templates
+
+	Role is directory structure for managing following...
+	Tasks
+	Variables
+	Handlers
+	Templates
+
+.
+└── web
+    ├── defaults
+    │   └── main.yml			vars
+    ├── files					files					DONE
+    ├── handlers								
+    │   └── main.yml			handlers tasks			DONE
+    ├── meta
+    │   └── main.yml			META
+    ├── README.md
+    ├── tasks
+    │   └── main.yml			main tasks
+    ├── templates
+    ├── tests
+    │   ├── inventory
+    │   └── test.yml
+    └── vars										DONE
+        └── main.yml			vars				
