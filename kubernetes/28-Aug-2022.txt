@@ -1,0 +1,210 @@
+What is Kubernetes?
+--------------------
+	POD/Container orch Tool
+	Writte in Go
+	by Google
+	Donated to CNCF
+	2015
+	------------------
+
+Why K8?
+---------------------
+	Limitation of Docker
+
+Architecture of K8
+--------------------------
+
+LAPTOP						NODE			NODE
+
+Human(Workstation) ------> Master ----> Worker(S)
+					===============================
+							k8 clustor
+
+Workstation
+=================================
+- kubectl(Client)
+
+Master
+=================================
+- kubeadm		- k8 Admin tool - 
+- kubelet		- AGENT running in each NODE - Pod Lifecycle & mgmt
+- docker			- container mgmt 
+- ContainerD		- container mgmt - runtime interface
+- kubectl 		- for connect API server
+
+- API Services
+- ectd
+- controller mgmr
+- Schedular
+- DNS 
+- Proxy
+
+Worker
+=================================
+- kubeadm
+- kubelet
+- docker
+- ContainerD
+- kubectl 
+
+- Proxy
+
+===================================
+What is POD?
+
+
+VMWARE				DOCKER					Kubenetes
+----------------------------------
+VMs					Container				POD
+											- Container1
+											- Container2
+
+
+How to setup clustor?
+
+Docker
+Centos7 - kubeadm - https://www.devopsschool.com/blog/setting-up-kubernetes-clusters-using-kubeadm-manual-way-in-rhel-7-centos7/
+
+Ubuntu
+ContainerD
+https://www.devopsschool.com/blog/kubernetes-1-23-6-cluster-setup-master-and-worker-in-ubuntu-20-04/
+
+
+Your Kubernetes control-plane has initialized successfully!
+
+To start using your cluster, you need to run the following as a regular user:
+
+  mkdir -p $HOME/.kube
+  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+Alternatively, if you are the root user, you can run:
+
+  export KUBECONFIG=/etc/kubernetes/admin.conf
+
+You should now deploy a pod network to the cluster.
+Run "kubectl apply -f [podnetwork].yaml" with one of the options listed at:
+  https://kubernetes.io/docs/concepts/cluster-administration/addons/
+
+Then you can join any number of worker nodes by running the following on each as root:
+
+kubeadm join 172.31.30.191:6443 --token <value withheld> \
+        --discovery-token-ca-cert-hash sha256:6ea31e2600471e9545e5a1d622d75d78825c3818d4c47fdb51061a12d39d425a
+
+
+
+### COMMAND TO ADD A WORKER NODE ###
+kubeadm join 172.31.30.191:6443 --token qkzfi1.fmkyfsp3zhw1ztnk --discovery-token-ca-cert-hash sha256:6ea31e2600471e9545e5a1d622d75d78825c3818d4c47fdb51061a12d39d425a
+
+=======================================================================
+k8										aws							
+-------------------------------------------------------
+Namespace								account
+POD										ec2 instance
+ReplicationController						ASG					Replicasets
+Deployment								ASG++++
+Services									LoadBalancer
+
+
+CRUD
+
+	CREATE
+			CMD
+				create
+			YAML
+				create -f yaml
+	READ
+			CMD
+				get
+			YAML
+				get -f yaml
+
+	UPDATE
+			CMD
+				edit
+			YAML
+				apply -f yaml
+
+	DELETE
+
+			delete
+			delete -f yaml
+
+
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nodehelloworld.example.com
+  labels:
+    app: helloworld
+spec:
+  containers:
+  - name: devopsschool1
+    image: scmgalaxy/nginx-devopsschoolv1
+    ports:
+    - name: nginx-port
+      containerPort: 80
+
+
+
+Troubleshooting and Debugging Commands:
+  describe      Show details of a specific resource or group of resources
+  logs          Print the logs for a container in a pod
+  attach        Attach to a running container
+  exec          Execute a command in a container
+  port-forward  Forward one or more local ports to a pod
+  cp            Copy files and directories to and from containers
+  auth          Inspect authorization
+
+
+
+kubectl port-forward --address 0.0.0.0 pod/nodehelloworld.example.com 8888:80
+
+
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: replicationcontroller-example
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: scmgalaxy/nginx-devopsschoolv1
+	
+	
+
+
+
+=====================================================
+
+https://www.devopsschool.com/blog/list-of-popular-deployment-strategies/
+https://www.devopsschool.com/blog/kubernetes-deployment-strategy-explained-with-example/
+
+
+kubectl create deployment my-dep --image=scmgalaxy/nginx-devopsschoolv1 --replicas=3
+
+
+kubectl create service clusterip my-cs --tcp=5678:80
+
+service
+----------------------
+ClustorIP
+
+NodePort
+- svc of ClustorIP
++ svc get exposed at NodePort
+
+kubectl create service nodeport my-np --tcp=5678:80 
+
+
+
+
+
+
+
