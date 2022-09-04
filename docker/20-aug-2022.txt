@@ -1,0 +1,323 @@
+What is Docker?
+----------------------------------------------
+		Container management tool
+
+
+		Tool
+		- saving cost
+				PS - VS -> Container(les c+r+s)
+		- save time
+				2-3 H	-> 5 mins  -> 1 second
+		- improve a quality
+				
+
+		management
+
+		What is Container? - 2 hours
+		-------------------------
+		Container run your APP
+								ubuntu
+								rhel
+								windows
+								bash
+								apache
+								tomcat
+								mysql
+
+		Light APP run time env
+
+------------------------------
+How to run app? == What are the component required to run APP in kernel?
+
+Hardware
+		OS
+			Kernel
+					namespaces
+						PID NS		- init pid table	1			UNLIMIT
+						USER NS		- init user		UNLIMIT		UNLIMIT
+						NET NS		- init net		1			UNLIMIT
+						MNT NS		- init rootfs		1			UNLIMIT
+					cgroups
+					capability
+
+OS
+----------------
+bootfs + rootfs + userfs + apps
+kernal
+RAM
+
+rootfs - centos | rhel | ubuntu | fedoara
+
+OS - linux + centos == centos
+OS - linux + ubuntu == ubuntu
+
+The kernel is a computer program at the core of a computer's operating system and generally has complete control over everything in the system
+
+
+
+=================================================
+Components of Docker
+--------------------------
+docker engine	- Software 
+			docker client -> docker server -> containerd -> kernal
+							check if image exist in local
+							if not - download from hub to local
+docker image
+
+Os Image = bootfs + rootfs + userfs + apps
+Docker image = rootfs + userfs + apps
+			 centos  + apache + java
+			 ubuntu + ubuntu + java + tomcat
+			 fedorad + user + java + tomcat + app
+docker registry
+			hub.docker.com
+
+docker container
+
+			the moment u run docker image -- -u get container
+
+
+install docker?
+
+Docker Workflow
+
+
+
+Container Lifecycle
+-----------------------------------------------
+Create -> Start -> Stop ->  Start -> restart -> pause -> unpause -> kill -> remove
+
+
+VM Workflow
+-----------------------------------------------
+Create -> Start -> Stop ->  Start -> restart -> pause -> unpause -> kill -> remove
+
+
+
+
+docker -> dockerfile -> docker compose --> kubernetes -> helm -> rancher/openshift/pks
+
+aws		- public	
+azure 	- public
+
+openstake - private
+vspsh	- private
+
+  1  curl -fsSL get.docker.com -o get-docker.sh
+    2  sudo sh get-docker.sh
+    3  sudo systemctl enable docker
+    4  clear
+    5  sudo systemctl start docker
+    6  which docker
+    7  which dockerd
+    8  ps -eaf | greo dockerd
+    9  ps -eaf | grep dockerd
+   10  which containerd
+   11  ps -eaf | grep containerd
+   12  clear
+   13  docker
+   14  clear
+   15  docker info
+   16  clear
+   17  docker version
+   18  clear
+   19  ls
+   20  docker images
+   21  docker pull httpd
+   22  clear
+   23  docker images
+   24  docker create httpd
+   25  docker ps
+   26  docker ps -a
+   27  docker create -name=raj httpd
+   28  docker create --name=raj httpd
+   29  clear
+   30  docker ps -a
+   31  docker create httpd
+   32  clear
+   33  docker ps -a
+   34  clear
+   35  docker ps -a
+   36  docker start aaeeb83e7b59
+   37  docker ps -a
+   38  docker start 5cc00d0b08fd
+   39  docker ps -a
+   40  docker stop aaeeb83e7b59
+   41  docker ps -a
+   42  docker start aaeeb83e7b59
+   43  docker ps -a
+   44  docker restart 5cc00d0b08fd
+   45  docker ps -a
+   46  clear
+   47  docker ps
+   48  docker pause aaeeb83e7b59
+   49  docker ps
+   50  docker unpause aaeeb83e7b59
+   51  docker ps
+   52  clear
+   53  docker ps
+   54  docker ps -a
+   55  clear
+   56  docker ps
+   57  docker kill aaeeb83e7b59
+   58  docker ps
+   59  docker ps -=a
+   60  docker ps -a
+   61  docker stop 5cc00d0b08fd
+   62  docker ps -a
+   63  docker start aaeeb83e7b59 5cc00d0b08fd
+   64  docker ps
+   65  clear
+   66  docker ps -a
+   67  docker rm aaeeb83e7b59 5cc00d0b08fd f100de19cda1
+   68  docker stop  aaeeb83e7b59 5cc00d0b08fd
+   69  docker rm aaeeb83e7b59 5cc00d0b08fd
+   70  clear
+   71  docker ps -a
+   72  history
+====================================================
+How to use vm?
+-----------------------------------
+- GO INSIDE using SSH - Do whatever
+- ACCESS FROM OUTSIDE using network http://192.16.1.1
+-----------------------------------
+- Go inside a container
+		exec way u can execute any exec inside a container
+		But if you exec /bin/bash with iteractive way - u r inside
+		
+
+- ACCESS FROM OUTSIDE using network
+
+RUN 
+-----------------------------
+pull + create + start + attached to container
+
+RUN -d
+-----------------------------
+pull + create + start + DO not attached to container
+
+docker run -d httpd
+
+docker run -d -p 8080:80 httpd
+
+8080 - port on docker host
+80 - port of container
+-------------------------------------------------------------
+https://www.devopsschool.com/blog/the-docker-command-line-complete-referenece/
+
+
+attach	Attach local standard input, output, and error streams to a running container
+cp		Copy files/folders between a container and the local filesystem
+create	Create a new container
+diff		Inspect changes to files or directories on a container’s filesystem
+exec		Run a command in a running container
+inspect	Return low-level information on Docker objects
+kill		Kill one or more running containers
+pause		Pause all processes within one or more containers
+port	List port mappings or a specific mapping for the container
+ps	List containers
+rename	Rename a container
+restart	Restart one or more containers
+rm	Remove one or more containers
+run	Run a command in a new container
+start	Start one or more stopped containers
+stop	Stop one or more running containers
+unpause	Unpause all processes within one or more containers
+
+update	Update configuration of one or more containers
+wait	Block until one or more containers stop, then print their exit codes
+
+======================================================
+
+What is an Image?
+----------------------------------------
+Collection of FILESYSTEM
+Version of FILESYSTEM
+
+
+Docker image = rootfs + userfs + apps
+			 centos  + apache + java
+			 ubuntu + ubuntu + java + tomcat
+			 fedora + user + java + tomcat + app
+==========================================================
+			Layer0 +  Layer1 + Layer2 + Layer3
+
+Existing Container
+----------------------------------
+ubuntu + java + git + apache === 
+
+Using Dockerfile ===== 2 hours
+
+
+
+
+
+ 1  clear
+    2  cd /var/lib/docker/
+    3  ls
+    4  cd overlay2
+    5  clear
+    6  pwd
+    7  docker info
+    8  clea
+    9  clear
+   10  ls
+   11  du -sh
+   12  docker pull tomcat
+   13  ls
+   14  docker history tomcat
+   15  ls
+   16  docker inspect tomcat
+   17  clear
+   18  df -kh
+   19  docker ps -a
+   20  docker run -d tomcat
+   21  docker ps
+   22  df -kh
+   23  docker stop 8323903dd97a
+   24  clear
+   25  df -kh
+   26  docker start 8323903dd97a
+   27  df -kh
+   28  clear
+   29  cd
+   30  ls
+   31  docker run -itd ubuntu
+   32  docker ps
+   33  docker exec -it 6d495d851047 /bin/bash
+   34  clear
+   35  docker ps
+   36  docker exec 6d495d851047 java
+   37  clear
+   38  docker exec 6d495d851047 git
+   39  clear
+   40  docker exec 6d495d851047 which apach2
+   41  docker exec 6d495d851047 which apache2
+   42  docker ps
+   43  docker commit -a "Rajesh" -m"up-git-java" 6d495d851047 up-git-java
+   44  docker images
+   45  docker run -itd ubuntu
+   46  docker ps
+   47  docker exec -it 2b6be981fa0b /bin/bash
+   48  clear
+   49  ls
+   50  docker ps -a
+   51  docker commit -a "Rajesh" -m"up-git-java" 2b6be981fa0b  raju
+   52  docker images
+   53  clear
+   54  docker images
+   55  docker tag raju devopsschools/saturday2222222
+   56  docker images
+   57  docker login
+   58  docker push devopsschools/saturday2222222
+
+======================================
+Dcoker 
+---------------
+ub + jav + x y
+
+ub -> container -> got inside -> jav + x y -> came out --> commit
+
+FRESH image - container - jav + x y
+
+
