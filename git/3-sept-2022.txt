@@ -1,0 +1,113 @@
+What is Git?
+		Version control system
+			WHO - WHEN - What - why?
+		Open Source
+		Free
+		Dev by - Linus Tovarld
+		Distributed concept
+	
+Other tools
+----------------------------
+RCS -> CVS -> SVN -> Perforce -> Clearcase
+'================================
+How to install git
+		Windows - exe + git bash
+		yum install git -y
+		apt-get install git -y
+https://git-scm.com/
+
+Workflow in git
+
+1. git init
+
+2. Write a code
+
+3. add a code to git
+
+git config user.name "Rajesh kumar"
+git config user.email "devops@rajeshkumar.xyz"
+git config --list
+
+4. Commit
+
+5. view a version
+
+$ git log
+commit 4fc5a1cdb2dcbd83dda42ab1eb6da6758a6f94e7 (HEAD -> master)
+Author: Rajesh kumar <devops@rajeshkumar.xyz>
+Date:   Sat Sep 3 16:06:20 2022 +0530
+
+    This is my first commit
+
+515  mkdir repo1
+  516  cd repo1/
+  517  clear
+  518  start .
+  519  git init
+  520  ls
+  521  ls -la
+  522  clear
+  523  touch code2.java
+  524  touch code3.java
+  525  clear
+  526  ls
+  527  git add code1.java
+  528  git config user.name "Rajesh kumar"
+  529  git config user.email "devops@rajeshkumar.xyz"
+  530  git config --list
+  531  !
+  532  clear
+  533  ls
+  534  git commit -m"This is my first commit"
+  535  git log
+  536  git show 4fc5a1cdb2dcbd83dda42ab1eb6da6758a6f94e7
+  537  clear
+  538  history
+  539  clear
+  540  git status
+  541  ls
+  542  git add code2.java
+  543  git status
+  544  git commit -m"second commit"
+  545  git status
+  546  clear
+  547  git status
+  548  ls
+  549  vi code2.java
+  550  git status
+  551  git add .
+  552  git status
+  553  git commit -m"test" code2.java
+  554  git status
+  555  ls
+  556  history
+===============================
+LAPTOP#1									LAPTOP#2
+---------------------------------------------------------------
+C:\workspace\git\repo1\.git					D:\workspace\git\repo2\.git
+												http server - doc - D:\workspace\git\repo2\.git
+												10.7.6.8
+
+
+git push sujit@10.7.6.8:D:\workspace\git\repo2\.git
+git pull sujit@10.7.6.8:D:\workspace\git\repo2\.git
+
+git push http://10.7.6.8:repo2\
+git pull http://10.7.6.8:repo2\
+====================================================
+Github - Gitlab - bitbucket - Gerrt
+==========================================================
+https://github.com/devopsschool-demo-temporary/devops202209.git
+
+Undoing
+Branching & Merging
+==================
+
+
+
+
+
+
+
+
+
