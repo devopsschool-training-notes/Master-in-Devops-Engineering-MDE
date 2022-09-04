@@ -1,0 +1,146 @@
+What is SonarQube?
+----------------------------
+		Quality Management tool
+
+		Quality
+				Code Quality
+							Peers Code Review
+							Static Code Review
+				Test Quality
+							Code Coverage | Test Coverage
+
+		Management
+
+		Dev in JAVA
+				- JRE
+
+		Release
+				COMMUNITY	FREE
+				DEVELOPER	PAID
+				ENTERPRISE PAID
+				https://www.sonarqube.org/downloads/
+
+		Version
+		- 9.5	
+
+Static Code Review
+---------------------------------------
+Code would be Reviewed by CODE
+Code would be Reviewed by RULE
+Code would be Reviewed by RULE(S)
+Code would be Reviewed by TOOL
+Code would be Reviewed by SCA TOOL
+https://en.wikipedia.org/wiki/List_of_tools_for_static_code_analysis
+
+
+Why do we need Sonarqube?
+---------------------------------------
+- Multiple Projects
+		RULES(Profile)
+		REPORTS
+- RBAC 
+- RICH UI
+============================================
+Other tools for SCA
+-------------------------------------------------------------------------
+SonarQube Architecture
+====================================================================
+
+SonarQube server					- DONE
+	Rules
+	UI
+	DB
+		H2 - mssql - ps - oracle
+		ElasticSearch
+					Log storage & searching & Ana
+
+
+Scanner						- DONE
+	TYPES
+		SonarScanner for Gradle
+		SonarScanner for .NET
+		SonarScanner for Maven
+		SonarScanner for Azure DevOps
+		SonarScanner for Jenkins
+		SonarScanner for Ant
+		SonarScanner
+					READ a file in code -- project.propeties
+					Inlcude only these code
+					exclude only these code
+
+C:\tools\sonarqube\scanner\bin\sonar-scanner.bat
+
+
+Source Code		DONE
+
+https://github.com/devopsschool-demo-labs-projects/java-sonarqube-helloworld-src
+https://github.com/devopsschool-demo-labs-projects/sonar-scanning-examples
+
+How to install SonarQube
+===============================================
+https://docs.sonarqube.org/latest/requirements/requirements/
+
+
+
+https://www.sonarplugins.com/
+
+
+
+
+
+
+        <profile>
+            <id>sonar</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <!-- Optional URL to server. Default value is http://localhost:9000 -->
+                <sonar.host.url>
+                  http://192.168.1.11:9000
+                </sonar.host.url>
+            </properties>
+        </profile>
+
+-Dsonar.user=admin
+-Dsonar.password=admin123
+
+How to run sonarqube using maven?
+
+Step 1 - Modify pom.xml for scanner
+Step 1 - Modify setting.xml for sonar server path and profile
+Step 3 - run below command
+mvn clean verify sonar:sonar -Dsonar.login=squ_c70b632fdec94826768282c62f3fef6a8546f088
+
+ANT		MSBUILD	MAVEN			GRADLE 
+target	target	goal			task
+
+
+----------------------------------------
+BACKUP
+------------------------------
+DB
+	PS
+	h2				PS
+	ORACLE
+Plugins
+---------------------
+==================================================================================
+SonarQube Vs Fortify
+
+Fortify
+		SAST == SCA == SONARQUBEs	= CODE ANA
+		DAST					= ANA During TEST -- SECRUIRY
+		RASP					== ana duing PRODU
+	
+Static Code Analyzer === SOnarQube === SAST
+
+Fortify Wedinspect == DAST
+==================================
+Maven - Gradle
+
+
+
+
+
+
