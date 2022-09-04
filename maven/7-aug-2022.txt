@@ -1,0 +1,165 @@
+What is Maven?
+------------------
+		is a Build tool
+				project mgmt tool
+		Dev in Java
+		From Apache
+		Open source & Free
+		Version - 3.X
+		Plugins based
+
+		Feature
+		- In built dep mgmt system
+	
+		----------------------------------
+		Maven says - Follow and i would automate everything for u.
+
+		----------------------------------
+		Maven 				Ant				Gradle
+		Procedural			Decalarative		Decalarative + Procedural
+
+What is Build Tool?
+-------------------------
+Create a env - Compile - UT - Package
+
+Other tools
+-------------------------------------------------
+makefile -> ant -> nant -> msbuild -> maven -> gradle
+----------------------------------------------
+Architrure of Maven - How it works!!
+-----------------------------------------
+Maven
+		Core Plugins
+		Community Plugins
+
+Lifecycle of Human
+Born - KID -> Teen -> Young -> Middle -> old -> Die 
+
+Lifecycle of Software Project using maven
+Build -> UT -> Package -> Deploy
+
+https://maven.apache.org/ref/3.8.1/maven-core/lifecycles.html
+
+Lifecycle of my project
+-------------------------------------
+PHASE				GOAL				plugins(jar)	
+
+compile			mvn compile			X
+test				mvn test			Y
+package			mvn package			Y
+
+install			mvn install			Z
+deploy			mvn deploy
+
+-------------------------------
+How to install Maven?
+		- JAVA + JAVA_HOME
+		- Download - extact - maven_home/bin -- PATH
+https://www.devopsschool.com/blog/complete-guide-of-java-installation-in-linux/
+
+https://maven.apache.org/download.cgi
+
+
+C:\RajeshAll\workspace\maven>mvn
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.145 s
+[INFO] Finished at: 2022-08-07T10:59:13+05:30
+[INFO] ------------------------------------------------------------------------
+[ERROR] No goals have been specified for this build. You must specify a valid lifecycle phase or a goal in the format <plugin-prefix>:<goal> or <plugin-group-id>:<plugin-artifact-id>[:<plugin-version>]:<goal>. Available lifecycle phases are: validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy, pre-clean, clean, post-clean, pre-site, site, post-site, site-deploy. -> [Help 1]
+[ERROR]
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR]
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/NoGoalSpecifiedException
+
+C:\RajeshAll\workspace\maven>
+
+=============================================================================================================
+
+mvn archetype:generate 
+
+-D
+groupId=com.devopsschool.software 
+
+-D
+artifactId=chat 
+
+-D
+archetypeArtifactId=maven-archetype-quickstart 
+https://maven.apache.org/guides/introduction/introduction-to-archetypes.html
+
+-D
+interactiveMode=false
+
+mvn archetype:generate -DgroupId=com.devopsschool.software -DartifactId=chat -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+------------------------------------------------------------
+com.software.ms		word
+
+
+
+CTO (ms)
+------------------------
+com.software.ms.word
+com.software.ms.slides
+com.software.ms.excel
+com.software.ms.common
+
+			word
+			slides
+			excel
+			common
+BUILD								RUN(jar)
+									Load jar file 
+import com.software.ms.common			
+
+
+pom.xml
+======================================
+		project object model
+		xml
+		contains all spec of maven
+
+
+packaging
+			jar | war | ear | pom
+version	
+			SNAPSHOT	- 1.0-SNAPSHOT	1.0.1-SNAPSHOT
+			RELEASE - 1.0	1.0.1
+
+
+
+Error
+https://stackoverflow.com/questions/53034953/error-source-option-5-is-no-longer-supported-use-6-or-later-on-maven-compile
+=======================================================================================
+
+mvn compile|test
+				- class path
+				junit
+				C:\tools\Java\jdk-11.0.8\lib- NOT FOUND
+-------------------------------------------------------------
+
+mvn -> POM.xml --> Look for dependency in .m2 --> Central repo
+					SET IN CLASSPATH
+				
+	
+
+.m2 = C:\Users\Rajesh Kumar\.m2\repository
+Central repo = https://repo.maven.apache.org/maven2/
+------------
+Local maven repostory for for all packages
+======================================================
+
+
+
+
+
+
+
+
+
+
+
