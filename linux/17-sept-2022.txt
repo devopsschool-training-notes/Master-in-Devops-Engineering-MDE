@@ -1,0 +1,85 @@
+OS
+=======================
+LINUX
+	RHEL
+		centos	free
+		rhel
+	DEBIAN
+		ubuntu	free
+Windows
+==================================
+How to setup?
+		Using VMS.
+
+Where to get vms?
+------------------------
+		Laptop
+		AWS
+		Azure
+------------------------
+How to create vms in laptop?
+	virtualbox
+	vmware
+	hyperv
+
+virtualbox
+	- Download - iNstall - 
+	https://www.virtualbox.org/wiki/Downloads
+
+ISO file - OS image
+	centos7 - http://isoredirect.centos.org/centos/7/isos/x86_64/
+	ubuntu - https://ubuntu.com/download/server
+
+How To Create Virtual Machine Using VirtualBox?
+https://www.devopsschool.com/lms/mod/page/view.php?id=468
+
+How to login linux and work with it?
+---------------------------------------
+https://www.youtube.com/watch?v=ApDdY0K_Z7Q
+
+List of Linux commands?
+------------------------------
+https://www.devopsschool.com/commands/tools/linux
+https://www.devopsschool.com/blog/linux-commands-for-user/
+https://www.devopsschool.com/blog/linux-commands-for-administrator/
+https://www.devopsschool.com/blog/complete-linux-shell-scripting-guide-and-tutorial-for-linux-admin-and-devops-engineer/
+----------------------------------------
+Shell Scripting?
+------------------------
+- Collection of linux commands
+- declare var
+- accept param $1 $2
+- Conditional
+- Looping
+
+Vi Editor
+
+File Permission 
+https://www.youtube.com/watch?v=0sSWpjM12BE
+
+a=10
+b=20
+  
+#Check whether they are equal
+if [ $a == $b ]
+then
+    echo "a is equal to b"
+fi
+
+
+for a in 1 2 3 4 5 6 7 8 9 10
+do
+    # if a is equal to 5 break the loop
+    if [ $a == 5 ]
+    then
+        break
+    fi
+    # Print the value
+    echo "Iteration no $a"
+done
+
+=============================================
+
+
+
+
