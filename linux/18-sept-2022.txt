@@ -1,0 +1,263 @@
+OS
+---------------------
+	Linux
+	Windows
+---------------------
+LINUX 
+		Linus Tovarld
+
+	Flavour of Linux - 40 
+	Redhat
+			Centos 7
+	Debian
+			Ubuntu 22.X
+========================================
+Linux Package Manager
+-----------------------------------------------------------------
+Centos		Ubuntu		Windows		Mac		Android 		Iphone
+---------------------------------------------------------------
+Registry	Registry	Registry	Registry		Registry		Registry	
+											playstore		appstore		
+--------------------------------------------------------------------------
+repository	repository					repository
+httpd		apache2						whatsappp
+											- v1
+											- v2
+CLINET
+==========================================================================
+yum			apt			nuget		brew
+
+$ yum | apt-get install git -y
+$ yum | apt-get remove git -y
+==============================================================================
+How to get Linux OS?
+----------------------------------------------------------------------
+Virtual Machine
+--------------------------------------------------------------------
+	Hypervisor							Cloud
+-----------------------------------------------------------------------
+Vmware workstation						AWS
+virtualbox								Azure
+hyperv
+kvm
+========================================================================
+How to Download and Install virtualbox?
+========================================================================
+https://www.virtualbox.org/wiki/Downloads
+
+How to OS image?
+-----------------------------------
+centos 7 - http://isoredirect.centos.org/centos/7/isos/x86_64/
+ubuntu 22 - https://ubuntu.com/download/server
+
+How to create vm using virtualbox? - 20 mins
+----------------------------------
+https://www.devopsschool.com/lms/mod/page/view.php?id=468
+
+How to login/work with linux server?
+----------------------------------------
+Protocol?
+https://www.youtube.com/watch?v=ApDdY0K_Z7Q
+https://www.devopsschool.com/blog/how-to-login-linux-server-using-ssh/
+
+Windows	Laptop		---------rdp-------> Remote Windows
+Windows	Laptop		---------winrm-------> Remote Windows but using http
+Windows	Laptop		---------SSH-------> Remote Linux
+								- Login
+								- Permission
+
+What are the best linux ssh client to connect linux server?
+- putty (https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)
+- https://www.devopsschool.com/blog/list-of-free-tools-for-tabbed-multiple-linux-ssh-putty-sessions/
+
+How to learn Linux Basic Commands?
+---------------------------------------
+https://www.devopsschool.com/blog/linux-commands-for-user/
+- Note - If you stuck with SOME COMMAND. share in the Group.
+chmod + chown =
+- https://www.youtube.com/watch?v=0sSWpjM12BE
+- https://www.youtube.com/watch?v=YwxH7AdMEEw
+
+How to learn Linux Administrator Commands?
+---------------------------------------
+- https://www.devopsschool.com/blog/linux-commands-for-administrator/
+
+How to write shell scripting in Linux?
+---------------------------------------
+	- collection of Linux Commands
+	- Var
+	- Conditions
+	- Looping 
+	- User param
+	- debug
+
+Editor
+- vi
+- vim
+- nano
+
+
+echo "Enter a number"
+read n
+if [ $n -lt 100 ]; then
+	printf "$n is less than 100\n"
+fi
+
+
+#!/bin/bash
+echo "Hello, who are you?"
+read $REPLY
+echo "Can I ask you some questions?"
+read $REPLY
+echo "What is your favorite topic?"
+read $REPLY
+
+#!/usr/bin/expect -f
+set timeout -1
+spawn ./questions
+expect "Hello, who are you?\r"
+send -- "Im Adam\r"
+expect "Can I ask you some questions?\r"
+send -- "Sure\r"
+expect "What is your favorite topic?\r"
+send -- "Technology\r"
+expect eof
+
+https://stackoverflow.com/questions/6961389/exception-handling-in-shell-scripting
+
+
+
+#Start of for loop
+for a in 1 2 3 4 5 6 7 8 9 10
+do
+    # if a is equal to 5 break the loop
+    if [ $a == 5 ]
+    then
+        break
+    fi
+    # Print the value
+    echo "Iteration no $a"
+done
+
+How to debug shell scrpting?
+
+
+The following script reports the success/failure status of a command:
+
+#!/bin/bash 
+#Filename: success_test.sh 
+# Evaluate the arguments on the command line - ie success_test.sh 'ls | grep txt' 
+eval $@ 
+if [ $? -eq 0 ]; 
+then 
+    echo "$CMD executed successfully" 
+else 
+    echo "$CMD terminated unsuccessfully" 
+fi
+
+
+$?
+
+=============================================================================
+
+
+Question for offline @ debug.school
+-------------------------
+1. What is EPEL and Write a instructions to install and use it
+2. What is diffrence between hypervisor and cloud
+3. What are the Network Adaptor(Driver) you have in VirtualBox and write a usecase of it?
+4. Find a list 10 commands and write 10 example of it and publish it to https://www.devopsschool.com/commands
+	- grep  
+	- find
+	- xargs
+	- sed
+	- chmod
+	- netstat
+	- route
+	- record
+	- vmstat
+	- visudo
+	- awk
+
+========================================================================================
+========================================================================================
+How to install vagrant?
+https://www.devopsschool.com/blog/vagrant-installation-in-centos-ubuntu-and-windows/
+
+C:\Users\Rajesh Kumar>vagrant
+Usage: vagrant [options] <command> [<args>]
+
+    -h, --help                       Print this help.
+
+Common commands:
+     autocomplete    manages autocomplete installation on host
+     box             manages boxes: installation, removal, etc.
+     cloud           manages everything related to Vagrant Cloud
+     destroy         stops and deletes all traces of the vagrant machine
+     global-status   outputs status Vagrant environments for this user
+     halt            stops the vagrant machine
+     help            shows the help for a subcommand
+     init            initializes a new Vagrant environment by creating a Vagrantfile
+     login
+     package         packages a running vagrant environment into a box
+     plugin          manages plugins: install, uninstall, update, etc.
+     port            displays information about guest port mappings
+     powershell      connects to machine via powershell remoting
+     provision       provisions the vagrant machine
+     push            deploys code in this environment to a configured destination
+     rdp             connects to machine via RDP
+     reload          restarts vagrant machine, loads new Vagrantfile configuration
+     resume          resume a suspended vagrant machine
+     snapshot        manages snapshots: saving, restoring, etc.
+     ssh             connects to machine via SSH
+     ssh-config      outputs OpenSSH valid configuration to connect to the machine
+     status          outputs status of the vagrant machine
+     suspend         suspends the machine
+     up              starts and provisions the vagrant environment
+     upload          upload to machine via communicator
+     validate        validates the Vagrantfile
+     version         prints current and latest Vagrant version
+     winrm           executes commands on a machine via WinRM
+     winrm-config    outputs WinRM configuration to connect to the machine
+
+For help on any individual command run `vagrant COMMAND -h`
+
+Additional subcommands are available, but are either more advanced
+or not commonly used. To see all subcommands, run the command
+`vagrant list-commands`.
+        --[no-]color                 Enable or disable color output
+        --machine-readable           Enable machine readable output
+    -v, --version                    Display Vagrant version
+        --debug                      Enable debug output
+        --timestamp                  Enable timestamps on log output
+        --debug-timestamp            Enable debug output with timestamps
+        --no-tty                     Enable non-interactive output
+
+From where i would download Vagrant box?
+- https://app.vagrantup.com/boxes/search
+- https://www.vagrantbox.es/
+- https://yum.oracle.com/boxes/
+
+
+ $ vagrant box add centos7 https://github.com/tommy-muehle/puppet-vagrant-boxes/releases/download/1.1.0/centos-7.0-x86_64.box
+ $ vagrant init ubuntu16
+ $ vagrant up
+$ ssh
+
+1st Time - Rajesh
+Step - 1 - Download Base Box
+Step - 2 - Modify a box as per some env
+Step - 3 - Package a Box and upload to team location
+$ vagrant package --base my-virtual-machine
+$ vagrant package --base ubuntu16 --output ubuntu166.box
+$ vagrant package --output alpine_python2_base.box
+
+All Time - Other Engineers
+Step - 1 - Add a Box to local
+Step - 2 - Init a box vm
+Step - 3 - Start and Login to vm and use it
+
+
+
+
+
