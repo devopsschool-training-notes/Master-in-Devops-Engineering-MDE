@@ -1,0 +1,102 @@
+What is Maven?
+	- Build tool
+	- Automate build mgmt
+	-  Build -> UT -> Package
+	- Dev in Java for Java
+
+makeilfe -> ant -> maven - msbuild
+
+PLAN -> Code -> Analyze -> Build -> UT -> Package -> Archive -> Dep2Qa -> AT -> CC 
+===================================================================================
+JIRA -> Git -> Sonarqube ->       maven			--arti   --ans
+
+How to install it?
+-----------------------
+https://www.devopsschool.com/blog/complete-guide-of-java-installation-in-linux/
+
+	- JAVA
+	- JAVA_HOME
+
+How to install maven?
+https://www.devopsschool.com/blog/how-to-install-configure-maven/
+
+
+C:\Users\Rajesh Kumar>mvn
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.152 s
+[INFO] Finished at: 2022-09-18T16:24:24+05:30
+[INFO] ------------------------------------------------------------------------
+[ERROR] No goals have been specified for this build. You must specify a valid lifecycle phase or a goal in the format <plugin-prefix>:<goal> or <plugin-group-id>:<plugin-artifact-id>[:<plugin-version>]:<goal>. Available lifecycle phases are: validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy, pre-clean, clean, post-clean, pre-site, site, post-site, site-deploy. -> [Help 1]
+[ERROR]
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR]
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/NoGoalSpecifiedException
+
+C:\Users\Rajesh Kumar>
+C:\Users\Rajesh Kumar>
+==========================================================================
+
+God
+lifecycle
+Born -> KID -> teen -> Young -> Mid -> Old -> Die
+https://maven.apache.org/ref/3.8.1/maven-core/lifecycles.html
+
+GOD of Software
+----------------------------------------------------
+Code -> Analyze -> Build -> UT -> Package
+\
+
+Maven default Lifecycle
+-----------------------------------------------
+PHASES			Magic(goal)			plugins
+------------------------------------------
+compile			compile				jar	
+test				test					jar
+package			package
+install			install
+deploy			deploy
+
+Maven
+	Plugins
+		core 
+				compile
+				XXXXX
+		community		
+
+
+group id
+artifact id
+version
+================================
+msoffice				com.ms.office	=group id
+		word			com.ms.office.word = artifact id
+		slides		com.ms.office.word
+		excel		com.ms.office.word
+		common		com.ms.office.word
+
+version
+		Release	- 	2, 2.1, 2.1.1	
+		Snapshot - 	2-SNAPSHOT, 2.1-SNAPSHOT, 2.1.1-SNAPSHOT
+
+Package
+		jar
+		ear
+		war
+		pom
+
+group id=devopsschool
+artifact id = chat
+version
+
+	
+mvn archetype:generate -DgroupId=com.devopsschool.software -DartifactId=chat -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+
+
+
+
