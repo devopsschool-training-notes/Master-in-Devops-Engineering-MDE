@@ -1,0 +1,178 @@
+Container World
+============================================
+Docker -> Container -> Dockerfile -> Docker Compose => Kubernetes -> istio -> OpenShift Or PKS or Rancher
+=============================================
+https://www.devopsschool.com/blog/understanding-the-tools-sets-in-kubernetes-ecosystem/
+======================
+RUNNING APP
+---------------------------------------------------------------------
+PHYSICAL SERVER	=> Virtual Server => Container
+
+What is Container?
+---------------------------
+		Managed by Docker
+		(create+start+stop+rm)
+
+What is Kubernetes?
+============================
+---> Orchestration tool for containers
+============================================
+Architecture of K8?
+=======================================
+How to setup
+=======================================
+Master
+
+Worker
+
+Workstation
+====================================================================
+What is POD?
+---------------------------------------------------------
+VMware	=> AWS => Docker 		=> 	Kubernetes
+=====================================================
+VMs		=> EC2 => Container		=>  POD
+
+				(APP)
+
+==================================================
+Kube with Docker - 1.22
+https://www.devopsschool.com/blog/setting-up-kubernetes-clusters-using-kubeadm-manual-way-in-rhel-7-centos7/
+
+Kuber with containerd - 1.23 - Ubuntu
+https://www.devopsschool.com/blog/kubernetes-1-23-6-cluster-setup-master-and-worker-in-ubuntu-20-04/
+
+Master + Workstation
+3.110.131.169
+
+worker
+13.232.203.5
+
+
+kubeadm join 172.31.29.25:6443 --token m6scnv.u7cieytqhfn15rc7 --discovery-token-ca-cert-hash sha256:ca842373b56a496c6f14ca0f2fbd09a342679f98e7f0e402a79c197cb3f1e8d4
+=========================================================================
+Kubernetes					AWS
+===================================================
+Namespace					VPC
+
+POD							Ec2 Instance
+
+ReplicationController			Auto Scaling group
+
+Deployment					Auto Scaling group++++++
+
+Service						Network Load balancers
+======================================================
+
+API Server --- API -->
+
+				HTTP			PUT 		GET 		POST		DELETE
+				PROGRAMMING	CREATE	READ		UPDATE	DELETE
+
+
+CREATE	
+		CMD
+				create
+		YAML
+\				create -f yaml
+
+READ	
+		CMD
+				get
+		YAML	
+				get -f yaml
+
+UPDATE	
+		CMD
+				edit 
+		YAML
+				apply -f yaml
+
+DELETE
+		CMD
+				delete 
+		YAML
+				delete -f yaml
+
+
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nodehelloworld.example.com
+  labels:
+    app: helloworld
+spec:
+  containers:
+  - name: devopsschool1
+    image: scmgalaxy/nginx-devopsschoolv1
+    ports:
+    - name: nginx-port
+      containerPort: 80
+
+
+
+Troubleshooting and Debugging Commands:
+  describe      Show details of a specific resource or group of resources
+  logs          Print the logs for a container in a pod
+  attach        Attach to a running container
+  exec          Execute a command in a container
+  port-forward  Forward one or more local ports to a pod
+  cp            Copy files and directories to and from containers
+
+
+kubectl port-forward --address 0.0.0.0 pod/nodehelloworld.example.com 8888:80
+kubectl port-forward --address 0.0.0.0 pod/nodehelloworld.example.com 8888:80
+
+
+
+
+ReplicationController
+
+Replication	- 1 POD to many
+Controller	- Desire === Actual
+
+
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: rc
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: scmgalaxy/nginx-devopsschoolv1
+
+Deployment	
+==================================
+Replication + Controller + Versioning + Rollout + Rollback
+-----------------------
+	ReplicaSets
+
+
+https://www.devopsschool.com/blog/kubernetes-deployment-strategy-explained-with-example/
+https://www.devopsschool.com/blog/list-of-popular-deployment-strategies/
+https://www.devopsschool.com/blog/kubernetes-deployment-example-programs/
+
+kubectl create deployment my-dep --image=scmgalaxy/nginx-devopsschoolv1 --replicas=3
+=========================================================================
+
+ kubectl create service clusterip my-cs --tcp=5678:80
+
+=============================================================================
+Write a 5 benefits of kubernetes?
+Write a short notes on kubernetes architecure?
+Write a top 10 api resources of kubernetes and their real use cases.
+
+
+
+
+
+
+
+
