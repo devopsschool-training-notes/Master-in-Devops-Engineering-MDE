@@ -1,0 +1,241 @@
+CENTOS - UBUNTU - LINXUX - Vagrant
+=======================================
+
+What is Docker?
+---------------------------------
+		Container mgmt tool
+
+What is Container		- 2 Hours 
+---------------------
+Light weight APP run time env
+-----------------------------
+
+PS ------> VS  ----> Container
+		 5 APP
+		 5 VS
+		 5 OS
+
+Docker install 
+https://www.devopsschool.com/blog/docker-installation-and-configurations/
+=======================================================
+
+Docker Engine
+	
+Client --> DockerD -> ContainerD -> Kernel
+---------------------------------
+			DE
+
+Docker registry
+			repository == docker image name
+				Contains version of file system
+
+Docker image 
+Rootfs --> Userfs -> Appfs
+----------------------------
+ubuntu  -> jenkis --> jenkins
+centos
+fedora
+
+VMs
+------------------------
+Bootfs -> Rootfs --> Userfs -> Appfs
+		
+Docker images
+------------------------
+
+Docker COntainer
+
+--- The moment u run a image - container.
+==================================================
+================================================================
+Container Lifecycle
+-----------------------------------------------------
+create -> start -> stop -> start -> restart -> pause -> unpause -> kill -> remove
+
+
+2006  docker images
+ 2007  docker rmi c30a46771695
+ 2008  clear
+ 2009  docker images
+ 2010  docker ps
+ 2011  docker ps -a
+ 2012  clear
+ 2013  docker images
+ 2014  docker create httpd
+ 2015  docker ps
+ 2016  docker ps -a
+ 2017  docker start dbb5a7185355
+ 2018  docker ps
+ 2019  docker create httpd
+ 2020  docker ps -0a
+ 2021  clear
+ 2022  docker ps -a
+ 2023  docker stop dbb5a7185355
+ 2024  docker ps -a
+ 2025  clear
+ 2026  docker ps -a
+ 2027  docker start ba1a2fadffdd dbb5a7185355 16a4288c15e8 70f683cc7bbc
+ 2028  clear
+ 2029  docker ps -a
+ 2030  docker rm 16a4288c15e8
+ 2031  clear
+ 2032  docker ps -a
+ 2033  docker restart ba1a2fadffdd
+ 2034  docker ps -a
+ 2035  docker pause ba1a2fadffdd
+ 2036  docker ps -a
+ 2037  clear
+ 2038  docker pause ba1a2fadffdd
+ 2039  docker ps -a
+ 2040  docker kill dbb5a7185355
+ 2041  docker ps -a
+ 2042  docker unpause ba1a2fadffdd
+ 2043  clear
+ 2044  docker ps -a
+ 2045  docker rm ba1a2fadffdd
+ 2046  docker rm dbb5a7185355
+ 2047  docker ps -a
+
+
+
+===============================================
+How to use?
+----------------------------------
+Go inside
+
+Access from outside
+
+
+2053  docker ps
+ 2054  docker exec -it ba1a2fadffdd /bin/bash
+ 2055  ls /
+ 2056  clear
+ 2057  docker ps
+ 2058  docker inspect ba1a2fadffdd
+ 2059  clear
+ 2060  curl http://172.17.0.2
+ 2061  history
+
+
+
+ 2053  docker ps
+ 2054  docker exec -it ba1a2fadffdd /bin/bash
+ 2055  ls /
+ 2056  clear
+ 2057  docker ps
+ 2058  docker inspect ba1a2fadffdd
+ 2059  clear
+ 2060  curl http://172.17.0.2
+ 2061  history
+ 2062  clear
+ 2063  docker ps
+ 2064  docker exec ba1a2fadffdd ls
+ 2065  clear
+ 2066  docker exec ba1a2fadffdd df -kh
+ 2067  docker exec ba1a2fadffdd du -h
+ 2068  clear
+==========================================================
+https://www.devopsschool.com/blog/the-docker-command-line-complete-referenece/
+
+
+
+run
+------------------------------------------------------
+pull + create + start + attach
+
+run -d
+------------------------------------------------------
+pull + create + start + do not attach
+
+
+
+
+=======================================================
+2 METHOD
+----------------------------------------
+using Existing Cont
+using Dockerfile
+
+Base - ubuntu
+git
+apache
+java
+copy some tiles
+
+===========================================
+FROM ubuntu
+MAINTAINER < Rajesh kumar > devops@rajeshkumar.xyz
+RUN apt-get update 
+RUN apt-get install git -y
+RUN apt install openjdk-11-jdk-headless -y
+COPY raju.txt /opt
+ENV JAVA_HOME /tmp/java_home
+
+
+docker build -t ddd -f filename .
+
+
+TAR BALL
+
+
+hub.docker.com
+
+==================================================================
+What is Jira?
+------------------------
+Project 1
+		TASKS
+		BUGS
+		INCIDENT
+		BACKLOG
+		FEATURE
+		AGILE
+
+Project 2
+		TASKS
+		BUGS
+		INCIDENT
+		BACKLOG
+		FEATURE
+		AGILE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
