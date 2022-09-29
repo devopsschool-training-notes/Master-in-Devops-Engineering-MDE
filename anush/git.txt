@@ -1,0 +1,134 @@
+What is Git?
+	version Control tool
+	Free and Opensource
+	by Linus
+	Distributed....
+
+Why?
+	WHO 
+	WHAT 
+	WHY
+	WHERE
+	WHEN
+------------------------------------
+How to install
+		Windows - https://git-scm.com/
+				exe
+		Linux
+				yum install git
+				apt install git
+
+		UI
+			visual Studio Code
+			Eclipse
+			SourceTree
+
+Workflow of working with Git
+
+1 - create repo				DONE
+2 - Write a code		
+3. Add a file to git
+-----------------------
+set ur name and email - DONE
+----------------------
+4. commit a file
+5. see a history
+
+
+$ git log
+commit 89e78d21ee0b372f65f885d3d2a14df55012d367 (HEAD -> master)
+Author: Rajesh kumar <devops@rajeshkumar.xyz>
+Date:   Wed Sep 28 20:38:58 2022 +0530
+
+    first commit
+
+504  cd /c
+  505  clear
+  506  mkdir ansul
+  507  cd ansul/
+  508  start .
+  509  git init
+  510  start .
+  511  ls
+  512  git add file1.java
+  513  clear
+  514  ls
+  515  git config user.name "Rajesh kumar"
+  516  git config user.email "devops@rajeshkumar.xyz"
+  517  git commit -m"first commit"
+  518  git log
+  519  git show 89e78d21ee0b372f65f885d3d2a14df55012d367
+  520  history
+
+
+ 520  history
+  521  clear
+  522  git status
+  523  git add file2.java .
+  524  git status
+  525  touch raju.txt
+  526  git status
+  527  git commit -m"second commit"
+  528  git status
+  529  ls
+  530  git status
+  531  clear
+  532  ls
+  533  git log
+  534  clear
+  535  ls
+  536  ls
+  537  git add .
+  538  git commit -m"all"
+  539  clear
+  540  ls
+  541  git rm raju.txt
+  542  git commit -m"delete"
+  543  git log
+  544  clear
+  545  git config --global gc.auto 256
+  546  git config --global core.fscache true
+  547  git config --global core.preloadindex true
+  548  clear
+  549  ls
+  550  ls
+  551  git log
+  552  git checkout 0ca672ca768965003682b25554747bf0e1307e66
+  553  ls
+  554  git checkout master
+  555  ls
+  556  clear
+  557  git push https://github.com/devopsschool-demo-temporary/anushl.git master
+  558  git push https://github.com/devopsschool-demo-temporary/anushl.git master
+  559  cd ..
+  560  git clone https://github.com/devopsschool-demo-temporary/anushl.git
+  561  ls
+  562  cd -
+  563  clear
+  564  ls
+  565  clear
+  566  git branch fea1
+  567  git branch
+  568  git checkout fea1
+  569  touch fea1.txt;git add .;git commit -m"adding fea1"
+  570  touch fea2.txt;git add .;git commit -m"adding fea11"
+  571  ls
+  572  git checkout master
+  573  ls
+  574  clear
+  575  ls
+  576  git merge fea1
+  577  ls
+  578  git remote add origin https://github.com/devopsschool-demo-temporary/anushl.git
+  579  git push origin master
+  580  clear
+  581  git checkout fea1
+  582  touch fea3.txt;git add .;git commit -m"adding fea111"
+  583  git push origin fea1
+  584  clear
+  585  history
+
+
+
+	
+		
