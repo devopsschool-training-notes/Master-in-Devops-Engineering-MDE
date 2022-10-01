@@ -1,0 +1,259 @@
+What is Ansible?
+---------------------
+		Config mgmt tool
+		Dev in Python
+		Release
+			Ansible - cmd - free - opensource
+			Tower	- UI - Paid
+			AWX - UI - free ------Not tested version of tower
+		Ansible
+				3.x
+
+config for what??
+------------------
+	Server(S)
+
+What is there in Server?
+----------------------
+	files
+	dir
+	user
+	group
+	srvices
+	packages
+================================================================
+PLAN -> Code -> Ana -> Build -> Pack -> Archive -> Dep2QA -> AT -> CC
+------------------------------------------------------------------------
+JIRA - Git - Sonar --Maven ----War ---> Artifactory -> Ansible
+
+Ansible Arch
+------------------------
+Human --> ACS ----> ARS (S)
+		
+ACS						ARS
+==========================================
+linux					ANY
+			===WIND		winrm
+			===Linux	ssh
+
+python					WIN == PS + DOTNET
+						LINUX == python
+
+ACS					
+------------------------
+Ansible
+	tools		- Executable
+	Modules		- Code which run in ARS
+	Plugins	- Code which extend a fea of Ansible
+
+inventory
+	a file which contain IP address of ARS
+
+Playbook
+	Collection of Modules which rn in ARS
+==============================================================
+Project --> Setup a webserver
+
+Psucode ---->
+		1. install httpd						yum - latest
+		2. copy a index.html /var/www/html			copy - dest - src
+		3. start a httpd						service - started
+-----------------------------------------------------------------
+Ansible Adhoc command
+--------------------------
+
+ansible localhost -m yum -a"name=httpd state=latest"
+ansible localhost -m copy -a"src=index.html dest=/var/www/html/index.html"
+ansible localhost -m service -a"name=httpd state=started"
+ansible localhost -m service -a"name=firewalld state=stopped"
+
+
+ansible localhost -m yum -a"name=httpd state=latest" -b
+ansible localhost -m copy -a"src=index.html dest=/var/www/html/index.html" -b
+ansible localhost -m service -a"name=httpd state=started" -b
+
+ansible all -i inventory -m yum -a"name=httpd state=latest"
+ansible all -i inventory -m copy -a"src=index.html dest=/var/www/html/index.html"
+ansible all -i inventory -m service -a"name=httpd state=started"
+ansible all -i inventory -m service -a"name=firewalld state=stopped"
+
+ansible all -i inventory -m yum -a"name=httpd state=latest" -u root -k -b
+ansible all -i inventory -m copy -a"src=index.html dest=/var/www/html/index.html"  -u root -k -b
+ansible all -i inventory -m service -a"name=httpd state=started"  -u root -k -b
+ansible all -i inventory -m service -a"name=firewalld state=stopped"  -u root -k -b
+
+Playbook
+------------------------------------
+Collection of Play
+
+Play contains
+		- group
+		- tasks
+				module1
+				module2
+				module3
+
+
+
+---
+- name: Update web servers
+  hosts: all
+
+  tasks:
+  - name: Install Apache in centos7
+    ansible.builtin.yum:
+      name: "httpd"
+      state: latest
+  - name: Copy index.html
+    ansible.builtin.copy:
+      src: index.html
+      dest: /var/www/html/index.html
+  - name: Starting a Apache Server
+    ansible.builtin.service:
+      name: "httpd"
+      state: started
+
+
+
+
+$ ansible-playbook -i inventory web.yaml -u root -k -b
+=============================================================================
+VARS
+
+
+TEMPLATE
+
+HANDLERS
+
+
+
+=============================================================================
+
+$ python3 -m pip install --user ansible
+
+65d2ee6554217cedff1/PyYAML-6.0-cp36-cp36m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64         .manylinux2010_x86_64.whl
+Collecting cryptography (from ansible-core~=2.11.7->ansible)
+  Using cached https://files.pythonhosted.org/packages/6d/0c/5e67831007ba6cd7e52c4095f053cf45c357739b0         a7c46a45ddd50049019/cryptography-38.0.1.tar.gz
+    Complete output from command python setup.py egg_info:
+
+            =============================DEBUG ASSISTANCE==========================
+            If you are seeing an error here please try the following to
+            successfully install cryptography:
+
+            Upgrade to the latest pip and try again. This will fix errors for most
+            users. See: https://pip.pypa.io/en/stable/installing/#upgrading-pip
+            =============================DEBUG ASSISTANCE==========================
+
+    Traceback (most recent call last):
+      File "<string>", line 1, in <module>
+      File "/tmp/pip-build-zahnym45/cryptography/setup.py", line 17, in <module>
+        from setuptools_rust import RustExtension
+    ModuleNotFoundError: No module named 'setuptools_rust'
+
+    ----------------------------------------
+Command "python setup.py egg_info" failed with error code 1 in /tmp/pip-build-zahnym45/cryptography/
+
+
+-----------------
+
+sudo pip3 install setuptools-rust
+sudo pip3 install --upgrade pip
+python3 -m pip install -- ansible
+python3 -m pip install ansible
+
+Successfully installed MarkupSafe-2.0.1 PyYAML-6.0 ansible-4.10.0 ansible-core-2.11.12 cffi-1.15.1 cryptography-38.0.1 jinja2-3.0.3 packaging-21.3 pycparser-2.21 pyparsing-3.0.9 resolvelib-0.5.4
+
+======================================
+[root@localhost ~]# yum install wget -y
+  File "/usr/bin/yum", line 30
+    except KeyboardInterrupt, e:
+                            ^
+SyntaxError: invalid syntax
+
+
+
+
+
+
+---
+- name: Update web servers
+  hosts: web
+  vars:
+    myname: "Rajeshkumar"
+    age: "18"
+    packagename: "httpd"
+    servicename: "httpd"
+  vars_prompt:
+    - name: "version"
+      prompt: "Which version Do you want to install?"
+      private: no
+
+  tasks:
+  - name: Install Apache in centos7
+    ansible.builtin.yum:
+      name: "{{ packagename }}"
+      state: latest
+  - name: Copy index.html
+    ansible.builtin.copy:
+      src: index.html
+      dest: /var/www/html/index.html
+  - name: Starting a Apache Server
+    ansible.builtin.service:
+      name: "{{ servicename }}"
+      state: started
+  - name: Print return information from the previous task
+    ansible.builtin.debug:
+      var: myname
+  - name: Print return information from the previous task
+    ansible.builtin.debug:
+      msg: "My Name is {{ myname }} and My age is {{ age }}"
+  - name: Print return information from the previous task
+    ansible.builtin.debug:
+      var: version
+===================================
+ 
+---
+- name: Update web servers
+  hosts: web
+  vars:
+    myname: "Rajesh Kumar"
+
+  tasks:
+  - name: Install Apache in centos7
+    ansible.builtin.yum:
+      name: httpd
+      state: latest
+  - name: Copy index.html
+    ansible.builtin.copy:
+      src: index.html
+      dest: /var/www/html/index.html
+  - name: Template index.html
+    template:
+      src: index.html.j2
+      dest: /var/www/html/index-template.html
+  - name: Starting a Apache Server
+    ansible.builtin.service:
+      name: httpd
+      state: started
+=======================
+role 
+		
+
+
+---
+- name: Update web servers
+  hosts: all
+
+  roles:
+    - web
+
+
+
+tasks
+vars
+template
+handlers
+
+
+
+
