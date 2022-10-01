@@ -1,0 +1,364 @@
+What is Docker?
+-------------------------
+		Manage Container
+
+		Manage
+		- create - start - stop - pause - kill - remove
+
+		Container?
+		- is running app and it has all app runtime env and all resources
+						---						-----------------------------
+
+What r the resources we need to run any app?
+		PID			DONE
+		USER		DONE
+		CPU
+		MEM
+		MOUNT == ROOTFS	DONE
+		network			DONE
+
+hardware
+		Software(OS)
+					Kernel
+							Namespace	1 time		n times			OS
+								USER	- 1							N
+								PID		- 1							1
+								NET		- 1							1
+								MNT		- 1							1
+							Cgroups
+										Allocation of CPU and RAM 
+							Capabilities
+										assign a access to user
+
+computer program 
+				--- Run 1 time - U get 1 response
+				--- Run N time - U get N response
+
+
+Crgoups
+Cgroups allow you to allocate resources — such as CPU time, system memory, network bandwidth, or combinations of these resources
+
+What is kernal? == computer program
+The kernel is a computer program at the core of a computer's operating system and generally has complete control over everything in the system. It is the portion of the operating system code that is always resident in memory and facilitates interactions between hardware and software components.
+---------------------------------------------------------
+
+How to install docker?
+https://www.devopsschool.com/blog/docker-installation-and-configurations/
+
+Docker Components
+------------------------------
+					Docker Engine - 
+===================================================
+human -> client -> server -> Containerd 			-> 		Kernel
+
+Docker image
+------------------------------------------------------------------------
+Root FileSystem + User FileSystem + App FileSystem
+---------------------------------------------------------
+centos		+ root + ls
+fedora		+ apache + apache + tomcat + db +
+win16
+-----------------------
+1 doc image --- multiple container
+whatevr u have in image --- you would get in container
+
+
+Vm image
+------------------------------------------------------
+Kernal + Root FileSystem + User FileSystem + App FileSystem
+---------------------------------------------------------
+Linux  + centos		+ root + ls
+Linux  + fedora		+ apache + apache
+Windows + win16
+
+
+Registry
+		repository = image name
+				version of FileSystem
+				Root FileSystem + User FileSystem + App FileSystem
+
+				hub.docker.com
+				google registry
+				artifactory|nexus
+				github.com
+
+
+Container
+				The momnent i run image....
+				- 1 user is created
+				- 1 net is created
+				- 1 PID tree is created
+				- 1 MOUNT (rootfs) is created from one copy of IMAGE
+
+				=== USER is attached with net + pid + mnt === Container
+
+==============================================================================
+Container Lifecycle
+------------------------------------------------
+Create -> Start -> Stop -> Start -> Restart -> Pause -> UnPause -> Kill -> Remove
+
+httpd
+
+   1  clear
+    2  ls
+    3  yum update
+    4  clear
+    5  ls
+    6  clear
+    7  ls
+    8  curl -fsSL get.docker.com -o get-docker.sh
+    9  sudo sh get-docker.sh
+   10  sudo systemctl enable docker
+   11  sudo systemctl start docker
+   12  clear
+   13  which docker
+   14  which dockerd
+   15  which containerd
+   16  ps -eaf | grep doc
+   17  ps -eaf | grep cont
+   18  docker
+   19  clear
+   20  which docker
+   21  clear
+   22  ls
+   23  docker ps
+   24  docker ps -a
+   25  docker images
+   26  docker info
+   27  clear
+   28  docker pull httpd
+   29  clear
+   30  docker images
+   31  docker create httpd
+   32  docker ps
+   33  docker ps -a
+   34  docker create --name raju httpd
+   35  clear
+   36  docker ps  -a
+   37  docker start d9ead9c7f543
+   38  docker ps  -a
+   39  docker start 3a5ff6677cdf
+   40  ckear
+   41  clear
+   42  docker ps  -a
+   43  docker create --name raju1 httpd
+   44  docker ps  -a
+   45  docker stop raju
+   46  docker ps  -a
+   47  docker start raju
+   48  clear
+   49  docker ps
+   50  docker ps -a
+   51  docker restart  3a5ff6677cdf
+   52  docker ps -a
+   53  docker pause raju
+   54  docker ps -a
+   55  clear
+   56  docker unpause raju
+   57  docker ps -a
+   58  docker kill d9ead9c7f543
+   59  docker ps -a
+   60  docker rm d9ead9c7f543
+   61  docker ps -a
+   62  history
+
+=============================
+
+How to use container?
+---------------------------
+go inside --- /bin/bash
+
+exec 
+
+
+network
+================================================
+			run
+-----------------------------
+pull + create + start + attach
+
+
+			run -d
+-----------------------------
+pull + create + start + do not attach
+
+
+62  history
+   63  clear
+   64  docker ps
+   65  docker ps -a
+   66  docker run -itd ubuntu
+   67  clear
+   68  docker
+   69  clear
+   70  docker ps
+   71  ps -eaf | grep cont
+   72  clear
+   73  ls
+   74  docker ps
+   75  docker inspect b69437a32992
+   76  clear
+   77  docker ps
+   78  docker exec -it b69437a32992 /bin/bash
+   79  clear
+   80  ls
+   81  docker ps
+   82  ps -eaf
+   83  clear
+   84  ls
+   85  docker ps
+   86  clear
+   87  docker ps
+   88  docker exec b69437a32992 ls
+   89  docker exec 3a5ff6677cdf ls
+   90  docker exec 3a5ff6677cdf df -kh
+   91  docker exec 3a5ff6677cdf du -hs
+   92  docker exec 3a5ff6677cdf du -s
+   93  docker exec 3a5ff6677cdf ps -eaf
+   94  docker exec 3a5ff6677cdf ps
+   95  docker ps
+   96  docker exec b69437a32992 ps -eaf
+   97  clear
+   98  docker ps
+   99  docker exec -it 3a5ff6677cdf /bin/bash
+  100  docker ps
+  101  clear
+  102  docker ps
+  103  docker inspect 3a5ff6677cdf
+  104  cler
+  105  curl http://172.17.0.3
+  106  clear
+  107  docker ps
+  108  id
+  109  ps
+  110  docker attach b69437a32992
+  111  docker ps
+  112  docker ps -a
+  113  docker start b69437a32992
+  114  clear
+  115  docker attach b69437a32992
+  116  docker ps
+  117  docker attach 3a5ff6677cdf
+  118  docker ps
+  119  clear
+  120  docker run ubuntu
+  121  docker ps -a
+  122  docker run -itd ubuntu
+  123  clear
+  124  docker ps -a
+  125  docker run httpd
+  126  clear
+  127  docker run -d httpd
+  128  clear
+  129  ls
+  130  docker ps a
+  131  docker ps
+  132  clear
+  133  docker ps
+  134  clear
+  135  docker ps
+  136  docker run -itd -p 80:80 httpd
+  137  docker ps
+  138  docker run -itd -p 81:80 httpd
+  139  docker ps
+  140  ip a
+  141  clear
+  142  ls
+  143  docker ps
+  144  history
+============================================================================
+============================================================================
+How to create Docker image?
+------------------------------
+
+Collection of filesystem
+------------------------------
+rootfs + userfs  + appfs + appfs
+
+
+Using Container
+--------------------------------
+ubuntu + apache + git + java = 5mins
+
+
+
+Using Dockerfiles
+===========================================
+FROM ubuntu
+ARG user=raju
+MAINTAINER Rajesh kumar devops@rajehskumar.xyz
+RUN touch /opt/raju.txt
+RUN apt-get update
+RUN apt-get install git -y
+RUN apt-get install apache2 -y
+RUN apt-get install java 
+ENV JAVA /tmp/java_home
+COPY get-docker.sh /tmp
+RUN useradd ${user}
+USER ${user}
+
+https://github.com/jenkinsci/docker/blob/587b2856cd225bb152c4abeeaaa24934c75aa460/Dockerfile
+
+1  clear
+    2  ls
+    3  yum update
+    4  clear
+    5  ls
+    6  docker ps
+    7  ls
+    8  docker cp get-docker.sh 481b8bb070b6/tmp
+    9  docker cp get-docker.sh 481b8bb070b6:/tmp
+   10  docker exec 481b8bb070b6 ls /tmp
+   11  history
+   12  clear
+   13  cd
+   14  ls
+   15  vi dockerfile
+   16  docker build -t jami .
+   17  clear
+   18  docker build -t jami .
+   19  cler
+   20  clear
+   21  cler
+   22  docker build -t jami .
+   23  clear
+   24  vi dockerfile
+   25  docker build -t jami .
+   26  clear
+   27  docker images
+   28  docker run -itd jami
+   29  docker ps
+   30  docker exec 8b18fa5fb51d ls /opt
+   31  docker exec 8b18fa5fb51d ls /tmp
+   32  docker exec 8b18fa5fb51d env
+
+
+
+How to chnage PID 1??
+
+CMD
+ENTRYPOINT
+
+
+============================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
