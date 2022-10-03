@@ -1,0 +1,641 @@
+What is the current problem you are facing in SDLC?
+ - So Many tools
+
+What is CI?
+Auto Build + Auto Testing + Imm Feedack
+
+Plan - Code - Review - BUild - UT - Package - Dep2Repo - Dep2QA  - AT - CC -> RELEASE
+=========================================================================================
+JIRA - GIT - SonarQube - Maven - JUNIT - JAR - NEXUS - Chef - SEL - Jacoco - 
+-------------------------------------------------------------------------------------
+				JENKINS
+--------------------------------------------------------------------------------
+				IMM FEEDBACK
+
+What is Jenkins
+	Cont Integ tool	
+		Integrity every tool at one place
+	Scheduling 
+	Feedback	
+	2 Version
+		Community - FREE 
+				Community Support
+		Enterprise - Paid by Cloudbees
+				FREE SUPPORT
+	Jenkins is nothing without plugins
+		BUT plugins - its extremly powerful
+	Developed using JAVA
+
+FREE & PAID
+--------------------
+Paid - You get stable and secured plugins
+
+JAVA
+DOTNET
+RUBY
+NODE
+MOBILE
+https://www.devopsschool.com/path
+
+What are the other tools we have?
+	Teamcity
+	Bamboo
+	Ubuild-UDeploy
+		
+	
+How to install Jenkins?
+	JDK
+	JENKINS
+https://www.devopsschool.com/tutorial/jenkins/jenkins-installation-and-configuration.html
+
+Architecture of Jenkins
+https://www.devopsschool.com/blog/jenkins-architecture-explained/
+
+http://13.233.216.59:8080/
+rajesh
+rajesh123
+
+Secret Formula of Jenkins?
+=====================================
+What is technology?
+JAVA 			| DOTNET | RUBY | PERL | PYTHON
+
+Where is your Source Code?
+Github
+https://github.com/scmgalaxy/helloworld-java-maven
+
+What is your builder?
+maven
+
+=================================================================
+Gradle
+https://github.com/scmgalaxy/artifactory-gradle-example
+Ant
+https://github.com/scmgalaxy/helloworld-java-ant
+
+
+How to add windows node in Jenkins?
+
+Pre requisite
+1. Network of windows should have internet accessble and connecting to Jenkins
+2. JDK should be installed.
+
+
+Step 1 - First verify wether Jenkins JNLP port is enabled/random or not? It should be checked with enabled/random.
+Go to http://X.X.X.X:8080/configureSecurity/
+
+Agents > Select enabled/random.
+
+Step 2 - java -jar agent.jar -jnlpUrl http://13.233.216.59:8080/computer/windows/slave-agent.jnlp -secret afe8c7dc8da71cd0ae83650b9acff4ace0f6ad3a7c51edd6f310e98bc195278e -workDir "D:\cts-chennai"
+
+How to set path for DOTNET/CSC and MSBUILD in windows?
+C:\Windows\Microsoft.NET\Framework64\v4.0.30319 ==> PATH
+
+Issues while connecting to Windows slave from Jenkins
+https://wiki.jenkins.io/display/JENKINS/Windows+slaves+fail+to+start+via+DCOM
+https://wiki.jenkins.io/display/JENKINS/Windows+Slaves+Plugin
+
+Msbuild
+https://github.com/scmgalaxy/artifactory-msbuild-example
+
+BATCH
+https://github.com/scmgalaxy/teamcity-batch-helloworld
+======================================================================
+How to add Linux node?
+---------------------------
+
+
+
+
+How to copy job to multiple job
+======================================
+$ gradle tasks
+	humen defined
+maven goal
+	pre defined
+	compile
+	test
+	package
+	verify
+	install
+	deploy
+	
+===============================================================
+How to scheduled a job in Jenkins? ==== Build Triggers
+
+1. AT CERTAIN TIME == Build periodically
+2. AT CERTAIN TIME BUT only if SCM chnages == Poll SCM
+3. WHEN another job is build == Build after other projects are built
+
+
+4. When someone push to the github == GitHub hook trigger for GITScm polling
+https://www.devopsschool.com/blog/how-to-build-when-a-change-is-pushed-to-github-in-jenkins/
+5. Using SCRIPT == Trigger builds remotely (e.g., from scripts)
+-------------------------
+
+
+
+How to trigger a job only based on time of previus job?
+Approach1 - 
+job 1- no chnages
+CRON - WHich will read the api josn and fetch the timespace
+http://13.233.216.59:8080/job/job1/lastBuild/api/json
+ - fetch the current time stamp
+----
+	30 mins.
+	Trigger a job 2......
+
+SYSTEM CRON - 
+ADD
+DELET
+MODU
+
+job 2 - no chnages
+
+
+
+====================Day 2 ======================
+
+Jira	
+http://52.66.212.86:8080
+rajesh
+rajesh123
+
+Git
+github.com
+
+Jenkins
+13.233.110.241:8080
+rajesh
+rajesh123
+
+SonarQube
+http://52.66.212.86:9000
+admin
+admin
+1. Install Plugins
+2. Configure SonarQube
+3. Install SonarQube Scanner via jenkins
+
+4. Run a job Scanner
+https://github.com/scmgalaxy/java-sonar-runner-simple
+
+Nexus
+http://52.66.212.86:8081
+admin
+admin123
+
+MY REPO - 
+
+
+1. Create a Repo in nexus
+		Hosted		RW
+			SNAPSHOT | RELEASE
+		Proxy		C RO
+		Group		
+	http://52.66.212.86:8081/repository/rajesh/
+
+			
+2. Modify a pom.xml with repo location
+		distributionManagement element
+3 Modify a setting.xml with user/pass
+		server element
+# Make sure id of setting.xml == pom.xml should be matching.
+4 $ mvn deploy
+
+Maven	
+Junit	
+Chef	NO	DEATAIL
+Puppet	No
+Ansible	No	DEATAIL
+Docker	No	DEATAIL
+AWS	
+Jacoco	
+Coverity	NO
+Selenium	
+Gradle		
+Terraform	NO
+Packer		NO
+
+====================================
+What is Docker?
+	Container mgmt tool
+What is Container?
+	Extremly Lighter vms
+
+How to install it?
+https://www.devopsschool.com/tutorial/docker/install-config/docker-install-commuityedition-oldmethod.html
+https://www.devopsschool.com/tutorial/
+
+DOCKER ENGINE
+DOCKER IMAGE
+DOCKER REPO
+DOCKER CONTAINER
+
+
+Plan - Code - Review - BUild - UT - Package - Dep2Repo - Dep2QA  - AT - CC -> RELEASE
+=========================================================================================
+JIRA - GIT - SonarQube - Maven - JUNIT - JAR - NEXUS - Chef - SEL - Jacoco - 
+-------------------------------------------------------------------------------------
+				JENKINS
+--------------------------------------------------------------------------------
+
+Ansible
+	MASTER = Ansible Control server - 1
+	13.233.195.199
+		Ansible Install
+		Script (Role)
+		inventory = A file which has list of IP address of Ansible Remote Server
+		$ command....
+	Node   = Ansible Remote Servers - Many 
+		52.66.197.218
+		13.233.200.231
+CHEF | ANSIBEL
+
+Code Coverage
+https://github.com/scmgalaxy/CHATjacoco-maven-unittestv2
+
+
+How to get a feedback?
+	EMAIL 
+		E-mail Notification
+		Editable Email Notification = Extended E-mail Notification
+
+
+		
+
+Server Name:	
+email-smtp.eu-west-1.amazonaws.com
+Port:	25, 465 or 587	
+SMTP Username:
+AKIAIRNIIMKS3HV5G6NQ
+SMTP Password:
+AmKdcVC+dS9U0MyQlA+jDyCscFsNUnShNAlBIc7DgiNa
+
+
+	CHAT
+Slack
+Skype
+Jabbar
+Whatsapp
+
+	SMS
+
+	FAX
+
+	DASHBOARD
+		Easy - But with Limitation	== Build Pipeline
+		Not Easy with with lots of feature == Pipeline
+		https://jenkins.io/doc/book/pipeline-as-code/
+
+	
+		
+
+How to utlilize a node capacity maximum!
+---->
+	
+
+
+
+Problems of Jenkins
+
+	- Managing multiple Jenkins Server
+		Each master has 10+ Jobs
+				- Pipeline - 				-
+==================================================
+
+How to install docker?
+https://www.devopsschool.com/tutorial/docker/install-config/docker-install-commuityedition-oldmethod.html
+
+
+Docker Engine - Installed
+Docker Images - From Repo - Jenkins
+Docker Repo
+		hub.docker.com
+		store.docker.com
+		nexus
+		
+Docker container
+		run a image -- get a container
+		One image can be running multiple containers
+
+
+  32  sudo systemctl start docker
+   33  clear
+   34  docker info
+   35  clear
+   36  docker help
+   37  cler
+   38  docker version
+   39  which docker
+   40  ps -eaf | grep docker
+   41  clear
+   42  ps -eaf
+   43  clear
+   44  docker images
+   45  docker pull jenkins
+   46  clear
+   47  docker images
+   48  docker run jenkins
+   49  history
+
+
+ 25  docker run -d jenkins
+   26  docker run -d jenkins
+   27  docker ps
+   28  docker ps
+   29  history
+
+Container life Cycle
+===============================
+https://www.devopsschool.com/blog/lifecycle-of-docker-containers/
+
+
+PROOF....
+	Each container gets 
+			own network
+			own mounts
+			own pmap
+
+ 53  docker ps -a
+   54  clear
+   55  docker ps -a
+   56  docker inspect 60cb07dfa9b1 | grep -i ip
+   57  docker inspect e14aad8f646c | grep -i ip
+   58  docker inspect b23ff556bdb1 | grep -i ip
+   59  ifconfig
+   60  clear
+   61  docker ps
+   62  docker exec 60cb07dfa9b1 df -kh
+   63  docker exec e14aad8f646c df -kh
+   64  docker exec e14aad8f646c touch /var/jenkins_home/rajesh.txt
+   65  docker exec 60cb07dfa9b1 ls /var/jenkins_home
+   66  docker exec e14aad8f646c ls /var/jenkins_home
+   67  clear
+   68  docker ps -a
+   69  docker exec 60cb07dfa9b1 ps -eaf
+   70  docker exec e14aad8f646c ps -eaf
+   71  history
+ 55  docker ps -a
+   56  docker inspect 60cb07dfa9b1 | grep -i ip
+   57  docker inspect e14aad8f646c | grep -i ip
+   58  docker inspect b23ff556bdb1 | grep -i ip
+   59  ifconfig
+   60  clear
+   61  docker ps
+   62  docker exec 60cb07dfa9b1 df -kh
+   63  docker exec e14aad8f646c df -kh
+   64  docker exec e14aad8f646c touch /var/jenkins_home/rajesh.txt
+   65  docker exec 60cb07dfa9b1 ls /var/jenkins_home
+   66  docker exec e14aad8f646c ls /var/jenkins_home
+   67  clear
+   68  docker ps -a
+   69  docker exec 60cb07dfa9b1 ps -eaf
+   70  docker exec e14aad8f646c ps -eaf
+   71  history
+   72  clear
+   73  docker ps
+   74  docker inspect 60cb07dfa9b1
+   75  curl http://172.17.0.4:8080
+   76  clear
+   77  docker ps -a
+   78  docker stop 60cb07dfa9b1 e14aad8f646c b23ff556bdb1
+   79  docker rm 60cb07dfa9b1 e14aad8f646c b23ff556bdb1
+   80  clear
+   81  docker run -d -p 8080:8008 -p 50000:50000 jenkins
+   82  docker ps -a
+   83  docker rm 48d2ebeba182
+   84  docker run -d -p 8080:8080 -p 50000:50000 jenkins
+   85  ps -eaf | grep jenkins
+   86  docker run -d -p 8081:8080 -p 50000:50000 jenkins
+   87  docker run -d -p 8082:8080 -p 50002:50000 jenkins
+   88  docker run -d -p 8084:8080 -p 50003:50000 jenkins
+   89  doker exec -it a773590d4346d042a05137df05f3b6389da4f11a64d13306723c0c37c3e19e3b /bin/bash
+   90  docker exec -it a773590d4346d042a05137df05f3b6389da4f11a64d13306723c0c37c3e19e3b /bin/bash
+   91  docker exec -it a773590d4346d042a05137df05f3b6389da4f11a64d13306723c0c37c3e19e3b /bin/bash
+   92  docker ps
+   93  history
+====================================
+What is Docker image?
+	a file system
+ 25  docker images
+   26  docker inspect jenkins
+   27  docker history jenkins
+   28  clea
+   29  clear
+   30  ls
+   31  cd /var/lib/docker/
+   32  ls
+   33  clear
+   34  cd
+   35  ls
+   36  docker pull centos
+   37  clear
+   38  docker ps -a
+   39  docker stop a773590d4346 3c2f919c3b21 1b8b3e7629f2 2f08d9eab704
+   40  clear
+   41  s
+   42  clear
+   43  docker imaes
+   44  docker images
+   45  docker run -d centos
+   46  docker ps
+   47  docker ps -a
+   48  docker rm 7cde6a7d93dc a773590d4346 3c2f919c3b21 1b8b3e7629f2 2f08d9eab704
+   49  clear
+   50  ls
+   51  docker ps a
+   52  docker ps -a
+   53  clear
+   54  docker run -itd centos
+   55  docker ps
+   56  docker attach 55c2c7d7bc7e
+   57  docker ps
+   58  docker imagegs
+   59  docker images
+   60  docker commit -m"centos-git-up-java" 55c2c7d7bc7e centos-git-up-java
+   61  docker images
+   62  docker ps -a
+   63  docker stop 55c2c7d7bc7e
+   64  docker rm 55c2c7d7bc7e
+   65  clear
+   66  docker images
+   67  docker run -itd centos
+   68  docker ps
+   69  docker exec fe26443f8003 git
+   70  docker run -itd centos-git-up-java
+   71  docker ps
+   72  docker exec 1226d5c1ec46 git
+   73  clear
+   74  docker images
+   75  docker ps -a
+   76  docker stop 1226d5c1ec46 fe26443f8003
+   77  docker rm 1226d5c1ec46 fe26443f8003
+   78  ll
+   79  clear
+   80  vi Dockerfile
+   81  docker build -t centos-git-up-java-df .
+   82  docker images
+   83  history
+
+
+
+How to create a image?
+	- Existing container
+		docker commit -m"centos-git-up-java" 55c2c7d7bc7e centos-git-up-java
+		
+	- Dockerfile
+	
+$ vi Dockerfile
+	
+FROM centos
+MAINTAINER Rajesh Kumar DevOps@Rajeshkumar.xyz
+RUN yum update && yum install git -y && yum install wget -y
+RUN wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+RUN rpm -ivh jdk-8u131-linux-x64.rpm
+
+$ docker build -t centos-git-up-java-df .
+
+jenkins
+	openjdk:8-jdk
+		buildpack-deps:stretch-scm
+			buildpack-deps:stretch-curl
+					debian:stretch
+						scratch
+
+Docker has relased all the BASE image.
+====================================================
+Jenkins with Docker
+====================================
+Step 1. Run Docker daemon to accept request from any machine.
+https://scriptcrunch.com/enable-docker-remote-api/
+
+$ systemctl stop docker
+IN THIS /lib/systemd/system/docker.service
+ExecStart=/usr/bin/dockerd -H tcp://0.0.0.0:4243 -H unix:///var/run/docker.sock
+
+$ vi /etc/default/docker
+DOCKER_OPTS='-H tcp://0.0.0.0:4243 -H unix:///var/run/docker.sock’.
+
+$ systemctl start docker
+
+
+Step 2 - Install Docker plugins
+
+Step 3  Restart a jenkins
+
+Step 4 - 
+
+
+==========================
+How to upload/download jar file using nexus with gradle?
+How to deploy ear file frl nexus to server?
+	Ansible role'
+
+
+How to upload a image to Docker hub?
+1. Register a account at docker hub
+2. create a repo at docker hub
+3. have a repo name === image name
+4. Docker login
+5. docker push reponame
+
+
+API
+	CLI
+	http://13.233.110.241:8080/cli/
+	Step 1- Jenkins security  should be enable
+	Step 2- Get a user/password
+		rajesh / rajesh123
+		111e1697680b834419197cfc559bdc29cf
+	Step 3 - Java installed
+	Step 4 - Download jenkins-cli.jar
+	Step 5 - Login
+		who-am-i
+
+
+
+java -jar jenkins-cli.jar -s http://13.233.110.241:8080/ who-am-i –-username rajesh --password rajesh123
+java -jar jenkins-cli.jar -s http://13.233.110.241:8080/ -auth rajesh:rajesh123 list-jobs
+java -jar jenkins-cli.jar -s http://13.233.110.241:8080/ -auth rajesh:rajesh123 delete-job Sleep1
+		
+	CURL
+
+http://13.233.110.241:8080/job/CC/
+ curl -X POST http://13.233.110.241:8080/job/CC/build?delay=0sec --user rajesh:111e1697680b834419197cfc559bdc29cf
+
+	PROGRAM
+		JAVA
+		GROVVY
+		PHP
+		PYTHON
+
+https://www.devopsschool.com/blog/complete-guide-to-use-jenkins-cli-command-line/
+https://www.devopsschool.com/blog/jenkins-command-line-reference-for-login-and-trigger-a-job/
+https://www.devopsschool.com/blog/ways-to-login-jenkins-using-command-line/
+
+Multibranch Pipeline Now
+=====================================
+https://github.com/scmgalaxy/helloworld-java-maven
+
+
+How to take a backup of Jenkins and Restore?
+https://www.devopsschool.com/blog/jenkins-backup-and-restore-process/
+
+How to have 2 jenkins hitting to one database/cnfig
+
+docker run -d -p 8085:8080 -p 50000:50000 jenkins
+
+docker run -d -p 8085:8080 -p 50000:50000 -v /opt/common:/var/jenkins_home jenkins
+================================================
+
+Configure Gradle build to publish artifacts to SonaType Nexus?
+
+Gradle using maven
+https://support.sonatype.com/hc/en-us/articles/213465348-How-do-I-configure-my-Gradle-build-to-publish-artifacts-to-Nexus-
+
+Gradle Doc
+https://docs.gradle.org/current/userguide/artifact_management.html
+
+https://stackoverflow.com/questions/28630470/upload-sources-to-nexus-repository-with-gradle
+https://github.com/bmuschko/gradle-nexus-plugin
+
+=========================================================
+Rajesh Kumar
+DevOps@RajeshKumar.xyz
+http://rajeshkumar.xyz/
+
+Certified by 
+http://devopscertification.co/  - Jenkins Certified Engineer
+
+Subject - Jenkins Certified Engineer of Cognizant
+
+BODY
+
+Full Name - 
+Personal Email Address
+Officil Email Address
+phone 
+Role -
+
+SEND TO Mantosh@DevOpsSchool.com 
+CC vikas@DevOpsSchool.com
+
+
+
+Feedback
+https://tcheck.co/HTHPD6
+
+
+
+
+
+
+
+
+
+
+
+
+
+

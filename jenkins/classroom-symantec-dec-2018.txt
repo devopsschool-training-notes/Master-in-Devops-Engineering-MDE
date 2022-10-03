@@ -1,0 +1,864 @@
+Prod Name - SymX
+-------------------
+
+Mgr - MgrX
+--------------------------
+Architect - 1 - Confluence | VSTS Online | Jira | Trello | Servicenow |Sharepoints
+
+Dev - 10 - 
+	Code Collob-
+	Git - SVN - CVS - p4 - CC - MER 
+		WHO 
+		WHEN
+		WHY
+		WHERE
+Code Review
+	https://en.wikipedia.org/wiki/List_of_tools_for_static_code_analysis
+	SonarQube
+
+
+Build mgmt
+	- 20 times in a day/ 20 steps for one build
+	makefile->ant->maven->gradle
+	nant-msbuild
+
+Unit testing
+	Junit | Nunit | Rspec
+
+Packaging
+		SYSTEM - EXE/MSI/RPM/DEB/DMG
+		APP - JAR, WAR, Zip TAR, bin, EAR
+
+Repo mgmt system
+Artifact Archive
+		Artifactory, nexus, Archiva, ECR
+
+Deploy2Qa		
+		200 BOXES
+		1 Dep - 10 mins
+		200 Dep - 11 Mins
+
+		100 LINUX
+			50 RHEL
+			50 UB
+		100 WINDOWS
+			XXX
+
+		50 TOMCAT
+		50 WEBL
+		50 WEBS
+		50 JBS
+
+		50 MYSQL
+		50 ORA
+		50 PS
+		50 MSSQL
+		
+		100 DIFF
+===================================
+		1 MINS for GETTING 200 BOXES - AWS, OPENSTAKE
+		10 MINS	
+		Puppet, Ansible, Chef, 
+		Octopus Deploy, XL Deploy, UDeploy
+--------------------------------------------------------
+		200 Dep - 1 SECOND - CONTAINER - DOCKER
+
+Code Coverage
+		Jacoco / NCOVER / Cobertura
+	
+===================================
+	Available for Deploy - Continous Delivery
+	Deployed to Prod - Continous Deployment....
+
+What is Jenkins?
+	CI tools
+	Free
+	Open Source
+	Dev in Java
+	Dumb tool
+		BUT WITH PLUGINS - ITS MOST POWERFUL.
+	3 VERSION 
+		Jenkins - FREE
+		Jenkins Enterprise - Cloudbees
+		Jenkins X
+Objective
+	Automating a rep tasks using GUI
+	Scheduling
+	Feedback
+
+What is CI?
+
+Auto Build + Auto test
+-----------------------------
+Imm Feedback
+
+
+Code->A CR -> A Build -> A UT -> A Pack ->A Dep2Repo -> A Dep2 QA -> A CC ->
+============================================================================
+				IMM FEEDBACK
+
+ARCHITECT->DEV->BR->QA->OPS- CI/CD
+-------------------------------------
+		DEVOPS
+
+
+Jira -> Git -> SonarQube -> Maven -> JUNIT ->  ArT ->Ansible -> XXX -> Jacoco
+---------------------------------------------------------------------------
+				JENKINS
+---------------------------------------------------------------------------------
+				IMM FEEDBACK
+			EMAIL
+			CHAT
+			DHSHBOARD
+			PIPELINE
+
+
+Other tools 
+	Teamcity  -  Bamboo - U Build/DP - Travis
+
+https://www.devopsschool.com/path/
+=================================================================
+
+
+How to install JDK?
+https://www.devopsschool.com/tutorial/jenkins/jenkins-installation-and-configuration.html
+
+How to install Jenkins?
+https://jenkins.io/
+https://pkg.jenkins.io/redhat-stable/
+
+Architecture Jenkins
+=====================
+SEERVER-AGENT
+https://www.devopsschool.com/blog/jenkins-architecture-explained/
+
+=================================
+What is your technology? 
+JAVA 	| DOTNET | RUBY | PERL | PYTHON
+JAVA --> JDK 8
+
+Where is src code?
+GIT
+https://github.com/scmgalaxy/helloworld-java-maven
+
+What is your builder?
+Maven | Ant | Shell | Batch | Ps | MSBuild
+Maven
+
+
+
+JAVA -> GIT -> MAVEN
+https://github.com/scmgalaxy/helloworld-java-maven
+
+JAVA -> GIT -> ANT
+https://github.com/scmgalaxy/helloworld-java-ant
+
+WINDOWS
+DOTNET -> GIT -> MSBUILD
+https://github.com/scmgalaxy/msbuild-helloworld
+
+DOTNET -> GIT -> BATCH
+https://github.com/scmgalaxy/teamcity-batch-helloworld
+
+
+How to add windows node to jenkins?
+http://13.232.243.95:8080/computer/
+	IP Address	NA	13.126.108.29
+	User Name	NA	ec2-user
+	Password | KEY	NA		
+	WORK DIRECTORY	C:\jenkins	/opt/ws
+
+Requirement of jenkins node?
+	jre/jdk
+	slave.jar
+
+
+
+Step 1 - Enable Winows in Node Section.
+http://13.232.243.95:8080/configureSecurity/
+	TCP port for JNLP agents -> Random 
+
+Step 2 - run in agent
+java -jar agent.jar -jnlpUrl http://13.232.243.95:8080/computer/windows/slave-agent.jnlp -secret 6eb60f2a7eef8cbbee35730b1a727b02db6938399b0871e0dabb307855ac8b4c -workDir "C:\jenkins
+
+jenkins windows troubleshooting
+https://wiki.jenkins.io/display/JENKINS/Windows+slaves+fail+to+start+via+DCOM
+
+msbuild.exe
+C:\Windows\Microsoft.NET\Framework64\v4.0.30319
+
+How to schedule a job?
+	AT A SPECIFIC TIME == Build Triggers >> Build periodically
+	AT A SPECIFIC TIME ONLY WHEN THERE IS SCM CHANGES == Build Triggers >> Poll SCM
+	INTER JENKINS JOB DEPENDENCY
+		PRE = Build after other projects are built
+		POST = Post-build Actions >> Build Other Projects
+	USING SCRIPT ALSO == Build Triggers >> Trigger builds remotely (e.g., from scripts)
+	http://www.scmgalaxy.com/tutorials/ways-to-login-jenkins-using-command-line
+	http://www.scmgalaxy.com/tutorials/how-to-trigger-builds-remotely-in-jenkins/
+	1. Jenkins should be authenticated
+	2. Jenkins URL should be created
+4	http://13.232.243.95:8080/job/Script/build?token=iFBDOBhNhaxL4T9ass93HRXun2JF161Z
+	
+	3. Trigger a job
+	> curl --user rajesh:11854545dd49451f469f5b9ea5d2b3883b http://13.232.243.95:8080/job/Script/build?token=iFBDOBhNhaxL4T9ass93HRXun2JF161Z
+
+curl --user rajesh:11854545dd49451f469f5b9ea5d2b3883b http://13.232.243.95:8080/job/Script/build
+
+
+
+
+
+	USING SCM Hooks
+	GITHUB -http://www.scmgalaxy.com/tutorials/how-to-build-when-a-change-is-pushed-to-github-in-jenkins
+	BITBUCKET - http://www.scmgalaxy.com/tutorials/build-when-a-change-is-pushed-to-bitbucket/
+	
+	
+==============================================================================
+How to get feedback?
+	Email using SMTP
+		1. E-mail Notification using SMTP
+		2. Extended Email Notification
+	Chat 
+		Slack
+		Jabbar
+		WhatsApp
+		Skype
+	SMS / FAX / Pager
+	
+	Dashboard / PIPELINE
+
+FROM - info@scmgalaxy.com
+=========================================
+
+SCALIBILITY AND AVailability
+=====================================
+Executors
+How to add Linux Node?
+How to setup Load Blancing
+
+Discard old builds
+
+===================================
+PLAN --> Code -> Review --> Build -> UT --> Dep2Repo --> Dep2QA - CodeCoverage
+
+JIRA -> Git -> SonarQube -> Maven --> JUnIT -> ARTIFACTORY -> Ansible - Jacoco
+===========================
+How to install Jira?
+
+	> cd /opt/
+	> yum install wget -y
+  	> ls
+	> wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+	> rpm -ivh jdk-8u131-linux-x64.rpm
+
+$ wget https://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-software-7.8.1-x64.bin
+$ chmod 755 atlassian-jira-software-7.8.1-x64.bin
+$ ./atlassian-jira-software-7.8.1-x64.bin
+JIRA GOT INSTALLED AT 
+/opt/atlassian/jira
+
+http://13.233.5.137:8080/
+rajesh/rajesh123
+
+
+13.233.5.137
+
+List of SCA
+https://en.wikipedia.org/wiki/List_of_tools_for_static_code_analysis#Java
+
+SonarQube
+
+Server
+Scanner 
+Source Code 
+
+
+How to install SonarQube Server?
+==================================
+$ yum install wget
+
+> wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+
+> rpm -ivh jdk-8u131-linux-x64.rpm
+
+> wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-7.4.zip
+$ sudo yum install unzip -y
+> unzip sonarqube-7.4.zip
+
+http://ec2-13-233-5-137.ap-south-1.compute.amazonaws.com:8084/
+admin
+admin
+
+https://github.com/scmgalaxy/java-sonar-runner-simple/
+
+
+ARTFACTORY OSS 6.X
+https://www.devopsschool.com/blog/artifactory-install-and-configurations-guide/
+http://13.233.5.137:8080/artifactory/
+admin
+password
+
+How to deploy a Artifact to Artifactory using Maven?
+1. user/password - admin / password
+2. Create a Repo in Artifactory
+http://13.233.5.137:8080/artifactory/rajesh
+3. Modify pom.xml with repo location
+<distributionManagement>
+    <repository>
+        <id>sym</id>
+        <name>ip-172-31-17-110.ap-south-1.compute.internal-releases</name>
+        <url>http://13.233.5.137:8080/artifactory/rajesh</url>
+    </repository>
+    <snapshotRepository>
+        <id>sym</id>
+        <name>ip-172-31-17-110.ap-south-1.compute.internal-snapshots</name>
+        <url>http://13.233.5.137:8080/artifactory/rajesh</url>
+    </snapshotRepository>
+</distributionManagement>
+
+
+4. Modify setting.xml with user/password TO SERVER element
+    <server>
+      <id>sym</id>
+      <username>admin</username>
+      <password>password</password>
+    </server>
+
+5. mvn deploy
+==================================
+Dep2QA
+--------------
+Ansible Control Server - 1	13.233.204.56			DNE
+Ansible Remote Server - 2	13.233.198.79 | 13.233.90.128	DONE
+Playbook							DONE
+iventory							DONE
+
+$ ansible-playbook -i inventory site.yaml --key-file=node.pem -u ec2-user -b
+
+
+How to install Ansible?
+> yum install wget -y
+> wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+> sudo rpm -i epel-release-latest-7.noarch.rpm
+> sudo yum update -y 
+> sudo yum install ansible -y
+
+
+
+PIPELINE
+==========================
+	EASY - LESS FUNC - Build Pipeline - need to install
+	DIFF - HELL LOT FUNC - Pipeline - Default 
+===========================================================
+https://jenkins.io/doc/book/pipeline-as-code/
+
+	jenkinsfile
+		Code download
+		BUilD
+		UT
+		Package
+		Deploy		
+
+	
+
+node {
+   def mvnHome
+   stage('Preparation') { // for display purposes
+      // Get some code from a GitHub repository
+      git 'https://github.com/scmgalaxy/helloworld-java-maven'
+      // Get the Maven tool.
+      // ** NOTE: This 'M3' Maven tool must be configured
+      // **       in the global configuration.           
+      mvnHome = tool 'maven'
+   }
+   stage('Build') {
+      // Run the maven build
+      if (isUnix()) {
+         sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean compile"
+      } else {
+         bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean compile/)
+      }
+   }
+   stage('UT') {
+      // Run the maven build
+      if (isUnix()) {
+         sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean test"
+      } else {
+         bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean test/)
+      }
+   }
+   stage('Package') {
+      // Run the maven build
+      if (isUnix()) {
+         sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
+      } else {
+         bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean package/)
+      }
+   }
+   stage('Results') {
+      junit '**/target/surefire-reports/TEST-*.xml'
+      archive 'target/*.jar'
+   }
+}
+
+============================================================================
+============================================================================
+TERRFAFOM
+
+What is terraform
+	Tool to automate whole infra
+	Code for infra
+	Hashicorp
+		Vagrant
+		Packer
+		Terraform
+	Written in go
+
+What is a Providers?
+	is a lib which has written functionality for each tool.
+	- Terraform Supported
+	- Community Supported
+	
+
+Provider
+	Resources
+		Attributes / Properties
+
+AWS
+	Ec2
+		TYPE | AMI
+=============================================
+How to install Terraform?
+
+   5  yum install wget -y
+    6  wget https://releases.hashicorp.com/terraform/0.11.10/terraform_0.11.10_linux_amd64.zip
+    7  clear
+    8  ls
+    9  yum install unzip -y
+   10  ls
+   11  unzip terraform_0.11.10_linux_amd64.zip
+   12  clear
+   13  ls
+   14  echo $PATH
+   15  mv terraform /usr/bin
+   16  chmod 755 /usr/bin/terraform
+   17  clear
+   18  terraform
+   19  clear
+   20  history
+
+
+
+PLANNNNG
+- CODE FOR THE INFRA
+
+How to code in Terraform?
+.tf which contains terraform config lang
+
+How to exectute....
+$ terraform <<option>> which will work on all .tf
+$  terraform help
+https://www.devopsschool.com/tutorial/terraform/lab/example-program1.html
+
+
+
+
+HOW TERRAFORM HAVE A KNOWLEDGE OF WHAT HE HAS CREATED?
+						WHAT SHOULD BE UPDATED
+							WHAT SHOULD BE DELETED?
+
+STATEFILE
+
+How to have a single terraform state file for entire team?
+
+terraform {
+  backend "s3" {
+    bucket = "mybucket"
+    key    = "path/to/my/key"
+    region = "us-east-1"
+  }
+}
+https://www.terraform.io/docs/backends/types/s3.html
+
+
+How to declare a variable in terraform?
+
+Step 1- Iniliaze a variable using "var" in any .tf
+Step 2- Declare value to variable inside "terraform.tfvars"
+Step 3 - USE it any where? ${var.VARRIABLE-NAME}"
+		
+What should be action in a RESOURCES after a creations?
+
+======================================================================
+======================================================================
+
+DOCKER
+	DOCKER CE	- FREE
+	DOCKER EE	- PAID - HSOTED - 12-15 - 12 Hours trial.....
+
+======================================================================
+======================================================================
+
+Docker Engine - A Tools which should be installed in the server (Client + Server/Daemon)
+Docker images - Filesystem + APP == Get mounted in Containers.
+Docker Repo - 
+		PUBLIC Repo
+			hub.docker.com
+			store.docker.com
+			github.com
+		PVT Repo
+			Artifactory
+			Nexus
+			Docker registry
+			
+		
+	
+Docker Containers
+		- Container is nothign a running state of the images
+		- One image - UNLIMTED Containesrs
+
+How to install docker?
+https://www.devopsschool.com/tutorial/docker/install-config/
+
+Container will get separate user space & 
+				Powered
+					ONE NETWORK
+					ONE MOUNT
+					ONE PMAP
+
+  122  ifconfig
+  123  clear
+  124  ls
+  125  clear
+  126  clear
+  127  docker run -d jenkins
+  128  clear
+  129  docker images
+  130  docker ps
+  131  docker run -d jenkins
+  132  docker run -d jenkins
+  133  docker ps
+  134  cler
+  135  ls
+  136  clear
+  137  ls
+  138  ls
+  139  docker ps
+  140  df -kh
+  141  clear
+  142  ls
+  143  docker ps
+  144  docker exec 830f993e0dc5 df -kh
+  145  docker exec 15f6ccbaf014 df -kh
+  146  docker exec 4d0cad0d1110 df -kh
+  147  clear
+  148  ls
+  149  docker ps
+  150  docker inspect 830f993e0dc5 ] grep -i ip
+  151  docker inspect 830f993e0dc5 | grep -i ip
+  152  docker inspect 15f6ccbaf014 | grep -i ip
+  153  clear
+  154  s
+  155  clea
+  156  clear
+  157  ps -eaf
+  158  ps -eaf | grep docker
+  159  clear
+  160  ps -eaf | grep docker
+  161  docker run -d jenkins
+  162  ps -eaf | grep docker
+  163  docker ps
+  164  clear
+  165  clear
+  166  docker ps
+  167  docker exec ce83af85cc4f ps -eaf
+  168  docker exec 830f993e0dc5 ps -eaf
+  169  docker exec 15f6ccbaf014 ps -eaf
+  170  ps -eaf
+  171  ps -eaf
+  172  clear
+  173  ls
+  174  history
+
+============================================================
+
+Container Lifecycle
+https://www.devopsschool.com/blog/lifecycle-of-docker-containers/
+
+ 216  clear
+  217  docker ps -a
+  218  docker inspect 08ac9134c9e6 | grep -i ip
+  219  http://172.17.0.2:8080
+  220  curl http://172.17.0.2:8080
+  221  docker ps -a
+  222  docker stop 08ac9134c9e6
+  223  docker rm 08ac9134c9e6
+  224  docker ps -a
+  225  docker run -d -p 8080:8080 -p 50000:50000 jenkins
+  226  docker run -d -p 8081:8080 -p 50001:50000 jenkins
+  227  docker ps -a
+  228  curl http://13.233.154.199:8081/
+  229  history
+  230  history
+
+
+REEPO -- 
+Local Repo
+Remote Repo
+==================================
+CONTAINERS ARE RUNNING ONLY IF PID 1 is ACTIVE
+
+How can you get inside a containes?
+	EXEC 	 ALWAYS CREATE NEW TERMAIL AND EXECUTE A EXECUTABLES SPECIFIED
+	ATTACH	 ALWAYS ATTACH TO EXEC WHICH IS WITH PID 1
+
+UB
+docker run -d ubuntu
+docker run -itd ubuntu
+
+JENKINS 
+
+===================================
+Docker VOlume 
+https://www.devopsschool.com/blog/understand-docker-volume-from-beginner-to-deep-dive-level/
+
+Docker Netwokrng
+=====================
+https://www.devopsschool.com/notes/docker/commands-collections/docker-networking.txt
+
+
+How to create docker images?
+	Manual Mthood
+		Using Docker Container
+	Automation Method
+		Using Dockerfile
+
+REQUIREMENT
+	Base UBUnTU
+	Updates ub
+	Install git
+	install httpd
+
+FROM ubuntu
+MAINTAINER Rajesh Kumar DevOps@RajeshKumar.xyz
+RUN apt-get update && apt-get install git && apt-get install apache2
+
+
+  225  docker run -d -p 8080:8080 -p 50000:50000 jenkins
+  226  docker run -d -p 8081:8080 -p 50001:50000 jenkins
+  227  docker ps -a
+  228  curl http://13.233.154.199:8081/
+  229  history
+  230  history
+  231  clear
+  232  ls
+  233  clear
+  234  docker images
+  235  cd /var/lib/docker/
+  236  ls
+  237  docker info
+  238  clear
+  239  ls
+  240  cd overlay
+  241  ls
+  242  cler
+  243  cd ..
+  244  ls
+  245  clear
+  246  ls
+  247  clear
+  248  ls
+  249  cd
+  250  ls
+  251  docker run ubuntu
+  252  docker ps
+  253  docker run -d ubuntu
+  254  docker ps
+  255  cler
+  256  clear
+  257  ps -eaf
+  258  clear
+  259  history
+  260  docker ps -a
+  261  docker exec fd3ce1cf722e ps -eaf
+  262  docker exec fd3ce1cf722e kill -9 1
+  263  docker ps
+  264  docker attach fd3ce1cf722e
+  265  docker ps
+  266  docker run -itd ubuntu
+  267  docker p s
+  268  docker ps
+  269  docker exec fd3ce1cf722e kill -9 1
+  270  clear
+  271  docker ps -a
+  272  docker stop f4ba1c87f6bf 2304038c314c c0596d6a160d fd3ce1cf722e
+  273  docker stop 66ad5011534d
+  274  docker rm f4ba1c87f6bf 2304038c314c c0596d6a160d fd3ce1cf722e
+  275  cler
+  276  docker ps -
+  277  clear
+  278  docker ps -a
+  279  docker rm 66ad5011534d
+  280  clear
+  281  docker ps -a
+  282  docker run -itd ubuntu
+  283  docker ps
+  284  docker run -d jenkins
+  285  docker ps -a
+  286  docker top f0b9e7676851
+  287  docker exec f0b9e7676851 /bin/bash
+  288  docker ps -a
+  289  clear
+  290  docker exec -it f0b9e7676851 /bin/bash
+  291  docker top f0b9e7676851
+  292  docker exec -it f0b9e7676851 /bin/bash
+  293  docker top f0b9e7676851
+  294  docker exec -it f0b9e7676851 /bin/bash
+  295  docker top f0b9e7676851
+  296  clear
+  297  docker ps
+  298  docker attach caf0bec8d9b7
+  299  docker ps
+  300  docker ps -a
+  301  clear
+  302  docker ps -a
+  303  docker stop f0b9e7676851 caf0bec8d9b7
+  304  docker rm f0b9e7676851 caf0bec8d9b7
+  305  clear
+  306  docker ps -a
+  307  docker images
+  308  docker run -itd ubuntu
+  309  docker ps
+  310  docker attach 6dc587c37085
+  311  docker s
+  312  docker ps
+  313  docker commit -m"ub-up-git-ap" 6dc587c37085 ub-up-git-ap
+  314  docker images
+  315  docker ps -a
+  316  docker stop 6dc587c37085
+  317  docker rm 6dc587c37085
+  318  clear
+  319  docker images
+  320  docker run -itd ubuntu
+  321  docker ps
+  322  docker run -itd ub-up-git-ap
+  323  docker ps
+  324  docker exec fbfecbba6dc7 git
+  325  docker ps
+  326  docker exec dd4636f0a80e git
+  327  clear
+  328  clear
+  329  vi Dockerfile
+  330  docker build -t ub-doc .
+  331  vi Dockerfile
+  332  docker build -t ub-doc .
+  333  docker ps -a
+  334  docker images
+  335  history
+
+================================================
+Jenkins Secruity 		DONE
+Jenkins Backup & Restore	DONE
+jenkins Command Line	
+Jenkins Scripting
+================================================
+
+JENKINS SEURITY
+	AUTHENTICATION
+		USING LAGACY METHOD
+		JENKINS OWN USER DATABASE
+		LINUX USERS/GROUP
+		LDAP
+
+	AUTHRIZATION
+		Matrix-based security 
+		 Project-based Matrix Authorization Strategy
+
+
+Jenkins Backup & Restore
+=======================================
+EVERYTHING
+	is getting stored in XML
+https://www.devopsschool.com/blog/jenkins-backup-and-restore-process/
+
+
+Jenkins Command Line
+============================================
+		
+		JENKINS API - 	https://jenkinsapi.readthedocs.io/en/latest/
+				https://wiki.jenkins.io/display/JENKINS/Remote+access+API
+				XML 	
+				JSON
+				PYTHON
+				Jenkins Command Line
+
+java -jar jenkins-cli.jar -s http://13.233.154.199:8080/ who-am-i –-username rajesh --password rajesh123
+java -jar jenkins-cli.jar -s http://13.233.154.199:8080/ help –-username rajesh --password rajesh123
+java -jar jenkins-cli.jar -s http://13.233.154.199:8080/ list-jobs –-username rajesh --password rajesh123
+java -jar jenkins-cli.jar -s http://13.233.154.199:8080/ -auth rajesh:rajesh123 list-jobs
+java -jar jenkins-cli.jar -s http://13.233.154.199:8080/ -auth rajesh:rajesh123 delete-job rajesh1
+
+http://13.233.154.199:8080/cli/
+
+=====================================================		
+Jenkins Scripting
+=====================================================
+	USING 
+			GROOVY		
+			DSL LANG OF JAVA
+					Gralde Build tool
+
+			CHEF
+			DSL LANG oF RUBY
+		
+			PUPPET
+			DSL LANG oF RUBY
+
+			ANSIBLE 
+			DSL LANG OF PYTHNNs
+
+			
+			PLUGINS WAY - 
+			MANUAL WAY
+
+https://github.com/scmgalaxy/jenkins-groovy-script-example/
+https://www.devopsschool.com/tutorial/jenkins/jenkins-plugins.html
+======================================================================
+
+https://kubernetes.io/docs/setup/pick-right-solution/
+KUBERNETES CLUSTORS
+================
+
+MASTER - 1	- --13.233.111.182
+NODES - 1 -- -52.66.253.171
+
+KUBEADM
+
+=======================================================
+How to reach out to me?
+http://rajeshkumar.xyz/
+
+Powered by DevOps
+http://www.devopscertification.co/
+
+
+Subject - Jenkins Certified Engineer - SYMANTEC
+
+BODY - 
+FULL NAME
+Personal Email ID
+Official Email ID
+Mobile #
+Role
+
+TO Mantosh@DevOpsSchool.com | CC to vikas@DevopsSchool.com
+
+
+
+
+
+
+
+
+

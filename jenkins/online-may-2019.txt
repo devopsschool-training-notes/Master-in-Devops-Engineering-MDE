@@ -1,0 +1,92 @@
+Jenkins Essentials Training - 
+Agenda
+
+
+What is Continuous Integration
+CI is software methodogy and automation build, run tests and deploy code 
+  - Trusted builds
+  - More visitibility
+  - Dont wait for issues 
+  - Feedback loop
+What is Jenkins:
+Jenkisn Java based application which enables Continuous Integattion 
+Build automation tool
+Schedular 
+CI server 
+
+Alternatives Jenkins
+TeamCity, Bambo, Drone, Buil Bot, Travis 
+
+Jenkins features/History
+ - Open Source 
+ - Large community support 
+ - Easy to setup
+ - GUI
+ - 1400 plugin 
+ - exentisble 
+ - Distributed
+ 
+ 2004 this Hudson, oracle 
+ the guys Koshuke 2011 he forked hudson and made it opensource 
+ 2.164 stables release and weekly/nightly 
+ - con
+ Jenkins opensource vs Jenkins Enterprise (CloudBees)
+ 
+Jenkins installations
+-------------------
+To JDK 
+Tomcat/Jboss/any other application 
+
+install jenkins rpm (jetty) 
+
+sudo yum install java-1.8.0-openjdk-devel
+
+curl --silent --location http://pkg.jenkins-ci.org/redhat-stable/jenkins.repo | sudo tee /etc/yum.repos.d/jenkins.repo
+sudo rpm --import https://jenkins-ci.org/redhat/jenkins-ci.org.key
+
+yum install jenkins
+
+Jenkins Plugins
+
+By defaul does come up featus 
+
+tool ->broker->integration 
+you need install plugin 
+you isntall server /configure it 
+use it 
+
+CI pipeline 
+Java/Ruby/Python/.Net/C#
+Checkout source code -> Git/SVN/Perforce/TFS/VSTS -> plugins 
+Builder/builds tools -> Maven/Ant/NANT/MSBUILD/Gradle/python/ruby
+Deployment -> shell(defualt)/Ansible/puppet/chef..etc 
+TEst case -> Junit/sonarQube
+Notifcation -> email/slack/skype
+
+Jenkins Jobs
+ 10 Developers -> demo-app(Java) -> my Github  -> Maven (POM.xml)Compile -> Junit (test)-> run static code analysis(sonar cube) -> Jar/War -> Nexus -> deploy to dev -> Deploy integration env -> deploy ACpt (continues ) 
+	- Build Pipeline Jobs with Java Maven example
+	- Cron
+	- Poll SCM
+	
+Deployment - >
+
+Shell script to get package from nexus/artifcatory - dev/qa/acpt/prod
+Ansible application 
+PUppet 
+Chef  
+	
+SonarQube integration with Jenkisn
+duplicate/bug fix/ report vulnerability/test results 
+
+Jenkisn admininstration
+How configuring tools 
+Manage users
+Backup Jenkins 
+Thin Backup
+Period Backup 
+Migration /var/lib/jenkins (Jenkins HOme & restart the service )
+Master + Slave 
+
+Additional Jenkisn admininstration or information 
+

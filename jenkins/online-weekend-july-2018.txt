@@ -1,0 +1,113 @@
+What is Jenkins
+------------------------
+	Continous integ tool
+	Free
+	Open Source
+	Dev In Java
+	Earier Hudson
+	Plugins 
+
+Version
+	Community Driven
+	Enterprise by CloudBeess - Paid
+
+
+What is CI?
+Auto build  + Auto Testing + Imm Feedback
+
+Planning -> Coding -> Analysis -> Building -> Packaging -> Store2Repo -> Dep2Qa -> AT -> CC -> RELEASE
+JIRA	     GIT      SOnarque     Maven       jar        nexus        puppet    Selenium - Jacoco
+==============================================================================================
+					AUTO + IM FEEDBACK
+---------------------------------------------------------------------------------------------------
+					JENKINS
+
+
+How to install it?
+	JRE OR JDK
+
+$ sudo -s
+$ cd
+$ yum install wget -y
+$  wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+$ rpm -ivh jdk-8u131-linux-x64.rpm
+$ java -version
+
+Jenkins Downoad & Install
+https://pkg.jenkins.io/redhat-stable/
+
+$ sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+$ sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+$ yum install jenkins
+
+$ systemctl start jenkins
+$ ps -eaf | grep jenkins
+
+=============================================================
+Secret Formula of jenkins
+1. Where is my source Code?
+	GIT - SVN - CC - p4
+2. What is technology?
+	JAVA - C++  DOTNET RUBY NODE PYTHONG SHELL PS PUPPET
+3. What is Builder for the source code?
+	maven|ant|   makefile msbuild rake shell shell ps puppet-apply
+
+https://github.com/scmgalaxy/helloworld-java-maven
+JDK
+maven
+	3.3
+	3.8
+===================================
+PHASES iN JENKINS JOB
+	CHECKOUT THE SOURCE CODE
+	ENV
+	SCHEDULE
+	BUILD
+	POST BUILD
+
+Schedule the jenkins job?
+1. Fixed time					Build periodically
+2. Fixed time but if there is new changes	Poll SCM	
+3. Github/bitbucket can trigger based on push	GitHub hook trigger for GITScm polling
+	http://www.scmgalaxy.com/tutorials/build-when-a-change-is-pushed-to-bitbucket/
+	http://www.scmgalaxy.com/tutorials/how-to-build-when-a-change-is-pushed-to-github-in-jenkins/
+4. Other job can trigger this			Build after other projects are built
+5. Trigger from Remote CMD| SCript				
+	http://www.scmgalaxy.com/tutorials/how-to-trigger-builds-remotely-in-jenkins
+
+
+Feedback
+	Jenkins Dashabord
+	Emails			SMTP
+	Advance Email		SMTP
+	Chat
+		Slack
+		Zabbar
+	SMS
+	WhatsApp
+	
+	PIPELINE DASHBOARD
+		Build Pipeline	- EASY - NOT INSTALLED 
+		Pipeline - LIL PROGRAMMING - INSTALLED
+		
+		
+
+BUILD -> UT -> PACK - Dep2Repo -> Dep2QA
+
+
+
+DEP2Repo
+	How to trigger a command in Remote Machine(Puppet Master)
+
+NODE
+	IP Add		13.232.201.91
+	USR		ec2-user
+	PAS		KEY
+	WORKSAPCE	/tmp/jenkins	
+
+
+
+
+
+
+

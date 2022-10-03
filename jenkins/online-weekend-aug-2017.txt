@@ -1,0 +1,72 @@
+JENKINS
+==============================
+What is Jenkins?
+	CI tools - Continous Integration
+	DUMP TOOL, Empowered by PLugins
+
+What is CI? 
+	PROCESS with some practices
+
+Auto Build --> A UT --> A CODE ANA --> A Packing --> A Dep2Repo --> Dep2 QA 
+===============================================================================
+			IMM FEEDBACK
+
+WHY?
+	SAVING TIME FOR SOFTWARE LIFECYCLE
+
+
+
+Auto Build --> A UT --> A CODE ANA --> A Packing --> A Dep2Repo --> Dep2 QA 
+GIT+MAVEN  --> JUNIT--> SONARQUBE  --> JAR	 --> NEXUS      --> CHEF
+===============================================================================
+			IMM FEEDBACK
+			JENKINS
+
+
+How to install jenkins?
+
+BEFORE SETTING UP ANY JOB
+1. WHERE IS YOUR SRC CODE?
+2. WHERE IS YOUR BUILDER/INTREP/EXECTORS
+3. WHAT IS YOUR COMPILERS
+
+Auto Build?
+=================================
+JOB 1
+Build a JAVA BASED PROJECT using MAVEN
+SRC - https://github.com/scmgalaxy/helloworld-java-maven
+BUILDER - Maven
+COMILE - JAVA
+
+JOB 2
+Build a JAVA BASED PROJECT using ANT
+SRC - https://github.com/scmgalaxy/helloworld-java-ant
+BUILDER - ANT - https://github.com/scmgalaxy/helloworld-java-ant
+COMILE - JAVA
+
+JOB 3
+Build a DOTNET BASED PROJECT using MSBUILD
+SRC - https://github.com/scmgalaxy/msbuild-helloworld
+BUILDER - MSBUILD
+COMILER - DOT NET
+
+JOB 4
+Build a DOTNET BASED PROJECT using BATCH
+SRC - https://github.com/scmgalaxy/teamcity-batch-helloworld
+BUILDER - BATCH
+COMILER - DOT NET
+
+BUILD --> UT -> PACKAGE -> DEPLOYE
+
+NODE SPEC
+=========
+DIR
+IP
+USER
+PASS
+
+
+
+
+
+

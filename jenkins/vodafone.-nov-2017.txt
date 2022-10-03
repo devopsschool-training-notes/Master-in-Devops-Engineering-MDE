@@ -1,0 +1,205 @@
+http://www.devopsschool.com/video/devops/Complete-CICD-Implementation-from-Scratch.html
+
+What is Jenkins?
+	CI tools.
+	Dev in Java
+	open source
+	free
+	driven by community
+	extend the func using plugins 1000+
+	
+
+
+
+What is CI?
+Continous Build + Cont Testing + Imm Feedback
+=======================================================
+A Plan --> Coding --> A SCA --> A Build --> A UT --> A PACK --> A A --> A Dep -> A A AT --> A CC --> PASS | FAIL
+
+JIRA	   GIT		SONARQUBE  MAVEN --> JNUIT --- JAR --- NExus --> PUPPET ---> Sel --> Jacoco --- Emil | sms | rss | chat
+====================================================================================================================================
+JENKINS
+
+continuous integration
+continuous delivery
+continuous deployment
+
+How to install it?
+	PRE - JDK - 1.8
+	yum install java-1.8.0-openjdk-devel
+
+wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/8u151-b12/e758a0de34e24606bca991d704f6dcbf/jdk-8u151-linux-x64.tar.gz"
+
+export JAVA_HOME=/opt/java
+export PATH=/opt/java/bin:$PATH
+ 
+	
+	Jenkins 2.0
+	https://pkg.jenkins.io/redhat/
+
+How to browse it?
+http://13.126.42.195:8080/
+
+=============================================================================
+CHECKOUT  ---> BUILD
+git plugins -- maven plugins
+
+A-BUILD
+https://github.com/scmgalaxy/helloworld-java-maven
+
+
+https://github.com/scmgalaxy/helloworld-java-ant
+target name - compile
+
+Jenkins Integration with SonarQube
+==================================================
+JENKINS
+http://13.127.35.74:8080/
+
+SonarQube
+http://35.154.246.185:9000/
+
+Pre-----SonarQube Serverr
+		Scanner
+		Source Code
+		
+How to install jenkins
+=============================
+yum install java-1.8.0-openjdk-devel
+https://pkg.jenkins.io/redhat/
+
+
+
+Jenkins Integration with Jira
+==================================================		
+35.154.246.185:8080
+
+LAB=====================================
+Create a Job Which can 
+	1. compile
+	2. test
+	3. sca 
+	&&&& if build is failed, create a ticket
+
+JIRA - rajesh / rajesh123
+http://35.154.246.185:8080
+
+http://35.154.246.185:9000
+SonarQube - 6bbfd64041590c58112597649bd0afeaad1d0bb5
+
+SAMPLE SRC Code
+https://github.com/scmgalaxy/helloworld-java-maven
+Scanner
+https://github.com/scmgalaxy/java-sonar-runner-simple
+
+1 13.127.14.241
+2 13.127.6.213
+3 13.126.252.144
+4 13.126.45.236
+5 13.127.27.157
+6 13.126.190.92
+7 13.126.251.48
+8 13.127.44.9
+9 13.127.22.240
+10 52.66.161.10
+11 13.127.3.57
+12 35.154.211.201
+13 13.126.200.171
+14 35.154.203.86
+15 13.126.25.117
+16 13.126.91.131
+17 13.126.113.65
+18 13.126.37.7
+19 13.126.253.125
+21 35.154.20.13
+
+===========================================================================
+USER CHOISE
+=============================================================================
+TASK		DONE
+	1. Install a Docker - http://www.devopsschool.com/tutorial/docker/docker-install-and-configuration.html
+	2. Create a Jenkins server Insance using Docker	
+	http://www.scmgalaxy.com/tutorials/install-jenkins-using-docker/
+	
+
+Task 2		DONE
+	server - node
+	13.127.48.19
+	user name - ec2-user	
+	Pass - key
+	working dir ----
+	
+Task 3
+	Using jenkins build and deploy using docker
+		Using Docker - 
+					JOB 1
+						docker build
+						docker push
+					JOB 2
+						docker pull 
+						for loop 30
+							docker run imagename
+						end
+						
+						docker compose
+						docker machine
+						kubct
+http://www.devopsschool.com/tutorial/docker/
+
+
+Task 4
+	Puppet inte with jenkins
+	
+
+Task 7 
+		Nexus
+		http://www.scmgalaxy.com/tutorials/how-to-upload-the-artifacts-in-sonatype-nexus/
+		
+Task 5 
+	jenkins Pipeline
+	
+Task 6
+	Hiera
+	MCollective
+		r10k
+		
+
+		
+Task 8
+		AWS intr
+		
+Task 9 
+		pipeline
+			
+		war jar
+			
+			
+SCA --> BUILD --> TEST --> PACK --> DEP2Repo --> c --> RELEASE
+
+
+Mine
+https://goo.gl/crL8Vn
+
+RPS - Vodafone
+https://goo.gl/ep954p
+
+For Training Material
+https://goo.gl/5Dp5GF
+
+Do you know about me?
+www.RajeshKumar.xyz
+
+Do you want my CV?
+www.RajeshKumar.xyz/cv
+
+Social Handles
+FB - RajeshKumarLog
+TW - RajeshKumarIN
+Linkedin - RajeshKumarIN
+Email - DevOps@RajshKumar.xyz
+
+Phone# - +91 8105843520
+
+
+
+

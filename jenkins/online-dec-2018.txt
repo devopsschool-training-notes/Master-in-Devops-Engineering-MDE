@@ -1,0 +1,95 @@
+What is jenkins?
+	CI tool
+	Free 
+	powered with plugins
+	Developed in Java
+	Version
+		Free - Community
+		Jenkins Enterprise from Cloudbees
+
+What is CI?
+	Continous Integ
+Auto Build + Auto test + Imm Feedback.
+
+
+Why jenkins?
+	We have So many Tools
+	------------------------
+Plan->Code->Review->Build->UT->Package->Dep2Nexus->Dep2QA->AT->CC
+
+Jira->Git->SonarQube->Maven->Junit->Jar->Nexus->Ansible->Selenium->Jacoco
+--------------------------------------------------------------------------
+				JENKINS
+					SCHEDULEED
+					FEEDBACK
+						WEB UI
+						DASHBOARD
+						EMAIL
+						CHAT
+
+DO you want to integrate any tools
+	1. Install Plugins http://13.126.234.42:8080/pluginManager/
+	2. Configure Plugins http://13.126.234.42:8080/configure
+	3. Use it Jenkins Job
+
+Other tools - teamcity, Bamboo, TravisCI
+
+
+How to install Jenkins?
+13.126.234.42
+
+
+=============================================
+Secret Forumla of jenkins
+==============================================
+Where is your source
+https://github.com/scmgalaxy/helloworld-java-maven
+
+What is technology and compiler?
+JAVA - JDK
+
+What is Builder
+maven
+
+
+
+How to SCHEDULEED a job?
+
+At certain time				= Build periodically
+At certain but only if SCM changes	= Poll SCM
+Build this job if another Job was build = Build after other projects are built
+Based on the githhub push
+		https://www.devopsschool.com/blog/build-when-a-change-is-pushed-to-bitbucket/
+		https://www.devopsschool.com/blog/how-to-build-when-a-change-is-pushed-to-github-in-jenkins/
+	Script
+	https://www.devopsschool.com/blog/how-to-trigger-builds-remotely-in-jenkins/
+
+How to get feedback?
+	EMAIL --> SMTPP
+		1
+		2
+	CHAT
+		WHATSAPP
+		SLACK
+		JABBAR
+	DASHBOARD
+		BUILD PIPELINE - EASY but not Flexible
+		PIPELINE - Scripting - Extremly Flex
+			jenkinsfile using groovy
+			https://jenkins.io/doc/book/pipeline/
+	FAX
+	SMS
+
+	
+
+
+
+
+
+
+
+
+
+
+
+

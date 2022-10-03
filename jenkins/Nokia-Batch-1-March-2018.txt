@@ -1,0 +1,199 @@
+What is Jenkins?
+	CI tools
+	free
+	Open Source
+	Dumb Tool - 
+	But when you integrate with plugins -- Its evrything
+	Devloped Using Java
+	Web Based tool
+	One of the most popular App by the software dev
+	
+
+Why Jenkins?
+RELEASE
+====================================================================================================
+Planning -> Code -> Code Review - > Build -> Pack  -->Dep2Repo	   ->Dep2Qa  -> AT	   - CC	
+Jira    ->  GIT ->  SonarQube   - > Ant  -> JAR|EXE -> Artifactory -> Puppet  -> Sel|JUNIT - Jacoco
+
+
+Other tools -
+Teamcity From jetbrains
+Bamboo from Atlassian
+Ubuild UDep from IBM
+In Built capt with TFS
+
+Enterprise Jenkins - CloudBees
+
+
+How to install it?
+
+Jenkins Installation
+---------------------
+> wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+> rpm -ivh jdk-8u131-linux-x64.rpm
+> sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+> sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+> yum install jenkins
+> systemctl status jenkin
+> systemctl start jenkins
+> systemctl stop jenkins
+
+DOC - https://jenkins.io/download/
+
+My - 35.154.65.18
+
+
+TEAM
+1 13.126.167.31
+2 13.127.47.199
+3 13.127.107.224
+4 13.127.148.103
+5 35.154.187.64
+6 13.127.180.84
+7 13.127.226.55
+8 13.126.108.194
+9 13.127.232.104
+10 35.154.70.13
+11 13.127.219.41
+12 13.127.180.208
+13 13.127.232.210
+14 13.126.152.51
+15 13.127.232.169
+16 13.126.30.78
+17 13.126.233.164
+===============================================
+
+Algorithm == Rule 
+
+Where is your source?
+		git - svn - p4 - cc - cvs 
+What is your technlogy?
+		java - c++ DN perl py ruby grov
+What is your compiler/interpreter
+
+What is your builder?
+	JAVA  ---> Ant, Maven, Gradle
+	DN - NANT, MSBUILD
+	C++ - makefile
+	perl - batch | shell
+	class  | qtp | 
+
+Where is your source? -git
+	https://github.com/scmgalaxy/helloworld-java-ant
+What is your technlogy?  - java
+What is your compiler/interpreter - jdk
+What is your builder? - ant
+	MANUALLY
+	JAVA SET
+	ANT SET
+	git 
+	> git clone url	DONE
+	> cd
+	> ant
+
+	
+
+Where is your source? -git
+	https://github.com/scmgalaxy/helloworld-java-maven
+What is your technlogy?  - java
+What is your compiler/interpreter - jdk
+What is your builder? - maven
+
+Where is your source? -git
+	https://github.com/scmgalaxy/helloworld-cpp-ant
+What is your technlogy?  - c++
+What is your compiler/interpreter - gcc
+What is your builder? - makefile
+
+Where is your source? -git
+What is your technlogy?  - python
+What is your compiler/interpreter - python
+What is your builder? - shell script
+
+
+This project is parameterised		DONE
+Throttle builds
+Execute concurrent builds if necessary	DONE
+Build after other projects are built	DONE
+Jobs Inter-dependency			DONE
+Post Builld Junit Test reports		DONE
+Archive the artifact
+
+Trigger builds remotely (e.g., from scripts)
+http://www.scmgalaxy.com/tutorials/how-to-trigger-builds-remotely-in-jenkins
+
+
+
+
+Jenkins Job 
+3 Way to Scheduling
+==============================================
+		1. On Each Commit  => GitHub hook trigger for GITScm polling + Trigger builds remotely (e.g., from scripts)
+http://www.scmgalaxy.com/tutorials/how-to-build-when-a-change-is-pushed-to-github-in-jenkins
+http://www.scmgalaxy.com/tutorials/how-to-trigger-builds-remotely-in-jenkins
+http://www.scmgalaxy.com/tutorials/build-when-a-change-is-pushed-to-bitbucket
+		
+		2. Fixed the time => Build periodically
+		3. Fixed time only build when new commit => Poll SCM
+	
+Notification in Jenkins
+=============================================
+	Email - SMTP -->
+	Chat - Jabbar | Slack | Hipchat | Watsapp | 
+	FAX - 
+	Dashboard ----
+
+
+Security in Jenkins ===
+Security Realm
+	Jenkins Own UP
+	LDAP
+
+
+How to use Jenkins using API/Command line
+
+JSON
+	api/json
+	api/xml
+
+Command line
+java -jar jenkins-cli.jar -s http://35.154.65.18:8080/ who-am-i –-username admin –password admin123
+java -jar jenkins-cli.jar -s http://35.154.65.18:8080/ delete-job fff --username admin --password admin123
+java -jar jenkins-cl
+
+
+		Groovy
+	println Jenkins.instance.projects.collect { it.name }
+==============================================================================
+Planing->Code->SCA->Build->Pack>Dep2Rpo->AT-->CC--ReLEASE
+Jira --- git ---sonarqube -maven-jar-artifactory-> junit->jacoco->
+=================================================================
+Jenkins
+http://35.154.65.18:8080
+
+JIRA - 8080
+13.127.169.155:8080
+rajesh|rajesh123
+
+SonarQube
+http://13.127.169.155:9000/
+admin
+admin
+
+Artifactory 
+http://13.127.169.155:8090/artifactory/
+admin password
+
+BUILD-->SCA
+
+
+maven
+===============
+pom.xml	
+setting.xml 	admin 	password
+mvn deploy
+
+
+
+
+

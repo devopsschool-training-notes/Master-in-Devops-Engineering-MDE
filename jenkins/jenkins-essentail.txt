@@ -1,0 +1,33 @@
+What is Jenkins?
+CI tool.
+Dev in Java
+For Auto
+1000+ plugins
+
+What is CI?
+Continous Integration
+
+A SCA --> A Build --> Auto Pack --> A UT --> A Dep2Nexus --> A Dep2Qa --> A Test --> A CC
+--------------------------------------------------------------------------------------------
+IMM FEEDBACK
+Auto Build > Auto Test > Imm feedback == CI
+
+Jenkins
+No in built capa to do all above.
+Empowered with plugins -->ANYTHIng -- 1000+ Plugins
+
+How to install Jenkins?
+------------------------------------
+JDK
+JAva
+
+=====================================
+TECHNOLGY WHERE TO GET COMPILER BUILDER
+JAVA GITHUB JDK ANT / MAVEN / GRADLE
+DOTNET GITHUB DOTNET MSBUILD
+PERL GITHUB PERL PERL
+PY GITHUB PY PY
+BASH GITHUB BASH BASH
+
+JAVA GITHUB JDK ANT
+JAVA GITHUB JDK MAVEN

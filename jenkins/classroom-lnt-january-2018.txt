@@ -1,0 +1,92 @@
+Questions - 
+1. How to merge Jacoco tow data files?
+http://www.jacoco.org/jacoco/trunk/doc/cli.html
+
+
+3. 
+4. How to create a pipeline
+5. 
+
+
+
+
+
+====================================================================
+What is Jenkins?
+	CI tools
+	Dumb Tool
+	Integrating with all the tools
+	Open Frameotk
+	Dev In Java
+	Any technology | Any automation
+	Integration with Eeverything ------> Plugins
+	
+
+What is CI?
+	Auto Build + Auto Test ==> IMMEDIATE FEEDBACK
+
+Code -> Code Analysis -> Compile -> UT -> PACKAGE --> Dep2Repo --> Dep2Qa --> AT --> CodeCoverage --> 
+												PASSS - Release
+												FAil - back p1
+        SonarQube       -JDK+Maven  - JUNIT -- JAR  --- NEXUS ---Puppet -- --> Selenium --> Jacoco
+
+=========================================================================================
+
+How to install jenkins?
+
+
+    5  ls
+    6  yum insta wget
+    7  yum install wget
+    8  clear
+    9  wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+   10  ls
+   11  rpm -ivh jdk-8u131-linux-x64.rpm
+   12  history
+
+
+https://pkg.jenkins.io/redhat-stable/
+>  systemctl start jenkins
+
+
+Group 1	- http://13.126.121.162:8080/		admin/admin123
+	
+Group 2 - http://13.127.65.68:8080/		admin/admin123
+
+Group 3 - http://35.154.194.23:8080/		admin/admin123
+
+
+First Job?
+====================
+Where is your source code?
+https://github.com/scmgalaxy/helloworld-java-maven
+
+Compile - JDK
+
+Builder?
+	maven
+
+Second Job?
+====================
+Where is your source code?
+https://github.com/scmgalaxy/helloworld-java-ant
+
+Compile - JDK
+
+Builder?\\
+	ant1\
+
+========================
+Soanrqube
+
+SonarQube Server - http://13.127.21.73:9000 admin/admin
+SRC - https://github.com/scmgalaxy/java-sonar-runner-simple
+Scanner  - 
+
+Step 1- Setup SonarQube Server in Manage jenkins - >Configure System
+Step 2- Setup SonarQube Scanner in Manage jenkins - >Global Tool Configuration
+Step 3- Create a Job with Scanner builder
+Step 4 - Copy a compile job with UT n Package
+
+===========================================
+kiran - 49e1a2ad81300199d5fc11398428f48b9c40464e

@@ -1,0 +1,132 @@
+What is Jenkins?
+==============================
+	CI tool
+	Written in JAVA
+	Version
+		Open Source - Jenkins
+		Paid - CLoudBees Jenkins
+	Powered by Community
+	Feature - From PLugins
+----------------------------------
+	
+
+What is CI?
+	Cont Integ
+
+AUTO/Cont Build --> AUTO/Cont testing --> AUTO/Cont Feedback
+========================================================
+Git -> Maven -> Jar --> Nexus --> Ansible -> AT 
+-------------------------------------------------------
+		Sharing
+		Scheduling -----????
+		Feedback
+		Integration
+
+https://www.devopsschool.com/path/
+
+
+Other tool?
+https://www.devopsschool.com/path/
+https://www.devopsschool.com/top10tools/
+https://www.devopsschool.com/blog/top-10-continuous-integration-tool/
+
+How to install it?
+------------------------
+JDK
+JENKINS
+=============================
+https://www.devopsschool.com/tutorial/jenkins/jenkins-installation-and-configuration.html
+
+http://13.127.213.226:8080/
+devops
+devops123
+====================================================
+Secret Formula for setting up any job
+--------------------------------------------------
+What is your technology?
+What is Builder?
+
+JDK	DOTNET		RUBY
+
+maven	msbuild		rake
+ant
+
+How often you want this build to be triger?
+
+Whom / how should be sent a notification with?
+=====================================================
+JAVA --> JDK --> mAVEn -> DAILY --> rajesh@scmgalaxy.com
+==========================================================
+https://github.com/scmgalaxy/helloworld-java-maven
+
+================================================================
+Architecure of jenkins
+https://www.devopsschool.com/blog/jenkins-architecture-explained/
+
+https://github.com/scmgalaxy/helloworld-java-ant
+
+========================================================
+
+What are the options we have in Jenkins Schedule?
+-----------------------
+1. Set at Fixed time = Build periodically
+2. Set at Fixed time But only when SCM changes = Poll SCM
+
+3. Trigger through remote script -
+http://www.scmgalaxy.com/tutorials/ways-to-login-jenkins-using-command-line
+http://www.scmgalaxy.com/tutorials/how-to-trigger-builds-remotely-in-jenkins/
+
+4. Build after other projects are built
+
+5. Build when there is CHNAGES In Github...
+	GitHub hook trigger for GITScm polling
+http://www.scmgalaxy.com/tutorials/how-to-build-when-a-change-is-pushed-to-github-in-jenkins/
+
+How can jekins send a feedback?
+-----------------------------------------------
+	Email	
+		2 PLUGINS
+		- Email Notification
+		- Editiable Email Notification
+
+		1. Config SMTP 	
+		http://13.127.213.226:8080/configure
+
+	CHat
+		Slack
+		Skype
+
+	Dashboard
+		Build Pipeline
+			compile
+			test with test result
+			package with archive
+		Pipeline
+--------------------------------
+		PAST A CODE
+		JENKINSFILE
+
+
+Admin
+	Authentication - How to login jenkins?
+		Jenkins OWn DB
+		LDAP
+		OpenID
+
+	Authorization
+		Who is suppose to do what?
+	
+
+	Backup and Restore
+
+
+
+
+
+
+
+
+
+
+
+

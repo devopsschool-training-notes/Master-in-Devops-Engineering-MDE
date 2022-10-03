@@ -1,0 +1,240 @@
+What is Jenkins?
+	CI  tools - Continous integ
+	Open Source
+	Free
+	Developed in Java
+	From Automating the SDLC 
+	It is Dumb tool.
+		Powered with plugin(1000+)...Its become very powerful
+	Most popular app which is driven by most active community
+	
+
+What is Cont integ?
+
+Auto Build + Auto Test + Imm Feedback
+
+Plan -> Code -> SCA -> Build -> UT -> Pack -> Dep2Repo -> Dep2QA -> AT -> CC -> RELEASE
+JIRA -> GIT  -> Sonar-> Maven -> Junit-> Jar-> Artifactory -> Puppet -> SEl -> JACCO --RELEASE
+===============================================================================================
+				JENKINS
+Continoues 
+Integrated
+Feedback
+	email
+	sms
+	dashboard
+	chat
+
+What are other tools.
+1. teamctiy 
+2. Bamboo
+3. UBUILD_DEP from IBM
+4. Travis CI
+
+RELEASE in Jenkins
+	Free 
+	Paid - Enterprise Jenkins from CloudBees
+
+How to install Jenkins?
+	JDK
+	> yum install wget -y
+	> wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+	> rpm -ivh jdk-8u131-linux-x64.rpm
+	> java -version
+
+
+	Download jenkins & Install jenkins
+	FROM - https://pkg.jenkins.io/redhat/
+	> systemctl start jenkins
+
+RULES of the JENKINS
+=================================
+Where is your source	GIT
+https://github.com/scmgalaxy/helloworld-java-maven
+https://github.com/scmgalaxy/helloworld-java-ant
+
+What is Tech		JAVA
+
+What is your builder	MAVEN | ANT
+
+	
+Maven GOAL - compile -> package -> test -> install -> deploy
+Ant TARGET - compile -> package
+
+ALGORITHM - PSUCODE
+---------------------------
+1. Create a dir strc	-- JENMKINS
+2. checkout using git clone url -- JNE
+3. SET THE COMP
+4. SET THE BUILD
+5. DOWNOAD THE DEP
+6. CALL THE BUILDER
+	mvn compile
+========================================
+IMPORTANT JOB CONFIGURATION
+	Discard old builds
+	This project is parameterised
+	Execute concurrent builds if necessary
+COPY THE JOBs
+	Executors	/configure
+
+Trigger builds remotely
+http://www.scmgalaxy.com/tutorials/how-to-trigger-builds-remotely-in-jenkins/
+
+	How can you schedule a build?
+	1. On Specified time			Build periodically
+	2. On Specified time but only when there is a new change	Poll SCM
+	3. The push in git - Trigger a new build
+
+Abort the build if it's stuck
+
+
+Where to Setup SMTP /configure
+Archive the projects
+
+
+SERVERS OF JENKINS
+==============================
+1 13.127.101.43
+2 13.127.246.27
+3 13.232.49.158
+4 13.232.52.8
+5 13.232.38.137
+6 13.127.49.25
+7 13.127.219.116
+8 52.66.154.78
+9 13.126.38.47
+10 13.127.238.0 - RAJESH
+11 13.232.51.65
+12 13.232.20.200
+
+
+JIRA - 
+http://13.232.38.23:8080
+rajesh
+rajesh123
+
+Project Key - NOK
+
+JENKINS
+http://13.127.238.0:8080
+rajesh
+rajesh123
+
+SonarQube
+http://13.232.38.23:9000/
+admin
+admin
+
+Artifactory
+http://13.232.38.23:8085/artifactory/
+admin
+password
+
+==================================
+HOW TO ADD A Node?
+
+	1. IP Address	52.66.109.146
+	2. USER		ec-user
+	3. PASS | KEY	
+	4. WORKING DIR
+
+WINDOWS ISSUES _
+https://wiki.jenkins.io/display/JENKINS/Windows+slaves+fail+to+start+via+DCOM
+======================================================================================
+		
+
+
+Subject - DevOps-Nokia-Chennai-April2018
+
+Content - 
+Full Name = 
+Personal EmailID = 
+Office EmailID = 
+Mobile Number  = 
+Role = 
+
+[info@scmgalaxy.com]
+
+Rajesh Kumar
+email - rajesh@scmgalaxy.com
+Mobile# - +91 8105843520
+
+https://www.facebook.com/groups/1767961479936849/
+https://groups.google.com/forum/#!forum/devopsschool
+DEVOPS NEWS N EVENT  - http://www.bestdevops.com/	
+
+=======================================================
+
+
+Terraform from Hashicorp
+	Vagrant
+	Packer
+	Terraform
+
+What is Terraform?
+
+
+AWS INTRO
+========================
+Lets Create a AWS
+	1. CREATE VM - OS TYPE - STORAGE - RAM - CPU
+	2. INSTALL ISO
+
+EC2->
+	Create a Instance
+	AMI- ami-5b673c34
+	Region - Mumbai = ap-south-1
+
+	Config 
+	
+	AUTOMATION USING TERRAFORM
+	===============================
+	How to install terraform
+	> yum install unzip -y
+	> yum install wget -y
+	> cd /opt
+	> wget https://releases.hashicorp.com/terraform/0.11.7/terraform_0.11.7_linux_amd64.zip
+	export PATH=$PATH:/opt/terraform
+	
+	PLAN
+	APPLY
+	DESTORY
+
+	PROVIDER - 
+	https://www.terraform.io/docs/providers/
+
+	MY PROVIDER - AWS
+	Resources???
+
+	
+FIRST PROGRAM - Create a Instance using Terraforms
+
+
+How to store the code?
+	.tf
+
+How to write hello program using AWS provider....
+
+
+provider "aws" {
+  access_key = "AKIAITCRCMAD3ISKEKJA"
+  secret_key = "srH+Pc9v+cGWLCu0OdcrN/70X/PviUDGK5tenuGx"
+  region     = "ap-south-1"
+}
+
+resource "aws_instance" "example" {
+  ami           = "ami-5b673c34"
+  instance_type = "t2.micro"
+}
+
+https://scmgalaxy.signin.aws.amazon.com/console
+nokia
+Nokia$123
+
+
+
+
+
+
+

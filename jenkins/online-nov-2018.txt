@@ -1,0 +1,111 @@
+What is Jenkins?
+	CI tools
+	Free
+	Open Source
+	Dev by Community
+	Dev in JAVA
+	Powered  by Plugins(features)
+Plugins - A Commands of the tools. its not a tool.
+	VERSION
+		FREE + OS
+		Enterprise - Cloud bees - Paid - Rich Plugins
+
+What is CI?
+	Auto Build + Auto Test + Immediate feedback.
+
+
+Plan->Code->Analysis->Build->UT->PACK->Dep2Repo->Dep2QA->AT->CC-> RELEASE
+JIRA->GIT->SonarQube->MAVEN->Junit->JAR->Nexus->Puppet->Sel->JAOCOC---RELEASe
+=================================================================================
+				JENKINS
+			Immediate feedback.
+					EMAIL
+					CHAT
+					DHASBOARD
+
+Other tools
+Teamcity, Babmoo, uBuild-Deploy
+
+How to install it?
+13.233.90.243
+https://www.devopsschool.com/tutorial/jenkins/jenkins-installation-and-configuration.html
+http://13.233.90.243:8080/
+rajesh / rajesh123
+
+
+OTHER 
+13.232.122.98
+
+JIRA
+docker run --detach --publish 8080:8080 cptactionhank/atlassian-jira:latest
+http://13.232.122.98:8080
+rajesh / rajesh123
+
+SONARQUBE
+docker run -d --name sonarqube -p 9000:9000 -p 9092:9092 sonarqube
+http://13.232.122.98:9000
+admin/admin
+
+
+NEXUS
+docker run -d -p 8081:8081 --name nexus sonatype/nexus:oss
+http://13.232.122.98:8081/nexus/
+admin
+admin123
+
+Secret Formula of Jenkins
+================================
+What is your Technology? That decide your compiler.
+Where is your source code - Git 
+What is the builder?
+
+JAVA - GITHUB - MAVEN
+https://github.com/scmgalaxy/helloworld-java-maven
+
+JAVA - GITHUB - ANT
+https://github.com/scmgalaxy/helloworld-java-ant
+
+How can you trigger a job in jenkins?
+Trigger builds remotely (e.g., from scripts) - Using any sciript, IDE, Dev env
+http://www.scmgalaxy.com/tutorials/how-to-trigger-builds-remotely-in-jenkins
+	
+Build after other projects are built
+	
+Build periodically  - CRON TAB	
+
+GitHub hook trigger for GITScm polling	
+http://www.scmgalaxy.com/tutorials/how-to-build-when-a-change-is-pushed-to-github-in-jenkins/
+http://www.scmgalaxy.com/tutorials/build-when-a-change-is-pushed-to-bitbucket/
+
+Poll SCM
+
+
+Immediate feedback.
+	EMAIL --> STMP -->
+	http://13.233.90.243:8080/configure
+		Extended E-mail Notification - ADVANCE
+		E-mail Notification - BASIC
+	CHAT
+		JABBAR
+		SLACK
+	DHASBOARD
+		BUILD PIPELINE
+		PIPELINE - JENKINSFILE
+		https://jenkins.io/doc/book/pipeline/
+
+How can you work with Jenkins using Command Line?
+http://13.233.90.243:8080/cli/
+http://www.scmgalaxy.com/tutorials/ways-to-login-jenkins-using-command-line/
+
+How can you scale jenskins for more builds?
+	increase exectors
+	Add a nodes
+		JRE
+		IP	13.232.122.98
+		KEY | PAS	
+		user	ec2-user
+		jenkins workspace	/opt/jenkins
+
+
+
+

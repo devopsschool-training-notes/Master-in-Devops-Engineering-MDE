@@ -1,0 +1,105 @@
+Jenkins
+========================================
+
+What is jenkins?
+	CI tool
+	Continoues Integration	
+	Java Based app
+	Free
+	Open Source
+	Plugins and Community
+
+What is CI?
+Auto Build >> Auto Test >> Immediate Feedback
+
+Static Code Analysis>>Build>>UnitTest>>Pack>>Dep2Repo>>Dep2QA+AT>>CodeCoeverave
+===============================================================================
+				IMMIDIATE
+
+
+How can we implements using jenkins??
+
+How to install jenkins?
+	JRE / JDK
+	Jenkins
+
+$ sudo -s
+$ cd
+$ yum install wget -y
+$  wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+$ rpm -ivh jdk-8u131-linux-x64.rpm
+$ java -version
+
+Jenkins Downoad & Install
+https://pkg.jenkins.io/redhat-stable/
+
+$ sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+$ sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+$ yum install jenkins
+
+$ systemctl start jenkins
+$ ps -eaf | grep jenkins
+
+What is Plugins?
+-----
+	Core Framewrok >> plugins
+	No Capabiity without plugins
+
+
+Rules of the jenkins
+----------------------------------
+1. Where is yoursource code?	Git(Java)	Git(Java)	Git(Java)	
+2. What is compiler?		JDK		JDK		DOTNET	
+3. What is Builder?		ANT		MAVEN		MSBUILD
+
+https://github.com/scmgalaxy/helloworld-java-maven
+JDK
+MAVEN
+
+https://github.com/scmgalaxy/helloworld-java-ant
+JDK
+ANT
+
+Schedule a Job????
+---------------------------
+At fixed time				Build periodically
+At fixed time but only when changes	Poll SCM
+Depending on other jobs 		Build after other projects are built
+Trigger via Script??			Trigger builds remotely (e.g., from scripts)
+					http://www.scmgalaxy.com/tutorials/how-to-trigger-builds-remotely-in-jenkins/
+One commit on SCM			GitHub hook trigger for GITScm polling
+					http://www.scmgalaxy.com/tutorials/how-to-build-when-a-change-is-pushed-to-github-in-jenkins
+
+
+How to integrate with other tools?
+...That should be up nn runnning - get http://13.127.180.100:9000
+...access of that tool - --- admin/admin ///KEY
+
+in Jenkins
+------Plugins
+
+SonarQube?
+
+
+How to add Jenkins Node?
+1. IP 
+2.. US | PAS
+Working dir
+
+Static Code Analysis>>Build>>UnitTest>>Pack>>Dep2Repo>>Dep2QA+AT>>CodeCoeverave
+===============================================================================
+
+
+PIPELINE
+	BUILDPIPELNE 		EASY BUT NO CUZ
+	PIPELINE		TRICKY BUT GREAT
+
+
+
+
+
+
+
+
+
+

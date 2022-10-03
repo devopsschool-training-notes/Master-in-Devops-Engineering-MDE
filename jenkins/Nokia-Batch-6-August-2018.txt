@@ -1,0 +1,54 @@
+What is Jenkins?
+------------------------------
+	CI tools
+	Free
+	Open Source
+	Dev in JAVA
+	Release
+		FREE
+		Enterprise Jenkins from Jacoco
+	Important - 1000s of Plugins
+
+
+What is CI?
+-----------------
+Auto Build + Auto testing + Imm Feedback
+----------------------------------------
+
+Plan -> Code -> Analysys -> Build -> UT -> Pack -> Dep2Repo -> Dep2QA -> AT -> CC
+--------------------------------------------------------------------------------
+JIRA -> GIt -> SonarQube -> Maven -> Junit -> Jar -> Artifactory -> Ansible/Puppet -> SEL -> JACOCO
+---------------------------------------------------------------------------------
+					JENKINS
+http://www.devopsschool.com/tutorial/jenkins/jenkins-installation-and-configuration.html
+						
+
+How to install it?
+52.66.51.58
+
+wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u181-b13/96a7b8442fe848ef90c96a2fad6ed6d1/jdk-8u181-linux-x64.tar.gz
+
+
+$ export JAVA_HOME=/opt/jdk1.8.0_181
+$ export PATH=$JAVA_HOME/bin:$PATH
+$ echo $JAVA_HOME
+$ java -version
+
+wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u181-b13/96a7b8442fe848ef90c96a2fad6ed6d1/jdk-8u181-linux-x64.rpm
+
+
+
+JIRA - 13.233.28.211:8080
+GIT - https://github.com/scmgalaxy/helloworld-java-maven
+SonarQube - http://13.233.28.211:9000	admin/admin
+Artifactory - http://13.233.28.211:8085	admin/password
+
+JENKINS PIPLINE --> CI -> 
+		Build Pipeline - EASY
+		Pipeline - jenkinsfile
+				
+
+
+
+
+

@@ -1,0 +1,93 @@
+What is Jenkins?
+	CI tool
+	Free
+	Open Source
+	Dev using JAVA
+	Powered Wih Plugins
+	A Dumb tool	
+		With Plugins it act like everything
+
+
+What is CI?
+
+Doing Continous Integ of Software package by doing Auto Build --> Auto Testing and Immediate feedback of whatever happening.
+
+Auto Build + Auto Testing + Immediate feedback
+==============================================================
+Auto SCA -> Auto Build -> Auto UT -> Auto Package -> Auto Dep2Repo -> A Deploy -> A Testing -> A CC
+---------------------------------------------------------------------------------------------------
+SONARQUBE->MAVEN-> JUNIT 	-> JAR 		  ->  NEXUS 	 -> CHEF PUPPET -> SEL     -> JAOCOC
+				IMM FEEDBACK
+				-- Email
+				-- Web Dashboard
+				-- SMS
+				-- CHAT
+			-------------------------
+			PASS   | FAIL
+
+How to install?
+	- JDK(PRE) 
+	- JRE(PRE)
+http://www.scmgalaxy.com/tutorials/complete-guide-of-java-installation-in-linux/
+
+Download n Install
+-----------------------------
+https://jenkins.io/download/
+https://pkg.jenkins.io/redhat/
+
+> systemctl status jenkins
+> systemctl start jenkins
+> ps -eaf | grep jenkins
+
+.exe
+=================
+services.msc
+
+java -jar /usr/lib/jenkins/jenkins.war
+=======================
+
+Default - 8080
+
+================================
+Rule of Creating a Job?
+
+1. Where is your source code? - java, c++, python, batch, shell, perl, ruby, sel, un
+---> git, svn, cc, tfs
+2. What is your builder?
+---> ant, maaven, gralde, makefile, ant, nnat, msbuild, batch.exe, shell, perl, ruby, java
+
+3. What is your compiler?
+JDK, DOTNET, PERL, PYTHONG, RUBY
+
+
+JAVA(GIT)
+	MAVEN		JDK
+	https://github.com/scmgalaxy/helloworld-java-maven		maven3.3 | maven 3.5
+	ANT		JDK
+	https://github.com/scmgalaxy/helloworld-java-ant
+	
+DOTNET(GIT)	
+	NANT		DOTNET
+	https://github.com/scmgalaxy/teamcity-nant-helloworld
+	MSBUILD		DOTNET
+	https://github.com/scmgalaxy/msbuild-helloworld
+	BATCH		DOTNET
+	https://github.com/scmgalaxy/teamcity-batch-helloworld
+
+===================================================================
+Auto SCA -> Auto Build -> Auto UT -> Auto Package ->
+
+SOnar --> Build --> UT --> Package --> Deploy --
+
+Sol - DASHBOARD -----
+		BUILD PIPELINE
+=============================================
+Security 
+	Authentication	- OWN + LDAP
+	Authorization
+
+Jenkins Nodes n DOTNET
+======================================
+1. Linux
+2. Windows
+

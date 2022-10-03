@@ -1,0 +1,153 @@
+What is Jenkins?
+	CI tools	
+	Free & Open Source
+	dev in Java
+	Earlier name was - Hudson
+	Dumb tool
+		very powerful when you integrate with plugins
+	
+	
+
+What is CI?
+http://www.devopsschool.com/video/devops/DevOps-Essentials.html	
+http://www.devopsschool.com/video/devops/cicd-pipeline-using-jenkins.html
+
+AUTO Build + Auto testing + Imm Feedback
+===============================================
+
+Plan -> Code -> Analysis -> Build -> UT -> Package -> Dep2 Repo -> Dep2Qa -> AT -> CC --> RELEASE
+=================================================================================================
+JIRA  -> GIT -> SOAnrqube ->Maven ->.Junit -> Jar -> Nexus --> Puppet --> Sel -> Jacoco ---
+				FEEDBACK
+===============================================================================================
+					JENKINS
+http://www.devopsschool.com/video/devops/Complete-CICD-Implementation-from-Scratch.html
+
+
+
+CI 
+	Integrate team
+	Integrare Process
+	Integrate tools'
+
+
+How to install jenkins
+13.126.193.81
+	JRE OR JDK
+
+$ sudo -s
+$ cd
+$ yum install wget -y
+$  wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+$ rpm -ivh jdk-8u131-linux-x64.rpm
+$ java -version
+
+Jenkins Downoad & Install
+https://pkg.jenkins.io/redhat-stable/
+
+$ sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+$ sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+$ yum install jenkins
+
+$ systemctl start jenkins
+$ ps -eaf | grep jenkins
+
+
+
+jenkins  10368     1 99 03:54 ?        00:00:04 /etc/alternatives/java -Dcom.sun.akuma.Daemon=daemonized -Djava.awt.headless=true -DJENKINS_HOME=/var/lib/jenkins -jar /usr/lib jenkins/jenkins.war --logfile=/var/log/jenkins/jenkins.log --webroot=/var/cache/jenkins/war --daemon --httpPort=8080 --debug=5 --handlerCountMax=100 --handlerCountMaxIdle=20
+root     10398  9682  0 03:55 pts/0    00:00:00 grep --color=auto jenkins
+
+========================================
+SECRET FORMULA OF JENKINS
+
+
+Where is your source code? - Some dir // git/svn / cvs / p4,/ cc
+What is technology?	java	dotnet	perl 	python sel batch shell ruby
+What is Builder -  maven, ant, gradle, msbuild, perl, pythin, batch, shell, 
+
+GITHUB ->JAVA -> MAVEN
+https://github.com/scmgalaxy/helloworld-java-maven
+$ git clone url	# git should be install
+$ cd dir
+$ mvn compile	# maven should be install
+
+GITHUB ->JAVA -> ANT
+https://github.com/scmgalaxy/helloworld-java-ant
+
+GITHUB ->DOTNET -> mSBUILD
+https://github.com/scmgalaxy/msbuild-helloworld
+
+Architecture of Jenkins
+http://www.scmgalaxy.com/tutorials/jenkins-architecture-explained/
+	JENKINS SERVER
+	ONE JENKINS NODE - master
+
+
+Execute concurrent builds if necessary
+		DEV - 10 AM ---- BUILD TIME(2 HOURS)-->10.05 ---> RESULT --> 12.05
+		DEV 10.06	--- 12.06
+
+/var/lib/jenkins/workspace/concurrent
+/var/lib/jenkins/workspace/concurrent@2
+===============================================
+CONDITION TO TRIGGER
+	FIXED TIME 			=== Build periodically
+	FIXED TIME BUT DO BUILD ONLY WHEN GIT CHANGES	== Poll SCM
+	WHEN DEV COMMITS TO GIT --> JENKINS
+	http://www.scmgalaxy.com/tutorials/how-to-build-when-a-change-is-pushed-to-github-in-jenkins
+	http://www.scmgalaxy.com/tutorials/build-when-a-change-is-pushed-to-bitbucket/
+	DEPENDENT JOB		==Build after other projects are built
+
+
+
+
+===================
+STATUS of THE JOB VIA SCRIPT
+		JENKINS
+			API
+				XML
+				JSON----
+
+http://13.126.193.81:8080/job/MAVEN/lastBuild/api/json
+
+{"_class":"hudson.model.FreeStyleBuild","actions":[{"_class":"hudson.model.CauseAction","causes":[{"_class":"hudson.model.Cause$UpstreamCause","shortDescription":"Started by upstream project \"concurrent\" build number 3","upstreamBuild":3,"upstreamProject":"concurrent","upstreamUrl":"job/concurrent/"}]},{"_class":"hudson.plugins.git.util.BuildData","buildsByBranchName":{"refs/remotes/origin/master":{"_class":"hudson.plugins.git.util.Build","buildNumber":13,"buildResult":null,"marked":{"SHA1":"38034da85a9a25bc4519e0a6ed1e1c3367920f53","branch":[{"SHA1":"38034da85a9a25bc4519e0a6ed1e1c3367920f53","name":"refs/remotes/origin/master"}]},"revision":{"SHA1":"38034da85a9a25bc4519e0a6ed1e1c3367920f53","branch":[{"SHA1":"38034da85a9a25bc4519e0a6ed1e1c3367920f53","name":"refs/remotes/origin/master"}]}}},"lastBuiltRevision":{"SHA1":"38034da85a9a25bc4519e0a6ed1e1c3367920f53","branch":[{"SHA1":"38034da85a9a25bc4519e0a6ed1e1c3367920f53","name":"refs/remotes/origin/master"}]},"remoteUrls":["https://github.com/scmgalaxy/helloworld-java-maven"],"scmName":""},{"_class":"hudson.plugins.git.GitTagAction"},{},{},{}],"artifacts":[],"building":false,"description":null,"displayName":"#13","duration":3085,"estimatedDuration":36377,"executor":null,"fullDisplayName":"MAVEN #13","id":"13","keepLog":false,"number":13,"queueId":19,"result":"SUCCESS","timestamp":1526791507432,"url":"http://13.126.193.81:8080/job/MAVEN/13/","builtOn":"","changeSet":{"_class":"hudson.plugins.git.GitChangeSetList","items":[],"kind":"git"},"culprits":[{"absoluteUrl":"http://13.126.193.81:8080/user/noreply","fullName":"noreply"}]}
+
+
+13.127.1.164
+=============================
+JIRA
+docker run --detach --publish 8080:8080 cptactionhank/atlassian-jira:latest
+http://13.127.1.164:8080
+rajesh/rajesh123
+
+SONARQUBE
+docker run -d --name sonarqube -p 9000:9000 -p 9092:9092 sonarqube
+http://13.127.1.164:9000/
+admin
+admin
+
+SRC
+https://github.com/scmgalaxy/java-sonar-runner-simple
+
+SCanner
+
+Server
+
+NEXUS
+docker run -d -p 8081:8081 --name nexus sonatype/nexus:oss
+http://13.127.1.164:8081/nexus/
+admin
+admin123
+
+
+HOW TO ADD A NODE?
+	PUPPET MASTER
+----------------------------------
+	
+	IP	13.127.1.164	
+	USER ID	 ec2-user
+	PASS | kEY
+	WORKSAPCE LOCA - /opt/jenkins
+
+
+

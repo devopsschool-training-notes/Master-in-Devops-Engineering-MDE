@@ -1,143 +1,112 @@
-What is Jenkins?
----------------------------
-		CI tool
-		Dev in JAVA
-		Release
-			Jenkins				-----> OS - FREE - Community
-			Jenkins X			-----> OS - FREE - Community - FOr Container
-			Blue OCean			-----> OS - FREE - Community - For Dedicated pipeline
-			Jenkins Enterprise	PAID by CloudBees	
-		Version - 2.X
-		Earlier - Hudson
+Demo time
+====================================
+What is jenkins?
+Done
 
-
-What is CI?
-- Cont Integ*
-
-Auto Build + Auto Test
-----------------------
-	Imm Feedback
-============================================
-Arch		Dev				BR					QA			Release
---------------------------------------------------------------------
-JIRA 	- GIT		Sonar	Maven	 Junit --> WAR -> Artifactory-> Ansible - Selenium - Jacoco
----------------------------------------------------------------------------------
-PLAN -> Code -> Ana -> Build -> UT -> Pack -> Archive -> Dep2Qa -> AT -> CC
-======================================================================================
-							Integ
-							jenkins 
-	-------------------------------------------------------------------------
-										Integ
-										Scheduling
-										Feedback
-
-
-
-Other ---- Teamcity - Bamboo - Ubuild - Circle CI
+Why jenkins?
+Done
 
 How to install Jenkins?
-------------------------
+-----------------------------------
+Pre
+JRE OR JDK
+	SYSTEM	---
+	DOWNLOAD - SET THE ENV
+> yum install java-1.8.0-openjdk-devel
+
+More - http://www.scmgalaxy.com/tutorials/complete-guide-of-java-installation-in-linux
+
+Install Jenkins
+-----------------------
+https://jenkins.io/download/
+https://pkg.jenkins.io/redhat/
+
+> systemctl status jenkins
+> systemctl start jenkins
+
+What is the rule of Jenkins?
+==================================
+
+A BUILD------------------->
+Where is your source code?				GIT	
+What is your compiler and did you confiure it?		JAVA			DOTNET			
+What is your builders and where is that?		ANT+MAVEN+GRADLE	MSBUILD+NANT+BATCH		
+
+A UT------------------->
+Where is your source code?				GIT	
+What is your compiler and did you confiure it?		JUNIT			NUNIT
+What is your builders and where is that?		ANT,MAVEN		MSBUILD
+
+A PACK------------------->
+Where is your source code?				GIT	
+What is your compiler and did you confiure it?		RPM,TAR,ZIP,IA			
+What is your builders and where is that?		ANT,MAVEN		MSBUILD
+
+A SCA --> A BUILD  --> A UT --> A PACK --> A DEP2REPO --> A AT --> A CC --> RELEASE
 
 
-43.205.103.200
-https://www.devopsschool.com/blog/complete-tutorial-of-jenkins-installation-and-configuration/
+LAB 1
+--------------
+Install and Configure Jenkins
 
-Architecture
--------------------
+Lab 2 
+---------------
+Setup a Ant Jobs with jenkins
+https://github.com/scmgalaxy/helloworld-java-ant
 
+Questions?
+I want to change the ddefauilt port.
+What if build.xml has diff name
 
-Secret Formula
-===============================
-
-====================================================================
-Basic workflow
---------------------------------------------------------------------
-What is your tech?	java dotnet python ruby???
-						--which version?
-						-- need to installed in Build server
-
-Where is your code?	git 
-				- which version
-				- need to be installed in build server
-
-						access?? url?
-
-What is your builder?
-				maven gradle ant msbuild shell cmd bash perl python
-
-				- which version
-				- need to be installed in build server
-
-How often you want to trigger this job?
-					@daily
-
-Whom u want to deliver Feedback
-					rajesh@devopsschool.com
-========================================================================
-ANT		MAVEn		GRADLE				MSBuid	
--------------------------------------------------
-build.xml	pom.xml		build.gradle
-
-	
-https://github.com/devopsschool-demo-labs-projects/helloworld-java-maven
-maven
-		mvn compile
-		mvn test
-		mvn package
-
---------------------------
-Any Integ
--------------------------
-1. Install plugins
-2. Config plugins
-3. use plugins
-			Scanner
-			code
+Lab 3
+===========================
+src - https://github.com/scmgalaxy/helloworld-java-maven
+Goal name - 
+comile
+package
 
 
-docker run -d -p 9000:9000 sonarqube
-=========================================================
-Scheduling
+Lab 5
+====================
+Reference
+http://www.scmgalaxy.com/tutorials/how-to-trigger-builds-remotely-in-jenkins
 
-https://www.devopsschool.com/blog/how-to-schedule-and-trigger-a-jenkins-job-automatically/
 
-Method 1 – AT CERTAIN TIME AKA Build periodically
-Method 2 – AT CERTAIN TIME BUT Build only when there is Code changes AKA Poll SCM
-Method 3 – Trigger using command line or script AKA Trigger builds remotely (e.g., from scripts)
-Method 4 – Trigger this job if other job is triggerred AKA Build after other projects are built
+Lab 6
+=======================
+SonarQube Integration
 
-Method 5 – Trigger a job when there is PUSH into Github AKA GitHub hook trigger for GITScm polling
-Method 6 – Trigger a job when there is PUSH into Bitbucket AKA GitHub hook trigger for GITScm polling
+Integrate SonarQube with jenkins
+-----------------
+Sonar Server - http://13.126.143.49:9000	b6b5bb2ed89e27fe16d29471e90fa22ee4573b87
+Scanner - DONE
+Src - 	https://github.com/scmgalaxy/java-sonar-runner-simple
 
-Method 7 – Trigger another job after this Job AKA Post Build Action => Build Other project
-Method 8 – Trigger a Jenkins jobs using Jenkins command line jar file
+DAY 2
+===============================================
+Node Mgmt -- Jenkins --- Distributed
+A UT --> A PACK --> A DEP2REPO --> A AT --> A CC --> RELEASE
+Jenkins Security 
+Jenkins Commannds lines
+Jenkins Backup and Restore
+Jenkins Pipeline
+
+Node Mgmt -- Jenkins --- Distributed
+===================================================
+
+WINDOWS MACHINE	
+	IP ADDD		I DONT HAVE
+	username	rajesh
+	password	
+	ws		C:\Tools\jenkins-ws
 
 
 
-java -jar jenkins-cli.jar -s http://43.205.103.200:8080/ -webSocket help
-
-java -jar jenkins-cli.jar -s http://43.205.103.200:8080/ -auth rajesh:1189ca41bddcd8541d3ab9d0fcfcacb809 build TEST
-
-
-
-curl -X POST --user rajesh:1189ca41bddcd8541d3ab9d0fcfcacb809 http://43.205.103.200:8080/job/DevOpsSchool/job/FAKE/build?delay=0sec
-
-Feedback
-===================
-	Email
-	Chat
-	Pipeline
-
-https://www.devopsschool.com/blog/jenkins-pipeline-complete-reference-tutorials/
-
-
-
-LAB TIME:
--------------------------
-http://43.205.103.200:8080/
-rajesh
-rajesh123
-https://www.devopsschool.com/blog/
+LINUX
+	IP ADDD
+	username
+	password
+	ws
 
 
 
@@ -146,6 +115,35 @@ https://www.devopsschool.com/blog/
 
 
 
+SERVERS
+USER NAME - ec2-user
+
+First Commands
+> sudo -s
+
+======================================
+1	13.126.170.66
+2	52.66.77.23
+3	13.126.91.90
+4	13.126.191.156
+5	13.126.213.31
+6	13.126.54.134
+7	13.126.77.211
+8	52.66.66.29
+9	13.126.114.25
+10 	35.154.107.39
+11	13.126.151.110
+12	13.126.11.108
+13	13.126.147.9
+14	13.126.175.254
+15	52.66.116.144
+16	35.154.50.87
+
+http://52.66.77.23:8090
+admin
+admin123
+
+52.66.77.23
 
 
 

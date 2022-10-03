@@ -1,0 +1,117 @@
+https://www.devopsschool.com/top10tools/index.html
+https://www.devopsschool.com/interview/
+
+
+What is Jenkins?
+	CI Tool
+	Free
+	Open Source
+	Dev In Java
+	Powerful with plUgins....
+	version
+		Free - OS
+		Jenkins Enterprise  by CloudBees
+	
+What is CI?
+		Auto Build + Auto test 
+		------------------------
+		   Auto Feedback
+
+Plan->Coding->CodeReview->Build->UT->Pack->Dep2Repo->Dep2Qa->AT->CC->Release
+JIRA > Git  -> SonarQube -> Maven -> Junit-> Jar-> Nexus-> Ansible-> Sel-> Jacoco-Release
+----------------------------------------------------------------------------------------
+				JENKINS
+					IMM Feedback
+					- Email - SMTP
+						email notification
+						editable email notification
+					- Chat
+						slack
+						jabbar
+						
+					- Dashboard
+						Build Pipeline
+						Pipeline
+					Schedule
+					Fixed time == Build periodically
+					Fixed time BUT ONLY WHEN CHANGES = Poll SCM							using Scripting = Trigger builds remotely (e.g., from scripts)
+					http://www.scmgalaxy.com/tutorials/how-to-trigger-builds-remotely-in-jenkins/	
+					Someone push to Github or Bibucket
+					http://www.scmgalaxy.com/tutorials/how-to-build-when-a-change-is-pushed-to-github-in-jenkins/
+					http://www.scmgalaxy.com/tutorials/build-when-a-change-is-pushed-to-bitbucket/
+
+
+Other tools - 
+Bamboo - teamcity - TFS - Travis.io
+
+How to install jenkins?
+13.232.119.140:8080
+rajesh
+rajesh123
+
+
+Jira
+docker run --detach --publish 8090:8080 cptactionhank/atlassian-jira:latest
+http://52.66.196.78:8090
+admin
+admin123
+
+SonarQube
+docker run -d --name sonarqube -p 9000:9000 sonarqube
+http://52.66.196.78:9000
+admin
+admin
+https://github.com/scmgalaxy/java-sonar-runner-simple
+
+nexus
+docker run -d -p 8081:8081 --name nexus sonatype/nexus3
+http://52.66.196.78:8081/
+admin
+admin123
+
+================================
+Secret Formula of setting up a Jenkins job
+===============================
+What is your technology?
+	JAVA --> JDK
+Where is that? how can i access?
+	github.com
+		https://github.com/scmgalaxy/helloworld-java-maven
+What is your builder?
+	maven
+		compile
+		test
+		- target/surefire-reports/TEST-com.scmgalaxy.mavensample.AppTest.xml		
+		package
+		- target/
+		deploy
+======================================
+PLUGINS MEANS ONLY A COMMAND....
+		NOT A TOOL
+
+Architecure of Jenkins?
+https://www.devopsschool.com/blog/jenkins-architecture-explained/
+
+
+Parametrized options in Jenkins....
+How to deploy to 100 QA server using Ansible and GUI(Jenkins)
+Step 1 - Create a inventory file which has 100 of qa server
+Step 2 - Write a playbook which will dowload a package from Nexus
+Step 3 - Install Ansible in WHERE (Jenkins Nodes)
+Step 4 - run a Ansible Commannds....
+
+https://github.com/scmgalaxy/ansible-role-template
+
+HA for jenkins node using label
+	master
+	linux
+
+HA for jenkins Server
+	BACKUP
+		thikbackup
+
+How to set up a node?
+	JRE/JDK
+
+
+

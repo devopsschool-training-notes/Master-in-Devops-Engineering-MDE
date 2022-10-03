@@ -1,0 +1,201 @@
+What is jenkins?
+	CI tools
+	Free
+	Dev using JAVA
+	OS
+	Powered with - 1000 pLugins
+	https://plugins.jenkins.io/
+	VERSION
+		FREE
+		PAID -> Cloudbees - Enterprise Jenkins
+
+CI - 
+Auto Build + Auto Test + Imm Feedback
+-------------------------------------------
+Plan -> Code -> Ana -> Build -> Pack -> Dep2Repo -> Dep2QA -> AT -> CC
+JIRA  -> GIT  -> SonarQube -> Maven -> Jar -> Nexus -> P|A|C -> SEL --> JACOCO
+-----------------------------------------------------------------------------
+					JENKINS
+
+How to install Jenkins?
+JRE ---> JDK 
+https://www.devopsschool.com/tutorial/jenkins/
+https://www.devopsschool.com/tutorial/jenkins/jenkins-installation-and-configuration.html
+
+
+Download - -
+================
+JENKINS - 4GB
+13.233.108.226
+ 
+ALL - 8GB
+	
+http://13.233.108.226:8080/
+rajeshkumar
+rajesh123
+
+FORMULA OF JENKINS
+===================================
+Where is a Source Code?
+https://github.com/scmgalaxy/helloworld-java-maven
+
+What is the technology? JAVA + DOTNET
+JAVA
+
+What is your Builder?	ANT | MAVEN
+Maven
+---------------------------------------
+BUILD
+
+====================
+MAVEN ->PM -->
+HUMEN LIFECYCLE
+---------------
+BORN -> KID -> TEEN - YOUNG -> MID -> OLD - DIE
+--------------------------------
+COMPILE - TEST ->. PACK -> VERy -> Instal -> DEPLOY
+
+GOAL - COMPILE - TEST ->. PACK -> VERy -> Instal -> DEPLOY
+
+=================
+Where is a Source Code?
+https://github.com/scmgalaxy/helloworld-java-ant
+
+What is the technology? JAVA + DOTNET
+JAVA
+
+What is your Builder?	ANT | MAVEN
+ant
+==============================
+JENKINS
+	SCM
+	TRIGGERS
+		@ CERTAIN TIME == Build periodically
+		@ CERTAIN TIME BUT ONLY WHEN CODE CHANGES == Poll SCM
+		@ PUSH IN GIT--TRigger a job
+		http://www.scmgalaxy.com/tutorials/how-to-build-when-a-change-is-pushed-to-github-in-jenkins/
+		http://www.scmgalaxy.com/tutorials/build-when-a-change-is-pushed-to-bitbucket/
+		@ TRIIGER FRM ANY OTHER SCRIPT
+		Trigger builds remotely (e.g., from scripts)
+		http://www.scmgalaxy.com/tutorials/how-to-trigger-builds-remotely-in-jenkins/
+
+	BUILD 
+
+	POST BUILD
+		EMAIL
+		WHATSAPP
+		PAGER
+		FAX
+		CHAT
+		------
+		DASHABORD
+
+-------------------------------------------
+Plan -> Code -> Ana -> Build -> Pack -> Dep2Repo -> Dep2QA -> AT -> CC
+JIRA  -> GIT  -> SonarQube -> Maven -> Jar -> Nexus -> P|A|C -> SEL --> JACOCO
+-----------------------------------------------------------------------------
+					JENKINS
+
+RajScan -> RajBuild -> RajUT -> RajPack -> RajDep2Repo -> RajDep2QA -> RajCC
+
+JIRA 
+http://13.233.19.201:8080/
+rajesh / rajesh123
+JIRA-JENKINS
+- 
+
+SONARQUBE  
+http://13.233.19.201:9000
+admin/admin
+https://github.com/scmgalaxy/java-sonar-runner-simple
+
+NEXUS
+http://13.233.19.201:8081/nexus/#welcome
+admin/admin123
+
+
+Maven Integration with Nexus-
+modify pom.xml with repo
+http://13.233.19.201:8081/nexus/content/repositories/yoodlex/
+
+modify setting.xml with nexus access
+$ mvn deploy
+
+<distributionManagement>
+	<repository>
+		<id>tata</id>
+		<name>Internal Releases</name>
+		<url>http://13.233.19.201:8081/repository/yoodlex/</url>
+	</repository>
+ 
+	<snapshotRepository>
+		<id>tata</id>
+		<name>Internal Releases</name>
+		<url>http://13.233.19.201:8081/repository/yoodlex/</url>
+	</snapshotRepository>
+
+</distributionManagement>
+
+    <server>
+      <id>tata</id>
+      <username>admin</username>
+      <password>admin123</password>
+    </server>
+======================
+Dep2Qa using Ansinle
+
+Ansible Control Server - 52.66.240.195
+Agent
+13.233.91.236
+13.232.242.127
+
+JENKINS  --> Ansible Control Server --> Agent using SSH
+
+How to add nodes?
+IP Address - USERR - PASS|KEy | WORKSPACE 
+52.66.240.195
+ec2-user
+/tmp/ansible
+
+ansible all -i 13.233.91.236, -m yum -a "name=httpd state=present" --key-file=/tmp/node.pem -u ec2-user -b
+ansible all -i 13.232.242.127, -m yum -a "name=httpd state=present" --key-file=/tmp/node.pem -u ec2-user -b
+
+ansible all -i 13.233.91.236, -m service -a "name=httpd state=started" --key-file=/tmp/node.pem -u ec2-user -b
+ansible all -i 13.232.242.127, -m service -a "name=httpd state=started" --key-file=/tmp/node.pem -u ec2-user -b
+============================================
+Dashboard
+---------------------
+PIPELINE
+	BUILD PIPELINE - SIMPLE - NOT FLEXIBLE
+	PIPELINE - SCRIPTING - VERY FLEXIBLE
+		jenkinsfile
+	https://jenkins.io/doc/book/pipeline/
+		- jenkinsfile
+		- content of the jenkinsfile in the box
+======================================================
+Backup - n restre..
+Security
+==============================
+Rajesh Kumar
+Email - DevOps@RajeshKumar.xyz
+http://rajeshkumar.xyz/cv/
+https://www.devopsschool.com/courses/
+
+Subject - Devops Certified Engineer
+
+Full Name - 
+Personal Email IDS
+Official Email IDs
+Phone 
+Role 
+Company - Envestnet Yodlee
+
+TO - INFO@SCMGALAXY.com
+=====================================
+FEED BACK
+
+
+	
+
+
+

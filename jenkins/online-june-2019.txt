@@ -1,0 +1,244 @@
+What is Jenkins?
+	CI tool.
+	Free
+	Open Source
+	Release
+		Community  - Free -
+		Enterprise - From Cloud bees - Paid
+	Empowered with Plugins concept.
+	100s of plugins available which makes jenkins very powerful.
+	Dev in JAVA
+	
+	
+
+What is CI?
+	Continous Integration.
+
+What is Continous Integration?
+
+https://www.devopsschool.com/path/
+
+plan->Code->Code Review->Build->UT->Pack->Dep2Repo->Dep2Qa->AT->CC->RELEASE
+------------------------------------------------------------
+jira->Git->SonarQube->Maven>Junit->Jar->Nexus->Ansible->Sel->Jacoco		
+		Integration of All tools
+		IMM FEEDBACK
+		Scheduling
+		
+--------------------------------------------------------------
+			JENKINS
+
+
+Why Jenkins?
+	So many tool so we need ONE to integrate with
+	IMM FEEDBACK
+	Scheduling of tasks
+	Notification
+---------------------------------
+A team workspace...
+===============================================
+Other tools - 
+
+How to install Jenkins?
+	JRE 8.X	- JDK 8.X
+	https://pkg.jenkins.io/redhat-stable/
+	https://www.devopsschool.com/tutorial/jenkins/jenkins-installation-and-configuration.html
+
+Jenkins - 
+http://13.233.198.228:8080/
+rajesh
+rajesh123
+=======================================
+
+
+Jira
+http://13.126.145.10:8080
+rajesh
+rajesh123
+
+SonarQube
+http://13.126.145.10:9000
+admin
+admin
+
+Nexus
+http://13.126.145.10:8081/
+admin
+admin123
+
+Ansible
+=================================================
+Secret formula jenkins?
+===========================================
+What is your technology?
+	JAVA | DOT NET | RUBY | PYTHON
+	-------------------------------
+	Which Compiler / Interpreter
+
+What is your builder?
+	Maven | msBuild | Ant | Rake
+
+Where is your source code?
+	GIT | SVn | p4 | CC
+	-----------------------
+	Location | User | Password
+
+How often this build/job to be triggered?
+
+Whom you want to be notified if build failed?
+============================================
+Jenkins Architecture
+==========================
+
+Web server --> Build Node
+-------------------------
+8080		XXXXX
+	JENKINS
+		Master
+	
+https://www.devopsschool.com/blog/jenkins-architecture-explained/
+=====================================================================
+
+	
+
+===========================================
+What is your technology?
+JAVA
+
+What is your builder?
+MAVEN
+
+Where is your source code?
+https://github.com/scmgalaxy/helloworld-java-maven
+
+How often this build/job to be triggered?
+Daily
+
+Whom you want to be notified if build failed?
+DevOps@RajeshKumar.xyz
+==================================================
+MANUAL
+Install JDK and SetUP JAVA_home
+Install mAVEN and SetUP M2_HOME
+Install git 
+cd git-repo
+rm -rf 
+git clone url
+mvn compile
+-----
+mailto - DevOps@RajeshKumar.xyz
+
+THROUGH JENKINS
+
+cd git-repo
+rm -rf 
+git clone url
+mvn compile
+-----
+mailto - DevOps@RajeshKumar.xyz
+	-------------------------------
+	JENKINS IS NOT ELIGILE TO SENT AN EMAIL.
+		SMTP SERVER
+		http://13.233.198.228:8080/configure
+
+
+What is Plugins?
+=========================
+
+Tool 1 ------> Tool2
+YOU ---------> GIT
+YOU(Command)--> GIT
+  <-----------Response
+--------------------------
+Is nothing but a collection of commands through API/CMD ---> Tools
+Plugins is not a tool.
+===================================================
+
+Why we have server - client?
+		Web -- node
+
+----------------------------------------
+2 JOB --> HOURLY --> Each takes 1 hour to build -> DAY==48 hours
+------------------------------------
+Exectation is 1 day - 
+	Half
+-----------------------------------------------------------------
+Scheduling using Jenkins?
+===========================================
+ON SPECIFIC TIME == Build periodically
+
+TRIGGER A BUILD FROM SCRIPT OR REMOTE LOCATION == Trigger builds remotely
+http://www.scmgalaxy.com/tutorials/how-to-trigger-builds-remotely-in-jenkins/
+
+Build after other projects are built	
+
+Poll SCM - Pool SCM at Certain time but Build will happen only where there are SCm Changes
+	
+GitHub hook trigger for GITScm polling
+http://www.scmgalaxy.com/tutorials/how-to-build-when-a-change-is-pushed-to-github-in-jenkins/
+http://www.scmgalaxy.com/tutorials/build-when-a-change-is-pushed-to-bitbucket/
+============================================
+Integration with tools in Jenkins
+=============================================
+plan->Code->Code Review->Build->UT->Pack->Dep2Repo->Dep2Qa->AT->CC->RELEASE
+------------------------------------------------------------
+jira->Git->SonarQube->Maven>Junit->Jar->Nexus->Ansible->Sel->Jacoco	
+-------------------------------------------------------------------------
+			JENKINS
+How to integrate any tools with Jenkins?
+1.. Install plugins
+2. Config plugins
+3. Use plugins
+
+
+Jira
+http://13.126.145.10:8080
+rajesh
+rajesh123
+-------------------------------
+A moment buld is failed, it should creating ticket jira.
+
+SonarQube
+http://13.126.145.10:9000
+admin
+admin
+
+Code Review
+-------------------------
+SOnarQube server
+SRC - https://github.com/scmgalaxy/java-sonar-runner-simple
+SCanner
+
+
+---------------------------------
+How to integrate NExus with Jenkins?
+==---------------------------------
+1 = Plugins way - Nexus
+2. Maven to Nexus
+	pom.xml
+	setting.xml
+	mvn deploy
+
+
+Nexus
+http://13.126.145.10:8081/
+admin
+admin123
+
+How to deploy in QA server with jekins and ansible?
+Ansible
+====================================
+IMM FEEDBACK using Jenkins?
+	Email
+		Simple Email
+		Extended email
+	Chat
+		jabbar
+		slack
+	Dashboard
+		Build Pipeline - Simple
+		Pipeline - using Jenkins file - Coding
+
+
+
+

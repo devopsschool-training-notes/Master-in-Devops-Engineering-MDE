@@ -1,0 +1,1240 @@
+Bangalore - Ranjani - POC
+Chennai - AnantRaj - POC
+============================
+https://global.gotomeeting.com/join/269358533
+
+
+What is CI?
+	Continous Integration
+
+What is Continous Integration?
+	is a process to effectively / efficiently do the software development.
+
+Why?
+DevOps
+http://www.devopsschool.com/video/devops/DevOps-Essentials.html
+
+What you do in the software development?
+
+mgr - Mgrx
+Project - CtsX
+=========================
+Goals -
+	Less budget
+	Tight schedule
+	Every day can be a release day
+	Quality of the release is set very high
+
+
+Architect - 1
+Dev - 10 --- 10 Modules
+Qa - 5
+IT
+NET
+DB
+OPS
+BR
+LEAD
+============================
+		30 People
+
+Implementation
+======================================
+10 Modules === 10 DEV  ==> PRODUCT
+
+System Ana & Design Integ
+------------------------------------
+Architect
+		Requirement Ana
+		Planning
+		Task
+		Fea Dev
+Solution  - 
+		[JIRA]
+		TRello
+		VSO
+		
+
+
+
+Code Integration
+------------------------------------
+Problem - 	Code Integration
+		version of the code
+			WHO
+			WHY
+			WHEN
+			WHERE
+		EVERYONE SHOULD BE ABLE TO DO EVERYTHING THEIR OWN
+			ADD
+			DELETE
+			COMMIT
+			BRANCH
+			MERGE
+			VIEW
+Solution - 
+		[GIT] - SVN  - CVS - p4 - CC
+
+
+Static Code Ananlysis
+		https://en.wikipedia.org/wiki/List_of_tools_for_static_code_analysis
+		SonarQube
+
+Build Integration
+------------------------------------
+10K Source file ---> 10K class file 
+[Source code into Binary]
+		Clean Up
+		Create a dir
+		Copy the src
+		Copy the 3rd party
+		Set the compiler
+		Set the config
+		Dependency mgmt
+			Internal
+			External
+		-----------------------------
+		20 times in a day
+
+Solution
+		These are easy to learn/test/debug/and share
+		Maven
+		Gradle
+		MSBUILD
+		ANT
+		NANT
+		makefile
+
+		java
+		c++
+		shell
+		perl
+
+
+10K Class ===> PACKAGE
+
+Package Managemment Integration
+========================================
+	APPLICATION
+		JAVA	jar, war, bin, ear
+		DOTNET	dll, msi, exe
+		COMMON  zip, tar, gzip
+	SYSTEM
+		WIN	exe, msi
+		LN	rpm, deb
+		MAC	dmg
+		Mobile 	apk
+	
+	TOOLS
+		installanywhere,
+		wise
+		installshield
+		wix
+		rpmbuild
+		zip
+		tar
+	--------------------
+	20 times in a day
+
+Next Problem
+		BUILD VERSIONING
+		SECURITY 
+		INTEGRITY
+		Admin & mgmt activities
+
+Solution 
+		Private - NEXUS, Artifactory, Archiva, Choc, Nuget, 
+		Public - yum, apt, nuget, docker hub, Play store, app storeDep
+
+NEXT PROBLEM
+		Deploying to 100s of QA Server
+		
+		50 SERVER LINUX
+			25 RHEL
+			25 DEB
+		25 SERVER WIN
+			WIN 2012/16
+		25 MAC
+
+		25 MYSQL
+		25 MSSQL
+		25 ORACLE
+		25 POST
+
+		25 JBOSS
+		25 WEBLOG
+		25 WS
+		25 IIS
+
+		100 DIFF CONFIG
+	=====================================
+		10 mins | 5 mins?
+		How?? Problem???
+	Solution - 
+		CHEF / Puppet / Ansible | Salt
+
+		10 sec / 5 sec??
+		HOW? problem?
+	Solution - Docker
+
+Automated Testing
+		Selenium
+		QTP
+
+REPORTS 	
+		COMMON TOOLS
+
+Code Coverage 
+		JACOCO
+		COVERTURA
+		ETC
+================================================
+RELEASE
+================================================
+
+EVERYTHINGY YOU NEED TO DO 20 TIMES IN DAY....20 RELEASE
+
+
+Planning  - Jira
+Code Analysis - SonarQube
+Code mgmt - Git
+Build mgmt - Maven, Ant, Gralde, MSbuild
+Packagaing - Jar, War
+Repo - Nexus, Artifactory
+Deployment - Chef, Ansible, Docker
+AT - Selenium, Junit
+Code Coverage - Jacoco
+=============================
+	JENKINS
+
+
+What is CI?
+Auto Build + Auto Testing  + Imm Feedback
+					EMAIL
+					SMS
+					CHAT
+					DASHBOARD
+
+Planning -> Code -> CodeAna -> Compile -> UT -> -> Pack -> Dep2Repo -> Dep2QA-> AT -> CC --> RELEASE
+===================================================================================================
+Jira  --> Git-> SonarQube -> Maven -> Junit -> Jar -> Nexus -> Chef -> Selenum --> Jacoco
+			 		Continous Feedback 
+===================================================================================================
+					JENKINS
+	
+What is Jenkins?
+	is a CI tool
+	Free
+	Open Source
+	Driven by one of the active community of the world
+	Dumb tools
+		But very power when you integrate with plugins
+	Developed in Java
+	For for every automations tasks
+	Earlier name was known as hudson
+
+DEVOPS
+	Reduce the cost of the SD
+	Immediate release
+	Improve the quality
+
+How?	
+	Continous Code (agile,kanban,scrum)
+	Continous Inspection (Code Analsys)
+	Continous Build -> 
+	Continous Deploy to QA
+	Continous Test
+	Continous Release
+		Continous Delivery
+		Continous Deployment 
+		
+
+Continous Integration - FAIL | PASS
+
+Continous Delivery-  is State to reach...
+			You have a verified package readily available for the production.
+
+
+Continous Deployment  --is State to reach...
+
+Release in jenkins?
+	Jenkins OSS
+	Jenkins Enterprise	- Cloudbees - Paid
+	
+
+How to install Jenkins?
+
+PRE	
+	WIN 32/64  LIN 32/64 MAC
+	JRE ==> JDK
+
+	RHEL7.5 == Cent os 7
+	
+Download 
+	https://jenkins.io/
+
+
+DEMO SERVER IP ADDRESS - 13.127.149.237
+$ sudo -s
+$ cd
+$ yum install wget -y
+$  wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+$ rpm -ivh jdk-8u131-linux-x64.rpm
+$ java -version
+
+Jenkins Downoad & Install
+https://pkg.jenkins.io/redhat-stable/
+
+$ sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+$ sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+$ yum install jenkins
+
+Installed Location - /var/lib/jenkins
+
+How to start jenkins???
+$ systemctl start jenkins
+$ systemctl status jenkins
+$ systemctl stop jenkins
+
+How to access the jenkins?
+defauit port - 8080
+http://13.127.149.237:8080
+
+$ ps -eaf | grep jenkins
+
+jenkins  10730     1 22 07:12 ?        00:00:38 /etc/alternatives/java -Dcom.sun.akuma.Daemon=daemonized -Djava.awt.headless=true -DJENKINS_HOME=/var/lib/jenkins -jar /usr/lib/jenkins/jenkins.war --logfile=/var/log/jenkins/jenkins.log --webroot=/var/cache/jenkins/war --daemon --httpPort=8080 --debug=5 --handlerCountMax=100 --handlerCountMaxIdle=20
+root     11042  9686  0 07:15 pts/0    00:00:00 grep --color=auto jenkins
+
+Jenkins service is running as a "jenkins" user
+JENKINS_HOME=/var/lib/jenkins
+-jar /usr/lib/jenkins/jenkins.war
+--logfile=/var/log/jenkins/jenkins.log
+webroot=/var/cache/jenkins/war
+--httpPort=8080
+
+
+
+Architecture of Jenkins?
+Jenkins Server ---> Jenkins Client
+Master 		--> Slave
+Web Server		--> Node
+
+
+SECRET FORMULA OF THE JENKINS?
+============================================
+Where is your Source Code? Git SVN CVS p4  CC
+What is compiler/Interpreter ? JDK DOTNET pERL pYTHON
+What is your builder? maven ant msbuilld gradle
+
+MAVEN
+GIT - JAVA  - MAVEN
+https://github.com/scmgalaxy/helloworld-java-maven
+1. Create a job 
+2. Passed url of Git
+3. BUild it
+4. $ yum install git
+
+ANT
+GIT - JAVA - ANT
+https://github.com/scmgalaxy/helloworld-java-ant
+
+ANTGCCs
+GIT - CPP - Ant
+https://github.com/scmgalaxy/helloworld-cpp-ant-example
+
+Im humen
+================================
+git clone https://github.com/scmgalaxy/helloworld-java-maven
+cd helloworld-java-maven
+mvn compile
+
+
+-----------------------
+How to intall tools using Jenkins?
+Jenkins -> Manage Jenkins -> Global Tools Configurations
+Rakesh  - mvn 3.3.3
+Rajani - mavn 3.5.3
+		
+
+==========================
+Some of the popular Goals in Maven
+compile		compile
+test		junit
+package		jar
+install		local repo USER_HOME/.m2
+
+DEMO == LAB
+=============================
+Rename a Job
+Duplicate a Job with goal name = test
+
+
+Discard old builds?
+Disable this project??
+Execute concurrent builds if necessary?
+	RAJ 	10.01 AM --> 1 ----> 1HOUR	/var/lib/jenkins/workspace/build
+	RAK 	10.05 AM			/var/lib/jenkins/workspace/build@2
+	RAJANU 10.10 AM
+	AMIT 	10.20 AM
+	11:00 AM ------>
+This project is parameterised
+	You want deploy in => 	QA		10.0.0.4	
+				DEV		10.0.0.6
+				Stage		10.0.0.7
+				Integ		10.0.0.8
+
+
+rajesh@scmgalaxy.com
+===========================================
+
+LAB TIME 4.11 PM - 4.30 PM
+==========================================
+
+
+Build Triggers
+===============================
+How can you trigger a build auto way?
+	1. Set time							Build periodically	DONE
+	2. Set time but do build only if there are SCM changes		Poll SCM		DONE
+	
+	3. Trigger a Build when you push to the SCM			PENDING	
+	http://www.scmgalaxy.com/tutorials/build-when-a-change-is-pushed-to-bitbucket/
+	http://www.scmgalaxy.com/tutorials/how-to-build-when-a-change-is-pushed-to-github-in-jenkins/		
+	
+	4. Trigger from Script						DONE
+	http://www.scmgalaxy.com/tutorials/how-to-trigger-builds-remotely-in-jenkins
+	Step 1 - admin/admin123
+		
+	Step 2 - Access done
+
+
+	Step 3 - Get a ACCESS TOKEN
+	http://13.127.149.237:8080/user/admin/configure
+	TOKEN - f4a60615c5192e5d3c184633abf1c596
+
+	Step 4 - 
+	GET A PROJECT TOKEN
+	iFBDOBhNhaxL4T9ass93HRXun2JF161Z
+
+	URL - http://13.127.149.237:8080/job/Trigger4mScript/build?token=iFBDOBhNhaxL4T9ass93HRXun2JF161Z
+
+	curl -X POST http://admin:f4a60615c5192e5d3c184633abf1c596@13.127.149.237:8080/job/Trigger4mScript/build?token=iFBDOBhNhaxL4T9ass93HRXun2JF161Z
+
+
+	5. Build after other projects are built				DONE
+
+
+
+
+
+Questions?
+JENKINS USER TRAINING - 1, 2 day
+==========================================
+Planning -> Code -> CodeAna -> Compile -> UT -> -> Pack -> Dep2Repo -> Dep2QA-> AT -> CC --> RELEASE
+===================================================================================================
+Jira  --> Git-> SonarQube -> Maven -> Junit -> Jar -> Nexus -> Ansibe -> Selenium --> Jacoco
+			 		Continous Feedback 
+===================================================================================================
+					JENKINS
+
+
+
+DAY 2
+=====================================================
+13.127.106.68
+Trigger a Build when you push to the SCM
+http://www.scmgalaxy.com/tutorials/how-to-build-when-a-change-is-pushed-to-github-in-jenkins/
+	GITHUB
+	JENKINS
+	
+	s1-Install the Github Jenkins plugin
+	s2-Configure the plugin with github accounts and keys
+	s3-Check the GitHub project checkbox and set the Project URL to point to your GitHub Repository
+	s4-Under Source Code Management, check Git and set the Repository URL to point to your GitHub Repository
+	s5-Under Build Triggers, check the “Build when a change is pushed to GitHub” checkbox
+	s6-Install the Jenkins (GitHub plugin) and set a webhook to your Jenkins machine
+
+		http://13.127.106.68:8080/github-webhook/
+	
+Jenkins Jobs Configure 
+Integration
+	Jira		DONE
+	Git		DONE
+	SonarQube
+	Maven
+	Junit
+	Nexus
+	Chef
+	Selenium
+	Jacoco
+
+1. Get A nEW vm - 4GB
+2. iNSTALL dOCKER
+3. rUN app
+
+How to setup JIRA using Docker?
+13.232.21.125
+
+$ sudo -s
+$ sudo tee /etc/yum.repos.d/docker.repo <<-'EOF'
+[dockerrepo]
+name=Docker Repository
+baseurl=https://yum.dockerproject.org/repo/main/centos/7/
+enabled=1
+gpgcheck=1
+gpgkey=https://yum.dockerproject.org/gpg
+EOF
+
+$ sudo yum install docker-engine
+$ sudo systemctl enable docker.service
+$ sudo systemctl start docker
+$ docker run --detach --publish 8080:8080 cptactionhank/atlassian-jira:latest
+http://13.232.21.125:8080/
+http://ec2-13-232-21-125.ap-south-1.compute.amazonaws.com:8080/
+rajesh
+rajesh123
+
+JIRA INTEGRATION WITH JENKINS
+1. Install jira plugins in jenkins
+2. configure jira with jenkins
+3. Configure a job and fail it
+
+How to stop docker jira containers
+> docker ps
+> docker stop cont-id
+> docker stop 643ad6f880b1
+
+SonarQube Integration with Jenkins?
+- is a Quality mgmt dashboard(Code + Test + Coverage)
+
+	SonarQube Server
+		Rules from https://en.wikipedia.org/wiki/List_of_tools_for_static_code_analysis
+		Dashboard
+		DB	
+	$ docker run -d --name sonarqube -p 9000:9000 -p 9092:9092 sonarqube
+	http://13.232.21.125:9000/
+	http://ec2-13-232-21-125.ap-south-1.compute.amazonaws.com:9000/
+	admin
+	admin
+
+	SRC CODE -
+	https://github.com/scmgalaxy/java-sonar-runner-simple
+	
+
+	Jenkins
+		Install SonarQube Plugins	DONE
+		Config SonarQube PLugins....	DONE
+		Config Scanner			DONE
+		Download Src code		DONE
+		RUN SCANNER ON SOURCE CODE	DONE
+
+	
+
+SCA-->BUILD-->UT-->PACK-->DEp2Repo->
+======================================
+How can we integrate Nexus with Jenkins
+	NEXUS SERVER
+		REPO
+		USER N PASS
+	$ docker run -d -p 8081:8081 --name nexus sonatype/nexus:oss
+	http://13.232.21.125:8081/nexus
+	http://ec2-13-232-21-125.ap-south-1.compute.amazonaws.com:8081/nexus
+	admin
+	admin123
+	RELEASE - http://13.232.21.125:8081/nexus/content/repositories/cts-release/
+	SNAPSHOT - http://13.232.21.125:8081/nexus/content/repositories/cts-snapshot/
+
+	
+	How to deploy a package using maven to Nexus?
+	- modify pom.xml with repo location	DONE
+	- modify setting.xml with user/pass
+	[/var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/maven/conf]
+
+   <server>
+		
+	<id>cts-nexus</id>
+		
+	<username>admin</username>
+		
+	<password>admin123</password>
+
+   </server>
+
+
+	mvn deploy
+	
+	NOTE - ID of Pom.xml should match the id of setting.xml
+	cts-nexus
+
+How to integrate Ansible with Jenkins
+=======================================================
+Lets understand about ansible?
+
+What is Ansible?
+	Config mgmt tools
+	Deployment tools
+	
+	You can manage large numbers of servers through ansible?
+
+
+Ansible Arch?
+	Ansible Control Server - 1
+	Ansible Remote server - 10 / 100 / 1000
+
+How "Ansible Control Server" will know the the commands needs to executed>
+	inventoryfile
+		a list of hosts of "Ansible Remote server"
+
+What should be executed 
+	playbooks
+		script which you write and in the script you write a deployement of the packahe from NEXUS
+	
+
+> ansible-playbook -i inventory playbooks [Ansible Control Server]
+
+Step 1. Contrl server
+	How to install Ansible?
+	> yum install wget -y
+	> wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+	> sudo rpm -i epel-release-latest-7.noarch.rpm
+	> sudo yum update -y 
+	> sudo yum install ansible -y
+
+Step 2. inventory file with List of Remote server
+13.127.197.215
+13.232.52.163
+
+Step 3. Playbook a script which can copy the file from nexus and deploy in in Remote server
+
+---
+- hosts: localhost
+  sudo: yes
+ 
+  tasks:
+  - name: Ensure that Apache is installed
+    yum: name=httpd state=present
+
+  - name: Start Apache Services
+    service: name=httpd enabled=yes state=started
+
+  - name: Download my-maven-2.0.0.jar
+    get_url:
+      url: http://13.232.21.125:8081/nexus/content/repositories/cts-release/com/scmgalaxy/mavensample/my-maven/2.0.0/my-maven-2.0.0.jar
+      dest: /opt/my-maven-2.0.0.jar
+      mode: 0440
+
+
+ansible-playbook -i inventory playbook.yaml
+
+
+LAST POINT ----
+HOW JENKINS WILL RUN A COMMAND IN THE CONTROL SERVER???
+$ansible-playbook -i inventory playbook.yaml
+
+How can you add a slave in Jenkins?
+	IP	13.232.21.125
+	USER	ec2-user
+	PASSWORD OR KEY	
+	WORKING DIR /opt/jenkins
+
+JOB OF DEP2QA
+export ANSIBLE_HOST_KEY_CHECKING=False
+cp /opt/ws/inventory .
+cp /opt/ws/playbook.yaml .
+cp /opt/ws/remote-access.pem .
+chmod 600 remote-access.pem
+ansible-playbook -e 'host_key_checking=False' -i inventory playbook.yaml --key-file=remote-access.pem -u ec2-user
+ansible-playbook -e "ansible_user=username ansible_ssh_pass=xxx ansible_sudo_pass:xxx" -i inventory playbook.yaml
+
+
+How Jenkins Can be integrated with Selenium?	
+================================================
+src code	
+		https://github.com/scmgalaxy/Selenium-Maven-Template
+test code	
+		clean verify
+driver - browsers
+-------------------------
+	bat
+	sh
+	maven	=================
+	ant
+
+How can you integrate Jenkins with Code COverage?
+===============================================
+What is Code Covergae
+
+https://github.com/scmgalaxy/jacoco-maven-unittestv2
+> install
+
+100 JAVA --> 100 CLASS --> 100 TEST CASES (100% AUTO)
+----------------------------------------------------
+		TESTS --> REPORTS
+				PASS----> RELEASE
+				FAIL ---> REPEAT
+
+REPORTS == 100 JAVA - 100 CLASS ==> 100 TEST
+			PASSED		FAILED		COVEREAGE
+		100	60		40		100%		= DREAM	
+COVERAGE PROCESS WILL CHECK
+	EACH LINE
+	EACH METHOD
+	EACH BLOCK
+	EACH CLASS
+			COVERED DURING THE TESTING
+
+100 JAVA --> 100 CLASS --> 100 TEST CASES ()
+----------------------------------------------------
+			PASSED		FAILED		COVEREAGE
+		100	60		40		60%		= DREAM	
+MEANING --- 60% of the code only
+	EACH LINE
+	EACH METHOD
+	EACH BLOCK
+	EACH CLASS
+
+
+CODE COVERGE IS A PROCESS WHICH YOU WILL COME TO KNOW WHAT IS % of the code has been covered during the test
+														AUTO
+														MAN
+	100 JAVA - 100 file - 50 TEST(50%) / 30
+CC	----		---	50%         30%
+TS				100%        60%
+
+Code Coverage
+		Coverity
+		JACOCO		=====
+		Cobertura
+		NCOVER
+		
+
+
+
+Code Coverage Vs Test Covergae
+==========================================================
+
+Conclusion
+	INTEGRATING TEAM
+	INTEGRATING TOOLS
+	INTEGRATING PROCESS
+			REDUCE THE RELEASE
+			REDUCE THE COST
+			IMPROVE THE QUALITY
+
+Jenkins Jobs Depedency
+===============================
+	INTEGRATING A JOBS
+
+
+
+
+Imm Feedback
+======================================
+	EMAILS ???
+	CHAT ??
+	DASHBOARD ??
+
+How to send an email using jenkins?
+	SMTP 
+	Manage Jenikins --> Config System --> 
+						SMTP server (For Plugins Extended E-mail Notification)
+						E-mail Notification (For plugins Email Notification)
+	Job Config --> Post Build Action --> 
+					Email Notification
+
+	Content of Email
+	Manage Jenikins --> Config System -->
+		Email Notification Plugins --> Default Content Type
+
+
+$PROJECT_NAME
+$BUILD_NUMBER
+$BUILD_STATUS
+$BUILD_URL
+https://wiki.jenkins.io/display/JENKINS/Building+a+software+project#Buildingasoftwareproject-belowJenkinsSetEnvironmentVariables
+
+How can you sent an chat message using jenkins?
+Jabbar		DONE
+Cisco Communicator
+Slack
+
+How can we build nice DASHBOARD ?? === PIPELINE
+	Build Pipeline - Basic - No Scripting Required
+	pipeline - Advance - Need Scripting(jenkinsfile)
+	https://jenkins.io/doc/book/pipeline/
+
+	Script Name - 
+	jenkinsfile
+		Pipeline === Name  or Label or Tag
+		Node	==== WHERE YOU RUN THE Step
+		Stage   ==== JOB NAME
+		Step	==== build step in the job config
+	
+node {
+   echo 'Hello World'
+}
+
+node {
+   def mvnHome
+   stage('Preparation') { // for display purposes
+      // Get some code from a GitHub repository
+      git 'https://github.com/jglick/simple-maven-project-with-tests.git'
+      // Get the Maven tool.
+      // ** NOTE: This 'M3' Maven tool must be configured
+      // **       in the global configuration.           
+      mvnHome = tool 'maven'
+   }
+   stage('Build') {
+      // Run the maven build
+      if (isUnix()) {
+         sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
+      } else {
+         bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean package/)
+      }
+   }
+   stage('Results') {
+      junit '**/target/surefire-reports/TEST-*.xml'
+      archive 'target/*.jar'
+   }
+}
+
+
+pipeline {
+    agent any 
+    stages {
+        stage('Build') { 
+            steps {
+                echo 'Hello World'
+            }
+        }
+        stage('Test') { 
+            steps {
+               	echo 'Hello World'
+            }
+        }
+        stage('Deploy') { 
+            steps {
+               echo 'Hello World' 
+            }
+        }
+    }
+}
+	
+How do you find the list of steps in Jenkins pipeline?
+https://jenkins.io/doc/pipeline/steps/
+
+					
+sh /opt/shell.sh
+
+JENKINS WITH DOCKER
+	
+	Docker Community Edition
+	Docker Enter
+	Docker Swram
+	Docker Compose
+	Dockerfile
+	Docker Machine
+
+How do you run the container of the docker images in the node?
+
+How do you deploy APPS using Docker?
+	1. ONE HOST		- docker engine(doker run)
+	2. MULTPLE HOST		- docker machine
+	3. HELL LOT OF HOST	- (Swaram or kubernetes)
+
+MULTPLE HOST
+=======================
+	2 WAYS OF IT
+		DOCKER MACHINE
+		JENKINS
+	
+
+========================================================
+JENKINS ADMIN ACTIVITY
+========================================================
+1. ADDING A NODE
+		LINUX
+		WINDOWS
+			Windows a Service - 	
+			https://wiki.jenkins.io/display/JENKINS/Windows+slaves+fail+to+start+via+DCOM
+
+			JNLP	 -- WEB START
+			NODE PORT SHOULD BE ENABLED IN JENKINSSERVER
+			http://13.127.100.246:8080/configureSecurity/
+			Agent Port - Random
+
+			JDK NEED TO INSTALLED IN WINDOWS SLAVE (slave.jar)
+			Remote root directory	
+			Launch Agent via Java Web Start
+			
+			download agent.jar in D:\jenkins
+			java -jar agent.jar -jnlpUrl http://13.127.100.246:8080/computer/windows/slave-agent.jnlp -secret 6c2bdbee2935f0e9da9e3e04d8d73d433399068ef6e94f0626af7b21b579c3ef -workDir "D:\jenkins"
+
+	
+How can you build DONET?
+https://github.com/scmgalaxy/msbuild-helloworld
+C:\Windows\Microsoft.NET\Framework64\v4.0.30319 --> PATH
+> msbuild
+
+=====================LAB==============================
+https://github.com/scmgalaxy/teamcity-dotnet-service
+https://github.com/scmgalaxy/teamcity-batch-helloworld
+
+
+
+EXERCISE
+	Configure System
+	Global Tools Configuration
+	Manage Plugins
+	System Logs
+	Manage Nodes
+	Manage Users
+
+
+======================================================================
+Configure Global Security
+	AUTHENTICATION
+		Jenkins Own database
+			USER ID & PASSWORD --- JENKINS FILES
+		JENKINS with LDAP
+			
+		JENKINS WITH SERVELETS
+			3rd party 
+				Twitter
+				Gmail | fb |opendid
+
+	AUTHRIZATION
+		WHO SHOULD ACCESS WHAT?
+			Anyone can do anything
+			 Logged-in users can do anything
+
+		Matrix-based security
+			APPLIESS TO WHOLE JENINS
+		Project-based Matrix Authorization Strategy
+			PROJECTS
+What about if you lost the password? or forgot??
+=================================================
+File name - config.xml under /var/lib/jenkins....
+	DISABLE THE AUTHENTICATION
+
+FROM
+<useSecurity>true</useSecurity>
+TO
+<useSecurity>false</useSecurity>
+
+===========================================
+Project-based Matrix Authorization Strategy
+	EXT OF Matrix-based security
+
+BUT APPLIES ON EACH PROJECTS
+	Projects
+	Job Can act like a Projects
+
+
+How to change port?
+		8080
+WINDOWS --->jenkins.xml
+
+LINUX - 
+
+How jenkins service is registered?
+/etc/init.d/jenkins
+	JENKINS_CONFIG=/etc/sysconfig/jenkins
+			JENKINS_PORT="8080"
+systemctl stop jenkins
+systemctl start jenkins
+
+=====================================
+========================================
+BREAK for 15 MINS. START TIME - 11.50AM
+========================================
+
+RELOAD CONFIGURATION FROM DISK
+----------------------------------
+Jenkins Store everything in xml
+
+rajesh@scmgalaxy.com
+
+monitoring Jenkins load 
+	IN Built
+	Naios
+	AppD
+	N
+
+=================================================
+load balancing of Manage Nodes
+
+Answer- Labels
+
+1	LINUX
+2	LINUX
+3	WINDOWS
+
+
+==================================
+Using Jenkins command line? - JENKINS CLI
+http://13.127.244.212:8090/cli/
+
+How to configure?
+> wget http://13.127.244.212:8090/jnlpJars/jenkins-cli.jar
+> java -jar jenkins-cli.jar -s http://172.31.30.174:8090/ help
+> java -jar jenkins-cli.jar -s http://172.31.30.174:8090/ login - DEPRICATED
+> java -jar jenkins-cli.jar -s http://172.31.30.174:8090/ who-am-i # default will go into anonymous
+> java -jar jenkins-cli.jar -s http://172.31.30.174:8090/ who-am-i --username admin --password admin123
+> java -jar jenkins-cli.jar -s http://172.31.30.174:8090/ -auth admin:admin123 list-jobs
+> java -jar jenkins-cli.jar -s http://172.31.30.174:8090/ -auth admin:admin123 delete-job BUILD3
+
+Using Groovy Script do the automations in Jenkins?
+===================================================
+How can you call a groovy script in jenkins
+	1. http://13.127.244.212:8090/script
+
+	2. Attaching a Gradle using
+			https://wiki.jenkins.io/display/JENKINS/Scriptler+Plugin
+
+
+Example Groovy Script?
+http://www.scmgalaxy.com/tutorials/database-of-groovy-script-for-jenkins-automation/
+	
+
+My preferred Plugins
+http://www.devopsschool.com/tutorial/jenkins/jenkins-plugins.html
+
+
+How to Backup Jenkins?
+	JENKINS STORE EVERYTHNG IN XML
+	
+	What need to be backup?
+	XML
+		job
+		plgins
+		users
+		permis
+		config
+		tools
+
+	How can you backup XML?
+	1. Dumb Backup Process - /var/lib/jenkins  using rsync
+	https://www.fastwebhost.in/blog/13-rsync-command-examples-on-linux/
+	SOURCE			DESTINAION
+	/var/lib/jenkins 	/var/lib/jenkins
+
+	S3 RYNC - Changed file
+
+	2. SCRIPT
+	http://www.scmgalaxy.com/tutorials/jenkins-backup-and-restore-process/
+
+	3. PLUGINS
+		THINBACKUP
+		- Install Plugins
+		- Configure plugins
+			http://13.127.244.212:8090/manage
+			http://13.127.244.212:8090/thinBackup/backupsettings
+ 
+
+
+How to restore it?		
+			DONE
+
+
+
+
+
+JENKINS ADMINISTRATION SESSION - 3rd DAY & 4 the day
+========================================
+Jenkins using command line		DONE
+Jenkins Security			DONE
+		Authri
+		Authen
+		Project Level
+		Role
+Jenkins Scripting using Groovy		DONE
+7. How do you recover admin password	DONE
+1. How can i change the jenkins port		DONE
+2. How i can install jenkins to custom path
+		https://jenkins.io/download/ - WAR FILE
+						using Tomcat
+						User - Jenkins | Tomcat
+3. How can we enable https for Jenkins?
+		HTTP
+		NGNIX
+		PORT Forwarding
+		https://wiki.jenkins.io/pages/viewpage.action?pageId=135468777
+		https://wiki.jenkins.io/display/JENKINS/Running+Jenkins+behind+Apache
+
+
+4. Jenkins installation in Tomcat?
+		USING WAR
+5. How can i install plugins via command line?
+		install-plugin	Installs a plugin either from a file, an URL, or from update center.
+6. How can i backup and Disaster reovery?	DONE
+		
+	Jenkins Migration
+7. Jenkins CLI					DONE
+8. LDAP integration
+9. After installation of any plugins, is it necessary to restart jenkins? - DEPENDS
+10. Master -  Slave - Executors : Best practices to configure		- LABELS | EXECUTORS | Concurrent
+11. How to setup Jenkins Slave on demand basis, automatically?		- DONE 
+					
+			Automatically
+			VM (BASE VM) = JDK + SLAVE.jar
+			MASTER --> NODE(SLAve.jar)
+				PERMISION
+			ONE SLAVE.jar == ONE MASTER
+
+			MASTER --> SLAVE (LINUX EXAMPLE)
+			NODE --> MASTER (WINDOWS EXAMPLE)
+
+12. Monitoring Jenkins Slaves & Server
+			APPDYnamics
+			Nagios COre - OSS
+			NAgios  XI  -		http://www.devopsschool.com/tutorial/nagios/
+			New Relic Infra		- http://www.devopsschool.com/tutorial/newrelic/
+			Datadog
+13.  How to hande trust store /Certifactes etc
+			Certifactes --> APACHE/NGNIX
+			KEY - http://13.127.244.212:8090/credentials/
+14. job load balancing in jenkins using labels.		- DONE
+15. HA setup in Jenkins
+		HA of Jenkins
+			PRIMARY JENKINS SERVER  ----> 100s Nodes --- WORKING == 10.5.6.67
+			SECONDARY JENKINS SERVER			10.5.6.68
+
+
+		WHEN you take a backup of PRIMARY JENKINS SERVER ----> SECONDARY JENKINS SERVER	
+		SETUP A MONITOING on PRIMARY---FOR 10 MINS...---- ALERT
+					ACTION --- 
+						DNS SERVER 
+							jenkins-master = 10.5.6.67 TO 10.5.6.68 (1 SEC)
+
+		AWS -> LOAD BALE
+			SCALING
+			ROUTE 53
+
+		AZURE
+			
+		GC -----
+
+
+
+16. how many slaves we can configure in jenkins?
+		EACH EXECUTORS - 2MB (Approx) RAM 
+				SSH 		
+				WEBSTART 
+		SEVR - 4GB 
+			1GB - OS
+			1 GB other
+			2 GB - 
+				1 Node - 10
+				200 executors - 200/10=20 NODES
+
+17. How to setup slave
+		SSH
+		webstart
+		jNLP
+		etc
+	
+Parrel Build
+			BUILD ANOTHER OPTIONS
+			JENKINS FILE----
+			DSL --- TRIG
+			
+			How to trigger a a job using command line	
+
+rajesh,for each master how many nodes it can handle and if am migrating any project job,can I make two master (mean two servers) which will help ful for me to add more nodes into it.So will you help me clarify on this
+
+
+Can you show once nagios config once
+		SETUP A NAGIOS SERVER	- http://www.devopsschool.com/notes/nagios/Nagios.txt
+		SETUP A JENKINS SERVER AS A AEGNT(Install Nag agent in the Jenkins Server)
+			http://www.scmgalaxy.com/tutorials/step-by-step-procedures-to-install-nagios-agent-in-linux
+		MOTIORING. START
+
+Can you pls explain about multi branch pipeline	DONE
+
+How to recover the stuck jobs.....		DON
+
+How to troublshoot in jenkins?			DONE
+		System logs
+		Appcation log
+		Java Dumb		----
+
+RESTART THE JOB IF IT IS
+
+-rajesh@scmgalaxy.com
+
+still now we have discussed CI part,how real tim scenarios can we get?...just share with your experiecnes
+
+still now we have discussed CI part,how real tim scenarios can we get?...just share with your experiecnes---can you answer rit
+http://www.devopsschool.com/video/devops/DevOps-Essentials.html
+http://www.devopsschool.com/video/devops/Complete-CICD-Implementation-from-Scratch.html
+
+sometimes,jobs are goes in pending state when it configured through slaves and like any other issue we face in jenkins?...
+
+
+
+PENDING
+can we have a token for group of jobs ( within folder ) like we have tokens for organizations in GitHub
+===================================================4
+I NEED YOUR INFO TO SEND 
+		cOURSE MATERIAL
+		TRAINING CERTIFACTE
+
+SEND ME AN EMAIL to info@scmGalaxy.com with
+
+SUBJECT - CTS-JENKINS-MAY-2018
+FULL Name
+PERSONAL EMAIL ID
+OFFICE EMAILD ID
+Mobile #
+Role - 
+
+=================================
+TRAINING FEEDBACK
+http://tcheck.co/2nkLwb
+
+Trainer
+----------------------------------------
+
+RAJESH KUMAR
+http://rajeshkumar.xyz/cv/
+
+EMAIL - DevOps@RajeshKumar.xyz
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+
+
+
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+

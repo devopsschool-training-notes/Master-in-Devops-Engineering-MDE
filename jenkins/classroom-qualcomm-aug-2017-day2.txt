@@ -1,0 +1,170 @@
+What is Jenkins?
+	CI Tool
+	FREE
+	OPEN SOURCE
+	JAVA
+	ENGINE + PLUGINS
+	1000+ plugins
+
+=======================INTEGRATION================================
+What is CI?
+Auto B + Auto Testing + Imm Feedback(PASS + FAIL)
+
+QualX ---> Mgrx
+
+Architect - 1 --> JIRA		-RALLY, TRELLO, MP
+Dev -> 10 --> m10 --> INTEGRATON --> GIT
+	STATIC CDE ANA ----> SONARQUBE
+	Source CODE to Binary --> BUILD MGMT ---> Maven,
+	Packaging - 
+			SYSTEM
+				RPM, EXE, MSI, DMG
+			APPLICATION
+				war, jar, tar, zip, ear, bin, dill, exe, 
+	UNIT TEST	JUNIT, NUIT, 
+	REPO mgmt ---	NEXUS, ARTIFACTORy, ARCHIVA, NUGET,
+	DEPLOY
+			QA --> 100 SERVER
+			50 WINDOWS
+			50 LINUX
+		
+			50 MSSQL
+			25 MYSQL
+			25 ORACLE
+			
+			25 JBOSS
+			25 TOMCAT
+			25 WL
+			25 WC
+
+			100
+===========================================
+			5 mins.
+		100 SERVERS - 1 mins -  VIRTUALIZATION
+		DEP - -4 mins - CHFF, ANSIBLE, PUPPET, SALT --- CONFIG MGMT
+----------------------------
+		5 sec
+		DOCKER
+		
+
+AT === 3 sec
+
+CODE COVERAGE ------> JACOCO, COBBERTURA, COVERITY
+
+RELEASE
+==============================================================	
+
+
+CI TOOLS ----JENKINS - BAMBOO - TFS -- TEAMCITY
+
+Qa
+IT
+DB
+BR
+OPS
+=======================================================
+How to install?
+
+====================================
+RULES OF JENKINS
+========================================
+WHERE IS MY SOURCE CODE?
+WHAT IS MY COMPILER | INTERPRETOR?
+WHAT IS MY BUILDER?
+
+GIT	JAVA		MAVEN | ANT | GRADLE
+	DOT NET		msbuild | NANT
+			BATCH | SHELL
+	PERL		PERL
+	PY		PY
+	HP		PHP
+
+
+=======================================
+DMEO 1:
+GIT	JAVA		
+https://github.com/scmgalaxy/helloworld-java-maven
+
+LAB 1:
+
+MAVEN
+pom.xml 
+Compiler
+GOal - compile
+
+
+DEMO 2:
+=============================
+compile --> test --> package --> install --> deploy
+
+Build Triggers
+UI --> EMAIL --> SMS --> CHAT
+BUILD PIPELINE
+
+LAB 2:
+
+GIT	JAVA	ANT
+https://github.com/scmgalaxy/helloworld-java-ant
+Filename - build.xml
+Target - package
+
+
+GIT	DOTNET	MSBUILD
+https://github.com/scmgalaxy/msbuild-helloworld
+C:\Windows\Microsoft.NET\Framework64\v4.0.30319
+File name - default.msbuild
+
+GIT	DOTNET	BATCH
+https://github.com/scmgalaxy/teamcity-batch-helloworld
+Builder - build.bat
+
+=======================================================================
+JIRA --> GIT --> SONARQUBE -> MAVEN --> JAR --> UNT --> NEXUS --> CHEF --> SEL --> JACOCO --> RELEASE
+===========================================================================================================
+					JENKINS
+
+SonarQube - DONE
+
+
+
+
+NEXUS integration with Maven
+		pom.xml with repo location
+	
+		setting.xml with username /pass
+
+		mvn deploy
+
+
+JACOCO
+======================
+COde Coverage ---> TEST CLASS + SRC CODE 
+
+Install Plugins
+Config Plugins
+
+
+============
+docker integration
+
+
+NODE MGMT
+	ip address	13.126.241.48
+	user		ec2-user
+	pass
+	worksapce	/opt/ws
+
+
+DOCKER INTEG
+PARA
+GROVVY
+
+
+
+
+
+
+
+
+
+

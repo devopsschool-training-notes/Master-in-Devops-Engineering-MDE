@@ -1,0 +1,107 @@
+What is Jenkins?
+	CI tools
+	Open Source
+	Dumb tools	
+		1000+ Plugins - It is everything
+	By Community
+	Dev in Java
+	For any kind of automation
+
+What is CI?
+	Continous Integration
+http://www.devopsschool.com/video/devops/cicd-pipeline-using-jenkins.html
+
+Auto B + Auto Testing + Immediate Feedback
+=================================================
+Plan -> Coding -> SCA -> Build -> Pack -> Dep -> AT --> CC -> RELEASE(FAIL | PASS)
+JIRA -> GIT    -> SONARQUBE --.Maven -> JAR ->. Puppet-> Sel --> Jacoo
+-------------------------------------------------------------------------
+				JENKINS
+
+Integrate all tools
+	all process
+	all phases
+	all work
+	all team
+			Automatically........
+
+CI --> CD --> CD
+       Continous Delivery
+		Cont Dep
+
+What are other tools?
+	Teamcity from Jetbrains
+	Bamboo from Atlassian
+	ubuild - IBM
+
+How to install it?
+	JDK or JRE
+	JENKINS
+
+How to install jenkins?
+------------------------------------------
+JDK OR JRE
+> wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+
+> rpm -ivh jdk-8u131-linux-x64.rpm
+
+How to download & Install
+https://pkg.jenkins.io/redhat/
+
+How to access jenkins?
+================================
+http://13.127.225.88:8080/
+
+
+
+RULES OF JENKINS
+========================================
+Q1. Where is your source code?	- GIT, SVN, TFS, VSS, P4, CC
+Q2. What is your tec==Compiler? - JAVA, DOTNET, C, C++, perl pythng ruby
+Q3. What is your builder - ant, makeile, sh, batch, maven, perl,py gra, msbuild
+Q4. How to execute --??????
+
+GIT - JAVA - MAVEN=====MAVEN
+https://github.com/scmgalaxy/helloworld-java-maven
+
+GIT - JAVA - ANT
+https://github.com/scmgalaxy/helloworld-java-ant
+
+GIT - DOTNET - MSUUILD
+https://github.com/scmgalaxy/msbuild-helloworld
+
+
+
+Scheduling
+===========================
+	At certain ============Build periodically
+	At Cerntain time but if changes===Poll SCM
+ 	On each commit -- HOOKS at the git level
+			= GitHub hook trigger for GITScm polling
+	http://www.scmgalaxy.com/tutorials/how-to-build-when-a-change-is-pushed-to-github-in-jenkins
+
+
+Trigger builds remotely (e.g., from scripts)
+======================================
+http://www.scmgalaxy.com/tutorials/how-to-trigger-builds-remotely-in-jenkins
+
+Q
+Master Slave
+	LINI  --  IP + US + PA + Wrking Dir == 13.127.13.93
+	WIND
+
+slave.jar need to be running in each node.... ==> jenkins Server
+
+
+
+Backup
+.xml
+http://www.scmgalaxy.com/tutorials/jenkins-backup-and-restore-process
+==========================
+
+
+Command Line
+=======================
+
+API
+Command Line

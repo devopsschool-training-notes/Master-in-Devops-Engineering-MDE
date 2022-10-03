@@ -1,0 +1,141 @@
+What is Jenkins?
+    CI tools
+    Java Based
+    Free
+    Plugins is all about in Jenkins
+    Version
+            Community
+            Enterprise by Cloudbeess
+                        
+What are other tools -
+Free - Cruisecontrol -> Continum
+Paid - AnthillPro, UBuild, UDeploy, Teamcity, Bamboo, 
+
+
+What is CI?
+Auto Build + Auto Test + Imm Feedback
+
+Plan -> Code -> Analysis -> Build -> UT -> Pack -> Dep2Repo -> Dep2Qa -> AT -> CC -> RELEASE
+--------------------------------------------------------------------------------------------
+Jira -> Git  -> SonarQube -> Maven -> Junit -> Jar -> Art -> Ansible -> Sel -> Jacoco 
+--------------------------------------------------------------------------------------
+                                        Jenkins
+
+Imm
+    Emails | SMS | CHAT | Pager | Dashboard
+
+DevOPs - http://www.devopsschool.com/video/
+
+How to install Jenkins?
+http://www.devopsschool.com/tutorial/jenkins/
+http://www.devopsschool.com/tutorial/jenkins/jenkins-installation-and-configuration.html
+
+
+FORMULA OF Jenkins
+===========================
+1. What is Code? - JAVA, C++, PERl, PY, R
+2. Where is your source code? Git
+3. What is your builder?
+
+JAVA    https://github.com/scmgalaxy/helloworld-java-maven
+Git     
+Maven | Ant - MAven 
+        mvn compile
+
+
+http://download.oracle.com/otn-pub/java/jdk/8u181-b13/96a7b8442fe848ef90c96a2fad6ed6d1/jdk-8u181-linux-i586.tar.gz
+
+
+JIRA 
+http://13.127.67.19:8080
+rajesh
+rajesh123
+
+SonarQube
+http://13.127.67.19:9000/
+admin
+admin
+
+SRC - https://github.com/scmgalaxy/java-sonar-runner-simple
+
+Artifactory
+http://13.127.67.19:8081/artifactory
+admin
+password
+
+Which is the maven goal which will upload Package to repo?
+deploy
+
+1. pom.xml with repo location
+
+<distributionManagement>
+    <repository>
+        <id>deploymentRepo</id>
+        <name>51708afbf5e2-releases</name>
+        <url>http://13.127.67.19:8081/artifactory/rajesh</url>
+    </repository>
+    <snapshotRepository>
+        <id>deploymentRepo</id>
+        <name>51708afbf5e2-snapshots</name>
+        <url>http://13.127.67.19:8081/artifactory/rajesh</url>
+    </snapshotRepository>
+</distributionManagement>
+
+
+2. setting.xml with user id n pass
+
+    <server>
+      <id>deploymentRepo</id>
+      <username>admin</username>
+      <password>password</password>
+    </server>
+
+------------
+13.127.67.19
+ec2-user
+key
+worksapcee - /opt/jenkins
+
+
+
+Imm Feedback
+    Emails - SMTP
+    Zabber - 
+    Fax  -
+    Pager
+    WhatsApp
+    SMS
+    DASHBOARD
+        BUILD PIPELINE
+        PIPELINE
+
+    How can we schedule a job
+
+===========================
+
+Subject - Devops Certified Administrator
+
+Full Name - 
+Personal Emails
+Official Emails
+Phone
+Role 
+
+
+TO INFO@SCMGALAXY.COM
+========================
+Rajesh Kumar
+Email - DevOps@rajeshKumar.xyz
+CV - http://rajeshkumar.xyz/cv/
+
+-----------
+Feedback
+
+Internal - Will share
+External Feedback - 
+
+
+
+
+
+

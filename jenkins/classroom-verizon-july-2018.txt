@@ -1,0 +1,155 @@
+What is Jenkins?
+	CI tools
+	Free
+	Open Source
+	Dev in Java
+	For Automation and CI
+	Based on GUI
+	Dumb Tool
+		But empowered with Plugins.
+
+What is CI - Cont Integ
+
+Auto Build + Auto Test 
+----------------------
+	Imm Feedback
+
+Planning -> Code -> Ana -> UT -> Pack -> Dep2Repo -> Dep2Qa -> AT -> CC -> Release
+Jira         git  - SonarQube - junit  jar    artifactory   ansible -> Sel - Jacoco ---
+===============================================================================
+					JENKINS
+
+Other tools - Bamboo, Teamcity, Anthill, UBuild, 
+
+Jenkins
+	Open Source
+Jenkins Enter
+	Cloudbees
+
+
+How to install Jenkins?
+	JRE + JDK
+13.232.144.121
+
+
+$ sudo -s
+$ cd
+$ yum install wget -y
+$  wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+$ rpm -ivh jdk-8u131-linux-x64.rpm
+$ java -version
+
+
+https://pkg.jenkins.io/redhat-stable/
+sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+yum install jenkins
+
+
+systemctl start jenkins
+
+=======================
+OTHER SERVERS
+13.126.184.229
+
+JIRA
+docker run --detach --publish 8080:8080 cptactionhank/atlassian-jira:latest
+http://13.126.184.229:8080/
+rajesh/rajesh123
+
+SonarQube
+docker run -d --name sonarqube -p 9000:9000 -p 9092:9092 sonarqube
+http://13.126.184.229:9000/
+admin/password
+
+Artifactory
+docker run -d -p 8085:8080 mattgruter/artifactory
+http://13.126.184.229:8085
+
+Integration
+----------------------
+Jenkins with 
+		GIT
+		https://github.com/scmgalaxy/helloworld-java-maven
+
+FORMULA OF JENKINS
+-------------------------------------------------
+Where is your source Code? GIT - JAVA - MAVEN--
+				
+What is Source Codde??
+JAVA	PY	PE	CC	
+What is your builder?
+
+
+Maven
+	compile
+	package
+	test
+	deploy
+
+
+BUILD
+
+
+JAVA
+
+$ cd /opt
+
+$ wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.tar.gz
+
+$ tar -xvf jdk-8u131-linux-x64.tar.gz
+
+
+SonarQube
+	Src			https://github.com/scmgalaxy/java-sonar-runner-simple
+	Scanner							DONE
+	SonarQube	http://13.126.184.229:9000/		DONE
+			admin / admin
+
+
+Integ with artifactory?
+How to deploy a artifact from maven to arrt
+1. Create a repo in art				DONE
+2. put that repo in pom.xml			DONNE
+3. put the access of art in setting.xml		DONE
+/var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/maven354/conf
+
+http://13.126.184.229:8085
+
+<distributionManagement>
+    <repository>
+        <id>00321bca3728</id>
+        <name>00321bca3728-releases</name>
+        <url>http://13.126.184.229:8085/artifactory/verizon</url>
+    </repository>
+    <snapshotRepository>
+        <id>00321bca3728</id>
+        <name>00321bca3728-snapshots</name>
+        <url>http://13.126.184.229:8085/artifactory/verizon</url>
+    </snapshotRepository>
+</distributionManagement>
+
+    <server>
+      <id>00321bca3728</id>
+      <username>admin</username>
+      <password>password</password>
+    </server>
+
+
+Dep 2 QA  - DONE
+
+How to setup a node?
+13.126.184.229
+user
+key
+dir
+
+
+Code Coverage
+------------------
+https://github.com/scmgalaxy/jacoco-maven-unittestv2
+
+
+
+	
+

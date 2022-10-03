@@ -1,0 +1,135 @@
+What is Jenkins?
+	CI tool
+	Jenkins can integ with all
+	Scheduling
+	feedback
+	Open Source
+	Dev in JAVA
+	For any automation you need Scheduling & feedback
+	is nothing without plugins. N everyting with Plugins.
+	Release
+		Community
+		Enterprise by CloudBees 
+
+
+What is CI?
+	Auto Build  + Auto testing + Imm Feedback
+
+Commit -> Analsysi -> Build -> UT -> Pack -> Dep2Repo -> Dep2QA -> AT -> CC-> REL
+---------------------------------------------------------------------------------
+			IMM FEEDBACK
+GIT	SonarQube	Maven  Junut - Jar -> Artifactory ->Ansible -> JUNUT - JACOCO
+=================================================================================
+				JENKINS
+
+Other tools - Teamcity, Bamboo, TFS family, UBuild-Deploy
+
+How to install Jenkins?
+JDK
+  62  sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+   63  sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+   64  yum install jenkins
+   65  ls
+   66  systemctl start jenkins
+   67  systemctl status jenkins
+   68  ps -eaf | grep jenkins
+   69  more /var/lib/jenkins/secrets/initialAdminPassword
+   70  history
+
+====================================
+Secret formula of Jenkins?
+
+What is your technology?
+JAVA
+
+Where is your source code?
+https://github.com/scmgalaxy/helloworld-java-maven
+
+What is your builder?
+maven
+
+
+Steps to build....
+1. creating a dir?	mkdir workspace
+2. dwnload a src	git clone url
+3. set compiler		export 
+4. set builder		export maben
+5. call builder		mvn compile
+	VISUALiZATION
+	FEEDBACK
+========================================
+
+Arch of Jenkins
+-------------------
+https://www.devopsschool.com/blog/jenkins-architecture-explained/
+================================================================
+Jenkins
+http://13.233.148.136:8080/
+admin admin123
+
+Jira
+http://35.154.90.5:8080
+admin
+admin123
+
+
+Sonarqube
+http://35.154.90.5:9000
+admin
+admin
+https://github.com/scmgalaxy/java-sonar-runner-simple
+
+How to integrate jira with Jenkins?
+Jenkins should know few thing...
+	- Where is JIRA?	- Config -
+	- Cred of Jira		- Config -
+	- Commands of Jira 	- Plugins
+
+
+st and Load balancing
+Jenkins Pipeline
+Integration with Gitgub
+How do you call Terraform and CF?
+How to customize a Workspace location.
+Jenkins API
+
+How to add a nodes?
+Pre - 
+	JDK
+SSH | WINRM | JNLP
+
+35.154.90.5
+ec2-user
+key
+-working dir-- /tmp/jenws
+
+
+JACOCO FOR CC
+https://github.com/scmgalaxy/jacoco-maven-unittestv2
+=================================================================
+Integration?
+Node mgmt
+Feedback?
+	Email
+		Simple = E-mail Notification
+		Advance = Extended E-mail Notification
+	Chat
+		Slacke
+		Skype		
+	Dashboard
+		Simple - Build Pipeline
+		Advance - Pipeline
+
+==========================================
+How to Schedule a Jenkins Job?
+1. Build at Fixed time  === Build periodically
+2. Build at Fixed time but Only When there are changes? == Poll SCM
+3. Build "ME" only when another build job is build. == Build after other projects are built
+4. Build only when there are changes pushed into Github
+http://www.scmgalaxy.com/tutorials/build-when-a-change-is-pushed-to-bitbucket/
+http://www.scmgalaxy.com/tutorials/how-to-build-when-a-change-is-pushed-to-github-in-jenkins/
+5. Trigger builds remotely (e.g., from scripts)
+http://www.scmgalaxy.com/tutorials/how-to-trigger-builds-remotely-in-jenkins/
+11c6f153093626d378e58b795e03ae922b
+
+

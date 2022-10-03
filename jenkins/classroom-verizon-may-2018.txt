@@ -1,0 +1,212 @@
+Time - 7.5 HOURS
+========================
+I need - 30 mins
+=================
+7 HOURS
+	CI
+	CD
+	Vault
+	Python
+		
+===================================
+What is CI?
+	Continous Integration = Auto B + Auto Test + Immediate Feeback
+	
+Jira --> Git -> Sonarube -> Junit -->  Jar -> Artifactory -> Ansible --> SEL --> Jacoco - 
+												IF PASS - RELESE
+												IF FAIL - REPEAT 
+==================================================================================================		
+					jenkins
+
+Immediate Feeback
+		DASHBOAR
+		EMAIL
+		SMS
+		chat
+		whatsapp
+
+What is jenkins?
+	CI TOOL	
+	FREE
+	OPEN SOURCE
+	HTTP - BASHBOARING - RICH UI
+	Developed JAVA
+	One of the top 10 active open source projects
+	
+	DUMB Tools
+		PLugins ---Its become soo powerful...
+
+How to install Jenkins?
+	JDK
+	> yum install wget -y
+	> wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+	> rpm -ivh jdk-8u131-linux-x64.rpm
+	
+	JENKINS
+	> sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+	>  sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+	> yum install jenkins -y
+	> systemctl start jenkins
+
+MY JENKINS _ 35.154.21.72
+http://35.154.21.72:8080/
+admin
+admin123
+
+
+Secret formula of the jenkins?
+===========================================
+Where is your source code?	GIT | SVn | C | Playbook
+What is your source code? TECH	JAVA | Anisble | dockrfile
+What is your builder?		MAVEN | ansible | docker
+What is your compile		JAVA	| ansible+py | dockerengine
+
+HOW TO EXECUTE		
+
+
+				ansible-playbook
+
+				docker
+
+https://github.com/scmgalaxy/helloworld-java-maven
+
+				mvn compile
+				mvn packege
+				mvn test	
+				mvn deploy
+
+JAVA ISSUES
+==================
+cd /opt
+wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.tar.gz
+> tar zxvf jdk-8u131-linux-x64.tar.gz
+
+JAVA_HOME =/opt/jdk1.8.0_131
+
+
+JIRA - 13.127.243.158:8080
+admin
+admin123
+
+SOnar
+http://13.127.243.158:9000/
+admin
+admin
+
+JIRA
+VER-  10.76.118.112:8080
+phanic9
+admin123
+
+
+PROJECT - https://github.com/scmgalaxy/java-sonar-runner-simple
+Sonar
+10.76.118.76:9000
+admin
+admin
+				
+
+Artifactory
+http://13.127.243.158:8080/artifactory/
+
+POM.xml		Contain the repo path
+
+<distributionManagement>
+    <repository>
+        <id>bd7e4d6b271d</id>
+        <name>bd7e4d6b271d-releases</name>
+        <url>http://13.127.243.158:8080/artifactory/verizon</url>
+    </repository>
+    <snapshotRepository>
+        <id>bd7e4d6b271d</id>
+        <name>bd7e4d6b271d-snapshots</name>
+        <url>http://13.127.243.158:8080/artifactory/verizon</url>
+    </snapshotRepository>
+</distributionManagement>
+
+
+
+Setting.xml	Contain access
+		admin
+		password
+
+
+    <server>
+      <id>bd7e4d6b271d</id>
+      <username>admin</username>
+      <password>password</password>
+    </server>
+
+
+================================
+How to deploy a Artifact from Arttifactory to 100 servers using Ansible?
+
+http://13.127.243.158:8080/artifactory/verizon/com/scmgalaxy/mavensample/my-maven/2.0.0/my-maven-2.0.0.jar
+
+
+inventory of 100 machne
+roles
+	webserver
+		files
+			HOW CAN I PUT A JAR HERE
+			curl + wget =
+
+site.yaml
+
+ansble-playbook.yaml -i webservers
+
+
+
+
+
+Q1 . What about if control server is differnt the jenkins servers
+IP Add		13.127.243.158
+USER		ec2-user
+PASS
+
+WORKING 	/opt/jenkins
+
+==========================================================
+	Continous Inspection	
+	Continous Integratin
+CD
+	Continous Delivery
+	Continous Deployment
+	
+
+
+
+ABOUT ME
+RAJESH KUMAR
+Email - DevOps@RajeshKumar.xyz
+CV - http://rajeshkumar.xyz/cv
+Courses - http://www.scmgalaxy.com/courses/
+
+===========FOR CERTIFICATION & Materials ==========================
+
+SUBJECT - Ansible Training - May  2018 - Verizon
+
+Full Name -
+Personal Email ID = 
+Official Email ID = 
+Mobile Number = 
+Role in the Project = 
+
+To - info@scmGalaxy.com
+
+===========Feedback time ==========================
+http://www.scmgalaxy.com/
+
+
+
+
+
+	
+
+
+
+
+
+
+DEVOPPS
+http://www.devopsschool.com/video/devops/DevOps-Essentials.html

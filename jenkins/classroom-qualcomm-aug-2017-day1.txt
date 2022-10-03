@@ -1,0 +1,178 @@
+What is Jenkins?
+	JENKINS IS CI Tools?
+	FREE
+	OPEN SOURCE
+	JAVA 
+	FOR ANY PROJECTS
+	--------------------------------
+	PLUGINS
+	1000+
+
+What is CI?
+AUTO BUILD + AUTO TESTING + IMM FEEDBACK
+
+AUTO SCA  -> A B -> A P --> A DEP2NEXUS --> A DEP2QA --> A TEST --> A CC --> RELEASE
+=================================================================================
+				IMM FEEDBACK
+
+SONARQUBE -> Maven --> JAR --> NEXUS --> CHEF --> FAKE JOB --> Jacoco -->RELEASE
+
+
+SONARQUBE
+	SERVER
+	SCANNER
+	SOURCE CODE
+
+NEXUS
+
+	REPOS---
+	SNAPSHOT 
+	RELEASE
+
+	pom.xml with repo url
+	
+	setting.xml with username n pass
+
+	mvn deploy
+
+
+
+
+
+Qualcomm - QualX - MGRX
+
+ARCHITECT - 1
+DEV - 10
+QA - 5
+IT 
+DB 
+BR
+OPS
+
+ARCHITECT -->>>>JIRA/TRELLO
+DEV- 1- FEA ---10-
+	SOURCE CODE COLL ->p4, git, svn, 
+
+CODE REEVIEW ---- SONARQUBE
+
+Source code into Binary --- maven, ant, msbuild, gradle, makefile 
+	- Create a required dir structure
+	- Copy thesrc
+	- Copy Dep		
+		Internal
+		External
+	- Set the compiler
+	- Set the config
+	=============================
+	20 times in day
+
+Packaging
+		Application - war, jar, ear, msi, exe, zip, tar, bin, dll
+		SYSTEM - rpm, deb, dmg, exe, msi
+WISE, INSTALLS, IA, WIX, RPMBUILD, WINZIP, TARBAR
+
+Repos mgmt tool - NEXUS, ARTIFACTORY, ARCHIVA, NUGET
+
+DEPLOYMENT
+			PACKX ---> 100 SERVERS
+			50 LINUX
+			50 WIN
+	
+			25 JBOSS
+			25 WL
+			25 WS
+			25 IIS
+
+			25 MYSQL
+			25 MS
+			25 ORACLE
+			25 POR
+		
+			1000
+===============================================
+			5 mins
+		PC - PC -- VIRTUALIZATION - - 3 mins
+		CONFIGURATION MGMT TOOL - CHEF, PUPPET, ANSBILE
+	
+		3 SEC --> CONTAINERIZATION ---> DOCKER
+
+
+AT - QTP, SEL, HPQC
+
+CODE COVERAGE  ---- JACOCO, COBERTUR, COVERITY
+
+RELEASE
+=========================================
+JENKINS ===>>>
+
+
+How to Install Jenkins?
+	CENTOS -> RHEL 
+
+RULES OF THE JENKINS?
+	WHERE IS YOUR SOURCE CODE? - GIT, SVN, LOCAL, P4, CVS, TFS
+	WHAT IS YOUR COMPILER/INTERPRETOR
+			JAVA --> JDK
+			DOTNET --> VS/WINDOWS
+			PERL --> PERL
+			PYTHON -> PYTHON
+			PHP ---> PHP
+			SELENUM - JDK
+
+	WHAT IS YOUR BUILDER --
+				MAVEN
+				ANT
+				SHELL
+				BASH
+					BATCH
+				PERL
+				PYTHON
+
+SOURCE CODE  ===== TECH ==== BUILDER
+GIT		   JAVA		MAVEN
+https://github.com/scmgalaxy/helloworld-java-maven
+JDK
+MAVEN
+==================
+3 WF
+goal --- compile --> test --> package -> deploy
+
+GIT		   JAVA		ANT
+GIT		   JAVA		GRADLE
+GIT		   DOTNET	MSBUILD
+GIT 		   DTNET 	NANT
+GIT 		   DOTNET	BATCH
+
+LAB -
+ANT - TARGET - package
+https://github.com/scmgalaxy/helloworld-java-ant
+
+MSBUILD
+https://github.com/scmgalaxy/msbuild-helloworld
+msbuild location - C:\Windows\Microsoft.NET\Framework64\v4.0.30319
+
+BATCH
+https://github.com/scmgalaxy/teamcity-batch-helloworld
+
+
+How to add Nodes?
+
+IP ADDRESSS
+USER
+PSSS
+WORKSPACE
+
+
+Questions?
+What is Hudson?
+
+
+
+
+
+
+
+
+
+
+Quality Central 

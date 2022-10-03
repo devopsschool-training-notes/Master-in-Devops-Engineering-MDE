@@ -1,0 +1,72 @@
+What is Jenkins?
+	CI tool
+	Free
+	OpenSource
+		Cloudbees- Paid
+	Empowered with 100s Plugins
+
+What is CI?
+
+Auto Build + Auto Test  + Imm Feedback.	
+
+PLAN -CODE -BUilD - UT - PACK -Dep2REPo - Dep2QA - TEST - CC
+jIRA - GIT - MAVEN - JUNIT - JAR - ART - Puppet - SEL - JACOCO
+----------------------------------------------------------------
+				JENKINS
+Imm Feedback
+		EMAIL 
+		DASHBOARD ---- 
+		CHAT
+
+How to install Jenkins?
+	JRE + JDK	
+	JENINS
+https://www.devopsschool.com/tutorial/jenkins/jenkins-installation-and-configuration.html
+
+13.232.14.218
+http://13.232.14.218:8080/
+rajesh
+rajesh123
+
+Secret Formula of Jenkins
+=====================================
+What is the Technology? JAVA DN PER PY RU (Compiler OR intreptreter)
+Where is the source Code? Git
+What is Builder? Maven ANT
+===============================
+JAVA
+GITHUB
+MAVEN
+https://github.com/scmgalaxy/helloworld-java-maven
+mvn compile
+
+JAVA
+GITHUB
+ANT
+https://github.com/scmgalaxy/helloworld-java-ant
+
+Imm Feedback
+		EMAIL 
+		DASHBOARD ---- 
+		CHAT
+
+DASHBOARD ---- 
+	BUILD PIPELINE - EASY -GUI- NO CUSTOMIZATION
+		X number of Jobs
+		Everyone shuld be connected
+	PIPELINE - HARD - SCRIPTING - FULL CUSTOMIZATION
+	https://jenkins.io/doc/book/pipeline/
+
+	Scripting -- 
+		JENKINSFILE
+		JOB's Build Area
+
+
+
+	
+
+
+
+
+
+		

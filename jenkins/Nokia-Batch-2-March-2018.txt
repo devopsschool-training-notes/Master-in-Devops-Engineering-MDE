@@ -1,0 +1,232 @@
+What is Jenkins?
+	CI tool
+	Dumb Tools
+	BUT with plugins, its powerful.
+	Developed in java
+	Web Based
+	Free
+	Open Source
+
+WHY???
+======================================================================
+What is CI?
+	AUTO Build + Auto Testing + Immediate
+	--------------------------------------
+
+IN details....
+
+==============================================================================
+Planning -> Code -> Analysis -> BUILD ->Packaging ->Dep2Repo -> Dep2QA --> AT -> CC
+JIRA	-> Git -> SonarQube  -->ANT -> X Tools -> Artifactory -->Puppet> JUNIT --> JACOCO
+
+===================================================================================
+ANSWER - JENKINS
+
+
+How to install jenkins?
+------------------------------------------
+JDK OR JRE
+wget  wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+
+How to download & Install
+https://pkg.jenkins.io/redhat/
+
+How to access jenkins?
+================================
+=====================
+1 13.126.140.28
+2 35.154.255.154
+3 13.126.9.4
+4 13.126.99.170
+5 13.127.219.118
+6 52.66.66.22
+7 13.127.101.8
+8 13.127.192.84
+9 13.127.227.51
+10 13.127.179.142
+11 13.126.216.120
+12 13.127.160.94
+13 13.127.126.220
+14 13.127.173.16 
+
+============================
+FORMULA OF JENKINS
+================================
+Where is source code? --- GIT
+
+What is the technology? - JAVA  | C++
+
+What is my Builder?     - Ant | Mavem | Makefie | Shell | batch | Java | CPP
+
+What is my Compiler?    - JDK | GCCC | DOTNTE | PERL | PY | RUBY
+
+=====================================
+Where is source code? --- GIT	-- INSTALLED OR NOT
+https://github.com/scmgalaxy/helloworld-java-ant
+
+What is the technology? - JAVA  - -- INSTALLED OR NOT
+What is my Builder?     - Ant   - -- INSTALLED OR NOT
+What is my Compiler?    - JDK - -- INSTALLED OR NOT
+
+
+LAB 1 - ant
+Setup up a job for 
+https://github.com/scmgalaxy/helloworld-java-ant
+
+Lab 2 - cpp
+Setup a a Job
+https://github.com/scmgalaxy/helloworld-cpp-ant
+
+DONE
+Discard old builds
+Disable this project
+Execute concurrent builds if necessary
+Executors
+This project is parameterised
+
+Build Triggers
+---------------------------
+Trigger builds remotely
+	ENABLE
+	Decalare TOKEN
+	
+	FROM YOUR DESKTOP
+	JENKINS_URL/job/ant/build?token=TOKEN_NAME or /buildWithParameters?token=TOKEN_NAME
+	curl -X POST http://admin:2cba84459662556438674f6e71750ea8@13.127.46.36:8080/job/ant/build?token=iFBDOBhNhaxL4T9ass93HRXun2JF161Z
+
+Build after other projects are built
+	ant - 35
+	test - 4
+
+Scheduling
+	CERTAIN TIME	- DONE
+		Build periodically
+	CERTAIN CODE COMMIT
+	http://www.scmgalaxy.com/tutorials/how-to-build-when-a-change-is-pushed-to-github-in-jenkins/
+	GitHub hook trigger for GITScm polling
+	@CERTAIN TIME BUT ONLY IF NEW CODE COMMIT
+		Poll SCM
+	@OTHHER PROJETS R BUILD..DEP IN BETWEEN JOBS
+
+
+POST BUILD ACTION
+---------------------------
+Clean  --- DONE
+
+Notification
+	Email Notification
+		Config
+		Send an email
+		https://wiki.jenkins.io/display/JENKINS/Building+a+software+project#Buildingasoftwareproject-belowJenkinsSetEnvironmentVariables
+	SMS
+		api
+	CHat
+		HipChat
+		Cisco
+		Slack
+	
+Archive
+
+Dashboard
+Generate 
+======================
+	
+2. nodes-slave		DONE	- 
+3. sonarqube integ	- DONE
+4. Puppet integ		DONE
+5. artifactory		- DONE
+
+7. Docker integration
+8. Jacoco
+1. pipeline
+6. test trigger - Junit
+
+==============================================================================
+Planning -> Code -> Analysis -> BUILD ->Packaging ->Dep2Repo -> Dep2QA --> AT -> CC
+JIRA	-> Git -> SonarQube  -->ANT -> X Tools -> Artifactory -->Puppet> JUNIT --> JACOCO
+
+JIRA 			http://13.126.215.67:8080
+artifactory		http://13.126.215.67:8090/artifactory/
+sonarqube 		http://13.126.215.67:9000/about
+--------------------------
+Solution - Docker
+
+SonarQube - JENKINS
+
+SERVER - http://13.126.215.67:9000/
+SRC - GIT
+SCANNER - 
+
+PROJECT - https://github.com/scmgalaxy/helloworld-java-maven
+
+1. Repo path in builder
+2. user id n pass in maven config
+3. maven goal - mvn deploye
+========================================
+LAB - 
+
+JIRA using Ant project
+http://13.126.215.67:8080
+rajesh | rajesh123
+
+SonarQube
+http://13.126.215.67:9000
+admin
+admin
+https://github.com/scmgalaxy/java-sonar-runner-simple
+
+===============================
+IP 		13.126.215.67
+User		ec2-user
+Pass		key
+Working		/opt/jenkins
+
+================================================================
+ BUILD -> ANALYSIS -> PACK ->DEp2Repo ->Dep2QA -> AT -> CC
+
+
+https://github.com/scmgalaxy/helloworld-java-maven
+
+
+
+Add a Node and Run into the Node
+Create a Job using the 
+	https://github.com/scmgalaxy/helloworld-java-maven
+
+	Goal - 
+	compile
+	package
+	test
+	deploy
+
+n Integrate everything in Build Pipeline
+
+
+
+========================================================
+java -jar jenkins-cli.jar -s http://13.127.46.36:8080/ help
+
+
+Command line
+java -jar jenkins-cli.jar -s http://13.127.46.36:8080/ who-am-i –-username admin --password admin12345
+java -jar jenkins-cli.jar -s http://13.127.46.36:8080/ delete-job DDD –-username admin --password admin12345
+
+1 13.127.131.211
+2 52.66.21.27
+3 13.126.196.18
+4 13.127.47.121
+5 35.154.248.9
+6 13.127.224.252
+7 13.127.204.119
+8 35.154.58.168
+9 13.127.188.209
+10 13.127.199.196
+11 35.154.230.149
+12 13.127.91.190
+13 13.127.52.11
+14.127.23.11
+
+
+
+
+

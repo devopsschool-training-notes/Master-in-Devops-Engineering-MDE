@@ -1,0 +1,165 @@
+https://www.devopsschool.com/path/
+
+
+What is Jenkins?
+	CI tool
+	Version
+		Free - OS
+		Paid - Enterprise Jenkins by Cloudbess
+	Dev in Java....
+	Old Name - hudson.
+	ALl feature - Form of Plugins
+	
+	
+
+What is CI?
+	Continous integ
+Auto Build + Auto Test + Imm feedback.
+---------------------------------------------------
+Plan->Code->Analysis->Build->UT->Pack->Dep2Repo->Dep2QA->AT->CC->RELEASE
+-------------------------------------------------------------------------
+Jira->Git->SonarQube->Maven->Junit->Jar->Nexus->Ansible->Sel->Jacoco> RELEASE
+---------------------------------------------------------------------------
+				JENKINS
+				Imm feedback.
+						EMAIL
+						CHAT
+						DASHBOARD
+
+Why Jenkins
+	There are so many tools. We want to have one common for everything in SDLC 
+
+
+Other Tools - Teamcity, Bamboo, UBuild, 
+
+jenkins Architecute
+	Web Server - 8080
+	Master Node - Local...
+		Node can add more....
+How to install Jenkins
+https://www.devopsschool.com/tutorial/jenkins/jenkins-installation-and-configuration.html
+
+
+SonarQube & Nexus
+-----------------------
+35.154.147.154
+
+Jenkins  - http://35.154.87.124:8080/
+rajesh/rajesh123
+
+Nexus - http://35.154.147.154:8081/nexus/
+
+SonarQube - http://35.154.147.154:9000
+
+Secret formula to setup a job...
+=================================
+What is your technolgy?
+JAVA DOTNET C C++ PERl PYTHON RUBY
+
+Where is your source code?
+GIT | SVn ] CC | p4
+
+What is Your builder....
+Ant, Maven, Gradle, Makefile, Perl, Pythng, Shell, Bash...
+
+
+JAVA
+GIT - https://github.com/scmgalaxy/helloworld-java-maven
+MAVEN -
+
+Install Plugins ----> Has a Tools Commands...
+
+maven 3.3
+maven 3.5
+
+Ant
+
+
+jenkins Integration - 
+	Sonarqube
+		1. Under a arch
+		Sonar Server - http://35.154.147.154:9000
+		User - admin / admin
+		
+		Src - https://github.com/scmgalaxy/java-sonar-runner-simple
+
+		Scanner -
+ 
+		-- Install SonarQube Plugins
+		-- Config SonarQube in jenkins
+		-- Use SonarQube Scan in Job.
+
+		
+
+
+
+	nexus
+
+=============================
+Arch of Ansible
+
+	Playbook
+	Inventory
+	
+
+
+How can you schedule a first job?
+	At fixed time == Build periodically
+	At Fixed time but build only when there is change in git === Poll SCM
+	When there is push in github = GitHub hook trigger for GITScm polling
+	Via Script= Trigger builds remotely (e.g., from scripts)
+	
+
+How can you get a Imm feedback?
+	EMAIL
+		SIMPLE EMAIL
+		DETAIL EMAIL.
+	CHAT
+		slack
+		jabbar
+	Dashboard
+		Build Pipeline - Multiple Job
+		Pipeline - Coding
+
+
+
+
+
+
+Multiple and Parrellll
+Parameters
+Jira Confi
+	Install Jira plugins
+Node
+	IP		35.154.147.154
+	USR		ec-user
+	PASS
+	Workin Dir - /tmp/jenkins
+
+
+Backup
+===============
+.xml - 
+
+
+
+
+Jenkins
+BlueOcean
+	Free
+	Paid
+
+
+RUN --- JOB 1
+	JOB 2
+
+Node2	linux ALL
+Node3	linux ALL
+Node1	windows ALL
+
+
+
+
+
+
+

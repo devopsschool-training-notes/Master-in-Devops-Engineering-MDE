@@ -1,0 +1,162 @@
+What is Jenkins?
+	CI TOOL
+	Continous Integration
+	--------------------
+	FREE
+	Developed in Java
+	VERSION
+		FREE - JENKINS by Community
+		PAID - JENKINS ENTERPRISE by CloudBee
+	POWERED with 
+		1000s of Plugins
+	Cross Platform
+
+
+What is Continous Integration? and WHY JENKINS?
+
+PLAN -> CODE -> ANALYSIS -> BUILD -> UT -> PACK -> Dep2Repo -> Dep2Qa -> AT -> Jacoco ======
+JIRA --> GIT  -> SonarQube --> Maven -> JUNIT -> JAR -> Nexus -> ansible --> SEL --Jacoco	
+===============================================================================================
+			- TOOLS INTEG
+			- IMM Feedback
+				Emails
+				Chat
+				Whatsapp
+				Pipeline
+			- Scheduling
+			- GUI
+			====================
+			JENKINS
+======================================================
+Other tools - 
+TEAMCITY  - BAMBOO - UDBUILD
+=====================================
+
+Architecture of Jenkins
+https://www.devopsschool.com/blog/jenkins-architecture-explained/
+
+Master - GUI - 8080
+Node - BUILD SERVER - ANY ==== SLAVES
+
+
+Master ---> Node (Master)
+===========================
+	FIRST INSTALLATION
+	---> Node (node1)
+	---> Node (node2)
+	---> Node (node3)
+	---> Node (node4)
+
+=================================
+How to install jenkins
+==================================
+https://www.devopsschool.com/tutorial/jenkins/jenkins-installation-and-configuration.html
+13.232.13.176
+
+http://13.232.13.176:8080/
+rajesh
+rajesh123
+
+
+
+
+
+   1  yum install wget -y
+    2  wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+    3  rpm -ivh jdk-8u131-linux-x64.rpm
+    4  java -version
+    5  sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+    6  sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+    7  yum install jenkins
+    8  systemctl start jenkins
+    9  ps -eaf | grep jenkins
+   10  more /var/lib/jenkins/secrets/initialAdminPassword
+   11  history
+
+================================================================
+SECRET FORMULA OF JENKINS!!
+
+1. What is Technology?
+	JAVA DOTNET RUBY NODE
+Node ---JDK   DOTNET...........
+
+2. Where is your Source Code?
+	GIT - SVN - CC 
+	
+3. What is your Builder?
+Maven		ant
+pom.xml		build.xml
+
+4. How often you want this build to be happen?
+
+5 Where the feedback to be delivered?
+=======================================
+	NODE (Build Server)
+JAVA --> JDK
+GIT ---> GIT
+https://github.com/scmgalaxy/helloworld-java-maven
+maven --> Maven
+		compile -----
+		test
+		package
+		deploy
+Schedul -> Hourly
+Feedback - Email???
+===================================
+
+Lab - 
+
+Builder - Ant - build.xml - compile
+https://github.com/scmgalaxy/helloworld-java-ant
+
+=================================================
+PLAN -> CODE -> ANALYSIS -> BUILD -> UT -> PACK -> Dep2Repo -> Dep2Qa -> AT -> Jacoco ======
+JIRA --> GIT  -> SonarQube --> Maven -> JUNIT -> JAR -> Nexus -> ansible --> SEL --Jacoco	
+===============================================================================================
+			     comile     test      package
+
+UT test results should be on job page- target/surefire-reports/*.xml
+Package archived should be on job dashboard - archive - target/*jar
+
+=======================================================
+
+How to add jenkins Nodes (slave.jar ==> remotingxxxxxx)
+	----------------------
+	LINUX - SSH	
+	IP 		13.235.91.196
+	USER		ec2-users
+	KEY
+	ws dir		
+	----------
+	
+https://github.com/devops-school/repo
+=============================================================
+How to schedule a job?
+=================================
+1. RUN A JOB AT A CERTAIN TIME  == Build periodically
+2. RUN A JOB ONLY WHEN SCM CHANGES == Poll SCM
+3. RUN A JOB ONLY WHEN OTHER JOB IS BUILD == Build after other projects are built
+4. RUN A JOB FROM OTHER TOOLS.
+	Trigger builds remotely (e.g., from scripts)
+	http://www.scmgalaxy.com/tutorials/how-to-execute-grovvy-script-remotely-on-jenkins-server/
+	http://www.scmgalaxy.com/tutorials/how-to-trigger-builds-remotely-in-jenkins
+	http://www.scmgalaxy.com/tutorials/jenkins-remote-access-api-example/
+5. GitHub hook trigger for GITScm polling
+	http://www.scmgalaxy.com/tutorials/how-to-build-when-a-change-is-pushed-to-github-in-jenkins/
+	http://www.scmgalaxy.com/tutorials/build-when-a-change-is-pushed-to-bitbucket/
+
+
+
+==========================================================
+ IMM Feedback
+==========================================================
+				Emails - using - SMTP
+				Chat - Whatsapp
+				-------------------------
+				Pipeline
+					Build Pipeline
+						MAKE EACH JOB LINK - DEPENDENT
+
+
+
+

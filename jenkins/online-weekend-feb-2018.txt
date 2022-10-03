@@ -1,0 +1,134 @@
+What is Jenkins?
+	CI Tools.  - Continous Integration	
+	DUMP TOOL - NO FEATURE WITH PLUGINS
+	1000+ Plugins - EVERYTHIG -- INTELLGENT
+	Develped in Java
+	Any Technology
+	WEb Based Tools
+	Open  framework ---
+	Free
+	Open Source
+	Suported by active n huge base commmunity
+	FEEDBACK
+
+What is CI?
+	AUTO BUILD --> AUTO TESTING --> IMMEDIATE FEEDBACK
+
+Versioining -> CA --> BUILD -> UT -> PACK -> DEP2REPO --> DEP2QA --> TEST -> Coverge -> FEEDBACK-> RELASE
+------------------------------------------------------------------------------------------------------------
+					AUTO	         
+
+GIT	--> SONARQUBE -> MAVEN--> JUNUT-->JAR --> NEXUS-->CHEF --> SELENIUM --> JACOCO --EMAIL|SMS|CHAT|DASHB
+
+FEEDBACK  - PASS  OR FAIL
+
+How to Install it?
+	JDK
+	
+
+Download - 
+https://pkg.jenkins.io/redhat-stable/
+
+
+=======================================================
+RULES OF JENKINS
+	Where is your source code? - JAVA- DONET- C++, PE, PY, JUNUT, SEL, SEHLL... Batch...
+	- GIT
+
+	WHT IS THE BULILDER?	
+	- MAVEN, ANT, MSBUIL, PY, PEL, JUNI, BASH
+
+	What is your compiler?
+	JDK, 
+
+GIT -> JAVA -> MAVEN -> JDK
+https://github.com/scmgalaxy/helloworld-java-maven
+mvn compile
+test
+package
+deploy
+
+Install GIT --- MAVEN + JDK
+1. Download the src code --> git clone url
+2. Call th builder --> mvn compile
+
+Maven  --> 2.3
+	3.3
+	3.9
+
+
+GIT -> JAVA -> ANT -> JDK
+https://github.com/scmgalaxy/helloworld-java-ant
+compile
+package
+
+-------------------------------------------------------
+GIT -> C++ -> mSBUILD -> DOTNET
+https://github.com/scmgalaxy/msbuild-helloworld
+--------------------------------------------------------
+
+
+30 PROJECTS - 2 HOURS ---> 60 HOURS
+
+- 12 HOURS - 1 NODES --> 5 executors... 5 CUNCURRENT PROCESS
+
+==========================
+Build Triggers
+	BASED ON FIXED TIME		---> Build periodically
+	BASED ON THE NEW SOURCE CODE CHANGES in GIT  --> GitHub hook trigger for GITScm polling	
+	--> http://www.scmgalaxy.com/tutorials/how-to-build-when-a-change-is-pushed-to-github-in-jenkins/
+
+
+	BASED ON THE NEW SOURCE CODE N FIXED TIME --> Poll SCM
+	
+	TRIGGER FROM ANY EXTERNAL SOURCE  --> Trigger builds remotely (e.g., from scripts)
+		ANOTHER JOB - 
+		SCRIPT
+		EDITOR
+		TOOLS 
+	http://www.scmgalaxy.com/tutorials/how-to-trigger-builds-remotely-in-jenkins
+===========================================
+BUILD PIPELINE
+
+============================
+Node
+	HOST | IP ADDRESS
+	USER
+	PASS
+	WORKING DIR
+
+===========================
+1. what are the security features you hv used?
+	
+
+2. What are the back up n restore mechanism you used... ?
+http://www.scmgalaxy.com/tutorials/jenkins-backup-and-restore-process
+
+3. how did you integrate auto deployment on cloud.. ( both serverless and web server ) ?
+
+serverless    ----- AWS - Lambda 
+and web server   ------>VMS -- E ----> JENKINS --> CHEF(Pu) --> EC2 
+
+4. what is hook file in jenkins?
+
+How to exeuct script in jenkins	
+
+> aws configure
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
