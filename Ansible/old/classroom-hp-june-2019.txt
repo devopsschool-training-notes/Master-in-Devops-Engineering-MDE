@@ -1,0 +1,890 @@
+Where Ansible fits in SDLC cycle?
+=======================================
+https://www.devopsschool.com/path/
+======================================
+Product - HPX
+Mgr - Mgrx
+	------------------
+	Cost Reduction - 100 Rs - 5 Fea | 10 Fea - 100 Rs
+	Immediate Release
+	Redefined Quality
+-----------------------------------------------
+	DEVOPS
+		CI / CD
+===========================================
+Hiring - 
+	Planning - 2 Architect - JIRA,Sharepoint,Atlassion, Trello
+	Coding - 20 People - Code Integ --> Git,SVN
+		  Code Review - SonarQube
+		  Build intg- Maven, Ant,
+		  UT - Junit, Nunit
+		  Package -- 1 Pack -- Jar War, Ear, Exe, mSi, dmg
+		  Package Arch - Nexus, Artifactory, Nuget		  
+		  	  
+	testing - QA
+	Deployment to integ
+	Deployment to staging
+	Deployment to QA
+	Deployment to pre prd
+
+	HPX5.0 ---> 100 BOXES
+		FUNTIONAL
+		SMOKE
+		PERFORMANCE
+		SECURITY
+		WHITE
+		BLACK
+----------------------------------------------------------
+	1 Deployment takes - 9 mins
+	200 Deployment must take - 10 mins.
+==========================================================
+Problem
+	100 Boxes
+	50 W	50 M	50 U	50 REDHAT
+	50 N	50 A	50 IIS
+	50 T	50 J	50 WS	50 WL 
+	50 MYSQL	50 MSSQL	50 ORA	50 PS
+	10 diff config....
+	----------------------------------
+===============================================================
+1 mins - So you can get 100 BOX using cloud
+						PVT  OpenStake
+						PUB  AWS, GC, Azure
+Parrell deployment......
+	Which tool has this feature -
+	Puppet -> Ansible -> Chef -> Salt -----PROGRAMMING
+	UDeploy -> Octopus Deploy --> GUI
+
+	 
+	Code coverage
+	Release
+
+	IT
+	NEtwork
+	DB
+	Integration Eng - BR - DEVOPS
+==================================================================================
+Ansible is Good with VMs and Physical Machine.
+	How can i deploy a software in 1 sec?
+	-----------------------------------------------
+	Docker -> Kubernetes | Swarm
+==========================================================================
+JENKINS
+	CI
+	scheduling
+	imm feedback
+====================================================================
+What is Ansible?
+	parrel deployment tool
+	From Redhat
+	Written Python
+	Two Release
+		Open Source - Free - Ansible - Command line
+		Enterprise - Paid - Ansible Tower(GUI) -> AnsibleOSS
+	IDEOMPOTENT.....
+	COND - Ansible is agent less.
+	DSL language of Python
+	-------------
+	Groovy is DSL language of JAVA
+	Puppet is DSL langaue of Ruby
+	-----------------
+Why Ansible?
+	parrel deployment tool
+	
+	Easy to learn / debug | extend | test | share
+		Compare to deployment script written in
+			PERL - PYTHON - 
+
+	Cross platform compare to shell script | ps
+
+	IDEOMPOTENT
+	DESIRE === ACTUAL ==== NO CHANGES
+	1 deploy has 10 stesp - n each steps take 1 mins ===10		
+	2 deploy has 10 stesp - 5 already -- n each steps take 1 mins ===5
+
+Other tools
+
+Architecture of Ansible?
+
+Ansible Control Server (ACS ) -------> Ansible Remote Server(ARS)
+- LINUX 64 BIT oNLY			LINUX 
+					WINDOWS
+- PYthn 2.6+				Python 2.4 + 
+-------------------------------------------------
+	PYTHON 3.X is not a upgrade for 2.x
+--------------------------------------------------
+How ACS and ARS communicate each other?
+
+ACS ----> 	ARS (LINUX) ---- SSH
+		ARS (WINDOWS ---- http winrm
+=================================================
+Deep dive into ACS
+	playbook
+		modules
+	inventory
+	ansble config
+=======================================
+What is your roles in Ansible?
+	Ansible Programmer
+		Who write/test/validate ansible program
+	Ansible Admin
+		Who apply a ansible program in QA or prod env
+		Mangaing deployment infra
+
+
+
+How to become a JAVA Programmer?
+JDK --> .JAVA		--> .Class --> .JAR --> TOMCAT
+	Main class
+		variables
+		methods
+		conditioon
+		looping
+		logic
+
+How to become ansible programmer?
+==========================================
+Ansible -> .yaml  -----------------> roles
+	 ---------
+ 	   Playbook
+		module
+			Desire
+			variables
+			methods
+			conditioon
+			looping
+			logic
+========================================
+Psucode
+-----------------------------------
+Create a dir		module
+Create a file		module
+change a content of some file		module
+install some some software httpd	module
+replace index.html server		module		
+stop a http				module
+start a httpd				module
+==========================
+Pre - --------
+
+
+
+
+Step 1- How to install Ansble
+
+Step 2 - Adhoc Commands === LINUX
+		USING in LOCAL MACHINE
+		USING in REMOTE MACHINE(S)
+
+
+Step 3 - Playbook === LINUX
+		USING in LOCAL MACHINE
+		USING in REMOTE MACHINE(S)
+
+Step 4 - Roles === LINUX
+		USING in LOCAL MACHINE
+		USING in REMOTE MACHINE(S)
+
+Step 5 - Adhoc - Playbook - Roles === WINDWS
+		USING in LOCAL MACHINE
+		USING in REMOTE MACHINE(S)
+
+Step 6 - Ansible Tower
+		USING in LOCAL MACHINE
+		USING in REMOTE MACHINE(S)
+
+=====================================
+20 mins - Lab Setup
+=====================================
+2 LINUX VM ----- 2 GB RAM
+=====================================
+
+$ systemctl stop firewalld
+$ systemctl disable firewalld
+ACS - 13.233.113.226
+
+How to install Ansible in RHEL?
+> yum install wget -y
+> wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+> sudo rpm -i epel-release-latest-7.noarch.rpm
+> sudo yum update -y 
+> sudo yum install ansible -y
+
+[root@ip-172-31-20-193 ec2-user]# ansible --version
+ansible 2.8.1
+  config file = /etc/ansible/ansible.cfg
+  configured module search path = [u'/root/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python2.7/site-packages/ansible
+  executable location = /bin/ansible
+  python version = 2.7.5 (default, Jun 11 2019, 12:19:05) [GCC 4.8.5 20150623 (Red Hat 4.8.5-36)]
+[root@ip-172-31-20-193 ec2-user]#
+=====================================================
+GIST -
+https://gist.github.com/devops-school/3e09ab77e38a2c570061b20e69194c75
+
+Step 2 - Adhoc Commands === LINUX
+		USING in LOCAL MACHINE
+		USING in REMOTE MACHINE(S)
+
+========================================
+Psucode
+-----------------------------------
+Create a dir				module
+Create a file				module
+change a content of some file		module
+install some some software httpd	module
+replace index.html server		module		
+stop a http				module
+start a httpd				module
+==========================
+Ansible Adhoc Commands in Local Exec?
+=============================================
+ansible
+
+Where 
+-m = Module name
+	-a = allow parameters
+localhost
+-u = username
+
+ansible 127.0.0.1 -m file -a "dest=/opt/a.txt mode=600 state=touch"
+
+ansible 127.0.0.1 -m file -a "dest=/opt/a.txt mode=600 state=touch"
+ansible 127.0.0.1 -m file -a "dest=/opt/a.txt mode=600 state=touch owner=ec2-user"
+ansible 127.0.0.1 -m file -a "dest=/opt/b.txt mode=755 state=touch owner=ec2-user"
+ansible 127.0.0.1 -m file -a "dest=/opt/c.txt mode=755 state=touch owner=ec2-user"
+ansible 127.0.0.1 -m file -a "dest=/opt/bmc.txt mode=755 owner=ec2-user"
+
+ansible 127.0.0.1 -m file -a "dest=/opt/bmcdir mode=755 owner=ec2-user group=ec2-user state=directory"
+
+ansible 127.0.0.1 -m yum -a "name=httpd state=present"
+ansible 127.0.0.1 -m yum -a "name=httpd state=absent"
+
+ansible 127.0.0.1 -m service -a "name=httpd state=started"
+
+Excercise 1 
+Install httpd server and create a file in /opt/index.html with content"
+<html>
+<h1> Welcome to HP Ansible class </h1>
+</html>
+
+Then, copy a file from /opt/index.html to /var/www/html
+https://gist.github.com/devops-school/3e09ab77e38a2c570061b20e69194c75
+
+
+
+
+==================================================================
+Ansible helps you to manager a resources in Computer
+---------------------------------------------------
+What are the resources
+	resources		action		property
+Software 
+	file(Module)		C|D|(State)				
+	directory
+	package
+	services
+	yum
+	apt
+	shell
+
+Hardware	--> HYPERVISOR --> Ansible
+	RAM 
+	CPU
+	NETWORK
+	volume
+=================================================
+Playbook is nothing but collection of Module 
+		Module is nothing but collection action+proper+ their desire
+=======================================================
+
+
+Lab2 - https://www.devopsschool.com/blog/ansible-adhoc-commands-lab-excercise-part-1/
+
+======
+EXECUTION MODE
+	LOCAL --------
+	
+	REMOTE -----
+	
+	DOCKER -----
+
+
+using Ansible Adhoc Commands - Managing SINGLE REMOTE SERVER
+========================================================
+
+
+Remote mode - you have one or more server....but this would passed as LIST.
+	This list may have GROUP as well.
+
+There r kind of Group you have in Remote Servers
+	all - Built-in
+	ungroup - Built-in
+	CUSTOM
+==============================================
+10.0.0.2 - ACS
+
+10.0.0.3
+10.0.0.4
+10.0.0.5
+10.0.0.6
+
+ansible all -i 13.127.105.192,10.0.0.3,10.0.0.3,10.0.0.3, -m yum -a "name=httpd state=present" --key-file=remote.pem -u ec2-user -b
+
+LINUX --SSH-> LINUX
+-------------------------
+	username & password	
+	username & key
+	ec2-user & 
+	keybros
+
+			---- ALLOWED FOR execiting module or not....
+
+
+CONNECTION OPTIONS
+  Connection Options:
+    control as whom and how to connect to hosts
+
+    -k, --ask-pass      ask for connection password
+    --private-key=PRIVATE_KEY_FILE, --key-file=PRIVATE_KEY_FILE
+                        use this file to authenticate the connection
+    -u REMOTE_USER, --user=REMOTE_USER
+                        connect as this user (default=None)
+    -c CONNECTION, --connection=CONNECTION
+                        connection type to use (default=smart)
+    -T TIMEOUT, --timeout=TIMEOUT
+                        override the connection timeout in seconds
+                        (default=10)
+    --ssh-common-args=SSH_COMMON_ARGS
+                        specify common arguments to pass to sftp/scp/ssh (e.g.
+                        ProxyCommand)
+    --sftp-extra-args=SFTP_EXTRA_ARGS
+                        specify extra arguments to pass to sftp only (e.g. -f,
+                        -l)
+    --scp-extra-args=SCP_EXTRA_ARGS
+                        specify extra arguments to pass to scp only (e.g. -l)
+    --ssh-extra-args=SSH_EXTRA_ARGS
+                        specify extra arguments to pass to ssh only (e.g. -R)
+
+
+  Privilege Escalation Options:
+    control how and which user you become as on target hosts
+
+    -b, --become        run operations with become (does not imply password
+                        prompting)
+    --become-method=BECOME_METHOD
+                        privilege escalation method to use (default=sudo), use
+                        `ansible-doc -t become -l` to list valid choices.
+    --become-user=BECOME_USER
+                        run operations as this user (default=root)
+    -K, --ask-become-pass
+                        ask for privilege escalation password
+
+ARS - RAJESH - 13.233.250.66 13.233.140.246
+
+
+$ ansible all -i 13.127.105.192, -m yum -a "name=httpd state=present" --key-file=remote.pem -u ec2-user -b
+
+$ ansible all -i 13.127.105.192, -m service -a "name=httpd state=started" --key-file=remote.pem -u ec2-user -b
+$ ansible all -i 13.127.105.192, -m copy -a "dest=/var/www/html/index.html  src=/opt/index.html" --key-file=remote.pem -u ec2-user -b
+
+
+# Excercise 3 - Write a ansible module using Adhoc commands to create a user and add him into sudoers and using regular user only run "Excercise 3" all adhoc commands to remote machine.
+https://stackoverflow.com/questions/37333305/ansible-create-a-user-with-sudo-privileges
+=====================================================================================================
+PROBLEM - ansible all -i 13.127.105.192,10.0.0.3,10.0.0.3,10.0.0.3, -m yum -a "name=httpd state=present" --key-file=remote.pem -u ec2-user -b
+
+TOO MANY IP ADDRESS ON INVENTORY LIST.....
+
+How to solve it?
+Ansible allows to access a ARS address in following ways.
+	- Command
+	- inventory file == hostfile
+	- script
+
+What is Inventory file?
+	it is a list of IP address or Hostname separated by new line.
+			- You may have BEHAVIOURAL PARATAMETERS AS WELL.
+
+	This may have 
+		GROUP
+		GROUPS OF GROUP
+		Varaiable at many level.
+
+ansible all -i 13.127.105.192,10.0.0.3,10.0.0.3,10.0.0.3, -m yum -a "name=httpd state=present" --key-file=remote.pem -u ec2-user -b
+
+TO
+
+ansible all -i inventory -m yum -a "name=httpd state=present" --key-file=node.pem -u ec2-user -b
+ansible all -i inventory -m service -a "name=httpd state=started" --key-file=node.pem -u ec2-user -b
+
+
+
+content of "inventory"
+----------------------------
+172.31.20.123
+172.31.28.91
+
+=====================
+
+Group in iNventory.
+--------------------------
+all 
+ungroup
+
+content of "inventory"
+----------------------------
+172.31.20.3
+172.31.28.4
+
+[web]
+172.31.20.123
+172.31.28.91
+172.31.20.193
+
+[db]
+172.31.20.33
+172.31.28.44
+172.31.28.55
+172.31.28.66
+
+ansible web -i inventory -m service -a "name=httpd state=started" --key-file=node.pem -u ec2-user -b
+BEHAVIOURAL PARATAMETERS
+
+https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html#connecting-to-hosts-behavioral-inventory-parameters
+		
+inventory
+==============================
+
+172.31.20.3
+172.31.28.4
+
+[web]
+172.31.20.123 ansible_ssh_private_key_file=node.pem ansible_become=yes ansible_user=ec2-user
+172.31.28.91 ansible_ssh_private_key_file=node.pem ansible_become=yes ansible_user=ec2-user
+127.0.0.1 ansible_connection=local 
+
+
+[db]
+172.31.20.33
+172.31.28.44
+172.31.28.55
+172.31.28.66
+
+
+ansible_host
+-----------------------
+hostname	ansible_host=X.X.X.X
+
+ansible_port
+------------------
+X.X.X.X ansible_port=34
+
+ansible_user
+--------------------
+X.X.X.X ansible_user=user
+
+ansible_password
+--------------------
+X.X.X.X ansible_password=passwword
+
+QA
+==================
+Agent name using Ansible....
+===================================
+
+
+PLAYBOOK
+------------------------------------
+---
+- name: This sets up an httpd webserver
+  hosts: localhost
+  tasks:
+  - name: Install the httpd apps
+    yum: name=httpd
+  - name: start the httpd service
+    service: name=httpd state=started
+...
+
+
+LAB 4 - 
+https://www.devopsschool.com/blog/ansible-playbook-lab-excercise-part-2/
+
+https://gist.github.com/devops-school/39243de4e9f23d9687b3ecfeeecaf3d0
+=======================================================
+
+Working with Windows
+====================================
+ACS - LINUX
+
+ARS 1- LINUX
+ARS 2 - WINDOWS (HOST | VM)
+==============================
+
+How to setup and config ansible remote machine in Windows?
+https://www.devopsschool.com/tutorial/ansible/ansible-windows-remote-setup.html
+
+PS to check a versio - $PSVersionTable.PSVersion
+DOT VERSION - C:\Windows\Microsoft.NET\Framework64
+
+
+Public DNS	ec2-13-233-119-65.ap-south-1.compute.amazonaws.com
+User name	Administrator
+Password	
+WsgPP?V%&JWvp.AwfKcacQp@22I!8QF!
+$password = "WsgPP?V%&JWvp.AwfKcacQp@22I!8QF!"
+=============================================================
+How to setup and config ansible control machine for Windows?
+https://www.devopsschool.com/tutorial/ansible/ansible-windows-control-setup.htmls
+
+ansible_user=Administrator ansible_password=WsgPP?V%&JWvp.AwfKcacQp@22I!8QF! ansible_connection=winrm ansible_winrm_transport=basic ansible_winrm_server_cert_validation=ignore
+
+
+rajesh
+c/hp/rajesh/index.html
+c/hp/sanjeev/index.html
+=================================================
+http://devopsschool.com/tutorial/ansible/ansible-conditional-programming-playbooks.html
+
+====================================================
+Variables -- 15 DIFF PLACES
+=================
+
+--------------------
+What is variable?
+	varible = value
+Variable are 2 TYPES
+	FACTS variabkle - No change
+	Custom
+
+inventory file
+http://devopsschool.com/tutorial/ansible/variables/ansible-variables-2-inventory.html
+------------------------------------------
+host1 myname=rajeshkumar myname=rajeshkumar 
+host2
+host3
+host4
+
+[web]
+host5
+host6
+
+[db]
+host7 myname=rajeshkumar myname=rajeshkumar 
+host8
+
+[web:vars]
+myname=rajeshkumar
+mycompany=hp
+myage=8
+
+How to use it in plabook?
+========================================
+debug
+{{ myname }} 
+{{ varname }}
+
+
+
+msg "{{ myname }} "
+msg "myname"
+var "My name is {{ myname }} "
+
+- debug:
+    msg: System {{ myname }} has uuid {{ ansible_product_uuid }}
+
+
+How to set a var in playbook
+------------------------------------------
+http://devopsschool.com/tutorial/ansible/variables/ansible-variables-1-playbook.html
+
+  vars:
+     myname: "raj-playbook"
+     mycomp: "hp-playbook"
+
+
+- debug: msg="System {{ myname }} has uuid {{ ansible_product_uuid }}"
+- debug: msg={{ ansible_product_uuid }}
+- debug: var=ansible_product_uuid
+  - debug: 
+      var: "ansible_product_uuid
+
+How to set a vars in external file 
+=================
+https://www.devopsschool.com/tutorial/ansible/variables/ansible-variables-3-external-files.html
+
+
+
+How to set a vars using vars_prompt in playbook 
+=================
+https://www.devopsschool.com/tutorial/ansible/variables/ansible-variables-5-vars_prompt.html
+
+---
+- name: This sets up an httpd webserver
+  hosts: web
+#  vars_files:
+#    - "vars.yaml"
+  vars_prompt:
+    - name: "myname"
+      private: no
+      prompt: "What is your name?"
+
+  vars:
+    myname: "raj-playbook"
+    mycomp: "hp-playbook"
+
+  tasks:
+  - name: Install the httpd apps
+    yum: name=httpd
+  - name: start the httpd service
+    service: name=httpd state=started
+  - debug:
+      msg: System {{ myname }} has uuid {{ ansible_product_uuid }}
+  - debug: msg="System {{ myname }} has uuid {{ ansible_product_uuid }}"
+  - debug: msg={{ ansible_product_uuid }}
+  - debug: var=ansible_product_uuid
+  - debug:
+      var: ansible_product_uuid
+  - debug:
+      var: ansible_product_uuid
+
+How to include vars at task level?
+https://www.devopsschool.com/tutorial/ansible/variables/ansible-variables-6-include-vars-using-include_vars-into-task.html
+
+Looping
+=================
+Deep Dive into Inventory
+=========================
+Groups of group
+-------------------------------
+
+[web]
+host1
+host2
+host3
+
+[db]
+host4
+host5
+host6
+
+[common:children]
+db
+web
+
+Dynamic Inventory 
+https://docs.ansible.com/ansible/latest/user_guide/intro_dynamic_inventory.html
+
+---------------------------------------------------
+http://devopsschool.com/tutorial/ansible/ansible-linux-playbooks.html
+Register vars
+include  - ANother Yaml
+Handlers
+
+
+Templates
+https://www.devopsschool.com/tutorial/ansible/ansible-playbook-template.html
+
+Loop
+https://www.devopsschool.com/tutorial/ansible/ansible-looping-programming-playbooks.html
+
+
+
+
+
+
+
+Working with multiple YAMLS
+=======================
+Working with templates
+==================
+Working with ROLES
+====================
+Working with TAGS
+
+
+
+https://gist.github.com/devops-school/ac5f0830149ff59899d1773370102528
+https://www.devopsschool.com/blog/ansible-include-scnario-with-list-of-plays-or-tasks/
+How to create a Ansible Module
+Ansible Loop Controller
+Ansible Tower
+Ansible Vault
+Ansible Import vs Include 
+
+https://api.playbook.cloud/v1/modules/include.html
+
+==========================================================
+==========================================================
+==========================================================
+==========================================================
+
+What is Roles?
+==============================
+What is roles?
+
+PROBLEM- 
+	Too many play book
+	Handlers
+	Variables
+	Templates
+	files
+	lib - CUSTOM
+How to org all?
+------------------------------
+Answer - Role
+	
+ENV
+	PROD
+		WEB
+==============================================		
+		
+---
+- hosts: web
+  roles:
+    - role: webserver
+
+
+ansible-galaxy init webserver –offline
+
+SAMPLE - 
+https://github.com/scmgalaxy/ansible-role-template
+
+https://www.devopsschool.com/blog/ansible-role-project-1/
+
+How to push a code into git
+====================================
+git init
+git add .
+git config user.name "Rajesh kumar"
+git config user.email "devops@RajeshKumar"
+git commit -m"adding first"
+git push github-http-url master
+
+github-http-url = Should be git hub repo url
+
+How to install Ansible Tower
+=====================================
+ 6  yum install wget -y
+    7  wget https://releases.ansible.com/ansible-tower/setup/ansible-tower-setup-3.5.0-1.tar.gz
+    8  ls
+    9  tar -zxvf ansible-tower-setup-3.5.0-1.tar.gz
+   10  clear
+   11  ls
+   12  cd ansible-tower-setup-3.5.0-1
+   13  ls
+   14  wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+   15  sudo rpm -i epel-release-latest-7.noarch.rpm
+   16  sudo rpm -i epel-release-latest-7.noarch.rpm
+   17  sudo yum install ansible -y
+   18  clear
+   19  ls
+   20  ansible
+   21  clear
+   22  ls
+   23  more setup.sh
+   24  more setup.sh  | grep -i playbook
+   25  clear
+   26  ls
+   27  vi inventory
+   28  ./setup.sh
+   29  history
+
+
+
+====================================================
+Authetication
+
+Authorization
+	
+
+Email Setup
+==========================================
+1. Create a org
+2. create a user admin/admin123
+3. Setup a credentials FOR inventory
+4. add a inventory
+5. Add a project - get a role
+6. Adding a template
+7. Schedule it
+
+https://13.233.195.196/
+admin
+admin123
+
+====================================================================================
+
+Ansible 
+----------------------
+
+
+
+
+
+   49  ansible-vault encrypt myvar.yaml
+   50  ls
+   51  more myvar.yaml
+   52  ansible-vault encrypt myvar.yaml
+   53  ansible-playbook -i inventory test.yaml
+   54  ansible-playbook -i inventory test.yaml --ask-vault-pass
+   55  ls
+   56  ansible-vault edit myvar.yaml
+   57  ansible-vault edit myvar.yaml
+   58  more myvar.yaml
+   59  ansible-playbook -i inventory test.yaml --ask-vault-pass
+   60  ls
+   61  ansible-vault decrypt myvar.yaml
+   62  ls
+   63  more myvar.yaml
+   64  ansible-vault create myvar1.yaml
+   65  ls
+   66  more myvar1.yaml
+   67  vi test.yaml
+   68  ansible-playbook -i inventory test.yaml --ask-vault-pass
+   69  ansible-vault
+   70  history
+
+
+
+ansible-doc -l
+ansible-doc -s module-name
+ansible-doc modulename
+==============================================
+
+How to reach out to me?
+https://www.devopsschool.com/courses/
+http://rajeshkumar.xyz/
+
+How to get course materials?
+
+Subject - HPE - BLR - Ansible - 2019
+
+Body
+
+Full Name 
+Email ID - Gmail ID
+Office Email - 
+Role
+Phone#
+City - Bangalore
+Company - HPE
+
+contact@DevOpsSchool.com
+
+
+
+How to get training certificate
+http://devopscertification.co/
+
+
+
+
+
+
+
+
+
+
+
+
+

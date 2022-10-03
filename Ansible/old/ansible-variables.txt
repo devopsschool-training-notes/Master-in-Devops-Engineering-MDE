@@ -1,0 +1,126 @@
+Variable IN ANSIBLE
+- USER DEFINED VARIBLES
+	inventory
+		Host Variables
+		Group Variables
+		Groups of Groups, and Group Variables
+	Playbooks
+	files / templates
+	Command Line
+	Roles
+	Register variable
+
+Valid variable names
+Variable names should be letters, numbers, and underscores. Variables should always start with a letter.
+#foo_port is a great variable. foo5 is fine too.
+#foo-port, foo port, foo.port and 12 are not valid variable names.
+
+- FIXED(FACT)
+	Inventory
+		Behavioral Inventory Parameters
+		Non-SSH connection types
+	Remote hosts Facts using setup modules - 
+	
+
+How to register variable?
+- register module
+
+How to use varaibles???
+{{ varname }}
+
+
+EXAMPLE
+- hosts: all
+  vars:
+    hello: world
+  tasks:
+  - name: Ansible Basic Variable Example
+    debug:
+      msg: "{{ hello }}"
+
+- hosts: all
+  vars:
+    hello:
+      - World
+      - Asia
+      - South America
+      - North America
+      - Artic
+      - Antartic
+      - Oceania
+      - Europe
+      - Africa
+  tasks:
+  - name: Ansible List variable Example
+    debug:
+      msg: "{{ hello[2] }}"
+
+- hosts: all
+vars:
+  hello: [Asia, Americas, Artic, Antartic ,Oceania,Europe,Africa]
+  tasks:
+  - name: Ansible List variable Example
+    debug:
+      msg: "{{ hello[2] }}"
+
+
+- hosts: all
+  vars:
+    hello: [Asia, Americas, Artic, Antartic ,Oceania,Europe,Africa]
+  tasks:
+  - name: Ansible array variables example
+    debug: 
+      msg: "{{ item }}"
+    with_items:
+      - "{{ hello }}"
+
+- hosts: all
+  vars:
+    python:
+      Designer: 'Guido van Rosum'
+      Developer: 'Python Software Foundation'
+      OS: 'Cross-platform'
+  tasks:
+  - name: Ansible Dictionary Example
+    debug:
+      msg: "{{ python }}"
+
+
+
+Here is the order of precedence from least to greatest (the last listed variables winning prioritization):
+===============================================
+role defaults [1]
+inventory file or script group vars [2]
+inventory group_vars/all [3]
+playbook group_vars/all [3]
+inventory group_vars/* [3]
+playbook group_vars/* [3]
+inventory file or script host vars [2]
+inventory host_vars/*
+playbook host_vars/*
+host facts / cached set_facts [4]
+inventory host_vars/* [3]
+playbook host_vars/* [3]
+host facts
+play vars
+play vars_prompt
+play vars_files
+role vars (defined in role/vars/main.yml)
+block vars (only for tasks in block)
+task vars (only for the task)
+include_vars
+set_facts / registered vars
+role (and include_role) params
+include params
+extra vars (always win precedence)
+
+
+Footnotes
+
+[1]	Tasks in each role will see their own role’s defaults. Tasks defined outside of a role will see the last role’s defaults.
+[2]	(1, 2) Variables defined in inventory file or provided by dynamic inventory.
+[3]	(1, 2, 3, 4, 5, 6) Includes vars added by ‘vars plugins’ as well as host_vars and group_vars which are added by the default vars plugin shipped with Ansible.
+[4]	When created with set_facts’s cacheable option, variables will have the high precedence in the play, but will be the same as a host facts precedence when they come from the cache.	
+
+http://www.mydailytutorials.com/the-basics-of-ansible-variables/
+

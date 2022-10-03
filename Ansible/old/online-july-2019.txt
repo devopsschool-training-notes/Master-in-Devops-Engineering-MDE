@@ -1,0 +1,215 @@
+What is Ansible?
+	Config mgmt tool
+	Deployment tool
+	From REDHAT
+	Written in PYTHON
+	Release
+		OS - FREE - Ansbile - Command Line Based - 
+		Paid  - Ansible Tower - GUI - Licence - 10 node free.
+	Agent less
+	Very powerful community
+
+
+Why Ansible?
+	Config mgmt in 100s of server
+			with 5s of diff environments .ie dev, qa, staging, prod
+				with many roles each env such as webserver(s), app, db .....
+=========================================================
+
+Other tools - Puppet, Chef, Salt
+https://www.devopsschool.com/compare/configuration-management.html
+
+================================================
+
+Ansible Architecture
+=================================================
+Ansible Control Server  ============ Ansible Remote Server(s)
+		1			many
+Linux 64 bit				WINDOWS(WINRM)  - LINUX(SSH)
+		SSH			LINUX
+		WINRM			WINDOWS
+PYTHON 2.7+				PYTHON 2.4+
+=========================================================
+How to setup a Ansible Control Server?
+Ansible Control Server - 13.127.131.71
+
+How to install Ansible in RHEL?
+> yum install wget -y
+> wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+> sudo rpm -i epel-release-latest-7.noarch.rpm
+> sudo yum update -y 
+> sudo yum install ansible -y
+
+
+
+Ansible Remote Server 1- 13.233.159.156
+Ansible Remote Server 2- 13.126.178.242
+	
+========================================
+What is the roles you are going to play?
+Ansible programmer
+------------------
+	A person who write|test|validate a role (ansible programs)
+Ansible Admin
+	A person who manage infra such dev, qa, staging, prod
+	Apply roles in the servers.
+==================================
+How to become a ansible programmer?
+JAVA 
+
+JDK --> .JAVA -> .CLASS -> JAR --> WAR --> TOMCAT
+Ansible -> .yaml ->------> playbook with include --> role --> SERVERS using ACS
+---------------------------------------------
+
+
+Phase 1 - Managing a localhost using Ansible Adhoc commands
+=============================================================
+ansible
+
+Where 
+-m = Module name
+	-a = allow parameters
+https://docs.ansible.com/ansible/latest/modules/list_of_all_modules.html
+
+
+localhost
+-u = username
+
+ansible 127.0.0.1 -m file -a "dest=/opt/a.txt mode=600 state=touch"
+ansible 127.0.0.1 -m yum -a "name=httpd state=present"
+ansible 127.0.0.1 -m service -a "name=httpd state=started"
+
+
+Phase 2 - Managing a remotehost using Ansible Adhoc commands
+ansible all -i 13.233.159.156,13.126.178.242, -m file -a "dest=/opt/a.txt mode=600 state=touch" -u ec2-user --key-file=node.pem -b
+ansible all -i 13.233.159.156, -m file -a "dest=/tmp/a.txt mode=600 state=touch" -u ec2-user --key-file=node.pem
+ 
+ansible all -i 13.233.159.156,13.126.178.242, -m yum -a "name=httpd state=present" -u ec2-user --key-file=node.pem -b
+ansible all -i 13.233.159.156,13.126.178.242, -m service -a "name=httpd state=started" -u ec2-user --key-file=node.pem -b
+
+inventory file
+============================
+13.233.159.156
+13.126.178.242
+
+ansible all -i inventory -m yum -a "name=httpd state=present" -u ec2-user --key-file=node.pem -b
+ansible all -i inventory -m service -a "name=httpd state=started" -u ec2-user --key-file=node.pem -b
+
+Phase 3 - Managing a localhost using Ansible playbook
+What is playbook.
+	yaml spec
+	play(s)
+		tasks
+			module1 ---- parameters
+			module2 ---- parameters
+
+---
+- name: This sets up an httpd webserver
+  hosts: localhost
+  tasks:
+  - name: Install the httpd apps
+    yum: name=httpd
+  - name: start the httpd service
+    service: name=httpd state=started
+...
+
+ansible-playbook -i inventory web.yaml -u ec2-user --key-file=node.pem -b
+
+Phase 4 - Managing a remotehost using Ansible playbook
+
+---
+- name: This sets up an httpd webserver
+  hosts: all
+  tasks:
+  - name: Install the httpd apps
+    yum: name=httpd
+  - name: start the httpd service
+    service: name=httpd state=started
+...
+
+ansible-playbook -i inventory web.yaml -u ec2-user --key-file=node.pem -b
+
+---
+- name: This sets up an httpd webserver
+  hosts: web
+  tasks:
+  - name: Install the httpd apps
+    yum: name=httpd
+  - name: start the httpd service
+    service: name=httpd state=started
+...
+
+[root@ip-172-31-1-15 ~]# more inventory
+[web]
+13.233.159.156
+13.126.178.242
+
+[db]
+4.5.6.7
+5.6.6.6
+
+
+Phase 5 - ansible vars (18+)
+		inventory
+		playbook
+
+Phase 7 - ansible include
+
+---
+- name: This sets up an httpd webserver
+  hosts: web
+  vars:
+    myname: rajeshkumar-play
+    website: devopsschool.com
+  tasks:
+  - name: Install the httpd apps
+    yum: name=httpd
+  - name: start the httpd service
+    service: name=httpd state=started
+  - debug:
+      msg: "My name is {{ myname }}"
+  - name: Include task list in play
+    include: other.yaml
+...
+
+
+
+other.yaml
+------------------
+---
+- debug:
+    msg: "My name is {{ myname }}"
+- debug:
+    msg: "My site name is  {{ website }}"
+- name: Copy Site Files
+  template: src=index.j2 dest=/var/www/html/index.html
+
+
+
+Phase 6 - ansible template
+https://www.devopsschool.com/tutorial/ansible/ansible-playbook-template.html
+
+template - jinza
+
+index.j2
+Nice job {{ ansible_hostname }} from DevOpsSchool.com!! You have successfully ran your first playbook! Woohooo! Now get yourself a drink to celebrate!. I am {{myname}}, {{email}}
+
+Lab
+
+
+DevOps@RajeshKumar.xyz
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

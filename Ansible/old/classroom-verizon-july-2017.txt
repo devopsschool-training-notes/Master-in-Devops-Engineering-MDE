@@ -1,0 +1,556 @@
+DAY 1
+============================
+FUNDAMENTAL OF ANSIBLE
+PROGRAMMER
+
+DAY 2
+INTERMEDIATE ANSIBLE
+ADVANCED PROGRAMMER
+
+DAY 3
+ADVANCE ANSIBLE
+	TOWER
+	INTEG - AWS
+		VAGRANT
+
+	WITH WINDOWS
+=============================================
+What is Ansible?
+	Config mgmt tool.
+	FREE
+
+What is config mgmt tool?
+	SERVERS CONFIG Mgmt
+
+What is there in the server which config can be managed by the Ansible?
+	
+	resources		state
+=============================================================================
+	file			create | modify | delete	
+	directory		create | modify | delete
+	services		start stop
+	apt			install | remove
+	yum
+	bash			commands | script
+	perl
+	regitry
+	Network
+	HARDWARE
+	package
+	policies
+	security
+
+	SOFTWARE
+	HARDWARE		ANSIBLE ---> virtaulbox,vmware,aws,azure
+		RAM
+		CPU
+		HDD
+	PEOPLE
+	PROCESS
+==============================================
+WHY DO WE NEED ANSIBLE?
+PERL | PYTHON | BASH | POWERSHELL
+
+MANAGE THE CONFIG OF LARGE MACHINE ----
+	EASY TO LEARN
+	EASY TO WRITE
+	EASY TO DEBUG
+	EASY TO EXTEND
+	EASY TO TEST
+
+MANAGING THE STATE OF THE RESOURCES.
+PERL			ANSIBLE
+REWRITTEN		NOT RUN
+
+==================================================
+USE OF ANSIBLE
+
+IT ENGINEER - 
+	ANTI VIRUS
+DEV TEAM
+	100 SERVER DEP
+		50 SERVERS in WINDOWS
+		50 SERVERS IN LINUX
+			25 CENTOS
+			25 UB
+	
+		25 SERVER MSSQL
+		25 SERVERS MYSQL
+		25 SERVERS ORACLE
+
+		25 JBOSS
+		25 WL
+=====================================================
+		5 MINS..
+
+ANSIBLE -----> 
+		DEV	20
+		QA	30
+		STAGE	50
+		INT	20
+		PRE PROD	50
+		PROD	200
+		
+ROLES IN ANSIBLE?
+	
+DEV -> PLAYBOOK - ROLES -> MODULES
+ADMIN - WHOLE INFRA + APPLY THE PLAYBOOKS
+
+How to Install Ansible?
+==========================================
+RHEL | CENTOS ==
+
+> wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+> sudo rpm -i epel-release-latest-7.noarch.rpm
+> sudo yum update
+> sudo yum install ansible
+
+How to install in UBUNTU
+============================================
+> apt-get install ansible
+
+How to install from Source Code
+======================================
+sudo yum install gcc
+sudo yum install python-setuptools
+sudo easy-install pip
+sudo yum install python-devel
+sudo pip install ansible
+
+
+====================================
+APPROACH ONE - ANSIBLE ADHOC WAY (COMMANDS)
+APPROACH TWO - PLAYBOOK (SCRIPTING WAY)
+
+ON
+
+LOCALHOST
+REMOTEHOST (INVENTORY)
+
+============================================
+ADHOC COMMANDS
+=================================
+Where 
+-m = Module name
+-a = allow parameters
+-u = username
+
+Ansible command parameters
+https://docs.ansible.com/ansible/2.4/ansible-console.html
+
+ansible 127.0.0.1 -m file -a "dest=/opt/a.txt mode=600 state=touch"
+ansible 127.0.0.1 -m file -a "dest=/opt/a.txt mode=600 state=touch"
+ansible 127.0.0.1 -m file -a "dest=/opt/a.txt mode=600 state=touch owner=ec2-user"
+ansible 127.0.0.1 -m file -a "dest=/opt/b.txt mode=755 state=touch owner=ec2-user"
+ansible 127.0.0.1 -m file -a "dest=/opt/c.txt mode=755 state=touch owner=ec2-user"
+ansible 127.0.0.1 -m file -a "dest=/opt/bmc.txt mode=755 owner=ec2-user"
+
+ansible localhost -m file -a "dest=/opt/bmcdir mode=755 owner=ec2-user group=ec2-user state=directory"
+
+ansible 127.0.0.1 -m yum -a "name=httpd state=present"
+ansible 127.0.0.1 -m yum -a "name=httpd state=absent"
+
+
+ansible 127.0.0.1 -m service -a "name=httpd state=started"
+ansible 127.0.0.1 -m service -a "name=httpd state=stopped"
+
+ansible 127.0.0.1 -m command -a "/bin/yum update -y"
+ansible 127.0.0.1 -a "/bin/yum update -y"
+
+ansible 127.0.0.1 -m copy -a "src: /srv/myfiles/foo.conf dest: /etc/foo.conf"
+
+
+=======================
+command module vs shell 
+====================================
+
+
+FACT MODULE
+===============
+ansible 127.0.0.1 -m setup
+
+
+PROTOAL WE USED TO COMMUNCATE WITH REMOTE MACHINE - SSH
+PASSWORD	
+fingerprints	PASSWORD LESS
+ssh-add		PASSWORD LESS
+private way
+
+ansible all -i 13.126.46.202, -m setup --key-file=node.pem -u ec2-user
+ansible all -i 13.126.46.202, -m file -a "dest=/opt/bmc.txt mode=755 owner=ec2-user state=touch" --key-file=node.pem -u ec2-user -s
+ansible all -i 13.126.46.202, -m file -a "dest=/opt/bmcdir mode=755 owner=ec2-user group=ec2-user state=directory" --private-key=node.pem -u ec2-user
+ansible all -i 13.126.46.202, -m yum -a "name=httpd state=present" --private-key=node.pem -u ec2-user
+ansible all -i 13.126.46.202, -m service -a "name=httpd state=started" --private-key=node.pem -u ec2-user
+
+PRIVATE KEY
+--private-key=node.pem -u ec2-user
+
+PASSWORD PROMPT
+-k
+--ask-pass
+
+Sudo
+-K
+--ask-become-pass
+
+TASK
+========================
+USING PASSWOD
+	remote Machine 
+	fie
+	httpd
+	service start
+
+
+REMOTE SERVER
+====================================
+
+
+ISSUES 
+====================================
+SSH FINGER PRINTS VERIFICATION
+====================================
+
+
+ansible all -i 172.31.9.224, -m setup -k
+ansible all -i 172.31.9.224, -m setup --ask-pass
+
+ansible all -i 172.31.9.224, -m setup -K
+ansible all -i 172.31.9.224, -m setup --ask-become-pass
+
+ansible all -i 172.31.9.224, -m setup --private-key=node.pem -u ec2-user
+ansible all -i 172.31.9.224, -m setup --key-file=node.pem -u ec2-user
+
+NOTE - 
+chmod 0400 file
+
+========================INVENTORY==============================
+vi inventory
+
+[bmc]
+172.31.9.224
+13.126.46.202
+
+
+ansible bmc -i inventory -m setup --key-file=node.pem  --key-file=node.pem -u ec2-user -s
+ansible bmc -i inventory -m file -a "dest=/opt/bmc.txt mode=755 owner=ec2-user state=touch" --key-file=node.pem -u ec2-user -s
+ansible bmc -i inventory -m file -a "dest=/opt/bmcdir mode=755 owner=ec2-user group=ec2-user state=directory" ---key-file=node.pem -u ec2-user -s -u ec2-user
+ansible bmc -i inventory  -m yum -a "name=httpd state=present" --key-file=node.pem -u ec2-user -s
+ansible bmc -i inventory -m service -a "name=httpd state=started" --key-file=node.pem -u ec2-user -s
+
+LAB
+==========================
+copy a file from control server to remote
+create a file in remote machine with some content
+Crarte a file into /var/www/html/index.html with some dummy content....http://ipadd
+
+
+DEBUGGING ANSIBLE
+========================================
+ansible bmc -i inventory -m file -a "dest=/opt/bmc.txt mode=755 owner=ec2-user state=touch" --key-file=node.pem -u ec2-user -s -vvv
+
+
+PLAYBOOK
+===========================================
+first.yaml
+
+- name: "Delete logs that we for sure 100% won't ever need to look at"
+  hosts: localhost
+  tasks:
+    - name: "Create file"
+      file: path=my-ansible-file state=touch
+
+> ansible-playbook first.yaml
+
+
+# Installign httpd
+
+vi httpd.yaml
+
+- hosts: bmc
+  sudo: yes
+  remote_user: ec2-user
+  ansible_ssh_private_key_file: node.pem
+ 
+ tasks:
+  - name: Ensure that Apache is installed
+    yum: name=httpd state=present
+
+  - name: Start Apache Services
+    service: name=httpd enabled=yes state=started
+
+> ansible-playbook second.yaml  
+
+--private-key=/super-secret delete-logs.yml   
+
+================SECOND YAML===============
+---
+- hosts: bmc
+  sudo: yes
+  ansible_ssh_private_key_file: nremote_key.pem
+  
+  tasks:
+  - name: Ensure that Apache is installed
+    yum: name=httpd state=present
+    when: ansible_os_family == "RedHat"
+
+  - name: Start Apache Services
+    service: name=httpd enabled=yes state=started
+
+
+> ansible-playbook second1.yaml -i inventory --private-key=node.pem
+
+
+[[[[ansible-playbook common_tasks.yml -i inventory --key-file=node.pem -u ec2-user -s]]]]
+
+===========================================================================
+PASSWORD LESS AUTHENTICATION
+===========================================================
+one Control server
+> ssh-keygen
+
+go to $USER_HOME/.ssh
+
+copy id_rsa.pub to remote server $USER_HOME/.ssh/authorized_keys
+
+===========================================================================
+INCLUDE MODULE
+===========================================================
+
+[root@ip-172-31-5-240 include-import]# more include.yml
+# include a play after another play
+- hosts: web
+  tasks:
+    - debug:
+        msg: "play1"
+
+- include: web.yml
+
+[root@ip-172-31-5-240 include-import]# more web.yml
+- hosts: web
+  sudo: yes
+  vars:
+    http_port: 80
+    doc_dir: /ansible/
+    doc_root: /var/www/html/ansible/
+    max_clients: 5
+
+  tasks:
+  - name: Ensure that Apache is installed
+    yum: name=httpd state=present
+    when: ansible_os_family == "RedHat"
+
+  - name: Start Apache Services
+    service: name=httpd enabled=yes state=started
+
+
+> ansible-playbook include.yml -i inventory
+
+===========================================================================
+ REGISTER VARIABLE
+===========================================================
+
+[root@ip-172-31-5-240 include-import]# more register.yml
+---
+-
+  hosts: web
+  sudo: true
+  tasks:
+    -
+      command: "echo Hello"
+      name: "Create variable from command"
+      register: command_output
+    -
+      debug: "msg=\"{{command_output.stdout}}\""
+
+===========================================================================
+DEBUG MODULE
+===========================================================
+
+[root@ip-172-31-5-240 include-import]# more debug.yml
+---
+-
+  hosts: web
+  sudo: true
+  tasks:
+    -
+      debug: "msg=\"System {{ inventory_hostname }} has uuid {{ ansible_product_uuid }}\""
+
+
+===========================================================================
+PROMPT MODULE
+===========================================================
+
+
+[root@ip-172-31-5-240 include-import]# more prompt.yml
+---
+-
+  hosts: web
+  sudo: true
+  tasks:
+    -
+      debug: "msg=\"Your User name is {{ username }}\""
+  vars_prompt:
+    -
+      name: username
+      prompt: "What is your name?  What is your Quest?  What is your fav color?"
+
+===========================================================================
+PROMPT 2 MODULE
+===========================================================
+---
+-
+  hosts: web
+  sudo: true
+  tasks:
+    -
+      debug: "msg=\"Your User name is {{ name }}\""
+  vars_prompt:
+    - name: "name"
+      prompt: "what is your name?"
+    - name: "quest"
+      prompt: "what is your quest?"
+    - name: "favcolor"
+      prompt: "what is your favorite color?"
+
+===========================================================================
+PROMPT 2 MODULE
+===========================================================
+
+  - name: Deploy configuration File
+    template: src=templates/httpd.j2 dest=/etc/httpd/conf/httpd.conf
+    notify:
+      - Restart Apache
+--------------------------------------
+  handlers:
+     - name: Restart Apache
+       service: name=httpd state=restarted
+
+
+========================================================
+CONDITION
+============================================================
+root@ip-172-31-5-240 include-import]# more condition.yml
+- hosts: web
+  tasks:
+  - name: echo hello
+    command: echo hello
+    register: result
+  - debug: msg="Enry is not equalt to blank"
+    when: result.stdout != ""
+  - debug: msg="Enry is equalt to blank"
+    when: result.stdout == ""
+
+
+======================================WINDOWS====================
+=====================================WINDOWS====================
+=====================================WINDOWS====================
+=====================================WINDOWS====================
+
+Step 2
+----------------------------------------
+Install Python 2.7 ONLY.
+
+Set in the PATH env variable
+
+Step 2 - Run PS script
+----------------------------------------
+https://goo.gl/CKd6II
+
+2012
+> Run on the powershell
+
+Step 3 - Know the version version
+---------------------------------------
+$PSVersionTable.PSVersion
+
+Step 4 - Upgrade
+---------------------------------------
+https://goo.gl/Tw6fzz
+
+Step 5 - COME BACK TO CONTROL SERVER
+---------------------------------------
+
+> sudo yum install -y python-pip
+> sudo yum install gcc krb5-devel krb5-workstation
+> easy_install pip
+> pip install --upgrade pip
+> pip install markupsafe
+> sudo pip install xmltodict
+> sudo pip install pywinrm
+
+> pip install pywinrm[kerberos]
+
+Step 5 - Verification in Control Server
+---------------------------------------
+
+Download and unzip 
+http://www.devopsschool.com/notes/ansible/windows.zip
+
+
+SET IN THE WINOWS VMS
+======================================
+> winrm get winrm/config
+> winrm set winrm/config/service/auth '@{Basic="true"}'
+> winrm set winrm/config/service '@{AllowUnencrypted="true"}'
+
+
+
+================================ANSIBLE TOWER============================
+Add new tasks
+-----------------
+Moidfy your projects
+=================================================================================================
+1. Setting --> 
+	Create a Org
+	Credentials - 
+2. Inventories
+
+4. Create a prject
+5. job Templates
+	RUN
+	SCHEDULE
+
+==========================================================
+SAMPLE PLAYBOOK - --https://goo.gl/tiSZGm
+
+
+https://13.126.86.85
+
+admin
+bmc123
+
+IMPORT INVENTORY=====================
+cd /var/lib/awx/projects
+
+tower-manage inventory_import --source=./inventory --inventory-name="Demo Inventory"
+
+
+
+
+VERIFICATION OF WINDOWS HOST AND FEW COMMANDS
+> ansible web -i inventory -m win_ping 
+
+
+> ansible web -i inventory -m setup
+> ansible web -i inventory -m raw -a "dir"
+> ansible web -i inventory -m win_service -a "name=spooler"
+> ansible web -i inventory -m win_service -a "name=spooler state=stopped"
+> ansible web -i inventory -m win_service -a "name=spooler"
+> ansible web -i inventory -m win_feature -a "name=Telnet-Client state=present"
+
+
+
+
+
+Questions -
+Control Server in Windows?
+LIMITATION OF ANSIBLE
+
+Customize the log according to the Groups in Inventory
+
+1. Demo and Clarification on Docker Compose
+2. Project with JIRA
+3. Upload To nexus
+
+

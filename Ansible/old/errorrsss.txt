@@ -1,0 +1,66 @@
+PROBLEM
+======================================
+
+root@localhost ~]#  ansible all -i 10.76.86.187, -m yum -a "name=httpd state=present" -u root
+10.76.86.187 | FAILED! => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "msg": "yum lockfile is held by another process"
+}
+[root@localhost ~]#
+
+SOLUTION
+======================================
+Parameters name "lock_timeout" which Amount of time to wait for the yum lockfile to be freed.
+That can be set on command line or in ansible.cfg that would avoid this issue.
+
+ansible all -i 10.76.86.187, -m yum -a "name=httpd state=present lock_timeout=180" -u root
+
+
+Problem
+=======================================================
+10.76.143.93 | FAILED! => {
+
+    "changed": false,
+
+    "msg": [
+
+        "Could not detect which major revision of yum is in use, which is required to determine module backend.",
+
+        "You can manually specify use_backend to tell the module whether to use the yum (yum3) or dnf (yum4) backend})"
+
+    ]
+
+}
+
+10.76.137.86 | FAILED! => {
+
+    "changed": false,
+
+    "msg": [
+
+        "Could not detect which major revision of yum is in use, which is required to determine module backend.",
+
+        "You can manually specify use_backend to tell the module whether to use the yum (yum3) or dnf (yum4) backend})"
+
+    ]
+
+}
+SOLUTION
+======================================
+
+
+
+
+PROBLEM
+=========================================
+[root@ip-172-31-20-193 ~]# ansible windows -i inventory -m win_ping
+ec2-13-233-119-65.ap-south-1.compute.amazonaws.com | UNREACHABLE! => {
+    "changed": false,
+    "msg": "basic: HTTPSConnectionPool(host='ec2-13-233-119-65.ap-south-1.compute.amazonaws.com', port=5986): Max retries exceeded with url: /wsman (Caused by SSLError(SSLError(1, u'[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed (_ssl.c:618)'),))",
+    "unreachable": true
+}
+===================================================
+https://www.devopsschool.com/tutorial/ansible/ansible-conditional-programming-playbooks.html

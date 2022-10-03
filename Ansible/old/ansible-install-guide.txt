@@ -1,0 +1,9 @@
+RHEL
+> yum install wget -y
+> wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+> sudo rpm -i epel-release-latest-7.noarch.rpm
+> sudo yum update -y 
+> sudo yum install ansible -y
+
+Documents
+https://developers.redhat.com/blog/2016/08/15/install-ansible-on-rhel/

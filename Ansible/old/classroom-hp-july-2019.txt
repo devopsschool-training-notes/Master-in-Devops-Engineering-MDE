@@ -1,0 +1,994 @@
+AMI - ami-5b673c34
+What is Ansible?
+	Config mgmt tool.
+	Written in PYTHON
+	From REDHAT
+	RELEASE
+		CMD BASED - FREE - OS - COMMUNITY POWERED
+		GUI ---> PAID - FRM REDHAT == ANSIBLE TOWER
+	AGENT LESS (DISCUSSION NEEDED)
+
+What is Config mgmt?
+	SERVER(S) config mgmt
+
+What is there in SERVER?
+----Resources----------------
+	HARDWARE
+		HYPEPER -> HARDWARE
+		
+	SOFTWARE
+		package
+		OS
+		file
+		directory
+		user
+		grooup
+		services
+		shell
+		ps
+		bash
+		apt
+		yum
+		psg
+		nuget
+		windowsinstaller
+
+You manage a config of Resources in the Server(S) using a tool called ANSIBLE.
+	
+-------------------------------
+OTHER TOOLS
+	PROGRAMMING -> Puppet -> Ansible -> Chef -> Salt
+	GUI - OCTOPUS Deploy -> U Deploy
+
+Where Ansible stands in SDLC cycle?
+-----------------------------------------------------
+Project - HPX
+Mgr - MgrX
+---------------------------
+	TIGHT BUDGET
+	RELEASE - Should be from EACH COMMIT
+	QUALITY IS AT UTMOST. 5X
+----------------------------
+Planning - Architect - 2 -> MSP, JIRA, ATLASSION, SHAREPOINT
+Coding - Dev - 10 - Module 10
+	Code Integ -> GIT
+	Code Analsys -
+		PEER Code --> Gerrit
+		Static Code Analysis - SonarQube
+	Build mgmt - Maven
+	UT ---> Junit
+	Packaging - N number
+		APP
+		SYS
+	Package Archive - NExus,
+	Deploy TO QA (ENVIRONMENT)
+	Deploy TO INT (ENVIRONMENT)
+	Deploy TO STAGE  (ENVIRONMENT)
+	Deploy TO PRE- PROD (ENVIRONMENT)
+	-------------------------------------------------
+	HPX 1.8 --> 200 SERVERS
+	1 Dep ---> 9 mins
+	200 Dep ---> 10 MINS
+		200 - 50 RHEL - 50 UB - 50 WIn - 50 MAC
+		100 NG	100 APACHE
+		50 TOMCAT - 50 JBOSS - 50 WL - 50 WS
+		50 MYSQL - 50 MSSQL - 50 OR - 50 PS
+		100 DIFF CONFI
+		50 FF 50 IE 50 CH 50 OP
+	TOTAL - 1 TESTING TIME IS --30 MINS.
+	BUT- RM need feedback in 5 MINS.
+	---------------------
+	Parrel Deployment
+	Cross Platform
+	----------------------
+
+	PROGRAMMING -> Puppet -> Ansible -> Chef -> Salt
+	GUI - OCTOPUS Deploy -> U Deploy	
+	----------------------
+	1 mins - TO GET INFRA of 200 boxes
+		AWS - GC - AZURE - VSPHE - OPENSTAKE
+	===================================================
+	1 SECOND 
+	DOCKER --> KUBERNETES
+	======================================
+	CI CD
+	--------------------
+
+	AT 
+	
+	Code Coverage - JACOO, NCOVE, Cobertura
+	---------------------------------------	
+	PASS - 	RELEASE
+	FAIL - REPEAT
+	=====================================================
+
+
+PLAN -> Code->Review -> BUild -> UT-> Pack - Dep2Repo - Dep2Qa - AT - CC -> RELEASE
+-----------------------------------------------------------------------------------------
+JIRA - > GIT - >SOnar - > Maven - Junit - Jar -> Nexus -> Ansile - >Sel -> jacoc - 
+------------------------------------------------------------------------------------------
+			JENKINS
+				CONTINOUS INTEG
+				IMM FEEDBACK
+				GUI	
+				SCHEDULE
+=========================================================================
+WHY ANSIBLE?
+---------------------
+	Automate using what???
+		PYTHON - PERL - JAVA - C++
+		NOT EASY TO LEARN - EXTEND - SHARE - TEST - DEBUG
+
+		SHELL SCRIPTING - PS
+		NOT CROSS PLATFORM
+
+		WE NEED A TOOL
+			EASY TO LEARN - EXTEND - SHARE - TEST - DEBUG
+			CROSS PLATFORM
+
+		DSL Langauage
+		------------------
+		IDEOPOTENT
+		1 Dep -- 10 STEPS ---> FIRST ---1Step/1mins=====> 10 mins
+		2 DEP -- 3 STEPS   -----------------------------> 3 MINS
+		========================================================
+		TOOL will check a resouces state of 
+				Desire ==== actual
+	
+
+
+
+
+
+
+ANSIBLE 		VS PUPPET VS CHEF
+========================
+SSH|WINDRM		TCP
+No Agent		Agent
+Python			Ruby
+COmmunity++++		Community +++
+---------------------------------------
+-----------------------------------------------------------------------
+Role of Ansible you are going to play?
+	-------------------------------
+	Ansible Programmer  - Who write | test | debug ansible program
+	Ansible Admin - Who manage infra and APPLy ansible Program
+=========================================================
+How to become a Ansible Programmer?
+How to become a JAVA Programmer?
+---------------------------------
+----
+JDK -> .java 	   --> .class (S) -->jar ----> WAR ---> TOMCAT
+      ---------------
+	Skelatan
+	variable
+	methods
+	class
+	subclass	
+	conditioning
+	loopping
+
+How to become a Ansible Programmer?
+------------------------------------------------
+Ansible->play.yaml --		->play(s)Playbook --> Playbook(s)- ROLE -----> Ansible too 1000 of serers
+
+	Skelatan
+	variable
+	methods
+	class
+	subclass	
+	conditioning
+	loopping
+===============================================================
+Architecture of Ansible?
+	Ansible Server(Ansible Control Server) === ACS === ONE
+	PYTHON 2.6+
+		Ansible (Modules)
+		Playbook
+		Inventory
+		Config
+
+	Ansible Remote(Ansible Remote Server) === ARS === MULTIPLE
+	PYTHON 2.4+
+		NOTHING
+
+	ACS --> SSH -->ARS (LINUX)
+	ACS ---> WINRM(http) --> ARS(WINDOWS)
+	-------------------------------------	
+	Ansible is agent less or not....
+	--------------------------
+	ACS 		 VS 		ARS
+	ssh				ssh
+	python				python
+	64bit linux			ANY
+	
+-------------------------------------------------
+
+How to install Ansible?
+$ sudo yum install wget -y
+$ wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+$ yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+$ sudo rpm -i epel-release-latest-7.noarch.rpm
+$ sudo yum update -y 
+$ sudo yum install ansible -y
+$ systemctl stop firewalld
+$ systemctl disable firewalld
+
+$ export http_proxy="http://web-proxy:8080/"
+$ export https_proxy="https://web-proxy:8080/"
+
+[root@ip-172-31-8-120 centos]# ansible --version
+ansible 2.8.1
+  config file = /etc/ansible/ansible.cfg
+  configured module search path = [u'/root/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python2.7/site-packages/ansible
+  executable location = /bin/ansible
+  python version = 2.7.5 (default, Oct 30 2018, 23:45:53) [GCC 4.8.5 20150623 (Red Hat 4.8.5-36)]
+
+
+
+Lets setup a Lab Infra?
+HYPERVIOR - virtualBox
+	http://isoredirect.centos.org/centos/7/isos/x86_64/CentOS-7-x86_64-DVD-1810.iso	
+	RHEL 64 bit
+	
+==================================================
+Do Config mgmt 
+	using ADHOC command 
+		Do one task in ONE MACHINE
+		Do one task in REMOTE MACHINE
+		Do one task in MULTIPLE MACHINE
+
+	using Playbook(Program)
+		Do MULIPLE task in ONE MACHINE
+		Do MULIPLE task in MULTIPLE MACHINE
+
+	using Role(Program)
+		Do MULIPLE task in MULTIPLE MACHINE/ENV
+
+DEV MACHINE - 13.233.133.127
+EC2-user - ec2-user
+
+using ADHOC command 
+		Do one task in ONE MACHINE
+
+
+[root@ip-172-31-8-120 centos]# ansible
+Usage: ansible <host-pattern> [options]
+
+How to write Ansible Adhc Commands?
+----------------------------------------
+What you want to do?
+	create a file
+	create a dir
+	install a package "httpd"
+	start a service "httpd"
+	copy a index.html frm one to web location
+
+What is Module?
+An action done on resources is called as module in ansible.
+
+Resource		ACTION	(state)	+ 	Property change	== Parameter
+-----------------------------------------------------------	
+file			C | D				
+directory		C | D
+package			I | R | U
+services		S | S | E D|
+
+
+Config mgt do a changes on prop of resources
+			Parrlll to many machine.
+
+Where can i find it?
+https://docs.ansible.com/ansible/latest/modules/modules_by_category.html	
+	
+How to write ansile adhoc command
+
+Usage: ansible <host-pattern> [options]
+	
+
+ansible  localhost -m file -a "dest=/opt/test.txt"
+ansible  localhost -m file -a "dest=/opt/test.txt state="touch""
+ansible  localhost -m file -a "dest=/opt/ansible state="directory""
+ansible  localhost -m yum -a "name=httpd state="present""
+ansible  localhost -m service -a "name=httpd state="started""
+ansible  localhost -m copy -a "dest=/var/www/html/ src="index.html""
+=================================================================
+LAB 1
+https://www.devopsschool.com/blog/ansible-adhoc-commands-lab-excercise-part-1/
+
+---------------------------
+using ADHOC command 
+		Do one task in REMOTE MACHINE
+
+
+
+
+What is  <host-pattern>?
+------------------------
+localhost
+remote host
+	LIST OF IP ADDRESS
+		4.4.4.4,5.5.5.5,6.6.6.6,
+		GROUP
+			ALL 
+			UNGROUP
+	ssh		
+	docker
+	
+
+ansible  all -i 13.233.115.152, -m file -a "dest=/opt/test.txt state="touch""
+ansible  13.233.115.152, -m file -a "dest=/opt/ansible state="directory""
+ansible  13.233.115.152, -m yum -a "name=httpd state="present""
+ansible  13.233.115.152, -m service -a "name=httpd state="started""
+ansible  13.233.115.152, -m copy -a "dest=/var/www/html/ src="index.html""
+
+13.233.115.152
+
+ansible  all -i 13.233.115.152, -m file -a "dest=/opt/test.txt state="touch"" -u ubuntu --key-file=remote.pem
+
+ansible  all -i 13.233.115.152, -m yum -a "name=httpd state="present"" -u ubuntu --key-file=remote.pem -b
+ansible  all -i 13.233.115.152, -m apt -a "name=apache2 state="present"" -u ubuntu --key-file=remote.pem -b
+
+ansible  all -i 13.233.115.152, -m service -a "name=apache2 state="started"" -u ubuntu --key-file=remote.pem -b
+
+ansible  all -i 13.233.115.152, -m copy -a "dest=/var/www/html/ src="index.html"" -u ubuntu --key-file=remote.pem -b
+
+===================================================================================
+13.233.27.235
+13.233.155.40
+
+ansible  all -i 13.233.115.152, -m file -a "dest=/opt/test.txt state="touch""
+ansible  13.233.115.152, -m file -a "dest=/opt/ansible state="directory""
+ansible  13.233.115.152, -m yum -a "name=httpd state="present""
+ansible  13.233.115.152, -m service -a "name=httpd state="started""
+ansible  13.233.115.152, -m copy -a "dest=/var/www/html/ src="index.html""
+
+PROB
+===================================
+ansible  all -i 13.233.115.152,13.233.115.152,13.233.115.152,13.233.115.152,13.233.115.152,13.233.115.152,13.233.115.152,13.233.115.152,13.233.115.152,13.233.115.152,13.233.115.152,13.233.115.152,13.233.115.152,13.233.115.152,13.233.115.152,13.233.115.152,13.233.115.152,13.233.115.152, -m file -a "dest=/opt/test.txt state="touch""
+
+=========================Do one task in MULTIPLE MACHINE===========================
+SOLUTION
+--------------
+ansible  all -i inventory -m file -a "dest=/opt/test.txt state="touch""
+
+What is Inventory?
+	is havig lits of machine separated by new line.
+
+13.233.115.151
+13.233.115.152
+13.233.115.153
+13.233.115.154
+13.233.115.155
+13.233.115.156
+13.233.115.157
+13.233.115.158
+13.233.115.158
+
+ansible  all -i inventory -m file -a "dest=/opt/test.txt state="touch"" -u ec2-user --key-file=remote.pem -b
+
+ansible  all -i inventory -m yum -a "name=httpd state="present"" -u ec2-user --key-file=remote.pem -b
+
+ansible  all -i inventory -m service -a "name=httpd state="started"" -u ec2-user --key-file=remote.pem -b
+
+ansible  all -i inventory -m copy -a "dest=/var/www/html/ src="index.html"" -u ec2-user --key-file=remote.pem -b
+--------------------------------
+Inventory GROUP
+
+[adhoc]
+13.233.27.235
+13.233.155.40
+
+[web]
+13.233.115.151
+13.233.115.152
+13.233.115.153
+
+[db]
+13.233.115.154
+13.233.115.155
+13.233.115.156
+
+[windows]
+13.233.115.157
+13.233.115.158
+13.233.115.158
+
+   36  ansible  all -i inventory -m file -a "dest=/opt/test.txt state="touch"" -u ec2-user --key-file=remote.pem -b
+   37  ansible  ungroup -i inventory -m file -a "dest=/opt/test.txt state="touch"" -u ec2-user --key-file=remote.pem -b
+   38  vi inventory
+   39  ansible  ungroup -i inventory -m file -a "dest=/opt/test.txt state="touch"" -u ec2-user --key-file=remote.pem -b
+   40  vi inventory
+   41  ansible  ungrouped -i inventory -m file -a "dest=/opt/test.txt state="touch"" -u ec2-user --key-file=remote.pem -b
+   42  vi in
+   43  vi inventory
+   44  ansible  ungrouped -i inventory -m file -a "dest=/opt/test.txt state="touch"" -u ec2-user --key-file=remote.pem -b
+   45  ansible adhoc -i inventory -m file -a "dest=/opt/test.txt state="touch"" -u ec2-user --key-file=remote.pem -b
+======================================================
+	using Playbook(Program)
+		Do MULIPLE task in ONE MACHINE
+
+======================================================
+What is Playbook?
+	Yaml
+	PLAY
+		hosts
+		tasks
+			module1
+			Module2
+			Module3
+	PLAY
+	PLAY
+
+EACH PLAY DEDICATED TO oNE GROUP from Inventory 
+
+SAMEPLE
+---
+- name: This sets up an httpd webserver
+  hosts: localhost
+  tasks:
+  - name: Install the httpd apps
+    yum: name=httpd
+  - name: start the httpd service
+    service: name=httpd state=started
+  - name: create a empty fle
+    file: dest=/opt/test.txt state=touch
+  - name: copy a file
+    copy: dest=/var/www/html/ src="index.html"
+...
+
+ansible  all -i inventory -m file -a "dest=/opt/test.txt state="touch"" -u ec2-user --key-file=remote.pem -b
+ansible  all -i inventory -m copy -a "dest=/var/www/html/ src="index.html"" -u ec2-user --key-file=remote.pem -b
+
+
+
+   7  ansible adhoc -C -i inventory first.yaml
+    8  ansible adhoc -i inventory -C first.yaml
+    9  ansible-playbook adhoc -i inventory -C first.yaml
+   10  vi first.yaml
+   11  ansible-playbook -i inventory -C first.yaml
+   12  ansible-playbook -i inventory -C first.yaml -u ec2-user --key-file=remote.pem
+   13  ansible-playbook -i inventory first.yaml -u ec2-user --key-file=remote.pem
+   14  ansible-playbook -i inventory first.yaml -u ec2-user --key-file=remote.pem -b
+   15  ansible
+   16  ansible-playbook -i inventory --syntax-check first.yaml -u ec2-user --key-file=remote.pem -b
+   17  history
+
+ansible behavioral inventory parameters
+=============================================================
+https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html#connecting-to-hosts-behavioral-inventory-parameters
+
+[adhoc]
+13.233.27.235 ansible_user=ec2-user ansible_ssh_private_key_file=remote.pem ansible_become
+13.233.155.40 ansible_user=ec2-user ansible_ssh_private_key_file=remote.pem ansible_become
+	
+
+[root@ip-172-31-13-153 ec2-user]# more inventory
+4.5.5.5
+
+[adhoc]
+13.233.27.235 ansible_user=ec2-user ansible_ssh_private_key_file=remote.pem ansible_become=yes
+13.233.155.40 ansible_user=ec2-user ansible_ssh_private_key_file=remote.pem ansible_become=yes
+
+[web]
+13.233.115.151
+13.233.115.152
+13.233.115.153
+
+
+  18  clear
+   19  vi inventory
+   20  ansible-playbook -i inventory first.yaml -u ec2-user --key-file=remote.pem -b
+   21  ansible-playbook -i inventory first.yaml
+   22  vi inventory
+   23  ansible-playbook -i inventory first.yaml
+   24  vi first.yaml
+   25  vi inventory
+   26  ansible-playbook -i inventory first.yaml
+   27  vi inventory
+   28  vi inventory
+   29  ansible-playbook -i inventory first.yaml
+   30  vi inventory
+   31  ansible-playbook -i inventory first.yaml
+   32  vi inventory
+   33  ansible-playbook -i inventory first.yaml
+======================================================
+Variables - 23 DIFF PLACES
+========================================================
+INVENTORY
+PLAYBOOK
+COMMAND
+
+How to declare variables in Playbook?
+https://www.devopsschool.com/tutorial/ansible/variables/ansible-variables-1-playbook.html	
+
+---
+- name: This sets up an httpd webserver
+  hosts: localhost
+  vars:
+    myname: "rajesh kumar"
+    package: "httpd"
+    service: "httpd"
+
+  tasks:
+  - name: Install the httpd apps
+    yum: name={{ package }}
+  - name: start the httpd service
+    service: name={{ service }} state=started
+  - name: create a empty fle
+    file: dest=/opt/test.txt state=touch
+  - name: copy a file
+    copy: dest=/var/www/html/ src="index.html"
+  - name: Ansible prompt example.
+    debug:
+      msg: "{{ myname }}"
+...
+
+
+How to declare variables in inventory?
+https://www.devopsschool.com/tutorial/ansible/variables/ansible-variables-2-inventory.html
+---------------EXAMPLE 1------------------------------------
+[web]
+13.233.27.235 ansible_user=ec2-user ansible_ssh_private_key_file=remote.pem ansible_become myname="raj-inv1"
+13.233.155.40 ansible_user=ec2-user ansible_ssh_private_key_file=remote.pem ansible_become
+	
+[fake]
+13.233.115.151
+13.233.115.152
+13.233.115.153
+
+---------------EXAMPLE 2------------------------------------
+[web]
+13.233.27.235 ansible_user=ec2-user ansible_ssh_private_key_file=remote.pem ansible_become
+13.233.155.40 ansible_user=ec2-user ansible_ssh_private_key_file=remote.pem ansible_become
+	
+[fake]
+13.233.115.151
+13.233.115.152
+13.233.115.153
+
+myname="raj-inv2"
+
+---------------EXAMPLE 2------------------------------------
+[web]
+13.233.27.235 ansible_user=ec2-user ansible_ssh_private_key_file=remote.pem ansible_become
+13.233.155.40 ansible_user=ec2-user ansible_ssh_private_key_file=remote.pem ansible_become
+	
+[fake]
+13.233.115.151
+13.233.115.152
+13.233.115.153
+
+[web:vars]
+myname="raj-inv3"
+
+How to declare variables in playbook but using external file?
+===================================================================
+https://www.devopsschool.com/tutorial/ansible/variables/ansible-variables-3-external-files-in-playbook.html
+vars.yaml
+-----------
+---
+myname: "rajesh kumar"
+package: "httpd"
+service: "httpd"
+
+second.yaml
+----------
+---
+- name: This sets up an httpd webserver
+  hosts: localhost
+  vars_files:
+    - "vars.yaml"
+  tasks:
+  - name: Install the httpd apps
+    yum: name={{ package }}
+  - name: start the httpd service
+    service: name={{ service }} state=started
+  - name: create a empty fle
+    file: dest=/opt/test.txt state=touch
+  - name: copy a file
+    copy: dest=/var/www/html/ src="index.html"
+  - name: Ansible prompt example.
+    debug:
+      msg: "{{ myname }}"
+...
+ansible-playbook -i inventory second.yaml
+
+How to pass variables in playbook using prompt?
+===================================================================
+https://www.devopsschool.com/tutorial/ansible/variables/ansible-variables-5-vars-prompt.html
+
+
+third.yaml
+----------
+---
+- name: This sets up an httpd webserver
+  hosts: localhost
+  vars_files:
+    - "vars.yaml"
+  vars_prompt:
+    - name: "myname"
+      prompt: "Which version Do you want to install?:-"
+      private: no
+
+  tasks:
+  - name: Install the httpd apps
+    yum: name={{ package }}
+  - name: start the httpd service
+    service: name={{ service }} state=started
+  - name: create a empty fle
+    file: dest=/opt/test.txt state=touch
+  - name: copy a file
+    copy: dest=/var/www/html/ src="index.html"
+  - name: Ansible prompt example.
+    debug:
+      msg: "{{ myname }}"
+...
+
+
+third.yaml
+----------
+---
+- name: This sets up an httpd webserver
+  hosts: localhost
+  vars:
+    package: "httpd"
+    service: "httpd"
+  
+  vars_prompt:
+    - name: "myname"
+      prompt: "Which version Do you want to install?:-"
+      private: no
+
+  tasks:
+  - name: Install the httpd apps
+    yum: name={{ package }}
+  - name: start the httpd service
+    service: name={{ service }} state=started
+  - name: create a empty fle
+    file: dest=/opt/test.txt state=touch
+  - name: copy a file
+    copy: dest=/var/www/html/ src="index.html"
+  - name: Ansible prompt example.
+    debug:
+      msg: "{{ myname }}"
+...
+
+======================================================
+Group of groups
+======================================================
+---------------EXAMPLE 2------------------------------------
+[web]
+13.233.27.235
+13.233.155.40 
+	
+[fake]
+13.233.115.151
+13.233.115.152
+13.233.115.153
+
+[gog:children]
+web
+
+[gog:vars]
+myname="raj-inv3"
+service="raj-inv3"
+package="raj-inv3"
+ansible_ssh_private_key_file=remote.pem
+ansible_become=yes
+--------------------------
+---
+- name: This sets up an httpd webserver
+  hosts: localhost
+
+  tasks:
+  - name: Install the httpd apps
+    yum: name={{ package }}
+  - name: start the httpd service
+    service: name={{ service }} state=started
+  - name: create a empty fle
+    file: dest=/opt/test.txt state=touch
+  - name: copy a file
+    copy: dest=/var/www/html/ src="index.html"
+  - name: Ansible prompt example.
+    debug:
+      msg: "{{ myname }}"
+...
+
+Please write a sample programs using diff scenario of variables as asked in the link below
+
+https://www.devopsschool.com/blog/ansible-variable-lab-excercise-part-1/
+https://www.devopsschool.com/blog/ansible-variable-lab-excercise-part-2/
+https://www.devopsschool.com/tutorial/ansible/inventory/index.html
+====================================================================================
+Ansible using Windows - 2 max
+============================
+ACS --> ARS (WINDOWS)
+	WINRM
+		---> http
+
+LINUX 64 ----> WINDOWS
+			python
+			winrm
+
+----------------------------------
+ssh
+WinRM
+
+
+Demo
+-----------
+How to setup Ansible Windows remote server?
+https://www.devopsschool.com/tutorial/ansible/ansible-windows-remote-setup.html
+
+How to setup Ansible Windows control server?
+https://www.devopsschool.com/tutorial/ansible/ansible-windows-control-setup.html
+
+Ansiblel WIndows Adhoc Cmmand
+https://www.devopsschool.com/tutorial/ansible/ansible-windows-adhoc-commands.html
+
+Ansible Playbook for windows
+https://www.devopsschool.com/tutorial/ansible/ansible-windows-playbooks.html
+
+Lab 
+------------
+ACS - 52.66.247.241
+
+ARS - Windows - 13.233.160.153
+
+
+WINDOWS MODULE
+https://docs.ansible.com/ansible/latest/modules/list_of_windows_modules.html
+
+
+[root@ip-172-31-12-86 ansible]# ansible all -i inventory -m win_ping
+13.233.160.153 | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host 13.233.160.153 port 22: Connection refused",
+    "unreachable": true
+}
+
+---
+[windows]
+13.233.160.153
+
+[windows:vars]
+ansible_connection=winrm
+
+
+[root@ip-172-31-12-86 ansible]# ansible all -i inventory -m win_ping
+13.233.160.153 | UNREACHABLE! => {
+    "changed": false,
+    "msg": "ssl: auth method ssl requires a username",
+    "unreachable": true
+}
+
+
+---
+[windows]
+13.233.160.153
+
+[windows:vars]
+ansible_connection=winrm
+ansible_user=administrator
+ansible_password="w$y%O.ubjQ*hQhfa&ME@5=TeEd4Y*hfy"
+
+
+[root@ip-172-31-12-86 ansible]# ansible all -i inventory -m win_ping
+13.233.160.153 | UNREACHABLE! => {
+    "changed": false,
+    "msg": "ssl: HTTPSConnectionPool(host='13.233.160.153', port=5986): Max retries exceeded with url: /wsman (Caused by SSLError(SSLError(1, u'[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed (_ssl.c:579)'),))",
+    "unreachable": true
+}
+
+----
+[win:vars]
+ansible_user=LocalUsername
+ansible_password=Password
+ansible_connection=winrm
+ansible_winrm_transport=basic
+ansible_winrm_server_cert_validation=ignore
+
+
+ASIGNMENT
+========================
+Createa a dir, named with your-name inside C:\HPE and create a file named with "readme.txt" inside "C:\HPE\<your-name> and content of the file should be "I love India by your-name".
+
+=============================================================
+
+Variables
+	Custom
+	Constant - Automatic - FACT
+
+Condition
+https://www.devopsschool.com/tutorial/ansible/ansible-conditional-programming-playbooks.html
+
+Looping
+https://www.devopsschool.com/tutorial/ansible/ansible-looping-programming-playbooks.html
+
+Register
+file:///D:/workspace/DevOpsSchool.com/tutorial/ansible/ansible-linux-playbooks.html
+"Ansible Linux Playbook Example - Register vars"
+
+Ansible Playbook Lab & Excercise – Part 3
+
+- Create a playbook where you should install a webserver into 2 OS type(Ubuntu and RHEL) with fact conditioning. and list out a directory which in "/etc" and display such as "This is a directory /file in /etc:-XXXx" # To be used Conditiong, looping, regiter and fact variable.
+
+
+Ansible Playbook Lab & Excercise – Part 3
+https://www.devopsschool.com/blog/ansible-playbook-lab-excercise-part-3/
+
+Templates
+https://www.devopsschool.com/tutorial/ansible/ansible-playbook-template.html
+
+There are 2 environment DEV and QA. Both has their own group_vars. Using it, in Dev and QA environment(RHEL/CENTOS) install apache and Dev should run with 80 port and QA should run with 8080 port. Whereas config file locaton for apache conf is /etc/httpd.conf/conf/httpd.conf and line for port is "Listen 80". This should be done using template module and zinja2 lib.
+
+
+ansible localhost -m template -a"dest="/etc/httpd/conf/httpd.conf" src="httpd.conf.j2"" -e portnum=8080
+ansible localhost -m service -a"name="httpd" state="started""
+
+
+Handlers
+https://www.devopsschool.com/tutorial/ansible/ansible-linux-playbooks.html
+
+===========================================================
+How to manage a complexity of multiple playbook?
+
+include
+https://www.devopsschool.com/blog/ansible-include-scnario-with-list-of-plays-or-tasks/
+
+import
+https://www.devopsschool.com/blog/ansible-include-and-import-with-differences-explanined/
+
+vars_files Vs include_vars
+https://www.devopsschool.com/blog/difference-between-ansible-vars_files-vs-include_vars/
+
+roles
+
+https://github.com/devops-school/ansible-hello-world-role
+
+===========================================================================
+===========================================================================
+===========================================================================
+Ansible Galaxy
+Ansible tower
+Ansible vault
+========================
+What is Ansible Tower?
+
+
+
+13.233.121.203
+
+https://galaxy.ansible.com/
+
+How to installl roles?
+ansible-galaxy install geerlingguy.java
+-- USER_HOME/.ansbile/roles/
+-- /etc/ansible/roles
+
+52.66.213.197
+How to setup ansible tower?
+
+Pre - Ansible Engine
+
+
+Download
+wget https://releases.ansible.com/ansible-tower/setup/ansible-tower-setup-3.5.1-1.tar.gz
+
+Change cnfig 
+
+Install
+
+Config
+
+ 3  yum install wget -y
+    4  sudo yum install wget -y
+    5  wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+    6  yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+    7  sudo rpm -i epel-release-latest-7.noarch.rpm
+    8  sudo yum install ansible -y
+
+   10  wget https://releases.ansible.com/ansible-tower/setup/ansible-tower-setup-3.5.1-1.tar.gz
+   11  ls
+   12  tar -zxvf ansible-tower-setup-3.5.1-1.tar.gz
+   13  clear
+   14  ls
+   15  cd ansible-tower-setup-3.5.1-1
+
+   23  vi inventory
+   24  ./setup.sh
+   30  ps -eaf | grep ng
+   31  history
+
+========================================
+Super Admin
+===================
+	HPE
+	DELL
+	--------------------
+	using Organization
+
+=================================
+Authetication
+	DB	
+	LDAP
+
+
+Authorization 
+	USERS
+	TEAMS
+
+Inventory
+
+Credentials
+
+Playbook ==== Project
+
+-------------------
+ansible-playbook -i in ply.yaml -u ddd
+
+template 
+	inventory
+	prject
+	cred
+
+scheung
+
+notification
+
+https://52.66.213.197
+admin
+admin123
+
+
+
+
+
+Ansible Vault
+=========================
+Create a encrypted file/files/dir 
+	Based on password...
+
+During run time --- Password can be passed
+Encrypted file is wrothless without passwrd.
+
+===============================================================
+feeback - Org
+Feedback - public
+http://devopscertification.co/
+
+contact@DevOpsSchool.com
+---------------------------------
+Subject - ANSIBLE CERTIFIED ENGINEER
+Full Name
+Gmail ID
+Phone
+Role
+City - Bangalore
+Company - HPE
+--------------------------------
+DevOpsSchool.com
+--------------------------
+How to reach out
+http://rajeshkumar.xyz
+
+Feedback - public
+https://goo.gl/maps/sfFc4oTtjTRDE9ac6
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

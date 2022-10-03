@@ -1,0 +1,332 @@
+What is Ansible?
+	Config mgmt tool.
+	From Redhat
+	Open Source
+		---making money using GUI tool - Ansible Tower.. + Supports
+
+What is config mgmt?
+	SERVERS CONFIG MGMT
+
+What is there in the server of which we do manage the config of items?
+	file
+	directory
+	services
+	package
+	apt
+	yum
+	bash
+	batch
+
+Why Do we need Ansible?
+	JAVA
+	PERL
+	PY 
+
+	BASH
+	BATCH | PS
+	
+Ansbile is
+	EASY to LEARN
+	EASY TO EXTEND	
+	EASY TO DEBUG
+	EASY TO SHARE
+
+BASH N BATCH is not a croos platform.
+
+Ansible is 
+	Cross platform
+
+=========VERY IMPORTANT==============
+IDEMPOTENT
+IF The state of the resources is not needed change, ansible will not change
+Desired state of the resources has to be maintained..if desire state is already in place, then ansible will not make any change.
+
+
+Ansible is able to manage is Large number of machine...
+
+
+OTHER TOOLS --> PUPPET, CHEF, ANSIBLE, SALT
+--------------------------------------------
+
+WHY ANSIBLE
+	PUPPET n CHEF === TCP + Agent
+	ANSIBLE === SSH + Agentess
+	More leaner than Chef n Puppet
+	More simpler than Chef n Puppet
+
+	
+Who can use Ansible??
+IT enginer | Network Enginer
+		- Manage the large infra in terms -- AV -- Upgrade oS - Patch - Policy in the system
+
+DevOps Enineer - BR Enginerr -
+		- Deploy the application in the large number f mahcine
+			- Staging
+			- Interg
+			- Qa
+			- Product
+
+What are the roles in Ansible?
+	Ansible Programmer - Play , Playbook, Modules (They write and test programs in Ansible)
+	Ansible Administrator - Who manages the infra n apply the playbook
+				 -  Manager Ansible Tower
+				- Manage all the hosts
+
+Qs - when ansible manage large machines ( lets say 50 machines ) do we need to install ansible in all machines ?
+Ans - NO. Ansible is agent less why coz of it works with SSH..
+ 
+Qs  - Ansible can be managed by command line or else through ansible tower right 
+Ans - it can be managed by the command line which is easy..but you can also manage by Tower GUI.
+
+Can i undo using Ansible?
+================================
+NO.
+
+-----------COOKBOOK|Modules|Playbook==========
+		v1				- Chef Server
+		v2				- Puppet Master (Git)
+		v3 -- Wrong			- Tower
+						STATE === present | Absent
+
+		v3 ==== /root/html/raj.txt STATE=preset == WRONG
+		v4 ==== /root/html/raj.txt STATE=absent == RIGHT
+
+		
+Install httpd
+Uninstall httpd
+
+	- Install httpd --> Uninstall httpd
+	- httpd.config ---> old httpd.config
+
+
+How to Intall Ansible???
+	WINDOWS
+	RHEL-CENTOS	==========
+			Install EPEL =  
+			Install Ansible == 
+
+			> wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+			> sudo rpm -i epel-release-latest-7.noarch.rpm
+			> sudo yum update
+			> sudo yum install ansible
+
+
+			WORKING THROUGH 
+			Installing ansible on AWS RHEL 7.4 instance and worked with below steps:
+			> easy_install pip
+			> yum install python-pip
+			> pip install paramiko PyYAML jinja2 httplib2
+			> pip install ansible
+			> ansible --version
+
+PRE REQ 	
+			Python 2.4.+
+			
+			Pything 3.X
+
+
+======================================================================================================================
+USING ANSBILE
+===========================================================================
+		Command Line
+		Playbooks
+	
+===================================================
+ANSIBLE COMMMAND LINE
+====================================================
+LOCALHOST
+--------------------------------------------------
+Ansible - tool
+127.0.0.1 - IP address of localhost
+-m module name
+-a "parameters to modules"
+
+ansible 127.0.0.1 -m file -a "dest=/opt/a.txt mode=600 state=touch"
+ansible 127.0.0.1 -m file -a "dest=/opt/a.txt mode=600 state=absent"
+ansible 127.0.0.1 -m file -a "dest=/opt/a.txt mode=600 state=touch"
+ansible 127.0.0.1 -m file -a "dest=/opt/a.txt mode=600 state=touch owner=ec2-user"
+ansible 127.0.0.1 -m file -a "dest=/opt/b.txt mode=755 state=touch owner=ec2-user"
+ansible 127.0.0.1 -m file -a "dest=/opt/c.txt mode=755 state=touch owner=ec2-user"
+ansible 127.0.0.1 -m file -a "dest=/opt/bmc.txt mode=755 owner=ec2-user"
+ansible 127.0.0.1 -m file -a "dest=/opt/2 mode=600 state=directory"
+ansible localhost -m file -a "dest=/opt/bmcdir mode=755 owner=ec2-user group=ec2-user state=directory"
+
+ansible 127.0.0.1 -m yum -a "name=httpd state=present"
+ansible 127.0.0.1 -m yum -a "name=httpd state=absent"
+
+ansible 127.0.0.1 -m copy -a "src=/opt/index.html dest=/var/www/html/index.html mode=600"
+ansible 127.0.0.1 -m copy -a "src: /srv/myfiles/foo.conf dest: /etc/foo.conf"
+
+ansible 127.0.0.1 -m service -a "name=httpd state=started"
+ansible 127.0.0.1 -m service -a "name=httpd state=stopped"
+
+
+---------------Command module-----------------------
+is the default
+ansible 127.0.0.1 -m command -a "/bin/yum update -y"
+ansible 127.0.0.1 -a "/bin/yum update -y"
+ansible 127.0.0.1 -m command -a "yum install -y git"
+
+
+OUTPUT
+=================================
+[root@ip-172-31-24-228 ~]# ansible 127.0.0.1 -m file -a "dest=/opt/a.txt mode=600 state=touch"
+ [WARNING]: Unable to parse /etc/ansible/hosts as an inventory source
+
+ [WARNING]: No inventory was parsed, only implicit localhost is available
+
+ [WARNING]: Could not match supplied host pattern, ignoring: all
+
+ [WARNING]: provided hosts list is empty, only localhost is available
+
+127.0.0.1 | SUCCESS => {
+    "changed": true,
+    "dest": "/opt/a.txt",
+    "failed": false,
+    "gid": 0,
+    "group": "root",
+    "mode": "0600",
+    "owner": "root",
+    "secontext": "unconfined_u:object_r:usr_t:s0",
+    "size": 0,
+    "state": "file",
+    "uid": 0
+
+================ArCH OF ANSIBLE=============================
+Modules
+===============================================================
+		Unit program which has certain functionality, can be used to modify the resouces in the srver
+			file
+			yum
+			copy
+			service
+
+Kind of Modules
+		- Core Module  - http://docs.ansible.com/ansible/latest/modules_by_category.html
+		- Community Module - https://galaxy.ansible.com/
+		- Depreciated 
+
+How can you create a module?	
+		You can create a ansible using any technology + How to link it???
+
+Chef + Puppet  - Ruby
+	
+
+> ansible-doc -l
+> ansible-doc -s file
+> ansible-doc file
+
+=============================================================	
+Inventory
+===============================================================
+
+Inventory is the list of hosts machine whrre you want to run the program..
+
+[db]  
+db1.company.com	ansible_ssh_user=aaron ansible_ssh_pass=123 
+db2.company.com	ansible_ssh_pass=123 
+
+[web]  
+web1.company.com	ansible_ssh_user=aaron ansible_ssh_pass=123 
+web1.company.com	ansible_ssh_pass=123 
+
+[datacenter-west]   === group name
+db		 === host
+
+[datacenter-west:childrent]   === group name of group of group
+db				== Group Name
+web				= grou Name
+
+[datacenter-west:vars]  
+ansible_ssh_user=ansible_user  
+ansible_ssh_pass=#45e!@Gh 
+ntp-server=5.6.7.8
+
+=============================================
+CURRENT DIR--
+		group_var
+			all #file which has all var of groups
+			db  # file which has all the vars for db group	
+
+		host_vars
+			web1  # file which has vars for individuals host
+		
+		intentory			
+		
+
+
+
+
+=============================================================	
+Playbook
+======================================================
+Playbook is a collection of play
+yaml file
+
+What is play?
+	play is combination of one or more tasks(modules) + Conditions + inputs + vars
+
+
+=============================================================	
+Ansible Config
+======================================================
+./config
+~./config
+ANSIBLE_CONIG=ddsd
+
+pass=
+user
+poool==
+
+
+
+===================================================
+ANSIBLE COMMMAND LINE
+====================================================
+SIINGLE REMOOTE 
+--------------------------------------------------
+ansible all -i 13.127.50.140, -m setup
+ansible all -i 13.127.50.140, -m setup -u ec2-user
+ansible all -i 13.127.50.140, -m setup -u ec2-user -k
+ansible all -i 13.127.50.140, -m setup --key-file=remote_key.pem -u ec2-user
+
+ansible all -i 13.127.50.140, -m file -a "dest=/opt/bmc.txt mode=755 owner=ec2-user state=touch" --key-file=remote_key.pem -u ec2-user -s
+
+
+ansible all -i 13.127.50.140, -m file -a "dest=/opt/bmcdir mode=755 owner=ec2-user group=ec2-user state=directory" --private-key=node.pem -u ec2-user
+ansible all -i 13.127.50.140, -m yum -a "name=httpd state=present" --private-key=node.pem -u ec2-user
+ansible all -i 13.127.50.140, -m service -a "name=httpd state=started" --private-key=node.pem -u ec2-user
+
+Control server - 13.127.22.42 (127.0.0.1 ) or localhost
+
+Remote 1 - 13.127.50.140
+
+
+
+Permission
+===========================
+Ip address - Correct
+user name & 
+password OR key OR SSH-public-private
+
+
+13.127.50.140
+13.127.25.8
+
+
+ansible bmc -i inventory -m command -a "yum install -y git" --key-file=remote_key.pem -u ec2-user -s
+ansible bmc -i inventory -m command -a "yum install -y git" --key-file=remote_key.pem -u ec2-user -s -vvvvv
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	

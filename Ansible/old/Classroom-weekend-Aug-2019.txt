@@ -1,0 +1,292 @@
+===========================================
+Madhu 
+Venkat
+Navya
+Sunil
+Himavnath
+Rekha
+Harendra
+Priya
+Naveen
+=============================
+Ansible?
+=================================================
+
+What is Ansible?
+	Config mgmt tool.
+	Its for Managing multiple servers
+	Written in python
+	Version
+		OSS  - Ansible - CMD
+		PAID  - Ansible+Tower == GUI + CMD
+	From REDHAT
+	
+
+What is Config mgmt tool?
+--------------------------------
+	SERVER(S)
+
+What is there in the servers?
+-------------------------------
+	-Resources----
+	OS
+	Package
+	Users
+	group
+	Process
+	services
+	files
+	directry
+	bash
+	batch
+	yum
+	apt
+	
+What config happend on the Resources?
+===========================================
+	
+-Resources----			properties(Parameters)		action(state)	
+	OS
+	Package			
+	Users
+	group
+	Process
+	services
+	files
+	directry
+	bash
+	batch
+	yum
+	apt
+
+Where do i find all Resources supported by Ansible? ---- 1000
+https://docs.ansible.com/ansible/latest/modules/modules_by_category.html
+
+============================================================================
+Where Ansible stands in SDLC ?
+https://www.devopsschool.com/path/
+
+Why Ansible?
+	For Parrel Dep work?
+	
+	Easy to learn / share / extend / test / debug comapre to
+			----- JAVA - C++ - PYTHON + PERL 
+	cross Platform -
+		Windows  + LINUX
+==================================================
+Architecture of Ansible?
+===========================================
+
+Ansible Control Server		Ansible Remote Server(S)
+
+LINUX 				WIINDOWS + LINUX + ANY BIT
+64 BIT					
+			
+LINUX 				LINUX - using SSH 22
+LINUX 				WINDOWS - winrm http 5616
+===========================================================
+How to get started? ROLES........
+-------------------------------------
+DEV 		- A person who writes ROLE / test --> validate -> debug --> release
+
+ADMIN		- Who apply role(s) to server(s) and manage server(s)
+=====================================================================================
+
+How to become a  java programmers?
+JDK --> .JAVA		-> .class  -> .class(s) --> JAR--> JAR(S) --> WAR
+	--Varibles
+	--conditions
+	--looping
+	--method
+	--class
+	--subclass
+	
+How to become a  Ansble programmers?
+Ansible -->.yaml--------------------------------------->-ROLE
+Ansible -->Playbook--------------------------------------->-ROLE
+
+Playbook
+	PLAY1
+		HOST - Where These TASK(S) should get exected.
+		TASK1 AKA Module and Parameters and Ensure
+		TASK2
+		TASK3
+	PLAY2
+		TASK1
+		TASK2
+		TASK3
+	PLAY3
+		TASK1
+		TASK2
+		TASK3
+	PLAY4
+		TASK1
+		TASK2
+		TASK3
+	PLAY5
+=========================================================================
+Ansible Control Server	
+	Modules
+		--> Playbook 
+			 ------> Inventory 
+					---> Ansible Config 
+	---------------------------------------------------------
+				MULTIPLE MAHINE
+	
+
+	using ADHOC command 
+		Do one task in ONE MACHINE(localhost)
+		Do one task in ONE REMOTE MACHINE
+		Do one task in MULTIPLE REMOTE MACHINES using Inventory
+		Do one task in MULTIPLE REMOTE MACHINES using group in Inventory
+	using Playbook(Program)
+		Do Multiple tasks(Playbook) in ONE MACHINE(localhost)
+		Do Multiple tasks(Playbook) in ONE REMOTE MACHINE
+		Do Multiple tasks(Playbook) in MULTIPLE REMOTE MACHINE using Inventory
+		Do Multiple tasks(Playbook) in MULTIPLE REMOTE MACHINE using group in Inventory
+		Do Multiple tasks(Playbook) in MULTIPLE REMOTE MACHINE using group of group in Inventory
+		Do Multiple tasks(Playbook) in MULTIPLE REMOTE MACHINE using environment directory Inventory 
+	using Role(Program)
+		Do One Role in in ONE MACHINE(localhost)
+		Do Multiple Roles in ONE REMOTE MACHINE
+		Do Multiple Roles in MULTIPLE REMOTE MACHINE using Inventory
+		Do Multiple Roles in MULTIPLE REMOTE MACHINE using group in Inventory
+		Do Multiple Roles in MULTIPLE REMOTE MACHINE using group of group in Inventory
+		Do Multiple Roles in MULTIPLE REMOTE MACHINE using environment directory Inventory
+
+
+
+How to install Ansible?
+$ sudo yum install wget -y
+$ wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+$ yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+$ sudo rpm -i epel-release-latest-7.noarch.rpm
+$ sudo yum update -y 
+$ sudo yum install ansible -y
+$ systemctl stop firewalld
+$ systemctl disable firewalld
+
+
+[root@ip-172-31-10-146 ec2-user]# ansible --version
+ansible 2.8.2
+  config file = /etc/ansible/ansible.cfg
+  configured module search path = [u'/root/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python2.7/site-packages/ansible
+  executable location = /bin/ansible
+  python version = 2.7.5 (default, Feb 20 2018, 09:19:12) [GCC 4.8.5 20150623 (Red Hat 4.8.5-28)]
+
+
+using ADHOC command 
+		Do one task in ONE MACHINE(localhost)
+		================================================
+		ansible  localhost -m file -a "dest=/opt/test.txt"
+		ansible  localhost -m file -a "dest=/opt/test.txt state="touch""
+		ansible  localhost -m file -a "dest=/opt/ansible state="directory""
+		ansible  localhost -m yum -a "name=httpd state="present""
+		ansible  localhost -m service -a "name=httpd state="started""
+		ansible  localhost -m copy -a "dest=/var/www/html/ src="index.html""
+		================================================13.232.52.39
+		Do one task in ONE REMOTE MACHINE
+		================================================
+		[LIST OF HOSTS]	13.232.52.39,13.232.52.39,13.232.52.39,
+			-- COMMAND LINE
+			-- INVENTORY FLilE
+			-- SCRIPT	
+			- DIRECTORY
+
+		ansible  localhost, -m known_hosts -a "name=13.232.52.39 state=present"
+		[ NEED WORK ]
+		# Disable host key checking in   vi /etc/ansible/ansible.cfg
+
+		ansible  all -i 13.232.52.39, -m file -a "dest=/opt/test.txt" -u ec2-user --key-file=node.pem
+		ansible  all -i 13.232.52.39, -m file -a "dest=/opt/test.txt state="touch"" -u ec2-user --key-file=node.pem -b
+		ansible  all -i 13.232.52.39, -m file -a "dest=/opt/ansible state="directory"" -u ec2-user --key-file=node.pem -b
+		ansible  all -i 13.232.52.39, -m yum -a "name=httpd state="present"" -u ec2-user --key-file=node.pem -b
+		ansible  all -i 13.232.52.39, -m service -a "name=httpd state="started"" -u ec2-user --key-file=node.pem -b
+		ansible  all -i 13.232.52.39, -m copy -a "dest=/var/www/html/ src="index.html"" -u ec2-user --key-file=node.pem -b
+
+		================================================13.232.52.39
+		Do one task in MULTIPLE REMOTE MACHINES using Inventory
+		-------------------------------------------------------------
+		What is Inventory
+		--------------
+		Its a file
+		has list of Servers(IP addrrss OR hostname)
+		It can be group.
+
+		vi inventory
+		--------------------
+		13.234.75.211
+		13.232.179.57
+		13.235.87.215
+		13.232.100.249
+
+
+		ansible  all -i inventory -m file -a "dest=/opt/test.txt" -u ec2-user --key-file=node.pem
+		ansible  all -i inventory -m file -a "dest=/opt/test.txt state="touch"" -u ec2-user --key-file=node.pem -b
+		ansible  all -i inventory -m file -a "dest=/opt/ansible state="directory"" -u ec2-user --key-file=node.pem -b
+		ansible  all -i inventory -m yum -a "name=httpd state="present" lock_timeout=60" -u ec2-user --key-file=node.pem -b
+		ansible  all -i inventory -m service -a "name=httpd state="started"" -u ec2-user --key-file=node.pem -b
+		ansible  all -i inventory -m copy -a "dest=/var/www/html/ src="index.html"" -u ec2-user --key-file=node.pem -b
+
+
+		Do one task in MULTIPLE REMOTE MACHINES using group in Inventory
+		vi inventory
+		--------------------
+		[web]
+		13.234.75.211
+		13.232.179.57
+
+		[db]
+		13.235.87.215
+		13.232.100.249
+
+		ansible  web -i inventory -m file -a "dest=/opt/test.txt" -u ec2-user --key-file=node.pem
+		ansible  web -i inventory -m file -a "dest=/opt/test.txt state="touch"" -u ec2-user --key-file=node.pem -b
+		ansible  web -i inventory -m file -a "dest=/opt/ansible state="directory"" -u ec2-user --key-file=node.pem -b
+		ansible  web -i inventory -m yum -a "name=httpd state="present" lock_timeout=60" -u ec2-user --key-file=node.pem -b
+		ansible  web -i inventory -m service -a "name=httpd state="started"" -u ec2-user --key-file=node.pem -b
+		ansible  web -i inventory -m copy -a "dest=/var/www/html/ src="index.html"" -u ec2-user --key-file=node.pem -b
+		ansible db -i inventory -m copy -a "dest=/var/www/html/index.html src="index1.html"" -u ec2-user --key-file=node.pem -b
+
+
+	using Playbook(Program)
+		Do Multiple tasks(Playbook) in ONE MACHINE(localhost)
+		Do Multiple tasks(Playbook) in ONE REMOTE MACHINE
+		Do Multiple tasks(Playbook) in MULTIPLE REMOTE MACHINE using Inventory
+		Do Multiple tasks(Playbook) in MULTIPLE REMOTE MACHINE using group in Inventory
+		Do Multiple tasks(Playbook) in MULTIPLE REMOTE MACHINE using group of group in Inventory
+		Do Multiple tasks(Playbook) in MULTIPLE REMOTE MACHINE using environment directory Inventory 
+	using Role(Program)
+		Do One Role in in ONE MACHINE(localhost)
+		Do Multiple Roles in ONE REMOTE MACHINE
+		Do Multiple Roles in MULTIPLE REMOTE MACHINE using Inventory
+		Do Multiple Roles in MULTIPLE REMOTE MACHINE using group in Inventory
+		Do Multiple Roles in MULTIPLE REMOTE MACHINE using group of group in Inventory
+		Do Multiple Roles in MULTIPLE REMOTE MACHINE using environment directory Inventory
+
+
+Grup 1 - 13.234.75.211
+Grup 2 - 13.232.179.57
+Grup 3 - 13.235.87.215
+Grup 4 - 13.232.100.249
+
+ec2-user
+Key --- PPK
+https://www.devopsschool.com/notes/ansible/2019/rajesh-mumbai.ppk
+
+---
+- name: This sets up an httpd webserver
+  hosts: web
+  tasks:
+  - name: Install the httpd apps
+    yum: name=httpd
+  - name: start the httpd service
+    service: name=httpd state=started
+  - name: create a empty fle
+    file: dest=/opt/test.txt state=touch
+  - name: copy a file
+    copy: dest=/var/www/html/ src="index.html"
+...
+
+ansible-playbook -i inventory playbook.yaml -u ec2-user --key-file=node.pem -b

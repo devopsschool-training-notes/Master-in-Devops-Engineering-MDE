@@ -1,0 +1,159 @@
+What is Ansible?
+    Config mgmt tool.
+            Which can manage SERVERS resources and thir behaviours and properties
+    Written in Python
+    From Redhat
+    Agent Less Tool
+    SSH
+    FREE
+
+FREE            PAID
+Ansible         Ansible Tower
+Puppet servers  Puppet Enter
+Chef servers    Chef Manage | Automate
+
+
+What is Config mgmt?
+        SERVERS CONFIG MGTMT
+
+What is there in the servers? so you manage their config?
+    hardware
+        storage
+    services        s | S |E |d
+    package         I |R 
+    file            C
+    network
+    Security pol
+    user
+    group
+    etc
+
+HARDWARE
+SOFTWARE
+PEOPLE
+PROCESS
+    
+Other tools - 
+Puppet, Ansible, Chef, Salt
+
+How to implement Ansible for your projects?
+Roles -
+        Ansible Programmer
+        Ansible Admin
+
+-------------------------------------
+JDK ->  .JAVA -> CLASS -> JAR
+
+Ansible -> .YAML - MODULE(Package) -> Roles
+
+.JAVA == .YAML
+
+DATA TYPE | FUNTIONS | LEYWORDS | OPER | CON | LOP
+RESOURCES | ACTION | FUN | O
+
+
+How to Install Ansible?
+RHEL
+> yum install wget -y
+> wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+> sudo rpm -i epel-release-latest-7.noarch.rpm
+> sudo yum update -y 
+> sudo yum install ansible -y
+
+Documents
+https://developers.redhat.com/blog/2016/08/15/install-ansible-on-rhel/
+
+13.127.121.101
+
+WHY ANSIBLE?
+================================
+ADVANTAGE
+        JAVA | C++ | PE | PY
+        SHELL  | PS
+        Ansible is Easy to learn, extend, debug, test, share
+
+        idempotent
+        Desire == Actual then no changes
+
+        Capability to manage Large number
+
+======================================
+TYPE OF EXECUTIONS
+            LOCAL	
+            REMOTE
+
+How to use modules?
+            ADHOC Commands
+            Playbooks
+
+Module 
+        Core Modules by Ansible
+        Community Modules by Ansible Galaxy in form roles
+            https://galaxy.ansible.com/
+
+------------------------------------------
+Ansible Adhoc Commands
+
+Where 
+-m = Module name
+-a = allow parameters
+-u = username
+
+Create a a file named with a.txt in opt
+ansible 127.0.0.1 -m file -a "dest=/opt/a.txt mode=600 state=touch"
+ansible 127.0.0.1 -m file -a "dest=/opt/a.txt mode=600 state=file"
+
+ansible 127.0.0.1 -m file -a "dest=/opt/a.txt mode=600 state=touch"
+ansible 127.0.0.1 -m file -a "dest=/opt/a.txt mode=600 state=touch owner=ec2-user"
+ansible 127.0.0.1 -m file -a "dest=/opt/b.txt mode=755 state=touch owner=ec2-user"
+ansible 127.0.0.1 -m file -a "dest=/opt/c.txt mode=755 state=touch owner=ec2-user"
+ansible 127.0.0.1 -m file -a "dest=/opt/bmc.txt mode=755 owner=ec2-user"
+
+ansible 127.0.0.1 -m file -a "dest=/opt/verizon mode=755 owner=ec2-user group=ec2-user state=directory"
+
+ansible 127.0.0.1 -m yum -a "name=httpd state=present"
+ansible 127.0.0.1 -m yum -a "name=httpd state=absent"
+
+# -vvvvvv is the level of LOG with Adhoc
+
+
+ansible 127.0.0.1 -m service -a "name=httpd state=started"
+ansible 127.0.0.1 -m service -a "name=httpd state=stopped"
+
+ansible 127.0.0.1 -m file -a"src=/opt/index.html  dest=/var/www/html/index.html state=link"
+
+ansible 127.0.0.1 -m copy -a "src=/opt/index.html dest=/var/www/html/index.html"
+
+Node1 - 13.126.253.64
+Node2 - 52.66.251.219
+
+
+---
+- name: This sets up an httpd webserver
+  hosts: all
+  tasks:
+  - name: Install the httpd apps
+    yum: name=httpd
+  - name: start the httpd service
+    service: name=httpd state=started
+  - name: example copying file with owner and permissions
+    copy:
+      src: index.html
+      dest: /var/www/html/index.html
+
+
+
+
+$ ansible-playbook -i inventory web.yaml --key-file=remote-access.pem -u ec2-user -b
+
+
+-i file
+
+which has 
+
+
+
+
+
+
+

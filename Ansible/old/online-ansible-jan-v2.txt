@@ -1,0 +1,309 @@
+https://www.devopsschool.com/kit/tool/ansible.html
+https://www.devopsschool.com/blog/category/ansible/
+
+What is Ansible?
+	Config mgmt tool.
+	Written in Python
+	By RHEL
+	VERSION
+		Command - Free - Open Source
+		GUI - Paid - Enterprise
+What is Config mgmt?
+	SERVERS config mgmt.
+What is there in the servers so manage their config?
+	file
+	directory
+	services
+	package
+	user
+	group
+	bash
+	batch
+	yum 
+	apt
+	ps
+
+
+Why Ansible?
+1. ANsible is easy to learn/debug/test/share and apply compare to follwing & Cross Platform
+		JAVA | DOTNET | PERL | PYTHONG | SHELl | BATCH 
+2. Ansible has capability to manage large servers.
+3. Ansible can do the work parrel....
+4. Ansible is IDEOMPOTENT.
+	1 DEP --> 10 STEPS --> 1 SERVERS--> 10 MINS
+	1 DEP --> 3 STEPS --> 1 SERVERS--> 3 MINS
+	ACTUAL STATE  == DESIRE RESOURCES
+
+Other Tools 
+	Puppet, Chef and Salt
+------------------------------------
+Ansible 		Puppet		Chef
+---------------------------------------------
+Python			Ruby		Ruby
+Agentlss		Agent		Agent
+SSH | WINRM		TCP		TCP
+=================================================
+Commmunity
+1			2		3
+https://www.devopsschool.com/compare/
+=================================================
+https://www.devopsschool.com/path/
+
+Architecture of Ansible
+ACS - Ansible Control Server
+	python
+	ssh
+	playbook | role ===> GITHUB
+	inventory === A file LIST OF IP ADDRESS of ARS
+
+ARS - Ansible Remote Server
+	python
+	ssh
+	
+
+
+Roles in Ansible?
+	Programmer
+	Admin		Ansible-Tower
+
+How to become a Programmer?
+JAVA 
+JDK -> .JAVA -> .CLSSS -> JAR --> DEPLOY2Server
+----------------------------	  ------------------
+	PROGRAMME			ADMIN- OPS
+Ansible -> Playbook -> Role 	--> Admin
+====================================================
+ACS - 13.233.92.228
+ARS1 - 52.66.87.39
+ARS2 - 13.233.245.214	
+
+How to install Ansible?
+> yum install wget -y
+> wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+> sudo rpm -i epel-release-latest-7.noarch.rpm
+> sudo yum update -y 
+> sudo yum install ansible -y
+
+[root@ip-172-31-22-13 ec2-user]# ansible --version
+ansible 2.7.5
+  config file = /etc/ansible/ansible.cfg
+  configured module search path = [u'/root/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python2.7/site-packages/ansible
+  executable location = /bin/ansible
+  python version = 2.7.5 (default, Feb 20 2018, 09:19:12) [GCC 4.8.5 20150623 (Red Hat 4.8.5-28)]
+[root@ip-172-31-22-13 ec2-user]#
+
+DEV
+Confi mgmt --> LOCAL 
+Confi mgmt --> REMOTE HOST
+
+Admin 
+DEV
+Confi mgmt --> MULTIPLE REMOTE HOST 
+
+Mode of Execution
+=============================
+Command Line
+	Confi mgmt --> LOCAL 
+	Confi mgmt --> REMOTE HOST
+	Confi mgmt --> MULTIPLE REMOTE HOST 
+Playbook 
+	Confi mgmt --> LOCAL 
+	Confi mgmt --> REMOTE HOST
+	Confi mgmt --> MULTIPLE REMOTE HOST
+===============================
+PSUCODE...
+	-----------------------
+1. Create a file			== ONE MODULE
+2. Create a file with content		== ONE MODULE
+# Create a copy of file....
+3. Create a file with fixed ownership and Permission	== ONE MODULE
+4. Create a dir				== ONE MODULE
+5. Install a package			== ONE MODULE
+6. Start the service			== ONE MODULE
+7. Copy a index.html to web server	== ONE MODULE
+
+What is Module?
+	- Function which will do the things.
+Where to find it?
+	- https://docs.ansible.com/ansible/latest/modules/list_of_all_modules.html
+
+Each Module have Parameters
+	Required
+	State
+
+ansible 127.0.0.1 -m file -a "dest=/opt/a.txt mode=600 state=touch"
+
+Ansible Adhoc Commands in Local Exec?
+=============================================
+Where 
+-m = Module name
+-a = allow parameters
+-u = username
+
+ansible 127.0.0.1 -m file -a "dest=/opt/a.txt mode=600 state=touch"
+ansible 127.0.0.1 -m file -a "dest=/opt/a.txt mode=600 state=touch"
+ansible 127.0.0.1 -m file -a "dest=/opt/a.txt mode=600 state=touch owner=ec2-user"
+ansible 127.0.0.1 -m file -a "dest=/opt/b.txt mode=755 state=touch owner=ec2-user"
+ansible 127.0.0.1 -m file -a "dest=/opt/c.txt mode=755 state=touch owner=ec2-user"
+ansible 127.0.0.1 -m file -a "dest=/opt/bmc.txt mode=755 owner=ec2-user"
+ansible 127.0.0.1 -m file -a "dest=/opt/a.txt mode=600 state=absent"
+ansible 127.0.0.1 -m file -a "dest=/opt/bmcdir mode=755 owner=ec2-user group=ec2-user state=directory"
+ansible 127.0.0.1 -m yum -a "name=httpd state=present"
+ansible 127.0.0.1 -m yum -a "name=httpd state=absent"
+-----------------------
+YUM - HTTPD --> /var/www/html - 80
+MANUAL - /opt/apache/
+		8080
+	RUN
+
+========================================================
+Ansible Adhoc Commands in Remote Exec?
+=============================================
+hostname
+	username
+	key | password
+https://www.devopsschool.com/blog/category/ansible/
+
+$ ansible 13.232.187.199 -m file -a "dest=/opt/a.txt mode=600 state=touch" #NOT WORK
+$ ansible <<LIST FORMAT>> -m file -a "dest=/opt/a.txt mode=600 state=touch" #NOT WORK
+$ ansible 13.232.187.199, -m file -a "dest=/opt/a.txt mode=600 state=touch" #NOT WORK
+$ ansible all 13.232.187.199, -m file -a "dest=/opt/a.txt mode=600 state=touch" #NOT WORK
+
+$ ansible all -i 52.66.87.39, -m file -a "dest=/opt/a.txt mode=600 state=touch"
+$ ansible all -i 52.66.87.39, -m file -a "dest=/opt/a.txt mode=600 state=touch" key-file=remote.pem -u ec2-user -b
+
+
+
+ansible all -i 52.66.87.39, -m file -a "dest=/opt/a.txt mode=600 state=touch"  --key-file=remote.pem -u ec2-user -b
+
+ansible all -i 52.66.87.39,13.233.245.214, -m file -a "dest=/opt/a.txt mode=600 state=touch"  --key-file=remote.pem -u ec2-user -b
+
+
+
+--key-file=remote-access.pem -u ec2-user --become
+
+provided hosts list is empty, only localhost is available.
+
+
+  Connection Options:
+    control as whom and how to connect to hosts
+
+    -k, --ask-pass      ask for connection password
+    --private-key=PRIVATE_KEY_FILE, --key-file=PRIVATE_KEY_FILE
+                        use this file to authenticate the connection
+    -u REMOTE_USER, --user=REMOTE_USER
+                        connect as this user (default=None)
+    -c CONNECTION, --connection=CONNECTION
+                        connection type to use (default=smart)
+    -T TIMEOUT, --timeout=TIMEOUT
+                        override the connection timeout in seconds
+                        (default=10)
+    --ssh-common-args=SSH_COMMON_ARGS
+                        specify common arguments to pass to sftp/scp/ssh (e.g.
+                        ProxyCommand)
+    --sftp-extra-args=SFTP_EXTRA_ARGS
+                        specify extra arguments to pass to sftp only (e.g. -f,
+                        -l)
+    --scp-extra-args=SCP_EXTRA_ARGS
+                        specify extra arguments to pass to scp only (e.g. -l)
+    --ssh-extra-args=SSH_EXTRA_ARGS
+                        specify extra arguments to pass to ssh only (e.g. -R)
+
+  Privilege Escalation Options:
+    control how and which user you become as on target hosts
+
+    -s, --sudo          run operations with sudo (nopasswd) (deprecated, use
+                        become)
+    -U SUDO_USER, --sudo-user=SUDO_USER
+                        desired sudo user (default=root) (deprecated, use
+                        become)
+    -S, --su            run operations with su (deprecated, use become)
+    -R SU_USER, --su-user=SU_USER
+                        run operations with su as this user (default=None)
+                        (deprecated, use become)
+    -b, --become        run operations with become (does not imply password
+                        prompting)
+    --become-method=BECOME_METHOD
+                        privilege escalation method to use (default=sudo),
+                        valid choices: [ sudo | su | pbrun | pfexec | doas |
+                        dzdo | ksu | runas | pmrun | enable | machinectl ]
+    --become-user=BECOME_USER
+                        run operations as this user (default=root)
+    --ask-sudo-pass     ask for sudo password (deprecated, use become)
+    --ask-su-pass       ask for su password (deprecated, use become)
+    -K, --ask-become-pass
+                        ask for privilege escalation password
+=============================
+inventory
+ - a file which contents
+		IP address of Hosts
+		Group Spec
+
+ansible all -i 52.66.87.39,13.233.245.214, -m file -a "dest=/opt/a.txt mode=600 state=touch"  --key-file=remote.pem -u ec2-user -b
+
+ansible all -i inventory -m file -a "dest=/opt/a.txt mode=600 state=touch"  --key-file=remote.pem -u ec2-user -b
+
+[root@ip-172-31-22-13 ans]# more inventory
+[web]
+52.66.87.39
+
+[db]
+13.233.245.214
+
+ 77  ansible all -i inventory -m file -a "dest=/opt/a.txt mode=600 state=touch"  --key-file=remote.pem -u ec2-user -b
+   78  ansible web -i inventory -m file -a "dest=/opt/a.txt mode=600 state=touch"  --key-file=remote.pem -u ec2-user -b
+
+---------------
+ACS	13.233.246.15
+ARS 1	35.154.171.217
+ARS 2	13.232.223.163
+
+How to do config management in multiple host + multiple tasks. == One Playbook
+========================================================
+inventory
+Playbook
+
+---
+- hosts: web
+  sudo: yes
+  tasks:
+  - name: Ensure that Apache is installed
+    yum: name=httpd state=present
+    when: ansible_os_family == "RedHat"
+
+  - name: Start Apache Services
+    service: name=httpd enabled=yes state=started
+
+Variables
+===============================
+USER VARIALBELS
+
+SYSTEM VAR
+ansible web -i inventory -m setup --key-file=access.pem -u ec2-user -b
+==========================================================
+
+Problems with mulpiple playbook...... = Roles
+=============
+How can you create a skeleton of a Roles?
+> ansible-galaxy init rajesh.role1 --offline
+
+
+ansible-playbook site.yaml --key-file=access.pem -u ec2-user -b
+
+=================================================
+1.
+2
+3	444
+4
+----------
+1 - 3
+2 - 3
+3 ---33 4=
+=========================
+
+https://github.com/devops-school/ansible-roles-example
+
+
+
+

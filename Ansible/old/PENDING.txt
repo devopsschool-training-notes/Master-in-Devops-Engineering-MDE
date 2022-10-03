@@ -1,0 +1,15 @@
+Ansible variables using
+	using [group:vars] in inventory
+	using vars in playbook
+	using vars_files with external file in playbook
+	using include_vars_module with external file in playbook
+	using group_vars in inventory
+	using host_vars in inventory
+	using --extra-vars key:value on command prompt
+	using --extra-vars @file on command prompt
+	using role/vars directory in role
+	using role/default directory in role
+	using prompt module in playbook
+	using register module in playbook
+	interpolate variables in template file decalared in playbook.
+	

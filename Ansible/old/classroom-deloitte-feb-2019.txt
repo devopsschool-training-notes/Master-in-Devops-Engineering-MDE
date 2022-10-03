@@ -1,0 +1,77 @@
+What is Ansible?
+	Config mgmt tool.
+
+What is config mgmt?
+	SERVERS
+
+What is there in SERVERS?
+
+Why Ansible?
+	Agent less
+	SSH | WINRM
+	Python
+	From Redhat
+	Version
+		FRee - Command
+		Paid - GUI - Ansible tower
+	Ansible Easy to learn share debug 
+	Crosss
+	IDEOMPOTENT
+	Ability to manage the large numbers of SERVER
+	Ability to manage the parrell deployments
+
+Other tool 
+	Programming - Chef, Puppet, Salt
+	GUI - Udeploy, Octopus Deploy
+
+architect of Ansible
+-------------
+Workstion --> SSH --> ACS --> SSH -- SERVER(S)
+
+What is there in the ACS
+	Install Ansible
+----------------------------------------
+How to install Ansible?
+> yum install wget -y
+> wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+> sudo rpm -i epel-release-latest-7.noarch.rpm
+> sudo yum update -y 
+> sudo yum install ansible -y
+
+
+	get your Script - Playbook - What you want to do in ARS.
+----------------------------------------
+	List Of Modules
+		Each Module has Attritbutes
+
+	WEB SERVER
+		Install httpd	package
+		start a httpd	service
+		copy index.htmm	copy file
+
+---
+- hosts: web
+  sudo: yes
+
+  tasks:
+  - name: Ensure that Apache is installed
+    yum: name=httpd state=present
+  - name: Start Apache Services
+    service: name=httpd enabled=yes state=started
+
+
+
+	get your inventory - A file which has list of IP address
+----------------------------------------
+	RUN IT.
+	ansible-playbook -i inventory web.yaml
+	ansible-playbook -i inventory web.yaml -u ec2-user --key-file=node.pem
+
+ACS - 13.233.250.154
+ARS 1 - 52.66.212.70
+ARS 2 - 13.233.113.127
+
+TASK - /var/www/html
+
+
+ 

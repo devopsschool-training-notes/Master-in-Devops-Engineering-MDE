@@ -1,0 +1,827 @@
+SDLC
+------------------
+Prod - AlphaX
+	DevOps
+		Immediate Release
+		Saving Cost
+		Improving Quality
+Mgr - Mgrx
+	Hiring -  
+Planning - Achitect - 2 - JIRA - Confluence
+DEV - 10 Dev - 10 Module
+	Code Integ - Git
+			WHO
+			WHAT
+			WHEN
+			WHERE
+			WHY
+	Code Analysis - SonarQube
+
+	Build mgmt - maven | msbuild
+	
+	UT - Junit + nunit
+	
+	Pack 
+		APP - Jar | WAR | Zip
+		Sys - EXE | RPM
+	
+	Artifactmgmt - Nexus | Artifactory | Nuget
+------------------------------------------------------------
+	Deployment
+		DEV ENV
+		200 SERVERS
+			100 L | 100 W
+			50 MYSQL | 50 MSQL | 50 O | 50 PS
+			50 IIS | 50 TOM | 50 WL | 50 WS | 50 AP | 
+			100 IIS  100 N 100 Ap
+			100 DIFF
+		----------------------------------------------
+ 		QA ENV
+		200 SERVERS
+			100 L | 100 W
+			50 MYSQL | 50 MSQL | 50 O | 50 PS
+			50 IIS | 50 TOM | 50 WL | 50 WS | 50 AP | 
+			100 IIS  100 N 100 Ap
+			100 DIFF
+		----------------------------------------------
+
+		STAGING ENV
+		200 SERVERS
+			100 L | 100 W
+			50 MYSQL | 50 MSQL | 50 O | 50 PS
+			50 IIS | 50 TOM | 50 WL | 50 WS | 50 AP | 
+			100 IIS  100 N 100 Ap
+			100 DIFF
+		----------------------------------------------
+
+		PROD ENV
+		200 SERVERS
+			100 L | 100 W
+			50 MYSQL | 50 MSQL | 50 O | 50 PS
+			50 IIS | 50 TOM | 50 WL | 50 WS | 50 AP | 
+			100 IIS  100 N 100 Ap
+			100 DIFF
+		----------------------------------------------
+		1 Dep - 9 mins
+		200 Dep - 9 mins
+				10 MINS.....
+		---------------------
+		How can we get 200 servers in 1 min?
+		Public - AWS, AZURE, GC
+		Private C - OpenStake, VMsph
+
+		How can we deploy in 200 servers 
+			Parrel Deployment......??????
+				Using Programming
+					Puppet from Puppet Lab
+					Ansible from REDHAT
+					Chef from Chef
+					Salt from XX
+				USING GUI
+					UrbanCode Deploy from IBM
+					Octopus Dep
+		
+		How can i deploy 200 servers in 1 SECOND?
+			Containers (Docker + Kuber)
+		
+		AT
+			FEEDBACK
+		
+		Code Coverage - Jacoco | NCOVER
+		-----------------------------------------------------
+		Jenkins
+			CI
+PLAN->CODE->ANA-BULDLD->UT->PACK-DEp2Reo->Dep2Qa->AT->CC
+=========================================================>>>>>>
+			JENKINS
+				INTEG
+				FEEDBACK
+				SCHEDULE
+
+		
+			
+
+What is Ansible?
+	Config mgmt tool by REDHAT
+	SERVER(ACS) - CLIENT(Server==ARS)
+	Agent Less
+		ACS 		ARS
+				Python (SSH OR WINRM)
+	DSL of Python
+	Support 2 Protocal - SSH & WINRM
+
+What is Config mgmt?
+	SERVER(S) config mgmt 
+
+What is there in Each server so we manage a config of it?
+	HARDWARE
+	Software (Hyprsiors --> HARDWARE)
+	
+	Software
+		file
+		user
+		package
+		service
+		group
+		script
+		bash
+		batch
+		ps
+		network
+
+	People
+		user
+		group
+
+	Process
+		Policy
+	
+Why Ansible?
+	Deployment in Server(S) with multiple config at onetime.
+	CrossPlatform needed
+	Easy to write/learn/test/debug and share
+	IDEOPOTENT
+	----------------
+	Detect a Acutal state and Desire state and based on that it will do the changes.
+	1st Deplyment -- 10 Steps - 10 mins
+	2nd Dep -    --- 3 Step   - 3 mins  
+  	
+Other tools - ADOBE.....
+
+Roles in Ansbile?
+	Developer - Who writes a program in Ansible
+	Admin  - Who Apply programs in SERVER(S)
+
+How can we become a programmer ?
+JDK -> .JAVA -> .CLASS --> .JAR --> WAR ====> ADMIN
+Ansible --> .yaml(playbook) --> roles --> ADMIN
+ 
+
+Ansible 			Vs 	Puppet
+=================================================
+AGENT LESS				AGENT 
+SSH WINRM				TCP					
+ROLES					MODULE
+PLAYBOOK				Puppet Program( == Manifest)
+.yaml					DSL of ruby
+LINUX(SSH)				LINUX (TCP)
+WINDOWS(HTTP				WINDOWS(TCP)
+PYTHON					RUBY
+================================================
+How to install Ansible in RHEL?
+> yum install wget -y
+> wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+> sudo rpm -i epel-release-latest-7.noarch.rpm
+> sudo yum update -y 
+> sudo yum install ansible -y
+
+How to install Ansible in UB?
+$ sudo apt-get update
+$ sudo apt-get install software-properties-common
+$ sudo apt-add-repository --yes --update ppa:ansible/ansible
+$ sudo apt-get install ansible
+
+Ansible using ADHOC commands
+==========================================
+using Ansible Adhoc Commands - Managing ONE SERVER
+using Ansible Adhoc Commands - Managing MULTIPLE SERVER
+using Ansible Playbook - Managing ONE SERVER
+using Ansible Playbook - Managing MULTIPLE SERVER
+===================================================
+Architecture of Ansible
+	Ansible Control Server - 64 BIT LINUX
+		Ansible	- A Tool
+			Modules
+		inventory -  a file[/dir/list] which has list of SERVER(S)
+		Config	- Ansible Config /etc/ansible/ansible.cfg
+	Ansible Remote Server - ANY
+	PYTHON
+		SSH - linux
+		Winrm - Windows
+
+What is Modules?
+
+What do you want to do in Remote Server[s]?
+Setup a web server.
+	1. Install web server(httpd)	 === ONE ITEM === MODULE== YUM
+	2. copy index.html  in web dir	=== ONE ITEM === MODULE == Copy
+	3. start web services	=== ONE ITEM === MODULE == service
+
+Where i can find out a list of Ansible Modules?
+https://docs.ansible.com/ansible/latest/modules/modules_by_category.html
+========================================================
+using Ansible Adhoc Commands - Managing ONE SERVER
+========================================================
+I want to create a file
+I want to delete a file
+i want to create a dir
+I i want to install a package
+I want to start a servicie
+
+$ ansible [FILE | LIST | DIR | SCRIPT ] -m module -a "ATTRIBUTES"
+	  -----------------------------
+		  inventory
+
+Module		Action(STATE)			Has attributes		 
+file		C D 
+
+
+Where 
+-m = Module name
+-a = allow parameters
+-u = username
+
+$ ansible 127.0.0.1 -m file -a "dest=/opt/test.txt state=touch"
+$ ansible 127.0.0.1 -m file -a "dest=/opt/test.txt state=absent"
+$ ansible 127.0.0.1 -m file -a "dest=/opt/src state=directory"
+$ ansible 127.0.0.1 -m file -a "dest=/opt/test1.txt owner=ec2-user state=touch"
+$ ansible 127.0.0.1 -m file -a "dest=/opt/test1.txt owner=ec2-user mode=755 state=file"
+
+6. install a package "httpd"	-yum
+$ ansible 127.0.0.1 -m yum -a "name=httpd state=present"
+
+7. Removea package "httpd"	-yum
+$ ansible 127.0.0.1 -m yum -a "name=httpd state=absent"
+
+8. start a service "httpd"	-service
+$ ansible 127.0.0.1 -m service -a "name=httpd state=started"
+
+9. stop a service "httpd"	-service
+$ ansible 127.0.0.1 -m service -a "name=httpd state=stopped"
+
+Copy a index.html
+$ ansible 127.0.0.1 -m copy -a "dest=/var/www/html/index.html src=/opt/index.html"
+
+TASK 
+https://www.devopsschool.com/blog/ansible-adhoc-commands-lab-excercise-part-1/
+
+======
+EXECUTION MODE
+	LOCAL
+	
+	REMOTE
+	
+	DOCKER
+========================================================
+using Ansible Adhoc Commands - Managing SINGLE REMOTE SERVER
+========================================================
+There r kind of Group you have in Remote Servers
+	all - Built-in
+	ungroup - Built-in
+	CUSTOM
+$ ansible all -i 13.127.105.192, -m yum -a "name=httpd state=present" --key-file=remote.pem -u ec2-user -b
+
+$ ansible all -i 13.127.105.192, -m service -a "name=httpd state=started" --key-file=remote.pem -u ec2-user -b
+$ ansible all -i 13.127.105.192, -m copy -a "dest=/var/www/html/index.html  src=/opt/index.html" --key-file=remote.pem -u ec2-user -b
+
+Authentication method
+	SSH -
+		Using Key == --key-file=remote.pem -u=ec2-user -b
+		Using Password
+	WINRM
+==========================================
+========================================================
+using Ansible Adhoc Commands - Managing SINGLE REMOTE SERVER
+========================================================
+$ ansible all -i inventory -m yum -a "name=httpd state=present" --key-file=remote.pem -u ec2-user -b
+
+Which is the default inventory==hosts
+
+[root@ip-172-31-23-154 ~]# more inventory
+5.5.5.5
+
+[web]
+13.127.71.143
+13.127.105.192
+
+[db]
+13.127.105.194
+
+IF LOCALHOST IN INVENTORY IS NOT WORKING
+https://www.devopsschool.com/blog/run-ansible-adhoc-commands-or-playbook-in-local-mode/
+
+========================================================
+REFR  - https://www.devopsschool.com/tutorial/ansible/ansible-inventory.html
+========================================================
+How to work wit Behaviour Parameters?
+[root@ip-172-31-23-154 ~]# more inventory
+5.5.5.5
+
+[web]
+13.127.105.192	ansible_ssh_private_key_file=remote.pem
+13.127.169.243	ansible_ssh_private_key_file=vision.pem
+localhost ansible_connection=local
+
+[db]
+13.127.105.194
+
+==================================================================
+$ ansible all -i inventory -m yum -a "name=httpd state=present" -u ec2-user -b
+$ ansible all -i 13.127.105.192, -m service -a "name=httpd state=started" -u ec2-user -b
+$ ansible all -i 13.127.105.192, -m copy -a "dest=/var/www/html/index.html  src=/opt/index.html" -u ec2-user -b
+==================================================================
+How can i run multiple modules on multiple Remote server?
+=====Playbook
+	.yaml
+
+=================================
+What is Playbook?
+	Contains PLAY(S)
+
+What is Play
+	Contains many Task
+	Host group spec
+	BEHAIOUR PARA + BUILT-IN  var
+
+What is Task 
+	==== MODULE in YAML FORMAT
+
+---
+- hosts: web
+  sudo: yes
+
+  tasks:
+  - name: Ensure that Apache is installed
+    yum: name=httpd state=present
+  - name: Start Apache Services
+    service: name=httpd enabled=yes state=started
+  - name: Copying index.html
+    copy:
+      src: /opt/index.html
+      dest: /var/www/html/index.html
+...
+
+---
+- hosts: web
+  sudo: yes
+
+  tasks:
+  - name: Ensure that Apache is installed
+    yum: name=httpd state=present
+  - name: Start Apache Services
+    service: name=httpd enabled=yes state=started
+  - name: Copying index.html
+    copy:
+      src: /opt/index.html
+      dest: /var/www/html/index.html
+...
+
+$ ansible-playbook -i inventory web.yaml -u ec2-user
+
+https://www.devopsschool.com/blog/ansible-playbook-lab-excercise-part-2/
+===================================================
+- Public Authentication to server for all
+
+------------------
+Step - 1 - Creating a baseline
+		Of ENV
+		IMAGE BASELINE
+		Pre-Req
+		
+	
+
+------------------
+playbook - 
+
+
+Variables in Ansible
+	Custom Variable Before run
+		Playbook
+			- In Built with Playbook
+				age = rajesh_playbook_in  
+				myname
+				compname
+-----
+Decalre - https://www.devopsschool.com/tutorial/ansible/variables/ansible-variables-1-playbook.html
+
+Use it - {{ age }} OR {{ myname }} OR {{ compname }}
+How & Where? - Module - Debug module
+-----
+			- Call a external var file (vars.yaml)
+				age: 28_playbook_out 
+				myname: playbook_out
+				compname: 28_playbook_out
+-----
+Decalre - https://www.devopsschool.com/tutorial/ansible/variables/ansible-variables-3-external-files.html
+Use it - {{ age }} OR {{ myname }} OR {{ compname }}
+How & Where? - Module - Debug module
+-----
+		Inventory file
+https://www.devopsschool.com/tutorial/ansible/variables/ansible-variables-2-inventory.html
+-------------------------
+filename - inventory
+------
+[web]
+5.5.5.5 age=ageininventory_beh
+4.5.5.5
+
+[web:vars]
+age=ageininventory
+myname=nameininventory
+compname=companeininventory 
+
+
+
+
+		
+		Ansible.cfg
+		Command Prompt-Adhoc command
+	Contant Variable - PRE EXIST
+		FACT Module
+	$ ansible 127.0.0.1 -m setup 
+	
+[[[[ DEFAULT MODULE FOR ADHOC COMMAND IS - command ]]]]	
+	
+	During Runtime
+		Modules
+			vars_prompt = function
+https://www.devopsschool.com/tutorial/ansible/variables/ansible-variables-5-vars_prompt.html
+
+			register
+-------------------------------------
+# Example 1
+- hosts: all
+  tasks:
+  - name: Ansible register variable basic example
+    shell: "find *.txt"
+    args:
+      chdir: /opt
+    register: find_output
+
+  - debug:
+      var: find_output
+# Make sure that /test should not be empty
+https://www.devopsschool.com/tutorial/ansible/ansible-linux-playbooks.html
+
+========================================================
+Inventory
+========================================================
+Groups of Gorup 
+
+[web]
+4.4.4.4
+5.5.5.5
+
+[db]
+4.4.4.7
+5.5.5.8
+
+[commmon]
+4.4.4.1
+5.5.5.2
+
+[gog:children]
+web
+db
+
+============================================
+inventory
+
+4.5.5.6
+5.6.7.8
+
+[web]
+4.5.5.2
+5.6.7.4
+
+[db]
+4.5.5.1
+5.6.7.0
+
+==================
+host_vars [DIR]
+4.5.5.6	[FILE]
+	age: fsdfds
+	name: fdsfds
+5.6.7.8 [FILE] 
+	age: fsdfds
+	name: fdsfds
+4.5.5.2 [FILE]
+5.6.7.0[FILE]
+group_vars[DIR]
+web	[FILE]
+	age: fsdfds
+	name: fdsfds
+db	[FILE]
+all	[FILE]
+
+====================================================
+ONE PLAYBOOK
+====================================================
+---------------------------------------
+How can we work with multiple playbook?
+How can we work with Template?
+How can we work with file?
+How can we work with VARS inside a playbook(s)
+--------------------------------------
+
+How can we work with multiple playbook?
+--------------------------------------------------
+------------first.yaml----------------------
+---
+- hosts: localhost
+  tasks:
+    - debug:
+        msg: "Hello Everyoone"
+    - include: second.yaml
+
+- name: Include a play after another play
+  include: third.yaml
+------------second.yaml----------------------
+---
+- debug:
+    msg: "This is a Second Yaml"
+
+
+------------third.yaml----------------------
+---
+- hosts: localhost
+  tasks:
+    - debug:
+        msg: "This is a Third Yaml"
+
+$  ansible-playbook first.yaml
+============================================================
+
+How can we work with Template? - YES INTO
+How can we work with file? - NO INTR
+================
+deploy.sh
+------
+touch /opt/yourname.html
+my name is {{ age }}
+
+- copy into remote machine /tmp
+- execute it.
+
+-------------------
+httpd.conf
+-----
+1. Copy /etc/httpd/conf/httpd.conf	httpd.conf.j2
+2 Stop a HTTPD Server
+3. using template module
+
+- template:
+    src: httpd.conf.j2
+    dest: /etc/httpd/conf/httpd.conf
+## Change 
+	Listen 80
+to 
+	Listen {{ port }}
+2 start a HTTPD Server
+
+
+---
+- hosts: web
+  sudo: yes
+
+  tasks:
+  - name: Ensure that Apache is installed
+    yum: name=httpd state=present
+  - name: Copying index.html
+    copy:
+      src: /opt/index.html
+      dest: /var/www/html/index.html
+  - template:
+      src: httpd.conf.j2
+      dest: /etc/httpd/conf/httpd.conf
+  - name: Start Apache Services
+    service: name=httpd enabled=yes state=restarted
+...
+==============================================================
+Working with Roles?
+=================================
+
+
+  - name: Ensure that Apache is installed
+    yum: name=httpd state=present
+  - name: Copying index.html
+    copy:
+      src: index.html
+      dest: /var/www/html/index.html
+  - template:
+      src: httpd.conf.j2
+      dest: /etc/httpd/conf/httpd.conf
+  - name: Start Apache Services
+    service: name=httpd enabled=yes state=restarted
+
+
+
+---
+- hosts: localhost
+  roles:
+  - webserver
+
+$ ansible-galaxy init webserver
+===============================================
+
+Conditioning with Ansible
+
+
+FACT
+https://www.devopsschool.com/tutorial/ansible/ansible-conditional-programming-playbooks.html
+
+
+      - name: Ansible when variable equals example
+        debug:
+          msg: "This is equal to 7"
+        when: ansible_distribution_major_version == 7
+
+=======
+mylist: [ 0, 2, 4, 6, 8, 10 ]
+
+- command: echo {{ item }}
+  loop: "{{ mylist|default([]) }}"
+  when: item > 5
+
+
+locales:
+    - 1
+    - 2
+    - 3
+    - 4
+
+
+
+
+      - name: Ansible when variable equals example
+        debug:
+          msg: "This is equal to 7"
+        when: ansible_distribution_major_version == "7"
+
+      - debug:
+          msg: "======== {{ item }} ======="
+        loop: [ 0, 2, 4, 6, 8, 10 ]
+        when: item > 5
+
+      - debug:
+          msg: "******** {{ item }} *******"
+        loop: "{{ locales|default([]) }}"
+        when: item > 5
+
+================================
+Log Ration
+	p4 - /opt/p4/log
+			latest.log
+			latest.1.log
+			latest.2.log
+
+Pattern - latest.2.log
+	  latest.{{}}.log
+
+Nagios Prb - 
+
+
+Security Test
+
+
+App - > 
+
+ANSIBLE IS NOT FOR UNDO
+		   -----
+	
+===============================
+Ansible in Windows	DONE
+Ansible Tower		DONE
+vault			DONE
+Ansible Role Tag	DONE
+Ansible with Docker	DONE
+Ansible Jenkins	
+
+
+- name: test play
+  hosts: webservers
+  serial: 2
+  gather_facts: False
+  tasks:
+  - name: task one
+    comand: hostname
+  - name: task two
+    command: hostname
+
+P - 10
+	serial 2
+
+Run a all roles in one server
+
+Tas1
+	ho1
+		
+
+tasl2	
+	h2
+
+==============
+F   		S 			mins
+5/1 mins				1 mins
+10/1 mins
+10					2 mins
+1 		1			5 mins					
+
+======================================================================================
+
+Vlaut in Ansible
+
+
+---
+- hosts: localhost
+  sudo: yes
+
+  tasks:
+  - name: Ensure that Apache is installed
+    yum: name=httpd state=present
+  - name: Start Apache Services
+    service: name=httpd enabled=yes state=restarted
+  - file:
+    path: /tmp/{{secret}}
+
+
+===========================
+Public DNS	ec2-13-234-119-62.ap-south-1.compute.amazonaws.com
+User name	Administrator
+Password	
+mjte!-6jrBynmni2ptA37ATZlY*W;))Y
+
+ansible_user: Administrator
+ansible_password: mjte!-6jrBynmni2ptA37ATZlY*W;))Y
+ansible_connection: winrm
+ansible_winrm_transport: basic
+
+$password = "mjte!-6jrBynmni2ptA37ATZlY*W;))Y"
+
+---
+- hosts: windows
+
+  tasks:
+  - name: Touch a file (creates if not present, updates modification time if present)
+    win_file:
+      path: C:\Temp\foo.conf
+      state: touch
+
+
+- name: Touch a file (creates if not present, updates modification time if present)
+  win_file:
+    path: C:\Temp\foo.conf
+    state: touch
+
+
+Quick - in Inventory file
+   [all:vars]
+    ansible_winrm_server_cert_validation=ignore
+
+https://docs.ansible.com/ansible/latest/modules/win_certificate_store_module.html
+
+
+
+Docker Deamon
+sudo dockerd -H unix:///var/run/docker.sock -H tcp://0.0.0.0:2375
+
+Docker Client
+export DOCKER_HOST="tcp://172.31.28.71:2375"
+
+---
+- hosts: localhost
+  sudo: yes
+
+  tasks:
+  - name: create jenkins container
+    docker_container:
+      docker_host: 172.31.28.71:2375
+      name: my_cont
+      image: ubuntu
+
+https://docs.docker.com/v17.09/engine/reference/commandline/dockerd/#daemon-socket-option
+
+============================
+Step 1 - Create a Org
+Step 2 - Create a cred
+Step 3 - add a Inventory
+Step 4 - Create a project = roles
+Step 5 - Template = site.yaml
+===================================================
+
+Your Trainer - www.RajeshKumar.xyz
+
+https://www.devopsschool.com/lms/
+
+Subject - ANSIBLE CERTIFIED ENGINEER 
+
+Full Name - 
+Personal Email - 
+Mobile
+City - Mumbai 
+Company Name - Visble
+
+Contact@DevOpsSchool.com
+============================================
+DevOpsSchool.com
+==--------------
+
+
+
+
+
+
+
+
+

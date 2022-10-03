@@ -1,0 +1,402 @@
+Product Name - VerizonX
+Mgr - MgrX
+
+
+Architect - 1
+Dev - 10
+QA - 5
+IT - 1
+DB - 1
+BR - 1
+LEAD - 2
+----------------------
+Planning - JIRA
+Code Integration - GIT
+Analysis - SonarQube
+Build mgmt - Maven
+UNIT Testing - Junit
+Packaging - Jar
+        SYSTEM
+        APP 
+Repo mgmt system - Artifactory | Nexus
+Deployment
+            200 BOXES
+    100 - WINDOWS
+        - 50 WIN2012
+        - 50 WIN2016
+    100 - LINUX
+        50 - RHEL
+        50 - DEB
+
+    50 - TOMCAT
+    50 - JBOSS
+    50 - WEBLOGIC
+    50 - WS
+
+    50 MYSQL
+    50 MSSQL
+    50 ORA
+    50 POS
+
+    100 DIFF
+    ================ANSIBLE==================
+    1. 1 MIns - CREATE VMS - HYD
+    2. 9 mins
+
+    1 DEP - 9 MINS
+    200 Dep - 10MINS
+     =================CONTAINER==================
+    200 - 1 SEC 
+
+    AT - 
+
+    CC - 
+
+    RELEASE
+
+
+What is Ansible?
+    Config mgmt tool.
+            Which can manage SERVERS resources and thir behaviours and properties
+    Written in Python
+    From Redhat
+    Agent Less Tool
+    SSH
+    FREE
+
+FREE            PAID
+Ansible         Ansible Tower
+Puppet servers  Puppet Enter
+Chef servers    Chef Manage | Automate
+
+
+What is Config mgmt?
+        SERVERS CONFIG MGTMT
+
+What is there in the servers? so you manage their config?
+    hardware
+        storage
+    services        s | S |E |d
+    package         I |R 
+    file            C
+    network
+    Security pol
+    user
+    group
+
+HARDWARE
+SOFTWARE
+PEOPLE
+PROCESS
+    
+Other tools - 
+Puppet, Ansible, Chef, Salt
+
+How to implement Ansible for your projects?
+Roles -
+        Ansible Programmer
+        Ansible Admin
+
+-------------------------------------
+JDK ->  .JAVA -> CLASS -> JAR
+
+Ansible -> .YAML - MODULE(Package) -> Roles
+
+.JAVA == .YAML
+
+DATA TYPE | FUNTIONS | LEYWORDS | OPER | CON | LOP
+RESOURCES | ACTION | FUN | O
+
+
+How to Install Ansible?
+RHEL
+> yum install wget -y
+> wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+> sudo rpm -i epel-release-latest-7.noarch.rpm
+> sudo yum update -y 
+> sudo yum install ansible -y
+
+Documents
+https://developers.redhat.com/blog/2016/08/15/install-ansible-on-rhel/
+
+13.127.121.101
+================================
+ADVANTAGE
+        JAVA | C++ | PE | PY
+        SHELL  | PS
+        Ansible is Easy to learn, extend, debug, test, share
+
+        idempotent
+        Desire == Actual then no changes
+
+        Capability to manage Large number
+
+======================================
+TYPE OF EXECUTIONS
+            LOCAL
+            REMOTE
+
+How to use modules?
+            ADHOC Commands
+            Playbooks
+
+Module 
+        Core Modules by Ansible
+        Community Modules by Ansible Galaxy in form roles
+            https://galaxy.ansible.com/
+
+------------------------------------------
+Ansible Adhoc Commands
+
+Where 
+-m = Module name
+-a = allow parameters
+-u = username
+
+Create a a file named with a.txt in opt
+ansible 127.0.0.1 -m file -a "dest=/opt/a.txt mode=600 state=touch"
+ansible 127.0.0.1 -m file -a "dest=/opt/a.txt mode=600 state=file"
+
+ansible 127.0.0.1 -m file -a "dest=/opt/a.txt mode=600 state=touch"
+ansible 127.0.0.1 -m file -a "dest=/opt/a.txt mode=600 state=touch owner=ec2-user"
+ansible 127.0.0.1 -m file -a "dest=/opt/b.txt mode=755 state=touch owner=ec2-user"
+ansible 127.0.0.1 -m file -a "dest=/opt/c.txt mode=755 state=touch owner=ec2-user"
+ansible 127.0.0.1 -m file -a "dest=/opt/bmc.txt mode=755 owner=ec2-user"
+
+ansible 127.0.0.1 -m file -a "dest=/opt/verizon mode=755 owner=ec2-user group=ec2-user state=directory"
+
+ansible 127.0.0.1 -m yum -a "name=httpd state=present"
+ansible 127.0.0.1 -m yum -a "name=httpd state=absent"
+
+# -vvvvvv is the level of LOG with Adhoc
+
+
+ansible 127.0.0.1 -m service -a "name=httpd state=started"
+ansible 127.0.0.1 -m service -a "name=httpd state=stopped"
+
+ansible 127.0.0.1 -m file -a"src=/opt/index.html  dest=/var/www/html/index.html state=link"
+
+ansible 127.0.0.1 -m copy -a "src=/opt/index.html dest=/var/www/html/index.html"
+
+/var/lib/www/index.html
+
+I want to install package that Webserver -- Apache
+------
+RHEL - httpd  yum 
+ub - apache2  apt-get
+
+install httpd in ALL SERVERS
+
+if os.type=rhel 
+    packahe httpd
+else
+lfkj
+package --> 
+            WIN - CHoC
+            UB - apt    
+            RH - YUm
+
+install httpd only RHEL - yum 
+install httpd only ub - apt
+
+=====================================
+FACT Module of the Linux - setup
+
+Default Module for Ansible - command
+
+FIRST EXCERCISE - http://www.scmgalaxy.com/tutorials/ansible-adhoc-commands-lab-excercise-part-1/
+
+Where to update the answer - in Comments Section.....
+
+==========================================
+
+
+How CONTROLS SERVER authenticate to REMOTE SERVER?
+Answer - SSH
+METHOD 1 - PASSWORD
+METHOD 2 - KEY
+	   --- PASS the key
+	   --- ssh-add
+METHOD 2 - KEYBROS
+
+
+============================
+User Name - ec2-user
+Key - remote-access.pem
+Remote Machine
+13.232.140.201
+35.154.85.120
+
+
+ansible all -i 13.232.140.201, -m file -a "dest=/opt/a.txt mode=600 state=touch" --key-file=remote-access.pem -u ec2-user --become
+
+ansible all -i 13.232.140.201, -m yum -a "name=httpd state=present" --key-file=remote-access.pem -u ec2-user -b
+
+ansible all -i 13.232.140.201, -m service -a "name=httpd state=started" --key-file=remote-access.pem -u ec2-user -b
+
+ansible all -i 13.232.140.201, -m copy -a "src=/opt/index.html dest=/var/www/html/index.html" --key-file=remote-access.pem -u ec2-user -b
+
+==================================================
+
+vi inventory
+13.232.140.201
+35.154.85.120
+
+HOST WITH INVENTORY
+ansible all -i inventory -m file -a "dest=/opt/a.txt mode=600 state=touch" --key-file=remote-access.pem -u ec2-user --become
+
+GROUP WITH INVENTORY
+ansible verizon -i inventory -m file -a "dest=/opt/a.txt mode=600 state=touch" --key-file=remote-access.pem -u ec2-user --become
+
+GROUP of GROUP WITH INVENTORY
+ansible gog -i inventory -m file -a "dest=/opt/a.txt mode=600 state=touch" --key-file=remote-access.pem -u ec2-user --become
+
+
+https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html
+
+====================================
+inventory
+------------
+
+[everything:children]
+dbservers
+webservers
+
+[dbservers]
+13.232.140.201 ansible_user=root ansible_ssh_pass=root
+35.154.85.120 ansible_user=root ansible_ssh_pass=root
+
+[webservers]
+35.154.85.120 ansible_user=root  ansible_ssh_private_key_file
+35.154.85.120 ansible_user=root  ansible_ssh_private_key_file
+
+ansible everything -i inventory -m setup 
+====================================
+SAMPLE Playbooks
+Lets play with Playbook
+
+
+
+---
+- name: This sets up an httpd webserver
+  hosts: dbservers
+  tasks:
+  - name: Install the httpd apps
+    yum: name=httpd
+  - name: start the httpd service
+    service: name=httpd state=started
+#  - name: Open port 80
+#    firewalld: service=http permanent=true state=enabled
+#  - name: start the firewalld service
+#    service: name=firewalld state=stopped enabled:no
+
+#$  ansible-playbook -i inventory httpd.yaml -u ec2-user 
+
+---
+- name: This sets up an httpd webserver
+  hosts: db
+  tasks:
+  - name: Install the httpd apps
+    yum: name=httpd
+  - name: start the httpd service
+    service: name=httpd state=started
+#  - name: Open port 80
+#    firewalld: service=http permanent=true state=enabled
+#  - name: start the firewalld service
+#    service: name=firewalld state=stopped enabled:no
+
+#$  ansible-playbook -i inventory httpd1.yaml -u ec2-user 
+
+
+---
+- name: This sets up an httpd webserver
+  hosts: all
+  remote_user: ec2-user
+  become: yes
+  vars:
+   ansible_ssh_private_key_file: remote.pem
+   pack: httpd
+  tasks:
+  - name: Install the httpd apps
+    yum: name=httpd
+  - name: start the httpd service
+    service: name=httpd state=started
+
+
+---
+- name: This sets up an httpd webserver
+  hosts: all
+  remote_user: ec2-user
+  become: yes
+  vars:
+   ansible_ssh_private_key_file: remote.pem
+   companyname: verizon
+   pack: httpd
+  tasks:
+  - name: Install the httpd apps
+    yum: name=httpd
+  - name: Deploy configuration File
+    template: src=templates/index.j2 dest=/var/www/html/index.html
+  - name: start the httpd service
+    service: name=httpd state=started
+
+
+---
+- name: This sets up an httpd webserver
+  hosts: all
+  remote_user: ec2-user
+  become: yes
+  vars:
+   ansible_ssh_private_key_file: remote.pem
+   companyname: verizon
+   pack: httpd
+  tasks:
+  - name: Install the httpd apps
+    yum: name=httpd
+  - name: Deploy configuration File
+    template: src=templates/index.j2 dest=/var/www/html/index.html
+  - name: start the httpd service
+    service: name=httpd state=started
+  - name: Install common software requirements
+    yum: pkg={{ item }} state=installed
+    with_items:
+     - git
+     - ntp
+     - vim
+
+
+
+
+
+
+
+http://www.scmgalaxy.com/tutorials/ansible-playbook-lab-excercise-part-2/
+
+
+Conditional Programming with Ansible
+http://www.devopsschool.com/tutorial/ansible/ansible-conditional-programming-playbooks.html
+
+
+Lopping Programs
+http://www.devopsschool.com/tutorial/ansible/ansible-looping-programming-playbooks.html
+
+How to inlclude another yaml file?
+http://www.devopsschool.com/tutorial/ansible/ansible-playbook-programming-include.html
+
+
+http://www.scmgalaxy.com/tutorials/use-of-runtime-variables-to-save-into-another-variable-using-register-in-ansible/
+
+Use of runtime variables to save into another variable using register in Ansible
+http://www.scmgalaxy.com/tutorials/use-of-runtime-variables-to-save-into-another-variable-using-register-in-ansible/
+
+FOR LAST DAY
+
+KUB
+SWARM
+Docker Cloud
+Artifactory with Docker images
+
+DOOR#2, #46, 2ND CROSS,MUNISWARA LAYOUT,
+AYAPPA NAGAR,DEVESANDRA MAIN ROAD, 
+K R PURAM, BANGALORE 
+KARNATAKA 560036

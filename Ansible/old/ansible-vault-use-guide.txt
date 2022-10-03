@@ -1,0 +1,112 @@
+ansible-vault
+ansible-vault is a encryption/decryption utility for Ansible data files.
+
+ansible-vault can encrypt any structured data file used by Ansible. This can include 
+
+group_vars/ or host_vars/ 
+inventory variables, 
+variables loaded by include_vars or vars_files, or 
+variable files passed on the ansible-playbook command line with -e @file.yml or -e @file.json. 
+Role variables and defaults 
+
+Step 1 - create and open a blah file in an editor that will be encryped with the provided vault secret when closed
+> ansible-vault create blah.yml
+password
+confirm password
+
+# Insert the required data
+---
+some_yaml: value
+
+# View the encrypted file
+$ cat blah.yml
+
+Step 2 - open and decrypt an existing vaulted file in an editor, that will be encryped again when closed
+$ ansible-vault edit blah.yml
+
+Step 3 - decrypt the supplied file using the provided vault secret
+$ ansible-vault decrypt blah.yml
+
+Step 4 - encrypt the supplied file using the provided vault secret
+> ansible-vault encrypt blah.yml
+
+Step 5 - Other Examples
+> ansible-vault encrypt groups_vars/all
+
+How to use ansible-vault?
+Run the plybook with --ask-vault-pass
+$ ansible-playbook site.yml --ask-vault-pass
+$ ansible-playbook common-playbook.yml -i hosts -l target -k -K -s --ask-vault-pass
+
+Example 1
+=================================================
+vars/main.yml
+---
+spoiler_text: | 
+  people run into some space aliens
+  and they end up fighting them
+
+tasks/main.yaml
+---
+- include_vars: spoilers.yml
+
+- name: Put the spoiler text in the tmp directory on the remote server.
+  copy:
+    content="{{spoiler_text}}"
+    dest=/tmp/secret_text.txt
+
+$ ansible-vault encrypt roles/webserver/vars/main.yml --vault-password-file ~/.vault_pass.txt
+Encryption successful
+
+Example 2
+=================================================
+---
+- hosts: all
+
+  roles:
+    - { role: aliens }
+
+ansible-playbook -i inventory/development.hosts playbooks/movies.yml --vault-password-file ~/.vault_pass.txt
+
+
+
+Example 3
+=================================================
+- hosts: all
+
+- name: Put the spoiler text in the tmp directory on the remote server.
+  copy:
+    content="{{name}}"
+    dest=/tmp/secret_text.txt
+
+ansible-playbook -i  invent rajesh.yaml -e @secrent.yaml --ask-vault-pass
+
+-e @sample_vault.yml myplaybook.yml
+
+Example 4
+=================================================
+---
+- name: This sets up an httpd webserver
+  hosts: localhost
+  tasks:
+  - debug:
+     msg: "System {{ name }} has uuid {{ ansible_product_uuid }}"
+
+ansible-playbook -i  invent ver.yaml -e @secret.yaml 
+ansible-playbook ver.yaml -e @secret.yaml --ask-vault-pass
+$ ansible-playbook ver.yaml -e @secret.yaml --ask-vault-pass
+
+https://www.digitalocean.com/community/tutorials/how-to-use-vault-to-protect-sensitive-ansible-data-on-ubuntu-16-04
+
+
+
+---
+- name: this is a sample program for vault
+  hosts: localhost
+  vars_files: myvar.yaml 
+
+  tasks:
+  - debug:
+     msg: "System {{ myname}} has uuid {{ ansible_product_uuid }}"
+
+

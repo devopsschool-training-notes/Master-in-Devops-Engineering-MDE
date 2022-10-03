@@ -1,0 +1,166 @@
+What is Ansible?
+	Config mgmt tool.
+	From Redhat
+	Release
+		Free - OS - Command line
+		Paid -  ---- GUI  === Ansible Tower
+	Written in Python
+	
+
+What is Config mgmt tool?
+	SERVER(S) config mgt
+
+What is there server(s)
+	file
+	directory
+	services
+	package
+	user
+	group
+
+Other tool - 
+	Ansible, Puppet, Chef, Salt
+	Udeploy, Octopus Deploy
+
+Why Ansible?
+	A tool to deploy in large number of servers -- Parrell...
+	Cross Platform
+	Easy to learn, debug, test, extend
+	IDEOMPOTENT
+
+Architecture of Ansible
+	Ansible Control Server (ACS)
+		Linux 64 bit only
+			Ansible
+			Playbook [[ ]]
+			Inventory = a file List of Servers
+			config = /etc/ansible/ansible.cfg
+	Ansible Remote Server(S)(ARS)		
+		Any
+		Python
+		SSH | WinRm
+
+How ACS and ARS communicate?
+	ACS - LINUX == SSH
+	ACS - WInowws- WINRM (HTTP)
+
+How to install Ansible?
+$ yum install wget -y
+$ wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+$ sudo rpm -i epel-release-latest-7.noarch.rpm
+$ sudo yum update
+$ sudo yum install ansible
+
+What is Playbook?
+	Has multiple Play
+		Play has Multiple Tasks
+			Task is noting but Module in Ansible
+				Each Module has Property/
+
+
+What are the module?
+https://docs.ansible.com/ansible/latest/modules/modules_by_category.html
+
+My Requirement
+=========================
+Install httpd	yum
+Start httpd	service
+Cpy index.html from ACS to ARS(S)	copy
+
+file.yaml
+	play
+	task 1
+		Parameters
+	task 2
+		Parameters
+	task 3
+		Parameters
+	
+	play
+	task 1
+		Parameters
+	task 2
+		Parameters
+	task 3
+		Parameters
+
+	play
+	task 1
+		Parameters
+	task 2
+		Parameters
+	task 3
+		Parameters
+
+
+hosts === Group of Servers of inventory where you want to run...
+
+
+
+---
+- hosts: web
+  sudo: yes
+
+  tasks:
+  - name: Ensure that Apache is installed
+    yum: name=httpd state=present
+  - name: Start Apache Services
+    service: name=httpd enabled=yes state=started
+  - name: example copying file with owner and permissions
+    copy:
+      src: /opt/index.html
+      dest: /var/www/html
+      mode: 0644
+...
+
+How to run playbook in remote server?
+$ ansible-playbook -i inventory web.yaml -u ec2-user --key-file=remote.pem
+	
+How ssh work?
+	ssh key
+	password
+
+
+
+8akbzOhj%Uo@B)jtr2;PxE4-FL%HRlTD
+
+
+ansible_connection 
+ansible_user 
+
+
+ansible_user: Administrator
+ansible_password: 8akbzOhj%Uo@B)jtr2;PxE4-FL%HRlTD
+ansible_connection: winrm
+ansible_winrm_transport: basic
+
+when you talk to Windows?
+
+
+
+---
+- hosts: windows
+
+  tasks:
+  - name: Touch a file (creates if not present, updates modification time if present)
+    win_file:
+      path: C:\Temp\foo.conf
+      state: touch
+
+...
+$ ansible-playbook -i inventory windows.yaml
+
+Step1  - https://www.devopsschool.com/tutorial/ansible/ansible-windows-control-setup.html
+Step2  - https://www.devopsschool.com/tutorial/ansible/ansible-windows-remote-setup.html
+
+
+
+$ ansible-playbook -i ec2.py windows.yaml
+
+-i 
+	List of Servers
+	a file which has a list of server
+	a script which can create a list of servver
+		AWS
+		AZURE
+		VMWARE

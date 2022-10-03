@@ -1,0 +1,11 @@
+{
+    "company_name": "Cotocus Private Limited", 
+    "contact_email": "rajesh@scmgalaxy.com", 
+    "contact_name": "Shoeb Ahmed", 
+    "hostname": "12d72874bd7349d698982b6c1b2d3541", 
+    "instance_count": 10, 
+    "license_date": 2125564856, 
+    "license_key": "da71fee4ec4bcfa09fbd1136bf1efa5cba10e64ec7e6a38bc0f8c35d41a20b0d", 
+    "license_type": "basic", 
+    "subscription_name": "Red Hat Ansible Tower, Self-Support (10 Managed Nodes)"
+}

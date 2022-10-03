@@ -1,0 +1,157 @@
+What is Ansible?
+	Config mgmt tool.
+	From redhat
+	Agent less
+	Written in Python
+	SSH
+
+Why Ansible?
+
+Other tools...
+
+
+Roles In Ansble
+===================
+Ansible Programmer
+Ansible Administrator
+----------------------------------
+
+Lets understand Ansible Architecture
+Ansible Control Server
+52.66.241.201
+
+> yum install wget -y
+> wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+> sudo rpm -i epel-release-latest-7.noarch.rpm
+$ sudo yum install ansible -y
+$ ansible --version
+
+Ansible remote Server
+13.233.34.232	
+13.127.242.136
+
+ec2-user
+PASS | KEY ---
+
+TYPES OF EXECUTIONS
+-----------------------
+LOCAL
+REMOTE
+
+TWO WAYS TO CALL MODULES
+1. Command Line (One module at a time) === AD-HOC Commands
+
+Where 
+-m = Module name
+-a = allow parameters
+-u = username
+
+
+ansible 127.0.0.1 -m file -a "dest=/opt/a.txt mode=600 state=touch"
+ansible 127.0.0.1 -m file -a "dest=/opt/a.txt mode=600 state=touch owner=ec2-user"
+ansible 127.0.0.1 -m file -a "dest=/opt/b.txt mode=755 state=touch owner=ec2-user"
+ansible 127.0.0.1 -m file -a "dest=/opt/c.txt mode=755 state=touch owner=ec2-user"
+
+
+ansible localhost -m file -a "dest=/opt/nokiadir mode=755 owner=ec2-user group=ec2-user state=directory"
+
+ansible 127.0.0.1 -m yum -a "name=httpd state=present"
+ansible 127.0.0.1 -m yum -a "name=httpd state=absent"
+
+
+ansible 127.0.0.1 -m service -a "name=httpd state=started"
+ansible 127.0.0.1 -m service -a "name=httpd state=stopped"
+
+RUNNING ADHOC COMMANDS IN REMOTE MACHINE.
+
+ansible all -i 13.233.34.232, -m yum -a "name=httpd state=present" --key-file=remote-server.pem -u ec2-user -b
+ansible all -i 13.233.34.232, -m service -a "name=httpd state=started" --key-file=remote-server.pem -u ec2-user -b
+ansible all -i 13.233.34.232, -m copy -a "dest=/var/www/html/index.html src=index.html" --key-file=remote-server.pem -u ec2-user -b
+
+ansible all -i inventory -m yum -a "name=httpd state=present" --key-file=remote-server.pem -u ec2-user -b
+ansible all -i inventory -m service -a "name=httpd state=started" --key-file=remote-server.pem -u ec2-user -b
+ansible all -i inventory -m copy -a "dest=/var/www/html/index.html src=index.html" --key-file=remote-server.pem -u ec2-user -b
+
+How to authenticate remote servers?
+	PASS
+	KEY
+	KEYBROS
+ansible all -i 13.126.162.214, -m setup
+
+
+2. Playbook (Multiple module at a time)
+
+---
+- name: This sets up an httpd webserver
+  hosts: all
+  tasks:
+  - name: Install the httpd apps
+    yum: name=httpd
+  - name: start the httpd service
+    service: name=httpd state=started
+  - name: example copying file with owner and permissions
+    copy:
+      src: index.html
+      dest: /var/www/html/index.html
+
+
+ansible-playbook -i inventory web.yaml --key-file=remote-server.pem -u ec2-user -b
+
+ansible_ssh_private_key_file=remote-server.pem
+ansible_user=ec2-user
+ansible_become
+
+https://www.devopsschool.com/blog/ansible-adhoc-commands-lab-excercise-part-1/
+https://www.devopsschool.com/blog/ansible-playbook-lab-excercise-part-2/
+1
+35.154.225.78
+13.233.94.58
+2
+52.66.88.239
+13.232.10.233
+3
+13.232.102.49
+13.233.106.185
+4
+13.126.110.242
+13.233.113.33
+5
+13.232.227.115
+13.127.4.64
+6
+13.127.192.26
+35.154.34.188
+7
+13.127.57.8
+13.127.219.239
+8
+13.233.130.143
+13.233.90.114
+9
+13.233.134.20
+13.232.83.14
+10
+13.232.75.121
+35.154.84.187
+11
+13.233.109.114
+13.232.152.214
+12
+13.233.90.139
+13.233.125.172
+13
+13.232.223.239
+13.232.98.178
+14
+13.233.82.35
+13.232.221.219
+15
+13.233.141.174
+13.233.125.43
+16
+35.154.1.148
+13.233.108.101
+
+
+
+

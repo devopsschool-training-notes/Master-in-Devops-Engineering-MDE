@@ -1,0 +1,20 @@
+PORBLEM
+========================================
+[root@ip-172-31-20-193 ~]# ansible-playbook -i inventory var_vars-files.yaml
+ERROR! variable files must contain either a dictionary of variables, or a list of dictionaries. Got: myname="rajesh" age="rr" (<class 'ansible.parsing.yaml.objects.AnsibleUnicode'>)
+
+SOLUTION
+========================================
+Keep vars.yaml like as follows
+
+---
+myname: "rajesh"
+age: "rr"
+...
+
+
+INSTEAD OF 
+---
+myname="rajesh"
+age="rr"
+...

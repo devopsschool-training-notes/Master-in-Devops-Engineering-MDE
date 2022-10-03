@@ -1,0 +1,90 @@
+
+- name: "Delete logs that we for sure 100% won't ever need to look at"
+  hosts: localhost
+  tasks:
+    - name: "Create file"
+      file: path=my-ansible-file state=touch
+      
+> ansible-playbook delete-logs.yml
+
+- name: "Delete logs that we for sure 100% won't ever need to look at"
+  hosts: localhost
+  tasks:
+    - name: "Create file"
+      file: path=my-ansible-file state=touch
+
+    - name: "Delete that file we just created. Why? I don't know."
+      file: path=my-ansible-file state=absent
+      
+> ansible-playbook delete-logs.yml
+> ansible-playbook -i "55.66.77.88," --private-key=/super-secret delete-logs.yml   
+
+
+COPY MODUEL
+- name: "Delete logs that we for sure 100% won't ever need to look at"   
+  tasks:
+    - name: ensure package cache is up to date
+      apt: update_cache=yes cache_valid_time=3600
+    - name: install web server
+      apt: pkg=apache2 state=present
+    - name: install index page
+      copy: src=front.html dest=/var/www/html/index.html backup=yes
+      
+      
+      
+      
+      
+---
+- hosts: webservers
+  sudo: yes
+ 
+  tasks:
+  - name: Ensure that Apache is installed
+    yum: name=httpd state=present
+
+  - name: Start Apache Services
+    service: name=httpd enabled=yes state=started
+
+- hosts: dbservers
+  sudo: yes
+
+  tasks:
+  - name: Ensure MySQL is installed
+    yum: name=mysql-server state=present
+
+  - name: Start MySQL
+    service: name=mysqld state=started
+
+- hosts: webservers:dbservers
+  sudo: yes
+
+  tasks:
+  - name: Stop IPTABLES NOW!!!
+    service: name=iptables state=stopped
+
+---
+- hosts: localhost
+  sudo: yes
+ 
+  tasks:
+  - name: Ensure that Apache is installed
+    yum: name=httpd state=present
+
+  - name: Start Apache Services
+    service: name=httpd enabled=yes state=started
+
+  - name: Download foo.conf
+    get_url:
+      url: http://13.232.21.125:8081/nexus/content/repositories/cts-release/com/scmgalaxy/mavensample/my-maven/2.0.0/my-maven-2.0.0.jar
+      dest: /opt/my-maven-2.0.0.jar
+      mode: 0440    
+ 
+ > ansible-playbook playbook.yml
+ > ansible-playbook playbook.yml -i inventory --user=username --extra-vars "ansible_sudo_pass=yourPassword"
+ > ansible-playbook playbook.yml -i inventory --user=username --extra-vars "ansible_become_pass=yourPassword"
+ > ansible-playbook playbook.yml -i inventory.ini --user=username --ask-become-pass
+ 
+ 
+ 
+ TASKS
+ 

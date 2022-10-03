@@ -1,0 +1,6 @@
+https://www.youtube.com/watch?v=MfoAb50Br94
+https://cloudacademy.com/blog/building-ansible-playbooks-step-by-step/
+http://codeheaven.io/15-things-you-should-know-about-ansible/
+https://liquidat.wordpress.com/2016/01/26/howto-introduction-to-ansible-variables/
+https://codereviewvideos.com/course/ansible-tutorial
+https://williamsbdev.com/posts/ansible-variable-precedence/

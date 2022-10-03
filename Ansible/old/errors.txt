@@ -1,0 +1,75 @@
+[root@ip-172-31-1-186 ~]# ansible all -i 13.126.172.45, -m file -m setup --key-f     ile=remote-access.pem -u ec2-user
+13.126.172.45 | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@     @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\r\n@         WARNING: UNPROTECTED PRIVATE KEY FIL     E!          @\r\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\r\n     Permissions 0644 for '/root/remote-access.pem' are too open.\r\nIt is required t     hat your private key files are NOT accessible by others.\r\nThis private key wil     l be ignored.\r\nLoad key \"/root/remote-access.pem\": bad permissions\r\nPermis     sion denied (publickey,gssapi-keyex,gssapi-with-mic).\r\n",
+    "unreachable": true
+}
+
+
+SOL-
+chmod 600 filename.pem
+
+$ pip install "pywinrm>=0.3.0"
+Requirement already satisfied: ipaddress in /usr/lib/python2.7/site-packages (from cryptography>=1.3->requests-ntlm>=0.3.0->pywinrm>=0.3.0) (1.0.16)
+Requirement already satisfied: cffi>=1.4.1 in /usr/lib64/python2.7/site-packages (from cryptography>=1.3->requests-ntlm>=0.3.0->pywinrm>=0.3.0) (1.6.0)
+Requirement already satisfied: pycparser in /usr/lib/python2.7/site-packages (from cffi>=1.4.1->cryptography>=1.3->requests-ntlm>=0.3.0->pywinrm>=0.3.0) (2.14)
+Installing collected packages: requests, ntlm-auth, requests-ntlm, pywinrm
+  Found existing installation: requests 2.6.0
+Cannot uninstall 'requests'. It is a distutils installed project and thus we cannot accurately determine which files belong to it which would lead to only a partial uninstall.
+
+ANSWER
+There is a conflict between a system package and pip trying to install another package which in Pip 10 it doesn't handle properly. You can do either of the following
+- Use a virtualenv and run Ansible from there https://stackoverflow.com/questions/49916736/how-to-properly-handle-conflicting-distutils-libraries-with-pip
+- Install the packages for just the user "pip install pywinrm --user"
+- Skip the install of requests and continue to use the distuil packaged version "pip install pywinrm --ignore-installed"
+
+========================================
+# ansible all -i inventory.txt -m file -a "path=~/hello.txt state=touch"
+
+52.207.55.160 | FAILED! => {
+
+    "failed": true,
+
+    "msg": "ERROR! to use the 'ssh' connection type with passwords, you must install the sshpass program"
+
+}
+
+3.89.36.56 | FAILED! => {
+
+    "failed": true,
+
+    "msg": "ERROR! to use the 'ssh' connection type with passwords, you must install the sshpass program"
+
+}
+=========================================================================
+=========================================================================
+Runnning Playbook in Windows
+
+
+TASK [Gathering Facts] *********************************************************
+fatal: [35.154.146.68]: UNREACHABLE! => {"changed": false, "msg": "basic: HTTPSConnectionPool(host='35.154.146.68', port=5986): Max retries exceeded with url: /wsman (Caused by SSLError(SSLError(1, u'[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed (_ssl.c:579)'),))", "unreachable": true}
+        to retry, use: --limit @/root/ansible/windows.retry
+
+Quick - in Inventory file
+   [all:vars]
+    ansible_winrm_server_cert_validation=ignore
+
+
+===========================================
+[root@ip-172-31-10-146 ec2-user]# ansible  all -i inventory -m yum -a "name=httd state="present"" -u ec2-user --key-file=node.pem -b
+13.235.87.215 | FAILED! => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "msg": "yum lockfile is held by another process"
+}
+=============================================
+
+SOlution - 
+A stale /run/yum.lock file containing a pid that is no longer running (host/yum crashed previously) causes yum lockfile is held by another process errors on Ansible 2.8, but gets ignored on Ansible 2.7.
+
+Is this a separate issue related to Ansible 2.8 yum locking changes?
+
+Workaround is to rm /run/yum.pid
+

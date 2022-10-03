@@ -1,0 +1,80 @@
+What is Ansible?
+	Config mgmt tool.
+	version 
+		FREE
+		PAID - GUI
+What is Config mgmt tool?
+	Servers config mgmt tool.
+What is there in the servers?
+	file
+	directory
+	package
+	service
+	user
+	group
+	apt
+	yum
+	bash
+	batch
+	ps
+
+Why Ansible?
+	We need a tools which can execute a Script to large number of servers - Parrel.....
+	Which can be easy to learn, extend, write, debug and share
+	Cross Platform
+	Ansible can be used to Deploy a packages or config any resources in the large number of servers.
+
+Roles in Ansilble
+	Programming - A Person Who write a Playbook/Roles
+	Admin - A Person Who apply a Playbook/Roles in the Servers.
+
+Architecture of Ansible
+==========================================
+Ansible Control Server
+	Ansible Modules - unit of functionality.... such copy, create, install a packge
+	https://docs.ansible.com/ansible/latest/modules/list_of_all_modules.html
+	
+	Ansible Inventory - is a file where list of "Ansible Remote Server" Ip address are there.
+	
+	Ansible Playbook - is a yaml in which you have List of module to be executed in form of task.
+	 
+	Ansible Config - ansible.cfg. WHich control a behaviour of Ansible.....
+	/etc/ansible/ansible.cfg
+
+Ansible Remote Server
+	LINUX - SSH
+	WINDOWS - WINRM
+
+How to install Ansible? in ACS
+> yum install wget -y
+> wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+> sudo rpm -i epel-release-latest-7.noarch.rpm
+> sudo yum update -y 
+> sudo yum install ansible -y
+
+Ansible Control Server - 13.233.87.107
+Ansible Remote Server 1  - 13.232.102.216
+Ansible Remote Server 2  - 35.154.216.69
+
+
+$ ansible-playbook -i inventory web.yaml --key-file=remote.pem -u ec2-user
+
+MAIN TASK - Writing a Good Playbook
+================================================
+Assignment for you.
+https://www.devopsschool.com/blog/ansible-playbook-lab-excercise-part-2/
+
+Assignment 3
+--------------------------------------------------------
+---
+- hosts: web
+  sudo: yes
+
+  tasks:
+  - name: Ensure that Apache is installed
+    yum: name=httpd state=present
+  - name: Start Apache Services
+    service: name=httpd enabled=yes state=started
+
+Ansible Tower -
+https://www.devopsschool.com/video/ansible/index.html

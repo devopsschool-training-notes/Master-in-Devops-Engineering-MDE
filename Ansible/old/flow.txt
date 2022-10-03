@@ -1,0 +1,70 @@
+Lab on Adhoc Commands
+
+Basic of Yaml
+
+Ansible Inventory - Basics
+
+Playbook - Basic
+
+Playbook+Inventory Lab
+
+Variables - 
+
+Factor
+
+Advance Playbook
+==================================
+Conditions In Playbook
+Looping in Playbook
+One PlayBook Calling Another Playbook
+Modules
+	INCLUDE MODULE
+	DEBUG MODULE
+	PROMPT MODULE
+	TEMPLATE MOD
+Using Template
+	https://www.devopsschool.com/blog/how-to-use-template-in-ansible/
+
+
+==========================
+INVENTORY
+MODULES
+PLAYBOOKS
+ROLES
+==========================
+
+
+LASt DAY
+-------------------
+Ansible Roles
+Ansible on Windows
+Ansible Vault
+Ansible Tower
+Docker with Windows - DEMO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Ansible Register
+Ansible Handlers
+Ansible Include
+Ansible Roles
+Ansible Galaxy
+Ansible Vault
+Ansible Tower
+Python Basic Programming
+
+

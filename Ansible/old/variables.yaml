@@ -1,0 +1,91 @@
+# Variables Defined in Inventory
+[clients]
+helium intevent_var=helium_123
+neon invent_var=bar
+
+[clients]
+helium
+neon
+
+[clients:vars]
+invent_var=group-foo
+
+# Variables Defined in a Playbook
+
+######A more direct way is to define variables in playbooks directly, with the key vars:
+
+...
+hosts: all 
+vars:
+  play_var: bar 
+
+tasks:
+...
+######This can be extended by including an actual yaml file containing variables:
+
+...
+hosts: all
+include_vars: setupvariables.yml
+
+tasks:
+...
+######Including further files with more variables comes in extremly handy when the variables for each system are kept in a system specific file, like $HOSTNAME.yml, because the included variable file can again be a variable:
+
+...
+hosts: all
+include_vars: "{{ ansible_hostname }}.yml"
+
+tasks:
+...
+    
+# Variables defined from included files and roles
+
+# Register Variables
+- name: test play
+  hosts: all
+
+  tasks:
+
+      - shell: cat /etc/motd
+        register: motd_contents
+
+      - shell: echo "motd contains the word hi"
+        when: motd_contents.stdout.find('hi') != -1
+        
+        
+# Variables and loops   
+tasks:
+  - name: copy files
+    copy: src={{ item }} dest=/tmp/{{ item }}
+    with_items:
+      - alha
+      - beta
+
+# Variables and templates
+$ cat template.j2
+My host name is {{ ansible_hostname }}.
+
+tasks:
+  - name: copy template
+    template: src=template.j2 dest="/tmp/abcapp.conf"
+
+# Using variables in conditions
+
+tasks:
+  - name: install Apache on Solaris
+    pkg5: name=web/server/apache-24
+    when: ansible_os_family == "Solaris"
+
+  - name: install Apache on RHEL
+    yum:  name=httpd
+    when: ansible_os_family == "RedHat"
+
+#Getting variables from the system    
+$ ansible neon -m setup
+
+# Getting variables from the command line
+$ ansible-playbook --extra-vars "cli_var=production" system-setup.yml
+
+
+
+# REF - https://liquidat.wordpress.com/2016/01/26/howto-introduction-to-ansible-variables/

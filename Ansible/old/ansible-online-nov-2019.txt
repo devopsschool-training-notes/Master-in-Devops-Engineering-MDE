@@ -1,0 +1,262 @@
+Prereq -  User & Wget 
+
+sudo -i
+echo "root:root" | chpasswd
+adduser training
+echo "training:training" | chpasswd
+echo 'training  ALL=(ALL:ALL) ALL' >>  /etc/sudoers
+
+
+sudo yum install wget -y
+
+
+
+PasswordLess SSH
+
+
+Enble for SSH for ROOT user -
+
+file=/etc/ssh/sshd_config
+cp -p $file $file.old && awk ' $1=="PermitRootLogin" {$2="yes"} $1=="PasswordAuthentication" {$2="yes"} $1=="#PubkeyAuthentication" {$1="PubkeyAuthentication"} {print} ' $file.old > $file
+service sshd restart
+
+
+
+ssh-keygen
+ssh-copy-id -i .ssh/id_rsa.pub root@n1.us-central1-a.c.peak-orbit-248216.internal
+
+
+-----
+Ansible Installation
+
+yum install epel-release
+yum install ansible
+
+
+Ansible hosts File Update.
+
+
+ansible dev -m ping
+ansible dev -m setup | more
+ansible dev -a "df -hP"
+
+
+
+File Module  -  /tmp/test
+
+
+ansible dev -m file -a "path=/tmp/test"
+
+ansible dev -a "ls -l /tmp/test"
+
+ansible dev -m file -a "path=/tmp/test owner=training group=training  mode=777"
+
+ansible dev  -a "ls -l /tmp/test"
+
+
+Copy Module - 
+
+ansible dev -m copy -a "src=/etc/ansible/hosts dest=/root"
+
+
+stat Module -  File exists or not 
+
+ansible dev -m stat -a "path=/root/hosts"
+
+
+
+
+Yum Module - 
+
+ansible dev -m yum -a "name=docker state=present"
+
+ansible dev -m yum -a "name=docker state=absent"
+
+
+ansible dev -m yum -a "name=docker download_only=true"
+
+
+download_only: true
+
+
+
+User Module - 
+
+
+ansible dev -m user -a "user=manish password=manish2password"
+
+ansible dev -m user -a "user=manish5 password=manish2password shell=/bin/zsh expires=-1 comment='test user'"
+
+ansible dev -m user -a "user=manish state=absent"
+
+ansible dev -a "id manish"
+
+ansible dev -a "id manish5"
+
+
+
+Service module - 
+
+ansible dev -m yum -a "name=docker state=present"
+
+ansible dev -m service -a "name=docker state=restarted"
+
+values accepted ( state ) - reloaded, restarted, started, stopped
+
+
+
+Python - Pip Module
+
+pip module  - 
+
+ansible dev -m yum -a "name=python-pip state=present" 
+
+ansible dev -a "pip install --upgrade pip" 
+
+ansible dev -m pip -a "name=NumPy" 
+
+ --> import numpy
+
+
+
+
+
+
+PlayBook Examples
+
+
+---
+- hosts: dev
+  gather_facts: false
+  tasks:
+    - yum:
+        name: git
+        state: present
+...
+
+
+
+---
+- hosts: dev
+  gather_facts: false
+  tasks:
+    - name: Git Instllation
+      yum:
+        name: git
+        state: present
+      tags: install
+    - name: Git Installation
+      yum:
+        name: git
+        state: absent
+      tags: uninstall
+...
+
+
+ansible-playbook gittags.yaml  -t uninstall
+
+
+
+
+Loop --  command -- yum module - 
+
+
+---
+- hosts: dev
+  gather_facts: false
+  tasks:
+    - name: Spark Installation
+      command: "{{item}}"
+      with_items:
+      - yum install java-1.8.0-openjdk -y
+      - wget http://apachemirror.wuchna.com/spark/spark-3.0.0-preview/spark-3.0.0-preview-bin-hadoop2.7.tgz
+      - tar xzf spark-3.0.0-preview-bin-hadoop2.7.tgz
+      - mv spark-3.0.0-preview-bin-hadoop2.7 spark
+...
+
+
+
+
+---
+- hosts: dev
+  gather_facts: false
+  tasks:
+  - name: java home
+    shell: echo "export JAVA_HOME=/usr/lib/jvm/jre-1.8.0-openjdk" >> /etc/profile
+  - name: spark path
+    shell:  echo "export PATH=$PATH:/root/spark/bin" >> /etc/profile
+  - name: reload profile
+    shell: source /etc/profile
+...
+
+
+
+
+
+
+Handlers are our way of calling a Task after some other Task completes.
+
+
+---
+- hosts: dev
+  tasks:
+   - name: Install Nginx
+     yum:
+       name=nginx state=installed update_cache=true
+     notify:
+      - Start Nginx
+  handlers:
+   - name: Start Nginx
+     service: name=nginx state=started
+
+
+
+
+---->  Remove Nginix -   ansible dev -m yum -a "name=nginx state=absent"
+
+
+
+---
+- hosts: dev
+  gather_facts: false
+  tasks:
+    - name: install httpd
+      yum:
+         name=httpd state=latest
+    - name: Place the index file at project
+      copy:
+         src: /root/website/index.html
+         dest: /var/www/html/
+         owner: apache
+         group: apache
+         mode: 0644
+    - name: restart apache
+      service:
+           name: httpd
+           state: restarted
+...
+
+
+
+
+
+
+
+
+
+ansible-playbook --connection=local 127.0.0.1 playbook.yml
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
