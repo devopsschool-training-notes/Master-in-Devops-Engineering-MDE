@@ -1,0 +1,68 @@
+13.126.141.215
+
+Install XMMPP
+> yum install wget
+> wget https://www.apachefriends.org/xampp-files/5.6.30/xampp-linux-x64-5.6.30-1-installer.run
+> chmod 755 xampp-linux-x64-5.6.30-1-installer.run
+> ./xampp-linux-x64-5.6.30-1-installer.run
+> /opt/lampp/lampp restart
+> /opt/lampp/lampp stop
+
+Now follow following steps..
+$ cd /opt/lampp/htdocs
+$ yum install wget -y
+$ yum install unzip -y 
+$ wget https://sourceforge.net/projects/phplist/files/phplist/3.3.4/phplist-3.3.4.zip/download
+$ mv download download.zip
+$ unzip download.zip
+$ chmod 777 phplist-3.3.4
+$ cd phplist-3.3.4
+
+
+https://www.phplist.org/manual/ch028_installation.xhtml
+
+RDS
+phplist
+phplist#1209
+
+13.126.193.239
+
+http://13.126.193.239/phplist/
+https://www.phplist.org/manual/ch028_installation.xhtml
+
+phplistdb.db.4970998.46d.hostedresource.net
+
+http://13.126.141.215/lists/admin
+
+http://domain-name/lists
+
+Database error 1146 while doing query Table 'phplist.phplist_subscribepage' doesn't exist
+https://stackoverflow.com/questions/22418115/phplist-database-error-1146
+
+http://devopssupport.in/lists/admin/
+admin
+Pas - PHplist$123
+
+
+DATABASE
+cd /opt/lampp/bin
+./mysql
+https://www.devopsschool.com/tutorial/mysql/setting-changing-and-resetting-mysql-root-passwords.html
+Set up root password for the first time
+$ use mysql;
+$ update user set password=PASSWORD("phPlist@b1209") where User='root';
+$ flush privileges;
+$ quit
+
+
+
+show databases;
+CREATE DATABASE phplistdb;
+
+phplistdb.sql
+
+
+./mysql -u root -p phplistdb < phplistdb.sql
+phplistdb
+phPlist@b1209
+
