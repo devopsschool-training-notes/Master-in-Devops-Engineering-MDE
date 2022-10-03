@@ -1,0 +1,7 @@
+> git hash-object "Apple Pie"
+> echo "Apple Pie" | git hash-object --stdin
+> echo "Apple Pie -" | git hash-object --stdin
+> echo "Apple Pie" | git hash-object --stdin -w
+> git init
+> git cat-file SHA1 -t
+> git cat-file SHA1 -p

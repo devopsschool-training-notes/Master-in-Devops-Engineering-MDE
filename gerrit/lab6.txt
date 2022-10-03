@@ -1,0 +1,60 @@
+IP - 13.126.240.58
+
+http://13.126.240.58:9000
+
+MYSQL INTERGRATION WITH GERRIT
+------------------------------------
+
+1. MYSQL SERVER - 13.126.240.58 3306
+2. DATABASE - gerrit
+3. USER NAME - root
+4. PASSWORD - password123
+
+Step 1: Setup a mySQL Server
+--------------------------------------------
+http://www.devopsschool.com/tutorial/mysql/how-to-install-mysql-on-centos-7.html
+
+Step 2: Create a database
+--------------------------------------------
+>  show databases;
+
+Step 3: Resetting the password of root.
+--------------------------------------------
+use mysql;
+update user SET PASSWORD=PASSWORD("password123") WHERE USER='root';
+flush privileges;
+exit
+
+Step 4: Gerrit Server Installations
+--------------------------------------------
+http://www.devopsschool.com/tutorial/gerrit/gerrit-install-and-configuration.html
+
+Gerrit Backup
+=====================================================================
+Includs..
+	"git" directory
+	"db" only if you are using h2
+	Name of the plugins & connectors details
+	"etc" directory
+	
+mysqldump --opt -Q -h localhost -u root --password=password123 gerrit| gzip -9  > gerrit.gz
+
+Gerrit Restore
+======================================
+mysql -u root -p gerrit1 < bkp/gerrit
+
+
+
+
+ROUGH
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'password123' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+
+yum install mysql
+
+mysql -u root -h 13.126.240.58 -p
+mysql -u root -p'password123' -h 13.126.240.58 gerrit1
+
+
+
+

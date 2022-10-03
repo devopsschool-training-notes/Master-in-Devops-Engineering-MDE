@@ -1,0 +1,26 @@
+Create Blob
+============================
+echo "Apple Pie2" | git hash-object --stdin -w
+echo "Apple Pie3" | git hash-object --stdin -w
+> git cat-file SHA1
+
+Create tree
+============================
+vi tree.txt
+100644 blob 6af36921db4cac7642c1b1c0d57417eed44ea559    ttest.txt
+100644 blob 072f1c6f6e597d907250ab2e44d7146fec6be9f6    testi1.txt
+
+> cat tree.txt | git mktree
+> git ls-tree tree-id
+
+Create Commit
+============================
+echo "Initial commit" | git commit-tree c79124e21d165e27e449ecf5c8bbd28d155457c6
+
+Updating Refs
+============================
+git update-ref refs/heads/master f4271f24c95101a98cf79eb559e8775bc1da5ed2
+
+Counting Obejects
+============================
+> git count-objects

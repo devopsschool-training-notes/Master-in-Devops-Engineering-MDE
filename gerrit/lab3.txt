@@ -1,0 +1,22 @@
+Rule - 1 - Which is known Working
+Rule - 2 - Which is known not working?
+
+
+> git bisect start 
+> git bisect bad 
+> git bisect good <commit-hash>
+> git bisect good 2af99d9 
+
+> git bisect good 
+> git bisect bad 
+
+> git bisect reset 
+
+
+$ git log --oneline
+32f13e3 commit 6
+7beb5ee commit 5
+f421258 commit 4
+944dc5f commit 3
+2d03021 commit 2
+2af99d9 commit 1

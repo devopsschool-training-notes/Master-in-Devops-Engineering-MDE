@@ -1,0 +1,24 @@
+SETTING UP THE GERRIT AND JENKINS INTEGRATION
+======================================================
+
+Step 1: Jenkins Installation
+http://www.devopsschool.com/tutorial/jenkins/jenkins-installation-and-configuration.html
+
+Step 2: Setup Gerrit
+
+Step 3- Adding Jenkins user on Gerrit
+
+Step 4 - Addding a user in "Non-Interactive Users" group in Gerrit
+
+Step 5: Adding jenkins pub key from the jenkins severs to gerrit jenkins user.
+
+Step 6: Enabled Verified lebel in ALL-Project
+
+Step 7: Enabled Non Integrative Verifed permission in All Projects.
+
+Step 8: Install "Gerrit Trigger" in jenkins
+
+Step 9: Configure "Gerrit Trigger" plugins with Gerrit Server
+http://13.126.240.58:9000
+
+Step 10 - file:///C:/Users/Rajesh/Desktop/HCL/web/gerrit-and-jenkins-integration-using-gerrit-trigger-plugins/continuous-integration-with-jenkins.html

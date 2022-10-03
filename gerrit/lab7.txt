@@ -1,0 +1,23 @@
+Edit project.config in a Gerrit project
+
+The project settings are kept in the Git repository for the project. You can edit them by cloning the project from Gerrit, making the change, committing and pushing back to Gerrit.
+
+You can do this for any project, but if you want it to be inherited by all your projects, which you probably do, use All-Projects as the project.
+
+mkdir gtproj
+cd gtproj
+git init
+git remote add origin ssh://<USER>@<GERRITHOST>:29418/<PROJECT>
+git fetch origin refs/meta/config:refs/remotes/origin/meta/config
+git checkout meta/config
+Then, make the change to the project.config file which will now be in the current directory.
+
+Now, commit the change, and push back to the Gerrit repo:
+
+git commit -a -m "Added label - Verified"
+git push origin meta/config:meta/config
+And that's it.
+
+
+
+https://stackoverflow.com/questions/22229536/edit-project-config-in-a-gerrit-project

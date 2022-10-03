@@ -1,0 +1,39 @@
+Step 1- Setup Gerrit Server 
+http://www.devopsschool.com/tutorial/gerrit/gerrit-install-and-configuration.html
+
+Step 2 - Create a Project in Gerrit
+
+Step 3 - Setup a Developement Machine
+git clone http://admin@35.154.81.167:8080/a/prj1 && (cd prj1 && curl -kLo `git rev-parse --git-dir`/hooks/commit-msg http://admin@35.154.81.167:8080/tools/hooks/commit-msg; chmod +x `git rev-parse --git-dir`/hooks/commit-msg)
+
+Step 4: Sample Commits to be done 
+> touch file1.txt;git add .;git commit -m"adding first version"
+
+Step 5: Sample push  and submit it
+> git push origin HEAD:refs/for/master
+
+Step 6: create it replication.config
+
+Content of the files is -
+
+[remote "github"]
+  url = git@github.com:scmgalaxy/${name}.git
+
+Step 7: 
+Generate a public/private key
+> ssh-keygen -t rsa
+
+Step 8: 
+create a "config" under /root/.ssh
+
+Host github.com
+    User git
+    IdentityFile /root/.ssh/id_rsa
+    StrictHostKeyChecking no
+    UserKnownHostsFile /dev/null
+
+
+Step 9: Update the public key to github
+
+Step 10: Create a repo in Github.com with same name.
+
