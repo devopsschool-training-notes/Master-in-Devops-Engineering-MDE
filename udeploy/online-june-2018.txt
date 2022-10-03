@@ -1,0 +1,197 @@
+SDLC Cycle
+--------------------
+PLAN > Code > SCA > Build > UT > Package > Dep2Repo > Dep2QA > CC > Release
+-----------------------------------------------------------------------------
+JIRA > GIT  > SonarQube>Maven> JUNIT> JAR > Nexus > UDeploy > Jacoco -----
+					
+						    Dep2Integ
+						    Dep2Prod
+
+What is UDeploy?
+	SDLC Cycle
+		Deploying | Versioning | Rollbacking 
+			TO Large numbers of servers at a time.
+	Deployment tool for apps
+	GUI
+	From IBM
+	Developed by Urbandcode
+	Later acquired by IBM.
+	Deveoped in Java
+
+	Few other tools in U Family - UBuild -UDeploy- URelease
+
+Why UDeploy
+	Automating the 100 complexities of the app deployment
+	Deployment version
+	Roll Back
+	Uninstall 
+	Rich GUI
+
+What are other tools we have which can be used
+	Config mgmt tool - Puppet -> Ansible -> Chef -> Salt
+	Container -  Docker > Swaram/Kubernetes
+
+
+Architecture of UDeploy
+SERVER - CLIENT
+
+
+How to setup a uDeploy Servers?
+	JRE | JDK
+13.232.27.12
+ec2-user
+4GB  ---->
+http://www.devopsschool.com/notes/udeploy/installing-udeployserver-linux.txt
+https://13.232.27.12:8443/
+admin
+admin
+
+ucd_id...
+
+
+=======================================================
+Terminology and Basic Flow is given here....
+
+Where should i keep a files which need to be deployed?
+- One Machine
+	
+How this machine will be accessible by UDep Server?
+- Convert into agent.
+
+How to setup agent?
+	SSH  - LINUX
+	WINRM - WINDOWS
+
+Through UDep Server GUI
+	Resources>>Agents>>Install New Agent >> SSH VS WinRS
+
+Auto Discovery
+	Resources>>Agents>>Discover Available Network Hosts>> Subnet CIDR e.g 172.31.16.0/20
+
+Manual Agent Installation
+Agent Machine ----> 13.127.5.59
+
+Steps -- http://www.devopsschool.com/notes/udeploy/installing-udeployagent.txt
+	
+wget --no-check-certificate https://13.232.27.12:8443/tools/ibm-ucd-agent.zip
+=================================================================================
+Phase 1 
+================================
+"Resources" Tab
+------------------------
+Simple Words ---- Agents
+
+Prod(Resource Tree)
+	Agent1
+	Agent2
+	Agent3
+	Agent4
+Agents
+	All the online active agents would be shown here.
+
+Phase 2
+================================
+Setting up the Component version Server...
+Setting >> System Settings >> Agent for Version Imports >> Agents
+
+Phase 3 Login in Agent and do needful
+================================
+    4  cd /tmp/
+    7  mkdir source
+    8  cd source/
+   10  mkdir 1.0
+   11  cd 1.0/
+   13  touch udepfile1.txt
+
+FINAL - /tmp/source
+
+
+Phase 4 Create a Component.
+================================
+CompX
+	SystemUtil(jdk,zip,wget,	==== COMPONENT
+	AppServer			==== COMPONENT
+	WebServer			==== COMPONENT
+	DBServer			==== COMPONENT
+==============================
+How to create a component?
+
+Components>>Create Component>>
+
+Phase 5 Create a Component versions
+================================
+Components>>SystemUtil>>versions>>Import New Version
+
+
+Phase 6 Create a Component Process
+===================================
+Components>>SystemUtil>>Processess>>CreateProcess
+
+What is Application?
+Combining
+	Component(s) + resources(s)
+
+Phase 6 Create a Application
+===================================
+Applications>>Create Application>>
+
+
+
+Phase 7 Add a Component into Application
+===================================
+Applications>>Components>>Add Component(SystemUtil)
+
+
+
+Phase 8 Add a resources into Application
+===================================
+Applications>>Envirionments>>CreateEnvironments
+&&
+Go into Environments & Add Base Resources
+
+========================================
+Need a Machine where Deployable Artifacts are there
+Crate a Resources Tree & Added a Agent into it....
+Create a Component
+	VERSION
+	PROCESS------
+Create a Application
+	Add a Component
+	Add a Resources
+	
+FINALLY
+	APPLICATION PROCESS
+	RUN
+
+
+
+
+
+===========================================
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

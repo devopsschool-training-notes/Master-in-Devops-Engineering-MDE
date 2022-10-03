@@ -1,0 +1,47 @@
+1. Udeploy built in repository
+====================================
+Codestation?
+
+2. UDeploy Snapshot
+
+
+3. Variable
+
+4. Uninstall
+devopsschool.html
+xyz.html
+
+13.233.129.157
+
+==============================
+What is Component "Process Type" 
+	Install
+	Uninstall?
+	Config Deployment?
+
+Component "Process Type" 		APPLICATION "Process Type" 
+==================================================================
+Deployment				Install
+UN-INSTALLS				UN-INSTALLS
+
+CONFIG DEP				CONFIG DEP
+	
+==========================================================
+Variables
+================
+Where n all you can define a variables?
+	COMPONENT LEVEL
+		Component Properties	
+		Environment Property Definitions
+		Resource Property Definitions
+		Version Property Definitions
+		Configuration File Templates
+		Version Import History
+
+https://www.devopsschool.com/blog/udeploy-properties-component-properties-along-with-their-contexts/
+
+
+
+
+
+	

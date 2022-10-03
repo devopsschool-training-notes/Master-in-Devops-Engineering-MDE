@@ -1,0 +1,165 @@
+https://www.devopsschool.com/notes/udeploy/
+=================================================
+What is uDeploy?
+	Deployment tool
+	GUI
+	Dev in Java
+	Urban Code Deploy
+		-  From Urban Code
+		- Acquired by IBM
+	Family - 
+		Ubuild
+		UDeploy
+		Urelease
+
+Why we need uDeploy?
+	Package + Dependencies + Config
+			===== MUL SERVERS
+			@ one TIME.
+	---------
+	Wants to maintained a Deployement
+			Consitency
+
+	Package
+		ears
+		jar
+		zip
+		jar
+		exe
+		rpm
+		wars
+	
+
+What are the other tools we have?
+	Chef
+	puppet
+	ansible
+	udeploy
+	octopus deploy
+https://www.devopsschool.com/path/
+
+How to install uDeploy?
+	Server
+	Agent
+	
+Udeploy Arch
+	Basic
+UDeploy Server ---> AGENT(S)	
+ONE			MANY
+WIND			WIN
+LINUXX			LINUX	
+			
+Installating UDeploy Server in Linux RHEL 7
+
+> sudo -s
+> yum install wget -y
+> yum install unzip -y
+> cd /opt
+> wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.tar.gz
+> tar -zxvf jdk-8u131-linux-x64.tar.gz
+> export JAVA_HOME=/opt/jdk1.8.0_131
+> export PATH=$PATH:$JAVA_HOME/bin
+> wget https://s3.ap-south-1.amazonaws.com/scmgalaxy/IBM_URBANCODE_DEPLOY_6.2.7_MP_ML_.zip
+> unzip IBM_URBANCODE_DEPLOY_6.2.7_MP_ML_.zip
+> cd ibm-ucd-install
+> ./install-server.sh
+
+How to start a uDeploy server?
+  27  cd /opt/
+   28  ls
+   29  cd ibm-ucd
+   30  clear
+   31  ls
+   32  cd server
+   33  ls
+   34  cd bin
+   35  ls
+   36  ./server start
+   37  ./server stop
+   38  ./server status
+   39  ./server start
+   40  ps -eaf | grep -i udeploy
+   41  ./server stop
+   42  ps -eaf | grep -i udeploy
+   43  ls
+   44  ps -eaf | grep -i udeploy
+   45  kill -9 9933
+   46  ps -eaf | grep -i udeploy
+   47  ls
+   48  ./server start
+   49  ps -eaf | grep -i udeploy
+
+https://52.66.213.58:8443/
+admin
+admin123
+
+Installating UDeploy Agent in Linux RHEL 7
+ 57  wget https://52.66.213.58:8443/tools/ibm-ucd-agent.zip
+   58  wget --no-check-certificate https://52.66.213.58:8443/tools/ibm-ucd-agent.zip
+   59  ls
+   60  unzip ibm-ucd-agent.zip
+   61  ls
+   62  cd ibm-ucd-agent-install
+   63  ls
+   64  ./install-agent.sh
+   65  ls
+   66  cd /opt/
+   67  ls
+   68  cd ibm-ucd
+   69  ls
+   70  cd agent
+   71  ls
+   72  cd bin
+   73  ls
+   74  ./agent start
+   75  history
+
+
+What is Java App?
+.JAVA ---> .Class
+		.Class(S) --> JAR
+				JAR(S) --> WAR
+			
+What is Component?
+	Package FROM --- FILE SYSTE|GIT|ARTIFACTORY
+		version
+		process		
+
+First Workflow of uDeploy?
+Step 1 - Create a Component
+		SOURCE - FILE SYSTEM | GIT | SVN | Artifactory
+		DESTINATION - SAME AGENT
+
+	FILESYSTEM
+		/tmp/filesystem/devopsschool.html
+	FILESYSTEM VERSIONed
+		/tmp/filesystem-v/1.0/devopsschool.html
+		/tmp/filesystem-v/2.0/devopsschool.html
+		/tmp/filesystem-v/3.0/devopsschool.html
+	GIT
+Step 2 - Create a Component VERSION
+Step 3 - Create a Process --- What you want to do with this component? 
+		Step1 - Download Artifact
+		Step2
+Step 4 - Create a Resource Tree
+				Add a agent1
+					ADD A Component 1
+				Add a agent2
+					ADD A Component 2
+				Add a agent3
+					ADD A Component 3
+					
+Step 5 - Create a Application
+		- Add a Component === which is part of this App.
+		- Add a Process === What you want to do with this Application????
+		- Create EnVIRON
+			--- ADD a BASE Resources
+			
+Step 6
+	RUN A APPLICATION
+
+
+
+DEV --> INT -> STAGE==QA -> PRE PRED  -> PROD
+
+
