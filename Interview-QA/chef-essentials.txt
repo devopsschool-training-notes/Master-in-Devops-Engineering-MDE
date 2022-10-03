@@ -1,0 +1,171 @@
+Why do we make a new cookbook dependent upon one or more different cookbooks?
+1. So that we don't breach copyright
+2. So that we can make use of Berkshelf
+3. So we can avoid having to duplicate code
+4. So that we can manage a node running Linux
+5. So that we can upload the cookbook to Chef Server
+Ans :-  3. So we can avoid having to duplicate code
+
+Why should we always encrypt credentials which are stored in data bags?
+1. We cannot create un-encrypted values on Chef Server.
+2. So that we do not expose sensitive passwords in plaintext
+3. Some cookbooks, like apt, require encrypted credentials.
+4. We don't need to encrypt credentials, Chef does this automatically.
+5. Berkshelf will not upload cookbooks containing unencrypted data bag values.
+Ans :-  2. So that we do not expose sensitive passwords in plaintext
+
+Why are hard-coded values in a Chef recipe or template a bad idea?
+1. Some platforms (like Windows) don't support hard-coded values.
+2. They increase processing time.
+3. From version 12 onwards, Chef does not support hard-coded values.
+4. They make the code inflexible and not reusable.
+5. They are a good idea as they reduce processing time.
+Ans :-  4. They make the code inflexible and not reusable. 
+
+When using the ChefDK to generate a new recipe, do you need to specify the .RB file extension?
+1. Yes, but only if you're running Windows.
+2. No, Visual Studio Code does this automatically.
+3. Yes, otherwise you can't edit the file.
+4. No, all files in a Chef repository automatically use the .RB file extension.
+5. No, CHEF GENERATE does this automatically.
+Ans :-  5. No, CHEF GENERATE does this automatically.
+
+What is Chocolatey?
+1. It is an open-source package provider for Windows.
+2. It is a community utility provided with the ChefDK.
+3. It is a platform for running virtual machines.
+4. It is a PowerShell module.
+5. It is the code name for the latest build of Windows 10.
+Ans :- 1. It is an open-source package provider for Windows.
+
+Which Test Kitchen provisioner should we use when the target platform is Windows? 
+1. Vagrant
+2. Gem
+3. Chef Zero Scheduled Task
+4. Chef Zero
+5. --local-mode
+Ans :-  3. Chef Zero Scheduled Task
+
+What should you do if "kitchen converge" encounters an error?
+1. Use a different Test Kitchen provisioner
+2. Use "kitchen destroy"
+3. Remediate the error and run "kitchen converge" again
+4. Nothing - errors are expected
+5. Upload the cookbook into production
+Ans :-  3. Remediate the error and run "kitchen converge" again
+
+How do you specify different attributes so that your cookbook will work with Vagrant/Test Kitchen?
+1. Use override attributes in the vagrantfile
+2. Create [default][kitchen] attributes in the cookbook's default.rb attributes file
+3. Use override attributes in the cookbook's .kitchen.yml file
+4. Chef Zero will automatically modify any attributes needed.
+Ans :-  3. Use override attributes in the cookbook's .kitchen.yml file
+
+How do you use a Chef resource which is defined in a different cookbook?
+1. Use the include_cookbook Chef resource in your own cookbook
+2. Create a dependency on the external cookbook in your cookbook's metadata.rb file
+3. You should always re-create Chef functionality from scratch in each cookbook.
+4. Use GEM INSTALL to download the cookbook to the ChefDK
+Ans :-  2. Create a dependency on the external cookbook in your cookbook's metadata.rb file
+
+Why do we need to install the WinRM plugin for Vagrant?
+1. We don't - Vagrant does not support WinRM.
+2. To connect to a Vagrant box running Windows using WinRM
+3. Because Vagrant talks to VirtualBox using WinRM
+4. To connect to a Vagrant box running Ubuntu using WinRM
+5. So that Vagrant can populate the PATH variable
+Ans :-  2. To connect to a Vagrant box running Windows using WinRM
+
+When creating a new Chef role using "knife role from file", in what format should the source file be?
+1. Ruby
+2. JSON
+3. Erlang
+4. XML
+5. TXT
+Ans :-   2. JSON
+
+Why is the Chef Server name important?
+1. The server name must be unique as it is accessible over the Internet
+2. The trial license is bound to the server name
+3. The name is written to the server certificate - if there is a mismatch clients cannot connect
+4. The Chef Server name isn't important at all
+Ans:- 3. The name is written to the server certificate - if there is a mismatch clients cannot connect
+
+What describes a technical process which gives the same result each time?
+1. Omnipotent
+2. Impotent
+3. Idempotent
+4. Potentate
+Ans:- 3. Idempotent
+
+When accessing the Chef Management Console via a browser, why might you see a certificate error?
+1. You forgot to run "opscode-manage-reconfigure"
+2. You are using a URL which is different to the Chef server name
+3. You need to purchase a certificate from a Certificate Authority
+4. The Management Console has been incorrectly installed
+Ans:- 2. You are using a URL which is different to the Chef server name
+
+What do you use to install the Azure PowerShell modules?
+1. Microsoft Web Platform Installer
+2. sudo apt-get install
+3. Microsoft OneGet
+4. Microsoft Azure CLI
+Ans:- 1. Microsoft Web Platform Installer
+
+We can use SSH to bootstrap the Chef Client onto a Linux node. What do we use for Windows nodes?
+1. PowerShell
+2. Visual Basic
+3. WinRM
+4. SSH
+Ans:-  3. WinRM
+
+Why is Git an integral part of using Chef?
+1. Because Chef development is driven by open source principles
+2. Because version control is critical for managing code properly
+3. The ChefDK needs Git to be installed first
+4. The ChefDK uses Git to upload cookbooks to the Chef Server
+Ans:- 2. Because version control is critical for managing code properly
+
+If one Chef cookbook depends upon another Chef cookbook, where should this dependency be stated?
+1. In the .gitignore file
+2. In the README.md file
+3. In the metadata.rb file
+4. In the knife.rb file
+Ans:-  3. In the metadata.rb file
+
+On which platform is the Azure Command Line Interface (CLI) supported?
+1. All of them 
+2. Mac OS X
+3. Microsoft Windows
+4. Linux
+Ans:-  1. All of them 
+
+What does Knife need in order to communicate with the Chef Server?
+1. The URL of the Chef Servercd
+2. User and organization certificates
+3. SSL certificates from the Chef Server
+4. All of these
+Ans:-  4. All of these
+
+In an environment managed by Chef, where does cookbook and policy authoring happen?
+1. In the Chef Management Console
+2. On the Chef Server
+3. In the Chef Development Kit
+4. In the Chef PostgreSQL database
+Ans:-  3. In the Chef Development Kit
+
+What is a provider?
+1. An entry in the PATH environment variable on a Windows system
+2. A process by which Chef achieves a recipe's declared end-state
+3. A component of a cookbook which defines the version number and dependencies
+4. A self-contained Ruby package, such as knife-windows
+Ans:- 2. A process by which Chef achieves a recipe's declared end-state
+
+What does it mean if a Chef node reports an "empty run list" during a client run?
+1. It means that the Chef Client did not install correctly, and must be reinstalled
+2. It means that no recipes, cookbooks, or roles have been assigned to the node
+3. It means that the wrong recipe, cookbook or role has been assigned to the node
+4. It means that the Chef Client failed to connect to the Chef Server
+Ans:-  2. It means that no recipes, cookbooks, or roles have been assigned to the node
+
+

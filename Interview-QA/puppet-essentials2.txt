@@ -1,0 +1,205 @@
+-When creating a new role, why do you not create the init.pp manifest?
+1. You never use sub-classes.
+2. You never use the role class directly.
+3. The init.pp is for modules.
+Ans : 2. You never use the role class directly.
+
+The configuration history can be viewed by Node, Class, and which other object?
+1. Module
+2. Resource
+3. Agent
+Ans : - 2. Resource
+
+On which port does the Puppet Fileserver run as standard?
+1. 8080
+2. 443
+3. 80
+4. 8140
+Ans : - 4. 8140
+
+With which command can you locate the hiera.yaml file that is in use?
+1. puppet config print hiera_yaml
+2. puppet config print hiera_config
+3. puppet config print hiera
+Ans : - 2. puppet config print hiera_config
+
+How can you install a module from the Puppet Forge?
+1. sudo install puppet module <name>
+2. sudo puppet install module <name>
+3. sudo puppet module install <name>
+Ans : - 3. sudo puppet module install <name>
+
+How many nodes can be used without charge with Puppet Enterprise?
+1. 15
+2. 5
+3. 50
+4. 10
+Ans : -  4. 10
+
+Which product includes the web dashboard? 
+1. Puppet DB
+2. Puppet Agent
+3. Puppet Enterprise
+4. Puppet Server
+Ans : - 3. Puppet Enterprise
+
+Why must time be accurate before installing Puppet Enterprise or Server?
+1. The Server hosts a web front-end
+2. The Server acts as Certifcate Authority
+3. This is required by the Puppet-Agent
+4. The Server hosts a database
+Ans : - 2. The Server acts as Certifcate Authority
+
+Which default user account is created for the web dashboard during the installation?
+1. root
+2. administrator
+3. webmin
+4. admin
+Ans : - 4. admin
+
+Which node in the Dashboard can show you groups of agents?
+1. Groups
+2. Classification
+3. Inventory
+4. Access Control
+Ans : - 2. Classification
+
+To which parameter do you assign PHP.INI configurations when declaring the mayflower-php class?
+1. settings
+2. config
+3. ini
+4. php
+Ans : - 1. settings
+
+When dealing with a large number of ephemeral nodes that consume licenses, how would you remove those nodes from Puppet Enterprise?
+1. Delete the node
+2. Purge the node
+3. Erase the node
+Ans : - 2. Purge the node
+
+Under which node in the dashboard can you run the puppet agent remotely on an agent system?
+1. Nodes
+2. Configuration
+3. Orchestrator
+4. Access Control
+Ans : -1. Nodes
+
+Consider the following site.pp:
+File { backup => false }
+node 'centos7' { include motd }
+Which nodes can make use of this file?
+1. All nodes
+2. CentOS 7 and any node with a file resource
+3. CentOS 7 only
+Ans : - 3. CentOS 7 only
+
+Which is the default fall-back file if no match is found in the defined hierachy?
+1. shared
+2. common
+3. hiera
+4. data
+Ans : - 2. common
+
+What is the minimum required RAM for Puppet Enterprise and Puppet Server?
+1. 16GB
+2. 2GB
+3. 8GB
+4. 4GB
+Ans : - 4. 4GB
+
+Which agents packages are available on the Puppet Enterprise Server by default?
+1. The matching package to the Server Platform
+2. Ubuntu and Red Hat packages
+3. All Red Hat packages
+4. SUSE and Red Hat Packages
+Ans : - 1. The matching package to the Server Platform
+
+Which command can be used to set the hostname on systemd based Linux distributions?
+1. hostnamed
+2. hostnamectl
+3. host
+Ans : - 2. hostnamectl
+
+What port is used by the web-based installer?
+1. 8120
+2. 443
+3. 3000
+4. 8080
+Ans : - 3. 3000
+
+In the Dashboard, what type of Puppet code to be assign to agent groups?
+1. Manifests
+2. Modules
+3. Classes
+4. Resources
+Ans : - 3. Classes
+
+What do you need to select first before you can run the Puppet agent remotely?
+1. The Node from Configuration
+2. The Node from Inventory
+3. The Node from Classification
+Ans : - 2. The Node from Inventory
+
+Which keyword should be used when declaring classes within roles?
+1. declare
+2. include
+3. class
+4. define
+Ans : -2. include
+
+On which device or devices do you install puppet modules when using the Puppet Enterprise?
+1. Server and Agents
+2. All Nodes
+3. Puppet Server
+4. CentOS Nodes
+5. Ubuntu Nodes
+Ans : - 3. Puppet Server
+
+How can you include all nodes from the example.com domain only in a node definition?
+1. node /example\.com$/
+2. node /example.com/
+3. node /example\.com/
+4. node example.com
+Ans : - 1. node /example\.com$/
+
+Which key is used to locate the directory in which backend files are located?
+1. json
+2. datadir
+3. yaml
+4. hierarchy
+Ans : - 2. datadir
+
+Where in the Dashboard do you find node groups?
+1. Inventory > Groups
+2. Inventory > Classification
+3. Nodes > Groups
+4. Nodes > Classification
+Ans : - 4. Nodes > Classification
+
+Which manifest file is used to assign work by default to nodes on the Puppet Server?
+1. site.pp
+2. resource.pp
+3. global.pp
+4. hiera.yaml
+Ans : - 1. site.pp
+
+In the /etc/hosts file what is the format of each entry?
+1. IP FQDN ALIAS
+2. FQDN IP ALIAS
+3. IP ALIAS FQDN
+Ans : - 1. IP FQDN ALIAS
+
+Which Linux command can be used to read the installation script for the Puppet Agent?
+1. wget
+2. curl
+3. put
+4. ftp
+Ans : - 2. curl
+
+Which role may be useful for auditors of Puppet?
+1. View-only
+2. Read-only 
+3. Viewers
+4. Audit
+5. Operators
+Ans : - 3. Viewers

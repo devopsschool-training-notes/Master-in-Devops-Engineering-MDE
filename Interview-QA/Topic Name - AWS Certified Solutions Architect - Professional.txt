@@ -1,0 +1,924 @@
+2. Topic Name - AWS Certified Solutions Architect - Professional
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  	2. Architecting Highly Available Systems on AWS
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1. You cannot run your own database on the AWS platform, but can choose between RDS or DynamoDB.
+
+A - true
+
+B - false
+
+Answer: B - false
+
+-----------------------------------------------------------------
+2. Which of the below features is NOT offered by Amazon RDS?
+
+A - replication
+
+B - patching
+
+C - stored procedure tuning
+
+D - backups
+
+E - version upgrades
+
+Answer: C - stored procedure tuning
+
+-----------------------------------------------------------------
+3. Local, instance storage for EC2 instances is best used for temporary storage
+
+A - true
+
+B - false
+
+Answer: A - true
+
+-----------------------------------------------------------------
+4. How can you configure Auto Scaling?
+
+A - With the language-specific SDKs
+
+B - All of the above
+
+C - Through the HTTP API	
+
+D - Via command line tools
+
+Answer: B - All of the above
+
+-----------------------------------------------------------------
+5. What problem do Elastic IPs solve?
+
+A - All of the above
+
+B - Lets you define a fixed IP and swap out the server it's attached to
+
+C - Sets a fixed public IP for 3 or more servers
+
+D - Provides simple load balancing between EC2 instances in the same AZ
+
+Answer: B - Lets you define a fixed IP and swap out the server it's attached to
+
+-----------------------------------------------------------------
+6. Why might you use a load balancer in your distributed systems?
+
+A - all of the above
+
+B - Provide resilience against servers going offline
+
+C - Offer enough servers to respond to all the inbound traffic
+
+D - Route traffic to geographically distributed servers
+
+Answer: A - all of the above
+
+-----------------------------------------------------------------
+7. How does load balancing differ from high availability?
+
+A - Something can be load balanced but not highly available
+
+B - They are the same thing
+
+C - A load balanced application doesn't work across geographies
+
+Answer: A - Something can be load balanced but not highly available
+
+-----------------------------------------------------------------
+8. "Message sampling" in Amazon SQS refers to ...
+
+A - none of the above
+
+B - queues being spread across servers so a "retrieve" operation only samples a subset of servers
+
+C - large messages in SQS that only have a sample of their payload returned to the caller
+
+D - a technique for querying a set of messages that have a particular metadata attribute
+
+Answer: B - queues being spread across servers so a "retrieve" operation only samples a subset of servers
+
+-----------------------------------------------------------------
+9. Which of the below is NOT a fallacy of distributed computing?
+
+A - Topology doesn't change
+
+B - The network is reliable
+
+C - There is only one administrator
+
+D - Databases can scale horizontally
+
+Answer: D - Databases can scale horizontally
+
+-----------------------------------------------------------------
+10. Which DNS record type is unique to Route 53?
+
+A - AAAA
+
+B - Alias
+
+C - CNAME
+
+D - A
+
+Answer: B - Alias
+
+-----------------------------------------------------------------
+11. S3 is highly available *if* you configure it for multi-AZ replication
+
+A - true
+
+B - false
+
+Answer: B - false
+
+-----------------------------------------------------------------
+12. Which of the below is NOT a scaling condition in Auto Scaling?
+
+A - Scheduled time period
+
+B - Ideal number of running instances
+
+C - None of the above
+
+D - High resource (e.g. RAM, CPU) consumption
+
+E - SQS queue depth
+
+Answer: C - None of the above
+
+-----------------------------------------------------------------
+13. Attach IAM roles to EC2 virtual machines to let applications securely connect to AWS services without embedding credentials.
+
+A - true
+
+B - false
+
+Answer: A - true
+
+-----------------------------------------------------------------
+14. What are some ways to create fault tolerance in a distributed system?
+
+A - Set of "circuit breakers" and avoid cascading errors
+
+B - Use eventual consistency for data synchronization
+
+C - All of the above
+
+D - Use timeouts and retries
+
+Answer: C - All of the above
+
+-----------------------------------------------------------------
+15. Choose to use DynamoDB instead of RDS if ...
+
+A - there is a need for high performance and a flexible data structure
+
+B - None of the above
+
+C - you need to establish strong relationships between table items
+
+D - you need a database available in ALL AWS regions
+
+Answer: A - there is a need for high performance and a flexible data structure
+
+-----------------------------------------------------------------
+16. What is a "visibilty timeout" in SQS?
+
+A - How long to delay the message before anyone can poll it
+
+B - none of the above
+
+C - An amount of time that the message is invisible to everyone but the publisher of the message
+
+D - The time that there is a "lock" on the message from the consumer who pulled it
+
+Answer: D - The time that there is a "lock" on the message from the consumer who pulled it
+
+-----------------------------------------------------------------
+17. Messages that are retrieved from the queue are immediately deleted so that no other poller can retrieve it.
+
+A - true
+
+B - false
+
+Answer: B - false
+
+-----------------------------------------------------------------
+18. Which of the options below represent a strategy for handling database failure?
+
+A - configuring multi-AZ replication
+
+B - promoting a read replica to a primary instance
+
+C - All of the above
+
+D - creating multiple read-replicas for the web application to access
+
+Answer: C - All of the above
+
+-----------------------------------------------------------------
+19. The ELB can load balance servers residing in different regions
+
+A - true
+
+B - false
+
+Answer: B - false 
+
+-----------------------------------------------------------------
+20. Route 53 can send traffic to a degraded website hosted on S3 if health checks fail.
+
+A - true
+
+B - false
+
+Answer: A - true
+
+-----------------------------------------------------------------
+21. Which type of storage is exposed to a virtual machine via a low level bus interface?
+
+A - object storage
+
+B - block storage
+
+C - file storage
+
+Answer: B - block storage
+
+-----------------------------------------------------------------
+22. Which of the following best describes the delivery guarantee of Amazon SQS?
+
+A - At-least-once delivery
+
+B - Only-once delivery
+
+C - Repeated delivery
+
+D - Eventual delivery
+
+Answer: A - At-least-once delivery
+
+-----------------------------------------------------------------
+23. You must write a script file to get Auto Scaled servers to join the ELB pool.
+
+A - false
+
+B - true
+
+Answer: A - false
+
+-----------------------------------------------------------------
+24. How can you create fault tolerance for EBS-driven solutions?
+
+A - Be prepared to detach and reattach EBS volumes from failed EC2 instances
+
+B - Create and store EBS snapshots in S3
+
+C - All of the above
+
+D - Use RAID10 to stripe and mirror across volumes
+
+Answer: C - All of the above
+
+-----------------------------------------------------------------
+25. Which of the below is NOT a way to share content between EC2 virtual machines?
+
+A - Durable EBS volumes
+
+B - S3 buckets
+
+C - EC2 VM acting as a network file share
+
+D - SQS queues
+
+Answer: A - Durable EBS volumes
+
+-----------------------------------------------------------------
+26. Route 53 can send traffic across AWS regions.
+
+A - true
+
+B - false
+
+Answer: A - true
+
+-----------------------------------------------------------------
+27. When does an EC2 image need to be EBS-backed vs. instance-backed?
+
+A - When using a cross-availability-zone virtual machine
+
+B - When its root drive is greater than 10GB
+
+C - When its root drive is smaller than 10GB
+
+Answer: B - When its root drive is greater than 10GB
+
+-----------------------------------------------------------------
+28. EC2 Security Groups serve what purpose?
+
+A - none of the above
+
+B - Define the roles and users who have access to a virtual machine
+
+C - Contains key pair used for decrypting the server password
+
+D - Act as a network firewall that defines valid ports and IPs
+
+Answer: D - Act as a network firewall that defines valid ports and IPs
+
+-----------------------------------------------------------------
+29. Once you create an EC2 virtual machine, you cannot change its instance size.
+
+A - false
+
+B - true
+
+Answer: A - false
+
+-----------------------------------------------------------------
+30. An Auto Scaling group includes all the servers already associated with the ELB instance.
+
+A - true
+
+B - false
+
+Answer: B - false
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+     	4. Managing Inventory, Change, and Compliance with AWS Config
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1. Why would you want to implement a retry strategy when using Continuous Compliance to fix issues?
+
+A - To guard against transient errors
+
+B - To ensure the fix is applied even if someone makes the resource non-compliant again later
+
+C - To ensure that the fix is applied through all of AWS' eventually consistent infrastructure
+
+Answer: A - To guard against transient errors
+
+-----------------------------------------------------------------------------------
+2. What is the name of the field you can use to transmit extra data fields from AWS Config Rule evaluations to your Continuous Compliance process?
+
+A - metadata
+
+B - reason
+
+C - annotation
+
+D - description
+
+Answer: C - annotation
+
+-----------------------------------------------------------------------------------
+3. What is a reason you might look at the Relationships portion of the Config Timeline view?
+
+A - To find out who was responsible for making a change
+
+B - To understand what change was made during a given timeframe
+
+C - To determine what other resources a change may have affected
+
+Answer: C - To determine what other resources a change may have affected
+
+-----------------------------------------------------------------------------------
+4. What are the three main inventory/compliance problems that you seek to solve with AWS Config?
+
+A - How do you become compliant, what compliance rules should you use, what tool should you use
+
+B - How do you fix the problem, what compliance rules are you using, when/how did you lose compliance
+
+C - Are you compliant, how do you fix the problem, who caused you to lose compliance
+
+D - Are you compliant, how do you fix the problem, when/how did you lose compliance
+
+Answer: D - Are you compliant, how do you fix the problem, when/how did you lose compliance
+
+-----------------------------------------------------------------------------------
+5. If you were a part of a small organization that ran most of their infrastructure on-premise and that
+ needed to maximize the use of their Ops team's time and minimize costs, what type of inventory/compliance management tool would you use?
+
+A - DevOps-focused
+
+B - Enterprise-focused
+
+C - Fully-integrated
+
+Answer: A - DevOps-focused
+
+-----------------------------------------------------------------------------------
+6. Why might you want to check the box to include deleted resources when searching in the Resource View?
+
+A - To troubleshoot problems on EC2 instances terminated by autoscaling policy
+
+B - To make sure AWS Config picked up resources you deleted before enabling it
+
+C - To test that AWS Config is properly recording deletion changes
+
+Answer: A - To troubleshoot problems on EC2 instances terminated by autoscaling policy
+
+-----------------------------------------------------------------------------------
+7. What are the valid values for compliance type when calling "put evaluations" on the AWS Config API?
+
+A - COMPLIANT, NON_COMPLIANT, and FAILED
+
+B - DELETED, DISCOVERED, FAILED, and OK
+
+C - COMPLIANT, NON_COMPLIANT, and NOT_APPLICABLE
+
+D - COMPLIANT and NON_COMPLIANT
+
+Answer: C - COMPLIANT, NON_COMPLIANT, and NOT_APPLICABLE
+
+-----------------------------------------------------------------------------------
+8. What AWS service(s) allow for evaluation of AWS Config Rules?
+
+A - Lambda
+
+B - Lambda, EC2
+
+C - AWS Config, Lambda
+
+D - Lambda, SNS, AWS Config
+
+Answer: C - AWS Config, Lambda
+
+-----------------------------------------------------------------------------------
+9. In what order should you utilize the different rule sources when looking to implement an AWS Config Rule?
+
+A - Built-in, custom, third-party
+
+B - Custom, built-in, third-party
+
+C - Built-in, third-party, custom
+
+D - Third-party, built-in, custom
+
+Answer: C - Built-in, third-party, custom
+
+-----------------------------------------------------------------------------------
+10. What's an example of a rule that would be appropriate for Continuous Compliance?
+
+A - Are EC2 instances tagged with an environment?
+
+B - Are EC2 instances launched in the correct subnet?
+
+C - Are EC2 instances in a specific VPC tagged with the same cost center as the VPC?
+
+D - Are EC2 instances launched with appropriate tenancy?
+
+Answer: C - Are EC2 instances in a specific VPC tagged with the same cost center as the VPC?
+
+----------------------------------------------------------------------------------
+11. When might a rule with high-impact corrections be a good choice for Continuous Compliance?
+
+A - If the corrections are extremely difficult to perform manually
+
+B - In all cases
+
+C - If the corrections only cause high impact in some isolated cases
+
+Answer: A - If the corrections are extremely difficult to perform manually
+
+-----------------------------------------------------------------------------------
+12. Enabling SNS notifications for AWS Config is optional. Why would you want to enable it?
+
+A - To reduce cost by destroying non-compliant resources
+
+B - To enforce compliance rules on your infrastructure
+
+C - To allow other systems to react to your infrastructure changes
+
+Answer: C - To allow other systems to react to your infrastructure changes
+
+-----------------------------------------------------------------------------------
+13. Why does the invokingEvent JSON for periodic rules contain so little information?
+
+A - Your lambda is expected to query for its resources each time it is triggered.
+
+B - So little has changed between executions of your lambda that there is very little in the JSON.
+
+C - The information that AWS Config sends in this JSON can be used to look up the information your lambda needs.
+
+D - Periodic AWS Config Rules are not fully implemented in AWS Config yet.
+
+Answer: A - Your lambda is expected to query for its resources each time it is triggered.
+
+-----------------------------------------------------------------------------------
+14. Name three common sources of compliance rules that you could implement in AWS Config.
+
+A - External standards, organizational standards, personal standards
+
+B - Organizational standards, AWS standards, national standards
+
+C - Personal standards, AWS standards, external standards
+
+Answer: A - External standards, organizational standards, personal standards
+
+-----------------------------------------------------------------------------------
+15. Name the main advantage of Continuous Compliance over Manual Compliance.
+
+A - Automatic notifications of compliance problems.
+
+B - No effort is required from an engineer to resolve the issue.
+
+C - Additional information about why the resource is non-compliant.
+
+Answer: B - No effort is required from an engineer to resolve the issue.
+
+-----------------------------------------------------------------------------------
+26. What might be a good use case for which to implement a periodic rule?
+
+A - Ensure MFA is enabled on the root account.
+
+B - Ensure that all IAM users have a username in the format <first>.<last>.
+
+C - Ensure all EC2 instances are part of a specific VPC.
+
+Answer: A - Ensure MFA is enabled on the root account.
+
+-----------------------------------------------------------------------------------
+17. When might you choose to have compliance notifications routed into SQS?
+
+A - If you want to store your messages for long periods of time
+
+B - If you want additional reliability or scalability of messages
+
+C - If you're looking for the simplest solution for Continuous Compliance
+
+Answer: B - If you want additional reliability or scalability of messages
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	5.Big Data on Amazon Web Services
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1. Which of the following is the largest enabler of the Big Data phenomenon?
+
+A - Relational databases
+
+B - Significant reduction in storage costs
+
+C - Commercial software
+
+D - Specialized hardware appliances
+
+Answer: B - Significant reduction in storage costs
+
+-----------------------------------------------------------------------------------
+2. The CAP Theorem speaks to which attributes of database systems?
+
+A - Consistency, Availability and Partition Tolerance
+
+B - Conjunction, ACIDity and Parallelism
+
+C - Construction, Availability and Pan-thread-safety
+
+D - Consistency, Angularity and Push-pull
+
+Answer: A - Consistency, Availability and Partition Tolerance
+
+-----------------------------------------------------------------------------------
+3. The Amazon Web Services platform supports all of the following database platforms: relational, NoSQL, data warehouse and Microsoft Access.
+
+A - True
+
+B - False
+
+Answer: B - False
+
+-----------------------------------------------------------------------------------
+4. Which of the following products is *not* relevant to working with the AWS Big Data stack?
+
+A - SQL Workbench/J
+
+B - Anti-Virus client
+
+C - PuTTY (SSH client)
+
+D - S3 Browser
+
+Answer: B - Anti-Virus client
+
+-----------------------------------------------------------------------------------
+5. Pipelines can be built based on templates, or from scratch.
+
+A - True
+
+B - False
+
+Answer: A - True
+
+----------------------------------------------------------------------------------
+6. Apache Hive provides an abstraction layer over DynamoDB.
+
+A - True
+
+B - False
+
+Answer: B - False
+
+----------------------------------------------------------------------------------
+7. Amazon S3 integrates with Elastic MapReduce, DynamoDB and Redshift.
+
+A - True
+
+B - False
+
+Answer: A - True
+-----------------------------------------------------------------------------------
+8. Which of the following terms does Jaspersoft use to refer to its semantic data model?
+
+A - Model
+
+B - Universe
+
+C - Data Source View
+
+D - Domain
+
+Answer: D - Domain
+
+-----------------------------------------------------------------------------------
+9. Which of the following technologies is *not* supported by Redshift?
+
+A - Column-oriented data storage
+
+B - NoSQL storage and query operation
+
+C - Massively Parallel Processing (MPP) query processing
+
+D - SQL query compatibility
+
+Answer: B - NoSQL storage and query operation
+
+-----------------------------------------------------------------------------------
+10. Amazon Kinesis is streaming data platform based on Apache Kafka and Storm.
+
+A - False
+
+B - True
+
+Answer: A - False
+
+-----------------------------------------------------------------------------------
+11. Big Data tools can be used on-premises or in the cloud.
+
+A - False
+
+B - True
+
+Answer: B - True
+
+-----------------------------------------------------------------------------------
+12. Database clients can connect to Redshift using ODBC and JDBC drivers for Postgres.
+
+A - True
+
+B - False
+
+Answer: A - True
+
+-----------------------------------------------------------------------------------
+13. Cloudera Impala is included on EMR clusters by default.
+
+A - True
+
+B - False
+
+Answer: B - False
+
+-----------------------------------------------------------------------------------
+14. EC2 stands for:
+
+A - External Cloud Connectivity
+
+B - Elastic Compute Cloud
+
+C - Energy Conserving CPU
+
+D - Enhanced Capacity, Squared
+
+Answer: B - Elastic Compute Cloud
+
+-----------------------------------------------------------------------------------
+15. How does DynamoDB display data rows of differing schema together?
+
+A - It displays common keys as distinct columns in a table, and the rest in an "Other" column
+
+B - It combines all keys from all rows as if they were common to each row
+
+C - It omits any key absent from any row
+
+D - It displays data in multiple frids, each with differing column headers
+
+Answer: B - It combines all keys from all rows as if they were common to each row
+
+-----------------------------------------------------------------------------------
+16. Which of the following services is a component of the AWS Big Data Stack?
+
+A - Redshift
+
+B - VPC
+
+C - Cloud Watch
+
+D - Glacier
+
+Answer: A - Redshift
+
+----------------------------------------------------------------------------------
+17. Amazon offers a code library that allows developers to build their own Kinesis data connectors.
+
+A - False
+
+B - True
+
+Answer: B - True
+
+-----------------------------------------------------------------------------------
+18. Designing Jaspersoft reports is done in a standalone desktop application.
+
+A - True
+
+B - False
+
+Answer: B - False
+
+-----------------------------------------------------------------------------------
+19. Which of the following is *not* directly supported as a Pipeline data source or destination?
+
+A - Microsoft SQL Server on Relational Database Service (RDS)
+
+B - DynamoDB
+
+C - Redshift
+
+D - MySQL on Relational Database Service (RDS)
+
+Answer: A - Microsoft SQL Server on Relational Database Service (RDS)
+
+-----------------------------------------------------------------------------------
+20. Which of the following Hadoop vendor's distribution is supported on Elastic MapReduce?
+
+A - Cloudera
+
+B - Hortonworks
+
+C - MapR
+
+D - Pivotal
+
+Answer: C - MapR
+
+-----------------------------------------------------------------------------------
+21. Which of the following Hadoop distribution components does Elastic MapReduce omit?
+
+A - MapReduce
+
+B - Sqoop
+
+C - Hive
+
+D - Pig
+
+Answer: B - Sqoop
+
+-----------------------------------------------------------------------------------
+22. What is the name of Apache Pig's programming language?
+
+A - Pig Latin
+
+B - PQL
+
+C - PigML
+
+D - Pig.js
+
+Answer: A - Pig Latin
+
+-----------------------------------------------------------------------------------
+23. Amazon CloudFormation can be used to provision Japsersoft instances.
+
+A - False
+
+B - True
+
+Answer:  B - True
+
+-----------------------------------------------------------------------------------
+24. You can create a key pair in the AWS Management Console.
+
+A - True
+
+B - False
+
+Answer: A - True
+
+-----------------------------------------------------------------------------------
+25. Saving a Pipeline causes a validation check to be run on it.
+
+A - False
+
+B - True
+
+Answer: B - True
+
+-----------------------------------------------------------------------------------
+26. Files stored in S3 can be referenced by URL.
+
+A - True
+
+B - False
+
+Answer: A - True
+
+-----------------------------------------------------------------------------------
+27. Kinesis has data connectors for all Amazon components except:
+
+A - MySQL Relational Database Service (RDS)
+
+B - DynamoDB
+
+C - Redshift
+
+D - EMR
+
+Answer: A - MySQL Relational Database Service (RDS)
+
+-----------------------------------------------------------------------------------
+28. The purpose of a DynamoDB secondary indexes is to:
+
+A - Allow for fast searches on attributes beyond hash and range keys
+
+B - Allow for querying data using SQL
+
+C - Allow indexes to be added after table creation
+
+D - Make data available on more nodes for distributed access
+
+Answer: A - Allow for fast searches on attributes beyond hash and range keys
+
+-----------------------------------------------------------------------------------
+29. Redshift uses relational database technology.
+
+A - True
+
+B - False
+
+Answer: A - True
+-----------------------------------------------------------------------------------
+30. Which of the following is an effective method for monitoring running Data Pipeline jobs?
+
+A - Run the pipeline in Eclipse
+
+B - Set breakpoints in Pipeline script file
+
+C - Set email alerts for activity nodes
+
+D - Ensure no steps in status page stay in WAITING_FOR_RUNNER or WAITING_ON_DEPENDENCIES state too long
+
+Answer: D - Ensure no steps in status page stay in WAITING_FOR_RUNNER or WAITING_ON_DEPENDENCIES state too long
+
+-----------------------------------------------------------------------------------
+31. Which of the following is the largest enabler of the Big Data phenomenon?
+
+A - Commercial software
+
+B - Relational databases
+
+C - Significant reduction in storage costs
+
+D - Specialized hardware appliances
+
+Answer: C - Significant reduction in storage costs
+
+-----------------------------------------------------------------------------------
+32. Which of the following does S3 Browser need to connect to your S3 account?
+
+A - Public and private key pair
+
+B - Access key ID and secret access key
+
+C - AWS username and password
+
+D - Bucket name and folder name
+
+Answer: B - Access key ID and secret access key
+
+-----------------------------------------------------------------------------------
+33. Impala provides interactive (non-batch) SQL query over data in:
+
+A - The Hadoop Distributed File System (HDFS)
+
+B - Relational Database Service (RDS)
+
+C - DynamoDB
+
+D - Redshift
+
+Answer: A - The Hadoop Distributed File System (HDFS)
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------

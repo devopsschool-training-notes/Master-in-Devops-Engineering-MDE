@@ -1,0 +1,2855 @@
+	4. Topic Name - AWS Certified SysOps Administrator - Associate 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	2. Amazon Web Services (AWS) Fundamentals for System Administrators
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1. Which of the following is not an AWS security method?
+	
+	A - Active Directory Authentication
+	
+	B - IAM
+
+	C - Security Groups
+
+	D - VPC
+
+Answer: A - Active Directory Authentication
+
+--------------------------------------------------------------------------------
+2. AWS infrastructure is built in such a way that it will never experience a failure.
+	
+	A - False
+	
+	B - True
+
+Answer: A - False
+
+--------------------------------------------------------------------------------
+3. You are allowed to export AWS provided AMIs.
+	
+	A - True
+	
+	B - False
+
+Answer: B - False
+
+--------------------------------------------------------------------------------
+4. The price of an instance varies depending on the region it is provisioned in.
+	
+	A - False
+	
+	B - True
+
+Answer: B - True
+
+--------------------------------------------------------------------------------
+5. How many hours of EC2 instances do you get per month with the free tier?
+	
+	A - 740
+	
+	B - 720
+
+	C - Unlimited
+
+	D - 750
+
+Answer: D - 750
+
+---------------------------------------------------------------------------------
+6. How many essential characteristics does cloud have?
+	
+	A - 7
+	
+	B - 3
+
+	C - 5
+
+	D - 4
+
+Answer: C - 5
+
+--------------------------------------------------------------------------------
+7. Route 53 has a:
+	
+	A - 99.9% uptime SLA and is available in each AWS Region
+	
+	B - 99.99% uptime SLA and is available in strategic AWS EdgeLocations
+
+	C - 99.999% uptime SLA and is available in all AWS EdgeLocations
+
+	D - 100% uptime SLA and is available in all AWS EdgeLocations
+
+Answer: D - 100% uptime SLA and is available in all AWS EdgeLocations
+
+
+--------------------------------------------------------------------------------
+8. Which of the following CloudFront statements is correct?
+	
+	A - CloudFront is a global Content Delivery Network that caches static content.
+	
+	B - None of these
+
+	C - CloudFront is an automation tool that deploys web content and synchronizes it.
+
+	D - CloudFront is available in all AWS EdgeLocations, caches static content and proxy dynamic content.
+
+Answer: D - CloudFront is available in all AWS EdgeLocations, caches static content and proxy dynamic content.
+
+--------------------------------------------------------------------------------
+9. How many total Regions does AWS currently have?
+	
+	A - 11
+	
+	B - 8
+
+	C - 10
+
+	D - 9
+
+Answer: A - 11
+
+--------------------------------------------------------------------------------
+10. EBS storage supports differential snapshopts
+	
+	A - False
+	
+	B - True
+
+Answer: A - False
+
+--------------------------------------------------------------------------------
+11. Which of the following is not a cloud service model
+	
+	A - DRaaS
+	
+	B - SaaS
+
+	C - PaaS
+
+	D - IaaS
+
+Answer: A - DRaaS
+
+--------------------------------------------------------------------------------
+12. Which was the first AWS service to launch?
+	
+	A - S2
+	
+	B - S3
+
+	C - EC2
+
+	D - Web Hosting
+
+Answer: B - S3
+
+--------------------------------------------------------------------------------
+13. An 80% annual utilization instance is most cost effective if consumed ___ .
+	
+	A - Heavy RI
+	
+	B - Light RI
+
+	C - On-demand
+
+	D - Medium RI
+
+Answer: D - Medium RI
+
+--------------------------------------------------------------------------------
+14. Your credit card will be billed if you use more than the resources assigned to the free tier.
+	
+	A - True
+	
+	B - False
+
+Answer: A - True
+
+---------------------------------------------------------------------------------
+15. Security groups are:
+	
+	A - lbject level traffic firewall and stateless.
+	
+	B - object level traffic firewall and stateful.
+
+	C - subnet level traffic firewall and stateful.
+
+Answer: B - object level traffic firewall and stateful.
+
+--------------------------------------------------------------------------------
+16. Glacier can be used ___ .
+	
+	A - To build SaaS applications
+	
+	B - To backup my files directly from Windows
+
+	C - To initiate a backup using the Glacier agent
+
+	D - By third party software as a platform
+
+Answer: D - By third party software as a platform
+
+
+--------------------------------------------------------------------------------
+17. Which of the following is not supported by Elastic Beanstalk?
+	
+	A - IIS
+	
+	B - Ruby
+
+	C - Cassandra
+
+Answer: C - Cassandra
+
+--------------------------------------------------------------------------------
+18. With RDS databases you can bring your own license
+	
+	A - False
+	
+	B - True
+
+Answer: B - True
+
+--------------------------------------------------------------------------------
+19. Ephemeral storage is:
+	
+	A - temporary storage, free storage and data persists on reboot.
+	
+	B - permanent local storage, free storage and data is lost on termination.
+
+	C - permanent local storage, free storage and data persists on termination.
+
+	D - temporary storage, free storage and data does not persists on reboot.
+
+Answer: A - temporary storage, free storage and data persists on reboot.
+
+--------------------------------------------------------------------------------
+20. How many emails can you send per day using AWS services?
+	
+	A - 5000
+	
+	B - 10000
+
+	C - 15000
+
+	D - 1000
+
+Answer: B - 10000
+
+--------------------------------------------------------------------------------
+21. You can use the free tier for:
+	
+	A - 12 months
+	
+	B - Free tier is always available
+
+	C - 3 months
+
+	D - 6 months
+
+Answer: A - 12 months
+
+--------------------------------------------------------------------------------
+22. One ECU is based on which generation of Intel processor? 
+	
+	A - 2008 Xeon
+	
+	B - Opteron
+
+	C - Nehalem
+
+	D - Core2
+
+Answer: B - Opteron
+
+--------------------------------------------------------------------------------
+23. Which of the following is not an EC2 instance type?
+	
+	A - network optimized
+	
+	B - compute optimized
+
+	C - micro
+
+	D - memory optimized
+
+Answer: A - network optimized
+
+---------------------------------------------------------------------------------
+24. Simple Compute Service (SCS) is an AWS simple service.
+	
+	A - False
+	
+	B - True
+
+Answer: A - False
+
+--------------------------------------------------------------------------------
+25. Elastic load balancers (ELB) are:
+	
+	A - a single region and multiple availability zones.
+	
+	B - multiple regions and a single availability zone.
+
+	C - multiple regions and multiple availability zones.
+
+	D - a single region and a single availability zone.
+
+Answer: A - a single region and multiple availability zones.
+
+--------------------------------------------------------------------------------
+26. Simple Notification Service (SNS) supports the following:
+	
+	A - HTTP, HTTPS, SMS, Email, Email-JSON, eFax
+	
+	B - HTTP, HTTPS, SMS, Email, phone call
+
+	C - HTTP, HTTPS, SMS, Email, Email-JSON
+
+	D - HTTP, HTTPS, SMS, Email
+
+Answer: C - HTTP, HTTPS, SMS, Email, Email-JSON
+
+--------------------------------------------------------------------------------
+27. CloudFront works with AWS services and non-AWS services.
+	
+	A - False
+	
+	B - True
+
+Answer: B - True
+
+--------------------------------------------------------------------------------
+28. EBS storage is:
+	
+	A - persistent and not internet accessible.
+	
+	B - persistent and internet accessible.
+
+	C - non-persistent and internet accessible.
+
+	D - non-persistent and not internet accessible.
+
+Answer: A - persistent and not internet accessible.
+
+--------------------------------------------------------------------------------
+29. The Amazon API allows for authentication.
+	
+	A - False
+	
+	B - True
+
+Answer: B - True
+
+--------------------------------------------------------------------------------
+30. Which of the following is not a current AWS Certification track?
+	
+	A - Cloud Architect
+	
+	B - Solution Architect
+
+	C - SysOps Administrator
+
+	D - Developper
+
+Answer: A - Cloud Architect
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	3. Optimizing and Managing Distributed Systems on AWS
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1. Custom CloudWatch metrics must be created in the Console before sending in data points.
+	
+	A - False
+	
+	B - True
+
+Answer: A - False
+
+--------------------------------------------------------------------------------
+2. Which of these is a characteristic of an ElastiCache cluster?
+	
+	A - Spans availability zones within a single region
+	
+	B - Has a maintenance window
+
+	C - Auto-scales based on usage
+
+	D - Cache nodes of different sizes
+
+Answer: B - Has a maintenance window
+
+---------------------------------------------------------------------------------
+3. The content is pushed to edge locations from the origin servers.
+	
+	A - True
+	
+	B - False
+
+Answer: B - False
+
+--------------------------------------------------------------------------------
+4. Elastic Beanstalk is a good fit for you if you:
+	
+	A - All of the above
+	
+	B - have a web application
+
+	C - want a user interface for Auto Scaling settings
+
+	D - want components to be managed as a group
+
+Answer: A - All of the above
+
+--------------------------------------------------------------------------------
+5. What technology forms the foundation of Amazon OpsWorks?
+	
+	A - Puppet
+	
+	B - DevOps
+
+	C - CloudFormation
+
+	D - Chef
+
+Answer: D - Chef
+
+--------------------------------------------------------------------------------
+6. You can not only send in a single data point to CloudWatch, but also aggregated statistics.
+	
+	A - False
+	
+	B - True
+
+Answer: B - True
+
+--------------------------------------------------------------------------------
+7. Which of the below is NOT an way to scale servers in an Auto Scaling policy?
+	
+	A - Multiplier change
+	
+	B - Change in capacity
+
+	C - Exact capacity
+
+	D - Percentage change
+
+Answer: A - Multiplier change
+
+---------------------------------------------------------------------------------
+8. How do you invalidate content in a CloudFront distribution?
+	
+	A - Navigate to the edge location viewer and choose which files to invalidate
+	
+	B - Use SNS to send notifications to each edge location
+
+	C - Use invalidation tab of distribution properties page, enter the path of the object to invalidate
+
+	D - Browse to the origin server and click the "invalidate" button next to the object
+
+Answer: C - Use invalidation tab of distribution properties page, enter the path of the object to invalidate
+
+
+--------------------------------------------------------------------------------
+9. What is something that you typically would NOT want to store in cache?
+	
+	A - Database results
+	
+	B - Results of complex calculations
+
+	C - Master transactional data
+
+	D - HTML snippets
+
+Answer: C - Master transactional data
+
+--------------------------------------------------------------------------------
+10. What's an example of a CloudFormation template change that won't disrupt the running environment?
+	
+	A - Modifying the load balancer settings
+	
+	B - Changing the database engine in RDS
+
+	C - Changing the EC2 server size
+
+	D - Adding a CloudWatch alarm
+
+Answer: D - Adding a CloudWatch alarm
+
+--------------------------------------------------------------------------------
+11. What is one benefit of adding CDN services to a distributed cloud system?
+	
+	A - Lower latency for application users
+	
+	B - Better availability of static content
+
+	C - All of the above
+
+	D - Less load on web application servers
+
+Answer: C - All of the above
+
+--------------------------------------------------------------------------------
+12. What actions can a CloudWatch alarm perform?
+	
+	A - All of the above
+	
+	B - Turn off a server
+
+	C - Send an email message
+
+	D - Scale up an auto scaling group
+
+Answer: A - All of the above
+
+--------------------------------------------------------------------------------
+13. Which of these components are NOT provisioned with Elastic Beanstalk applications?
+	
+	A - CloudWatch alarms
+	
+	B - ElastiCache clusters
+
+	C - Elastic Load Balancer
+
+	D - EC2 servers with Auto Scaling
+
+Answer: B - ElastiCache clusters
+
+---------------------------------------------------------------------------------
+14. Consistent hashing relies on the cache server routing cache requests to the right server.
+	
+	A - True
+	
+	B - False
+
+Answer: B - False
+
+--------------------------------------------------------------------------------
+15. What is the point of a private distribution in CloudFront?
+	
+	A - Create a distribution that runs on EC2 servers
+	
+	B - Restrict access to content
+
+	C - None of the above
+
+	D - Push content to a subset of edge locations
+
+Answer: B - Restrict access to content
+
+--------------------------------------------------------------------------------
+16. What does it mean to "warm up" an ElastiCache node?
+	
+	A - Connect it to another cache node for a hot backup
+	
+	B - Prepare a node for maintenance
+
+	C - Preload data into the cache before the client requests it
+
+	D - Start it before it's needed so that it's online and ready
+
+Answer: C - Preload data into the cache before the client requests it
+
+--------------------------------------------------------------------------------
+17. Which of the below is NOT a way for new content to make its way to the CloudFront edge location?
+	
+	A - Content exipration occurs
+	
+	B - Adding a new object to the origin server
+
+	C - Copy a file to the edge location service
+
+	D - Performing an invalidation of the object
+
+Answer: C - Copy a file to the edge location service
+
+--------------------------------------------------------------------------------
+18. What is NOT a question that I can answer by using Amazon CloudWatch?
+	
+	A - How many orders have been received by website today?
+	
+	B - What was the average write units in DynamoDB last month?
+
+	C - None of the above
+
+	D - What is the CPU utilization of a server right now?
+
+Answer: B - What was the average write units in DynamoDB last month?
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	4. AWS Certified SysOps Administrator - Associate
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1. AWS ELB is a:
+	
+	A - Layer 4 load balancer
+	
+	B - Layer 7 load balancer
+
+	C - Layer 6 load balancer
+
+	D - Layer 5 load balancer
+
+Answer: B - Layer 7 load balancer
+
+--------------------------------------------------------------------------------
+2. How many IP addresses that AWS reserve per subnet?
+	
+	A - 4
+	
+	B - 3
+
+	C - 5
+
+	D - 6
+
+Answer: C - 5
+
+
+---------------------------------------------------------------------------------
+3. Where are EBS snapshots stored?
+	
+	A - Amazon Elastic File System (EFS)
+	
+	B - Amazon S3 RRS
+
+	C - Amazon S3
+
+	D - Amazon S3 Glacier
+
+Answer: C - Amazon S3
+
+--------------------------------------------------------------------------------
+4. Which of the following is not an EBS storage type?
+	
+	A - Provisioned IOPS
+	
+	B - GP-SSD
+
+	C - Magnetic
+
+	D - Instance Store
+
+Answer: D - Instance Store
+
+--------------------------------------------------------------------------------
+5. What is the maximum number of security groups that can be applied per instance?
+	
+	A - 100
+	
+	B - 5
+
+	C - 10
+
+	D - 50
+
+Answer: B - 5
+
+--------------------------------------------------------------------------------
+6. Which of the following is not an Amazon S3 feature?
+	
+	A - Versioning
+	
+	B - Snapshots
+
+	C - Cross Region Replication
+
+	D - Data lifecycle management
+
+Answer: B - Snapshots
+
+--------------------------------------------------------------------------------
+7. Which of the following is not a current AWS Certification track?
+	
+	A - Cloud Architect
+	
+	B - Developer
+
+	C - Solution Architect
+
+	D - SysOps Administrator
+
+Answer: A - Cloud Architect
+
+---------------------------------------------------------------------------------
+8. Which of the following is not a VPN type supported at the AWS platform level?
+	
+	A - Remote Office
+	
+	B - Direct Connect
+
+	C - Site-to-Site
+
+	D - VPC Peering
+
+Answer: A - Remote Office
+
+--------------------------------------------------------------------------------
+9. Reserved instances also reserve capacity:
+	
+	A - True
+	
+	B - False
+
+Answer: A - True
+
+--------------------------------------------------------------------------------
+10. In order to point your own domain to your AWS static website hosting:
+	
+	A - You must host your domain on Amazon Route S3
+	
+	B - You cannot point an external doimain to AWS S3 static website hosting
+
+	C - You can host your DNS anywhere and point to S3 website
+
+Answer: C - You can host your DNS anywhere and point to S3 website
+
+--------------------------------------------------------------------------------
+11. Best practices dictate that you only use the root account for very specific functions. 
+	
+	A - False
+	
+	B - True
+
+Answer: A - False
+
+--------------------------------------------------------------------------------
+12. What methods does Auto Scaling support for configuring an EC2 instance during deployment?
+	
+	A - Bootstrapping
+	
+	B - Scripting
+
+	C - All of the above
+
+	D - Gold image
+
+Answer: C - All of the above
+
+--------------------------------------------------------------------------------
+13. Security Groups are:
+	
+	A - Stateless - traffic strictly filtered
+	
+	B - Stateless - return traffic not allowed
+
+	C - Stateful - return traffic allowed
+
+	D - Stateful - traffic strictly filtered
+
+Answer: C - Stateful - return traffic allowed
+
+---------------------------------------------------------------------------------
+14. Read replicas are synchronously replicated:
+	
+	A - False
+	
+	B - True
+
+Answer: A - False
+
+--------------------------------------------------------------------------------
+15. Multiple ELBs can be deployed per region:
+	
+	A - True
+	
+	B - False
+
+Answer: A - True
+
+--------------------------------------------------------------------------------
+16. What CIDR block range can be configured with a VPC?
+	
+	A - 14 - 26
+	
+	B - 16 - 28
+
+	C - 18 - 32
+
+	D - 15 - 36
+
+Answer: B - 16 - 28
+
+--------------------------------------------------------------------------------
+17. Amazon S3 and S3 RRS are built with a durability of:
+	
+	A - Standard: 8 nines, RRS: 3 nines
+	
+	B - Standard: 11 nines, RRS: 4 nines
+
+	C - Standard: 10 nines, RRS: 4 nines
+
+	D - Standard: 12 nines, RRS: 3 nines
+
+Answer: B - Standard: 11 nines, RRS: 4 nines
+
+--------------------------------------------------------------------------------
+18. Custom metrics are not currently supported with CloudWatch:
+	
+	A - True
+	
+	B - False
+
+Answer: B - False
+
+---------------------------------------------------------------------------------
+19. What is the maximum IOPS/volume for Provisioned IOPS?
+	
+	A - 48,000
+	
+	B - 20,000
+
+	C - 64,000
+
+	D - 10,000
+
+Answer: B - 20,000
+
+--------------------------------------------------------------------------------
+20. VPC Peering allows transitive peering:
+	
+	A - True
+	
+	B - False
+
+Answer: B - False
+
+--------------------------------------------------------------------------------
+21. Which of the following are valid EBS backup options? 
+	
+	A - API integration
+	
+	B - Snapshots
+
+	C - All of the above
+
+	D - Agent-based approach
+
+Answer: C - All of the above
+
+--------------------------------------------------------------------------------
+22. Which of the following is not a supported RDS database?
+	
+	A - DB2
+	
+	B - Amazon Aurora
+
+	C - MySQL
+
+	D - Oracle
+
+Answer: A - DB2
+
+--------------------------------------------------------------------------------
+23. AWS ELB's architecture is region wide.
+	
+	A - True
+	
+	B - False 
+
+Answer: A - True
+
+--------------------------------------------------------------------------------
+24. PRDS does not have reserved instance pricing similar to EC2:
+	
+	A - False
+	
+	B - True
+
+Answer: A - False
+
+---------------------------------------------------------------------------------
+25. Amazon S3 is a file system:
+	
+	A - True
+	
+	B - False
+
+Answer: B - False
+
+--------------------------------------------------------------------------------
+26. Port redundancy is available by default for:
+	
+	A - Direct Connect
+	
+	B - Internet-based VPN
+
+Answer: B - Internet-based VPN
+
+--------------------------------------------------------------------------------
+27. Which of the following is not a category that Trusted Advisor can report against?
+	
+	A - User Experience
+	
+	B - Performance
+
+	C - Cost
+
+	D - Security
+
+Answer: A - User Experience
+
+--------------------------------------------------------------------------------
+28. What is the default delay between EC2 instance deployment when using Auto Scaling groups?
+	
+	A - 200 seconds
+	
+	B - 100 seconds
+
+	C - 50 seconds
+
+	D - 300 seconds
+
+Answer: D - 300 seconds
+
+--------------------------------------------------------------------------------
+29. EBS volumes can be transferred between AZs?
+	
+	A - False
+	
+	B - True
+
+Answer: B - True
+
+---------------------------------------------------------------------------------
+30. Which of the following is not an Auto Scaling Component?
+	
+	A - Amazon CloudWatch
+	
+	B - Auto Scaling Groups
+
+	C - Scaling Plans
+
+	D - Launch Configuration
+
+Answer: A - Amazon CloudWatch
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	5. AWS Security Operations: Securing Core AWS Infrastructure Services
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1. How can SSL offload be customized for specific customer needs?
+	
+	A - Enable encryption using HTTPS only listeners.
+	
+	B - Upload a customer security certificate.
+
+	C - Create a custom security policy.
+
+	D - Deploy IAM policys per customer.
+
+Answer: C - Create a custom security policy.
+
+--------------------------------------------------------------------------------
+2. What virtual multifactor authentication protocol choices is required for the root account ?
+	
+	A - The virtual devices must support the time-based, one-time password standard
+	
+	B - Open ID connect
+
+	C - SMS MFA
+
+	D - SAML 2.0
+
+Answer: A - The virtual devices must support the time-based, one-time password standard
+
+---------------------------------------------------------------------------------
+3. Each AWS account has two unique IDs. Name them.
+	
+	A - Username and account ID
+	
+	B - Canonical ID and password
+
+	C - AWS Username and password
+
+	D - Canonical ID and account ID
+
+Answer: D - Canonical ID and account ID
+
+--------------------------------------------------------------------------------
+4. What security feature ensures no compromise of session keys during operation?
+	
+	A - Perfect forward secrecy
+	
+	B - Sticky sessions
+
+	C - Server order preference
+
+	D - SSL offload
+
+Answer: A - Perfect forward secrecy
+
+--------------------------------------------------------------------------------
+5. When EBS volumes are created, who has access?
+	
+	A - All power users
+	
+	B - The AWS account that created the volume
+
+	C - All tenant administrators
+
+	D - By default any IAM user
+
+Answer: B - The AWS account that created the volume
+
+--------------------------------------------------------------------------------
+6. What is the benefit of nesting IAM groups at AWS?
+	
+	A - Nested groups override any default group listings.
+	
+	B - Nested group members have easier access to more resources.
+
+	C - IAM groups can't be nested.
+
+	D - Allowing users to belong to multiple groups.
+
+Answer: C - IAM groups can't be nested.
+
+--------------------------------------------------------------------------------
+7. To control access to storage what type of policy should be deployed?
+	
+	A - In-line
+	
+	B - Tag based
+
+	C - Resource-based
+
+	D - Managed policy
+
+Answer: C - Resource-based
+
+---------------------------------------------------------------------------------
+8. What network component cannot be changed on an instance?
+	
+	A - The default network interface (eth0)
+	
+	B - The Mac address
+
+	C - The public IPv4 address
+
+	D - The primary IPv4 address
+
+Answer: A - The default network interface (eth0)
+
+--------------------------------------------------------------------------------
+9. What is the key feature of an elastic network interface?
+	
+	A - Elastic network interfaces increase bandwidth and decrease latency.
+	
+	B - Elastic network interfaces provide automatic failover.
+
+	C - Elastic network interfaces provide a static public IP address.
+
+	D - When an elastic network interface moves to a new instance, network traffic is redirected automatically.
+
+Answer: D - When an elastic network interface moves to a new instance, network traffic is redirected automatically.
+
+--------------------------------------------------------------------------------
+10. How can you effectively monitor your load balancer operation?
+	
+	A - Deploying AWS Config
+	
+	B - Creating health checks via Route 53
+
+	C - Reviewing CloudTrail reports
+
+	D - Using CloudWatch metrics
+
+Answer: D - Using CloudWatch metrics
+
+--------------------------------------------------------------------------------
+11. When designing IAM goals for AWS deployments access to resources should be granted based on what criteria?
+	
+	A - Access granted based on least privilege
+	
+	B - Access granted based on administrative requirements
+
+	C - Access granted based on application types
+
+	D - Access granted based on corporate privileges currently deployed on site
+
+Answer: A - Access granted based on least privilege
+
+--------------------------------------------------------------------------------
+12. What key component is required to access the AWS management console?
+	
+	A - A valid password
+	
+	B - Install the AWS management console add-in
+
+	C - An identity and access management policy
+
+	D - An access key
+
+Answer: A - A valid password
+
+--------------------------------------------------------------------------------
+13. When is IAM policy checked?
+	
+	A - Every time access as requested
+	
+	B - Every 12 hours
+
+	C - On a need for access basis
+
+	D - Every 15 minutes
+
+Answer: A - Every time access as requested
+
+---------------------------------------------------------------------------------
+14. What two types of hosts are supported by the application load balancer?
+	
+	A - Layer 7 Applications
+	
+	B - Both instances and containers
+
+	C - IAM groups and target groups
+
+	D - Both Linux and Windows instances
+
+Answer: B - Both instances and containers
+
+--------------------------------------------------------------------------------
+15. What is the definition of a VPC at AWS?
+	
+	A - Isolated network within the AWS cloud
+	
+	B - Flat virtual network shared by all AWS customers
+
+	C - Software defined network with predefined address ranges
+
+	D - Software defined network hosted by a single availability zone
+
+Answer: A - Isolated network within the AWS cloud
+
+--------------------------------------------------------------------------------
+16. What key cloud feature does Route 53 integrate with at AWS?
+	
+	A - Elastic load balancer's
+	
+	B - CloudWatch
+
+	C - Health checks
+
+	D - CloudTrail
+
+Answer: C - Health checks
+
+--------------------------------------------------------------------------------
+17. By default how do subnets handle routing requests within a VPC?
+	
+	A - Subnets within the VPC can route to each other.
+	
+	B - Custom route tables must be created from private and public roads.
+
+	C - Custom route tables must be created for all private routes.
+
+	D - Route tables are automatically created based on IP address range selected.
+
+Answer: A - Subnets within the VPC can route to each other.
+
+--------------------------------------------------------------------------------
+18. How do federated users gain access to AWS resources?
+	
+	A - Long-term security credentials assigned to the user secret access key.
+	
+	B - Permissions are attached to the IAM user or group associated with the corporate user.
+
+	C - Permissions are defined for federated users using IAM roles.
+
+	D - Short-term security credentials assigned to the user secret access key.
+
+Answer: C - Permissions are defined for federated users using IAM roles.
+
+---------------------------------------------------------------------------------
+19. What network levels can the classic ELB function up to?
+	
+	A - Level 4
+	
+	B - All network levels
+
+	C - Level 7
+
+	D - Only the application level
+
+Answer: A - Level 4
+
+--------------------------------------------------------------------------------
+20. What is the key feature of an elastic IP address?
+	
+	A - The assigned static IP address can be moved from one location to another.
+	
+	B - Elastic network addresses can be both public or private addresses.
+
+	C - The static IP address is linked to your account.
+
+	D - Can be assigned to multiple network locations at the same time.
+
+Answer: A - The assigned static IP address can be moved from one location to another.
+
+--------------------------------------------------------------------------------
+21. How do you disable your root account at AWS?
+	
+	A - You can't disable your account.
+	
+	B - Set up detailed billing policies.
+
+	C - SMS Multifactor authentication
+
+	D - IAM policies
+
+Answer: A - You can't disable your account.
+
+--------------------------------------------------------------------------------
+22. What type of networks can the classic ELB operate on?
+	
+	A - On site to site VPNs only
+	
+	B - Both public and private networks up to Layer 4
+
+	C - Only public networks up to Layer 4
+
+	D - Only private networks up to Layer 4
+
+Answer: B - Both public and private networks up to Layer 4
+
+--------------------------------------------------------------------------------
+23. What is the distinctive difference between dedicated instances and dedicated hosts?
+	
+	A - Single tenancy
+	
+	B - Full access to the CPU cores
+
+	C - Full access to the hardware resource
+
+	D - Physical hardware isolation
+
+Answer: B - Full access to the CPU cores
+
+--------------------------------------------------------------------------------
+24. If resources at AWS have been created by a no other account, what feature can be enabled to share access to resources?
+	
+	A - Cross Account Access
+	
+	B - Creating additional accounts for access to the required resources
+
+	C - Enabling consolidated billing
+
+	D - IAM role policies
+
+	E - Administrative IAM policies linked to required resources
+
+Answer: A - Cross Account Access
+
+---------------------------------------------------------------------------------
+25. Where can details be reviewed regarding user passwords?
+	
+	A - Review CloudWatch alerts
+	
+	B - Viewing the Credential Report
+
+	C - Through the properties of the users account
+
+	D - Analysis of CloudTrail reports
+
+Answer: B - Viewing the Credential Report
+
+--------------------------------------------------------------------------------
+26. What types of subnets can be chosen within your VPC?
+	
+	A - Public and hybrid subnets
+	
+	B - Private subnets
+
+	C - Both public and private subnets can be created.
+
+	D - Hybrid subnets
+
+Answer: C - Both public and private subnets can be created.
+
+--------------------------------------------------------------------------------
+27. In front of what does the Web Application Firewall sit?
+	
+	A - ALB and S3
+	
+	B - S3 and ALB
+
+	C - EC2 and S3
+
+	D - ALB and CF
+
+Answer: D - ALB and CF
+
+--------------------------------------------------------------------------------
+28. What is the benefit of deploying an in-line policy?
+	
+	A - If the principles deleted, the policy is still deployed.
+	
+	B - Maintain a strict one to one relationship between the policy and selected principal.
+
+	C - In-line policies are created for the customer by AWS.
+
+	D - In-line policies can be deployed to multiple identities at the same time.
+
+Answer: B - Maintain a strict one to one relationship between the policy and selected principal.
+
+--------------------------------------------------------------------------------
+29. To access resources or users outside of AWS what must be attached to your subnet?
+	
+	A - Defined network access control lists
+	
+	B - Security groups
+
+	C - Elastic IP addresses
+
+	D - A gateway device
+
+Answer: D - A gateway device
+
+---------------------------------------------------------------------------------
+30. What is the purpose of elastic load-balancing?
+	
+	A - Balancing the storage load on the elastic file system
+	
+	B - Balancing performance of Web servers
+
+	C - Distribution of incoming traffic across multiple instances
+
+	D - Scaling instances up or down based on demand
+
+Answer: C - Distribution of incoming traffic across multiple instances
+
+--------------------------------------------------------------------------------
+31. What type of network must a dedicated instance be deployed on?
+	
+	A - In a VPC
+	
+	B - Private only
+
+	C - Public only
+
+	D - In a Classic EC2 network
+
+Answer: A - In a VPC
+
+--------------------------------------------------------------------------------
+32. What is the secret access key used for at AWS?
+	
+	A - Authentication to the AWS console
+	
+	B - Access to resources through automation
+
+	C - Authentication using the CLI
+
+	D - Developing using the SDK
+
+Answer: B - Access to resources through automation
+
+--------------------------------------------------------------------------------
+33. When an EBS snapshot is shared, who can alter the original snapshot?
+	
+	A - Shared snapshots cannot be altered.
+	
+	B - Only the root user of the account
+
+	C - IAM policy defines access rules for snapshots.
+
+	D - Any administrator account
+
+Answer: A - Shared snapshots cannot be altered.
+
+--------------------------------------------------------------------------------
+34. What security tool should be used to create a second access key?
+	
+	A - Use the create-access-key command
+	
+	B - Run the Access Advisor
+
+	C - Using CloudTrail reports
+
+	D - The IAM Console
+
+Answer: D - The IAM Console
+
+--------------------------------------------------------------------------------
+35. Where is Route 53 located in the AWS ecosystem?
+	
+	A - Region
+	
+	B - Availability zone
+
+	C - Edge location
+
+	D - Hybrid location
+
+Answer: C - Edge location
+
+---------------------------------------------------------------------------------
+36. What types of permissions does and IAM policy control?
+	
+	A - Explicit disallow
+	
+	B - Implicit access
+
+	C - Implicit disallow
+
+	D - Explicit access
+
+	E - Allow or deny
+
+Answer: E - Allow or deny
+
+--------------------------------------------------------------------------------
+37. What common LDAP service is used in federating corporate users to AWS?
+	
+	A - AWS directory services
+	
+	B - Google authenticator
+
+	C - Open ID
+
+	D - SAML 2.0
+
+Answer: A - AWS directory services
+
+--------------------------------------------------------------------------------
+38. What is AWS Shield?
+	
+	A - EC2 firewall
+	
+	B - Edge firewall
+
+	C - A DDos protection service
+
+	D - Network layer protection
+
+Answer: C - A DDos protection service
+
+--------------------------------------------------------------------------------
+39. What happens if you find your instant size is inadequate for your needs?
+	
+	A - Use commandline tools to scale instance size up or down.
+	
+	B - Restore from backup to new instance type.
+
+	C - Shut down the instance, change instance type, and restart the instance.
+
+	D - Instances must be rebuilt from scratch to change size.
+
+Answer: C - Shut down the instance, change instance type, and restart the instance.
+
+--------------------------------------------------------------------------------
+40. What happens when storage and memory resources are discarded?
+	
+	A - Open a ticket with AWS support to clean discarded resources.
+	
+	B - Storage is automatically reset and memory is automatically scrubbed.
+
+	C - Storage is scrubbed, and memory is reset automatically.
+
+	D - Both storage and memory resources are cleaned upon request only.
+
+Answer: B - Storage is automatically reset and memory is automatically scrubbed.
+
+---------------------------------------------------------------------------------
+41. When authenticating against an EC2 Instance what IAM policies are required?
+	
+	A - Role-based policy
+	
+	B - Logging onto an EC2 instance is not controlled by IAM policy
+
+	C - Access-based policy
+
+	D - Group-based policy
+
+Answer: B - Logging onto an EC2 instance is not controlled by IAM policy
+
+--------------------------------------------------------------------------------
+42. Name the four common elements in an IAM policy.
+	
+	A - Username, resources, principal, and actions
+	
+	B - Security principles, assigned actions, effect, and resources
+
+	C - Resources, core effects, mandated actions, and principles
+
+	D - Resources, actions, effect, and principal
+
+Answer: D - Resources, actions, effect, and principal
+
+--------------------------------------------------------------------------------
+43. What is the definition of a managed policy?
+	
+	A - Custom policy controlled by the customer
+	
+	B - Deployed by the customer
+
+	C - Created and maintained by AWS
+
+	D - Policies applied to users and groups
+
+Answer: C - Created and maintained by AWS
+
+--------------------------------------------------------------------------------
+44. What's one difference between a network access control lists and a security group?
+	
+	A - Security groups can span availability zones.
+	
+	B - Security groups control subnet access, and network access control lists control instance access.
+
+	C - Security groups control instance access; network access control lists manage subnet access.
+
+	D - Security groups are stateless; network access control lists are stateful.
+
+Answer: C - Security groups control instance access; network access control lists manage subnet access.
+
+--------------------------------------------------------------------------------
+45. How can Windows instances take advantage of paravirtualization services at AWS?
+	
+	A - There is PV support for network and storage drivers.
+	
+	B - Select compute optimized instances when deploying Windows.
+
+	C - Upgrade Windows instances to Windows Server 2016 Datacenter.
+
+	D - Windows instances cannot take advantage of her paravirtualization.
+
+Answer: A - There is PV support for network and storage drivers.
+
+--------------------------------------------------------------------------------
+46. How are Amazon EC2 key pairs used for Windows authentication?
+	
+	A - Decryption of the user logon credentials
+	
+	B - Decryption of the administrator password
+
+	C - Encryption and decryption of logon information zip file
+
+	D - Decryption of the administrators secret key
+
+Answer: B - Decryption of the administrator password
+
+---------------------------------------------------------------------------------
+47. What is the purpose of the AWS security token service with regard to federated users?
+	
+	A - Security credentials are provided when requested by end-users.
+	
+	B - Federated users are provided with temporary security credentials.
+
+	C - Security credentials are provided for access to AWS resources.
+
+	D - To integrate AWS Active Directory services with customers corporate Active Directory services.
+
+Answer: B - Federated users are provided with temporary security credentials.
+
+--------------------------------------------------------------------------------
+48. How can AWS customers confirm that identity and access management security controls are verifiable?
+	
+	A - Reviewing the ISO 27001 audit
+	
+	B - Reviewing the SOC-2 audit
+
+	C - Reviewing the SOC-3 audit
+
+	D - Reviewing current IAM settings
+
+Answer: C - Reviewing the SOC-3 audit
+
+--------------------------------------------------------------------------------
+49. IAM policy defines what key component?
+	
+	A - Compliance and integrity
+	
+	B - Integrity and encryption
+
+	C - Authorization and compliance
+
+	D - Authentication and authorization
+
+Answer: D - Authentication and authorization
+
+--------------------------------------------------------------------------------
+50. What IAM policy choices control root account authentication?
+	
+	A - IAM group policy
+	
+	B - IAM policies in general
+
+	C - Multifactor authentication
+
+	D - IAM username policy
+
+Answer: C - Multifactor authentication
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	6. Mastering AWS Command-line Interface Operations
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1. Which of these statements best describes AWS Lambda?
+	
+	A - Datastream analysis
+	
+	B - Workflow orchestration for multiple tasks
+
+	C - Serverless technology for running functions
+
+Answer: C - Serverless technology for running functions
+
+--------------------------------------------------------------------------------
+2. Which of these tools can assist with designing an environment stop/start process?
+	
+	A - EC2 instances
+	
+	B - Service dependency map
+
+	C - API credentials
+
+Answer: B - Service dependency map
+
+---------------------------------------------------------------------------------
+3. Which of these most accurately describes the AWS CLI?
+	
+	A - Compiled executables written in C# that enable end users to access the AWS service API endpoints
+	
+	B - A unified single command that interfaces between the end user and the various AWS service API endpoints
+
+	C - Downloadable java libraries that can be run as executables to access the AWS service API endpoints
+
+Answer: B - A unified single command that interfaces between the end user and the various AWS service API endpoints
+
+
+--------------------------------------------------------------------------------
+4. Which of these is a true statement when copying an object into an S3 bucket that is owned by another account?
+	
+	A - Object ownership follows the account performing the copy or upload.
+	
+	B - Object ownership is irrelevant.
+
+	C - Object ACLs are more important than object ownership.
+
+	D - Object ownership follows the bucket.
+
+Answer: A - Object ownership follows the account performing the copy or upload.
+
+--------------------------------------------------------------------------------
+5. Which of these credential locations will be tested first when using the AWS CLI?
+	
+	A - Instance profile credentials
+	
+	B - Config file
+
+	C - Environment variables
+
+	D - Credentials file
+
+Answer: C - Environment variables
+
+--------------------------------------------------------------------------------
+6. Which service is used to directly generate instance profile credentials, which are visible via EC2 instance metadata?
+	
+	A - EC2
+	
+	B - EBS
+
+	C - KMS
+
+	D - STS
+
+Answer: D - STS
+
+--------------------------------------------------------------------------------
+7. Which command line option helps restrict the amount of output when using the CLI?
+	
+	A - --region
+	
+	B - --dry-run
+
+	C - --filter
+
+	D - --output
+
+Answer: C - --filter
+
+---------------------------------------------------------------------------------
+8. Which of these tasks can be easily performed using the AWS Console?
+	
+	A - Bulk ACL creation
+	
+	B - Bucket creation
+
+	C - Intra-bucket copies
+
+Answer: B - Bucket creation
+
+
+--------------------------------------------------------------------------------
+9. What is the meaning of the statement "The service API is a contract with the customer"?
+	
+	A - The API can only be changed if all customers agree first.
+	
+	B - The API can only be added to or extended, not changed or reduced in functionality.
+
+	C - The API is never changed after initial service release.
+
+Answer: B - The API can only be added to or extended, not changed or reduced in functionality.
+
+--------------------------------------------------------------------------------
+10. What are the steps involved in deleting an AMI?
+	
+	A - Terminate AMI, delete snapshots
+	
+	B - Delete AMI
+
+	C - Deregister AMI, delete snapshots
+
+Answer: C - Deregister AMI, delete snapshots
+
+--------------------------------------------------------------------------------
+11. What is the most appropriate AWS feature for sorting EC2 instances?
+	
+	A - EC2 instance type
+	
+	B - Subnet
+
+	C - Metadata tags
+
+	D - Security groups
+
+Answer: C - Metadata tags
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	7. Managing AWS Security and Identity
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1. MFA should be used for:
+	
+	A - Priviledged users
+	
+	B - Every IAM user
+
+	C - The root account
+
+	D - Priviledged users and the root account
+
+	E - Every IAM group
+
+Answer: D - Priviledged users and the root account
+
+--------------------------------------------------------------------------------
+2. The best tool to identify excess access keys and passwords that have NOT been rotated recently is:
+	
+	A - Cloud Trail
+	
+	B - Trusted Advisor
+
+	C - Amazon Inspector
+
+	D - Access Advisor
+
+	E - Credential Report
+
+Answer: E - Credential Report
+
+--------------------------------------------------------------------------------
+3. Which of the following AWS Directory Service offerings does not support transferring FSMO roles:
+	
+	A - AD Redirector
+	
+	B - AD Connector
+
+	C - LDAP
+
+	D - Simple AD
+
+	E - Enterprise AD
+
+Answer: D - Simple AD
+
+--------------------------------------------------------------------------------
+4. Which of the following is NOT part of Amazon's responsibility?
+	
+	A - Availability Zones
+	
+	B - Edge locations
+
+	C - Regions
+
+	D - Network Security
+
+Answer: D - Network Security
+
+--------------------------------------------------------------------------------
+5. Which of the following is NOT an MFA option for IAM users?
+	
+	A - Google Authenticator
+	
+	B - Biometric
+
+	C - Hardware token (FOB)
+
+	D - SMS (text)
+
+	E - Windows Authenticator
+
+Answer: B - Biometric
+
+--------------------------------------------------------------------------------
+6. Which of the following CANNOT have a role assigned to it?
+	
+	A - Federated User
+	
+	B - EC2 instance
+
+	C - Web Service
+
+	D - IAM Group
+
+	E - IAM User
+
+Answer: D - IAM Group
+
+--------------------------------------------------------------------------------
+
+7. Which of the following is NOT a type of policy?
+	
+	A - Inline Policy
+	
+	B - AWS Managed Policy
+
+	C - Customer Managed Policy
+
+	D - System Managed Policy
+
+Answer: D - System Managed Policy
+
+--------------------------------------------------------------------------------
+8. The common parameters passed to AWS to grant federated access regardless of which API include all of the following except:
+	
+	A - Role name
+	
+	B - Duration for which the credentials are valid
+
+	C - SAML Token
+
+Answer: C - SAML Token
+
+--------------------------------------------------------------------------------
+9. Which of the following is NOT a reason to use multiple AWS accounts?
+	
+	A - Control access to different workloads by different administrators
+	
+	B - Reduce the potential damage after a security breach
+
+	C - Control network security
+
+	D - Store auditing and backup data for safe keeping and restricted access
+
+Answer: C - Control network security
+
+--------------------------------------------------------------------------------
+10. Which of the following is much more difficult when multiple accounts are used?
+	
+	A - Visibility of what money is spent on across accounts
+	
+	B - Maximum volume discounts (they are determined per account)
+
+	C - Security consistency across accounts
+
+Answer: C - Security consistency across accounts
+
+
+--------------------------------------------------------------------------------
+11. CloudTrail can save auditing information to:
+	
+	A - An S3 bucket per account
+	
+	B - An S3 bucket per region
+
+	C - An S3 bucket for all accounts owned
+
+Answer: C - An S3 bucket for all accounts owned
+
+--------------------------------------------------------------------------------
+12. Which of the following identity sources is NOT supported with AWS?
+	
+	A - Twitter
+	
+	B - Google
+
+	C - Amazon
+
+	D - Facebook
+
+Answer: A - Twitter
+
+--------------------------------------------------------------------------------
+13. Which of the following uses a Rules Package to determine what gets reported?
+	
+	A - Amazon Inspector
+	
+	B - Access Advisor
+
+	C - Cloud Trail
+
+	D - Trusted Advisor
+
+	E - Credential Report
+
+Answer: A - Amazon Inspector
+
+--------------------------------------------------------------------------------
+14. IAM Groups should be used to group:
+	
+	A - IAM Users
+	
+	B - IAM Roles
+
+	C - IAM Policies
+
+Answer: A - IAM Users
+
+--------------------------------------------------------------------------------
+15. IAM roles can be used for which of the following?
+	
+	A - Both of these
+	
+	B - Neither of these
+
+	C - Providing applications on EC2 servers access to AWS resources
+
+	D - Identity Federation
+
+Answer: A - Both of these
+
+--------------------------------------------------------------------------------
+16. Which of the following is NOT a VPC prerequisite when using AWS Directory Services?
+	
+	A - Two subnets in two availability zones
+	
+	B - Default hardware tenancy
+
+	C - Two subnets in two regions
+
+Answer: C - Two subnets in two regions
+
+--------------------------------------------------------------------------------
+17. When an object is deleted, which of the following policy type(s) is/are also deleted with it?
+	
+	A - Customer Managed
+	
+	B - AWS Managed
+
+	C - None of these – policies must always be deleted separately from objects using them.
+
+	D - Inline
+
+	E - All of these – all policies are automatically deleted.
+
+Answer: D - Inline
+
+--------------------------------------------------------------------------------
+18. The root user account looks like which of the following?
+	
+	A - A user name
+	
+	B - An account number
+
+	C - A domain user name
+
+	D - An email address
+
+Answer: D - An email address
+
+--------------------------------------------------------------------------------
+19. You can require Multi Factor Authentication (MFA) be used with roles.
+	
+	A - Yes
+	
+	B - No
+
+Answer: A - Yes
+
+--------------------------------------------------------------------------------
+20. To configure access across accounts for users, which of the following actions should be used?
+	
+	A - Create a duplicate user account in each AWS account for the administrator to use.
+	
+	B - Federate users and authenticate to a third party or on-premises directory.
+
+	C - Create a role in each other AWS account, assign the correct permissions for that account, and allow the appropriate IAM users access to it.
+
+	D - Put IAM users from each of the accounts in the IAM group(s) in the accounts to which they need access.
+
+Answer: C - Create a role in each other AWS account, assign the correct permissions for that account, and allow the appropriate IAM users access to it.
+
+--------------------------------------------------------------------------------
+21. The root account should be used for which of the following?
+	
+	A - Day-to-day administration
+	
+	B - Creating IAM users
+
+	C - Initial setup and billing
+
+Answer: C - Initial setup and billing
+
+--------------------------------------------------------------------------------
+22. IAM users, groups, and roles cost how much per month?
+	
+	A - Pennies per thousand objects
+	
+	B - Nothing--they are free.
+
+	C - Pennies per hundred objects
+
+	D - Pennies per ten thousand objects
+
+Answer: B - Nothing--they are free.
+
+--------------------------------------------------------------------------------
+23. To take advantage of the greatest number of features available in Active Directory while having Amazon responsible for the management of the operating system and 
+    underlying hardware, you should choose:
+	
+	A - LDAP
+	
+	B - AD Redirector
+
+	C - Simple AD
+
+	D - Enterprise AD
+
+	E - AD Connector
+
+Answer: D - Enterprise AD
+
+--------------------------------------------------------------------------------
+24. Which AWS Directory Services Offering does not store data in AWS but rather redirects all access to an on-premises Active Directory implementation?
+	
+	A - Enterprise AD
+	
+	B - AD Redirector
+
+	C - AD Connector
+
+	D - LDAP
+	
+	E - Simple AD
+
+Answer: C - AD Connector
+
+--------------------------------------------------------------------------------
+25. Which of the following is NOT an available effect?
+	
+	A - Allow
+	
+	B - Deny
+
+	C - Permit
+
+Answer: C - Permit
+
+--------------------------------------------------------------------------------
+26. The root user credentials should be shared with all top-level administrators.
+	
+	A - False
+	
+	B - True
+
+Answer: A - False
+
+--------------------------------------------------------------------------------
+27. The best way for administrators in one AWS account to backup administrators in another account (such as for vacation or sickness) is:
+	
+	A - Create IAM users in each account for the administrators in the other account.
+	
+	B - Share account names and passwords as needed.
+
+	C - Create roles in each account that can be assumed by administrators in the other account.
+
+	D - Create a generic admin account for administrators in the other account to use.
+
+Answer: C - Create roles in each account that can be assumed by administrators in the other account.
+
+--------------------------------------------------------------------------------
+28. Trusted advisor is designed to do which of the following:
+	
+	A - Find unused IAM Groups
+	
+	B - Reduce cost
+
+	C - Report on compliance
+
+	D - Find IAM Users with excess permissions
+
+Answer: B - Reduce cost
+
+--------------------------------------------------------------------------------
+29. To maximize the safety of data that has been backed up, you should:
+	
+	A - Backup to two different S3 buckets in different regions.
+	
+	B - Set permissions on the backup destination to forbid deleting content.
+
+	C - Use Lifecycle policies to manage backups and expire outdated ones.
+
+	D - Backup to a different account.
+
+Answer: D - Backup to a different account.
+
+--------------------------------------------------------------------------------
+30. Consolidated billing is used to:
+	
+	A - Pay for all the charges in multiple AWS accounts.
+	
+	B - Report on the spending within an account.
+
+	C - Report on the spending across accounts.
+
+Answer: A - Pay for all the charges in multiple AWS accounts.
+
+--------------------------------------------------------------------------------
+31. Consolidated Billing can be used to secure volume discounts:
+	
+	A - Within an account
+	
+	B - Across multiple accounts
+
+	C - Within a region
+
+Answer: B - Across multiple accounts
+
+--------------------------------------------------------------------------------
+32. IAM roles are used when federating with users authenticated outside of AWS, such as Active Directory and Google.
+	
+	A - True
+
+	B - False
+
+Answer: A - True
+
+--------------------------------------------------------------------------------
+33. The Principle of Least Priviledge should be used to:
+	
+	A - Create as few policies as possible
+	
+	B - Grant users just enough permissions to do their jobs
+
+	C - Grant as few policies as possible to users
+
+Answer: B - Grant users just enough permissions to do their jobs
+
+--------------------------------------------------------------------------------
+34. If trusts are required between Active Directory domains hosted via AWS Directory Services, you must select:
+	
+	A - AD Redirector
+	
+	B - Enterprise AD
+
+	C - ADConnector
+
+	D - Simple AD
+
+	E - LDAP
+
+Answer: B - Enterprise AD
+
+--------------------------------------------------------------------------------
+35. To utilize AWS Directory Services’ Enterprise AD offering, which VPC range must be excluded from those you can use:
+	
+	A - 198.19.0.0/16
+	
+	B - 10.255.0.0/16
+
+	C - 192.168.0.0/16
+
+	D - 172.16.0.0/16
+
+Answer: A - 198.19.0.0/16
+
+--------------------------------------------------------------------------------
+36. Which of the following can occur if the root account is compromised?
+	
+	A - None of these
+	
+	B - Resources can be deleted
+
+	C - All of these
+
+	D - Resorces can be created
+
+	E - Data can be stolen
+
+Answer: C - All of these
+
+--------------------------------------------------------------------------------
+37. An IAM user may have _____ access keys maximum.
+	
+	A - 5
+	
+	B - 2
+
+	C - 1
+
+	D - unlimited
+
+	E - 3
+
+Answer: B - 2
+
+--------------------------------------------------------------------------------
+38. IAM accounts can be used to enforce the principle of least privilege.
+	
+	A - False
+	
+	B - True
+
+Answer: B - True
+
+--------------------------------------------------------------------------------
+39. Which of the following cannot be used to create an IAM policy?
+	
+	A - Policy Creator
+	
+	B - Copying an AWS managed policy
+
+	C - Creating a policy in JSON
+
+	D - Policy Generator
+
+Answer: A - Policy Creator
+
+--------------------------------------------------------------------------------
+40. Credential Report contains the following information:
+	
+	A - Regions used by this IAM user
+	
+	B - Access Key last used object
+
+	C - IAM user last used region
+
+	D - Access Key last used region
+
+Answer: D - Access Key last used region
+
+--------------------------------------------------------------------------------
+41. Simple AD uses:
+	
+	A - Samba
+	
+	B - Windows Active Directory
+
+	C - Novell eDirectory
+
+Answer: A - Samba
+
+--------------------------------------------------------------------------------
+42. Which of the following can have passwords assigned to them?
+	
+	A - IAM Users
+	
+	B - IAM Groups
+
+	C - IAM Roles
+
+Answer: A - IAM Users
+
+--------------------------------------------------------------------------------
+43. Password policies can be set for which of the following?
+	
+	A - All IAM users (all get the same policy applied)
+	
+	B - Each IAM user (individual settings for each user)
+
+	C - All IAM Groups (all get the same policy applied)
+
+	D - IAM Roles
+
+	E - Each IAM group (individual settings for each group)
+
+Answer: A - All IAM users (all get the same policy applied)
+
+--------------------------------------------------------------------------------
+44. Which of the following are you responsible for?
+	
+	A - Networking
+	
+	B - Data security
+
+	C - Storage
+
+	D - Compute
+
+Answer: B - Data security
+
+--------------------------------------------------------------------------------
+45. The root account can be restricted by permissions.
+	
+	A - False
+	
+	B - True
+
+Answer: A - False
+
+--------------------------------------------------------------------------------
+46. When a user is moved from one group to another group, what happens to their permissions?
+	
+	A - They get the permissions from both groups if the groups are nested; if groups are not nested, they get permissions from the group into which they are moved.
+	
+	B - They recieve the permissions for the new group and lose the permissions of the original group.
+
+	C - Users can't be moved between groups.
+
+	D - Users can't belong to groups.
+
+Answer: B - They recieve the permissions for the new group and lose the permissions of the original group.
+
+--------------------------------------------------------------------------------
+47. To troubleshoot policy problems, use ________.
+	
+	A - Policy Simulator
+	
+	B - Policy Verifier
+
+	C - Policy Tester
+
+Answer: A - Policy Simulator
+
+--------------------------------------------------------------------------------
+48. Roles can be used by IAM users in different AWS accounts.
+	
+	A - True
+	
+	B - False
+
+Answer: A - True
+
+--------------------------------------------------------------------------------
+49. To access the full set of Trusted Advisor capabilities, you must have:
+	
+	A - Basic support or higher
+	
+	B - Business support or higher
+
+	C - Enterprise support or higher
+
+	D - Developer support or higher
+
+Answer: B - Business support or higher
+
+--------------------------------------------------------------------------------
+50. Which of the following AWS Directory Service offerings supports LDAPS?
+	
+	A - Enterprise AD
+	
+	B - Simple AD
+
+	C - LDAP
+
+	D - AD Connector
+
+	E - AD Redirector
+
+Answer: A - Enterprise AD
+
+----------------------------------------------------------------------------------
+51. Which of the following requires an agent in an EC2 instance to gather the data it reports on?
+	
+	A - Amazon Inspector
+	
+	B - Cloud Trail
+
+	C - Access Advisor
+
+	D - Credential Report
+
+	E - Trusted Advisor
+
+Answer: A - Amazon Inspector
+----------------------------------------------------------------------------------
+52. Which of the following is NOT an available AWS Directory Service offering?
+
+	A - LDAP
+	
+	B - AD Connector
+
+	C - Simple AD
+
+Answer: A - LDAP
+
+----------------------------------------------------------------------------------
+53. You have two applications in development by your internal software developers team. Some developers are assigned to App A and 
+    some to App B and a few to both. You also have some general permissions that you want to apply to all software developers.
+    What is the simplest way to manage security while meeting the needs of each developer and the company?
+	
+	A - Create three groups. Nest the App A and App B groups in the software group. 
+		Assign the developers' IAM users to the appropriate App group based on the project they are working on. Assign permissions as required.
+	
+	B - Create three groups. Place all the developers' IAM users in the developer group and add them to their individual groups as needed. 
+		Assign permissions to each group as required.
+
+	C - Groups are not used with IAM users. Assign the permissions required for each developer's IAM user account directly.
+
+	D - Create two groups because users can only belong to one group at a time. 
+		Assign the developers' IAM users to the appropriate groups and assign all the software developer permissions to both groups and then assign 
+		the individual app permissions to the two groups as required.
+
+Answer: B - Create three groups. Place all the developers' IAM users in the developer group and add them to their individual groups as needed.
+	    Assign permissions to each group as required.
+
+----------------------------------------------------------------------------------
+54. When an application needs access to another resoiurce in AWS, such as a DynamoDB Table or a S3 Bucket, the best way to provide the needed credentials is to:
+		
+	A - Enter the credentials directly in the application for an IAM user.
+	
+	B - Enter the credentials directly in the application for an IAM role.
+
+	C - Make the resource publicly available so the application can access it.
+
+	D - Assign the EC2 instance a role that has the necessary permissions.
+
+	E - Nothing, this is automatic in AWS.
+
+Answer: D - Assign the EC2 instance a role that has the necessary permissions.
+
+---------------------------------------------------------------------------------
+55. Which policy type(s) can be associated with IAM users and IAM roles?
+
+	A - Inline
+	
+	B - None of these – policies can’t be assigned to roles.
+
+	C - AWS Managed
+
+	D - All of these
+	
+	E - Customer Managed
+
+Answer: C - All of these
+
+
+----------------------------------------------------------------------------------
+56. Which of the following policy types can be versioned and rolled back if necessary?
+
+	A - System Managed Policy
+	
+	B -Inline Policy
+
+	C - AWS Managed Policy
+
+	D - Customer Managed Policy
+
+Answer: D - Customer Managed Policy
+
+---------------------------------------------------------------------------------
+57. Which of the following services is used to associate a role with a federated user?
+
+	A - Security Role Association Service (SRAS)
+	
+	B - Federated Role Service (FRS)
+
+	C - Amazon Federation Service (AFS)
+
+	D - Security Token Service (STS)
+
+Answer: D - Security Token Service (STS)
+
+----------------------------------------------------------------------------------
+58. Which of the following is NOT part of a policy statement?
+
+	A - Conditions
+	
+	B - What 
+
+	C - Where 
+
+	D - Who 
+
+	E - Effect
+
+Answer: B - Where
+
+---------------------------------------------------------------------------------
+59. Access keys should NOT be...
+
+	A - assigned to roles.
+	
+	B - hard coded in applications.
+
+	C - rotated regularly.
+
+	D - assigned to users.
+
+Answer: B - hard coded in applications.
+
+----------------------------------------------------------------------------------
+60. IAM users should be created for:
+
+	A - Groups of users based on role or project they are working on
+	
+	B - Each user in the company
+
+	C - Each user that needs access to AWS resources
+
+Answer: C - Each user that needs access to AWS resources
+
+---------------------------------------------------------------------------------
+61. To receive notifications of Cloud Trail auditing data updates, use it in conjunction with which of these?
+
+	A - SNS
+	
+	B - SES
+
+	C - SQS
+
+	D - S3
+
+Answer: A - SNS
+
+----------------------------------------------------------------------------------
+62. Roles can be required to have users authenticated with MFA to be usable.
+
+	A - True
+	
+	B - False
+
+Answer: A - True
+
+---------------------------------------------------------------------------------
+63. An inline policy can be associated with multiple objects.
+
+	A - False
+	
+	B - True
+
+Answer: A - False
+
+----------------------------------------------------------------------------------
+64. Cloud Trail delivers logs to which of the following?
+
+	A - S3 buckets and RedShift instances
+	
+	B - S3 buckets and EC2 instances
+
+	C - S3 buckets and CloudWatch Logs groups
+
+	D - S3 buckets and RDS instances
+
+Answer: C - S3 buckets and CloudWatch Logs groups
+
+---------------------------------------------------------------------------------
+65. In a policy, a resource is:
+
+	A - A role
+	
+	B - An AWS object
+
+	C - a network object
+
+	D - An IAM object
+
+Answer: B - An AWS object
+
+----------------------------------------------------------------------------------
+66. Policies are written in:
+
+	A - JSON
+	
+	B - SOAPjr
+
+	C - HTML
+
+	D - XML
+
+Answer: A - JSON
+
+---------------------------------------------------------------------------------
+67. Rolling back a policy to a previous version is accomplished by which of the following methods?
+
+	A - Setting the default version of the policy
+	
+	B - Deleting the later version of a policy to get to the desired version
+
+	C - Selecting the rollback action under policies
+
+Answer: A - Setting the default version of the policy
+
+----------------------------------------------------------------------------------
+68. The best tool to identify excess permissions and inactive accounts is:
+
+	A - Amazon Inspector
+	
+	B - Credential Report
+
+	C - Cloud Trail
+
+	D - Access Advisor
+
+	E - Trusted Advisor
+
+Answer: D - Access Advisor
+
+---------------------------------------------------------------------------------
+69. Roles can be used with federated users from all of the following except:
+
+	A - Google
+	
+	B - Active Directory
+
+	C - Salesforce.com
+
+	D - Facebook
+
+Answer: C - Salesforce.com
+
+----------------------------------------------------------------------------------
+70. Roles can be delegated to IAM users only if:
+
+	A - A trust has been established betwen the role creator and the user creator
+	
+	B - A trust has been established to another AWS account
+
+	C - They are federated with Active Directory users
+
+Answer: B - A trust has been established to another AWS account
+
+
+----------------------------------------------------------------------------------
+71. Auditing answers all of the following questions except which one?
+
+	A - Who
+	
+	B - How
+
+	C - What
+
+	D - Where
+
+	E - When
+
+Answer: B - How
+
+----------------------------------------------------------------------------------
+72. Customer Managed policies are best for which of the following situations?
+
+	A - Those who need granularity and control over specific privileges
+	
+	B - Those wanting a simple policy experience
+
+	C - Those who are new to AWS policies
+
+Answer: A - Those who need granularity and control over specific privileges
+
+----------------------------------------------------------------------------------
+73. Which of the following policy types is deleted when the associated object is deleted?
+
+	A - AWS Managed Policies
+	
+	B - Customer Managed Policies
+
+	C - System Managed Policies
+
+	D - Inline Policies
+
+Answer: D - Inline Policies
+
+----------------------------------------------------------------------------------
+74. When multiple statements exist in a single policy or multiple policies are applied to a single object, the policies are:
+
+	A - ORed
+	
+	B - Ignored as only one statement per policy or policy per object is allowed
+
+	C - ANDed
+
+	D - XORed
+
+Answer: A - ORed
+
+----------------------------------------------------------------------------------
+75. To revert to a previous version if a policy, you select which option?
+
+	A - Revert to policy
+	
+	B - Set as active policy
+
+	C - Set as default
+
+Answer: C - Set as default
+
+----------------------------------------------------------------------------------
+76. IAM Roles can be assumed by:
+
+	A - Applications
+	
+	B - IAM Users
+
+	C - IAM Groups
+
+Answer: B - IAM Users
+
+----------------------------------------------------------------------------------
+77. IAM roles can be assumed by users in other accounts.
+
+	A - False
+	
+	B - True
+
+Answer: B - True
+
+----------------------------------------------------------------------------------
+78. The least expensive way to store cloud trail data for long periods of time is:
+
+	A - Archiving all data to Glacier
+	
+	B - S3 Reduced Redundancy Storage
+
+	C - S3 Lifecycle policies in conjunction with Glacier
+
+	D - S3 Infrequent Access
+
+Answer: C - S3 Lifecycle policies in conjunction with Glacier
+
+----------------------------------------------------------------------------------
+79. Which type of policies are used with roles to provide access to AWS resources?
+
+	A - Trust and Permission
+	
+	B - Account and Permission
+
+	C - Account and Access
+
+	D - Trust and Access
+
+Answer: A - Trust and Permission
+
+----------------------------------------------------------------------------------
+80. The best tool to identify potential compliance violations is:
+
+	A - Trusted Advisor
+	
+	B - Cloud Trail
+
+	C - Credential Report
+
+	D - Access Advisor
+
+	E - Amazon Inspector
+
+Answer: E - Amazon Inspector
+
+----------------------------------------------------------------------------------
+81. Auditing can be used to look for cost savings.
+
+	A - False
+	
+	B - True
+
+Answer: B - True
+
+----------------------------------------------------------------------------------
+82. IAM Policies contant all of the following components except:
+
+	A - Resource
+	
+	B - Effect
+
+	C - Action
+
+	D - Condition
+
+	E - Result
+
+Answer: E - Result
+
+----------------------------------------------------------------------------------
+83. If versioning of policies and the ability to revert to a previous version are required, select the _______ policy type.
+
+	A - Inline
+	
+	B - Customer Managed
+
+	C - Version-enabled
+
+	D - AWS Managed
+
+Answer: B - Customer Managed
+
+----------------------------------------------------------------------------------
+84. Cloud Trail is enabled on a _______ basis.
+
+	A - Object
+	
+	B - Region
+
+	C - Availability Zone
+
+Answer: B - Region
+
+----------------------------------------------------------------------------------
+85. When policies are evaluated, the precedence in permissions is:
+
+	A - Least Restricitive
+	
+	B - Explicit Deny, Explicit Allow, Implicit Deny
+
+	C - Explicit Allow, Explicit Deny, Implicit Deny
+
+	D - Most Restricitive
+
+Answer: B - Explicit Deny, Explicit Allow, Implicit Deny
+
+----------------------------------------------------------------------------------
+86. Cloud Trail data can be encrypted.
+
+	A - False
+	
+	B - True
+
+Answer: B - True
+
+----------------------------------------------------------------------------------
+87. IAM roles can be assigned to EC2 servers to provide access to AWS resources for applications running on that server.
+
+	A - False
+	
+	B - True
+
+Answer: B - True
+
+----------------------------------------------------------------------------------
+88. Cloud Trail audits which of these?
+
+	A - API Access
+	
+	B - Neither of these
+
+	C - Both of these
+
+	D - Console Access
+
+Answer: C - Both of these
+
+----------------------------------------------------------------------------------
+89. Manged policies exist as stand-alone objects that can be associated with multiple IAM objects.
+
+	A - False
+	
+	B - True
+
+Answer: B - True
+
+----------------------------------------------------------------------------------
+90. The AWS security best practice for applications requiring access to AWS resources is to:
+
+	A - Embed Access Keys and Secret keys within those applications
+	
+	B - Prompt the user for an IAM user name and password when access is needed
+
+	C - Assign roles to applications
+
+	D - Assign roles to EC2 servers running those applications
+
+Answer: D - Assign roles to EC2 servers running those applications
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------

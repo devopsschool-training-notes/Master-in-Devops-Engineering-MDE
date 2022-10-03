@@ -1,0 +1,159 @@
+
+Course:  Managing Docker Images
+
+1. Which of the following will display the specific command that created each layer in an image?
+
+A. docker search imagename
+B. docker images -t imagename
+C. docker history imagename
+D. docker build -th imagename
+
+Ans:    C. docker history imagename
+
+
+2. You would prepare an image called hello-world for uploading to a local Docker Registry using which of the following commands?
+
+A. docker tag hello-world localhost/hello-world:latest
+B. docker -tag 127.0.0.1/hello-world:latest
+C. docker -t hello-world localhost:5000/hello-world:latest
+D. docker tag hello-world localhost:5000/hello-world:latest
+
+Ans:   D. docker tag hello-world localhost:5000/hello-world:latest
+
+
+3. Where are the image files stored on a Linux machine running a package-based Docker Registry?
+
+A. /var/lib/docker/docker-registry/docker/registry/v2/repositories
+B. /var/lib/docker/docker-registry/docker/registry/v2/_catalog
+C. /var/lib/docker/volumes/<image-hash>/_data/docker/registry/v2/repositories/
+D. /var/lib/docker/docker-registry
+
+Ans:    A. /var/lib/docker/docker-registry/docker/registry/v2/repositories
+
+
+4. Which of these commands will return a list of images currently stored in a Docker Registry?
+
+A. curl 192.168.1.17:5000/v2/_data
+B. curl 192.168.1.17:5000/v2/_catalog
+C. docker images
+D. docker registry ls
+
+
+Ans:   B. curl 192.168.1.17:5000/v2/_catalog
+
+
+5. To add encryption using a self-signed certificate to your Docker Registry infrastructure, to which directory must the certificate be copied (assuming your domain is domain.com)?
+
+A. /etc/docker/cert.d/domain.com:5000/
+B. /var/lib/docker/certs.d/domain.com:5000/
+C. /etc/docker/certs.d/domain.com:5000/
+D. /etc/docker/certs.d/domain.com/
+
+Ans:   C. /etc/docker/certs.d/domain.com:5000/
+
+
+6. How do you temporarily enable Docker Content Trust on your local machine to take advantage of digitally signed images?
+
+A. export $DOCKER_CONTENT_TRUST=0
+B. export DOCKER_CONTENT_TRUST=1
+C. echo $DOCKER_CONTENT_TRUST=1
+D. echo DOCKER_CONTENT_TRUST=1 >> /etc/profile
+
+Ans:    B. export DOCKER_CONTENT_TRUST=1
+
+
+7. Which of the following will upload a new stack to your Docker Cloud account?
+
+A. docker-cloud stack create -f dockerfile
+B. docker-cloud stack create docker-cloud.yml
+C. docker stack create -f docker-cloud.yml
+D. docker-cloud stack create -f docker-cloud.yml
+
+Ans:   D. docker-cloud stack create -f docker-cloud.yml
+
+
+8. Docker Engine is:
+
+A. An online Docker image repository
+B. An online Docker administration interface
+C. The locally installed runtime through which you administrate Docker containers
+D. A local Docker image repository
+
+Ans:   C. The locally installed runtime through which you administrate Docker containers
+
+
+9. Docker Trusted Registry is:
+
+A. An open source tool for securing the infrastructure on which Docker Engine runs
+B. An open source tool for coordinating Docker container clusters
+C. A web-based, commercial, hosted image management tool
+D. A local, commercial image management tool
+
+Ans:   C. A web-based, commercial, hosted image management tool
+
+
+10. A Docker container will run faster when its image is properly optimized. Which of the following will have the greatest positive impact on speed?
+
+A. Build the image using as few layers as possible.
+B. Always base your images on the latest operating system version available.
+C. Build the image using a Dockerfile rather than from a running container.
+D. Always be consistent in the software package versions you choose for your image layers
+
+
+Ans:   A. Build the image using as few layers as possible.
+
+
+11. Which of the following commands will successfully build an image with the name "myimage"?
+
+A. docker build -t myimage .
+B. docker build --tag-image myimage
+C. docker build -t myimage
+D. docker build -n myimage .
+
+
+Ans:   A. docker build -t myimage .
+
+
+12. What is accomplished by running the following command?
+docker run -p 5000:5000 registry:latest
+
+A. Only if the Docker Registry image has already been pulled will it be run, exposing port 5000.
+B. The Docker Registry image will (if necessary) be pulled and then run, exposing port 5000.
+C. Docker Engine will run a "hot update" on the live Registry image.
+D. The Docker Registry image will be pulled from Docker Hub using port 5000.
+ 
+Ans: B. The Docker Registry image will (if necessary) be pulled and then run, exposing port 5000. 
+
+
+
+13. Which of these is the correct command to display a list images currently stored in a Docker Registry using a self-signed certificate? 
+
+A. curl -i https://192.168.1.16:5000/v2/_data
+B. curl -i https://192.168.1.16:5000/v2/_catalog
+C. curl --insecure http://192.168.1.16:5000/v2/_catalog
+D. curl --insecure https://192.168.1.16:5000/v2/_catalog
+
+Ans: D. curl --insecure https://192.168.1.16:5000/v2/_catalog
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

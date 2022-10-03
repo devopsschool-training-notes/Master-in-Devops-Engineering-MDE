@@ -1,0 +1,219 @@
+ Where does the Puppet agent look for the Puppet Master hostname?
+1. In /etc/puppet/puppet.conf under the [agent] section
+2. In /etc/puppet.conf under the [agent] section
+3. In /etc/puppet/puppet.conf under the [master] section
+4. In /etc/puppet.conf under the [master] section
+Ans : -1. In /etc/puppet/puppet.conf under the [agent] section
+
+What is one way to run the Puppet agent manually?
+1. Execute c:\programdata\puppetlabs\puppet\bin\puppet_run.exe
+2. Execute c:\program files\puppet labs\bin\puppet.bat --run-now
+3. Execute c:\programdata\puppetlabs\puppet\bin\puppet_run.bat
+4. Execute c:\program files\puppet labs\bin\puppet_interactive.bat
+Ans :  4. Execute c:\program files\puppet labs\bin\puppet_interactive.bat
+
+How is Puppet different than Chef and CFEngine?
+1.  Chef and CFengine are not open source
+2. Puppet's language is procedural while Chef and CFEngine use declarative languages
+3. Puppet's language is simpler and easier to learn
+4.
+Ans : 3. Puppet's language is simpler and easier to learn
+
+Where must directory environments be located?
+1. There is no particular location where they must be located
+2. /etc/puppet/environments
+3. /etc/puppet
+4. /etc/puppet/manifests/environments
+Ans :  1. There is no particular location where they must be located
+
+What is one of the purposes of modules?
+1. Provide a way to backup Puppet configurations
+2. Eliminate the need to ever do anything manually
+3. Extend Puppet's native functionality
+4. 
+Ans : - 3. Extend Puppet's native functionality
+
+What directory should module-specific templates go in?
+1. Under the module's root path
+2. /etc/puppet/templates
+3. The templates subdirectory under the module's root path
+4.
+Ans :  3. The templates subdirectory under the module's root path
+
+Hiera data can be stored in YAML files. What are these files called?
+1. Data fields
+2. Data accessor models
+3. Data sources
+4. Hierarchial manifests
+Ans :  3. Data sources
+
+What does the beginning of a class definition for the "linux" class look like?
+1. class linux: {
+2. class linux {
+3. { class 'linux':
+4.
+Ans : 2. class linux {
+
+What is a resource type?
+1. The type of Puppet server
+2. The type of node to be managed, such as Windows or Linux
+3. The type of resource to be managed, such as package, service, or file
+4.
+Ans : 3. The type of resource to be managed, such as package, service, or file
+
+The frequency of configuration runs is controlled by the...
+1. crontab
+2. Run interval
+3. Execution interval
+4. Enforcement interval
+5. The Windows service subsystem
+Ans :  2. Run interval
+
+What web server ships with the Puppet Master?
+1. nginx
+2. NetScaler
+3. WEBrick
+4. Apache HTTP server
+Ans :  3. WEBrick
+
+What happens if the title in a package resource declaration does not match the Windows DisplayName?
+1. Puppet will uninstall and reinstall the package
+2. Puppet will think the package isn't installed & will try to install it on every configuration run
+3. Windows will blue-screen
+4. Puppet will never install the package
+Ans : - 2. Puppet will think the package isn't installed & will try to install it on every configuration run
+
+Which of the following is the beginning of a valid file resource declaration?
+1. file { '/info.txt':
+2. file { '/info.txt' (
+3. file "/info.txt": {
+4. file '/info.txt' {
+Ans :  1. file { '/info.txt':
+
+What command run on a CentOS Puppet Master reloads the Hiera configuration?
+1. sudo service puppetmaster restart
+2. sudo service apache restart
+3. sudo service httpd restart
+4. sudo service httpd restart
+Ans : - 3. sudo service httpd restart
+
+Why aren't group policies always sufficient for Windows configuration management?
+1. Group policies require the use of PowerShell scripts
+2. Group policies do not allow managing files, packages, or services
+3. Group policies require an Active Directory infrastructure to be scalable
+4.
+Ans : - 3. Group policies require an Active Directory infrastructure to be scalable
+
+What is the command for setting SELinux to permissive mode?
+1. sudo getenforce --mode=permissive
+2. sudo setenforce permissive
+3. sudo setenforce disabled
+4.
+Ans : - 2. sudo setenforce permissive
+
+What does a selector do?
+1. Takes a set of possible values and assigns one of those values to a variable based on a condition
+2. Selects which package, file, or service declaration should be executed first
+3. Installs a package based on the version of operating system the Puppet agent is running on
+4.
+Ans :  - 1. Takes a set of possible values and assigns one of those values to a variable based on a condition
+
+What is a Git repository?
+1. A copy of files and directories that cannot be stored locally
+2. Where you download Git from
+3. Where Git maintains and tracks changes to files and directories
+4.
+Ans : - 3. Where Git maintains and tracks changes to files and directories
+
+How is a role implemented?
+1. By creating a subclass inside the profiles module named profiles::profilename
+2. By creating a subclass inside the roles module named roles::rolename
+3. By creating a subclass inside the roles module named profiles::profilename
+4.
+Ans : - 2. By creating a subclass inside the roles module named roles::rolename
+
+What does it mean for the Puppet Master to classify a node?
+1. Locate the node definition in the manifest and determine what configuration should be applied
+2. To generate a catalog based on the node's manifest
+3. To instantiate a class based on the node's operating system 
+4.
+Ans : - 1. Locate the node definition in the manifest and determine what configuration should be applied
+
+Where is the Puppet configuration file stored?
+1. /etc/puppet/puppet.conf
+2. /var/lib/puppet/puppet.conf
+3. /usr/share/puppet/puppetmaster.conf
+4.
+Ans : - 1. /etc/puppet/puppet.conf
+
+Puppet can manage all of following operating systems except...
+1. Mac OS X
+2. Windows
+3. Unix
+4. Solaris
+5. FreeBSD
+6. None of these. Puppet can manage all of them.
+Ans : - 6. None of these. Puppet can manage all of them.
+
+Which is true about resource parameters/attributes?
+1. They are variable declarations
+2. They are attribute/value pairs separated by a colon
+3. They are attribute/value pairs separated by a "fat comma" (=>)
+4.
+Ans : - 3. They are attribute/value pairs separated by a "fat comma" (=>)
+
+In the Roles & Profiles pattern, what is a profile?
+1. A non-technical description of what a server does or what its purpose is
+2. An abstraction that contains specifics about a server's packages and other settings
+3. A technical description of a server's packages, files, services, and other settings
+4.
+Ans : - 3. A technical description of a server's packages, files, services, and other settings
+
+In a resource declaration, attributes with a boolean (true/false) value must...
+1. be in single quotes
+2. be in double quotes
+3. not be in any quotes
+4.
+Ans : - 3. not be in any quotes
+
+Which of the following is the beginning of a valid node definition?
+1. define node "server7": {
+2. { node 'server7':
+3. node 'server7' {
+4.
+Ans : - 3. node 'server7' {
+
+After installing the Puppet server for the first time, what command should be used to generate SSL certificates?
+1. sudo puppet master --verbose --no-daemonize
+2. sudo puppet --verbose --no-daemonize
+3. sudo puppet master --generate --no-daemonize
+4.
+Ans : - 1. sudo puppet master --verbose --no-daemonize
+
+You've modified the /etc/sysconfig/iptables file. What command will ensure your changes take effect?
+1. sudo iptables reload
+2. sudo service iptables stop
+3. sudo chkconfig iptables on
+4. sudo service iptables restart
+Ans : - 4. sudo service iptables restart
+
+What are some disadvantages of using scripts?
+1. They're not powerful enough for configuration management
+2. They're inherently complex
+3. They're declarative instead of procedural
+4.
+Ans : - 2. They're inherently complex
+
+Given a selector variable named $ntppackage, which would be a valid resource declaration that makes use of this variable?
+1. package { $ntppackage: ensure => 'installed', }
+2. package { "$ntppackage": ensure => true, }
+3. package { '$ntppackage': ensure => 'installed', }
+4.
+Ans : - 1. package { $ntppackage: ensure => 'installed', }
+
+
+1.
+2.
+3.
+4.
+Ans : -

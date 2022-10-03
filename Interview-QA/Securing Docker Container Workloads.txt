@@ -1,0 +1,264 @@
+
+Course Name:  Securing Docker Container Workloads
+
+1.  Is it ever possible to run a Linux-based container on a Microsoft Windows platform?
+
+A. Yes, Docker containers abstract away the underlying operating system, which means the container can run on top of any operating system.
+B. Yes, provided that the container is running inside a Linux-based virtual machine, courtesy of the Microsoft Hyper-V hypervisor.
+C. No, containers rely on the physical host's kernel to provide it with access to system resources, and therefore a Linux container cannot run on top of a Windows kernel.
+
+Ans:    B. Yes, provided that the container is running inside a Linux-based virtual machine, courtesy of the Microsoft Hyper-V hypervisor.
+
+
+2. Ordinarily, when a calling process is cloned into one or more namespaces, the operation requires privileges. Under what circumstances can this operation be performed as a non-privileged user?
+
+A. There are no circumstances where a call to clone a process into new namespaces can be non-privileged. The clone system call requires the CAP_SYS_ADMIN Linux capability
+B. Only when one of the clone flags is CLONE_NEWUSER, because it’s possible to map a non-privileged user from one namespace, to a privileged user, in another.
+C. The clone system call does not require any privileges, and can be called by any user on a Linux system, irrespective of the specified namespace flags.
+
+Ans:  B. Only when one of the clone flags is CLONE_NEWUSER, because it’s possible to map a non-privileged user from one namespace, to a privileged user, in another.
+
+
+3. What language are Berkeley Packet Filters implemented in?
+
+A. Any high-level programming language, such as C.
+B. A bespoke assembler-like language.
+C. The assembly language asssociated with the host's architecture.
+
+Ans: B. A bespoke assembler-like language.
+
+
+4. What does the following snippet from a Docker seccomp profile achieve?
+{
+    "names": [
+        "settimeofday",
+        "stime",
+        "clock_settime"
+    ],
+    "action": "SCMP_ACT_ALLOW",
+    "args": [],
+    "comment": "",
+    "includes": {
+        "caps": [
+            "CAP_SYS_TIME"
+        ]
+    },
+    "excludes": {}
+}
+
+A. As the action is SCMP_ACT_ALLOW, adds the CAP_SYS_TIME capability for the container, when it attempts to call any of the settimeofday, stime or clock_settime system calls.
+
+B. Allows the container's process, access to the settimeofday, stime and clock_settime system calls, and adds the CAP_SYS_TIME capability, so it has the privileges to invoke them.
+
+C. Allows the container's process, access to the settimeofday, stime and clock_settime system calls, but only if the container's process has the CAP_SYS_TIME capability.
+
+Ans: C. Allows the container's process, access to the settimeofday, stime and clock_settime system calls, but only if the container's process has the CAP_SYS_TIME capability.
+
+
+
+5. Which Docker CLI config options and arguments should be set so that a container doesn't use more than 75% of CPU resources on a system with 4 cores?
+
+A. Either '--cpus 3', or '--cpu-quota 300000 --cpu-period 100000', both have the same effect.
+B. --cpu-quota 300000 --cpu-period 100000.
+C. It's not possible to limit the access a container has to CPU resources, as they are isolated from other processes.
+D. --cpus 3.
+
+Ans:   A. Either '--cpus 3', or '--cpu-quota 300000 --cpu-period 100000', both have the same effect.
+
+
+
+6. Which of the following statements is NOT true?
+
+A. Cgroups can help to ensure that the Docker host's resources are optimally distributed between container workloads.
+B. Cgroups can help to ensure that container workloads don't consume too much network bandwidth.
+C. Cgroups can help to protect container workloads from the effects of Denial of Service (DoS) attacks.
+
+Ans: B. Cgroups can help to ensure that container workloads don't consume too much network bandwidth.
+
+
+
+7. Which is the most preferred user configuration for running a container workload?
+
+A. Privileged user, but with a read-only filesystem
+B. Non-privileged user
+C. Privileged user, but with a minimal filesystem
+
+Ans: B. Non-privileged user
+
+
+
+8. The CAP_SYS_ADMIN capability is not in the whitelist of capabilities provided to containers by Docker. When should it be added using the --cap-add config option?
+
+A. Only when containers running as a non-root user, require special administrative privileges, in order to perform their function
+
+B. In very specific use cases, where it is required for the purpose of the container, and where risks have been appropriately mitigated
+C. When containers are started with UID/GID=0, because they they need the CAP_SYS_ADMIN capability to run as the 'root' user
+
+Ans: B. In very specific use cases, where it is required for the purpose of the container, and where risks have been appropriately mitigated
+
+
+
+9. Which of the following statements is true about mandatory access control for the opeSUSE Linux distribution?
+
+A. Mandatory access control must be implemented with AppArmor, as this is the preferred Linux security module for openSUSE.
+B. Instead of using a Linux security module, openSUSE makes exclusive use of Grsecurity for mandatory access control.
+C. Mandatory access control can be implemented with either SELinux or AppArmor Linux security modules.
+
+Ans:   C. Mandatory access control can be implemented with either SELinux or AppArmor Linux security modules.
+
+
+10. Which of the following descriptions best describes the principle of ‘defense in depth’ in the context of container workloads?
+
+A. The term applied when SELinux is chosen ahead of AppArmor for mandatory access control, as SELinux policy is applied on a system-wide basis.
+B. A set of layered security mechanisms that aims to maintain the integrity of a container workload in the event of the compromise of any one mechanism.
+C. The application of mandatory access control policy following the exhaustive testing of a container workload, using appropriate profiling tools.
+
+Ans:    B. A set of layered security mechanisms that aims to maintain the integrity of a container workload in the event of the compromise of any one mechanism.
+
+
+11. Secure computing mode (seccomp) has two modes of operation. What use case might seccomp 'strict mode' be used for?
+
+A. Application of strict limitations on the system calls available to Docker containers workloads running on a Docker host
+B. Isolation of Docker container workloads, one from another, on a Docker host that needs to implement co-tenanting
+C. Confinement of an untrusted application, that simply requires the ability to read and write to previously opened files, pipes or sockets
+
+Ans:    C. Confinement of an untrusted application, that simply requires the ability to read and write to previously opened files, pipes or sockets 
+
+
+
+12. Generally speaking, is it sensible to create Docker containers, sharing their namespaces with the default namespaces of the Docker host itself?
+
+A. Never. Docker container namespaces should never share the Docker host's namespaces. This could lead to unsolicited or unintended actions being performed on system resources, which may compromise the host or other container workloads.
+
+B. A container should only ever share the Docker host's namespaces, when there is a very specific requirement to do so, and the risks associated with doing so, have been assessed or mitigated adequately.
+
+C. This is fine. The default namespaces are the parents of all other namespaces, which means that whilst a container's process can see the resources associated with the default namespaces, it can't perform any operations on them.
+
+Ans:   B. A container should only ever share the Docker host's namespaces, when there is a very specific requirement to do so, and the risks associated with doing so, have been assessed or mitigated adequately.
+
+
+13. User namespaces allow the mapping of user and group IDs from one namespace to another. A cloned process, then, can be privileged (UID/GID=0) inside its own user namespace, but non-privileged in the default user namespace. Why do you think that Docker, in default circumstances, invokes containers in the default user namespace instead of in their own, unique user namespace?
+
+A. Because user namespaces are not enabled in all Linux distributions, and there are still some concerns as to whether they are fully secure and mature enough, so Docker doesn't enable them as its default behavior.
+
+B. Because Docker containers need to access the Linux kernel in order to function correctly, and accessing the kernel requires the privileges associated with the privileged user with UID/GID=0.
+
+C. Because Docker images and containers share the same filesystem content, using read-only image layers.
+
+
+Ans: C. Because Docker images and containers share the same filesystem content, using read-only image layers.
+
+
+
+14. If a process clones a new process into a PID namespace which in turn clones a new process into a new PID namespace, how many process ID (PID) representations does the 'grandchild' process have?
+
+A. Zero. It's not possible to nest PID namespaces beyond a parent and child.
+B. One. Each process must have a unique PID in order for the kernel to differentiate one process from another.
+C. Three. The process has a unique PID in each PID namespace.
+
+Ans: C. Three. The process has a unique PID in each PID namespace.
+
+
+
+
+15. A container's cgroup for the cpu subsystem, is located at:
+/sys/fs/cgroup/cpu/docker/42130a74a71e685d060cbf493a23401a97e8dc4ce3f47a445f8128ff977ec86b
+Which cgroup driver is the Docker host using?
+
+A. systemd
+B. cgroupfs
+C. cgroupfs - but with a custom cgroup parent
+D. systemd - but with a custom cgroup parent
+
+Ans: B. cgroupfs
+
+
+
+16. What is wrong with the following Dockerfile?
+FROM ubuntu
+RUN groupadd -r api && useradd -r -g api api
+USER api:api
+COPY apiserver /
+RUN chown api.api /apiserver
+ENTRYPOINT ["/apiserver"]
+ 
+A. The useradd and groupadd commands in the RUN instruction are incorrect. They should be adduser and addgroup.
+B. The user that's created in the RUN instruction, doesn't have a deterministic UID/GID, and won't be recognized by the host.
+C. A non-privileged user is set too early in the sequence, and the chown command in the RUN instruction will fail.
+
+Ans:    C. A non-privileged user is set too early in the sequence, and the chown command in the RUN instruction will fail.
+
+17. A minimal Docker image has been created for serving Nginx (built as a statically-linked binary from source code), using a multi-stage Docker image. The resulting image simply contains the binary, and other Nginx-related artifacts, including a configuration file. When an attempt is made to run a container, however, it fails to start. Part of the error message contains the following:
+2015/12/11 22:26:13 [emerg] 1#0: getpwnam("nobody")
+What is the likely cause of the error?
+
+A. Nginx is attempting to read the /etc/passwd file, in order to find the 'nobody' user, but /etc/passwd doesn't exist in the minimal image.
+B. The UIDs for the 'nobody' user, are different on the host and in the container, creating confusion for Nginx, and causing the container to exit.
+C. The Dockerfile didn't contain a RUN instruction with a command to create the 'nobody' user, which Nginx needs in order to function.
+
+Ans:   A. Nginx is attempting to read the /etc/passwd file, in order to find the 'nobody' user, but /etc/passwd doesn't exist in the minimal image.
+
+
+
+18. Which of the following Docker CLI commands will NOT result in a ‘super privileged container’ when invoked on a Docker host with SELinux enabled?
+ 
+A. docker container run -itd -v /:/tmp/root:Z  alpine
+
+B. 	docker container run
+-itd --ipc host alpine
+	
+C. docker container -itd --security-opt label=disable alpine
+
+D. docker container run
+-itd --privileged alpine
+
+Ans:    A. docker container run -itd -v /:/tmp/root:Z  alpine
+
+
+
+
+19. The following Docker daemon configuration syntax has been added to /etc/docker/daemon.json file:
+{
+    "apparmor-enabled": false
+}
+What will happen after a restart of the Docker daemon?
+ 
+A. This is an invalid configuration and the Docker daemon will fail to start. AppArmor confinement cannot be turned off for container workloads.
+B. A warning message is written to the Docker daemon's log file and all newly created containers will be unconfined by AppArmor policy.
+C. AppArmor confinement will be turned off for all container workloads and will be replaced by SELinux policy enforcement instead.
+
+Ans: A. This is an invalid configuration and the Docker daemon will fail to start. AppArmor confinement cannot be turned off for container workloads.
+
+
+
+20. Having thoroughly profiled a container workload using strace, in order to establish its requirements of system call usage, you start a container confined by a custom seccomp profile, but get the following error message:
+starting container process caused "readdirent: operation not permitted": unknown.
+What is the most likey cause of the error?
+
+A. The container wasn't invoked with the --security-opt no-new-privileges config option, and the container runtime is unable to start the container, as it doesn't have access to the required system calls to bootstrap the container.
+
+B. Clearly the profiling of the container workload was insufficient and the custom profile that was created for confining the container was missing the readdirent system call, which it requires to function correctly.
+
+C. Despite the custom seccomp profile accurately reflecting the requirements determined by the profiling process, a missing capability is blocking the use of the readdirent system call for the container workload.
+
+Ans: A. The container wasn't invoked with the --security-opt no-new-privileges config option, and the container runtime is unable to start the container, as it doesn't have access to the required system calls to bootstrap the container.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

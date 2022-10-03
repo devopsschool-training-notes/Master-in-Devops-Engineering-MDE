@@ -1,0 +1,265 @@
+Course: Python Fundamentals
+
+1. What Python function is used to open files?
+
+A. open_file()
+B. file()
+C. new_file()
+D. open()
+
+Ans: D. open()
+
+2. What does the pass keyword do?
+
+A. Passes control to another function
+B. Continues to the next iteration of a loop
+C. it is a no-op
+D. Raises an exception
+
+Ans: C. it is a no-op
+
+3. What are with-blocks used for?
+
+A. Writing to files
+B. Defining functions
+C. Resource management
+D. Looping over sequences
+
+Ans: C. Resource management
+
+4. Which one of the following is true?
+
+A. If present, the module docstring must begin on the first non-empty line in the module
+B. The first statement in the module must be an import statement
+C. If present, the shebang comment must be the first non-empty line in the module
+
+Ans: C. If present, the shebang comment must be the first non-empty line in the module 
+
+5. What does the in operator do for lists?
+
+A. Inserts an element in to the list
+B. Runs a function for each element in the list
+C. Duplicates the list
+D. Checks for membership of a value
+
+Ans: D. Checks for membership of a value
+
+6. What is the standard package that provides support for building and installing additional modules into a Python installation?
+
+A. fixture
+B. pkgutils
+C. palindrome
+D. distutils
+
+Ans: D. distutils
+
+
+7. Where must keyword arguments come when calling a function?
+
+A. Before positional arguments
+B. After the closing parenthesis
+C. They can appear anywhere
+D. After positional arguments
+
+Ans: D. After positional arguments
+
+8. Python source files can contain multiple classes.
+
+A. False
+B. True
+
+Ans: B. True
+
+
+9. The control flow construct for nested conditionals uses which form:
+
+A. elif:
+B. else if:
+C. elsif:
+D. elseif:
+
+Ans: A. elif:
+
+
+
+10. What does a comprehension's filtering predicate do?
+
+A. Prevents certain values from going into the collection
+B. Modifies the values going into the collection
+C. Allows sets to contain duplicates
+D. Determines the actual type of collection constructed
+
+Ans: A. Prevents certain values from going into the collection
+
+11. Can classes have docstrings?
+
+A. Yes
+B. No
+
+Ans: A. Yes
+
+12. Why is the first command line argument in sys.argv[1]
+
+A. Because Python lists use one-based indexing
+B. Because the program filename is in sys.argv[0]
+C. Because the program module name is in sys.argv[0]
+
+Ans: B. Because the program filename is in sys.argv[0]
+
+13. What does the LEGB acronym stand for?
+
+A. Local, Enclosing, Global, Built-in
+B. Lookup, Enable, Gateway, Backup
+C. Link, Extension, Generic, Binary
+D. Local, Embedded, Global, Built-in
+
+Ans: A. Local, Enclosing, Global, Built-in
+
+14. The REPL always displays the value of the entered expression.
+
+A. False
+B. True
+
+Ans: A. False
+
+15. How do you define a test function on a TestCase?
+
+A. Manually add it to the test_functions list
+B. Start the function name with test_
+C. Add the word test-function to the function's docstring
+D. End the function name with _test
+
+Ans: B. Start the function name with test_
+
+16. How do you replace an element in a list?
+
+A. the square-bracket operator
+B. the cons() method
+C. the replace() method
+D. you can't because lists are immutable
+
+Ans: A. the square-bracket operator
+
+17. What does the global keyword do?
+
+A. Declares a function as global
+B. Defines a global variable
+C. Allows assignment to globals in a function
+D. Exports functions from a namespace
+
+Ans: C. Allows assignment to globals in a function
+
+18. Copying a list does a deep copy of the list's.
+
+A. True
+B. False
+
+Ans: B. False
+
+19. How is iteration termination signalled in Python?
+
+A. With a special *end* token
+B. By raising an IndexError exception
+C. By raising the StopIteration exception
+D. By calling a user-provided callback function
+
+Ans:C. By raising the StopIteration exception 
+
+20. Why should you follow existing patterns when choosing exception types?
+
+A. To improve program performance
+B. To simplify integration of your code
+C. To avoids SyntaxErrors
+D. To avoid documenting your APIs
+
+Ans: B. To simplify integration of your code
+
+21. When is top level module code executed?
+
+A. Only the first time a module is imported
+B. Every time the module is imported
+
+Ans: A. Only the first time a module is imported
+
+22. What is the Python 3.3 tool for creating virtual environments?
+
+A. create_env
+B. virtenv
+C. pyvenv
+D. makeenv
+
+Ans: C. pyvenv 
+
+23. Which pdb function will stop program execution?
+
+A. pdb.set_trace()
+B. pdb.break()
+C. pdb.debug()
+D. pdb.halt()
+
+Ans: A. pdb.set_trace()
+
+24. Which function in unittest will run all of your tests?
+
+A. unittest.execute()
+B. unittest.run()
+C. unittest.main()
+D. unittest.generate_report()
+
+Ans: C. unittest.main()
+
+25. What is one way to create a list from another sequence?
+
+A. a with-statement
+B. the list constructor
+C. the split() method
+D. the make_string() function
+
+Ans: B. the list constructor
+
+
+26. What does PDB's where command do?
+
+A. Prints the current call stack
+B. Shows where an attribute was initially defined
+C. Prints directory containing the current source file
+D. Prints the current timezone
+
+Ans: A. Prints the current call stack
+
+27. When converting a float to an integer with the int() constructor in which direction is rounding?
+
+A. Towards zero
+B. Away from zero
+C. Towards the nearest integer
+D. Towards positive infinity
+E. Towards negative infinity
+
+Ans: A. Towards zero
+
+28. What is one way in which exceptions are superior to error codes?
+
+A. They are faster.
+B. They cannot be easily ignored.
+C. They aren't part of a function's API.
+D. Python doesn't support error codes.
+
+Ans: B. They cannot be easily ignored.
+
+29. What does Python's id() function return?
+
+A. A unique identifier for an object
+B. The version of the Python runtime
+C. The order in which an object was created
+D. The name of an object
+
+Ans: A. A unique identifier for an object
+
+30. Are functions also objects in Python?
+
+A. Yes
+B. Only if you declare them so explicitly
+C. Module-level functions are, but not instance methods
+D. No
+
+Ans: A. Yes

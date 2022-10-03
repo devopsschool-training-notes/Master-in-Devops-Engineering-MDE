@@ -1,0 +1,132 @@
+How does "technical debt" make it hard to become a software-driven company?
+1. Technical debt is paid off by business units that do not trust IT.
+2. Attention paid to existing investments prevents focus on new ones.
+3. Too much technical debt means that you can't automate systems.
+4. Technical debt cannot be paid off without support from commercial vendors.
+Ans:-  2. Attention paid to existing investments prevents focus on new ones.
+
+According to the Puppet Labs State of DevOps Report, teams can increase deploys-per-day as they increase dev count.
+1. True
+2. False
+
+Ans:-  1. True
+
+Why does the application team take responsibility for deciding how much work to take into a software sprint?
+1. So the application team knows the priorities of what needs to be done
+2. So that the team feels an obligation to complete the work
+3. Because product owners aren't adept at estimating level of effort
+Ans:-  2. So that the team feels an obligation to complete the work
+
+What's one reason to regularly merge code into a master branch instead of using feature branches?
+1. Reduce integration and debugging waste later on
+2. Reduce the number of broken builds each day
+3. Most source control systems don't support branching.
+Ans:- 1. Reduce integration and debugging waste later on
+
+Why should developers, operators, and support staff share a single ticketing system?
+1. It's cheaper to run a single system.
+2. Support teams should choose the system used by the company.
+3. You can avoid losing data as customer information moves between systems.
+Ans:-  3. You can avoid losing data as customer information moves between systems.
+
+What's the point of sending regular, structured team updates to executives?
+1. Show positive trends to justify the team's existence
+2. Share core business metrics and delivery momentum
+3. Demonstrate what new technologies the team is using
+Ans:- 2. Share core business metrics and delivery momentum
+
+Which of the below is NOT a useful source of info for new engineers to learn about the application they deliver?
+1. Deployment pipeline
+2. Source code
+3. Team wiki
+4. Tribal knowledge
+Ans:-  4. Tribal knowledge
+
+Why is it useful to have a regular operations review with management?
+1. Track each application team using uniform measures
+2. Stay focused on customers while improving quality of entire organization
+3. Focus on where each team is finding success
+4. Solve problems for a particular service experience issues
+Ans:- 2. Stay focused on customers while improving quality of entire organization
+
+How can you use data to make decisions about resizing application teams?
+1. Marginalize the engineer who is responsible for the most production issues.
+2. Assess who writes the most lines of code and move that engineer among teams.
+3. Look at team velocity and understand expected impact of new team members.
+Ans:- 3. Look at team velocity and understand expected impact of new team members.
+
+Why are relationships important within a DevOps team?
+1. Teams unite against common adversaries within the organization.
+2. You can create lasting friendships outside of the office.
+3. You can build trust that comes in handy during a crisis.
+Ans:-  3. You can build trust that comes in handy during a crisis.
+
+DevOps is characterized by:
+1. Cultural norms and collaboration practices that enable the fast flow of high-quality work
+2. Installing automation suites for testing and service management
+3. Developers with production access who regularly push their code to production
+4. Developers and Operators reorganized into the same department
+Ans:- 1. Cultural norms and collaboration practices that enable the fast flow of high-quality work
+
+In which way is an enterprise DevOps different from DevOps at a small company?
+1. More functional silos in place
+2. Optimized for efficiency instead of raw throughput
+3. Smaller IT budget for new software
+4. Less focus on delivering all the way to production
+Ans:- 1. More functional silos in place
+
+Which of the below is the primary point of the daily team standup?
+1. Let developers demonstrate new features they are working on.
+2. Give team members an opportunity to deliver a status update.
+3. Orient the team on the most important issues of the day.
+Ans:-  3. Orient the team on the most important issues of the day.
+
+Who should be part of an on-call rotation?
+1. Operators
+2. Developers, operators, and executives
+3. Developers and executives
+4. Developers and operators
+Ans:- 2. Developers, operators, and executives
+
+What is NOT a good way to patch infrastructure in a DevOps environment?
+1. Build "gold" images that are used to replace existing servers.
+2. Log into servers and run update scripts.
+3. Use centralized configuration management tools to push updates.
+Ans:- 2. Log into servers and run update scripts.
+
+Infrastructure-as-code refers to building virtual machines with languages like Java or C#.
+1. False
+2. True
+Ans:- 1. False
+
+How does one conduct a "blameless postmortem"?
+1. By focusing on the facts of the incident, and focusing on fixing processes, technology
+2. By identifying the party outside the team that caused the incident
+3. By considering how the incident would have gone differently by making different choices
+Ans:- 1. By focusing on the facts of the incident, and focusing on fixing processes, technology
+
+A well-designed application team has no dependencies on other teams.
+1. True
+2. False
+Ans:- 2. False
+
+Why does product documentation need a new approach in DevOps?
+1. More frequent product changes result in out-of-date product docs.
+2. Technical writers aren't part of a DevOps organization.
+3. Typically developers wrote all the product docs, but now operators do.
+Ans:- 1. More frequent product changes result in out-of-date product docs.
+
+How does a blue/green deployment work?
+1. While "blue" is serving production, "green" is updated and starts accepting production traffic.
+2. The "blue" environment is production and "green" environment acts as a test bed.
+3. "Blue" and "green" both serve production traffic but only one is updated at a time.
+Ans:- 1. While "blue" is serving production, "green" is updated and starts accepting production traffic.
+
+What does NOT belong in the application package?
+1. Infrastructure scripts
+2. Instructions for post-deployment manual changes
+3. Application binary or container
+4. Environment variable definition
+Ans:-  2. Instructions for post-deployment manual changes
+
+

@@ -1,0 +1,265 @@
+What is basic use of Artifactory?
+1. Binary and Package management system
+2. Source code management system
+3. Configuration management system
+4. Code management system
+Ans  1. Binary and Package management system
+
+What is the JAVA path need to be set before artifactory installation?
+1. JAVA_HOME	
+2. JAVA_PATH
+3. JRE_PATH
+5. JDK_PATH
+
+Ans - JAVA_HOME
+
+What is the use of $ARTIFACTORY_HOME/bin/artifactory.sh file
+1. To Start the Artifactory Services in Linux
+2. To Start the Artifactory Services in Windows
+3. To Start the Artifactory Services in Mac
+4. To Start the Artifactory Services in All Platforms
+
+Ans - To Start the Artifactory Services in Linux
+
+What is the use of $ARTIFACTORY_HOME/bin/artifactoryctl start
+1. To Start the Artifactory Services in Linux as a daemon process
+2. To Start the Artifactory Services in Windows as a daemon process
+3. To Start the Artifactory Services in Mac as a daemon process
+4. To Start the Artifactory Services in All Platforms as a daemon process
+
+Ans - To Start the Artifactory Services in All Platforms as a daemon process
+
+How to access default Artifactory application over the internet browsers?
+1. http://SERVER_DOMAIN:8081/artifactory
+2. http://SERVER_DOMAIN:8080/artifactory
+3. http://SERVER_DOMAIN:8090/artifactory
+4. http://SERVER_DOMAIN:8085/artifactory
+
+Ans - http://SERVER_DOMAIN:8081/artifactory
+
+What is the use of "Artifacts" menu in Dashboard?
+1. The Artifacts module is used to browse the repositories in your system and search for artifacts using a number of different methods.
+2. The Artifacts module is used to browse the Artifacts in your system and search for artifacts using a number of different methods.
+3. The Artifacts module is used to browse the Binary in your system and search for artifacts using a number of different methods.
+4. The Artifacts module is used to browse the Plugins in your system and search for artifacts using a number of different methods.
+
+Ans -  The Artifacts module is used to browse the repositories in your system and search for artifacts using a number of different methods.
+
+What is the function of "Build" menu in Artifactory Dashboard?
+1. The Build module displays the Build Browser where you can view all the CI server projects that output their builds to Artifactory.
+2. The Build module displays the Artifact Browser where you can view all the Artifact server projects that output their builds to Artifactory.
+3. The Build module displays the repositories Browser where you can view all the repositories server projects that output their builds to Artifactory.  
+4. The Build module displays the binary Browser where you can view all the binary server projects that output their builds to Artifactory.
+
+Ans -1. The Build module displays the Build Browser where you can view all the CI server projects that output their builds to Artifactory.
+
+What is not a right repostory type is avaiable in Artifactory
+1. Local
+2. Remote
+3. Virtual
+4. Group
+
+Ans - 4. Group
+
+What is not a right terminolgy for bintray?
+1. A global distribution network (CDN)
+2. Extreme throughput and redundancy for downloads
+3. CI servers metadata integration
+4. Product and EULA support
+
+Ans - 3. CI servers metadata integration
+  
+Which is the right repository definition should be inserted in pom.xml for uploading snapshot artifactory?
+1. <snapshotRepository>
+2. <releaseRepository>
+3. <snapshotsRepository>
+4. <distributionManagement>
+
+Ans - 1. snapshotRepository
+
+Which is the right repository definition should be inserted in pom.xml for uploading release artifactory?
+1. <snapshotRepository>
+2. <releaseRepository>
+3. <repository>
+4. <distributionManagement>
+
+Ans - 3. <repository>
+
+Which is the right repository definition should be inserted in pom.xml which holds release and snapshot artifactory?
+1. <snapshotRepository>
+2. <releaseRepository>
+3. <distributionManagement>
+4. <repository>
+
+Ans - 3. <distributionManagement>
+
+What maven elements should be added in setting.xml to add a artifactory credentials?
+1. <server>
+2. <mirror>
+3. <profile>
+4. <plugins>
+
+Answer - <server>
+
+Which is right maven goal to upload the package into Artifactory?
+1. mvn deploy
+2. mvn upload
+3. mvn install
+4. mvn download
+
+Answer - 1. mvn deploy
+
+
+What is the right definition of Local Repository?
+1. Local repositories are physical, locally-managed repositories into which you can deploy artifacts.
+2. A Local repository serves as a caching proxy for a repository managed at a remote URL (which may itself be another Artifactory remote repository).  
+3. A Local repository (or "repository group") aggregates several repositories with the same package type under a common URL.
+4. Local repositories are physical, remote-managed repositories into which you can deploy artifacts.
+
+Ans - 1. Local repositories are physical, locally-managed repositories into which you can deploy artifacts.
+
+What is the right definition of Remote Repository?
+1. Remote repositories are physical, locally-managed repositories into which you can deploy artifacts.
+2. A Remote repository serves as a caching proxy for a repository managed at a remote URL (which may itself be another Artifactory remote repository).  
+3. A Remote repository (or "repository group") aggregates several repositories with the same package type under a common URL.
+4. Remote repositories are physical, remote-managed repositories into which you can deploy artifacts.
+
+Ans - 2. A Remote repository serves as a caching proxy for a repository managed at a remote URL (which may itself be another Artifactory remote repository). 
+
+What is the right definition of Virtual Repository?
+1. Virtual repositories are physical, locally-managed repositories into which you can deploy artifacts.
+2. A Virtual repository serves as a caching proxy for a repository managed at a remote URL (which may itself be another Artifactory remote repository).  
+3. A Virtual repository (or "repository group") aggregates several repositories with the same package type under a common URL.
+4. Virtual repositories are physical, remote-managed repositories into which you can deploy artifacts.
+
+Ans - 3. A Virtual repository (or "repository group") aggregates several repositories with the same package type under a common URL.
+
+What is not the Basic Authentication supported in Artifactory?
+1. LDAP
+2. Active Directory
+3. Single Sign-On
+4. PAML
+
+Ans - 4. PAML
+
+What is not the Basic Authentication supported in Artifactory?
+1. SAML
+2. OAuth
+3. SCP
+4. Atlassian Crowd Integration
+
+Ans - 3. SCP
+
+Which database is not supported for Artifactory installtion?
+1. MySQL v5.5 and above with InnoDB
+2. Oracle version 10g and above
+3. Microsoft SQL Server 2008 and above
+4. Sybase
+
+Ans - 4. Sybase
+
+What is not a right tool to manage Binary repository?
+1. Artifactory
+2. Nexus
+3. Archiva
+4. git
+
+Ans - 4. git
+
+Are both right statement about downloading the artifact from Artifactory?
+1. Search:
+Perform a GAVC search on a set of group ID and artifact ID coordinates to retrieve all existing versions of that set; then you can use any version string comparison algorithm to determine the latest version.
+
+2. the Maven way:
+Artifactory generates a standard XML metadata that is to be consumed by Maven, because Maven is faced with the same problem - determining the latest version; The metadata lists all available versions of an artifact and is generated for every artifact level folder; with a simple GET request and some XML parsing, you can discover the latest version.
+
+1. YES
+2. NO
+
+Ans - YES
+
+Which one is wrong statement of gradle.properties file location?
+1. In project build dir (that is where your build script is)
+2. In sub-project dir
+3. In gradle user home (defined by the GRADLE_USER_HOME environment variable, which if not set defaults to USER_HOME/.gradle)
+4. C Drive
+
+Ans - 4. C Drive
+
+Is it right plugins syntax to add in order to upload artifact in Artifactory?
+1. apply plugin: 'artifactory-publish'
+2. apply plugin: 'artifactory-upload'
+3. apply plugin: 'artifactory-artifact'
+4. apply plugin: 'artifactory-push' 
+
+Is it right syntax to add in order to upload artifact in Artifactory?
+artifactory {
+    contextUrl = 'http://path.to.artifactory' // base artifactory url
+  publish {
+    repository {
+      repoKey = 'libs-releases'   //The Artifactory repository key to publish to
+      username = 'publisher'      //The publisher user name
+      password = '********'       //The publisher password
+      maven = true
+    }
+  }
+}
+
+1. YES
+2. False
+
+Ans - 1. YES
+
+What is the right statement for Snapshots repostory?
+1. The repository from which to resolve releases
+2. The repository from which to resolve snapshots
+3. The repository from which to resolve plugin releases
+4. The repository from which to resolve plugin snapshots
+Ans - 2. The repository from which to resolve snapshots
+
+What is the right statement for Releases repostory?
+1. The repository from which to resolve releases
+2. The repository from which to resolve snapshots
+3. The repository from which to resolve plugin releases
+4. The repository from which to resolve plugin snapshots
+Ans - 1. The repository from which to resolve releases
+
+What is the right statement for Plugin Releases repostory?
+1. The repository from which to resolve releases
+2. The repository from which to resolve snapshots
+3. The repository from which to resolve plugin releases
+4. The repository from which to resolve plugin snapshots
+Ans - 3. The repository from which to resolve plugin releases
+
+What is the right statement for Plugin Snapshots repostory?
+1. The repository from which to resolve releases
+2. The repository from which to resolve snapshots
+3. The repository from which to resolve plugin releases
+4. The repository from which to resolve plugin snapshots
+Ans - 4. The repository from which to resolve plugin snapshots
+
+Which is a wrong statement of "Artifactory supports import and export of data at two levels:"
+1. System level
+2. Repository level
+3. System and Repository level
+4. Artifactory level
+
+Ans - 4. Artifactory level
+
+All following statements are correct about Pro Features of Artifactory?
+
+1. Artifactory Query Language
+2. Black Duck Code Center integration
+3. Filtered Resources
+4. GPG Signing
+5. JFrog CLI
+6. LDAP Groups
+7. Repository Layouts
+8. Repository Replication
+9. Smart Search
+
+1. YES
+2. NO
+
+Ans - 1. YES
+

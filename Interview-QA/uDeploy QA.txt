@@ -1,0 +1,59 @@
+Is it right defintion of "Application" in uDeploy?
+One or more computer programs or software components that provide a function in direct support of a specific business process or processes.
+Yes 
+No
+Answer - YES
+
+Is it right defintion of "application process" in uDeploy?
+A process that is associated with an application. Unlike a component or generic process, an application process is created from application-level steps. Typically, an application process invokes component processes, and orchestrates multi-component deployments.
+Yes 
+No
+Answer - YES
+
+Is it right defintion of "CodeStation" in uDeploy?
+The artifact repository for IBM UrbanCode Deploy. CodeStation tracks Inventory versions as they change and maintains an archive for each artifact.
+Yes 
+No
+Answer - No
+
+Is it right defintion of "component" in uDeploy?
+A representation of deployable items and the user-defined processes that operate on them, usually by deploying them.
+Yes 
+No
+Answer - YES
+
+Is it right defintion of "component process" in uDeploy?
+A series of user-defined steps that operate on Application artifacts.
+Yes 
+No
+Answer - No
+
+Is it right defintion of "deployment" in uDeploy?
+A multistage process that retrieves the output of a build, packages the output, and moves the package to another location so it can be tested or run.
+Yes 
+No
+Answer - YES
+
+Is it right defintion of "environment inventory" in uDeploy?
+A list of all of the Resource versions that are deployed to an environment.
+Yes 
+No
+Answer - No
+
+Is it right defintion of "relay servers" in uDeploy?
+A proxy that can be used to access agents behind a firewall. Relay servers enable network-to-network communication.
+Yes 
+No
+Answer - YES
+
+Is it right defintion of "resource" in uDeploy?
+A user-defined construct that is based on the architectural model of IBM UrbanCode Deploy. A resource represents a deployment target.
+Yes 
+No
+Answer - YES
+
+Is it right defintion of "snapshot" in uDeploy?
+A collection of specific versions of components. Typically, a snapshot represents a set of component versions that are known to work together.
+Yes 
+No
+Answer - YES

@@ -1,0 +1,821 @@
+   
+    3. Topic Name - AWS Certified Developer - Associate
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+         2. AWS Developer: The Big Picture
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1. Amazon Web Services are organized physically using which terms?
+
+   A - Data Regions, Zones, Centers
+
+   B - States, Regions, Municipalities
+
+   C - Regions, Areas, Data Centers
+
+   D - Regions, Availability Zones, Data Centers
+
+Answer: D - Regions, Availability Zones, Data Centers
+
+-------------------------------------------------------------------------
+2. When reducing latency for static files, what is the best service to use?
+
+   A - CloudWatch
+
+   B - S3
+
+   C - Redshift
+
+   D - CloudFront
+
+Answer: D - CloudFront
+
+-------------------------------------------------------------------------
+3. What is the best access method to use when configuring user accounts on AWS?
+
+   A - Pizza cutter
+
+   B - Web console
+
+   C - Command line interface
+
+   D - Software development kit
+
+Answer: B - Web console
+
+-------------------------------------------------------------------------
+4. What is the best tool to use for your code to interact with AWS?
+
+   A - Clothes hanger
+
+   B - Web console
+
+   C - Command line interface
+
+   D - Software development kits
+
+Answer: D - Software development kits
+-------------------------------------------------------------------------
+5. What two features of the cloud make it appealing to companies?
+
+   A - Creativity and flexibility
+
+   B - Scalability and ethereality
+
+   C - Pricing and scalability
+
+   D - Pricing and fitness
+
+Answer: C - Pricing and scalability
+
+-------------------------------------------------------------------------
+6. How do cloud services interact with each other in AWS?
+
+   A - TCP Connections
+
+   B - Hardwire Connections
+
+   C - USB Connections
+
+   D - Service Connections
+
+Answer: A - TCP Connections
+-------------------------------------------------------------------------
+7. What is an Amazon Machine Image?
+
+   A - Software and operating system to be copied into S3 buckets
+
+   B - Database type used with RDS
+
+   C - JPG image to be printed on machines
+
+   D - Operating system and software to be installed on an EC2 instance
+
+Answer:  D - Operating system and software to be installed on an EC2 instance
+
+-------------------------------------------------------------------------
+8. What structure is used in AWS to secure instances of various services?
+
+   A - Security groups
+
+   B - Service management rgoups
+
+   C - Amazon machine images
+
+   D - Route53 DNS records
+
+Answer: A - Security groups
+
+-------------------------------------------------------------------------
+9. Route53 enables access to AWS services from what?
+
+   A - Command line
+
+   B - URL
+
+   C - Web browser
+
+   D - The cloud
+
+Answer: B - URL
+
+-------------------------------------------------------------------------
+10. What are the three main services that Elastic Beanstalk uses to launch your application?
+
+   A - Virtual Private Cloud, EC2, RDS
+
+   B - CloudFront, EC2, CloudWatch
+
+   C - EC2, Elastic Load Balancer, S3
+
+   D - EC2, DynamoDB, Redshift
+
+Answer: C - EC2, Elastic Load Balancer, S3
+
+-------------------------------------------------------------------------
+11. What AWS functionality controls interaction between instances?
+
+   A - TCP Connections
+
+   B - Autoscaling
+
+   C - Security Groups
+
+   D - Availability Zones
+
+Answer: C - Security Groups
+
+-------------------------------------------------------------------------
+12. What is the best tool to use when automating AWS actions in Shell scripts?
+
+   A - Software development kits
+
+   B - Web console
+
+   C - Command line interface
+
+   D - Snapping turtle
+
+Answer: C - Command line interface
+
+-------------------------------------------------------------------------
+13. What metric do you configure to correctly set up DynamoDB for an expected load?
+
+   A - Provisioned Table Capacity
+
+   B - Table Throughput Capacity
+
+   C - Table Storage Capacity
+
+   D - Provisioned Throughput Capacity
+
+Answer: D - Provisioned Throughput Capacity
+
+-------------------------------------------------------------------------
+14. What does Virtual Private Cloud use to control which IP Addresses are allowed incoming and outgoing access?
+
+   A - Network Authorization Capability Lists
+
+   B - Routing Tables
+
+   C - Virtual Security Groups
+
+   D - Network Access Control Lists
+
+Answer: D - Network Access Control Lists
+
+-------------------------------------------------------------------------
+15. What is the main benefit of using RDS?
+
+   A - Amazon saves the database to S3.
+
+   B - Amazon handles database maintenance and configuration.
+
+   C - Amazon picks the database type for you.
+
+   D - Amazon regularly restarts the database.
+
+Answer:  B - Amazon handles database maintenance and configuration.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	3. AWS Developer Fundamentals
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+1. DynamoDB differs from SimpleDB in the follow way:
+
+   A - SimpleDB has a database schema while DynamoDB does not
+
+   B - DynamoDB is eventually consistent while SimpleDB is not
+
+   C - DynamoDB databases can grow beyond 10GB
+
+Answer: C - DynamoDB databases can grow beyond 10GB
+
+-------------------------------------------------------------------------
+2. Elastic Block Storage would NOT be used for:
+
+   A - Persistent storage that survives Instance termination
+
+   B - Creating snapshots of what is stored on EBS volumes
+
+   C - Shared storage between multiple EC2 Instances
+
+Answer:  C - Shared storage between multiple EC2 Instances
+
+-------------------------------------------------------------------------
+3. AWS provides a set of tools for logging into RDS database instances.
+
+   A - False
+
+   B - True
+
+Answer: A - False
+
+-------------------------------------------------------------------------
+4. How long can an SQS queue hold onto a message before it is automatically removed?
+
+   A - 14 days
+
+   B - 24 hours
+
+   C - Unlimited
+
+   D - 1 hour
+
+Answer: A - 14 days
+
+-------------------------------------------------------------------------
+5. An SNS subscription must always be verified by a human recipient.
+
+   A - True
+
+   B - False
+
+Answer: B - False
+
+-------------------------------------------------------------------------
+6. An AWS Availability Zone is made up of distinct geographic Regions.
+
+   A - False
+
+   B - True
+
+Answer: A - False
+
+-------------------------------------------------------------------------
+7. Which of the following are AWS product categories?
+
+   A - Compute
+
+   B - Messaging
+
+   C - Database
+
+   D - Storage
+   
+   E - All of the above
+
+Answer: E - All of the above
+
+-------------------------------------------------------------------------
+8. Which of the following does an EC2 user NOT pay for?
+
+   A - Simple load balancing
+
+   B - Basic monitoring
+
+   C - Instance hour charges
+
+   D - OUtbuond data transfer
+
+Answer: B - Basic monitoring
+
+-------------------------------------------------------------------------
+9. Developers who provision AWS services may be responsible for:
+
+   A - Choosing size of storage
+
+   B - All of the above
+
+   C - Opening ports for access
+
+   D - Securing the service
+
+Answer: B - All of the above
+
+-------------------------------------------------------------------------
+10. In order for S3 objects to be encrypted, AWS users must upload objects in encrypted format.
+
+   A - True
+
+   B - False
+
+Answer: B - False
+
+-------------------------------------------------------------------------
+11. The AWS RDS service supports which of the following underlying database technologies?
+
+   A - BerkeleyDB
+
+   B - Oracle DB
+
+   C - IBM DB2
+
+   D - IBM DB1
+
+Answer: B - Oracle DB
+
+-------------------------------------------------------------------------
+12. All AWS services provide options for SOAP or REST access.
+
+   A - False
+
+   B - True
+
+Answer: A - False
+
+-------------------------------------------------------------------------
+13. How can a "path" property of an IAM user be used?
+
+   A - Setting the "path" will automatically provision users into IAM groups
+
+   B - The "path" sets the security permissions for the given user.
+
+   C - During search, "path" can be used to constrain the results
+
+Answer: C - During search, "path" can be used to constrain the results
+
+-------------------------------------------------------------------------
+14. The term commonly used to describe the fact that S3 functions are not atomic is:
+
+   A - CAP Exception
+
+   B - Slow moving updates
+
+   C - Eventual consistency
+
+   D - delay synchronization
+
+Answer: C - Eventual consistency
+
+-------------------------------------------------------------------------
+15. SimpleDB supports which of the following capabilities?
+
+   A - All of the above
+
+   B - Durable storage
+
+   C - Elastic storage that grows automatically (up to 10GB)
+
+   D - Schema-less data structure
+
+Answer: A - All of the above
+
+-------------------------------------------------------------------------
+16. When SQS queue messages are read, they are automatically deleted from the queue.
+
+   A - True
+
+   B - False
+
+Answer: B - False
+
+-------------------------------------------------------------------------
+17. SNS Topics do NOT support which of the following capabilities?
+
+   A - Content based routing rules
+
+   B - Bulk message distribution
+
+   C - Different security options for the publisher and subscriber of messages
+
+   D - Distribution of messages via text messaging
+
+Answer: A - Content based routing rules
+
+-------------------------------------------------------------------------
+18. AWS provides services that are typically classified as:
+
+   A - Platform as a Service
+
+   B - None of the above
+
+   C - Infrastructure as a Service
+
+   D - Data as a Service
+
+Answer: C - Infrastructure as a Service
+
+-------------------------------------------------------------------------
+19. EC2 Security Groups provide what function?
+
+   A - Defining users and roles that can log into an Instance
+
+   B - Defines which ports are not available on the Instance
+
+   C - Opening ports for selecting IP addresses
+
+Answer: C - Opening ports for selecting IP addresses
+
+-------------------------------------------------------------------------
+20. AWS users who want to store PDF documents would use which service?
+
+   A - SNS
+
+   B - S3
+
+   C - CloudFormation
+
+   D - IAM
+
+Answer: B - S3
+
+-------------------------------------------------------------------------
+21. Which AWS service is best for applications that want to have information pushed to them?
+
+   A - SPS
+
+   B - SNS
+
+   C - SQS
+
+   D - DynamoDB
+
+Answer: B - SNS
+
+-------------------------------------------------------------------------
+22. An EC2 AMI instance can be launched by:
+
+   A - Leveragin the AWS Ticket Service to make a request for an AWS engineer
+
+   B - Using the Management Console in a self-service fashion
+
+Answer: B - Using the Management Console in a self-service fashion
+
+-------------------------------------------------------------------------
+23. Which of the following data types can be specified in DynamoDB?
+
+   A - Character
+
+   B - Long
+
+   C - String
+
+   D - DateTime
+
+Answer: C - String
+
+-------------------------------------------------------------------------
+24. Elastic Block Storage is limited in size and won't auto scale with your storage needs.
+
+   A - False
+
+   B - True
+
+Answer: B - True
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	5. Amazon Web Services Databases in Depth
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1. Compared to a relational database's data model...
+
+   A - A DynamoDB attribute is like a row, and item is like a column
+
+   B - None of these
+
+   C - A DynamoDB key is like a column, and item is like a row
+
+   D - A DynamoDB attribute is like a column, and item is like a row
+
+Answer: D - A DynamoDB attribute is like a column, and item is like a row
+
+-------------------------------------------------------------------------
+2. A local secondary index can be created at any time, unlike a global secondary index.
+
+   A - True
+
+   B - False 
+
+Answer: B - False
+
+-------------------------------------------------------------------------
+3. You cannot use an Amazon-provided license for an Oracle Enterprise Edition.
+
+   A - False
+
+   B - True
+
+Answer: B - True
+
+-------------------------------------------------------------------------
+4. What is an example of a native capability of DynamoDB?
+
+   A - All of these
+
+   B - SSD storage
+
+   C - Multiple data consistency options
+
+   D - Built-in data replication
+
+Answer: A - All of these
+
+-------------------------------------------------------------------------
+5. What question does NOT factor into your decisions when creating a new RDS instance?
+
+   A - Number of manual snapshots you will take
+
+   B - Region to create the database in
+
+   C - How much storage you need
+
+   D - Which database engine to use
+
+Answer:  A - Number of manual snapshots you will take
+
+-------------------------------------------------------------------------
+6. Redshift customers have to pay data transfer costs when loading the warehouse.
+
+   A - False
+
+   B - True
+
+Answer: A - False
+
+-------------------------------------------------------------------------
+7. Why should a read replica use the same (or better) instance class as the source database?
+
+   A - None of these
+
+   B - Because instance size is immutable and can't be changed later
+
+   C - To avoid falling behind on synchronization
+
+   D - Because RDS requires it when configuring a read replica
+
+Answer: C - To avoid falling behind on synchronization
+
+-------------------------------------------------------------------------
+8. Why should you use multiple files in S3 to import data?
+
+   A - So Redshift can allocate the biggest files to the largest nodes
+
+   B - Get better throughput by putting all the node slices to work
+
+   C - All of these
+
+   D - The cost of importing data goes down
+
+Answer:  B - Get better throughput by putting all the node slices to work
+-------------------------------------------------------------------------
+9. Why would you add a read replica to an RDS database?
+
+   A - Have an alternate database to insert records
+
+   B - Scale performance of a high traffic database
+
+   C - Establish an automatic failover database in case of AZ outage
+
+Answer: B - Scale performance of a high traffic database
+
+
+-------------------------------------------------------------------------
+10. Which of the following are native Redshift capabilities?
+
+   A - Up to petabytes of storage
+
+   B - Encryption at rest
+
+   C - Parallel query processing
+
+   D - All of these
+
+Answer: D - All of these
+
+-------------------------------------------------------------------------
+11. Both query and scan requests support parallel execution via segments.
+
+   A - False
+
+   B - True
+
+Answer: A - False
+
+-------------------------------------------------------------------------
+12. What is the name of the setting that controls placement of data among the nodes?
+
+   A - Sort key
+
+   B - Primary key
+
+   C - Data distribution key
+
+   D - Index key
+
+Answer: C - Data distribution key
+
+-------------------------------------------------------------------------
+13. What happens when you ask for an attribute that wasn't projected into a local secondary index?
+
+   A - DynamoDB throws an exception
+
+   B - The data is retrieved from the source table
+
+   C - Empty data is returned
+
+   D - DynamoDB copies the data into the index and then returns it
+
+Answer:  B - The data is retrieved from the source table
+
+-------------------------------------------------------------------------
+14. Which of the following are supported RDS database engines?
+
+   A - MySQL
+
+   B - All of these
+
+   C - Microsoft SQL Server
+
+   D - Oracle
+
+Answer: B - All of these
+
+-------------------------------------------------------------------------
+15. Which command lets you validate data without actually importing it?
+
+   A - VALIDATE
+
+   B - SKIP
+
+   C - STAGE
+
+   D - NOLOAD
+
+Answer: D - NOLOAD
+
+-------------------------------------------------------------------------
+16. Read replicas cannot be promoted to standalone RDS database instances.
+
+   A - True
+
+   B - False
+
+Answer: B - False
+
+-------------------------------------------------------------------------
+17. Which of the following databases is based on PostgreSQL?
+
+   A - Amazon DynamoDB
+
+   B - Amazon RDS
+
+   C - All of these
+
+   D - Amazon Redshift
+
+Answer: D - Amazon Redshift
+
+-------------------------------------------------------------------------
+18. Throughput units are set during table creation time and cannot be changed.
+
+   A - True
+
+   B - False
+
+Answer: B - False
+
+-------------------------------------------------------------------------
+19. How does DynamoDB decide on the number of partitions to create for your table?
+
+   A - Based on the "partition count" parameter set during table creation
+
+   B - Based on throughput units chosen
+
+   C - Based on data storage
+
+   D - Based on data storage or throughput units chosen
+
+Answer: D - Based on data storage or throughput units chosen
+
+-------------------------------------------------------------------------
+20. What set of operations can you perform on RDS database logs?
+
+   A - View, watch, and download
+
+   B - View, download, and purge
+
+   C - View and watch
+
+   D - View and download
+
+Answer: A - View, watch, and download
+
+-------------------------------------------------------------------------
+21. What is a "node slice" in the Redshift architecture?
+
+   A - The leader that managers communication with clients and nodes
+
+   B - A partition of a compute node that works in parallel with others to complete operations
+
+   C - A compute node securely shared with multiple Redshift customers
+
+   D - A snapshot of a node at a point in time
+
+Answer: B - A partition of a compute node that works in parallel with others to complete operations
+
+-------------------------------------------------------------------------
+22. Which of the following is true of a multi-AZ database?
+
+   A - It cannot be connected to via client tools
+
+   B - All of these
+
+   C - It is the database instance used when you take backups
+
+   D - It is synchronously updated from the source instance
+
+Answer: B - All of these
+
+-------------------------------------------------------------------------
+23. You can restore an RDS database to any specific time during the retention period.
+
+   A - False
+
+   B - True
+
+Answer: B - True
+
+-------------------------------------------------------------------------
+24. A DynamoDB hash primary key is stored as an ordered index that can be queried.
+
+   A - True
+
+   B - False
+
+Answer: B - False
+
+-------------------------------------------------------------------------
+25. A Redshift security group is used to provide role-based access to the cluster.
+
+   A - True
+
+   B - False
+
+Answer: B - False
+
+-------------------------------------------------------------------------
+26. Why would you use a secondary index on a DynamoDB table?
+
+   A - Define alternate keys to query and scan
+
+   B - Duplicate data for redundancy purposes
+
+   C - All of these
+
+   D - To manually synchronize data with a source table
+
+Answer: A - Define alternate keys to query and scan
+
+-------------------------------------------------------------------------
+27. Why are Redshift snapshots useful?
+
+   A - Act as a disaster recovery tool by letting you stand up a cluster copy in another region
+
+   B - Restoring from a snapshot retains all the data and metadata from the source cluster
+
+   C - All of these
+
+   D - Snapshots can be shared with other AWS accounts
+
+Answer:  C - All of these
+
+-------------------------------------------------------------------------
+28. Redshift is based on PostgreSQL, but differs in supported functions, data types, and features.
+
+   A - False
+
+   B - True
+
+Answer: B - True
+
+-------------------------------------------------------------------------
+29. The COPY command can import data from S3, DynamoDB, or a server.
+
+   A - No
+
+   B - Yes
+
+Answer: B - Yes
+
+-------------------------------------------------------------------------
+30. In a global secondary index, the key values do NOT need to be unique.
+
+   A - False
+
+   B - True
+
+Answer:  B - True
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------

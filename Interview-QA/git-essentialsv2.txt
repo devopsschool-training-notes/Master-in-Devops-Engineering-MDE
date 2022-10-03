@@ -1,0 +1,88 @@
+51. Which of these was NOT mentioned as a common rule for rebasing?
+a. Never Rebase after Fetching a Branch
+b. Never Rebase after Commits use your Branch
+c. Never Rebase after Pushing a Branch
+d. Never Rebase after Pulling someone else's Branch
+
+Ans : a. Never Rebase after Fetching a Branch
+
+52. What does forking a repository let you do?
+a. Have your own copy of the repository to modify.
+b. Keep track of a repository that you're interested in.
+c. Stop future changes from being made to that repository.
+
+Ans : a. Have your own copy of the repository to modify.
+
+53. When tracking down the problem with an open issue, what option did I show that the resolver can use to communicate with the creator of the open issue?
+a. Email the user from their profile.	
+b. Comment on the issue itself.
+c. Send a git message to the user.
+
+Ans : b. Comment on the issue itself.
+
+54. What is the name of GitHub's native GUI application?
+a. GitUI
+b. GitHub for Windows
+c. GitX
+d. GitHub
+
+Ans : b. GitHub for Windows
+
+55. Which command can be used to get your stashed changes back?
+a. git stash get
+b. git stash pull
+c. git stash pop
+d. git stash
+
+Ans : c. git stash pop
+
+56. How do you associate a TFS Work Item to a Git commit?
+a. From Team Explorer, add the Work Item under the Related Work Items section
+b. From Command-line, add the Work Item ID to the commit message, with a hashtag in front of it
+c. From Team Explorer, add the Work Item ID to the commit message with a hashtag in front of it
+d. All of the above
+
+Ans : d. All of the above
+ 
+57. What are the qualities of a good commit that together make up the acronym ACID?
+a. Atomic, compact, irreversible and durable
+b. Atomic, consistent, incremental and documented
+c. Additional, concise, isolated and documented
+d. Atomic, consistent, isolated and durable
+
+Ans : b. Atomic, consistent, incremental and documented
+
+58. What does the two-dot notation, A..B mean when used with git log?
+a. It includes all the commits reachable from B, but not from A.
+b. It includes all the commits reachable from A, but not from B.
+c. It includes all the commits reachable from both A or B.
+d. It includes all the commits reachable from either A or B.
+
+Ans : a. It includes all the commits reachable from B, but not from A.
+
+59. What does the three-dot notation, A...B, mean when used with git log?
+a. It includes all the commits reachable from either A or B.
+b. It includes all the commits reachable from both A and B.
+c. It includes all the commits reachable from either A or B, but not both.
+d. It includes all the commits reachable from neither A nor B.
+
+Ans : c. It includes all the commits reachable from either A or B, but not both.
+
+60. What is the difference between the --mixed and --soft options of git reset?
+a. --mixed modifies both the index and the working directory, while --soft modifies only the index.
+b. --mixed modifies only the working directory, while --soft modifies only the index.
+c. --mixed modifies only the index, while --soft doesn't modify anything.
+d. --mixed modifies only the working directory, while --soft doesn't modify anything.
+
+Ans : c. --mixed modifies only the index, while --soft doesn't modify anything.
+
+
+61. Git Source Control Provider only works with Visual Studio 2010.
+a. True
+b. False
+
+Ans : b. False
+
+62. Git creates a separate folder for each branch that you create.
+a. True
+b. False

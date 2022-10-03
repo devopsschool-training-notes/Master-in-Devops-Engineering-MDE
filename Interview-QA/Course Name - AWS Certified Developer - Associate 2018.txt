@@ -1,0 +1,1314 @@
+Course Name - AWS Certified Developer - Associate 2018
+
+Quiz - 1. Identity Access Management Quiz
+==================================================
+1. Which of the following is NOT a feature of IAM?
+a. Centralised control of your AWS account
+b. Integrates with existing active directory account allowing single sign on
+c. Fine-grained access control to AWS resources
+d. Allows you to setup biometric authentication, so that no passwords are required
+
+Ans- d. Allows you to setup biometric authentication, so that no passwords are required
+
+2. AWS recommends that EC2 instances have credentials stored on them so that the instances can access other resources (such as S3 buckets).
+a. True
+b. False
+
+Ans- b. False
+
+3.Which IAM entity can you use to delegate access to your AWS resources to users, groups or services?
+a. IAM User
+b. IAM Web Identity Federation
+c. IAM Role
+d. IAM Group
+
+Ans- c. IAM Role
+
+4. In AWS, what is IAM used for?
+a. Secure VPN access to AWS
+b. Creating and managing users and groups, managing access to AWS services & assigning permissions to allow and deny access to AWS resources.
+c. To move large amount of data (Terrabytes) in to AWS.
+d. IAM is a serverless compute platform.
+
+Ans- b. Creating and managing users and groups, managing access to AWS services & assigning permissions to allow and deny access to AWS resources.
+
+
+5. What is an IAM Policy?
+a. A csv file contains a users Access Key and Secret Access Key
+b. A JSON document which defines one or more permissions
+c. A file containing a user's private ssh key
+d. The policy which determines how your AWS bill will be paid.
+
+Ans- b. A JSON document which defines one or more permissions
+
+6. Which is the best way to enable your EC2 instance to read files in an S3 bucket?
+a. Create a new IAM user and grant read access to S3. Store the user's credentials locally on the EC2 instance and configure your application to supply the credentials with each API resquest.
+b. Configure a bucket policy which grants read acess based on the EC2 instance name.
+c. Create an IAM role with read access to S3 and assign the role to the EC2 instance.
+d. Create a new IAM role and grant access to S3. Store the role's credentials locally on the EC2 instance and configure your application to supply the credentials with each API request.
+
+Ans- c. Create an IAM role with read access to S3 and assign the role to the EC2 instance.
+
+
+7. Which statement best describes IAM?
+a. IAM allows you to manage users, groups, and roles and their corresponding level of access to the AWS Platform.
+b. IAM allows you to manage user's passwords only. AWS staff must create nwe users for your organization. This is done by raising a ticket.
+c. IAM allows you to manage permission for AWS resources only.
+d. IAM stnads for Improvised Application Management, and it allows you to deploy and manage applications in the AWS Cloud.
+
+Ans- a. IAM allows you to manage users, groups, and roles and their corresponding level of access to the AWS Platform.
+
+==================================================================================
+Quiz - 2. EC2 Quiz
+==================================================================================
+1. A HTTP 4XX code means ________.
+a. There has been a server side error.
+b. There has been a client side error.
+c. There has been a redirection.
+d. The request was successful.
+
+Ans- b. There has been a client side error.
+
+2. To retrieve instance Metadata or Userdata, you will need to use which the following IP Addresses?
+a. http://127.0.0.1
+b. http://192.168.0.254
+c. http://10.0.0.1
+d. http://169.254.169.254
+
+Ans- d. http://169.254.169.254
+
+3. Which AWS service below is chargeable?
+a. Autoscaling
+b. Elastic Beanstalk
+c. Elastic Load Balancers
+d. Cloud Formation
+
+Ans- c. Elastic Load Balancers
+
+4. Which of the following best describes Amazon ECS?
+a. The Elastic Container Scheduler is software that you can run and manage to orchestrate many running Docker containers.
+b. The Elastic Container Service is software that you can run and manage to orchestrate many running Docker containers.
+c. The Elastic Container Scheduler is a service that manages running Docker containers on a group of your EC2 instances.
+d. The Elastic Container Schedulaer is a serverless system to manage running many Docker containers in a flexible and cost-effective way.
+e. The Elastic Container Services is a serverless system to manage running many Docker containers in a flexible and cost-effective way.
+
+Ans- b. The Elastic Container Service is software that you can run and manage to orchestrate many running Docker containers.
+
+5. In order to enable encryption at rest using EC2 and Elastic Block Store, you must ________.
+a. Configure encryption when creation the EBS volume
+b. Configure encryption using the appropiate Operation Systems file system
+c. Configure encryption using X.509 certificates
+d. Mount the EBS volume in to S3 and then encrypt the bucket using a bucket poliy.
+
+Ans-  a. Configure encryption when creation the EBS volume
+
+6. An HTTP 200 code means ________.
+a. The request has failed
+b. The request was successful
+c. There has been a server side error
+d. There has bben a client side error
+
+Ans- b. The request was successful
+
+7. An HTTP 3xx code means ________.
+a. The request was successful
+b. There has been a client side error
+c. There has been a server side error
+d. There nas been a redirection
+
+Ans-  d. There nas been a redirection
+
+8. A HTTP 5XX code means ________.
+a. There has been a server side error
+b. There has beeen a client side errror
+c. THere has been a redirection
+d. The request was a success
+
+Ans-  a. There has been a server side error
+
+9. You have an EC2 instance that needs to know both its private IP address and its public IP address. To do this, the application needs to ________.
+a. Run IPCONFIG (Windows) or IFCONFIG (Linux)
+b. Retrieve the instance Metadata from http://169.254.169.254/latest/meta-data/
+c. Retrive the instance Userdata from http://169.254.196.254/latest/meta-data/
+d. User the following command:\"AWS EC2 displayIP\
+
+Ans-  b. Retrieve the instance Metadata from http://169.254.169.254/latest/meta-data/
+
+10. Individual instances are provisioned ________.
+a. In Regions
+b. In Availability Zones
+c. Globally
+
+Ans-  b. In Availability Zones
+
+11. The default region for an SDK is \"US-EAST-1\".
+a. True
+b. False 
+
+Ans-  a. True
+
+12. You are a developer for a genomics firm who are moving their infrastructure to AWS. Their environment consists of a three tier web application, a web tier, an application tier and a relational database tier. They have a seperate fleet of virtual machines that are used to access large HPC clusters on the fly. Their lab researches run multiple projects simulaneously and they will need to launch and de-commission 1,000's of nodes on-demand while reducing the time required to complete genomic sequencing from weeks to days. In order to stay competitive they need to do this at as low cost as possible, with no long term contracts. These HPC clusters can run any time day or night and their workloads store information in S3, so the instances can be terminated at any time without any effect on the data. What is the most COST EFFECTIVE ec2 pricing model for their requirements?
+a. On-demand.
+b. Reserved Instances.
+c. Dedicated Instances.
+d. Spot Instances.
+
+Ans- d. Spot Instances.
+
+13. You run the internal intranet for a corporate bank. The intranet consists of a number of webservers and single relational database running Microsoft SQL Server. Your peak demand occurs at 9am every week morning when users are first logging in to the intranet. They can only log in using the company's internal network and it is not possible to access the intranet from any location other than within the office building for security purposes. Management is considering a change and to move this enironment to AWS where users will be able to access the intranet via a software VPN. You have been asked to evaluate a migration to AWS and to identify the best EC2 billing model for your company's intranet. You must keep costs low and to be able to scale at particular times of day. You must maintain availabilty of the intranet throughout office hours. Management do not want to be locked in to any contracts in case for some reason they want to go back to hosting internally. What EC2 billing model should you recommend?
+a. On-demand.
+b. Reserved Instances.
+c. Dedicated Instances.
+d. Spot Instances.
+
+Ans- a. On-demand.
+
+14. You are the IT manager at a furniture retailer and they are considering moving their web application to AWS. They currently colocate their servers in a colocation facility and the contract for this facility is now coming to an end. Mangement are comfortable signing a 3 year contract and want to get the cheapest web servers as possible while still maintaining availability. Their traffic is very steady and predictable. What EC2 pricing model would you recommend to maintain availability and to get the lowest cost price available?
+a. On-demand.
+b. Reserved Instances.
+c. Dedicated Instances.
+d. Spot Instances.
+
+Ans- b. Reserved Instances.
+
+15. You work for a government contractor who supply services that are critical to national security. Because of this your corporate IT policy states that no multi-tenant virtualization is authorised within the company. Despite this, they are interested in moving to AWS but they cannot violate corporate IT policy. Which EC2 billing model would you recommend that they use to achieve this?
+a. On-demand.
+b. Reserved Instances.
+c. Dedicated Instances.
+d. Spot Instances.
+
+Ans-  c. Dedicated Instances.
+
+16. Your company has a web application on AWS. The application computes thousands of algorithms per second and is very CPU and disk intensive. The application runs on a c4.8xlarge, the largest C class instance available. The application stores it's data locally on a standard SSD disk. Your application starts to perform slow. You check the logs and notice that your disk IO is routinely going above 10,000 IOPS. What should you do to remediate the issue?
+a. Change the instance family from a c4.8xlarge to an r4.8xlarge so that you have more memory available to cope with the increased IO.
+b. Migrate the EBS volume from a standard EBS volume to a provisioned IOPS EBS volume.
+c. Migrate the EBS volume from a standard EBS volume to a magnetic volume.
+d. Decrease the size of the EBS volume so as to increaase its IOPS performance.
+
+Ans-  b. Migrate the EBS volume from a standard EBS volume to a provisioned IOPS EBS volume.
+
+17. You work for a media production company that streams popular TV shows to millions of users. They are migrating their web application from an in house solution to AWS. They will have a fleet of over 10,000 webservers to meet the demand and will need a reliable layer 4 load balancing solution capable of handling millions of requests per second. What AWS load balancing solution would be suit their needs?
+a. AWS Direct Connect
+b. Elastic Load Balancer.
+c. Appilcation Load Balancer.
+d. Network Load Balancer.
+
+Ans-  d. Network Load Balancer.
+
+18. You work for a web analytics firm who have recently migrated their application to AWS. The application sits behind an Elastic Load Balancer and it monitors user traffic to their website. You have noticed that in the application logs you are no longer seeing your users public IP addresses, instead you are seeing the private IP adress of the elastic load balancer. This data is critical for your business and you need to rectify the issue immediately. What should you do?
+a. Migrate the application in front of a Network Load Balancer and then reverse proxy traffic to your RDS instance.
+b. Update the application to log the x-forwarded-for header to get your users public IPv4 addresses. 
+c. Install a cloudwatch logs agent on the EC2 instances behind the elastic load balancer to monitor the public IPv4 addresses and then stream this data to AWS Neptune.
+d. Migrate the application to AWS Lambda instead of EC2 and put the Lambda function behind a Network Load Balancer.
+
+Ans-  b. Update the application to log the x-forwarded-for header to get your users public IPv4 addresses. 
+
+19. You have a large team of developers working on a web application. A new developer joins the organisation but discovers they cannot do anything in the AWS console. You discover that they are not in the the developer group. You add the user to the group. How long will it take for the group's permissions to take effect?
+a. 24 hours
+b. 12 hours
+c. 60 seconds
+d. Immediately
+
+Ans-  d. Immediately
+
+20. You work at a large bank and are responsible for transitioning the banks applications to the cloud. You are creating an internal IT policy and this policy needs to dictate what level of access you should give to people in your organization. What is the best practice in terms of assigning permissions?
+a. Grant administrator acceess to all users.
+b. Grant the minimum level of access to each user, depending on what his or her job requirements are (least privilege).
+c. Grant yourself administrator access and deploy the code that your developers create yourself. 
+d. Deny all access to the cloud as its's insecure.
+
+Ans-  b. Grant the minimum level of access to each user, depending on what his or her job requirements are (least privilege).
+
+
+21. You work at a small start up that has 4 developers. Each developer will need access to AWS using the SDK, CLI and Console. You create 4 user accounts and assign them to the developer group. What should you do next?
+a. Create a user account called super-dev-1, Give this account full administrator access and generator the access keu id and secret access key. Share these keys with your developers.
+b. Carefully consider what permissions your developers will need and create a custom IAM policy. Attach this IAM to an S3 bucket.
+c. Carefully consider what permissions your developers will need and create a custom IAM policy. Attach this IAM policy to the developer group.
+d. Create a user account called super-dev-1. Give this account S3 read only access and generate the access key id and secret access key. Share these keys with your developers
+
+Ans-  c. Carefully consider what permissions your developers will need and create a custom IAM policy. Attach this IAM policy to the developer group.
+
+
+22. You work at a busy fast food chain who have recently migrated their physical servers on to EC2. Each instance needs to be able to communicate to S3 in order to pull down some configuration data. What is the best way to achieve this?
+a. Create a role, and assign an IAM policy giving you access to S3 to the role.
+b. Create a new user, assign that user full administrative privileges on AWS and then generate an Access Key ID and Secret Access Key. Store the details on each EC2 instance.
+c. Create a new user, assign that user full S3 Administrator Access and then generate an Access Key ID and Secret Access Key. Store the details on eaach EC2 instance.
+d. Create a new user, assign that user read only access for S3 and then generate an Access Key ID and Secret Access Key. Store the details on each EC2 instance.
+
+Ans-   a. Create a role, and assign an IAM policy giving you access to S3 to the role.
+
+23. An new CIO joins your company and implements a new company policy that all EC2 instances must have encryption at rest. What is the quickest and easiest way to apply this policy to your existing EC2 instances?
+a. In the AWS console, click on the EC2 instances, click actions and click encrypt EBS voulmes.
+b. Create a snapshot of the EC2 volume. Then create a copy of that volume, checking the box to enable encryption. Create an AMI of the copied snapshot and then redeploy the EC2 instance using the encrypted AMI. Delete the old EC2 instance.
+c. Create an encrypted snapshot of the EC2 volume using the encrypr on the fly option. Create an AMI of the copied snapshot and then redeploy the EC2 instance using the encrypted AMI. Delete the old EC2 instance.
+d. Create an encrypted AMI of the EC2 volume using Windows Bitlocker.
+
+Ans-  b. Create a snapshot of the EC2 volume. Then create a copy of that volume, checking the box to enable encryption. Create an AMI of the copied snapshot and then redeploy the EC2 instance using the encrypted AMI. Delete the old EC2 instance.
+
+24. You have a very popular blog site, which has recently had a surge in traffic. You want to implement an elasticache solution to help take the load of the production database and you want to keep it as simple as possible. You will need to scale you cache horizontally and object caching will be your primary goal. Which elasticache solution will best suit your needs?
+a. ArangoDB
+b. Redis
+c. Memcached
+d. Couchbase
+
+Ans-  c. Memcached
+
+25. You work for an online gaming store which has a global world wide leaderboard for players of the game. You need to implement a caching system for your leaderboard that has multiple availability zones in order to prevent an outage. Which elasticache solution should you use?
+a. ArangoDB
+b. Redis
+c. Memcached
+d. Couchbase
+
+Ans-  b. Redis
+
+
+26. You have an EC2 instance in a single availability zone connected to an RDS instance. The EC2 instance needs to communicate to S3 to download some important configuration files from it. You try the command aws s3 cp s3://yourbucket /var/www/html however you receive an error message. You log in to Identity Access Management (IAM) and discover there is no role created to allow EC2 to communicate to S3. You create the role and attach it to the existing EC2 instance. How fast will the changes take to propagate?
+a. Immediately
+b. The same duration as Cloudwatch standard monitoring-5 minutes.
+c. The same duration as Cloudwatch detailed monitoring-1 minutes.
+d. It depends on the region and availability zone.
+
+Ans- a. Immediately
+
+==============================================================================
+Quiz -3. S3 Quiz
+==============================================================================
+
+1. If you encrypt a bucket on S3, what type of encryption does AWS use?
+a. Data Encryption Standard (DES)
+b. International Data Encryption Algorithm (IDEA)
+c. Advanced Encryption Standard (AES) 128
+d. Advanced Encryption Standard (AES) 256
+
+Ans- d. Advanced Encryption Standard (AES) 256
+
+2. When you first create an S3 bucket, this bucket is publicly accessible by default.
+a. True
+b. False
+
+Ans-  b. False
+
+
+3. If you want to enable a user to download your private data directly from S3, you can insert a pre-signed URL into a web page before giving it to your user.
+a. True
+b. False
+
+Ans-  a. True
+
+4. The minimum file size allowed on S3 is 1 byte.
+a. True
+b. False
+
+Ans-  b. False
+
+
+5. What is the largest size file you can transfer to S3 using a PUT operation?
+a. 100MB
+b. 1GB
+c. 5GB
+d. 5TB
+
+Ans-  c. 5GB
+
+
+6. You are hosting a static website in an S3 bucket that uses Java script to reference assets in another S3 bucket. For some reason, these assets are not displaying when users browse to the site. What could be the problem?
+a. Amazon S3 does not support javascript.
+b. You cannot use one S3 bucket to reference another S3 bucket.
+c. You haven't enabled Cross Origin Resource Sharing (CORS) on the bucket where the assets are stored.
+d. You need to open port 80 on the appropriate security group in which the S3 bucket is located.
+
+Ans-  c. You haven't enabled Cross Origin Resource Sharing (CORS) on the bucket where the assets are stored.
+
+
+7. You are using S3 in AP-Northeast to host a static website in a bucket called "acloudguru". What would the new URL endpoint be?
+a. http://www.acloudguru.s3-website-ap-northeast-1.amazonaws.com
+b. http://s3-ap-northeast-1.amazonaws.com/acloudguru/
+c. http://acloudguru.s3-website-ap-northeast-1.amazonaws.com
+d. http://acloudguru.s3-website-ap-southeast-1.amazonaws.com
+
+Ans-  c. http://acloudguru.s3-website-ap-northeast-1.amazonaws.com
+
+
+8. S3 provides unlimited storage.
+a. True
+b. False
+
+Ans-  a. True
+
+
+9. Your application is consistently reading and writing 100s of objects per second to S3 and your workload is steadily rising. What can you do to to achieve the best performance from S3?
+a. Add a hex hash prefix to the objects key name
+b. Configure a CloudFront CDN and use the S3 bucket as the origin
+c. Add a hex hash suffix to the objects key name
+d. Configure an addtional bucket and distribute the files evenly between the two buckets
+
+Ans-  a. Add a hex hash prefix to the objects key name
+
+
+10. How does S3 determine which partition to use to store files?
+a. S3 automatically stores your files on a random partition
+b. The bucket name determines which partition the file is stored in
+c. By default, all files in the same bucket are stored on the same partition
+d. The key name determines which partition the file is stored in
+
+Ans-  d. The key name determines which partition the file is stored in
+
+
+11. Which of the following encryption methods are supported in S3?
+a. SSE-S3, SSE-AES, SSE-KMS
+b. SSE-S3, SSE-KMS, SSE-C
+c. SSE-C, SSE-AES, SSE-KMS
+d. SSE-S3, SSE-AES,SSE-C
+
+Ans-  b. SSE-S3, SSE-KMS, SSE-C
+
+
+12. Which feature of AWS can you use to configure S3 to allow one S3 bucket to access files in another S3 bucket?
+a. Bucket ACL
+b. Bucket Policy
+c. IAM Role
+d. CORS
+
+Ans-   d. CORS
+
+
+
+13. What is the HTTP code you would see once you successfully place a file in an S3 bucket?
+a. 404
+b. 300
+c. 200
+d. 512
+
+Ans-  c. 200
+
+==================================================================================
+Quiz - 4.  Introduction to Serverless Computing
+==================================================================================
+1. You work for a gaming company that has built a serverless application on AWS using Lambda, API Gateway and DynamoDB. They release a new version of the lambda function and the application stops working. You need to get the application up and back online as fast as possible. What should you do?
+a. Roll your lambda function back to the previous version.
+b. Create a cloudformation template of the environment. Deploy this template to a seperate region and then redirect Route53 to the new region.
+c. The new function has some dependencies not available tp lambda. Redeploy the application on EC2 and put the EC2 instances behind a network load balancer.
+d. DynamoDB is not serverless and is causing the error. Migrate your database to RDS and redeploy the lambda function.
+
+Ans-  a. Roll your lambda function back to the previous version.
+
+
+2. You have created a serverless application which converts text in to speech using a combination of S3, API Gateway, Lambda, Polly, DynamoDB and SNS. Your users complain that only some text is being converted, where as longer amounts of text does not get converted. What could be the cause of this problem?
+a. AWS X-ray service is interfering with the appilcation and should be disabled.
+b. Your lambda function needs a longer execution time. You should change this to the maximum of 300 seconds.
+c. You've placed your DynamoDB table in a single availability zone which is currently down, causing an outage.
+d. Polly has built in censorship, so if you try and send it text that is deemed offensive, it will not generate an MP3.
+
+Ans-  b. Your lambda function needs a longer execution time. You should change this to the maximum of 300 seconds.
+
+
+3. You have created a simple serverless website using S3, Lambda, API Gateway and DynamoDB. Your website will process the contact details of your customers, predict an expected delivery date of their order and store their order in DynamoDB. You test the website before deploying it in to production and you notice that all though the page executes, and the lambda function is triggered, it is unable to write to DynamoDB. What could be the cause of this issue?
+a. The availability zone that DynamoDB is hosted in is down.
+b. The availability zone that Lambda is hosted in is down.
+c. Your Lambda function does not have the sufficient Identity Access Management (IAM) permissions to write to DynamoDB.
+d. You have written your function in python which is not supported as a run time environment for Lambda.
+
+Ans- c. Your Lambda function does not have the sufficient Identity Access Management (IAM) permissions to write to DynamoDB.
+
+
+4. You have created an application using serverless architecture using Lambda, Api Gateway, S3 and DynamoDB. Your boss asks you to do a major upgrade to API Gateway and you do this and deploy it to production. Unfortunately something has gone wrong and now your application is offline. What should you do to bring your application up as quickly as possible?
+a. Restore your previous API gateway configuration using an EBS snapshot.
+b. Rollback your API Gateway to the previous stage.
+c. Restart API Gateway for the new changes to take effect.
+d. Delete the existing API Gateway.
+
+Ans-  b. Rollback your API Gateway to the previous stage.
+
+
+
+5. You have an internal API that you use for your corporate network. Your company has decided to go all in on AWS to reduce their data center footprint. They will need to leverage their existing API within AWS. What is the most efficient way to do this.
+a. Use the Swagger Importer tool to import your API in to API Gateway.
+b. Replicate your API to API Gateway using the API Replication Master.
+c. Recreate the API manually.
+d. Use AWS API Import/Export feature of AWS Storage Gateway.
+
+Ans-  a. Use the Swagger Importer tool to import your API in to API Gateway.
+
+
+
+6. You have launched a new web application on AWS using API Gateway, Lambda and S3. Someone posts a thread to reddit about your application and it starts to go viral. You start receiving 10,000 requests every second and your you notice that that most requests are similar. Your web application begins to struggle. What can you do to optimize performance of your application?
+a. Enable API Gateway caching to cache frequent requests.
+b. Enable API Gateway Accelerator.
+c. Migrate your API Gateway to an Network Load Balancer and enable session stickiness for all sessions.
+d. Change your route53 alias record to point to AWS Neptune and then configure Neptune to filter your API genuine requests only.
+
+Ans-  a. Enable API Gateway caching to cache frequent requests.
+
+
+7. You are developing a new application using serverless infrastructure and are using services such as S3, DynamoDB, Lambda, API Gateway, CloudFront, CloudFormation and Polly. You deploy your application to production and your end users begin complaining about receiving a HTTP 429 error. What could be the cause of the error?
+a. Your lambda function does not have sufficient permissions to read to DynamoDB and this is generating a HTTP 429 error.
+b. You have an S3 bucket policy which is preventing lambda from being able to write files to your bucket, generating a HTTP 429 error.
+c. You enabled API throttling for a rate limit of 1000 requests per second while in development and now that you have deployed to production your API Gateway is being throttled.
+d. Your cloudformation stack is not valid and is failing to deploy properly which is causing a HTTP 429 error.
+
+Ans-
+
+
+8. You are a developer for a busy real estate company and you want to enable other real estate agents to the ability to show properties on your books, but skinned so that it looks like their own website. You decide the most efficient way to do this is to create is to expose your API to the public. The project works well, however one of your competitors starts abusing this, sending your API tens of thousands of requests per second. This generates a HTTP 429 error. Each agent connects to your API using individual API keys. What actions can you take to stop this behaviour?
+a. Deploy multiple API Gateways and give the agent access to another API Gateway.
+b. Throttle the agents API access using the individual API Keys
+c. Use AWS Sheild Advanced API protection to block the requests.
+d. Place an AWS Web Application Firewall in front of API gateway and filter the requests.
+
+Ans-  b. Throttle the agents API access using the individual API Keys
+
+
+==================================================================================
+Quiz -5. DynamoDB
+==================================================================================
+1. What does the error "ProvisionedThroughputExceededException" mean in DynamoDB?
+a. The DynamoDB table has exceeded the allocated space.
+b. You exceeded your maximum allowed provisioned throughput for a table or for one or more global secondary indexes.
+c. There is no such error message. The correct error message would be "ProvisionedThroughputFailureException".
+d. The DynamoDB table is unavailable.
+
+Ans-  b. You exceeded your maximum allowed provisioned throughput for a table or for one or more global secondary indexes.
+
+
+2. You have a motion sensor which writes 600 items of data every minute. Each item consists of 5kb. What should you set the write throughput to?
+a. 10 
+b. 20
+c. 40
+d. 50
+
+Ans-  d. 50
+
+
+3. You have a motion sensor which writes 600 evenly spaced items of data every minute. Each item consists of 5kb. Your application uses eventually consistent reads. What should you set the write throughput to?
+a. 20
+b. 50
+c. 10
+d. 30
+
+Ans-  b. 50
+
+
+4. What is the API call to retrieve multiple items from a DynamoDB table?
+a. Getltems
+b. BatchGetltems
+c. BatchGet
+d. BatchGetltem
+
+Ans-  d. BatchGetltem
+
+
+5.  In terms of performance, a scan is more efficient than a query.
+a. True
+b. False
+
+Ans-  b. False
+
+
+6. You have an application that needs to read 25 items of 13kb in size per second. Your application uses strongly consistent reads. What should you set the read throughput to?
+a. 100
+b. 50
+c. 25
+d. 10
+
+Ans-  a. 100
+
+
+7. You have an application that needs to read 25 items of 13kb in size per second. Your application uses eventually consistent reads. What should you set the read throughput to?
+a. 25
+b. 50
+c. 100
+d. 10
+
+Ans-  b. 50
+
+
+8. DynamoDB is a No-SQL database provided by AWS.
+a. True 
+b. False
+
+Ans-  a. True 
+
+
+9. Using the AWS portal, you are trying to Scale DynamoDB past its preconfigured maximums. Which service can you increase by raising a ticket to AWS support?
+a. Local Secondary Indexes
+b. Global Secondary Indexes
+c. Provisioned throughput limits
+d. Item Sizes
+
+Ans-  c. Provisioned throughput limits
+
+
+10.  Which of the following attributes would make a good Partition Key?
+a. ProductType
+b. Size
+c. ProductID
+d. WarehouseLocation
+
+Ans-  c. ProductID
+
+
+11.  Which of the following attributes would make a good Sort Key?
+a. CustomerID
+b. EmailAddress
+c. OrderNumber
+d. InvoiceDate
+
+Ans- d. InvoiceDate
+
+12. Your application is storing customer order data in DynamoDB. Which of the following pairs of attributes would make the best composite key to allow you to query DynamoDB efficiently?
+a. CustomerID + OrderDate
+b. CustomerID + ProductID
+c. CustomerID + ProductCategory
+d. CustomerID + Size
+
+Ans-   a. CustomerID + OrderDate
+
+
+13. Your application is storing customer order data in a DynamoDB table. You need to run a query to find all the orders placed by a specific customer in the last month, which attributes would you use in your query?
+a. The Partition Key of OrderDate and Sort Key of CustomerName
+b. The Partition Key of CustomerID and a Sort Key of OrderDate
+c. A composite Primary Key made up of the CustomerName and OrderDate
+d. The Partition Key of OrderDate and a Sort Key of CustomerID
+
+Ans-   b. The Partition Key of CustomerID and a Sort Key of OrderDate
+
+
+14. What is the difference between a Global Secondary Index and a Local Secondary Index
+a. You can create a Local Secondary Index at any time but you can only create a Global Secondary Index at table creation time
+b. You can create a Global Secondary Index at any time but you can only create a Local Secondary Index at table creation time
+c. You can delete a Global Secondary Index at any time
+d. You can delete a Local Secondary Index at any time
+
+Ans-  b. You can create a Global Secondary Index at any time but you can only create a Local Secondary Index at table creation time
+
+
+15. Which of the following services provides in-memory write-through cache optimised for DynamoDB?
+a. Elaasticache
+b. CloudFront
+c. DAX
+d. Read-replica
+
+Ans-   c. DAX
+
+
+16. Your low latency web application needs to store its session state so that it can be accessed quickly. Which service do you recommend?
+a. In memory on your EC2 instance
+b. DynamoDB
+c. RDS
+d. Elastic File Store
+
+Ans-   b. DynamoDB
+
+
+17. By default, a DynamoDB query operation is used for which of the following?
+a. Find items in a table based on the Sort Key attribute
+b. Return the entire contents of a table
+c. Find items in a table based on the Primary Key attribute
+d. Return the entire contents of a table filtered on the Primary Key attribute
+
+Ans-   c. Find items in a table based on the Primary Key attribute
+
+
+18. In DynamoDB, a scan operation is used for which of the following?
+a. Find items in a table based on the Sort Key attribute
+b. Return the entire contents of a table
+c. Find items in a table based on the Primary Key attribute
+d. Return the entire contents of a table filtered on the Primary Key attribute
+
+Ans-  b. Return the entire contents of a table
+
+
+
+19. Which of the following are recommended ways to optimise a query or scan in DynamoDB?
+a. Reduce the page size to return fewer items per results page
+b. Filter your result based on the Primary Key and Sort Key
+c. Set your queries to be eventually consistent
+d. Run parallel scans
+
+Ans-  a. Reduce the page size to return fewer items per results page
+
+
+20. You are running a query on your Customers table in DynamoBD, however you only want the query to return CustomerID and EmailAddress for each item in the table, how can you refine the query so that it only includes the required attributes?
+a. Create a Global Secondary Index which only includes the attributes you need and run the query on the Global Secondary Index
+b. Run a query based on the Primary Key and filter the results using a Sort Key of EmailAddress
+c. Use the ProjectionExpression parameter
+d. Use a scan operation instead
+
+Ans-   c. Use the ProjectionExpression parameter
+
+
+21. Which of the following attributes would make a good Partition Key?
+a. ProductType 
+b. Size
+c. ProductID
+d. WarehouseLocation
+
+Ans-   c. ProductID
+
+===================================================================================
+Quiz - 6.Other AWS Services Quiz
+===================================================================================
+1. You run a video-hosting website with two types of members: premium, fee-paying members; and free members. Each video that is uploaded is processed by a fleet of EC2 instances, which poll an SQS queue as videos are uploaded. However, you need to ensure that the videos uploaded by your premium, fee-paying members have a higher priority than those of your free members. How might you work with SQS to endure priority treatment of the premium members' videos?
+a. SQS allows you to set priorities on individual items within the queue, so simply set the fee paying memners at a higher priority than your free memebers.
+b. Create two SQS queues - one for premium members, and pne for free members. Program your EC2 fleet to poll the premium queue first and, if empty. to then poll your free members SQS queue.
+c. SQS would not be suitable for this scenario. It would be much better to use SNS to encode the videos.
+
+Ans-  b. Create two SQS queues - one for premium members, and pne for free members. Program your EC2 fleet to poll the premium queue first and, if empty. to then poll your free members SQS queue.
+
+
+2. An SQS message can be delivered multiple times.
+a. True
+b. False
+
+Ans-  a. True
+
+
+3. Your EC2 instances download jobs from an SQS queue. However, they are taking too long to process the messages. What API call can you use to extend the length of time to process the jobs?
+a. AlterMessageTime
+b. SetMessageVisibility
+c. ChangeMessageVisibility
+d. ExtendMessageTime
+
+Ans-  c. ChangeMessageVisibility
+
+
+4. What is the default visibility timeout for a message in an SQS queue?
+a. 1 year
+b. 15 minutes
+c. 1 minute
+d. 30 seconds
+
+Ans-  d. 30 seconds
+
+
+5. What is the maximum visibility of an SQS message in a queue?
+a. 14 days
+b. 1 day
+c. 1 hour
+d. 12 hours
+
+Ans-  d. 12 hours
+
+
+6. What is the maximum retention period for an SQS message?
+a. 14 days
+b. 1 day
+c. 1 hour
+d. 12 hours
+
+Ans-  a. 14 days
+
+
+7. SQS was the first service on the AWS platform?
+a. True
+b. False
+
+Ans-  a. True
+
+
+8. How large can an SQS message be?
+a. 64KB
+b. 128KB
+c. 256KB
+d. 512KB
+
+Ans-  c. 256KB
+
+
+9. You have a fleet of EC2 instances that are constantly polling empty SQS queues, burning CPU cycles and costing your company money. What should you do?
+a. Enable SQS Long Polling.
+b. Delete the entire EC2 fleet so that they no longer poll the queue.
+c. Enable SQS Short Polling.
+d. Consider using ElastiCache to cache the messages, rather than SQS.
+
+Ans-  a. Enable SQS Long Polling.
+
+
+10. Which Amazon service can you use in conjunction with SQS to \"fan out\" SQS messages to multiple queues.
+a. ElastiCache
+b. SWF
+c. SNS
+d. SES
+
+Ans-  c. SNS
+
+
+11. What is the maximum long poll time out?
+a. 20 seconds
+b. 5 minutes
+c. 50 seconds
+d. 1 hour
+
+Ans-  a. 20 seconds
+
+
+12. You are designing a new application that processes payments and delivers promotional emails to customers. You need to ensure that the payment process takes priority over the creation and delivery of emails. How might you use SQS to achieve this.
+a. Use 1 SQS queue for the platform. Use the SetPriority API call to ensure that all payment SQS messages take over the promotional email messages.
+b. Use 2 SQS queues for the platform. Have the EC2 fleet poll the payment SQS queue first. If this queue is empty, then poll the promotional emails queue.
+c. Use 1 SQS queue for the platform. Use the HighPriority API call to ensure that all payment SQS messages takes priority over the promotional email messages.
+d. Use 2 SQS queues for the platform. Have the EC2 fleet poll the promotional emails SQS queue first. If this queue is empty, then poll payment emails queue.
+
+Ans-   b. Use 2 SQS queues for the platform. Have the EC2 fleet poll the payment SQS queue first. If this queue is empty, then poll the promotional emails queue.
+
+
+
+13. SNS is pull-based rather than push-based
+a. True
+b. False
+
+
+Ans-   b. False
+
+
+14. SNS messages cannot be customized by protocol type.
+a. True
+b. False
+
+Ans-  b. False
+
+
+15. You have a list of email addresses to which you need to push emails on a periodic basis. What do you subscribe them to?
+a. A Message
+b. A Subject
+c. A Subreddit
+d. A topic
+
+Ans-   d. A topic
+
+
+
+16. Which of these is a protocol NOT supported by SNS:
+a. HTTP
+b. Email
+c. FTP
+d. Email-JSON
+
+Ans-   c. FTP
+
+
+17. You can use SNS in conjunction with SQS to fan a single message out to multiple SQS queues.
+a. True
+b. False
+
+Ans-   a. True
+
+
+
+18.  What languages and development stacks are not currently supported by AWS Elastic Beanstalk?
+a. Apache Tomacat for Java applications
+b. Apache HTTP Server for PHP applications
+c. Passenger for Ruby Applications 
+d. Jetty for Jbos applications
+
+Ans-  d. Jetty for Jbos applications
+
+
+19. Elastic Beanstalk is object based storage.
+a. True
+b. False
+
+Ans-   b. False
+
+
+20. Unlike Cloud Formation, the use of Elastic Beanstalk is not free. And, in addition, you must pay for the resources it provisions.
+a. True
+b. False
+
+Ans-   b. False
+
+==================================================================================
+Quiz -7. Dev Theory Quiz
+==================================================================================
+1. You are deploying an application to to a number of EC2 instances using CodeDeploy. What is the name of the used to specify source files and lifecycle hooks?
+a. buidspec.json
+b. appspec.yml
+c. appspec.json
+d. buildspec.yml
+
+
+Ans-  b. appspec.yml
+
+
+2. Which of the following practices allows multiple developers working on the same application to merge code changes frequently, without impacting each other and enables the identification of bugs early on in the release process?
+a. Continuous Deployment
+b. Continuous Development
+c. Continuous Integration
+d. Continuous Delivery
+
+
+Ans-  c. Continuous Integration
+
+
+3. Which AWS service can be used to compile source code, run tests and package code?
+a. CodeDeploy
+b. CodeCommit
+c. CodeBuild
+d. CodePipeline
+
+
+Ans-  c. CodeBuild
+
+
+4. Which AWS service can be used automatically install your application code onto EC2, on premises systems and Lambda?
+a. CodeDeploy
+b. CodeCommit
+c. CodeBuild
+d. X-Ray
+
+
+Ans-  a. CodeDeploy
+
+
+5. Which AWS service can be used to centrally store and version control your application source code, binaries and libraries?
+a. ElasticFileSystem
+b. CodeCommit
+c. CodeBuild
+d. CodePipeline
+
+
+Ans-  b. CodeCommit
+
+
+6. You want to recieve an email whenever a user pushes code to your CodeCommit repository, how can you configure this?
+a. Configure a CloudWatch Events rule to send a message to SQS which will trigger an email to be sent whenever a user pushes code to the repository
+b. Configure Notifications in the console, this will create a CloudWatch Events rule to send a notification to an SNS topic which will trigger an email to be sent to the user
+c. Configure a CloudWatch rule to send a message to SES which will trigger an email to be sent whenever a user pushes code to the repository
+d. Create a new SNS topic and configure it to poll for CodeCommit events.Ask all your users subscribe to the topic to recieve notifications
+
+
+Ans-  b. Configure Notifications in the console, this will create a CloudWatch Events rule to send a notification to an SNS topic which will trigger an email to be sent to the user
+
+
+7. When deploying application code to Lambda, the AppSpec file can be written in which language?
+a. Python
+b. JSON
+c. XML
+d. YAML
+
+
+Ans-  b. JSON
+
+
+8. When deploying application code to EC2, the AppSpec file can be written in which language?
+a. JSON
+b. XML
+c. JSON or YAML
+d. YAML
+
+
+Ans-  d. YAML
+
+
+9. In the CodeDeploy AppSpec file, what are hooks used for?
+a. To specify code, script or functions that you want to run at set points in the deployment lifecycle
+b. To specify files that you want to copy during the deployment 
+c. Hooks are reserved for future use
+d. To reference AWS resources that will be used during the deployment
+
+
+Ans-  a. To specify code, script or functions that you want to run at set points in the deployment lifecycle
+
+10. Which AWS service can be used to fully automate your entire release process?
+a. CodeDeploy
+b. CodeCommit
+c. CodeBuild
+d. CodePipeline
+
+
+Ans-  d. CodePipeline
+
+==================================================================================
+Quiz - 8. Advanced IAM
+==================================================================================
+1. When using Web Identity Federation to allow a user to access an AWS service (such as an S3 bucket), which of the following is the correct order of steps?
+a. A user authenticates with facebook first. They are then given an ID token by facebook, which they can then trade for temporary security credentials.
+b. A user logs in to the AWS platform using their facebook credentials. AWS authenticate with facebook to check the credentials. Temporary Security Access is granted to AWS.
+c. Users cannot use Facebook credentials to access the AWS platform.
+d. A user makes the AssumeRoleWithWebIdentity API Call. The user is then redirected to facebook to authenticate. Once authenticated, the user is given an ID token. The user is then granted temporary access to the AWS platform.
+
+
+Ans-  a. A user authenticates with facebook first. They are then given an ID token by facebook, which they can then trade for temporary security credentials.
+
+
+2. The AWS sign-in endpoint for SAML is https://signin.aws.amazon.com/saml.
+a. True
+b. False
+
+Ans-  a. True
+
+3. SAML stands for Security Assertion Markup Language.
+a. True
+b. False
+
+
+Ans-  a. True
+
+
+4. What is the name of the service that allows users to use their social media account to gain temporary access to the AWS platform?
+a. Active Directory Authentication Services
+b. Web Confederation Services
+c. Web Identity Federation
+d. Facebook Sign In Service
+
+
+Ans-  c. Web Identity Federation
+
+
+5. You are working on a mobile phone app for an online retailer which stores customer data in DynamoDB. You would like to allow new users to sign-up using their Facebook credentials. What is the recommended approach?
+a. After the user has authenticated with Facebook, allow them to download encrypted AWS credentials to thier device so that the mobile app can access DynamoDB
+b. Write your own custom code which allows the user to log in via Facebook and receive an authentication token, then calls the AssumeRoleWithWebIdentity APi and exchanges the authentication token for temporary access to DynamoDB
+c. After the user has successfully logged in to Facebook and received an authentication token, Congnito should be used to exchange the token for temporary access to DynamoDB
+d. Embed encrypted AWS credentials into the application code, so that the application can access DynamoDB in the user's behalf.
+
+
+Ans-  c. After the user has successfully logged in to Facebook and received an authentication token, Congnito should be used to exchange the token for temporary access to DynamoDB
+
+
+6. Which of the following features of IAM allows you to have your users Authenticate using Facebook, Google or Amazon?
+a. Web Identity Federation
+b. Muilti-Factor Authentication
+c. The IAM HTTPS API
+d. AWS Single Sign-On (SSO)
+
+
+Ans-  a. Web Identity Federation
+
+
+7. What does Cognito use to manage sign-up and sign-in functionality for mobile and web applications?
+a. Identity Pools
+b. User Pools
+c. IAM Groups
+d. IAM Users
+
+
+Ans-  b. User Pools
+
+
+8. What does Cognito use to create unique identities for users and authenticate them with Web ID providers?
+a. Identity Pools
+b. User Pools
+c. IAM Groups
+d. IAM Users
+
+
+Ans-  a. Identity Pools
+
+
+9. You are developing a new mobile application to share photos, which AWS technology can you use to ensure your users have a seamless experience across all their devices?
+a. IAM
+b. Web Identity Federation
+c. Multi-Factors Authentication
+d. Cognito
+
+
+Ans-  d. Cognito
+
+
+10. Amazon Cognito provides Web Identity Federation with which of the following features?
+a. Single sign-on for Active Directory users
+b. Sign-up and sign-in to your applications
+c. Synchronisation of user data across multiple device types
+d. Multi-Factor Authentication
+
+
+Ans-  c. Synchronisation of user data across multiple device types
+
+
+11. Amazon Cognito is recommended for which use case?
+a. Web Identity Federation for mobile applications
+b. Identity Federation with Active Directory
+c. Anonymous access to AWS resources
+d. Secure storage of database connection strings
+
+
+Ans-  a. Web Identity Federation for mobile applications
+
+
+12. Which of the following are provided by AWS to allow you to easily assign IAM permissions to your users based on pre-defined common use cases?
+a. Custom Policy
+b. Common Policy
+c. Inline Policy
+d. Managed Policy
+
+
+Ans-  d. Managed Policy
+
+
+
+13. Which of the following correctly describes an Inline Policy?
+a. It is embedded in user, group or role
+b. You cannot change the permissions defined in the policy
+c. It can be attached to multiple users and groups within your AWS account
+d. The policy will be deleted if you delete the user, group or role it is associated with
+
+
+Ans-  d. The policy will be deleted if you delete the user, group or role it is associated with
+
+
+14. Which of the following correctly describes a Customer Managed Policy?
+a. It can be assigned to multiple users, groups or roles in your account
+b.  It is managed by you
+c. It is created and administered by AWS
+d. The policy will be deleted if you delete the user, group or role it is associated with
+
+
+Ans-  a. It can be assigned to multiple users, groups or roles in your account
+
+
+15. Which of the following applies to an AWS Managed Policy?
+a. It can only be assigned to a single user, group or role in your account
+b. It can be assigned to multiple users, group or roles
+c. You can change the default permissions defined in the policy
+d. It is available for use by any AWS account
+
+
+Ans-  b. It can be assigned to multiple users, group or roles
+
+
+16. When would you use an Inline Policy over a Managed Policy?
+a. To add IAM permissions for common use cases like giving your DBAs full access to DynamoDB
+b. To add IAM permissions that can be applied to multiple AWS accounts that you own
+c. To add permissions that are only ever intended to be used for a single user in your account
+d. When you want to manage the policy yourself
+
+
+Ans-  c. To add permissions that are only ever intended to be used for a single user in your account
+
+
+17. Which statement best describes IAM?
+a. IAM allows you to manage users, groups, and roles and their corresponding level of access to the AWS Platform.
+b. IAM allows you to manage user's password only. AWS staff must create new users for your organization. This is done by raisinf a ticket.
+c. IAM allows you to manage permissions for AWS resources only.
+d. IAM stands for Improvised Application Management, and it allows you to deploy and manage applications in the AWS Cloud.
+
+
+Ans-  a. IAM allows you to manage users, groups, and roles and their corresponding level of access to the AWS Platform.
+
+
+==================================================================================
+Quiz - 9. Mega Quiz 1
+==================================================================================
+1. You can select a specific Availability Zone in which to place your DynamoDB Table.
+a. True
+b. False
+
+Ans-  b. False
+
+
+2. You are using CodePipeline automatically deploy code to your environments every time a developer pushes new code to CodeCommit, however your newly built code fails one of the automated tests you have configured as part of your pipeline. How does CodePipeline deal with this failure?
+a. The pipeline stops immediately because one stage has failed
+b. The code is still deployed however CodePipeline sends an SNS notification that one or more tests have failed
+c. CodePipeline deploys only the code changes that passed the automated tests
+d. CodePipeline automatically retries the failed stage of the pipeline
+
+
+Ans-  a. The pipeline stops immediately because one stage has failed
+
+
+3. You run a video-hosting website with two types of members: premium, fee-paying members; and free members. Each video that is uploaded is processed by a fleet of EC2 instances, which poll an SQS queue as videos are uploaded. However, you need to ensure that the videos uploaded by your premium, fee-paying members have a higher priority than those of your free members. How might you work with SQS to endure priority treatment of the premium members' videos?
+a. SQS allows you to set priorities on individual items within the queue, so simply set the fee-paying members at a higher priority than your free members.
+b. Create two SQS queues - one for premium members, and one for free members. Program your EC2 fleet to poll the premium queue first and, if empty, to then poll your free members SQS queue.
+c. SQS would not be suitable for this scenario. It would be much better to use SNS to encode the videos.
+
+
+Ans-  b. Create two SQS queues - one for premium members, and one for free members. Program your EC2 fleet to poll the premium queue first and, if empty, to then poll your free members SQS queue.
+
+
+4. You are hosting a static website in an S3 bucket which uses Java script to reference assets in another S3 bucket. For some reason, these assets are not displaying when users browse to the site. What could the problem be?
+a. Amazon S3 does not support javascript.
+b. You cannot use one S3 bucket to reference another S3 bucket.
+c. You haven't enabled Cross Origin Resources Sharing (CORS) on the bucket where the assets are stored.
+d. You need to open port 80 on the appropriate security group in which the S3 bucket is located.
+
+
+Ans-  c. You haven't enabled Cross Origin Resources Sharing (CORS) on the bucket where the assets are stored.
+
+
+5. After successfully uploading a file to S3, what HTTP response code should you expect to see?
+a. HTTP 200
+b. HTTP 300
+c. HTTP 400
+d. HTTP 500
+
+
+Ans-  a. HTTP 200
+
+
+6.  To retrieve instance metadata or userdata, you will need to use the following IP Address: ________.
+a. http://127.0.0.1
+b. http://192.168.0.254
+c. http://10.0.0.1
+d. http://169.254.169.254
+
+
+Ans-  d. http://169.254.169.254
+
+
+7. Your mission critical web application needs to store its session state so that it can be accessed quickly and is highly available. Which service should you use?
+a. ElasticFileSystem
+b. RDS
+c. DynamoDB DAX
+d. DynamoDB
+
+
+Ans-  d. DynamoDB
+
+
+8. Amazon S3 buckets offer read-after-write consistency for PUTS of new objects.
+a. True
+b. False
+
+Ans-  a. True
+
+
+9. Which of the following provides in-memory cacheing specifically for DynamoDB?
+a. EBS
+b. EFS
+c. Elasticache
+d. DynamoDB Accelerator
+
+
+Ans-  d. DynamoDB Accelerator
+
+
+10. Which of the following can optimise the performance of a large a scan in DynamoDB?
+a. Run smaller scans in parallel
+b. Increase the page size
+c. Run a single scan rather than multiple smaller scans
+d. Increase your read capacity units
+
+
+Ans-  a. Run smaller scans in parallel
+
+
+11. What is the default encryption used on S3?
+a. Advanced Encryption Standard (AES) 256
+b. Camellia
+c. Data Encryption Standard (DES) 256
+d. Advanced Encryption Standard (AES) 128
+
+
+Ans-  a. Advanced Encryption Standard (AES) 256
+
+
+12. What is the default region for all SDKs?
+a. US-WEST-1
+b. US-EAST-1
+c. EU-WEST-1
+d. EU-CENTRAL-1
+
+
+Ans-  b. US-EAST-1
+
+
+13. You create a static hosting website in a bucket called \"acloudguru\" in Sydney using S3. What would the new URL endpoint be?
+a. http://www.acloudguru.s3-website-ap-southeast-2.amazonaws.com
+b. http://s3-ap-southeast-2.amazonaws.com/acloudguru/
+c. http://acloudguru.s3-website-ap-southeast-2.amazonaws.com
+d. http://acloudguru.s3-website-ap-eu-central-1.amazonaws.com
+
+
+Ans-  c. http://acloudguru.s3-website-ap-southeast-2.amazonaws.com
+
+
+14. There is a hard limit on how much data you can store on S3.
+a. True
+b. False
+
+Ans-  b. False
+
+
+15. You have a motion sensor that reads 300 items of data every 30 seconds. Each item consists of 5kb. Your application uses eventually consistent reads. In order for your application to keep up, what should you set the read throughput to?
+a. 20
+b. 10
+c. 5
+d. 30
+
+
+Ans-  b. 10
+
+
+16. The ability to act as a web server for dynamic content (i.e. can query a database)
+a. Unlimited File Size for Objects
+b. Unlimited Storage
+c. A great place from which to run a No SQL database
+d. The ability to act as a web server for dynamic content (i.e can query a database)
+
+
+Ans-  b. Unlimited Storage
+
+
+17. In order to enable encryption at rest using EC2 and Elastic Block Store, you need to ________.
+a. Configure encryption when creating the EBS volume
+b. Configure encryption using the appropriate Operating Systems file system
+c. Configure encryption using X.509 certificates
+d. Mount the EBS volume in to S3 and then encrypt the bucket using a bucket policy
+
+
+Ans-  a. Configure encryption when creating the EBS volume
+
+
+18. You are designing an application which needs to locate the public IP address of the EC2 instance on which it is stored. What do you do?
+a. Get the application to run IFCONFIG to get the public IP address.
+b. Get the instance's USER data by visiting http://169.254.169.254/latest/user-data/.
+c. Get the application to run IPCONFIG to get the public IP address,
+d. Get the instance's META data by visiting http://169.254.169.254/latest/meta-data/.
+
+
+Ans-  d. Get the instance's META data by visiting http://169.254.169.254/latest/meta-data/.
+
+
+19. Amazon S3 buckets do not provide eventual consistency for overwrite PUTS and DELETES.
+a. True
+b. False
+
+Ans- b. False
+
+
+20. Which of these AWS services do not use key value pairs?
+a. DynamoDB
+b. SNS
+c. SWF
+d. Route53
+
+
+Ans-  d. Route53
+
+21. Which of the following is recommended for mobile applications which allow users to authenticate using Google credentials?
+a. Google Federation Services
+b. SES
+c. Multi-Factor Authentication
+d. Cognito
+
+
+Ans-  d. Cognito
+
+
+22. Which of the following attributes would make a good Partition Key?
+a. ZipCode
+b. CustomerID
+c. AccountCreationDate
+d. CustomerName
+
+
+Ans-  b. CustomerID
+
+
+23. Your S3 backed website is consistently receiving over 400 read requests per second and is steadily rising. What can you do to to achieve the best performance as traffic to your website continues to increase?
+a. Add a hex hash suffix to the key name of your S3 objects
+b. Configure an addtional bucket and distribute the files evenly between the two buckets
+c. Add a hex hash prefix to the key name of your S3 objects
+d. Configure a CloudFront CDN and use the S3 bucket as the origin
+
+
+Ans- d. Configure a CloudFront CDN and use the S3 bucket as the origin
+
+
+24. With EC2, you can have 2 types of storage: EBS or Instance Store. EBS is persistent, and if an EC2 instance is stopped with an EBS volume attached, there will be no data lost. Instance Store is ephemeral and if the EC2 instance is stopped, all data will be lost.
+a. True
+b. False
+
+Ans-  a. True
+
+==================================================================================
+

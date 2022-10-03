@@ -1,0 +1,1041 @@
+	5. Topic Name - AWS Certified DevOps Engineer - Professional
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	1. Building Scalable APIs with the AWS API Gateway
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1. What billable components make up the AWS API Gateway?
+	
+	A - Requests, data out, and cache
+	
+	B - API calls
+
+	C - SEO + Virality
+
+	D - Requests and data out only
+
+Answer: A - Requests, data out, and cache
+
+--------------------------------------------------------------------------------
+2. What is the purpose of the execution role?
+	
+	A - Controls what events can trigger the lambda function
+	
+	B - Controls what resources the lambda function can access
+
+	C - Determines how long the function can run
+
+	D - Terminates the lambda function based on rules
+
+Answer: B - Controls what resources the lambda function can access
+
+--------------------------------------------------------------------------------
+3. What is a REST API?
+	
+	A - A group of resources or methods
+	
+	B - Any website with a search feature
+
+	C - An API not currently in use
+
+	D - A group of resources and methods
+
+Answer: D - A group of resources and methods
+
+--------------------------------------------------------------------------------
+4. What API Gateway feature allows you to transform data?
+	
+	A - Mapping Templates
+	
+	B - You can’t, it must be done in the backend service
+
+	C - HTTP Methods
+
+	D - IAM Permissions
+
+Answer: A - Mapping Templates
+
+--------------------------------------------------------------------------------
+5. Functions with multiple files or module dependencies should:
+	
+	A - Store the files in a publicly accessible location
+	
+	B - Zip the contents and upload directly to lambda
+
+	C - Reference the files using ARN names
+
+	D - Avoid using lambda functions
+
+Answer: B - Zip the contents and upload directly to lambda
+
+--------------------------------------------------------------------------------
+6. What is the default access level if a policy does not exist?
+	
+	A - Web authorization headers are used
+	
+	B - An overriding policy applies
+
+	C - Access denied
+
+	D - Access granted
+
+Answer: C - Access denied
+
+--------------------------------------------------------------------------------
+7. One way to start using the API Gateway is:
+	
+	A - Integrating with your current Continuous Integration server
+	
+	B - Greenfield projects that have no legacy dependencies
+
+	C - Building the front-end interface for your customer portal
+
+	D - Expanding the features of your existing API set
+
+Answer: B - Greenfield projects that have no legacy dependencies
+
+--------------------------------------------------------------------------------
+8. When deploying using the AWS API Gateway:
+	
+	A - Manually copy needed deployment files
+	
+	B - Build a server, patch, and deploy
+
+	C - Click the deploy button
+
+	D - Deploy to an existing EC2 instance
+
+Answer: C - Click the deploy button
+
+--------------------------------------------------------------------------------
+9. API Keys can be used to authorize users.
+	
+	A - True
+	
+	B - False
+
+Answer: B - False
+
+--------------------------------------------------------------------------------
+10. Choose the correct types of access policy statements:
+	
+	A - API gateways and access policies
+	
+	B - Testimonies and affidavits
+
+	C - Action-statements and resource-statements
+
+	D - Access policies and statements
+
+Answer: C - Action-statements and resource-statements
+
+--------------------------------------------------------------------------------
+11. How many servers should be configured to support lambda functions?
+	
+	A - None
+	
+	B - 2 times the number of compute cycles
+
+	C - 1 per cpu
+
+	D - It depends on load
+
+Answer: A - None
+
+--------------------------------------------------------------------------------
+12. Which is not a client SDK option?
+	
+	A - Javascript
+	
+	B - IOS
+
+	C - Android
+
+	D - OSX
+
+Answer: D - OSX
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	2. AWS Certified DevOps Engineer: Continuous Delivery and Automation
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1. Users connect to a web application (for which you are responsible) that is running on AWS. The web application runs on a fleet of EC2 instances in an autoscaling
+   group. Traffic to the web application is load balanced by Amazon Route 53. The web application stores orders in an Amazon RDS database instance. You need to roll
+   out a new version of the application. No database schema changes are required. What is the best way to roll out the application with minimal downtime?
+	
+	A - Create a second environment identical to the production environment. Install the new version of the application on the new infrastructure. Slowly move 
+	    users over to the new environment by using Amazon Route 53 weighted routing.
+	
+	B - Deploy the new version of your application using GitHub and AWS CodePipeline.
+
+	C - Create a CodeDeploy application for the new version of your application. Install the CodeDeploy agent on each EC2 instance. Create a new Deployment 
+	    Group in CodeDeploy and push out the application to one server at a time.
+
+	D - Use AWS CloudFormation to update the stack for your application and deploy the CodeDeploy agent. Roll out the new version of your application to each EC2
+	    instance.
+
+Answer: A - Create a second environment identical to the production environment. Install the new version of the application on the new infrastructure. Slowly move 
+	    users over to the new environment by using Amazon Route 53 weighted routing.
+
+--------------------------------------------------------------------------------
+2. You need to use multiple cookbooks from different repositories in your OpsWorks stack. What do you need to do to allow this?
+	
+	A - Enable custom cookbooks and berkshelf on the stack. Add a berksfile to your custom cookbook repository.
+	
+	B - Enable custom cookbooks on your OpsWorks stack.
+
+	C - Enable autohealing on your OpsWorks stack.
+
+	D - Enable bershelf on your OpsWorks stack.
+
+Answer: A - Enable custom cookbooks and berkshelf on the stack. Add a berksfile to your custom cookbook repository.
+
+--------------------------------------------------------------------------------
+3. You’ve noticed that one of your application server instances is no longer communicating with the OpsWorks service, yet OpsWorks has not attempted to auto heal the 
+   instance. What could be the issue?
+	
+	A - The instance is a load-based instance.
+	
+	B - The instance belongs to a layer that has auto-healing disabled.
+
+	C - The instance is a 24x7 instance.
+
+	D - The instance is a time-based instance.
+
+Answer: B - The instance belongs to a layer that has auto-healing disabled.
+
+--------------------------------------------------------------------------------
+4. You need to roll back an AWS OpsWorks application deployment. Which AWS CLI command should you use?
+	
+	A - aws opsworks deploy-app
+	
+	B - aws opsworks rollback-deployment
+
+	C - aws opsworks create-deployment
+
+	D - aws ec2 rollback-deployment
+
+Answer: C - aws opsworks create-deployment
+
+--------------------------------------------------------------------------------
+5. The developers on your team report an issue when deploying application revisions to an Elastic Beanstalk environment. Based on the existing settings for the 
+   environment, the application goes offline for several minutes when they deploy a new version of the application since it requires a restart to the web server 
+   service. What should you do to correct the problem?
+	
+	A - Redeploy the application on AWS OpsWorks.
+	
+	B - Reconfigure the Elastic Beanstalk environment to use rolling application updates.
+
+	C - Use AWS CloudFormation for new application deployments.
+
+	D - Reconfigure the Elastic Beanstalk environment to use rolling configuration updates.
+
+Answer: B - Reconfigure the Elastic Beanstalk environment to use rolling application updates.
+
+--------------------------------------------------------------------------------
+6. You’re creating a new CloudFormation template that will be used in your continuous delivery pipeline to deploy your infrastructure. Where should you save the 
+   template?
+	
+	A - Save the template in an S3 bucket.
+	
+	B - Save the template on an EBS volume and create a snapshot of the volume.
+
+	C - Save the template on your development machine.
+
+	D - Commit the template to your version control repository.
+
+Answer: D - Commit the template to your version control repository.
+
+--------------------------------------------------------------------------------
+7. You’ve created a CloudFormation template to deploy the infrastructure that supports a web application. One of the developers mentions that the application 
+   deployed through the template doesn’t seem to work immediately after the stack is launched. She says if she waits about 10 minutes then the application starts 
+   working. What should you do to resolve this?
+	
+	A - Create WaitConditions in your CloudFormation template for the EC2 instances running the application.
+	
+	B - Use Elastic Beanstalk to deploy the application instead.
+
+	C - Create a fully-configured AMI for the application servers.
+
+	D - Add a notice to the template description that says the application will take 10 minutes to initialize.
+
+Answer: A - Create WaitConditions in your CloudFormation template for the EC2 instances running the application.
+
+--------------------------------------------------------------------------------
+8. You need to automate the deployment of new application versions for your Elastic Beankstalk environment. What command should you use with the EB CLI?
+	
+	A - EB Create
+	
+	B - EB Deploy
+
+	C - EB Start
+
+	D - EB Update
+
+Answer: B - EB Deploy
+
+--------------------------------------------------------------------------------
+9. You’re building a CloudFormation template that will automate the deployment of an application. Your template needs to provide input parameters to customize the 
+   deployment. How can you include the values provided as input via parameters into your bootstrapping scripts?
+	
+	A - Use the Join intrinsic function to reference the template parameters in your bootstrapping script.
+	
+	B - Write a bootstrapping script that queries the CloudFormation service to parse the template parameter values for the associated stack.
+
+	C - Use the GetAtt intrinsic function to reference the template parameters in your bootstrapping script.
+
+	D - Use the Ref intrinsic function to reference the template parameters in your bootstrapping script.
+
+Answer: D - Use the Ref intrinsic function to reference the template parameters in your bootstrapping script.
+
+--------------------------------------------------------------------------------
+10. You use the blue-green deployment pattern for rolling out new versions of your application. You notice that even though you’ve configured weighted routing, 
+    users are not being routed to your green environment. What is the most likely cause of the problem?
+	
+	A - The Elastic Load Balancer is not configured to use the green environment.
+	
+	B - End-users must reboot their device to reset their connection to the application.
+
+	C - The time-to-live TTL for the application DNS record is too high.
+
+	D - You need to enable split-brain DNS in Route53.
+
+Answer: C - The time-to-live TTL for the application DNS record is too high.
+
+--------------------------------------------------------------------------------
+11. You need to provision an S3 bucket used to store static assets as part of your web application. You plan to run the application using Elastic Beanstalk. 
+    How can you configure your Elastic Beanstalk application source bundle so the S3 bucket is created during deployment?
+	
+	A - Use a Dockerfile to create a container to host the application and run a command from within the container to create the S3 bucket.
+	
+	B - Create a UserData script that will run when the first instance is deployed.
+
+	C - Configure your application to create the bucket the first time that it’s launched.
+
+	D - Create an .ebextentions folder in the root of your application source bundle and create a configuration file to provision the custom resource.
+
+Answer: D - Create an .ebextentions folder in the root of your application source bundle and create a configuration file to provision the custom resource.
+
+
+--------------------------------------------------------------------------------
+12. Which OpsWorks lifecycle event runs when an instance enters or leaves the online state?
+	
+	A - Configure
+	
+	B - Deploy
+
+	C - Undeploy
+
+	D - Setup
+
+Answer: A - Configure
+--------------------------------------------------------------------------------
+13. You need to add a stage to your CI server that verifies your CloudFormation templates are correctly formatted. Which AWS CLI command should you use to automate 
+    this process?
+	
+	A - aws cloudformation validate-stack
+	
+	B - aws cloudformation validate-template
+
+	C - aws cloudformation validate-cft
+
+	D - aws ec2 validate-template
+
+Answer: B - aws cloudformation validate-template
+
+--------------------------------------------------------------------------------
+14. You are responsible for automating the deployment of three different applications on AWS. Each application is architected to run in a custom Amazon VPC that 
+    spans multiple availability zones. You need to create CloudFormation templates for each application using the least amount of effort. What should you do?
+	
+	A - Create a single template for the VPC infrastructure. Use nested templates so that each application can reuse the same VPC template to eliminate code 
+            duplication
+	
+	B - Use Visual Studio and the AWS .NET SDK for authoring your templates
+
+	C - Use the AWS Toolkit for Eclipse to author your templates
+
+	D - Use the AWS CloudFormation Designer to visually create the templates
+
+Answer: A - Create a single template for the VPC infrastructure. Use nested templates so that each application can reuse the same VPC template to eliminate code 
+            duplication
+
+--------------------------------------------------------------------------------
+15. You support a web application that runs on a fleet of EC2 instances in an autoscaling group. The development team is complaining that it takes a long time to 
+    scale out when the application load increases due to the amount of work that needs to be done by bootstrapping scripts. What changes can you make to ensure that 
+    new instances in the autoscaling group launch as fast as possible?
+	
+	A - Create a fully-configured AMI for your EC2 instances.
+	
+	B - Increase the minimum size of the autoscaling group so it includes more instances.
+
+	C - Change the autoscaling group MaxScaleOutSpeed setting to True.
+
+	D - Use PIOPS EBS volumes for the OS root disk.
+
+Answer: A - Create a fully-configured AMI for your EC2 instances.
+
+--------------------------------------------------------------------------------
+16. You need to automate the creation of an AMI using the AWS CLI. Which EC2 command should you use?
+	
+	A - copy-image
+	
+	B - run-instances
+
+	C - create-image
+
+	D - create-snapshot
+
+Answer: C - create-image
+
+--------------------------------------------------------------------------------
+17. You need to define your infrastructure as code so your DevOps team can reliably release new versions of your application. Which of the following is the best 
+    approach?
+	
+	A - Use declarative templates to define your infrastructure and commit the templates to version control.
+	
+	B - Write a script using the AWS CLI that creates all of the required infrastructure and add the script to your version control repository.
+
+	C - Use Chef to create custom a custom cookbook to define your infrastructure and add the cookbook to your version control repository.
+
+	D - Write a program using the AWS SDK for Java that creates all of the required infrastructure and add the source code for the program to your 
+            version control repository.
+
+Answer: A - Use declarative templates to define your infrastructure and commit the templates to version control.
+
+--------------------------------------------------------------------------------
+18.  What is the difference between continuous delivery and continuous deployment?
+
+	A - With continuous delivery, software releases are pushed into production automatically.
+	
+	B - With continuous deployment, software releases are pushed into production manually.
+
+	C - With continuous deployment, software releases are pushed into production automatically.
+
+	D - With continuous deployment, software releases are pushed into staging automatically.
+
+Answer: C - With continuous deployment, software releases are pushed into production automatically.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	3. Integrating Lead Forms, Salesforce, Slack, and Email with AWS
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1. What does AWS call it's API integration transformation?
+
+	A - Endpoint Transformation
+	
+	B - Map API Data
+
+	C - Body Mapping Template
+
+	D - Integrate and Translate Template
+
+Answer: C - Body Mapping Template
+
+--------------------------------------------------------------------------------
+2. Besides a mock and http, what other integration types exist in the API Gateway?
+	
+	A - Lambda Function
+	
+	B - Worker method
+
+	C - Mobile functions
+
+	D - Custom code
+
+Answer: A - Lambda Function
+
+--------------------------------------------------------------------------------
+3. Which of these languages can be used with a Lambda Function?
+	
+	A - Lisp
+	
+	B - C++
+
+	C - GoLang
+
+	D - Javascript
+
+Answer: D - Javascript
+
+--------------------------------------------------------------------------------
+4. Why would you want to mock an API endpoint?
+	
+	A - Provide a real URL before the code is fully functional
+	
+	B - Provide a temporary path until the real one is ready to be switched later
+
+	C - Redirect the client to a new URL later
+
+	D - Hide irrelevant messaging from a user
+
+Answer: A - Provide a real URL before the code is fully functional
+
+--------------------------------------------------------------------------------
+5. What information is required to create an SQS queue?
+	
+	A - Name
+	
+	B - Name, description, and type
+
+	C - Name and type
+
+	D - Name and description
+
+Answer: C - Name and type
+
+--------------------------------------------------------------------------------
+6. Which configuration file holds a Beanstalk environment variables?
+	
+	A - config-env.yml
+	
+	B - beanstalk-config.yml
+
+	C - env-vars.config
+
+	D - environmentvariables.config
+
+	E - beanstalk-vars.config
+
+Answer: D - environmentvariables.config
+
+
+--------------------------------------------------------------------------------
+7. Why does AWS suggest creating additional users, outside your standard account user?
+	
+	A - To allow for more people to use your services
+	
+	B - To allow for more fine-grained permission control, increasing security
+
+	C - To make things more complex and keep hackers guessing
+
+Answer: B - To allow for more fine-grained permission control, increasing security
+
+--------------------------------------------------------------------------------
+8. What is the difference between a console user and a programmatic user in AWS?
+	
+	A - Console users have access to the AWS console via a password, while programmatic users do not.
+	
+	B - Programmatic users are created randomly by AWS.
+
+	C - Console users represent real people, while programmatic users do not.
+
+Answer: A - Console users have access to the AWS console via a password, while programmatic users do not.
+
+--------------------------------------------------------------------------------
+9. What kind of integration allows messages to be sent to a Slack channel from an external source?
+	
+	A - Post Message Integration
+	
+	B - Incoming Webhook
+
+	C - Gateway URL
+
+	D - Outgoing Webhook
+
+Answer: B - Incoming Webhook
+
+--------------------------------------------------------------------------------
+10. What does deploying an API do?
+	
+	A - Packages your code for future deployments
+	
+	B - Sends your API to a server
+
+	C - Creates a public-facing access point to your endpoints
+
+	D - Emails a configuration for deployment
+
+Answer: C - Creates a public-facing access point to your endpoints
+
+--------------------------------------------------------------------------------
+11. What kind of authorization allows an outside application to access Salesforce APIs?
+	
+	A - Challenge Handshake
+	
+	B - OAuth
+
+	C - Two-form factor
+
+	D - Password
+
+Answer: B - OAuth
+
+--------------------------------------------------------------------------------
+12. What is the primary permission a user needs to deploy code to lambda from the command line?
+	
+	A - UpdateLambdaFunction
+	
+	B - UpdateFunctionCode
+
+	C - DeployToLambda
+
+	D - DeployNewCode
+
+Answer: B - UpdateFunctionCode
+
+--------------------------------------------------------------------------------
+13. What is a specific requirement related to creating S3 buckets?
+	
+	A - Names must be unique across all buckets in all of S3.
+	
+	B - Names must be unique within your AWS account.
+
+	C - Names must only contain letters.
+
+	D - Names must only contain numbers.
+
+Answer: A - Names must be unique across all buckets in all of S3.
+
+--------------------------------------------------------------------------------
+14. If you want to send data to an API endpoint, which method is preferable?
+	
+	A - POST
+	
+	B - SEND
+
+	C - ALLOW
+
+	D - GET
+
+Answer: A - POST
+
+--------------------------------------------------------------------------------
+15. What is the difference between a worker and a webserver beanstalk environment?
+	
+	A - Only one is used to talk to a database.
+	
+	B - Only one can have code deployed to it via the command line.
+
+	C - Only one can have multiple instances setup for failover.
+
+	D - One is primarily used for behind the scenes processing, unexposed to the web by default.
+
+Answer: D - One is primarily used for behind the scenes processing, unexposed to the web by default.
+
+--------------------------------------------------------------------------------
+16. What is the minimum interval a Cloudwatch event rule can be scheduled to run?
+	
+	A - 5 minutes
+	
+	B - 1.5 minutes
+
+	C - 10 minutes
+
+	D - 3 minutes
+
+Answer: A - 5 minutes
+
+--------------------------------------------------------------------------------
+17. What is Boto?
+	
+	A - An email library used in Python to send emails
+	
+	B - An AWS tool to allow Beanstalk deployments
+
+	C - A Python library providing numerous features to use AWS services
+
+Answer: C - A Python library providing numerous features to use AWS services
+
+--------------------------------------------------------------------------------
+18. What is the format of a Lambda Function Handler?
+	
+	A - function.file
+	
+	B - file-name-function-name
+
+	C - function-name
+
+	D - filename.functionname
+
+	E - file-function-name
+
+Answer: D - filename.functionname
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	4. Automating AWS with CloudFormation
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1. Which tools simplify accessing the AWS API?
+	
+	A - CLI and SDKs
+	
+	B - HTTP Client
+
+	C - API Gateway
+
+Answer: A - CLI and SDKs
+
+--------------------------------------------------------------------------------
+2. Which of the following options describes Infrastructure in Code?
+	
+	A - Script containing all needed steps to transform current state into target state.
+	
+	B - Checklist containing all steps needed to transform current state into target state manually.
+
+	C - Blueprint containing target state. Tool transforming current sate into target state.
+
+Answer: C - Blueprint containing target state. Tool transforming current sate into target state.
+
+--------------------------------------------------------------------------------
+3. CloudFormation allows you to ____________ a stack.
+	
+	A - create, update, and delete
+	
+	B - create and update
+
+	C - create
+
+Answer: A - create, update, and delete
+
+--------------------------------------------------------------------------------
+4. A minimal CloudFormation template contains:
+	
+	A - Format Version, Description, Resources
+	
+	B - Resources, Inputs, Outputs
+
+	C - Resources
+
+Answer: A - Format Version, Description, Resources
+
+--------------------------------------------------------------------------------
+5. A resource definition consists of:
+	
+	A - Identifier, Type, Properties
+	
+	B - Ordinal Number, Identifier, Properties
+
+	C - Type, Properties
+
+Answer: A - Identifier, Type, Properties
+
+--------------------------------------------------------------------------------
+6. The following resources describe...
+
+"Resources": {
+    "EC2Instance": {
+        "Type": "AWS::EC2::Instance",
+        "Properties": {
+            "ImageId": "ami-bff32ccc",
+            "InstanceType": "t2.nano"
+        }
+    }
+}
+	
+	A - a S3 Bucket.
+	
+	B - an EC2 Instance.
+
+	C - a RDS Database Instance.
+
+	D - an AMI.
+
+Answer: B - an EC2 Instance.
+
+--------------------------------------------------------------------------------
+7. Which value is valid for the following parameter?
+
+ "Parameters": {
+    "VPC": {
+        "Description": "The default VPC",
+        "Type": "AWS::EC2::VPC::Id"
+    }
+ }
+	
+	A - vpc-ssh-bastion-host
+	
+	B - vpc-6b53320e
+
+	C - subnet-e16fa6ca
+
+Answer: A - vpc-ssh-bastion-host
+
+--------------------------------------------------------------------------------
+8. Which of the following options adds the private IP address of the EC2 instance to the outputs?
+
+{
+    "Resources": {
+        "EC2Instance": {
+            "Type": "AWS::EC2::Instance"
+        },
+    },
+    "Outputs": {
+        "PrivateIp": {
+            "Value": {"Fn::GetAtt": ["EC2Instance", "PrivateIp"]}
+        }
+    }
+}
+	
+	A - {"Ref": "EC2Instance"}
+	
+	B - {"Ref": ["EC2Instance", "PrivateIp"]}
+
+	C - {"Fn::GetAtt": ["EC2Instance", "PrivateIp"]}
+
+Answer: C - {"Fn::GetAtt": ["EC2Instance", "PrivateIp"]}
+
+--------------------------------------------------------------------------------
+9. A CloudFormation template includes the following mappings section.
+
+"Mappings": {
+    "RegionAMI": {
+        "us-east-1": {"AmazonLinux": "ami-8fcee4e5", "Ubuntu": "ami-fce3c696"},
+        "eu-west-1": {"AmazonLinux": "ami-e1398992", "Ubuntu": "ami-f95ef58a"},
+        "ap-northeast-1": {"AmazonLinux": "ami-59bdb937", "Ubuntu": "ami-a21529cc"}
+    }
+}
+
+  What's the output of the following function?
+
+   {"Fn::FindInMap": ["RegionAMI", "eu-west-1", "AmazonLinux"]}
+
+	
+	A - ami-e1398992
+	
+	B - ami-f95ef58a
+
+	C - Nothing, the parameters are invalid.
+
+	D - ami-59bdb937
+
+Answer: A - ami-e1398992
+
+--------------------------------------------------------------------------------
+10. A stack named webapp was created in region eu-west-1. What's the output of the following function?
+
+   {"Fn::Select": ["0", {"Fn::GetAZs": {"Ref": "AWS::Region"}}
+	
+	A - az-1
+	
+	B - eu-west-1a
+
+	C - eu-west-1
+
+Answer: B - eu-west-1a
+
+--------------------------------------------------------------------------------
+11. CloudFormation parameters allow you to:
+	
+	A - Add additional properties to resources without changing the template
+	
+	B - Create multiple stacks based on the same template
+
+	C - Specify input for a template when creating or updating a stack
+
+Answer: C - Specify input for a template when creating or updating a stack
+
+--------------------------------------------------------------------------------
+12. What's wrong with the described EC2 instance?
+	
+  "EC2Instance": {
+    "Type": "AWS::EC2::Instance",
+    "Properties": {
+        ...
+        "UserData": {"Fn::Join": ["\n", [
+            "#!/bin/bash -ex",
+            "yum install -y httpd",
+            "cd /var/www/html",
+            "echo '<html><body>Hello World!</body></html>' > index.html",
+            "service httpd start"
+        ]]}
+    }
+  }
+
+	
+	A - User Data is limited to 128 characters.
+	
+	B - There is no package called httpd.
+
+	C - User Data needs to be encoded in Base64.
+
+Answer: C - User Data needs to be encoded in Base64.
+
+--------------------------------------------------------------------------------
+13. A CloudFormation template is written in...
+	
+	A - Bash Script
+	
+	B - XML
+
+	C - JavaScript
+
+	D - JSON
+
+Answer: D - JSON
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	5. Using Docker on AWS
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+1. Which of the following is true of ECS?
+	
+	A - ECS automatically launches a fully-managed EC2 instance for every cluster created.
+	
+	B - At the cluster level, ECS can only be managed from the browser-based console.
+
+	C - Besides for the regular AWS resources in use, ECS charges users on a per-cluster basis.
+
+	D - ECS offers integration with either the ECS registry or Docker Hub images.
+
+Answer: D - ECS offers integration with either the ECS registry or Docker Hub images.
+
+--------------------------------------------------------------------------------
+2. You can display detailed information about an ECS cluster from the command line using...
+	
+	A - aws ecs clusters --list
+	
+	B - aws ecs list-clusters
+
+	C - aws ecs describe-clusters
+
+	D - aws ecs cluster --help
+
+Answer: C - aws ecs describe-clusters
+
+--------------------------------------------------------------------------------
+3. You can set load balancing and auto scaling for a deployment in the ________ configuration menu of the console.
+	
+	A - Container
+	
+	B - Services
+
+	C - Cluster Update
+
+	D - Task Definitions
+
+Answer: A - Container
+
+--------------------------------------------------------------------------------
+4. Which of the following commands will return authentication credentials for the EC2 Container Repository service?
+	
+	A - aws ecr login --region <your_region>
+	
+	B - aws get-login --region <your_region>
+
+	C - aws ecr get-login --region <your_region>
+
+	D - aws get-region <your_region>
+
+Answer: C - aws ecr get-login --region <your_region>
+
+--------------------------------------------------------------------------------
+5. Adding the "Amazon EC2 Container Service for EC2 Role" to your EC2 instance allows _________.
+	
+	A - the EC2 instance to be registered within an ECS system
+	
+	B - the account root user to manage the EC2 instance
+
+	C - ECS resources to connect to the EC2 instance
+
+	D - the EC2 instance to connect to ECS resources
+
+Answer: D - the EC2 instance to connect to ECS resources
+
+--------------------------------------------------------------------------------
+6. Which of the following files on an EC2 ECS-optimized AMI instance must be edited to permit access to Docker Hub private repositories?
+	
+	A - /ecs/ecs.config
+	
+	B - /etc/ecs/ecs-config
+
+	C - /etc/ecs-config
+
+	D - /etc/ecs/ecs.config
+
+Answer: D - /etc/ecs/ecs.config
+
+--------------------------------------------------------------------------------
+7. What is the primary purpose of adding a tag to a Docker image?
+	
+	A - To allow for easier visual identification once your infrastructure grows
+	
+	B - To direct Docker to the appropriate remote repository
+
+	C - To identify the object as an image
+
+	D - To identify the image's ownership and origin
+
+Answer: B - To direct Docker to the appropriate remote repository
+
+--------------------------------------------------------------------------------
+8. For security, the Docker website uses encryption certificates to _________.
+	
+	A - ensure that all images uploaded to Docker Hub are free of malware
+	
+	B - secure the computers of local Docker clients
+
+	C - ensure that all "docker run" operations are valid
+
+	D - secure connections between the website and clients
+
+Answer: D - secure connections between the website and clients
+
+--------------------------------------------------------------------------------
+9. What is the role of apache2ctl in this command?
+   docker run -d -p 80:80 webserver /usr/sbin/apache2ctl -D FOREGROUND
+	
+	A - apache2ctl will check to make sure the Apache webserve software package is properly installed on a container.
+	
+	B - apache2ctl is the name of a Docker image.
+
+	C - apache2tcl will run the Apache webserver software package when the container boots.
+
+	D - apache2ctl will launch a new Docker container as a backend server to your main container.
+
+Answer: C - apache2tcl will run the Apache webserver software package when the container boots.
+
+--------------------------------------------------------------------------------
+10. An ECS task can be described as:
+	
+	A - A virtual container profile
+	
+	B - A software tool used to manage cluster resources
+
+	C - A software agent used to enable communication across a cluster environment
+
+	D - A collection metadata defining the environment elements needed to launch Docker containers
+
+Answer: D - A collection metadata defining the environment elements needed to launch Docker containers
+
+--------------------------------------------------------------------------------
+11. What is the function of this command?
+    docker search apache/ubuntu
+	
+	A - It will search your local Docker client environment for images related to both apache and ubuntu.
+	
+	B - It will search Docker Hub for images related to either apache or ubuntu.
+
+	C - It will search your local Docker client environment for images related to either apache or ubuntu.
+
+	D - It will search Docker Hub for images related to both apache and ubuntu.
+
+Answer: D - It will search Docker Hub for images related to both apache and ubuntu.
+
+--------------------------------------------------------------------------------
+12. Which of these commands will associate a network interface with a Docker container?
+	
+	A - docker attach network newnet
+	
+	B - docker network connect newname newnet
+
+	C - docker net connect newname newnet
+
+	D - docker network connect newnet newname
+
+Answer: D - docker network connect newnet newname
+
+--------------------------------------------------------------------------------
+13. Which of these tools provides information about all the Docker resources on your system?
+	
+	A - docker ps
+	
+	B - docker inspect
+
+	C - docker info
+
+	D - docker images
+
+Answer: C - docker info
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------

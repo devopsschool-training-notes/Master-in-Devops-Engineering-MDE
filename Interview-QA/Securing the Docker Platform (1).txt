@@ -1,0 +1,342 @@
+
+Course Name:  Securing the Docker Platform
+
+
+1. An admin has configured the Linux audit framework to generate audit events for the Docker daemon's data root. After a recent OS update, the data root is no longer being audited. What is the likely reason?
+
+A. The rules need to be added to the kernel's audit framework by the administrator using the auditctl command after each system reboot.
+B. The first rule in the audit.rules file is -D, which deletes all rules and watches and means the daemon's data root is no longer under audit.
+C. The rules were generated using the auditctl utility, but weren't written to the audit.rules file and weren't preserved on reboot.
+
+Ans:   C. The rules were generated using the auditctl utility, but weren't written to the audit.rules file and weren't preserved on reboot.
+
+
+2. Which of the following is not a benefit of using a minimalist, cloud-native OS to host a Docker platform?
+
+A. The userspace hypervisor employed by cloud-native OSes helps protect the host from any potential container workload breakouts.
+B. A read-only filesystem protects the Docker host from unintended changes, either accidental or malicious, which may render the host vulnerable to attack.
+C. Atomic updates lend themselves to immutable infrastructure, allowing for the creation of dependable, reproducible Docker platforms.
+D. A stripped-down OS configured for hosting the Docker platform provides a smaller surface area for an attacker to exploit.
+
+Ans:  A. The userspace hypervisor employed by cloud-native OSes helps protect the host from any potential container workload breakouts.
+
+
+3. Which of the following factors is least likely to influence your decision concerning the most appropriate tool to use and test a Docker platform for CIS Docker Benchmark compliance?
+
+A. The tool is only available as a containerized testing facility
+B. The established use of an existing test framework in your organization
+C. The currency of the tools implementation of the CIS Docker Benchmark
+
+Ans:   A. The tool is only available as a containerized testing facility
+
+
+4. Which three environment variables can be used when configuring a Docker client to communicate with a Docker daemon using TLS?
+
+A. DOCKER_DAEMON, DOCKER_TLS_PATH, DOCKER_TLS_VERIFY.
+B. DOCKER_HOST, DOCKER_CERT_PATH, DOCKER_TLS_ENABLE.
+C. DOCKER_DAEMON, DOCKER_TLS_PATH, DOCKER_TLS_ENABLE.
+D. DOCKER_HOST, DOCKER_CERT_PATH, DOCKER_TLS_VERIFY.
+
+Ans:   D. DOCKER_HOST, DOCKER_CERT_PATH, DOCKER_TLS_VERIFY.
+
+
+5. Which port does the Docker Engine use for secure TLS communication with clients?
+
+A. 2375
+B. 2377
+C. 2376
+
+Ans:  C. 2376
+
+
+6. Which methods must a third-party Docker authorization plugin implement?
+
+A. AuthZPlugin.AuthZReq and AuthNPlugin.AuthNReq
+B. The implementation of the plugin is down to its author, provided it uses a UNIX domain socket to communicate with the daemon.
+C. AuthZPlugin.AuthZReq and AuthZPlugin.AuthZRes
+
+Ans:   C. AuthZPlugin.AuthZReq and AuthZPlugin.AuthZRes
+
+
+7. What is a valid method for limiting a client user from inspecting a production container whilst allowing them to inspect non-production containers?
+
+A. Provide production containers with labels and implement an authorization plugin that checks the daemon's response body for the label and denies the response if it exists.
+B. Provide production containers with labels, get the authorization plugin to check the body of the request passed by the daemon, and deny the request if the label exists.
+C. If you deny the user the ability to inspect a production container, you deny them the ability to inspect any container.
+
+Ans:   A. Provide production containers with labels and implement an authorization plugin that checks the daemon's response body for the label and denies the response if it exists.
+
+
+8. You require access to a self-hosted registry. When must the --insecure-registry config option be configured on the Docker daemon?
+
+A. When the registry is configured to receive API calls over plain HTTP
+B. When the registry is being served from the loopback network
+C. When the registry uses a self-signed certificate for authentication
+
+Ans:   A. When the registry is configured to receive API calls over plain HTTP
+
+
+9. Which of the following commands would not pull an image from the nginxhello repo on the Docker Hub registry for the user account nbrown?
+
+A. docker image pull registry-1.docker.io/nbrown/nginxhello
+B. docker image pull nbrown/nginxhello
+C. docker image pull hub.docker.com/nbrown/nginxhello
+
+Ans:   C. docker image pull hub.docker.com/nbrown/nginxhello
+
+
+10. What secret artifact is used to decrypt the key that encrypts the Raft log in an autolock swarm cluster?
+
+A. Unlock key
+B. Join token
+C. Node TLS key
+
+Ans:   A. Unlock key
+
+
+11. On which date is it likely that Docker Community Edition 19.06 will cease to receive fixes and updates?
+
+A. 20th July 2019
+B. 15th October 2019
+C. 1st September 2019
+
+Ans:   B. 15th October 2019
+
+
+
+12. Which utility is the most appropriate for analyzing the events that the audit framework records for all activity related to key Docker filesystem objects?
+
+A. The aureport utility is the more useful, as it summarizes the logged events.
+B. Aureport and ausearch provide a useful interface into the audit log and can be used independently or together.
+C. The ausearch utility is the more useful, as it provides in-depth information on logged events.
+
+Ans:   B. Aureport and ausearch provide a useful interface into the audit log and can be used independently or together.
+
+
+
+13. A Docker client user attempts to invoke a CLI command but gets the following response:
+$ docker info
+Get http://wolff:2376/v1.37/info: net/http: HTTP/1.x transport connection broken: malformed HTTP response 
+"\x15\x03\x01\x00\x02\x02".* Are you trying to connect to a TLS-enabled daemon without TLS?
+
+What is the likely problem?
+
+A. The client's certificate has been signed by a different certificate authority to that of the Docker daemon.
+B. The user has not specified any command line arguments or set the appropriate environment variable for communicating with a remote Docker daemon using TLS.
+C. The user has not been added to the docker group by the system admin and is unable to read or write to the local daemon's socket.
+
+Ans:   B. The user has not specified any command line arguments or set the appropriate environment variable for communicating with a remote Docker daemon using TLS.
+
+
+
+14. A user runs a container and mounts a host volume inside of it so that data persists between container invocations. The daemon is configured to use user namespaces. After the container exits, the user realizes that there is no change to the volume of data. What's the likely explanation?
+
+A. Subordinate ranges may not have been specified for the remap user in the subordinate files, so Docker sets the ownership of the files to 'nobody.'
+B. Volumes cannot be mounted within a container when the user namespace feature is enabled for the daemon. The daemon ignores the request to mount the volume.
+C. Because of the remapping associated with user namespaces, it will not have the necessary privileges to write to the host's filesystem object, despite the container's process running as the root user,.
+
+Ans:   C. Because of the remapping associated with user namespaces, it will not have the necessary privileges to write to the host's filesystem object, despite the container's process running as the root user,.
+
+
+15. Which statement best describes the purpose of the following Rego syntax:
+
+allow {
+    input.Path = "/v1.37/containers/create"
+    labels["com.acme/environment"] = "production"
+    input.Body.HostConfig.Memory != 0
+}
+
+labels[key] = value {
+    input.Body.Labels[key] = value
+}
+
+A. Containers created with the label com.acme/environment and set to the string production must have a memory limit set.
+B. When containers are created before their deployment to production, they must not consume any of the host's memory.
+C. In conjunction, the rules provide a label, called production, for a container when it starts consuming the host's memory.
+
+
+Ans:   A. Containers created with the label com.acme/environment and set to the string production must have a memory limit set.
+
+
+
+16. A join token is a secret generated by the initiating manager node in a swarm cluster. What is its purpose?
+
+A. To provide the joiner with the key that unlocks the manager node's encrypted TLS credentials
+B. To let the manager node decide whether to allow a new node to join the cluster based on how many tokens it has generated and issued
+C. To let the joiner authenticate the manager, and allows the manager to register the joiner with the correct role
+
+Ans:   C. To let the joiner authenticate the manager, and allows the manager to register the joiner with the correct role
+
+
+17. A Docker daemon can authenticate a registry that uses a self-signed certificate by placing the CA certificate in a directory, such as /etc/docker/certs.d/registry.acme.com:443. What filename extension must the certificate have?
+
+A. .cert
+B. .pem
+C. .crt
+
+Ans:   C. .crt
+
+
+
+18. Which is the most accurate statement about the Docker platform?
+
+A. Docker platform best practices are generated by the Docker security team and embodied in the InSpec test and audit framework.
+B. The CIS Docker Benchmark is an audit and compliance tool used for measuring the effective security of a Docker platform.
+C. By concensus, security professionals and subject-matter experts define security recommendations for the Docker platform, embodied in the CIS Docker Benchmark.
+
+Ans:   C. By concensus, security professionals and subject-matter experts define security recommendations for the Docker platform, embodied in the CIS Docker Benchmark.
+
+
+19. Which of the following statements is true of Docker Bench for Security?
+
+A. The Docker Bench for Security cannot run in a container because containers are created with their own set of namespaces that render the tests ineffective.
+B. In order to test a Docker platform effectively, the Docker Bench for Security needs to be unintrusive and should be run inside a container.
+C. The Docker Bench for Security can be run as a process on the host or can be run inside a container, provided the container has access to the necessary host resources.
+
+
+Ans:   C. The Docker Bench for Security can be run as a process on the host or can be run inside a container, provided the container has access to the necessary host resources.
+
+
+20. Which of the following specifies the required quorum in a swarm cluster of n manager nodes?
+
+A. (n - 1)/2
+B. (n/2) + 1
+C. (2n -1)/2
+
+
+Ans:   B. (n/2) + 1
+
+
+21. Docker recommends using the responsible disclosure model for reporting vulnerabilities in the Docker platform. What does this mean?
+
+A. Simultaneously report the vulnerability to Docke and openly publish details of the vulnerability so that the wider community can take preventative action.
+B. After reporting the vulnerability to Docker, desist from further disclosure for a period of time to enable the project time to remedy the vulnerability.
+C. Engineer a patch to remedy the vulnerability and describe the vulnerability and its fix in a GitHub pull request.
+
+Ans:   B. After reporting the vulnerability to Docker, desist from further disclosure for a period of time to enable the project time to remedy the vulnerability.
+
+
+22. Why does RancherOS launch two Docker daemons on boot?
+
+A. To implement redundancy in the event that one of the daemons becomes unavailable
+B. To isolate application containers from the host's system services
+C. To improve system performance by load balancing Engine API requests
+
+Ans:    B. To isolate application containers from the host's system services
+
+
+
+23. Given the following users and their group membership, which user will NOT have the means to access the Docker Engine API on its UNIX domain socket?
+
+rackham: uid=1000(rackham) gid=1000(rackham) groups=1000(rackham),27(sudo)
+
+baxter: uid=1001(baxter) gid=1001(baxter) groups=1001(baxter),999(docker)
+
+bolt: uid=1002(bolt) gid=1002(bolt) groups=1002(bolt)
+
+
+A. baxter
+B. bolt
+C. rackham
+
+Ans:   B. bolt
+
+
+
+24. Which of the following statements is untrue about Docker?
+
+A. By default, Docker doesn't create containers in user namespaces because not all Linux distributions enable user namespaces in their kernel.
+B. Docker creates a sub-directory in its data root so that newly created objects are owned by the UID/GID at the top of the dock-remap user's subordinate ranges.
+C. User namespaces allow a container's process to be privileged in its own user namespace, whilst remaining non-privileged in the host's user namespace.
+
+Ans:   A. By default, Docker doesn't create containers in user namespaces because not all Linux distributions enable user namespaces in their kernel.
+
+
+25. A Docker admin needs a container to be able to write to a file owned by the root user located in the /etc directory. The Docker daemon is running with user namespace remapping enabled and the file is to be made available to the container as a bind mount. What is the best means of circumventing any permissions problems?
+
+A. Change the group ownership of the file to that of the remapped group ID that is used by the Docker daemon when creating containers.
+B. Temporarily reconfigure the Docker daemon to disable user namespace remapping for the lifetime of the container.
+C. Use the --userns config option with the argument host to disable the use of user namespaces for the container.
+
+Ans:    C. Use the --userns config option with the argument host to disable the use of user namespaces for the container.
+
+
+26. What is the process of granting a client access to objects based on their identity?
+
+A. Approval
+B. Authorization
+C. Authentication
+
+
+Ans:   B. Authorization
+
+
+27. The Open Policy Agent (OPA) is a general purpose policy engine. Which of the following attributes is essential for it to function as a Docker authorization plugin?
+
+A. Its ability to act as an independent decision making service for clients
+B. The availability of variables in Rego for defining policy rules
+C. The means for adding contextual data for use in rule evaluation
+
+Ans:   A. Its ability to act as an independent decision making service for clients
+
+
+
+28. An environment variable can be used to define or override a registry setting. Which of the following variables defines or overrides the path to the certificate bundle used to sign tokens?
+
+A. AUTH_TOKEN_CERTBUNDLE
+B. AUTH_TOKEN_ROOTCERTBUNDLE
+C. REGISTRY_AUTH_TOKEN_ROOTCERTBUNDLE
+D. REGISTRY_TLS_CERTIFICATE
+
+Ans:   C. REGISTRY_AUTH_TOKEN_ROOTCERTBUNDLE
+
+
+29. Which of the following registry operations are not provided to a client of the Docker Engine API?
+
+A. Pull an image from a registry repo
+B. Remove an image from a registry repo
+C. Push an image to a registry repo
+
+
+Ans:   B. Remove an image from a registry repo
+
+
+30. Which of the following is NOT a valid argument to the --secret config option for associating a secret with a swarm service?
+
+A. source=db_pw,target=password,mode=0400
+B. db_pw
+C. source=$(pwd)/db_pw,target=password
+
+
+Ans:   C. source=$(pwd)/db_pw,target=password
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

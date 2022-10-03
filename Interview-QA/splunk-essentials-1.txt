@@ -1,0 +1,886 @@
+Quiz Name - Splunk Fundamental
+
+
+1.Introduction Quiz - 10 Questions
+========================
+
+Question 1:
+Where is the best place to get help with general Splunk questions?
+
+Options
+A. Splunk Answers (answers.splunk.com)
+B. Stack Overflow
+C. Course Q and A
+
+Answer:- Splunk Answers
+
+--------------------------------------------------------------------------------------------------
+
+Question 2:
+Splunk is primarily a business intelligence tool.
+
+Options
+A. False
+B. True
+
+Answer:- False
+
+--------------------------------------------------------------------------------------------------
+
+Question 3:
+To be successful in this course, you should commit to _____ per day.
+
+Options
+A. 10 - 20 minutes
+B. 1 to 2 hours
+C. 30 - 45 minutes
+D. 0 minutes
+
+Answer:- 10 - 20 minutes
+
+-----------------------------------------------------------------------------------------------------
+
+Question 4:
+Splunk can be used to
+
+Options
+A. investigate.
+B. alert.
+C. build dashboards.
+D. build reports.
+E. all of these
+
+Answer:- all of these
+
+--------------------------------------------------------------------------------------------------------
+
+Question 5:
+Splunk is free for up to 5GB of incoming data per day.
+
+Options
+A. True
+B. False
+
+Answer:- False
+Splunk Free license is only 500MB per day.
+
+--------------------------------------------------------------------------------------------------------
+
+Question 6:
+This course is "version agnostic."
+
+Options
+A. False
+B. True
+
+Answer:- True
+
+--------------------------------------------------------------------------------------------------------
+
+Question 7:
+You need a lot of prior experience in IT or Business Intelligence to be successful in this course.
+
+Option
+A. True
+B. False
+
+Answer:- False
+
+----------------------------------------------------------------------------------------------------------
+
+Question 8:
+Where is Splunk headquartered?
+
+Options
+A. New York
+B. Boston
+C. UK
+D. San Francisco
+E. Palo Alto
+
+Answer:- San Francisco
+
+----------------------------------------------------------------------------------------------------------
+
+Question 9:
+You need to understand a complicated search language to use Splunk successfully.
+
+Options
+A. False
+B. True
+
+Answer:- False
+
+----------------------------------------------------------------------------------------------------------
+
+Question 10:
+Splunk can make you the "hero" of your IT department.
+
+Option
+A. True
+B. False
+
+Answer:- True
+
+(--------------Quiz section end 1--------------------)
+
+====================================================
+
+
+
+2.Installing Splunk Quiz - 10 Questions
+===========================
+
+Question 1:
+The Splunk Enterprise Trial license is valid for
+
+A. 30 days.
+B. 90 days.
+C. 60 days
+D. 45 days.
+
+Answer:- 60 Days
+
+--------------------------------------------------------------------------
+
+Question 2:
+To collect and parse data at the source, you need a
+
+A. light forwarder.
+B. universal forwarder.
+C. heavy forwarder.
+D. indexer.
+E. parser.
+
+Answer:- heavy forwarder.
+
+----------------------------------------------------------------------------
+
+Question 3:
+Splunk can be set up in a distributed environment.
+
+Options
+A. False
+B. True
+
+Answer:- True
+
+----------------------------------------------------------------------------
+
+Question 4:
+Splunk can be installed in the following environments:
+
+Options
+A. Unix
+B. Linux.
+C. Windows.
+D. Mac.
+E. All of these.
+F. Solaris.
+
+Answer:- All of these
+----------------------------------------------------------------------------
+
+Question 5:
+Select the best description of a Splunk app.
+
+Options
+A. A particular configuration setting found in a config file.
+B. A collection of configuration files that extend the functionality of Splunk.
+C. A competitor to Splunk, like Elk.
+D. A heavy forwarder that is installed with a forwarder license.
+
+Answer:- A collection of configuration files that extend the functionality of Splunk.
+---------------------------------------------------------------------------------------------------------------------
+
+Question 6:
+A licensing violation is in effect for
+
+Options
+A. 90 days.
+B. 30 days.
+C. 60 days.
+D. 45 days.
+
+Answer:- 30 days.
+Rolling, 30 day calendar.
+---------------------------------------------------------------------------------------------------------------------
+
+Question 7:
+Splunk will stop indexing your data during the violation period.
+
+Options
+A. False
+B. True
+
+Answer:- False
+Splunk will never stop indexing your data until you tell it to.
+
+---------------------------------------------------------------------------------------------------------------------
+
+Question 8:
+To manage licensing in the Splunk GUI, navigate to
+
+A. Settings / Server controls.
+B. Settings / Forwarder management.
+C. Settings / Licensing.
+D. Settings / Access controls.
+
+Answer:- Settings / Licensing.
+
+---------------------------------------------------------------------------------------------------------------------
+
+Question 9:
+Search is a Splunk app.
+
+Options
+A. False
+B. True
+
+Answer:- True
+
+---------------------------------------------------------------------------------------------------------------------
+
+Question 10:
+Where should you go to find and download Splunk apps?
+
+Options
+A. applications.splunk.com
+B. splunkers.com
+C. splunkbase.com
+D. install.splunk.com
+
+Answer:- splunkbase.com
+
+(--------------Quiz section end 2--------------------)
+
+====================================================
+
+
+3.Getting Data In Quiz - 10 Questions
+==========================
+
+Question 1:
+Which port is the default forwarding port?
+
+Options
+A. 8683
+
+B. 8089
+
+C. 9997
+
+D. 8079
+
+E. 9907
+
+F. 9090
+
+G. 80
+
+H. 8080
+
+Answer:- 9997
+
+--------------------------------------------------------------------------------------------------
+
+Question 2:
+Universal forwarders do not parse data.
+
+Options
+A. False
+B. True
+
+Answer:- True
+
+--------------------------------------------------------------------------------------------------
+
+Question 3:
+Which port is the default management/deployment port?
+
+Options
+A. 9997
+
+B. 8089
+
+C. 4447
+
+D. 4096
+
+E. 8008
+
+F. 8080
+
+G. 80
+
+Answer:- 8089
+
+--------------------------------------------------------------------------------------------------
+
+Question 4:
+Which type of forwarder requires a specific type of license?
+
+Options
+A. Universal
+B. Light
+C. Heavy
+D. Advanced
+
+Answer:- Heavy
+
+--------------------------------------------------------------------------------------------------
+
+Question 5:
+On which platform(s) can you use WGET to install a universal forwarder?
+
+Options
+A. Linux
+B. Unix
+C. Windows
+D. Solaris
+E. AIX
+F. All of these
+G. None of these
+H. Linux, AIX, and Solaris only
+I. Windows only
+
+Answer:- All of these
+
+--------------------------------------------------------------------------------------------------
+
+Question 6:
+Other than the installation wizard on Windows, how can you configure a universal forwarder?
+
+Options
+A. Uninstall and reinstall the universal forwarder to reconfigure it.
+B. On Windows, that is the only way. On Linux/Unix, you can edit the configuration files.
+C. By editing the configuration files.
+D. None of these.
+
+Answer:- By editing the configuration files.
+
+--------------------------------------------------------------------------------------------------
+
+Question 7:
+Universal forwarders should also be installed on all indexers.
+
+Options
+A. False
+B. True
+
+Answer:- False
+Indexers can capture data locally, since they have a full Splunk installation.
+-------------------------------------------------------------------------------------------------------
+
+Question 8:
+Some syslog devices do not require Splunk forwarders. Syslog data is generally received on port
+
+Options
+A. 443
+
+B. 80
+
+C. 9999
+
+D. 8080
+
+E. 514
+
+Answer:- 514
+
+-------------------------------------------------------------------------------------------------------
+
+Question 9:
+Which of the following is not a Splunk default metadata assignment?
+
+Options
+A. source
+B. sourcetype
+C. index
+D. host
+E. network
+
+Answer:- network
+
+-------------------------------------------------------------------------------------------------------
+
+Question 10:
+Splunk can locally monitor both individual files and entire directories.
+
+Options
+A. True
+B. False
+
+Answer:- True
+
+(--------------Quiz section end 3--------------------)
+
+====================================================
+
+
+4.SPL Quiz - 10 Questions
+===================
+
+Question 1:
+Which of the following needs to be placed in quotes?
+
+Options
+A. Keywords
+B. Phrases
+C. Commands
+D. Transformations
+
+Answer:- Phrases
+
+----------------------------------------------------------------------------------
+
+Question 2:
+Which search mode does not discover fields?
+
+Options
+A. Fast
+B. Verbose
+C. Smart
+D. No_Fields
+
+Answer:- Fast
+
+----------------------------------------------------------------------------------
+
+Question 3:
+The time 11:33 PM can be expressed in the following Splunk variables:
+
+Options
+A. %H-%S-%p
+
+B. %B:%H %i
+
+C. %I:%S :p
+
+D. %H:%S %p
+
+Answer:- %I:%S :p
+
+----------------------------------------------------------------------------------
+
+Question 4:
+The date Monday, February 23, 1985 can be expressed in the following Splunk variables:
+
+A. %M, %m %d, %Y
+
+B. %b, %m %m, %Y
+
+C. %A, %B %e, %Y 
+
+D.  %Y, %e %b, %y
+
+Answer:- %A, %B %e, %Y 
+
+----------------------------------------------------------------------------------
+
+Question 5:
+Which of the following is not an option for extracting fields?
+
+Options
+A. ddex
+B. regex
+C. delimiters
+
+Answer:- ddex
+
+----------------------------------------------------------------------------------
+
+Question 6:
+Indices are "buckets" where Splunk data is stored on disk.
+
+Options
+A. False
+B. True
+
+Answer:- True
+----------------------------------------------------------------------------------
+
+Question 7:
+Splunk detects fields as _
+
+Options
+A. regular expressions.
+B. preconfigured metadata.
+C. key=value pairs.
+E. events.
+
+Answer:- key=value pairs.
+
+-----------------------------------------------------------------------------------
+
+Question 8:
+The basic search pipeline goes 
+
+Options
+A. middle-in
+B. middle-out
+C. from specific to general.
+D. from general to specific
+
+Answer:- from general to specific
+-----------------------------------------------------------------------------------
+
+Question 9:
+The Search app comes built into Splunk Enterprise.
+
+Options
+A. True
+B. False
+
+Answer:- True
+-----------------------------------------------------------------------------------
+
+Question 10:
+SPL stands for
+
+Options
+A. Search Processing Language
+B. Splunk Processing Language
+C. Super Processing Language
+D. Search Positioning Language
+
+Answer:- Search Processing Language
+
+(--------------Quiz section end 4--------------------)
+
+====================================================
+
+
+
+5.Final Exam - 20 Questions
+====================
+
+Question 1:
+Of the following, which is the best description of Splunk?
+
+Options
+A. Splunk is a log collector.
+
+B. Splunk is a business intelligence tool.
+
+C. Splunk is operational intelligence that consumes and makes machine data useable and valuable.
+
+D. Splunk is an alerting tool.
+
+Answer:- Splunk is operational intelligence that consumes and makes machine data useable and valuable.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Question 2:
+What are the building blocks of a Splunk App?
+
+Options
+A. Configuration files
+
+B. Data sources
+
+C. Reports
+
+D. Pivots
+
+Answer:- Configuration files
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Question 3:
+Where is the best place to get help for Splunk?
+
+Options
+A. reddit.com
+
+B. answers.splunk.com
+
+C. stackoverflow.com
+
+D. blogs
+
+Answer:- answers.splunk.com
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Question 4:
+What is the primary way in which the timechart command differs from the chart  command?
+
+Options
+A. There is no difference. timechart  is just a shortcut for chart  with a specified x-axis of _time .
+
+B. timechart does not take a span  argument. chart  does.
+
+C. chart forces the x-axis to be _time. timechart does not.
+
+D. timechart forces the x-axis to be _time. chart  does not.
+
+Answer:- timechart forces the x-axis to be _time. chart  does not.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Question 5:
+Another way to say |  is
+
+Options
+A. "take the output of the commands before it, then do this with the input."
+
+B. "take the input of the commands before it, then do this with the output."
+
+C. "take the output of the commands before it, then do this with the output."
+
+D. "take the output of the commands after it, then do this with the output."
+
+
+Answer:- "take the output of the commands before it, then do this with the output."
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Question 6:
+What is one of the differences between a heavy forwarder and a universal forwarder?
+
+Options
+A. A universal forwarder is a complete installation of Splunk; a heavy forwarder is a light agent.
+
+B. A heavy forwarder is a complete installation of Splunk; a universal forwarder is a light agent.
+
+C. Heavy forwards are limited in their functionality, but universal forwarders can do advanced things like route data.
+
+D. The only difference is the type of machine you install the forwarder on.
+
+
+Answer:- A heavy forwarder is a complete installation of Splunk; a universal forwarder is a light agent.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Question 7:
+Which search mode will Splunk default to if your search specifies fields?
+
+Options
+A. Fast
+
+B. Smart
+
+C. Verbose
+
+D. Heavy
+
+Answer:- Fast
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Question 8:
+What is "the language of Splunk" known as?
+
+Options
+A. SSL: Splunk Search Language
+
+B. SQL: Splunk Query Language
+
+C. SPL: Splunk Processing Language
+
+D. SEL: Splunk Execution Language
+
+Answer:- SPL: Splunk Processing Language
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Question 9:
+The default Splunk forwarding and management ports are, respectively
+
+Options
+A. 8088, 9998
+
+B. 9997, 8089
+
+C. 9997, 8087
+
+D. 443, 9797
+
+Answer:- 9997, 8089
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Question 10:
+Splunk assigns which three fields as default metadata?
+
+Options
+A. host, source, source type
+
+B. host, ip, port
+
+C. host, hostname, source
+
+D. host, sourcetype, ip
+
+Answer:- host, source, source type
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Question 11:
+The structure of Splunk configuration files is:
+
+Options
+A. key=value 
+[stanza] 
+
+B. [stanza] 
+[sub-stanza] 
+
+C. [stanza] 
+attribute=value 
+
+D. savedsearch=value 
+[stanza] 
+
+Answer:- [stanza] 
+	attribute=value 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Question 12:
+What is the purpose of a lookup?
+
+Options
+A. Allows you to add custom fields to events from external sources, like csv files.
+
+B. Allows Splunk to examine semantic knowledge objects.
+
+C. Allows users to build custom reports based on data models.
+
+D. Keeps a record of all previous searches, so that Splunk can look them up later.
+
+Answer:- Allows you to add custom fields to events from external sources, like csv files.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Question 13:
+Searches in the search pipeline go from
+
+Options
+A. general to specific.
+
+B. specific to general.
+
+C. middle out.
+
+D. bottom up.
+
+Answer:- general to specific.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Question 14:
+What's wrong with this search?
+
+host=homework user=* status=failed stats count(status) BY user | rename count(status) as "Number of Failed Logins" 
+
+Options
+A. count is not a stats function.
+
+B. You need to have a |  before the stats  command.
+
+C. The rename command is invalid because you cannot rename a field to a phrase.
+
+D. This search is valid.
+
+Answer:- You need to have a |  before the stats  command.
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Question 15:
+Which type of authentication method does Splunk recommend for anything other than a small deployment?
+
+Options
+A. Local
+
+B. SAML
+
+C. LDAP/AD
+
+D. Scripted
+
+Answer:- LDAP/AD
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Question 16:
+The rare function returns __, while the top function returns __.
+
+Options
+A. a visualization with _time  on the x axis; a visualization with a specified field on the x axis
+
+B. limits; thresholds
+
+C. least common values; most common values
+
+D. top ten common values; top ten uncommon values
+
+Answer:- least common values; most common values
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Question 17:
+The Enterprise Trial license is valid for __, after which point it will convert to a __ license.
+
+Options
+A. 60 days; free
+
+B. 30 days; limited functionality
+
+C. 30 days; free
+
+D. 60 days; limited functionality
+
+Answer:- 60 days; free
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Question 18:
+Heavy forwards
+
+Options
+A. require a universal license.
+
+B. require an enterprise license.
+
+C. do not require a license.
+
+D. require a forwarder license.
+
+Answer:- require a forwarder license.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Question 19:
+Of the following, which best describes the difference between a tag and an event type?
+
+Options
+A. There is no difference.
+
+B. Tags are more complex knowledge objects than event types.
+
+C. Tags are much more powerful than event types, because they can contain multiple fields.
+
+D. Event types can contain multiple fields, while tags can only contain one.
+
+Answer:- Event types can contain multiple fields, while tags can only contain one.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Question 20:
+Which of the following is not one of the four major functions of Splunk?
+
+Options
+A. Parsing
+
+B. Input
+
+C. Compressing
+
+D. Indexing
+
+E. Searching
+
+Answer:- Compressing
+
+(--------------Quiz section end 5--------------------)

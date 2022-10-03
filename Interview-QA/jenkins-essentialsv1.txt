@@ -1,0 +1,116 @@
+An important step in making sure that the build process is taken seriously is to _________.
+1. never leave the build in a broken state
+2. send out a report on each build
+3. have management introduce the new build process
+4. set off the smoke alarm every time the build breaks
+Ans: 1. never leave the build in a broken state
+
+Which of the following is REQUIRED for using Jenkins?
+1. Java 1.5 or higher
+2. Java in your Path
+3. .NET framework
+4. Web server
+Ans: 1. Java 1.5 or higher
+
+One of the primary problems that continuous integration addresses is _________.
+1. formatting code
+2. isolated development
+3. language choice
+4. group think
+Ans: 2. isolated development
+
+Parallelization in Jenkins can best be achieved by _________.
+1. breaking up your build into multiple jobs
+2. setting parallel to true in the Jenkins config
+3. using multiple jenkins master servers
+4. writing multi-threaded job scripts
+Ans: 1. breaking up your build into multiple jobs
+
+Jenkins can be started from the command line by using what command?
+1. java -jar jenkins.war
+2. run jenkins.war
+3. java -run jenkins.war
+4. jar jenkins.war
+Ans: 1. java -jar jenkins.war
+
+When implementing unit testing in Jenkins it is important to never _________.
+1. report the test results
+2. write small tests
+3. run the tests in parallel to anything else
+4. leave tests broken
+Ans: 4. leave tests broken
+
+Jenkins is really a tool that can be used to __________ most aspects of continuous integration?
+1. reverse engineer
+2. dispel
+3. undo
+4. automate
+Ans: 4. automate
+
+Security can be set at an individual job level in Jenkins.
+1. true
+2. false
+Ans: 1. true
+
+The Join trigger plugin _______.
+1. makes sure multiple jobs are complete before downstream jobs can run
+2. makes 2 jobs run at the same time
+3. makes a single job split into many jobs
+4. makes jenkins show a different icon
+Ans: 1. makes sure multiple jobs are complete before downstream jobs can run
+
+A good first step for moving a build over to Jenkins is to ________.
+1. get a full build in a failed state
+2. disable unit tests
+3. diagram the manual process 
+4. conver everything to Java
+Ans: 3. diagram the manual process 
+
+The easiest way to get a plugin for Jenkins is _________.
+1. from inside Jenkins itself
+2. creating a plugin request call
+3. downloading an installer package
+4. by building it from source
+Ans: 1. from inside Jenkins itself
+
+A workspace is _______.
+1. the central configuration area for Jenkins
+2. the directory Jenkins checks source code out to
+3. the directory that Jenkins caches files at
+4. the only part of Jenkins that lives in the cloud
+Ans: 2. the directory Jenkins checks source code out to
+
+One of the major conflicts that led to a split of the early Jenkins project was _______.
+1. how much to charge for it
+2. whether or not to keep the project on Java.net
+3. what language to write it in
+4. whether or not it should only work with Java applications
+Ans: 2. whether or not to keep the project on Java.net
+
+Jenkins is primarily written in ______.
+1. ruby
+2. C#
+3. java1
+4. python
+Ans: 3. java1
+
+What should the http port be set to in order to disable regular http in favor of https?
+1. 0
+2. 8080
+3. 43
+4. -1
+Ans: 4. -1
+
+Which of the following is NOT an advantage to distributing builds across multiple nodes?
+1. parallelization of jobs
+2. support for multiple platforms
+3. faster build times
+4. automatic recovery of the master Jenkins node
+Ans: 4. automatic recovery of the master Jenkins node
+
+Jenkins used to be called _______.
+1. burly
+2. hudson
+3. cheeves
+4. jeeves
+Ans: 2. hudson

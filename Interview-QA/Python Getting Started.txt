@@ -1,0 +1,148 @@
+Course: Python: Getting Started
+
+1. Which argument would you use in a Python function to obtain a dictionary of all the named arguments passed?
+
+A. Keyword Arguments (**kwargs)
+B. *args
+C. The NoneType argument
+D. Regular function arguments
+
+Ans: A. Keyword Arguments (**kwargs)
+
+2. To create a virtual environment, you use the following command:
+
+A. virtualenv-create
+B. virtualenvironment
+C. virtualenv
+D. virtual-env
+
+Ans: C. virtualenv
+
+3. A nested function can access its parent's function variable and use that data within it.
+
+A. True
+B. False
+
+Ans: A. True 
+
+4. To install a Python package using pip, you use:
+
+A. pip install
+B. pip get
+C. pip add
+D. pip uninstall
+
+Ans: A. pip install
+
+5. Flask is used:
+
+A. as a Python utility library.
+B. as a Web microframework.
+C. as a general purpose Python library.
+D. Similarly to how pip is used.
+
+Ans: B. as a Web microframework.
+
+6. One of the Python packages used for creating executable files out of Python code is called:
+
+A. PyInstaller
+B. PyMaker
+C. Flask
+D. Django
+
+Ans: A. PyInstaller
+
+7. Python requires us to declare types such as int, string, and char[] before declaring a variable
+
+A. True
+B. False
+
+Ans: B. False
+
+8. In order to group multiple objects in one variable, you use:
+
+A. array
+B. list
+C. collection
+D. dictionary
+ 
+Ans: B. list
+
+9. When creating two instances of the same class, those two instances will share all the data automatically
+
+A. True
+B. False
+
+Ans:B. False
+
+10. In Python, a class can inherit from exactly this number of parent classes
+
+A. 1
+B. Many
+C. None
+D. 3
+
+Ans: B. Many
+ 
+11. To help debug your application, you can set something called a:
+
+A. Stop point
+B. Pause
+C. Resume point
+D. Breakpoint
+
+Ans: D. Breakpoint
+
+12. The constructor method in Python classes looks similar to this
+
+A. def initialize(self):
+B. def constructor():
+C. def __init__(self):
+D. There is no constructor method in Python classes
+
+Ans: C. def __init__(self):
+
+13. What is the result of the following code?
+
+names = ["Jonathan", "Bo", "Layla", "Kristin"]
+for name in names:
+    if name == "Bo":
+        print("Found the instructor!")
+        break
+    print("{0} is not the instructor".format(name))
+
+A. It will print "Jonathan is not the instructor", after which it will print "Found the instructor" and then stop the for loop.
+B. It will print "Jonathan is not the instructor", after which it will print "Found the instructor" and continue to print the rest of the list.
+C. It will print "Kristin is not the instructor", after which it will print "Found the instructor" and stop the for loop.
+D. It will print all the names from the list.
+
+Ans: A. It will print "Jonathan is not the instructor", after which it will print "Found the instructor" and then stop the for loop.
+
+14. Which one of the following is a valid dictionary?
+
+A. All of them
+B. { "name": "Mark" }
+C. { "name": "Mark", "student_Id": 16135 }
+D. { "name": "Bo", "student_id": 42671, instructor: True }
+
+Ans: A. All of them
+
+15. What keyword do we use in a function when we want to return the data to the function caller?
+
+A. respond
+B. give_back
+C. print()
+D. reply
+E. return
+
+Ans: E. return
+
+16. Class attributes do share their value across different instances of that class.
+
+A.  True, but only if the class attribute name has a dash.
+B. False
+C. False, except when the class attribute name starts with a capital letter.
+D. True
+
+Ans: D. True
+

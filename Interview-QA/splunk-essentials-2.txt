@@ -1,0 +1,360 @@
+Splunk Administration
+================
+
+Section 1. - 10 Questions
+Setting up a Splunk Enterprise Environment
+----------------------------------------------
+Question 1:
+Which file is used for role and mapping  
+
+Options
+A. authorize.conf
+
+B. authorizes.conf
+
+C. authentication.conf
+
+D. limits.conf
+
+Answer:- A. authorize.conf
+
+-----------------------------------------------------------------------------------------------------------
+
+Question 2:
+You can not search the data in frozen stage of bucket
+
+Options
+A. True
+
+B. False
+
+Answer:- A. True
+
+-----------------------------------------------------------------------------------------------------------
+
+Question 3:
+Attributes in indexes.conf to freeze data when it grows too old
+
+Options
+A. frozenTimePeriodInSecs
+
+B. frozenTimePeriodInMinutes
+
+C. frozenTimePeriodInHour
+
+D. MaxDataSizeInMb
+
+Answer:- A. frozenTimePeriodInSecs
+
+-----------------------------------------------------------------------------------------------------------
+
+Question 4:
+Which Splunk License does not exist
+
+Options
+A. search head
+
+B. forwarder
+
+C. free
+
+D. Splunk Enterprise
+
+Answer:- A. search head
+
+-----------------------------------------------------------------------------------------------------------
+
+Question 5:
+You can not back up hot buckets
+
+Options
+A. Yes, you can not do
+
+B. No , you can back up hot buckets
+
+C. You can back up hot buckets as well, you need to take a snapshot of the files, using a tool like VSS.
+
+D. Its not possible to take backup of hot buckets
+
+Answer:- C. You can back up hot buckets as well, you need to take a snapshot of the files, using a tool like VSS.
+
+-----------------------------------------------------------------------------------------------------------
+
+Question 6:
+Why you should create multiple indexes?
+
+Options
+A. To control user access.
+
+B. To accommodate varying retention policies.
+
+C. To speed searches in certain situations.
+
+D. All of the above.
+
+Answer:- D. All of the above.
+
+-----------------------------------------------------------------------------------------------------------
+
+Question 7:
+Which command is used only to delete index web data ?
+
+Options
+A. splunk clean eventdata -index web
+
+B. splunk clean eventdata
+
+C. splunk remove -index web
+
+D. splunk disable -index web
+
+Answer:- A. splunk clean eventdata -index web
+
+-----------------------------------------------------------------------------------------------------------
+
+Question 8:
+What is the use of Add-on in splunk?
+
+Options
+A. To create dashboards
+
+B. To run only scripts 
+
+C. To extract fields, parsing etc but do not provide dashboards 
+
+D. To replace App
+
+Answer:- C. To extract fields, parsing etc but do not provide dashboards 
+
+-----------------------------------------------------------------------------------------------------------
+
+Question 9:
+In which index, events from the file system change monitor, auditing, and all user search history are stored. 
+
+Options
+A. audit
+
+B. _audit
+
+C. index
+
+D. _index
+
+E. main
+
+Answer:- B. _audit
+
+-----------------------------------------------------------------------------------------------------------
+
+Question 10:
+Can you create new index starting with _ in splunk web-gui ?
+
+Options
+A. Yes
+
+B. No
+
+C. You can create but it is not recommended by Splunk
+
+Answer:- B. No
+
+(-------------------Quiz Section End 1--------------------------)
+------------------------------------------------------------------------------------------------------------
+
+Section: 2
+2.How different Splunk components works -  9 Questions
+========================================
+
+Question 1:
+Deployment server push configuration files to deployment client
+
+Options
+A. True
+
+B. False
+
+Answer:- B. False
+
+------------------------------------------------------------------------------------------------------------
+
+Question 2:
+Deployment client uses which configuration files to connect deployment server ?
+
+Options
+A. serverclass.conf
+
+B. deploymentclient.conf
+
+C. inputs.conf
+
+D. outputs.conf
+
+Answer:- B. deploymentclient.conf
+
+------------------------------------------------------------------------------------------------------------
+
+Question 3:
+universal forwarder can index the data 
+
+Options
+A. True
+
+B. False
+
+Answer:- B. False
+
+------------------------------------------------------------------------------------------------------------
+
+Question 4:
+Which component should not have web gui?
+
+Options
+A. Search Head
+
+B. Deployment Server
+
+C. Universal Forwarder
+
+D. Heavy Forwarder
+
+Answer:- C. Universal Forwarder
+
+------------------------------------------------------------------------------------------------------------
+
+Question 5:
+Search Head can not index the data.
+
+Options
+A. True
+
+B. False
+
+Answer:- B. False
+
+------------------------------------------------------------------------------------------------------------
+
+Question 6:
+Which index includes Splunk Enterprise internal logs and metrics.
+
+Options
+A. _internal
+
+B. audit
+
+C. main
+
+D. _audit
+
+Answer:- A. _internal
+
+------------------------------------------------------------------------------------------------------------
+
+Question 7:
+The deployment server does not automatically deploy apps when you edit through forwarder management. 
+
+Options
+A. True
+
+B. False
+
+Answer:- B. False
+
+------------------------------------------------------------------------------------------------------------
+
+Question 8:
+The deployment server does not automatically deploy apps in response to direct edits of serverclass.conf
+
+Options
+A. True
+
+B. Flase
+
+Answer:- A. True
+
+------------------------------------------------------------------------------------------------------------
+
+Question 9:
+A dedicated deployment server can handle how many clients ?
+
+Options
+A. 50
+
+B. 100
+
+C. 400
+
+D. 500 - 1000 clients, even more than this  and it depends of the periodicity, and the size of the bundles to deploy.
+
+Answer:- D. 500 - 1000 clients, even more than this  and it depends of the periodicity, and the size of the bundles to deploy.
+
+(-------------------Quiz Section End 2--------------------------)
+------------------------------------------------------------------------------------------------------------
+
+Section: 4
+3.Get Data In -  4 Questions
+========================================
+
+Question 1:
+Which is used in script stanza ?
+
+Options
+A. monitor
+
+B. script
+
+C. fschange
+
+Answer:- B. script
+
+------------------------------------------------------------------------------------------------------------
+
+Question 2:
+which attribute can be used to run a script in every 5 minutes 
+
+Options
+A. interval = 5
+
+B. interval = 300
+
+C. interval = 1800
+
+D. cron = 300
+
+Answer:- B. interval = 300
+
+------------------------------------------------------------------------------------------------------------
+
+Question 3:
+which can be used in stanza to destroy file after reading the file
+
+Options
+A. fschange
+
+B. monitor
+
+C. batch
+
+D. destroy
+
+Answer:- C. batch
+
+------------------------------------------------------------------------------------------------------------
+
+Question 4:
+To receive data from forwarder  in indexer in inputs.conf file, which is used in stanza ? 
+
+Options
+A. tcp
+
+B. splunktcp
+
+C. udp
+
+D. forwardertcp
+
+Answer:- B. splunktcp
+
+(-------------------Quiz Section End--------------------------)
+------------------------------------------------------------------------------------------------------------
+
+

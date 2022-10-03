@@ -1,0 +1,223 @@
+How can we use lsof to display open ports?
+1. lsof -i
+2. lsof -w
+3. lsof -u
+4. sudo lsof -i
+Ans:- 4. sudo lsof -i
+
+On SUSE which file stores the static hostname
+1. /etc/hosts
+2. /eyc/hostname
+3. /etc/HOSTNAME
+4. /etc/sysconfig/network
+Ans:- 3. /etc/HOSTNAME
+
+Which file is used for static ARP entries
+1. /etc/services
+2. /etc/ethers
+3. /etc/networks
+4. /etc/hosts
+Ans:- 2. /etc/ethers
+
+Who should the group owner of the wall program be?
+1. tty
+2. wall
+3. wheel
+4. root
+Ans:- 1. tty
+
+Including the LPIC-1 exams how many exams in total do you need to pass for LPIC-2
+1. 2
+2. 3 
+3. 4
+4. 5
+Ans:- 3. 4
+
+Which option used with sysctl reads and loads the configuration file?
+1. -p
+2. -r
+3. -l
+4. -m
+Ans:- 1. -p
+
+How are debian source repositories listed in the sources.list file?
+1. source
+2. deb-src
+3. deb
+4. debian-source
+Ans:- 2. deb-src
+
+To expand a tar archive in Linux which option is used ?
+1. -i
+2. -e
+3. -x
+4. -t
+Ans:- 3. -x
+
+What is the name of the nagios service in Ubunto 14.04?
+1. ng3
+2. nagios3
+3. nagios
+4. ng
+Ans:- 2. nagios3
+
+For Red Hat and Centos which repo do we need to add for collectd?
+1. LABEL
+2. LPEL
+3. HTTP
+4. EPEL
+Ans:- 4. EPEL
+
+Using ifconfig as a standard user which is the correct syntax to activate an interface?
+1. sudo ifconfig eth0 up
+2. ifconfig eth0 up
+3. sudo ifconfig up eth0
+4. ifconfig up eth0
+Ans:- 1. sudo ifconfig eth0 up
+
+Which could be the correct syntax to synchronized with a remote rsync server module?
+1. rsync -av server::/doc/ /tmp/
+2. rsync -av server:doc/ /tmp/
+3. rsync -av server/::doc/ /tmp/
+4. rsync -av server::doc/ /tmp/
+Ans:- 4. rsync -av server::doc/ /tmp/
+
+The output from vmstat show memory used as Cache, what does this represent?
+1. Directory listing and file permissions
+2. Virtual RAM
+3. Disk space
+4. File content
+Ans:- 4. File content
+
+Which variable to we need to set in the /etc/init.d/hostapd script?
+1. DAEMON_CONF
+2. CONF
+3. DAEMON
+4. D_CONF
+Ans:- 1. DAEMON_CONF
+
+By default which database is used when installing Bacula on Ubuntu?
+1. MSSQL
+2. MySQL
+3. PostgreSQL
+4. SQLite
+Ans:- 2. MySQL
+
+It is common for source packages to be downloaded to which directory?
+1. /src
+2. /usr/src
+3. /home
+4. /usr/bin
+Ans:- 2. /usr/src
+
+Using lsof which character is used to filter by host
+1. #
+2. =
+3. @
+4. H
+Ans:- 3. @
+
+Uptime shows the load averages of what time periods?
+1. 1,10 and 15 minutes
+2. 1,2,3 seconds
+3. 1,5 and 15 minutes
+4. 1,2,3 minutes
+Ans:-  3. 1,5 and 15 minutes
+
+Which template can be used to fill in default values for Nagios hosts?
+1. generic-host
+2. host
+3. host-generic
+4. generic_host
+Ans:-  1. generic-host
+
+Which option used with sar will allow you to read from a certain file?
+1. -f
+2. -I
+3. -F
+4.  -i
+Ans:-  1. -f
+
+Which option can be used with nagios3 to test the configuration?
+1. -v
+2. -t
+3. -r
+4. -f
+Ans:- 1. -v
+
+Which option can specify a DNS server to use with dig
+1. @8.8.8.8
+2. AT8.8.8.8.8
+3. -s8.8.8.8
+4. =8.8.8.8
+Ans:-  1. @8.8.8.8
+
+Which MySQL command is used to new accounts take effect immediately?
+1. READ USERS
+2. EXIT
+3. FLUSH PRIVILEGES
+4. LOAD USERS
+Ans:- 3. FLUSH PRIVILEGES
+
+How can we list sockets with netstat
+1. -t
+2. -s
+3. -u
+4. -x
+Ans:- 4. -x
+
+Which tape device represent a rewindable model?
+1. /dev/st0
+2. /dev/rwst0
+3. /dev/rst0
+4. /dev/nst0
+Ans:- 1. /dev/st0
+
+By default which port is used by the Bacula Director
+1. 9100
+2. 9102
+3. 9101
+4. 9103
+Ans:- 3. 9101
+
+On a Red Hat based system how are the pre-requisites to ./configure installed?
+1. sudo yum groupinstall "Development Tools"
+2. sudo install tools
+3. sudo apt-get install build-essentials
+4. sudo zypper install --type pattern devel_basis
+Ans:-  1. sudo yum groupinstall "Development Tools"
+
+What is the name os the dhcp service on Debian based systems?
+1. dhcpd
+2. isc-dhcp-server
+3. dhcpcd
+4. dhcp
+Ans:- 2. isc-dhcp-server
+
+Which web user account is created during the installation of nagios3?
+1. nagios
+2. admin
+3. nagiosadmin
+4. root
+Ans:-  3. nagiosadmin
+
+Which jump target do we configure when setting up NAT?
+1. RNAT
+2. NAT
+3. MASQUERADE
+4. iptables
+Ans:- 3. MASQUERADE
+
+
+1.
+2.
+3.
+4.
+Ans:- 
+
+
+1.
+2.
+3.
+4.
+Ans:- 

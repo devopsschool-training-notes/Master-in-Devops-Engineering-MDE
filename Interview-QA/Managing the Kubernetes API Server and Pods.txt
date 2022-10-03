@@ -1,0 +1,229 @@
+
+Course Name: Managing the Kubernetes API Server and Pods
+
+
+1. What is the primary application transport mechanism for the Kubernetes API Server?
+
+A. Server side RPC calls
+B. Javascript over WebSockets
+C. TCP multiplexing over HTTP/S
+D. JSON Over HTTP/S
+
+Ans:  D. JSON Over HTTP/S
+
+
+2. Objects in the Kubernetes API are organized by which following methods?
+
+A. Kind, Group and API Version
+B. etcd’s concurrency model
+C. Object level resourceVersion
+D. Key value store
+
+Ans:  A. Kind, Group and API Version
+
+
+3. Which kubectl command will retrieve the definition/documentation for an API Object from the API Server?
+
+A. get document
+B. --objectName
+C. explain
+D. get object <object name>
+
+Ans:   C. explain
+
+
+4. As new API Versions become available what is the release cadence?
+
+A. Alpha -> Beta -> Stable
+B. Versioning
+C. Stable - > Production -> Primary Release
+D. Release
+
+Ans:   A. Alpha -> Beta -> Stable
+
+
+5. If you needed to assign workload to a subset of nodes in your cluster, what method would you choose so that you are not dependent on the Node names in the cluster?
+
+A. Annotate the nodes and use a hardwareSelector in your Pod Spec
+B. Annotate the nodes and use a namespace in your Pod Spec
+C. Label the nodes and use a nodeSelector in your Pod Spec	
+D. This is not possible in Kubernetes due to it’s declarative model for deployments
+
+Ans:   C. Label the nodes and use a nodeSelector in your Pod Spec
+
+
+6. Which of the following will remove the label disk from a node?
+
+A. kubectl label node c1-node2 disk
+B. kubectl relabel node c1-node2 disk-
+C. kubectl label node c1-node2 disk-
+D. kubectl remove label node c1-node2 disk
+
+Ans:   C. kubectl label node c1-node2 disk-
+
+
+7. What is the primary function of a Controller in Kubernetes?
+
+A. Running bare/naked Pods
+B. Migrating Pod workloads to the Cloud
+C. Migrating Pod workloads between Nodes
+D. To keep your application in the desired state
+
+Ans:   D. To keep your application in the desired state
+
+
+8. What is the primary design goal for using multi-container Pods?
+
+A. Scaling stateful containers
+B. Tightly coupled applications
+C. More flexible recovery options when restarting Pods
+D. Scaling stateless containers
+
+Ans:   B. Tightly coupled applications
+
+
+9. Which of the following is the appropriate order of a Pod’s lifecycle?
+
+A. Creation -> Running -> Restart
+B. PodSpec -> Running -> Termination
+C. Kubectl run -> Running -> Termination
+D. Creation -> Running -> Termination
+
+Ans:  D. Creation -> Running -> Termination
+
+
+10. Which container restart policy will restart a container only on a non-zero exit code?
+
+A. OnFailure
+B. Never
+C. OnNonZeroExitCode
+D. Always
+
+Ans:  A. OnFailure
+
+
+11. For Kubernetes API Objects that were part of the initial releases, which API Group are they in?
+
+A. They’ve been refactored into their appropriate API Groups
+B. Fundamental
+C. Workload
+D. Core/Legacy
+
+Ans:  D. Core/Legacy
+
+
+12. What is the primary way to subdivide a cluster on the basis of resource isolation and/or organization?
+
+A. Namespace
+B. Label
+C. Annotation
+D. Subclustering/Federation
+
+Ans:   A. Namespace
+
+
+13. What is the primary way in Kubernetes to execute a command on a grouping of resources based on using a selector?
+
+A. Annotations
+B. Labels
+C. Querying
+D. Namespaces
+
+Ans:  B. Labels
+
+
+14. What is the primary way to store information along with your resources in the cluster?
+
+A. Annotations
+B. resourceNotes
+C. Labels
+D. Namespaces
+
+Ans:   A. Annotations
+
+
+15. Which of the following will return the pods whose label is app=prod?
+
+A. kubectl get pods -l app=prod
+B. kubectl get pods -l app<>prod
+C. kubectl get pods -l prod
+D. kubectl get pods -l app!=prod
+
+Ans:   A. kubectl get pods -l app=prod
+
+
+16. What is the primary unit of allocating work in a Kubernetes Cluster?
+
+A. Manifest
+B. Pod
+C. Deployment
+D. Container
+
+Ans:   B. Pod
+
+
+17. What is the primary function of a Controller in Kubernetes?
+
+A. To keep your application in the desired state
+B. Migrating Pod workloads to the Cloud
+C. Migrating Pod workloads between Nodes
+D. Running bare/naked Pods
+
+Ans:   A. To keep your application in the desired state
+
+
+18. When using kubectl exec, a connection is first made to what cluster component prior to sending the command to the Pod?
+
+A. The Controller Manager
+B. The API Server
+C. The Scheduler
+D. The Kubelet
+
+Ans:   B. The API Server
+
+
+19. Which type of container probe will restart your container on probe failure?
+
+A. livenessProbe
+B. SIGTERM
+C. readinessProbe
+D. SIGKILL
+
+Ans:  A. livenessProbe
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

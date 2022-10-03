@@ -1,0 +1,696 @@
+
+1. Topic Name  - AWS Certified Solutions Architect- Asscociate
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  2. AWS VPC Operations
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1. What kind of rules do Network Access Control Lists (NACLs) provide?
+
+A - Outbound allow and deny rules
+
+B - Inbound allow and deny rules
+
+C - Inbound and outbound allow rules
+
+D - Inbound and outbound allow and deny rules
+
+Answer: D - Inbound and outbound allow and deny rules
+
+--------------------------------------------------------------------
+2. How can you make a VPC Peering connection highly available (HA)?
+
+A - You can pay more to purchase a highly available version of a VPC Peering connection
+
+B - You can configure multiple VPC Peering connections between two VPCs for HA
+
+C - They are automatically highly available
+
+Answer: C - They are automatically highly available
+
+--------------------------------------------------------------------
+3. Which are the most isolated - Regions or Availability Zones (AZ)?
+
+A - Regions
+
+B - Availability Zones
+
+Answer: A - Regions
+--------------------------------------------------------------------
+4.  Which of the following is true of Direct Connect?
+
+A - It allows access to VPC resources using private IP addresses via a secure tunnel over the Internet
+
+B - It allows access to VPC resources using private IP addresses but is not preferred over VPN tunnels
+
+C - It allows access to VPC resources using private IP addresses and is preferred over VPN tunnels
+
+Answer: C - It allows access to VPC resources using private IP addresses and is preferred over VPN tunnels
+
+--------------------------------------------------------------------
+5. What was a major factor in the inception of Amazon Web Services?
+
+A - The ability to leverage Amazon's existing web-scale infrastructure
+
+B - The rise to popularity of the Docker container engine
+
+C - A response to Microsoft Azure
+
+Answer: A - The ability to leverage Amazon's existing web-scale infrastructure
+
+--------------------------------------------------------------------
+6. True or false, an ELB can be configured to accept incoming HTTPS connections and forward them internally as normal HTTP?
+
+A - True
+
+B - False
+
+Answer: A - True
+
+-----------------------------------------------------------------
+7. Which of the following is a valid subnet in a VPC with the following CIDR block - 192.168.0.0/16?
+
+A - 192.0.1.0/24
+
+B - 10.0.0.0/16
+
+C - 192.168.1.0/24
+
+D - 10.0.0.0/24
+
+Answer: C - 192.168.1.0/24
+
+--------------------------------------------------------------------
+8. How do you create a Router in your VPC?
+
+A - Using the AWS CLI tools
+
+B - A router is automatically created for your VPC
+
+C - From the Router-Config page in the VPC console
+
+Answer: B - A router is automatically created for your VPC
+
+-----------------------------------------------------------------
+9. What AWS component is an Internet Gateway associated with?
+
+A - Availability Zone
+
+B - Subnet
+
+C - Region
+
+D - VPC
+
+Answer: D - VPC
+
+-----------------------------------------------------------------
+10. At what level are Network ACLs applied?
+
+A - EC2 Instances
+
+B - VPCs
+
+C - Availability Zones
+
+D - Subnets
+
+Answer: D - Subnets
+
+-----------------------------------------------------------------
+11. Which AWS resource is a VPC bound by?
+
+A - A single Region
+
+B - A VPC can span all AWS resources
+
+C - A single Availability Zone
+
+D - A single Subnet
+
+Answer: A - A single Region
+
+-----------------------------------------------------------------
+12. How long does a VPC Peering request remain active?
+
+A - 28 days
+
+B - 7 days
+
+C - 1 hour
+
+D - 1 day
+
+Answer: B - 7 days
+
+-----------------------------------------------------------------
+13. Which protocol suite is used to encrypt most VPN tunnels?
+
+A - Secure DNS
+
+B - IPX/SPX
+
+C - IPsec
+
+D - NetBIOS
+
+Answer: C - IPsec
+
+-----------------------------------------------------------------
+14. What is the network portion of the following CIDR block - 10.0.0.0/24?
+
+A - 10.0
+
+B - 10
+
+C - 10.0.0.0
+
+D - 10.0.0
+
+Answer: D - 10.0.0
+
+-----------------------------------------------------------------
+15. What form of address translation does the Amazon NAT AMI perform?
+
+A - Port Address Translation (PAT)
+
+B - Route Address Translation (RAT)
+
+C - CIDR Address Translation (CAT)
+
+D - Network Address Translation (NAT)
+
+Answer: A - Port Address Translation (PAT)
+
+-----------------------------------------------------------------
+16. Which of the following best describes an AWS Elastic Load Balancer?
+
+A - A service that balances incoming traffic across multiple instances and Regions
+
+B - A service that balances incoming traffic across multiple instances in a single Availability Zone
+
+C - A service that balances incoming traffic across multiple instances and Availability Zones
+
+D - A service that balances incoming traffic across multiple instances and VPCs
+
+Answer: C - A service that balances incoming traffic across multiple instances and Availability Zones
+
+-----------------------------------------------------------------
+17. What kind of Elastic Load Balancers can be created?
+
+A - Only internal
+
+B - Internet facing and internal
+
+C - Only Internet facing
+
+Answer: B - Internet facing and internal
+
+-----------------------------------------------------------------
+18. Which AWS VPC component is required to allow instances in a private subnet to communicate with the Internet?
+
+A - An Internet gateway in the private subnet
+
+B - A NAT instance in the private subnet
+
+C - An Internet gateway in the public subnet
+
+D - A NAT instance in the public subnet
+
+Answer: D - A NAT instance in the public subnet
+
+-----------------------------------------------------------------
+19. Which of the following is true of the behavior of Security Groups?
+
+A - Explicit deny rules are required to deny traffic
+
+B - All traffic not explicitly denied is implicitly allowed
+
+C - Any traffic not explicitly allowed is implicitly denied
+
+Answer: C - Any traffic not explicitly allowed is implicitly denied
+
+-----------------------------------------------------------------
+20. What is the major advantage of Elastic IPs over Public IPs?
+
+A - Elastic IPs are publicly routable, Public IPs are not
+
+B - Elastic IPs belong to you and do not change when an instance reboots
+
+C - Elastic IPs allow you to manually choose a particular address from the pool of Amazon addresses
+
+Answer: B - Elastic IPs belong to you and do not change when an instance reboots
+
+-----------------------------------------------------------------
+21. What is the acronym used in the AWS GUI to represent VPC Peering connection objects?
+
+A - PCX
+
+B - VGW
+
+C - PGW
+
+D - IGW
+
+Answer: A - PCX
+
+-----------------------------------------------------------------
+22. Which AWS technology is used to connect multiple VPCs so they can communicate using private IPs?
+
+A - VPC Peering
+
+B - Direct Connect
+
+C - Virtual Private Networks
+
+D - Elastic Load Balancing
+
+Answer: A - VPC Peering
+
+-----------------------------------------------------------------
+23. Which of the following is true of Network ACLs?
+
+A - All rules are processed and order of processing is not important
+
+B - Rules are processed in strict numeric order
+
+Answer: B - Rules are processed in strict numeric order
+
+-----------------------------------------------------------------
+24. Which of the following describes an AWS Internet Gateway?
+
+A - Non-scalable but redundant and highly available
+
+B - Horizontally scaled, redundant, highly available
+
+C - Horizontally scaled but not redundant or highly available
+
+D - Vertically scaled, redundant, highly available
+
+Answer: B - Horizontally scaled, redundant, highly available
+
+-----------------------------------------------------------------
+25. Which of the following represents a default route to an Internet Gateway called "igw-x"?
+
+A - 255.255.255.0 igw-x
+
+B - 0.0.0.0/0 igw-x
+
+C - 255.255.255.255 igw.x
+
+D - 1.1.1.1/0 igw-x
+
+Answer: B - 0.0.0.0/0 igw-x
+
+-----------------------------------------------------------------
+26. What is the maximum number of rules in a Network ACL?
+
+A - 200
+
+B - 100
+
+C - 50
+
+D - 20
+
+Answer: D - 20
+
+-----------------------------------------------------------------
+27. How can instances be assigned Public IPs?
+
+A - Only automatically via the "Auto-assign Public IP" setting of the subnet
+
+B - Manually when launched, or via the "Auto-assign Public IP" setting of the subnet
+
+C - Instances cannot be assigned Public IP addresses
+
+D - Only when initially launched
+
+Answer: B - Manually when launched, or via the "Auto-assign Public IP" setting of the subnet
+
+-----------------------------------------------------------------
+28. What are the three major AWS components that need configuring when building an AWS VPN?
+
+A - Customer Gateway, Virtual Private Gateway, Elastic Load Balancer
+
+B - Customer Gateway, Virtual Private Gateway, VPN Tunnel
+
+C - Customer Gateway, Elastic Load Balancer, VPN Tunnel
+
+D - Customer Gateway, Internet Gateway, VPN Tunnel
+
+Answer: B - Customer Gateway, Virtual Private Gateway, VPN Tunnel
+
+-----------------------------------------------------------------
+29. Which of the following best describes Direct Connect?
+
+A - A dedicated private circuit from your infrastructure into an AWS Region via an approved 3rd party
+
+B - A dedicated private circuit directly from your infrastructure into an AWS Region
+
+Answer: A - A dedicated private circuit from your infrastructure into an AWS Region via an approved 3rd party
+
+-----------------------------------------------------------------
+30. Which of the following is true of the Amazon NAT AMI instance?
+
+A - It allows stateful replies
+
+B - It allows stateless replies
+
+C - It allows outbound but not inbound packets
+
+D - It allows inbound but not outbound packets
+
+Answer: A - It allows stateful replies
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	4.AWS Security Operations: Designing for Acceptable Risk and Compliance
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1. AWS maintains a system baseline with what industry-standard?
+
+A - FedRAMP
+
+B - ISO 27001
+
+C - ISO 9001
+
+D - PCI DSS
+
+Answer: B - ISO 27001
+
+------------------------------------------------------------------------------
+2. What two features can be used to manage costs at AWS?
+
+A - Tagging and consolidated billing
+
+B - Tagging and multiple accounts
+
+C - Multiple accounts and budget creation
+
+D - Tagging and the Cost Explorer
+
+Answer: A - Tagging and consolidated billing
+
+------------------------------------------------------------------------------
+3. The CIA triad has three levels of impact when defining a security breach; list the three levels?
+
+A - Moderate, high, catastrophic
+
+B - Limited, moderate, high
+
+C - Low, medium, high
+
+D - Low, moderate, high
+
+Answer: D - Low, moderate, high
+
+------------------------------------------------------------------------------
+4. What rules define a company's compliance standards?
+
+A - Government rules and regulations
+
+B - Internal rules
+
+C - Industry regulations
+
+D - AWS defined standards
+
+Answer: C - Industry regulations
+
+------------------------------------------------------------------------------
+5. What key data security feature is most valued when storing data in the cloud?
+
+A - Durability
+
+B - Lifecycle management
+
+C - Encryption
+
+D - Cleansing
+
+Answer: A - Durability
+
+------------------------------------------------------------------------------
+6. What is the default network operating model when launching an instance?
+
+A - VLAN
+
+B - Virtual private network
+
+C - Virtual private cloud
+
+D - Classic networking
+
+Answer: C - Virtual private cloud
+
+------------------------------------------------------------------------------
+7. What is the term availability zone define when considering AWS components?
+
+A - A single data center in a safe geological zone
+
+B - Availability zones map to area codes
+
+C - An area in the world where Amazon services are offered
+
+D - Two or more data centers connected with high-speed links
+
+Answer: D - Two or more data centers connected with high-speed links
+
+------------------------------------------------------------------------------
+8. What to core services are utilized in every solution offered by AWS?
+
+A - Compute and networking
+
+B - Compute and storage
+
+C - Networking and database services
+
+D - Storage and database services
+
+Answer: B - Compute and storage
+
+------------------------------------------------------------------------------
+9. How does a customer install AWS security tools?
+
+A - Security tools are hosted in the cloud.
+
+B - Third-party solutions must be purchased and installed.
+
+C - Downloaded and installed from a public GITHUB repository.
+
+D - Opening a ticket and requesting access.
+
+Answer: A - Security tools are hosted in the cloud.
+
+------------------------------------------------------------------------------
+10. What two words define the concept of governance in the cloud?
+
+A - Security and performance
+
+B - Auditing and identity access
+
+C - Security and compliance
+
+D - Risk and complance
+
+Answer: D - Risk and complance
+
+------------------------------------------------------------------------------
+11. Standardizing architecture at AWS can be best accomplished using what automation utility?
+
+A - Cloud Formation
+
+B - AWS Beanstalk
+
+C - AWS CLI
+
+D - AWS Config
+
+Answer: A - Cloud Formation
+
+------------------------------------------------------------------------------
+12. Monitoring acceptable performance at AWS can be carried out using what feature?
+
+A - Cloud Watch alarms
+
+B - Monitoring tools bundled with instances
+
+C - Inspector and rules
+
+D - Custom cloud trails
+
+Answer: A - Cloud Watch alarms
+
+------------------------------------------------------------------------------
+13. The IAS octave is an expansion of what security baseline?
+
+A - FEDRAMP
+
+B - HIPPA
+
+C - ISO 27001
+
+D - The C.I.A. Triad
+
+Answer: D - The C.I.A. Triad
+
+------------------------------------------------------------------------------
+14. What are three goals AWS is striving to meet in the cloud through utilization of their security tools?
+
+A - Planning, control, and audibility
+
+B - Visibility, audibility, and control
+
+C - Audibility, analysis, and governance
+
+D - Planning, governance, and control
+
+Answer: B - Visibility, audibility, and control
+
+------------------------------------------------------------------------------
+15. When defining the security requirements for your company's operation in the public cloud, what is the essential certification you need to analyze first?
+
+A - SOC-1
+
+B - SOC-2
+
+C - ISO 27001
+
+D - SOC-3
+
+Answer: B - SOC-2
+
+------------------------------------------------------------------------------
+16. What is the definition of the AWS shared security model for customers?
+
+A - Security in the cloud
+
+B - Security on the cloud
+
+C - Security of the cloud
+
+D - Security for the cloud
+
+Answer: A - Security in the cloud
+
+------------------------------------------------------------------------------
+17. Replication between regions at AWS is carried out by what party?	
+
+A - AWS partner
+
+B - AWS upon request
+
+C - Associated Telco
+
+D - The customer
+
+Answer: D - The customer
+
+------------------------------------------------------------------------------
+18. When managing hard drives in the Amazon cloud, how are older drives disposed of?
+
+A - Drives are sold for scrap.
+
+B - Drives are degassed and destroyed.
+
+C - All drives are SSD and never break down.
+
+D - Drives are reformatted.
+
+Answer: B - Drives are degassed and destroyed.
+
+------------------------------------------------------------------------------
+19. What security controls are inherited by AWS customers when they deploy workloads?
+
+A - ISO 27001
+
+B - Security of equipment
+
+C - Secure disposal of hard drives
+
+D - Physical security
+
+E - Equipment maintenance
+
+Answer: A - ISO 27001
+
+------------------------------------------------------------------------------
+20. Would key feature at AWS can be used on most services for identification and control?
+
+A - Tagging
+
+B - Cloud Watch
+
+C - Logging
+
+D - Cloud Trail
+
+Answer: A - Tagging
+
+------------------------------------------------------------------------------
+21. What can identity and access management be used to control in the AWS cloud?
+
+A - Users, groups, and services
+
+B - Users, groups, and devices
+
+C - APIs, console access, and groups
+
+D - Groups, systems, and consol access
+
+Answer: A - Users, groups, and services
+
+------------------------------------------------------------------------------
+22. Utilizing security for users and computers at AWS is carried out using what security tool?
+
+A - Cloud HSM
+
+B - Amazon Inspector
+
+C - AWS Config
+
+D - Identity and access management
+
+Answer: D - Identity and access management
+
+------------------------------------------------------------------------------
+23. Validating the security of physical access to AWS is performed by whom?
+
+A - Independent auditors
+
+B - Multifactor authentication and smartcards
+
+C - Swipe cards and security personnel
+
+D - Multifactor authentication and retinal scans
+
+Answer: A - Independent auditors
+
+------------------------------------------------------------------------------
+24. When creating a governance structure, policies are created from what two components?
+
+A - Certifications and standards
+
+B - Standards and procedures
+
+C - Procedures and goals
+
+D - Attestations and certifications
+
+Answer: B - Standards and procedures
+
+------------------------------------------------------------------------------
+25. What AWS infrastructure is deployed in Edge locations?
+
+A - Data centers
+
+B - DNS and CDN services
+
+C - Virtual machines
+
+D - Direct link
+
+Answer: B - DNS and CDN services
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+

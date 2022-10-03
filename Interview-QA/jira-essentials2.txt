@@ -1,0 +1,559 @@
+Quiz 1 -
+Cateogry Name - Jira-Fundamental
+**********************************************************************************************************************************************************
+Title - JIRA Fundamentals
+**********************************************************************************************************************************************************
+1. What commandline tool you access in order to increase the memory for JIRA?
+
+A servicemem.exe
+
+B tomcat7w.exe
+
+C jirasetup.exe
+
+D perfmon.exe
+
+Anser:B tomcat7w.exe
+----------------------------------------------------------------------------------------
+2. What does public mode mean in JIRA?
+
+A You can only run with a trial license
+
+B The server is placed on the internet.
+
+C Users can sign up them selfs.
+
+D All information on the server is open for all users
+
+Anser:C Users can sign up them selfs.
+----------------------------------------------------------------------------------------
+3. What happens if you write a numberical value in quick search?
+
+A You can only use full keys in the quick search field
+
+B You get a syntax error message
+
+C If the numberical part of the issue key correspond to the input, the issue is displayed
+
+D A create issue box is shown
+
+Anser:C If the numberical part of the issue key correspond to the input, the issue is displayed
+----------------------------------------------------------------------------
+4. Which is a not valid JQL?
+
+A text ~ "gps"
+
+B key=art-1 order by summary desc
+
+C order by summary
+
+D art-1=key
+
+Anser:D art-1=key
+----------------------------------------------------------------------------------------
+5. Which is a valid way of making a field required?
+
+A By using a notification scheme
+
+B In the project setup menu, you click on the fields you want to set as required
+
+C By setting the required flag at the issue configuration
+
+D With a Field Configuration
+
+Anser:D With a Field Configuration
+----------------------------------------------------------------------------------------
+6. What does "transition" mean in JIRA?
+
+A Updating an issue
+
+B Closing an issue
+
+C Sending an issue to another system
+
+D Move from one status to another
+
+Anser:D Move from one status to another
+----------------------------------------------------------------------------------------
+7. Which is not directly linked to a project?
+
+A Versions
+
+B Workflow scheme
+
+C Field Configuration Scheme
+
+D Screen
+
+Anser:D Screen
+----------------------------------------------------------------------------------------
+8. What is true for a small JIRA installation?
+
+A Recent multicore server with 2 GB of RAM and a 7200 HD will do
+
+B JIRA must have at least 4 GB of RAM allocated
+
+C You must have a minimum 8 core server with 16 GB of RAM and a SSD Raid setup
+
+D JIRA can only run on SATA hard-drives
+
+Anser:A Recent multicore server with 2 GB of RAM and a 7200 HD will do
+----------------------------------------------------------------------------------------
+9. How would you do a manual installation of Jira?
+
+A Use the archive-files and manually copy files
+
+B You must use the installation wizard with -q parameters
+
+C Manual installations can only be done using the on-demand solution
+
+D You cannot do a manual installation of Jira
+
+Anser:A Use the archive-files and manually copy files
+----------------------------------------------------------------------------
+10. What is true about an issue?
+
+A All of the statements are correct
+
+B An issue can be for example a bug, task or improvement
+
+C An issue must be belong to a project
+
+D An issue must have an unique key
+
+Anser:A All of the statements are correct
+----------------------------------------------------------------------------------------
+11. Which is not a built-in event for triggering a webhook?
+
+A Issue Deleted
+
+B Issue Created
+
+C Worklog Updated
+ 
+D Worklog deleted
+
+Anser:D Worklog deleted
+----------------------------------------------------------------------------------------
+12. What is the best way to migrate from Bugzilla?
+
+A You cannot migrate from Bugzilla
+
+B Use the built-in importer
+
+C Use the CSV-importer
+
+D Import the values directly into the JIRA-database
+
+Anser:B Use the built-in importer
+----------------------------------------------------------------------------------------
+13. How would you share a query with another JIRA user?
+
+A Send the JIRA query in as text in an email
+
+B Create a dashboard with the query and share the dashboard
+
+C Share the query by clicking the "share query" button in the search pane.
+
+D Create a filter and share the filter
+
+Anser:D Create a filter and share the filter
+----------------------------------------------------------------------------------------
+14. What does it mean that the workflow scheme is active?
+
+A It is in use and you have limited posibilites for change
+
+B The workflow scheme is used by more than one project
+
+C The workflow scheme is obsolete
+
+D It is in use but you can still make any change
+
+Anser:A It is in use and you have limited posibilites for change
+----------------------------------------------------------------------------------------
+15. What is not true about transitions?
+
+A Transitions cannot be bi-directional
+
+B You can trigger webhooks with transitions
+
+C A transition is needed in order to change status
+
+D You can only several transitions pr step
+
+Anser:A Transitions cannot be bi-directional
+----------------------------------------------------------------------------
+16. Which is a valid JQL?
+
+A order by summary, project=ART
+
+B project=ART and or project=MISC
+
+C select * from project=ART
+
+D project=ART order by summary desc
+
+Anser:D project=ART order by summary desc
+
+***********************************************************************************************************************
+Quiz 2 -
+Cateogry Name - Jira-Scrum
+-----------------------------------------------------------------------------------
+Title - JIRA with Scrum and Agile
+****************************************************************************************************************
+1. You should avoid using
+
+       A Work board
+
+       B Classic boards
+
+       C Report board
+
+       D Plan board
+
+Answer:B Classic boards 
+----------------------------------------------------------------------------------------
+2. Start by creating the following type of tickets in Jira to create your backlog (Hint: INVEST)
+
+       A Epic
+
+       B Task
+
+       C Bug
+
+       D Story
+
+Answer:D Story 
+----------------------------------------------------------------------------------------
+3. Use this report to determine bottlenecks
+
+       A Epic report
+
+       B Cumulative flow diagram
+
+       C Burndown chart
+
+       D Sprint report
+
+Answer:B Cumulative flow diagram
+----------------------------------------------------------------------------------------
+4. The start-stop-continue approach is used during?
+
+       A Sprint Review
+
+       B Sprint Retrospective
+
+       C Daily Scrum
+
+       D Requirement planning
+
+Answer:B Sprint Retrospective
+----------------------------------------------------------------------------------------
+5. What type of project should we create in Jira for the purpose of this training?
+
+       A Agile Scrum
+
+       B Kanban
+
+       C Jira classic
+
+       D Gantt-chart project
+
+Answer:A Agile Scrum
+----------------------------------------------------------------------------
+6. The following is only a listener during the Daily Scrum because is involved and not committed?
+
+       A Executive team
+
+       B Product Owner
+
+       C Team Member
+
+       D Scrum Master
+
+Answer:A Executive team
+----------------------------------------------------------------------------------------
+7. You create sprints in
+
+       A Release mode
+
+       B Plan mode
+
+       C Work
+
+       D Project Overview
+
+Answer: B Plan mode
+----------------------------------------------------------------------------------------
+8. The following is the old way of development where devs went into a room for months and came out with an application
+
+       A Feature driven development
+
+       B Scrum
+
+       C Test driven development
+
+       D Waterfall
+
+Answer:D Waterfall
+----------------------------------------------------------------------------------------
+9. The following is an involved team member
+
+       A Team Member
+
+       B Scrum Master
+
+       C Project Manager
+
+       D Product Owner
+
+Answer:C Project Manager
+----------------------------------------------------------------------------------------
+10. The key principle of scrum is
+
+       A Start with what you do now
+
+       B Plan all your work and schedule for the duration of the project
+
+       C Recognize that requirements can change
+
+       D Deliver a new version to customers every 2 to 4 weeks
+
+Answer:C Recognize that requirements can change
+----------------------------------------------------------------------------------------
+11. Where do you use primarily Report Mode?
+
+       A Sprint Planning Meeting
+
+       B Sprint Retrospective
+
+       C Daily Scrum
+
+       D Sprint Review
+
+Answer:B Sprint Retrospective
+----------------------------------------------------------------------------
+12. You release a version in
+
+       A Work mode
+
+       B Plan mode
+
+       C Project Overview
+
+       D Release mode
+
+Answer:A Work mode
+
+***********************************************************************************************************************************
+Quiz 3 -
+Cateogry Name - Jira-Kanban
+---------------------------------------------
+Title - JIRA with Kanban and Agile
+*********************************************************************************************************************************
+
+1. To grant a user permission to use JIRA you go to:
+
+       A Application Access
+
+       B Roles
+
+       C Groups
+
+       D Permissions
+
+Answer:A Application Access
+----------------------------------------------------------------------------------------
+2. A Role within JIRA is:
+
+       A A point-in-time for a project. They help you schedule and organize your releases
+
+       B Created within Permission Schemes, which are then assigned to specific projects
+
+       C A way to manipulate the display and behavior of issue fields
+
+       D A flexible way to associate users and/or groups with particular projects
+
+Answer: D A flexible way to associate users and/or groups with particular projects
+----------------------------------------------------------------------------------------
+3. The first step to implement Kanban is:
+
+       A Assign new roles to team members
+
+       B Map out your current process
+
+       C Not change anything
+
+       D Measure impact
+
+Answer:C Not change anything
+----------------------------------------------------------------------------------------
+4. In both Kanban and Scrum you make people:
+
+       A Limit their work in progress
+
+       B Meet on a daily basis
+
+       C A core part of the process
+
+       D Assume new roles according to their contribution
+
+Answer: C A core part of the process
+----------------------------------------------------------------------------------------
+5. Who is considered the father of Kanban in software?
+
+       A Xavier Morera
+
+       B David J. Anderson
+
+       C Taichi Ohno
+
+       D Michael Vizdos
+
+Answer:B David J. Anderson
+----------------------------------------------------------------------------
+6. Regarding new items to be worked on immediately, we have that they are:
+
+       A Reviewed by management and a decision is made
+
+       B Forbidden in Scrum, but allowed in Kanban if we have capacity
+
+       C Both methods allow work to be taken on immediately
+
+       D Forbidden in Kanban, but allowed in Scrum if we have capacity
+
+Answer: B Forbidden in Scrum, but allowed in Kanban if we have capacity
+----------------------------------------------------------------------------------------
+7. In a Kanban Board why isn't Plan Mode available?
+
+       A Plan Mode is only available for Scrum Boards, but it's a pending request for Atlassian to include it
+
+       B Planning is not required with Kanban
+
+       C It is an oversight by Atlassian
+
+       D You need to buy JIRA Agile
+
+Answer:A Plan Mode is only available for Scrum Boards, but it's a pending request for Atlassian to include it
+----------------------------------------------------------------------------------------
+8. The following is the most powerful and customizable way of creating a board.
+
+       A Board from existing project
+
+       B Personal Kanban board
+
+       C Board from an existing saved filter
+
+       D New project and new board
+
+Answer: D New project and new board
+----------------------------------------------------------------------------------------
+9. In Kanban you start by:
+
+       A Getting corporate buy in
+
+       B Mapping out your current process
+
+       C Assigning new roles
+
+       D Not changing anything
+
+Answer: D Not changing anything
+----------------------------------------------------------------------------------------
+10. In this chart you can visualize lead time and cycle time.
+
+       A Sprint Report
+
+       B Control Chart
+
+       C Cumulative Flow Diagram
+
+       D Burn Down Chart
+
+Answer: B Control Chart
+----------------------------------------------------------------------------------------
+11. You create a project from this drop down:
+
+       A Projects
+
+       B Create project
+
+       C Dashboards
+
+       D Agile
+
+Answer:A Projects
+----------------------------------------------------------------------------
+12. If you want to add one or many users to projects without having to specify them manually you use a:
+
+       A Group
+
+       B Role
+
+       C You can't, you need to add them manuall
+
+       D Permission scheme
+
+Answer: A Group
+----------------------------------------------------------------------------------------
+13. If you can't measure it:
+
+       A You need to set up your reports to track advance
+
+       B You can't improve it
+
+       C It doesn't count
+
+       D It does not exist
+
+Answer:B You can't improve it
+----------------------------------------------------------------------------------------
+14. The quick key for Detail View is:
+
+       A K
+
+       B T
+
+       C V
+
+       D +
+
+Answer:B T
+----------------------------------------------------------------------------------------
+15. A way to logically group functionality within your application is via:
+
+       A Components
+
+       B Sprints
+
+       C Versions
+
+       D Fields
+
+Answer:A Components
+----------------------------------------------------------------------------------------
+16. This key core practice helps build trust and reduce scope creep.
+
+       A Process Visibility
+
+       B Management Inclusion
+
+       C Value Stream
+
+       D Explicit Policies
+
+Answer: B Management Inclusion
+----------------------------------------------------------------------------
+17. In Issue Detail View you configure:
+
+       A The visible fields right panel in the Kanban board
+
+       B Fields included in notification emails
+
+       C The fields shown in each specific card in the Kanban board
+
+       D Fields displayed in a JIRA ticket
+
+Answer: A The visible fields right panel in the Kanban board
+----------------------------------------------------------------------------------------
+*************************************************************************************************************

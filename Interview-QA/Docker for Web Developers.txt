@@ -1,0 +1,528 @@
+
+Course Name: Docker for Web Developers
+
+1. What options are available for getting source code into Docker Containers?
+
+A. Create a custom container with the source code and use the "mount" command to point to your dev machine
+B. Create a custom docker image with the source code or create a data volume pointing to your dev machine
+C. Use the Dockerfile "embedcode" instruction
+D. None of these
+
+Ans:   B. Create a custom docker image with the source code or create a data volume pointing to your dev machine
+
+
+2. Docker works the same way as virtual machines.
+
+A. True
+B. False
+
+Ans:  B. False
+
+
+3. How do you show all containers on a machine?
+
+A. docker rmi -p
+B. docker showAllContainers -a
+C. docker ps -a
+D. docker-machine ps -a
+
+Ans:  C. docker ps -a
+
+
+4. VirtualBox is required to use Docker on Mac and Windows dev machines.
+
+A. True
+B. False
+
+Ans:  A. True
+
+
+5. What file does Docker Compose use to define services?
+
+A. compose.xml
+B. docker-compose.yml
+C. Dockerfile
+D. docker-compose.son
+
+Ans:   B. docker-compose.yml
+
+
+6. Which of the following use Docker's layered file system?
+
+A. VirtualBox
+B. Docker images only
+C. All of these
+D. Docker containers only
+E. Docker images and containers
+
+Ans:   E. Docker images and containers
+
+
+7. What Docker command can be used to view information about a custom network?
+
+A. docker network view <network_name>
+B. docker network inspect <network_name>
+C. None of these
+D. docker view network <network_name>
+
+Ans:   B. docker network inspect <network_name>
+
+
+8. Setting up communications between multiple containers always requires multiple Docker run statements to be executed.
+
+A. False
+B. True
+
+Ans:   A. False
+
+
+9. You've run the "docker ps" command but no containers are showing. Why?
+
+A. All containers are stopped.
+B. All containers are running.
+C. You don't have an image for the container.
+D. None of these
+
+Ans:   A. All containers are stopped.
+
+
+10. What cloud provider does Docker Compose support?
+
+A. Microsoft Azure
+B. Digital Ocean
+C. All of these
+D. Amazon Web Services
+
+Ans:   C. All of these
+
+
+11. What Dockerfile instruction can be used to execute "npm install" when creating a custom Image?
+
+A. RUN npm install
+B. None of these
+C. npm install
+D. EXECUTE npm install
+
+Ans:   A. RUN npm install
+
+
+12. Specific framework versions (Node.js, ASP.NET, etc.) can be loaded on a developer machine by creating a custom Dockerfile.
+
+A. True
+B. False
+
+Ans:  A. True
+
+
+13. Key benefits of Docker for web developers includes:
+
+A. All of these
+B. Setup a development environment quickly
+C. Simplify working with multiple framework versions
+D. Ship code faster
+E. Consistency between environments
+
+Ans:  A. All of these
+
+
+14. Docker Cloud YAML files are identical to Docker Compose YAML files.
+
+A. False
+B. True
+
+Ans:  A. False
+
+15. What Docker technologies are available to support communication between containers?
+
+A. Docker connect and bridge networks
+B. Docker linking and bridge networks
+C. Docker connect and alias networks
+D. None of these
+
+Ans:   B. Docker linking and bridge networks
+
+
+16. Bridge networks can be defined in Docker Compose files.
+
+A. False
+B. True
+
+Ans:   B. True
+
+
+17. What command can be run to download an image from Docker Hub?
+
+A. docker images
+B. docker rmi [image name]
+C. docker pull [image name]
+D. docker ps -a
+
+Ans:  C. docker pull [image name]
+
+
+18. Docker Kitematic can ONLY be used to download Docker images.
+
+A. False
+B. True
+
+Ans:   A. False
+
+
+19. Docker Kitematic provides a way to visually search for images hosted on ________?
+
+A. VirtualBox
+B. Docker Hub
+C. Docker Client
+D. Docker Machine
+
+Ans:   B. Docker Hub
+
+
+20. What syntax can be used to create a volume that Docker manages?
+
+A. docker run -v /var/www imageName
+B. docker run -vol /temp:/var/temp imageName
+C. docker run -v /temp:/var/temp imageName
+D. None of these
+
+Ans:  A. docker run -v /var/www imageName
+
+
+21. Which of the following options can be used in a Docker Compose file?
+
+A. env_file
+B. container_name
+C. All of these
+D. networks
+
+Ans:   C. All of these
+
+
+22. Environment variables can be defined in Docker Compose files.
+
+A. False
+B. True
+
+Ans:  B. True
+
+
+23.  What command can be used to "link" a command terminal window to a Docker machine?
+
+A. docker-machine env [machine name]
+B. docker rm [machine name]
+C. docker env [machine name]
+D. docker-machine environment [machine name]
+
+Ans:   A. docker-machine env [machine name]
+
+
+24. Which of the following statements accurately describe a Docker volume?
+
+A. All of these
+B. Can be shared and reused among containers
+C. Persisted even after a container is deleted
+D. Are not affected by updates to images
+E. Special type of directory in a container
+
+Ans:  A. All of these
+
+
+25. What key concepts does Docker rely on?
+
+A. Virtual machines and LXC
+B. Images and containers
+C. Images and archives
+D. Images and virtual machines
+
+Ans:  B. Images and containers
+
+
+26. What command-line switches are used with legacy linking?
+
+A. --net and --name
+B. --link and --name
+C. --com and --name
+D. --run and --link
+
+
+Ans:   B. --link and --name
+
+
+27. Docker volumes are persisted even after a container is deleted.
+
+A. False
+B. True
+
+Ans:   B. True
+
+
+28. What tool can be used to visually work with images and containers?
+
+A. Docker Engine
+B. Docker Kitematic
+C. None of these
+D. VirtualBox
+
+
+Ans:   B. Docker Kitematic
+
+
+29. Which of the following tasks can Docker Cloud perform?
+
+A. All of these
+B. Create nodes
+C. None of these
+D. Create stacks
+E. Start and stop services
+
+Ans:   A. All of these
+
+
+30. Dockerfile contains binary instructions.
+
+A. True
+B. False
+
+Ans:   B. False
+
+
+31. What command-line switch can be used to define a custom Dockerfile file name (such as node.dockerfile) when building a custom image?
+
+A. -t
+B. -customfile
+C. -f
+D. -v
+
+Ans:   C. -f
+
+
+32. What Docker Client command can be used to create a container network?
+
+A. docker createNetwork
+B. docker build network
+C. docker network create
+D. docker ps network
+
+Ans:   C. docker network create
+
+
+33. What syntax can be used to delete a Docker volume and a container?
+
+A. docker rm -rv containerName
+B. docker rm volume containerName
+C. docker rm -v containerName
+D. docker rm remove-volume containerName
+
+Ans:   C. docker rm -v containerName
+
+
+34. What task does Docker Machine perform?
+
+A. Create and manage Docker images
+B. Find and install Docker images
+C. Create and manage containers
+D. All of these
+E. Create and manage local machines
+
+Ans:  E. Create and manage local machines
+
+
+35. Docker Cloud provides a browser-based terminal for services.
+
+A. True
+B. False
+
+Ans:  A. True
+
+
+36. Docker Toolbox can only be installed and run on Linux.
+
+A. False
+B. True
+
+Ans:  A. False
+
+
+37. What Docker Compose command can be used to create service images?
+
+A. docker compose
+B. docker-compose create
+C. docker-compose make
+D. docker-compose build
+
+Ans:  D. docker-compose build
+
+
+38. What syntax can be used to publish an image to Docker Hub?
+
+A. docker create <username>/imageName
+B. docker publish <username>/imageName
+C. docker move <username>/imageName
+D. docker push <username>/imageName
+
+Ans:   D. docker push <username>/imageName
+
+
+39. What benefits do container networks offer?
+
+A. Allow local containers to communicate with external host containers
+B. Allow local containers to communicate directly with host processes
+C. Allow containers to communicate with each other in an isolated network
+D. All of these
+
+Ans:   C. Allow containers to communicate with each other in an isolated network
+
+
+40. Docker containers can be started and stopped.
+
+A. False
+B. True
+
+Ans:   B. True
+
+
+41. Docker Images consist of read-only layers.
+
+A. True
+B. False
+
+Ans:  A. True
+
+
+42. What is the role of Docker images?
+
+A. All of these
+B. Used to execute code at runtime
+C. Provides virtualization functionality across environments
+D. Acts as a blueprint or template that is used to create containers
+
+Ans:   D. Acts as a blueprint or template that is used to create containers
+
+
+43. What command can be used to start a container?
+
+A. docker run [image name]
+B. docker go [image name]
+C. docker rm [image name]
+D. docker ps -a
+
+Ans:   A. docker run [image name]
+
+
+44. Which of the following tasks can Docker Compose perform?
+
+A. View service logs
+B. None of these
+C. Build services
+D. All of these
+E. Start and stop containers
+
+Ans:   D. All of these
+
+
+45. Services can be organized into ______ with Docker Cloud.
+
+A. groups
+B. stacks
+C. roles
+D. zones
+
+Ans:   B. stacks
+
+
+46. What Docker Compose command can be used to start multiple service containers?
+
+A. docker-compose up
+B. docker-compose start
+C. None of these
+D. docker run
+
+Ans:  A. docker-compose up
+
+
+47.  A Docker _______ has a "thin R/W layer."
+
+A. File
+B. Image
+C. None of these
+D. Container
+
+Ans:   D. Container
+
+
+48. Each instruction in a Dockerfile creates an intermediate container as the image is built.
+
+A. True
+B. False
+
+Ans:   A. True
+
+
+49. What syntax can be used to convert a Dockerfile into an Image?
+
+A. docker create -t <username>/tagName .
+B. docker run -t <username>/tagName .
+C. docker run -t <username>/tagName .
+D. docker convert -t <username>/tagName .
+
+Ans:   C. docker run -t <username>/tagName .
+
+
+50. Which of the following tools are included in Docker Toolbox?
+
+A. All of these
+B. Docker Machine
+C. Docker Client
+D. VirtualBox
+E. Docker Kitematic
+
+Ans:  A. All of these
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

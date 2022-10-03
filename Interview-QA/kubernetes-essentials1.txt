@@ -1,0 +1,692 @@
+	
+		Note 3 - kubernetes
+
+**********************************************************************************************************************************************************************	
+		Getting Started with Kubernetes
+**********************************************************************************************************************************************************************
+
+1. Which of the following best describes Kubernetes from a licensing standpoint?
+
+	A. Proprietary technology under a subscription license from Google, Inc
+
+	B. Open-source under the OpenStack Foundation
+
+	C. Proprietary technology under a subscription license from Docker, Inc.
+
+	D. Open-source under the Cloud Native Computing Foundation
+
+Answer: D. Open-source under the Cloud Native Computing Foundation
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2. Which programming language is Kubernetes written in?
+
+	A. Swift
+
+	B. Cobol
+
+	C. Go/Golang
+
+	D. Python
+
+Answer: C. Go/Golang
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+3. What are the two main benefits that Deployments offer that Replication Controllers do not?
+
+	A. Strong update nd rollback model
+
+	B. Clinet-side updates and rollbacks
+
+	C. A declarative interface
+
+	D. Desired state
+
+Answer: A. Strong update nd rollback model  
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+4. Which of the following commands allows you to validate a cluster created with kops?
+
+	A. kubectl validate cluster
+
+	B. kubeadm validate cluster
+
+	C. kops validate cluster
+
+Answer: C. kops validate cluster
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+5. Which of the following kubeadm command creates a new cluster?
+
+	A. kubeadm create cluster
+
+	B. kubeadm init
+
+	C. kubeadm initialize cluster
+
+Answer: B. kubeadm init
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+6. What is the default range of ports used to expose a NodePort service?
+
+	A. 30000-32767
+
+	B. 500-1000
+
+	C. 60000-65536
+
+	D. 1024-32767 
+
+Answer: A. 30000-32767
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+7. You want to deploy two tightly coupled containers that share a volume and some memory. What is the best option?
+
+	A. Deploy them in separate Pods and couple them over the network
+
+	B. Deploy them as two processes in a single container
+
+	C. Deploy them in a single Pod
+
+Answer: C. Deploy them in a single Pod
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+8. Which Operating System does Kubernetes run on?
+
+	A. Windows
+
+	B. Linux
+
+	C. OS X
+
+	D. FreeBSD
+
+Answer: B. Linux
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+9. Which of the following commands gives you detailed info on a Pod?
+
+	A. kubectl describe pods
+
+	B. kubectl get pods -vvv
+
+	C. kubectl get pods --detail
+
+	D. kubectl pods inspect
+
+Answer: A. kubectl describe pods
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+10. Which component of the Kubernetes worker stack registers Nodes with the cluster and watches the apiserver for new work?
+
+	A. kube-proxy
+
+	B. Kubelet
+
+	C. Container runtime 
+
+Answer: B. Kubelet
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+11. Where did Kubernetes originate?
+
+	A. Docker
+
+	B. Twitter
+
+	C. Facebook
+
+	D. Google
+
+Answer: D. Google 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+12. Which of the following options is best for creating a local Kubernetes development environment on your laptop?
+
+	A. Minikube
+
+	B. Google Container Engine
+
+	C. Kubernetes for Mac
+
+	D. Docker for Mac
+
+Answer: A. Minikube
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+13. Which of the following best describes the Google Container Engine (GKE)?
+
+	A. Packaged Kubernetes that can be installed on several cloud platforms
+
+	B. Packaged Kubernetes hosted in the Google Cloud Platform
+
+	C. Packaged Kubernetes that can be installed on OpenStack
+
+	D. Packaged Kubernetes that can be installed on premises in your data center
+
+Answer: B. Packaged Kubernetes hosted in the Google Cloud Platform
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+14. You have updated the manifest file for an existing deployment and need to push the changes to the cluster. Which of the following command lets you do this?
+
+	A. kubectl create -f <manifest>
+
+	B. kubectl apply -f <manifest>
+
+	C. kubectl rollout apply -f <manifest>
+
+Answer: B. kubectl apply -f <manifest>
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+15. What is the default Service type (ServiceType) if you do NOT specify a value?
+
+	A. LoadBalancer
+
+	B. NodePort
+
+	C. ClusterIP
+
+	D. Ingress 
+
+Answer: C. ClusterIP 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+16. What is the default protocol for a Service?
+
+	A. TCP
+
+	B. UDP
+
+	C. HTTP
+
+	D. SSH
+
+Answer: A. TCP
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+17. What is the atomic unit of scheduling in Kubernetes?
+
+	A. Pod
+
+	B. VM
+
+	C. Container
+
+	D. Deployment 
+
+Answer: A. Pod
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+18. Which of the following is true about Pods and IP addressing?
+
+	A. Pods only work with IPv6 addresses
+
+	B. All containers in a Pod get unique IP addresses
+
+	C. An external DHCP server is required for Pod IP addressing
+
+	D. All containers in a Pod share a single IP address
+
+Answer: D. All containers in a Pod share a single IP address
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+19. Which of the following describes the fundamentals of Kubernetes Pod networks?
+
+	A. Each Pod gets a unique routable IP on the Pod network
+
+	B. All Pods share a common IP and are accessed on the Pod network via TCP ports
+
+	C. Each container gets a unique routable IP on the Pod network
+
+Answer: A. Each Pod gets a unique routable IP on the Pod network
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+20. How do two containers in the same Pod communicate?
+
+	A. Via the shared localhost adapter inside the Pod
+
+	B. Via the Pod overlay network
+
+	C. Via a local bridged network inside the Pod
+
+Answer: A. Via the shared localhost adapter inside the Pod
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+21. Which of the following commands will lauch a Minikube environment using the xhyve Virtual Machine driver on an Apple Mac?
+
+	A. kubectl start minikube --vm-driver=xhyve
+
+	B. minikube start --vm-driver=xhyve
+
+	C. kubeadm start minikube --vm-driver=xhyve 
+
+Answer: B. minikube start --vm-driver=xhyve
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+22. Which infrastructure platforms does Kubernetes run on?
+
+	A. Kubernetes only runs on virtual machines and cloud platforms as long as they are running Linux.
+
+	B. Kubernetes only runs on bare metal Linux installations.
+
+	C. Kubernetes is platform agnostic. All it requires is a Linux host.
+
+	D. Kubernetes only runs on bare metal servers and virtual machines as long as they are running Linux.
+
+Answer: C. Kubernetes is platform agnostic. All it requires is a Linux host.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+23. Where does the Kubernetes Operations tool kops store its configuration?
+
+	A. And environment variable called KOPS
+
+	B. A distributed K/V store running in a system Pod
+
+	C. An environment variable called KOPS_STATE_STORE
+
+Answer: C. An environment variable called KOPS_STATE_STORE
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+24. You are planning an update to an existing deployment and want to wait 15 seconds in between each pod update. Which option in the deployment manifest file lets you 
+    specify this?
+
+	A. rollingUpdateWait: 15
+
+	B. maxSurge: 15
+
+	C. podUptime: 15
+
+	D. minReadySeconds: 15
+
+Answer: D. minReadySeconds: 15
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+25. How do Services know which Pods to load-balance requests to?
+
+	A. Label selectors
+
+	B. A static list held in the Service's Endpoint object
+
+	C. Environment variables
+
+	D. DNS 
+
+Answer: A. Label selectors
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+26. You are working with Kubernetes deployments and want to log updates to the deployment each time to issue an update related command. Which command option does this 
+    for you?
+
+	A. --log
+
+	B. --record
+
+	C. --history
+
+	D.  --audit
+
+Answer: B. --record 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+27. Which Service type (ServiceType) will create a common cluster-wide port on all nodes? 
+
+	A. CkusterPort 
+
+	B. NodePort
+
+	C. ClusterIP
+
+	D. NodeIP 
+
+Answer: B. NodePort
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+28. Which of the following describes how to scale-up aspects of an application running on Kubernetes?
+
+	A. Add more containers to the Pod that needs scaling
+
+	B. Add more memory to the machines hosting the Pods
+
+	C. Add more replicas of the Pod that needs scaling
+
+Answer: C. Add more replicas of the Pod that needs scaling 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+29. Which of the following is true about Kubernetes Pods?
+
+	A. High level abstraction object for deploying virtual machines
+
+	B. Atomic unit of scheduling that contain exactly one container
+
+	C. Atomic unit of scheduling that contain one or more containers 
+
+Answer: C. Atomic unit of scheduling that contain one or more containers  
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+30. Which of the following tells Kubernetes that the object you are deploying is a Pod?
+
+	A. The value of the kind flag on the kubectl command line
+
+	B. The value of the kind field in the YAML or JSON manifest file  
+
+Answer: B. The value of the kind field in the YAML or JSON manifest file 
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+
+31. What are the two major infrastructure components of a Kubernetes cluster?
+
+	A. Managers and Workers
+
+	B. Masters and Nodes
+
+	C. Controllers and Minions
+
+	D. Masters and Workers 
+
+Answer: B. Masters and Nodes
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+32. What objects to Deployments manage?
+
+	A. Ingress Lists (IngressList)
+
+	B. Replica Sets (ReplicaSet)
+
+	C. Daemon Sets (DaemonSet)
+
+	D. Replication Controllers (ReplicationController)
+
+Answer: B. Replica Sets (ReplicaSet)
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+33. Which of the following commands deploys a new Deployment using a declarative style?
+
+	A. kubectl run my-deployment --image=<image>
+
+	B. kubectl create deployment -f <deployment.yml>
+
+Answer: B. kubectl create deployment -f <deployment.yml>
+ 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+34. Which of the following best describes a Kubernetes Service?
+
+	A. They allow you to break you monolithic apps into smaller micro-services
+
+	B. They provide a stable and reliable networ endpoint for your application containers
+
+	C. They provide a stable and reliable networ endpoint for your application Pods 
+
+Answer: C. They provide a stable and reliable networ endpoint for your application Pods 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+35. Which of the following Kubernetes commands creates a new service object (the iterative way)?
+
+	A. kubectl service
+
+	B. kubectl expose
+
+	C. kubectl create -f <manifest file>
+
+	D. kubectl endpoint 
+
+Answer: B. kubectl expose 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+36. You are working with a deployment that has 12 revisions and you are currently at revision 12. You want to rollback to revision 10. Which of the following commands 
+    will do this for you
+
+	A. kubectl rollout undo deployment <deployment-name> --to-revision=10
+
+	B. kubectl rollout rewind deployment <deployment-name> --to-revision=10
+
+	C. kubectl rollout reverse deployment <deployment-name> --to-revision=10 
+
+Answer: A. kubectl rollout undo deployment <deployment-name> --to-revision=10
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+37. Which of the following is correct about Kubernetes Pods?
+
+	A. Pods can only contain a single VM
+
+	B. Pods can only contain a single container
+
+	C. Pods can contain one or more containers
+
+	D. Pods must contain at least two containers 
+
+Answer: C. Pods can contain one or more containers
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+38. What is the smallest deployable object in Kubernetes?
+
+	A. Pod
+
+	B. Replication Controller
+
+	C. Deployment
+
+	D. Container
+
+Answer: A. Pod
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+39. How can you filter the output of a kubectl command to only show a Pod called "mypod"
+
+	A. kubectl get pods --filter mypod
+
+	B. kubctl get pods/mypod
+
+	C. kubectl get mypod
+
+Answer: B. kubctl get pods/mypod 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+40. Which of the following tools is good for installed Kubernetes in the AWS cloud?
+
+	A. kops
+
+	B. docker-machine
+
+	C. kubeaws
+
+	D. kubectl 
+
+Answer: A. kops
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+41. Which of the following is a best practice for running workloads on a Kubernetes cluster?
+
+	A. User workloads should only run on Nodes.
+
+	B. User workloads should only run on Masters.
+
+	C. User workloads should be evenly balanced across Masters and Nodes.  
+
+Answer: A. User workloads should only run on Nodes. 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+42. Which of the following Master components are the front-end to the Kubernetes control plane?
+
+	A. The Controller Manager
+
+	B. The apiserver
+
+	C. The Cluster Store
+
+	D. The Scheduler
+
+Answer: B. The apiserver
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+43. Which of the following is the only stateful component on a Kubernetes Master?
+
+	A. The Cluster Store
+
+	B. The Controller Manager
+
+	C. The Scheduler
+
+	D. The apiserver 
+
+Answer: A. The Cluster Store
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+44. Which of the following is the most common container runtime on Kubernetes Nodes? 
+
+	A. rkt
+
+	B. Docker
+
+	C. systemd
+
+	D. Parallels
+
+Answer: B. Docker
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+45. Which component of the Kubernetes worker stack implements networking?
+
+	A. Container runtime
+
+	B. Kubelet
+
+	C. kube-proxy
+
+Answer: C. kube-proxy
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+46. Which of the following is the preferred method of issuing work to Kubernetes?
+
+	A. Via manifest files in a declarative fashion
+
+	B. Via individual commands in an imperative fashion 
+
+Answer: A. Via manifest files in a declarative fashion
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+47. Which of the following best describes a Pod?
+
+	A. An isolated instance of Linux like aVirtual Machine
+
+	B. A unikernel
+
+	C. A Docker container
+
+	D. A ring-fenced environment
+
+Answer: D. A ring-fenced environment
+ 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+48. Which of the following is the best option for two containers that need to share memory and access to a common volume?
+
+	A. Put each container in its own Pod and couple them over the network
+
+	B. Package them as a deployment
+
+	C. Rewrite the code so that both services run inside a single container
+
+	D. Put both container sinde the same Pod
+
+Answer: D. Put both container sinde the same Pod
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+49. Which of the following is a major reason for Kubernetes Services?
+
+	A. K8s Services allow Pods to scale
+
+	B. Services are highly available
+
+	C. Services allow for simple rollbacks
+
+	D. We cannot rely on Pod IPs
+
+Answer: D. We cannot rely on Pod IPs
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+50. How are Services linked to Pods?
+
+	A. TCP port bindings
+
+	B. Docker Links
+
+	C. Label Selectors  
+
+Answer: C. Label Selectors 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+51. Which of the following best describes the benefits of Kubernetes Deployment objects?
+
+	A. Declarative formatting, rolling updates, and simple rollback capabilty
+
+	B. They provide High Availability to the Kubernetes control plane
+
+	C. Imperative formatting, rolling updates, and simple rollback capabilty
+
+	D. They hugely simplify the deployment and management of Masters and Nodes
+
+Answer: A. Declarative formatting, rolling updates, and simple rollback capabilty
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+52. Which component of the Kubernetes Master is responsible for issuing work to Nodes?
+
+	A. The Scheduler
+
+	B. The controller Manager
+
+	C. The apiserver
+
+	D. The Cluster Store 
+
+Answer: A. The Scheduler
+
+**********************************************************************************************************************************************************************

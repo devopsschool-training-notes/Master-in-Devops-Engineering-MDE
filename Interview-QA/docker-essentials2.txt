@@ -1,0 +1,2606 @@
+	Note - 2 - Docker Essential
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	Docker Swarm: Native Docker Clustering
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1. Which of the following commands will start a new container on the same nodes as container C1?
+
+	A. docker run -d -e affinity==c1 nginx
+
+	B. docker run -d -e constraint:container==c1 nginx
+
+	C. docker run -d -e affinity:container==c1 nginx
+
+	D. docker run -d -e constraint==c1 nginx
+
+Answer: C. docker run -d -e affinity:container==c1 nginx
+
+------------------------------------------------------------------------------------
+2. Which of the following flags tells the Docker daemon to listen on the network using the default secured Docker port?
+
+	A. -H tcp://0.0.0.0:3375
+
+	B. -H tcp://0.0.0.0:2376
+
+	C. -H tcp://0.0.0.0:2375
+
+	D. -H tcp://0.0.0.0:3376
+
+Answer: B. -H tcp://0.0.0.0:2376
+
+------------------------------------------------------------------------------------
+3. Which of the following flags turns on TLS authentication for the Docker daemon?
+
+	A. --tlscert
+
+	B. --tlsauthenticate
+
+	C. --tlsenable
+
+	D. --tlsverify
+
+Answer: D. --tlsverify
+
+------------------------------------------------------------------------------------
+4. How are custom labels implemented?
+
+	A. They are stored in an external KV store
+
+	B. They are applied to the Docker Engine daemon at startup
+
+	C. They are applied to the Docker host as environment variables
+
+	D. A custom metadata container runs on the Docker host
+
+Answer: B. They are applied to the Docker Engine daemon at startup
+
+------------------------------------------------------------------------------------
+5. How does Swarm support a pluggable discovery service backend?
+
+	A. Using libstorage as an abstraction layer
+
+	B. Using libkv as an abstraction layer
+
+	C. By publishing an open API that key-value stores can work with
+
+Answer: B. Using libkv as an abstraction layer
+
+------------------------------------------------------------------------------------
+6. Which of the following is the default scheduling strategy for Swarm clusters?
+
+	A. Stack
+
+	B. Spread
+
+	C. Random
+
+	D. Binpack
+
+Answer: B. Spread
+
+------------------------------------------------------------------------------------
+7. Which of the following Swarm components support High Availability?
+
+	A. Swarm manager and directory service
+
+	B. Swarm manager and discovery service
+
+	C. Swarm manager and scheduling service
+
+	D. Just the Swarm manager
+
+Answer: B. Swarm manager and discovery service
+
+------------------------------------------------------------------------------------
+8. Which of the following are the standard secured and unsecured Docker engine daemon ports?
+
+	A. 2375 (unsecured), 2376 (secured)
+
+	B. 4000 (unsecured), 4001 (secured)
+
+	C. 3375 (unsecured), 3376 (secured)
+
+	D. 80 (unsecured), 443 (secured)
+
+Answer: A. 2375 (unsecured), 2376 (secured)
+
+------------------------------------------------------------------------------------
+9. Which of the following arguments gets passed to the swarm command to join a node to the Swarm cluster?
+
+	A. raft-join
+
+	B. join
+
+	C. swarm-join
+
+	D. cluster-join
+
+Answer: B. join
+
+------------------------------------------------------------------------------------
+10. Which of the following describes what occurs when the primary Swarm Manager that is part of a highly available set of Swarm Managers fails?
+
+	A. A leader election occurs and an administrator selects which of the secondary managers is promoated to primary.
+
+	B. The Swarm cluster enters a split brain configuration.
+
+	C. A leader election occus and a secondary Swarm Manager seamlessly takes over the role of primary.
+
+	D. The remaining secondary Swarm Managers combine to fill the role of primary.
+
+Answer: C. A leader election occus and a secondary Swarm Manager seamlessly takes over the role of primary.
+
+------------------------------------------------------------------------------------
+11. Which of the following technologies allows Docker Swarm to leverage a pluggable discovery service backend?
+
+	A. libnetwork
+
+	B. libkv
+
+	C. Consul
+
+	D. godep
+
+Answer: B. libkv
+
+------------------------------------------------------------------------------------
+12. Which two resources can containers reserve on the nodes they will run on?
+
+	A. CPU and RAM
+
+	B. CPU and TCP ports
+
+	C. CPU and IOPS
+
+	D. IOPS and RAM
+
+Answer: A. CPU and RAM
+
+------------------------------------------------------------------------------------
+13. Which of the following is not a standard constraint?
+
+	A. storagedriver
+
+	B. networkdriver
+
+	C. executiondriver
+
+	D. operatingsystem
+
+Answer: B. networkdriver
+
+------------------------------------------------------------------------------------
+14. Which of the following is the preferred way to get TLS certificates into a Swarm manager container?
+
+	A. Start the Swarm manager container and copy the keys in via SCP.
+
+	B. Mount them in via a data volume.
+
+	C. Rebuild the swarm image with the certificates baked in via a Dockerfile.
+
+Answer: B. Mount them in via a data volume.
+
+------------------------------------------------------------------------------------
+15. Which environment variable can be used to automatically enable TLS for Docker Engine client commands?
+
+	A. DOCKER_TLS_AUTHENTICATE
+
+	B. DOCKER_TLS
+
+	C. DOCKER_TLS_VERITY
+
+	D. DOCKER_TLS_ENABLE
+
+Answer: C. DOCKER_TLS_VERITY
+
+------------------------------------------------------------------------------------
+16. Which of the following filter types allows you to launch new containers on the same node as another container?
+
+	A. Affinity
+
+	B. Resource
+
+	C. Custom
+
+	D. Node
+
+Answer: A. Affinity
+
+------------------------------------------------------------------------------------
+17. How is the Swarm Discovery Service implemented in a production-grade Swarm cluster?
+
+	A. As a distributed key-value store
+
+	B. A flat text file stored on every node in the cluster
+
+	C. As a high-speed relational database
+
+	D. Using Docker Hub as the hosted discovery service
+
+Answer: A. As a distributed key-value store
+
+------------------------------------------------------------------------------------
+18. Which of the following would be a good design for a Swarm cluster?
+
+	A. Three Swarm managers on separate VMs and separate physical hosts
+
+	B. Three Swarm managers on separate VMs on a single physical host
+
+	C. Three Swarm managers all on the same VM
+
+	D. Five Swarm managers on separate VMs on a single physical host
+
+Answer: A. Three Swarm managers on separate VMs and separate physical hosts
+
+------------------------------------------------------------------------------------
+19. Which of the following is passed to the swarm command to start a new Swarm Manager process?
+
+	A. manager
+
+	B. master
+
+	C. manage
+
+	D. leader
+
+Answer: C. manage
+
+------------------------------------------------------------------------------------
+20. Which of the following allows Swarm related components to trust a CA?
+
+	A. The presence of the Swarm component's own public key
+
+	B. The presence of the Swarm component's own private key
+
+	C. The presence of the CA's public key on the Swarm component
+
+	D. The presence of the CA's private key on the Swarm component
+
+Answer: C. The presence of the CA's public key on the Swarm component
+
+------------------------------------------------------------------------------------
+21. Which of the following shows the way Docker prefers keys to be named?
+
+	A. ca-cert.pem, swarm-cert.pem, swarm-key.pem
+
+	B. ca-cert.pem, node-cert.pem, node-key.pem
+
+	C. ca.pem, cert.pem, key.pem
+
+Answer: C. ca.pem, cert.pem, key.pem
+
+------------------------------------------------------------------------------------
+22. By default, how does Swarm enforce affinity filters?
+
+	A. Best effort. If the affinity cannot be met the container is still started
+
+	B. Strictly. If an affinity cannot be met the container is not started
+
+Answer: B. Strictly. If an affinity cannot be met the container is not started
+
+------------------------------------------------------------------------------------
+23. Which of the following is true of configuring the Docker Engine daemon for TLS?
+
+	A. The Engine daemon dynamically picks up TLS options.
+
+	B. The Engine daemon must be restarted to pick up TLS options.
+
+	C. The Engine daemon must be re-installed and compiled with the TLS configuration.
+
+Answer: B. The Engine daemon must be restarted to pick up TLS options.
+
+------------------------------------------------------------------------------------
+24. Which of the following discovery service backends are supported by Swarm?
+
+	A. MongaDB, CouchDB, MySQL
+
+	B. MySQL, PostgreSQL, etcd
+
+	C. Consul, etcd, Zookeeper
+
+	D. Consul, etcd, MySQL
+
+Answer: C. Consul, etcd, Zookeeper
+
+------------------------------------------------------------------------------------
+25. Which of the following describes the Swarm manager high availability model?
+
+	A. The Swarm manager service does not support high availability.
+
+	B. Point in time (PiT) copies that can be quickly be promoted to live in the event of failure
+
+	C. A single primary manager with n secondary managers
+
+	D. Multiple primary managers that are all active
+
+Answer: C. A single primary manager with n secondary managers
+
+------------------------------------------------------------------------------------
+26. Which of the following filter types works with labels/tags that are applied to Docker engine daemons?
+
+	A. Affinity filters
+
+	B. Standard constraints
+
+	C. Custom constraints
+
+	D. Resource filters
+
+Answer: C. Custom constraints
+
+------------------------------------------------------------------------------------
+27. How do Consul agents learn about other agents etc?
+
+	A. Using libkv
+
+	B. Using the Serf gossip protocl
+
+	C. Using libnetwork
+
+	D. Leveraging the Consul key-value store
+
+Answer: B. Using the Serf gossip protocl
+
+------------------------------------------------------------------------------------
+28. Which of the following Consul commands allows you to see the status of agents in the Consul cluster?
+
+	A. consul agent status
+
+	B. consul members
+
+	C. consul list members
+
+	D. consul status
+
+Answer: B. consul members
+
+------------------------------------------------------------------------------------
+29. Which of the following flags tells the Swarm Manager process that it will be part of a highly available multi-manager configuration?
+
+	A. --replicate
+
+	B. --replication
+
+	C. --multi-manager
+
+	D. --multi-master
+
+Answer: B. --replication
+
+------------------------------------------------------------------------------------
+30. Which three scheduling strategies does Swarm currently support?
+
+	A. Random, fastest response, spread
+
+	B. Random, round-robin, binpack
+
+	C. Random, spread, binpack
+
+	D. Random, spread, stack
+
+Answer: C. Random, spread, binpack
+
+------------------------------------------------------------------------------------
+31. What are the two major services required for a Swarm cluster to operate correctly?
+
+	A. Directory service and Swarm manager
+
+	B. Discovery service and Swarm manager
+
+	C. Discovery service and Directory service
+
+	D. Docker Hub and Discovery service
+
+Answer: B. Discovery service and Swarm manager
+
+------------------------------------------------------------------------------------
+32. What is the recommended way for clients to communicate with Swarm nodes in the Docker Swarm cluster?
+
+	A. Directly to the engine daemon on each node
+
+	B. Via the Swarm manager
+
+	C. Via Docker Hub
+
+	D. Via Docker Trusted Registry
+
+Answer: B. Via the Swarm manager
+
+------------------------------------------------------------------------------------
+33. Why does the binpack scheduling strategy choose the smallest node in the cluster when choosing new nodes to schedule containers on?
+
+	A. Larger nodes take longer to query
+
+	B. To keep operational costs as low as possible
+
+	C. To save larger nodes for larger containers
+
+Answer: C. To save larger nodes for larger containers
+
+------------------------------------------------------------------------------------
+34. You have a node in your Swarm cluster that does not have any running containers but is being overlooked when new containers are scheduled against the cluster. 
+    Which of the following could be a reason for this?
+
+	A. The node has too many images in its local store.
+
+	B. The node has a lot of containers in the stopped state.
+
+	C. The node has a lot of containers in the destroyed state.
+
+	D. The node has rebooted within the last two hours.
+
+Answer: B. The node has a lot of containers in the stopped state.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	Docker and Containers: The Big Picture
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1. Who is the founder and current CTO of Docker Inc.?
+
+	A. Ben Golub
+
+	B. Linux Torvalds
+
+	C. Mark Zuckerberg
+
+	D. Solomon Hykes
+
+Answer: D. Solomon Hykes
+
+
+------------------------------------------------------------------------------------
+2. Which open source license is the Docker project licensed?
+
+	A. CDDL
+
+	B. Apache License 2.0
+
+	C. GPL v3.0
+
+	D. MIT
+
+Answer: B. Apache License 2.0
+
+------------------------------------------------------------------------------------
+3. Which of the following describes the relationship between repositories and registries?
+
+	A. Repositories contain one or more registries.
+
+	B. Registries contain one or more repositories.
+
+	C. Repositories are always public, while registries are always private.
+
+	D. Registries are always public, while repositories are always private.
+
+Answer: B. Registries contain one or more repositories.
+
+------------------------------------------------------------------------------------
+4. Which of the following is driving stateful workloads towards becoming first-class citizens on the Docker ecosystem?
+
+	A. Docker Content Trust
+
+	B. Data volumes
+
+	C. The pluggable storage backend
+
+	D. The key/value store used in multi-host networking
+
+Answer: C. The pluggable storage backend
+
+------------------------------------------------------------------------------------
+5. Which of the following problems did hypervisor virtualization solve for businesses and IT?
+
+	A. Data Center security
+
+	B. Operating System management overhead
+
+	C. Wasted physical server resources
+
+	D. Re-writing of legacy monolithic apps
+
+Answer: C. Wasted physical server resources
+
+------------------------------------------------------------------------------------
+6. If you were using container orchestration tools from Docker Inc., which tool would manage your cluster of Docker hosts?
+
+	A. Docker Machine
+
+	B. Docker Swarm
+
+	C. Docker Compose
+
+	D. Docker Clustering
+
+Answer: B. Docker Swarm
+
+------------------------------------------------------------------------------------
+7. Which of the following advantages do containers have over virtual machines?
+
+	A. They are more fault-tolerant.
+
+	B. They are more efficient with system resources.
+
+	C. They are more mature. 
+
+	D. They are more secure.
+
+Answer: B. They are more efficient with system resources.
+
+------------------------------------------------------------------------------------
+8. Which of the following does the author believe will best help you prepare to thrive in a container world?
+
+	A. Partnerships with strategic vendors
+
+	B. A Windows only infrastructure
+
+	C. Knowledge and experience
+
+	D. Good change-management processes
+
+Answer: C. Knowledge and experience
+
+------------------------------------------------------------------------------------
+9. Which of the following is a popular place to get developers started with containers in your infrastructure?
+
+	A. Continuous Integration/Continuous Delivery solutions
+
+	B. Your production estate
+
+	C. Deploying infrastructure services such as DNS and Active Directory
+
+	D. New software defined networking solutions
+
+Answer: A. Continuous Integration/Continuous Delivery solutions
+
+------------------------------------------------------------------------------------
+10. Which of the following best describes the Commercially Supported Docker Engine (CS Engine)?
+
+	A. Released every ~6 months, supported by Docker Inc., and based on the same codebase as the stable release of the Docker Engine
+
+	B. Released every ~6 months containing proprietary code contributed by 3rd parties such as IBM, Microsoft, and Red Hat
+
+	C. Released every ~6 months, hosted and managed by Docker Inc. on the dotCloud cloud platform
+
+	D. Released by 3rd parties such as IBM and Red Hat but based on the stable release of the Docker Engine
+
+Answer: A. Released every ~6 months, supported by Docker Inc., and based on the same codebase as the stable release of the Docker Engine
+
+------------------------------------------------------------------------------------
+11. Which of the following container registries will be used in a default installation of Docker?
+
+	A. Docker Hub
+
+	B. Quay Enterprise
+
+	C. Docker Trusted Registry
+
+	D. GitHub
+
+Answer: A. Docker Hub
+
+------------------------------------------------------------------------------------
+12. Where can the Docker project and its source code be found?
+
+	A. BitBucket
+
+	B. It is proprietary code owned and kept in-house at Docker Inc.
+
+	C. GitHub
+
+Answer: C. GitHub
+
+------------------------------------------------------------------------------------
+13. Which of the following best describes a stateless app or workload?
+
+	A. One that stores changed data
+
+	B. One that does not care which public cloud platform it runs on
+
+	C. One that does not store any changed data
+
+	D. One that can run in any state or territory without legal issues
+
+Answer: C. One that does not store any changed data
+
+------------------------------------------------------------------------------------
+14. Which of the following is described in the course as being a pro and a con of the hypervisor virtualization model?
+
+	A. Being able to move existing apps directly into virtual machines
+
+	B. The need to change existing apps before they can run inside of virtual machines
+
+	C. Virtual machines can run on existing x86 and x64 hardware
+
+	D. Hypervisors contain a lot of code, making them feature rich but vulnerable to more attacks
+
+Answer: A. Being able to move existing apps directly into virtual machines
+
+------------------------------------------------------------------------------------
+15. Which of the following does container orchestration help with?
+
+	A. Interal cross charging
+
+	B. Scaling
+
+	C. Unit testing
+
+	D. Data volume management
+
+Answer: B. Scaling
+
+------------------------------------------------------------------------------------
+16. Which of the following problems (not solved by hypervisor virtualization) do containers solve?
+
+	A. Heterogeneous application management
+
+	B. Network Function Virtualization (NFV)
+
+	C. Software Defined Storage (SDS)
+
+	D. Overheads incurred by the multiplicity of Operating Systems (OS)
+
+Answer: D. Overheads incurred by the multiplicity of Operating Systems (OS)
+
+------------------------------------------------------------------------------------
+17. Which of the following commands will download the Ubuntu image from Docker Hub?
+
+	A. dkr pull ubuntu
+
+	B. docker download ubuntu
+
+	C. docker pull ubuntu
+
+	D. dkr download ubuntu
+
+Answer: C. docker pull ubuntu 
+
+------------------------------------------------------------------------------------
+18. What is the Open Container Initiative responsible for?
+
+	A. Container security standards
+
+	B. Container format and runtime standards
+
+	C. Image format and orchestration standards
+
+	D. The Docker Remote API
+
+Answer: B. Container format and runtime standards
+
+------------------------------------------------------------------------------------
+19. Which of the following is an important question to answer within your organization?
+
+	A. Which public cloud platform to deploy your container infrastructure on
+
+	B. Whether to deploy your containerized apps on Windows or Linux systems
+
+	C. Who will pay for container-related infrastructure and services
+
+Answer: C. Who will pay for container-related infrastructure and services
+
+------------------------------------------------------------------------------------
+20. What are the three Docker channels?
+
+	A. Community, Docker, 3rd Party
+
+	B. Linux, Windows, BSD
+
+	C. Experimental, Stable, Commercially Supported
+
+	D. Development, Test, Production
+
+Answer: C. Experimental, Stable, Commercially Supported
+
+------------------------------------------------------------------------------------
+21. Which of the following is true of Docker containers?
+
+	A. Docker containers are not persistent.
+
+	B. Docker containers only run in the cloud.
+
+	C. Docker containers are persistent.
+	
+	D. Docker containers are more secure than virtual machines.
+
+Answer: C. Docker containers are persistent.
+
+------------------------------------------------------------------------------------
+22. Which of the following products can run inside of a corporation's firewall and allows them to ship containerized apps?
+
+	A. Docker Universal Control Plane
+
+	B. Docker Hub
+
+	C. Docker Content Trust
+
+	D. Docker Trusted Registry
+
+Answer: D. Docker Trusted Registry
+
+------------------------------------------------------------------------------------
+23. Where is Docker Inc. based?
+
+	A. Boston, Massachusetts
+
+	B. Austin, Texas
+
+	C. San Jose, California
+
+	D. San Francisco, California
+
+Answer: D. San Francisco, California
+
+------------------------------------------------------------------------------------
+24. Which Docker Technology turns on image signing and verification for pushing and pulling images?
+
+	A. Docker Image Trust
+
+	B. Docker Content Trust
+
+	C. Docker Trusted Registry
+
+	D. Docker Trusted Images
+
+Answer: B. Docker Content Trust
+
+------------------------------------------------------------------------------------
+25. Which of the following is not an advantage of containerized cloud native apps?
+
+	A. Portability
+
+	B. Security
+
+	C. Scalability
+
+	D. Self-healing
+
+Answer: B. Security
+
+------------------------------------------------------------------------------------
+26. If you needed to deploy a container registry within your own corporate firewall that you own and manage, which of the following products could you use?
+
+	A. Docker Trusted Repository
+
+	B. Private repositories on Docker Hub
+
+	C. Docker Trusted Hub
+
+	D. Docker Trusted Registry
+
+Answer: D. Docker Trusted Registry
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	Using Docker on AWS
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1. Which of the following is true of ECS?
+
+	A. ECS offers integration with either the ECS registry or Docker Hub images.
+
+	B. Besides for the regular AWS resources in use, ECS charges users on a per-cluster basis.
+
+	C. ECS automatically launches a fully-managed EC2 instance for every cluster created.
+
+	D. At the cluster level, ECS can only be managed from the browser-based console.
+
+Answer: A. ECS offers integration with either the ECS registry or Docker Hub images.
+
+------------------------------------------------------------------------------------
+2. You can display detailed information about an ECS cluster from the command line using...
+
+	A. aws ecs cluster --help
+
+	B. aws ecs clusters --list
+
+	C. aws ecs list-clusters
+
+	D. aws ecs describe-clusters
+
+Answer: D. aws ecs describe-clusters
+
+------------------------------------------------------------------------------------
+3. You can set load balancing and auto scaling for a deployment in the ________ configuration menu of the console.
+
+	A. Container
+
+	B. Cluster Update
+
+	C. Task Definitions
+
+	D. Services
+
+Answer: A. Container
+
+------------------------------------------------------------------------------------
+4. Adding the "Amazon EC2 Container Service for EC2 Role" to your EC2 instance allows _________.
+
+	A. ECS resources to connect to the EC2 instance
+
+	B. the EC2 instance to be registered within an ECS system
+
+	C. the EC2 instance to connect to ECS resources
+
+	D. the account root user to manage the EC2 instance
+
+Answer: C. the EC2 instance to connect to ECS resources
+
+------------------------------------------------------------------------------------
+5. An ECS task can be described as:
+
+	A. A software tool used to manage cluster resources
+
+	B. A software agent used to enable communication across a cluster environment
+
+	C. A collection metadata defining the environment elements needed to launch Docker containers
+
+	D. A virtual container profile
+
+Answer: C. A collection metadata defining the environment elements needed to launch Docker containers
+
+------------------------------------------------------------------------------------
+6. Which of the following files on an EC2 ECS-optimized AMI instance must be edited to permit access to Docker Hub private repositories?
+
+	A. /etc/ecs/ecs.config
+
+	B. /etc/ecs-config
+
+	C. /ecs/ecs.config
+
+	D. /etc/ecs/ecs-config
+
+Answer: A. /etc/ecs/ecs.config
+
+------------------------------------------------------------------------------------
+7. What is the primary purpose of adding a tag to a Docker image?
+
+	A. To identify the object as an image
+
+	B. To identify the image's ownership and origin
+
+	C. To allow for easier visual identification once your infrastructure grows
+
+	D. To direct Docker to the appropriate remote repository
+
+Answer: D. To direct Docker to the appropriate remote repository
+
+------------------------------------------------------------------------------------
+8. Which of the following commands will return authentication credentials for the EC2 Container Repository service?
+
+	A. aws ecr login --region <your_region>
+
+	B. aws ecr get-login --region <your_region>
+
+	C. aws get-login --region <your_region>
+
+	D. aws get-region <your_region>
+
+Answer: B. aws ecr get-login --region <your_region>
+
+------------------------------------------------------------------------------------
+9. Which of these tools provides information about all the Docker resources on your system?
+
+	A. docker info
+
+	B. docker inspect
+
+	C. docker images
+
+	D. docker ps
+
+Answer: A. docker info
+
+------------------------------------------------------------------------------------
+10. What is the function of this command?
+    docker search apache/ubuntu
+
+	A. It will search your local Docker client environment for images related to either apache or ubuntu.
+
+	B. It will search Docker Hub for images related to both apache and ubuntu.
+
+	C. It will search your local Docker client environment for images related to both apache and ubuntu.
+
+	D. It will search Docker Hub for images related to either apache or ubuntu.
+
+Answer: B. It will search Docker Hub for images related to both apache and ubuntu.
+
+------------------------------------------------------------------------------------
+11. For security, the Docker website uses encryption certificates to _________.
+
+	A. secure the computers of local Docker clients
+
+	B. ensure that all images uploaded to Docker Hub are free of malware
+
+	C. ensure that all "docker run" operations are valid
+
+	D. secure connections between the website and clients
+
+Answer: D. secure connections between the website and clients
+
+------------------------------------------------------------------------------------
+12. What is the role of apache2ctl in this command?
+    docker run -d -p 80:80 webserver /usr/sbin/apache2ctl -D FOREGROUND
+
+	A. apache2ctl will launch a new Docker container as a backend server to your main container.
+
+	B. apache2tcl will run the Apache webserver software package when the container boots.
+
+	C. apache2ctl will check to make sure the Apache webserve software package is properly installed on a container.
+
+	D. apache2ctl is the name of a Docker image.
+
+Answer: B. apache2tcl will run the Apache webserver software package when the container boots.
+
+------------------------------------------------------------------------------------
+13. Which of these commands will associate a network interface with a Docker container?
+
+	A. docker attach network newnet
+
+	B. docker network connect newnet newname
+
+	C. docker network connect newname newnet
+
+	D. docker net connect newname newnet
+
+Answer: B. docker network connect newnet newname
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	Getting Started with Docker Datacenter
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1. How do you configure a repository in DTR to allow it to be signed by one or more UCP users?
+
+	A. Using the DTR Web UI: select 'Content Trust' for the repo and add the UCP users who can sign.
+
+	B. Using the Docker client: initialize the snapshot, rotate the root key, add delegation imports.
+
+	C. Using the Notary client: initialize the repo, make the snapshot key user-managed, add delegation targets.
+
+Answer: C. Using the Notary client: initialize the repo, make the snapshot key user-managed, add delegation targets.
+
+------------------------------------------------------------------------------------
+2. For a repo with content trust delegations configured, how do you sign an image?
+
+	A. Set DOCKER_CONTENT_TRUST=TRUE on the client, then docker sign and enter your UCP key passphrase.
+
+	B. Run docker push to upload the image, then upload your private key in the DTR Web UI to sign it.
+
+	C. Set DOCKER_CONTENT_TRUST=1 on the client, then docker push and enter your UCP key passphrase.
+
+Answer: C. Set DOCKER_CONTENT_TRUST=1 on the client, then docker push and enter your UCP key passphrase.
+
+------------------------------------------------------------------------------------
+3. What is the difference between a 'service' and an 'application' in UCP?
+
+	A. A service runs as a single task on each node in the cluster; an application can run as one or more tasks spread throughout the cluster.
+
+	B. A service has one or more tasks created from a single image; an application is a distributed solution with containers created from many images.
+
+	C. A service is a system-level component, like the UCP agent or the DTR Notary server; an application is a user-level component created through the Web UI.
+
+Answer: B. A service has one or more tasks created from a single image; an application is a distributed solution with containers created from many images.
+
+------------------------------------------------------------------------------------
+4. How are global services and replicated services different?
+
+	A. Global services are restricted so only UCP administrators can see and manage them, replicated services can be secured using role-based access control.
+
+	B. Global services are workloads which run on the UCP servers but are not containers, they are application processes which Docker doesn't manage.
+
+	C. Global services run a single task on each UCP node, replicated services run one or more tasks spread across all nodes.
+
+Answer: C. Global services run a single task on each UCP node, replicated services run one or more tasks spread across all nodes.
+
+------------------------------------------------------------------------------------
+5. How do you deploy an distributed application in UCP?
+
+	A. You can build an installer into a Docker image and upload it to DTR, then run a container from the image in UCP.
+
+	B. You can copy a Docker Compose file into the Web UI and UCP will deploy all the resources.
+
+	C. You can create networks and volumes manually, then start containers in the correct dependency order.
+
+Answer: B. You can copy a Docker Compose file into the Web UI and UCP will deploy all the resources.
+
+------------------------------------------------------------------------------------
+6. Can you install Docker Datacenter with the free, open-source Docker engine?
+
+	A. No, DDC requires the commercially supported engine, which is licensed with DDC.
+
+	B. Yes, but you need to add Docker's CA cert into your host's certificate store.
+
+	C. Yes, provided you are using version 1.12 of the open-source engine.
+
+Answer: A. No, DDC requires the commercially supported engine, which is licensed with DDC.
+
+------------------------------------------------------------------------------------
+7. How do you install UCP and DTR once you have the commercially-supported Docker engine installed?
+
+	A. The installers are images on the Docker Hub; to install just run containers from docker/ucp and docker/dtr.
+
+	B. Packaged installers are available for all major Linux distros; in debian just run apt-get install docker-ddc.
+
+	C. Download an installer from Docker's website, which is an image archive, then uncompress and run as a container.
+
+Answer: A. The installers are images on the Docker Hub; to install just run containers from docker/ucp and docker/dtr.
+
+------------------------------------------------------------------------------------
+8. What's the difference between Docker repositories and Docker registries?
+
+	A. A repository can only store images built for one OS, a registry can store images for many OSes
+
+	B. A repository stores many versions of an image, a registry stores many repositories
+
+	C. A registry is a store for images, a repository is a store for containers running on a host
+
+Answer: B. A repository stores many versions of an image, a registry stores many repositories
+
+------------------------------------------------------------------------------------
+9. What does Docker Datacenter provide that you don't get from the free open-source Docker ecosystem?
+
+	A. Scalable, secure, and supported platforms for managing images and container workloads
+
+	B. Licensing which lets you run Docker on Windows servers as well as Linux servers
+
+	C. A locked-down container environment, where you can only manage Docker if you have SSH access to the hosts
+
+Answer: A. Scalable, secure, and supported platforms for managing images and container workloads
+
+------------------------------------------------------------------------------------
+10. How does Docker Trusted Registry provide high availability and high scale?
+
+	A. Replica nodes can be added to provide HA, and a cloud storage service can be used for scalable storage.
+
+	B. You can host DTR behind a load balancer, so the LB provides high availability and scale.
+
+	C. DTR runs on DDC as a replicated service, so you can increase scale by adding replicas in UCP.
+
+Answer: A. Replica nodes can be added to provide HA, and a cloud storage service can be used for scalable storage.
+
+------------------------------------------------------------------------------------
+11. How do organizations and teams in DTR let you capture permissions for multi-user access to a repository?
+
+	A. Repos are created at team level, teams are members of organizations in UCP, users inherit organization permissions
+
+	B. Repos are created at organization level, access is granted to teams in the organization, users inherit team access
+
+	C. Repos are created at organization level, organizations are owned by a UCP team, users inherit team permissions
+
+Answer: B. Repos are created at organization level, access is granted to teams in the organization, users inherit team access
+
+------------------------------------------------------------------------------------
+12. How do you add new UCP controllers to the cluster, to make UCP highly available?
+
+	A. Run docker swarm join --as-manager with the swarm token, and the new node will join as a controller.
+
+	B. Run docker swarm join using the manager token, and the new node will be configured as a controller.
+
+	C. Run docker swarm join to join as a node, and then run the docker/ucp installer image to become a controller.
+
+Answer: B. Run docker swarm join using the manager token, and the new node will be configured as a controller.
+
+------------------------------------------------------------------------------------
+13. If you need to install an OS patch on one of the UCP nodes, how can you do it?
+
+	A. Put the node into drain mode which kills all containers and exits the swarm, apply the patch and rejoin.
+
+	B. Stop any services and applications which have tasks running on the node, then apply the patch and restart.
+
+	C. Put the node into drain mode to stop all container workloads, leave the swarm, apply the patch and rejoin.
+
+Answer: C. Put the node into drain mode to stop all container workloads, leave the swarm, apply the patch and rejoin.
+
+------------------------------------------------------------------------------------
+14. How do you push an image from your local Docker engine to a remote Docker Trusted Registry?
+
+	A. Set your default registry to be DTR using docker config and then just push as normal.
+
+	B. Tag your image with your DTR user name, then run docker push specifying the DTR URL.
+
+	C. Run docker save to archive the image, then log in to DTR using the Web UI and upload the archive.
+
+	D. Tag your image with the DTR domain name, run docker login to authenticate to DTR, and then docker push .
+
+Answer: D. Tag your image with the DTR domain name, run docker login to authenticate to DTR, and then docker push .
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	Docker Networking
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1. Which component of the Docker network stack implements specific network topologies such as `overlay networking` or `bridge networking`?
+
+	A. libcontainer
+
+	B. Libnetwork
+
+	C. The driver layer
+
+	D. The CNM
+
+Answer: C. The driver layer
+
+------------------------------------------------------------------------------------
+2. Which of the following commands would you use if you were logged onto a Docker host and needed to look at detailed information about a network called `prod-fe`?
+
+	A. docker network inspect prod-fe
+
+	B. docker network ls prod-fe
+
+	C. docker network show prod-fe
+
+	D. docker network ls prod-fe --verbose
+
+Answer: A. docker network inspect prod-fe
+
+------------------------------------------------------------------------------------
+3. Which fundamental networking technology does the native (local) `overlay` driver leverage when creating multi-host container networks?
+
+	A. VLAN
+
+	B. Token Ring
+
+	C. VXLAN
+
+	D. FCoE
+
+Answer: C. VXLAN
+
+------------------------------------------------------------------------------------
+4. You need to create a singe container network that spans multiple hosts and gives all containers on the network IP addresses from the same L2 subnet. 
+   Which built-in Docker networking driver would you use?
+
+	A. bridge
+
+	B. overlay
+
+	C. ipvlan
+
+	D. l2-overlay
+
+Answer: B. overlay
+
+------------------------------------------------------------------------------------
+5. Which of the following commands would you use to display all networks present on a particular Docker host?
+
+	A. docker networks get
+
+	B. docker network ls
+
+	C. docker network display
+
+	D. docker network show
+
+Answer: B. docker network ls
+
+------------------------------------------------------------------------------------
+6. In which of the following scenarios will the built-in Docker name resolution allow two containers to resolve each other by name?
+
+	A. Two containers created with the --name flag and both containers are on the same container network
+
+	B. Two containers created with the --name flag and both containers are part of the same Swarm Service
+
+	C. Two containers created with the --name flag and both containers are part of the same Swarm
+
+	D. Both containers are on the same Docker host
+
+Answer: A. Two containers created with the --name flag and both containers are on the same container network
+
+------------------------------------------------------------------------------------
+7. You manage a production Docker estate and want to make sure all of the nodes in a particular Swarm can handle and process requests for a particular service. You 
+   need this to work even if nodes in the Swarm are not running a task for the service. Which technology should you use to accomplish this?
+
+	A. IPVLAN
+
+	B. Service Discovery
+
+	C. The Routing Mesh
+
+	D. An traditional external load balancer
+
+Answer: C. The Routing Mesh
+
+------------------------------------------------------------------------------------
+8. Which of the following container networks is used by Swarm Mode for internal routing of traffic?
+
+	A. overlay
+
+	B. nat
+
+	C. ingress
+
+	D. bridge
+
+Answer: C. ingress
+
+------------------------------------------------------------------------------------
+9. Which core Docker component contains the bulk of networking code and is the de facto implementation of the CNM?
+
+	A. bridgenetwork
+
+	B. containerbridge
+
+	C. libnetwork
+
+	D. libcontainer
+
+Answer: C. libnetwork
+
+------------------------------------------------------------------------------------
+10. Which of the following describes a `sandbox` in the context of Docker networking?
+
+	A. A container within a container that contains a shared network stack
+
+	B. A ring-fenced area of the Host OS that contains an isolated network stack
+
+	C. An area of virtual memory used as scratch space by Libnetwork
+
+	D. A ring-fenced area of a container made available to all other containers on the same network
+
+Answer: B. A ring-fenced area of the Host OS that contains an isolated network stack
+
+------------------------------------------------------------------------------------
+11. In which programming language is Libnetwork written?
+
+	A. C
+
+	B. Pascal
+
+	C. Python
+
+	D. Golang
+
+Answer: D. Golang
+
+------------------------------------------------------------------------------------
+12. You have a container network called `m1-prd` that is scoped to "swarm." However, when you are logged onto a node in the Swarm, you cannot see the network. Why 
+    might this be the case?
+
+	A. The node you are logged onto is not running a task that is using the network, so the network has not been extended to the node yet.
+
+	B. Docker takes a lazy approach to creating networks on all nodes in the Swarm. You probably haven't waited the 30 minutes it takes to infect the entire Swarm 
+           with the network.
+
+	C. The m1-prd network is encrypted and therefore not visible in the output of regular docker network commands.
+
+	D. The docker network ls command does not display networks scoped to to "swarm."
+
+Answer: A. The node you are logged onto is not running a task that is using the network, so the network has not been extended to the node yet.
+
+------------------------------------------------------------------------------------
+13. What is the purpose of the MACVLAN driver?
+
+	A. To put containers on existing networks and VLANs
+
+	B. To create multi-host overlay networks
+
+	C. To enhance container networking for Docker Engines running on Docker for Mac (DFM)
+
+Answer: C. To enhance container networking for Docker Engines running on Docker for Mac (DFM)
+
+------------------------------------------------------------------------------------
+14. Which of the following open source specification documents forms the foundation of Docker networking?
+
+	A. The Docker Network Model (DNM)
+
+	B. The Container Network Interface (CNI)
+
+	C. The Container Network Model (CNM)
+
+	D. Virtual Extensible LAN (VXLAN)
+
+Answer: C. The Container Network Model (CNM)
+
+------------------------------------------------------------------------------------
+15. Which of the following are the three major constructs defined in the Container Network Model (CNM)?
+
+	A. Container, endpoint, network
+
+	B. Sandbox, endpoint, network
+
+	C. Service, endpoint, network
+
+	D. Sandbox, container, network
+
+Answer: B. Sandbox, endpoint, network
+
+------------------------------------------------------------------------------------
+16. Which native Docker feature simplifies and enhances creation and management of Docker networks?
+
+	A. The Docker Remote API
+
+	B. Content Trust
+
+	C. The volume driver interface
+
+	D. Swarm Mode
+
+Answer: D. Swarm Mode
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	Managing Docker Images
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1. Which of the following will display the specific command that created each layer in an image?
+
+	A. docker build -th imagename
+
+	B. docker history imagename
+
+	C. docker search imagename
+
+	D. docker images -t imagename
+
+Answer: B. docker history imagename
+
+------------------------------------------------------------------------------------
+2. What is accomplished by running the following command?
+   docker run -p 5000:5000 registry:latest
+
+	A. Docker Engine will run a "hot update" on the live Registry image.
+
+	B. The Docker Registry image will (if necessary) be pulled and then run, exposing port 5000.
+
+	C. Only if the Docker Registry image has already been pulled will it be run, exposing port 5000.
+
+	D. The Docker Registry image will be pulled from Docker Hub using port 5000.
+
+Answer: B. The Docker Registry image will (if necessary) be pulled and then run, exposing port 5000.
+
+------------------------------------------------------------------------------------
+3. You would prepare an image called hello-world for uploading to a local Docker Registry using which of the following commands?
+
+	A. docker tag hello-world localhost:5000/hello-world:latest
+
+	B. docker tag hello-world localhost/hello-world:latest
+
+	C. docker -tag 127.0.0.1/hello-world:latest
+
+	D. docker -t hello-world localhost:5000/hello-world:latest
+
+Answer: A. docker tag hello-world localhost:5000/hello-world:latest
+
+------------------------------------------------------------------------------------
+4. To add encryption using a self-signed certificate to your Docker Registry infrastructure, to which directory must the certificate be copied (assuming your domain is 
+   domain.com)?
+
+	A. /etc/docker/certs.d/domain.com:5000/
+
+	B. /etc/docker/cert.d/domain.com:5000/
+
+	C. /var/lib/docker/certs.d/domain.com:5000/
+
+	D. /etc/docker/certs.d/domain.com/
+
+Answer: A. /etc/docker/certs.d/domain.com:5000/
+
+------------------------------------------------------------------------------------
+5. Which of these is the correct command to display a list images currently stored in a Docker Registry using a self-signed certificate?
+
+	A. curl --insecure http://192.168.1.16:5000/v2/_catalog
+
+	B. curl -i https://192.168.1.16:5000/v2/_catalog
+
+	C. curl -i https://192.168.1.16:5000/v2/_data
+
+	D. curl --insecure https://192.168.1.16:5000/v2/_catalog
+
+Answer: D. curl --insecure https://192.168.1.16:5000/v2/_catalog
+
+------------------------------------------------------------------------------------
+6. How do you temporarily enable Docker Content Trust on your local machine to take advantage of digitally signed images?
+
+	A. export DOCKER_CONTENT_TRUST=1
+
+	B. export $DOCKER_CONTENT_TRUST=0
+
+	C. echo DOCKER_CONTENT_TRUST=1 >> /etc/profile
+
+	D. echo $DOCKER_CONTENT_TRUST=1
+
+Answer: A. export DOCKER_CONTENT_TRUST=1
+
+------------------------------------------------------------------------------------
+7. Which of the following will upload a new stack to your Docker Cloud account?
+
+	A. docker-cloud stack create docker-cloud.yml
+
+	B. docker-cloud stack create -f docker-cloud.yml
+
+	C. docker-cloud stack create -f dockerfile
+
+	D. docker stack create -f docker-cloud.yml
+
+Answer: B. docker-cloud stack create -f docker-cloud.yml
+
+------------------------------------------------------------------------------------
+8. Docker Engine is:
+
+	A. The locally installed runtime through which you administrate Docker containers
+
+	B. An online Docker administration interface
+
+	C. An online Docker image repository
+
+	D. A local Docker image repository
+
+Answer: A. The locally installed runtime through which you administrate Docker containers
+
+------------------------------------------------------------------------------------
+9. Docker Trusted Registry is:
+
+	A. A local, commercial image management tool
+
+	B. An open source tool for securing the infrastructure on which Docker Engine runs
+
+	C. A web-based, commercial, hosted image management tool
+
+	D. An open source tool for coordinating Docker container clusters
+
+Answer: C. A web-based, commercial, hosted image management tool
+
+------------------------------------------------------------------------------------
+10. A Docker container will run faster when its image is properly optimized. Which of the following will have the greatest positive impact on speed?
+
+	A. Build the image using as few layers as possible.
+
+	B. Always base your images on the latest operating system version available.
+
+	C. Always be consistent in the software package versions you choose for your image layers.
+
+	D. Build the image using a Dockerfile rather than from a running container.
+
+Answer: A. Build the image using as few layers as possible.
+
+------------------------------------------------------------------------------------
+11. Where are the image files stored on a Linux machine running a package-based Docker Registry?
+
+	A. /var/lib/docker/docker-registry
+
+	B. /var/lib/docker/volumes/<image-hash>/_data/docker/registry/v2/repositories/
+
+	C. /var/lib/docker/docker-registry/docker/registry/v2/repositories
+
+	D. /var/lib/docker/docker-registry/docker/registry/v2/_catalog
+
+Answer: C. /var/lib/docker/docker-registry/docker/registry/v2/repositories
+
+------------------------------------------------------------------------------------
+12.  Which of these commands will return a list of images currently stored in a Docker Registry?
+
+	A. docker images
+
+	B. curl 192.168.1.17:5000/v2/_catalog
+
+	C. curl 192.168.1.17:5000/v2/_data
+
+	D. docker registry ls
+
+Answer: B. curl 192.168.1.17:5000/v2/_catalog
+
+------------------------------------------------------------------------------------
+13. Which of the following commands will successfully build an image with the name "myimage"?
+
+	A. docker build -t myimage
+
+	B. docker build --tag-image myimage
+
+	C. docker build -n myimage .
+
+	D. docker build -t myimage .
+
+Answer: D. docker build -t myimage .
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	Getting Started with Docker Swarm Mode
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1. What does "retries" specify for a health check?
+
+	A. How many times a container is restarted before it's marked unhealthy
+
+	B. How many times an individual health check is simultaneously performed before assuming a failure
+
+	C. How many times a container is restarted before its task is shutdown and a new one is created
+
+	D. How many times a health check fails before a container is marked unhealthy
+
+Answer: D. How many times a health check fails before a container is marked unhealthy
+
+------------------------------------------------------------------------------------
+2. docker-compose is roughly equivalent to what swarm mode command: ______?
+
+	A. docker stack deploy
+
+	B. docker service create
+
+	C. docker run
+
+Answer: A. docker stack deploy 
+
+------------------------------------------------------------------------------------
+3. What purpose does the ingress network serve?
+
+	A. Routing traffic from published ports to running containers
+
+	B. Load balancing internal container to container traffic
+
+	C. Routing internal container to container traffic
+
+Answer: A. Routing traffic from published ports to running containers
+
+------------------------------------------------------------------------------------
+4. How are secrets made available to a container?
+
+	A. Environment Variables
+
+	B. Filesystem
+
+	C. Socket
+
+	D. HTTP API
+
+Answer: B. Filesystem
+
+------------------------------------------------------------------------------------
+5. Pinning is the process of ______?
+
+	A. Resolving an image tag to a digest
+
+	B. Assigning a image repository to a digest
+
+	C. Assigning a task to a node
+
+	D. Assigning a container to a task
+
+	E. Resolving a image digest to a tag
+
+Answer: A. Resolving an image tag to a digest
+
+------------------------------------------------------------------------------------
+6. Which published port mode would you use to map the port on a given node to a specific container running on that node?
+
+	A. Host
+
+	B. LoadBalanced
+
+	C. Ingress
+
+	D. None
+
+	E. Bridge
+
+Answer: A. Host
+
+------------------------------------------------------------------------------------
+7. Services are a template for:
+
+	A. Containers
+
+	B. Tasks
+
+	C. Images
+
+	D. Swarms
+
+Answer: B. Tasks
+
+------------------------------------------------------------------------------------
+8. If you only have a global service, what will happen when you add a new node to the cluster?
+
+	A. The pending task for the service will be assigned to the new node and a container will be started.
+
+	B. A new task will be allocated to the new node for the global service.
+
+	C. The existing containers for the service will be rebalanced so that a fair share are placed onto the new node.
+
+	D. Nothing will run on the new node unless you change the service.
+
+Answer: B. A new task will be allocated to the new node for the global service.
+
+------------------------------------------------------------------------------------
+9. Let's say you have a service with four replicas, and four tasks currently running with IDs: A, B, C, and D. Let's say you stop the container associated with task D. 
+   What happens?
+
+	A. The service is terminated.
+
+	B. A new task E and a new container are created. Task D and its container are removed.
+
+	C. The container is restarted.
+
+	D. The container is removed, and a new one is created and associated with Task D.
+
+Answer: B. A new task E and a new container are created. Task D and its container are removed.
+
+------------------------------------------------------------------------------------
+10. What happens if you try to view cluster state from a worker only node?
+
+	A. List of cluster state for all nodes
+
+	B. List of state for that worker node only
+
+	C. An error
+
+Answer: C. An error
+
+------------------------------------------------------------------------------------
+11. How can you see a log of health checks?
+
+	A. docker service ps MYSERVICE
+
+	B. docker ps
+
+	C. docker inspect CID
+
+	D. docker service inspect MYSERVICE
+	
+	E. docker stack ps MYSTACK
+
+Answer: C. docker inspect CID
+
+------------------------------------------------------------------------------------
+12. If you want to convert a worker node into a manager node, what do you use?
+
+	A. docker node demote
+
+	B. docker swarm worker
+
+	C. docker swarm manager
+
+	D. docker node promote
+
+	E. docker node rm
+
+Answer: D. docker node promote
+
+------------------------------------------------------------------------------------
+13. A stack manages multiple:
+
+	A. Replicas
+
+	B. Nodes
+
+	C. Containers
+
+	D. Tasks
+
+	E. Services
+
+Answer: E. Services
+
+------------------------------------------------------------------------------------
+14. If you run docker network ls and do not see a network that you're looking for, what is the most likely culprit?
+
+	A. That node is not a worker node.
+
+	B. That node is not a manager node.
+
+	C. You're not authorized to see the network.
+
+	D. That node doesn't have a container running that uses that network.
+
+Answer: D. That node doesn't have a container running that uses that network.
+
+------------------------------------------------------------------------------------
+15. What does --update-parallelism control?
+
+	A. The time between updating tasks
+
+	B. The number of tasks updated at the same time
+
+	C. What to do when an update fails
+
+	D. Whether or not to update all tasks at once, or one at a time
+
+Answer: B. The number of tasks updated at the same time
+
+------------------------------------------------------------------------------------
+16. Which published port mode would you use to load balance requests across all containers for a service?
+
+	A. Host
+
+	B. None
+
+	C. Ingress
+
+	D. Bridge
+
+	E. LoadBalanced
+
+Answer: C. Ingress
+
+------------------------------------------------------------------------------------
+17. If you only have a replicated service, what will happen when you add a new node to the cluster?
+
+	A. The pending task for the service will be assigned to the new node and a container will be started.
+
+	B. The existing containers for the service will be rebalanced so that a fair share are placed onto the new node.
+
+	C. Nothing will run on the new node unless you change the service.
+
+	D. A new task will be allocated to the new node for the global service.
+
+Answer: C. Nothing will run on the new node unless you change the service.
+
+------------------------------------------------------------------------------------
+18. If you want multiple containers for an application, what command is easiest to use to go from a service with one task replicas to two?
+
+	A. docker clone ...
+
+	B. docker service rm; docker service create --replicas 2 ...
+
+	C. docker service scale ...
+
+	D. docker service update --replicas 2 ...
+
+	E. docker run ...
+
+Answer: C. docker service scale ...
+
+------------------------------------------------------------------------------------
+19. On a swarm, if a container dies that's part of a service, and a new container is created, what concept explains this?
+
+	A. High Availability
+
+	B. Desired State Reconciliation
+
+	C. Scheduling
+
+	D. Service Scaling
+
+Answer: B. Desired State Reconciliation
+
+------------------------------------------------------------------------------------
+20. What does the "*" mean in the output of docker node ls?
+
+	A. The nearest manager
+
+	B. The leader
+
+	C. A worker node
+
+	D. The node you're connected to
+
+Answer: D. The node you're connected to
+
+------------------------------------------------------------------------------------
+21. Joining a node as a manager by default that node will perform ____ role(s).
+
+	A. Manager only
+
+	B. Leader only
+
+	C. Manager and Worker
+
+	D. Replica only
+
+	E. Slave and Replica
+
+Answer: C. Manager and Worker
+
+------------------------------------------------------------------------------------
+22. Which of the following would you use to decrease the time between health checks?
+
+	A. retries
+
+	B. CMD
+
+	C. timeout
+
+	D. interval
+
+Answer: D. interval
+
+------------------------------------------------------------------------------------
+23. Assuming you have a stack called APIS, what is the equivalent of docker service ls for stacks?
+
+	A. docker stack deploy
+
+	B. docker stack services APIS
+
+	C. docker stack ps APIS
+
+	D. docker stack ls
+
+Answer: B. docker stack services APIS
+
+------------------------------------------------------------------------------------
+24. What happens to containers on a node that you drain?
+
+	A. They're shut down until you make the node active again.
+
+	B. They keep running, just no new work is allowed to be put onto the node.
+
+	C. They're snapshotted and migrated to other nodes.
+
+	D. They're terminated and migrated as new containers on other nodes.
+
+Answer: D. They're terminated and migrated as new containers on other nodes.
+
+------------------------------------------------------------------------------------
+25. Assuming you have a service named web, what will the dns query tasks.web return?
+
+	A. The Swarm Load Balancer
+
+	B. Individual container IPs for the web service
+
+	C. The web service's Virtual IP
+
+Answer: B. Individual container IPs for the web service
+
+------------------------------------------------------------------------------------
+26. What does --update-delay control?
+
+	A. What to do when an update fails
+
+	B. The number of tasks updated at the same time
+
+	C. The time between updating tasks
+
+	D. Whether or not to update all tasks at once, or one at a time
+
+Answer: C. The time between updating tasks
+
+------------------------------------------------------------------------------------
+27. What command do you use to create containers on a swarm?
+
+	A. docker service create
+
+	B. docker swarm run
+
+	C. docker run
+
+	D. docker-compose up
+
+Answer: A. docker service create
+
+------------------------------------------------------------------------------------
+28. Which of the following has a one-to-one relationship with a container?
+
+	A. Task
+
+	B. Service
+
+	C. Image
+
+	D. Swarm
+
+Answer: A. Task
+
+------------------------------------------------------------------------------------
+29. What can you put in front of a swarm so that end users don't have to pick a node, nor deal with node failures, to access a service with a published port?
+
+	A. Round Robin DNS to all nodes
+
+	B. Load Balancer to all nodes
+
+	C. Single DNS entry to one node
+
+Answer: B. Load Balancer to all nodes
+
+------------------------------------------------------------------------------------
+30. When no nodes in the cluster fulfill the constraints of a service, what is the status of the service?
+
+	A. Failed
+
+	B. Running
+
+	C. Pending
+
+	D. Started
+
+Answer: C. Pending
+
+------------------------------------------------------------------------------------
+31. What does "starting" mean in terms of health checks?
+
+	A. The health check has not yet run for a new container.
+
+	B. This shows each time the health check runs to indicate that it is starting. 
+
+	C. The health checking service is starting up and is not ready to run health checks.
+
+Answer: A. The health check has not yet run for a new container.
+
+------------------------------------------------------------------------------------
+32. What happens when Docker Swarm Mode detects an unhealthy container?
+
+	A. Restarts the container
+
+	B. Shuts the corresponding task down and starts a new one
+
+	C. Nothing, health checks are not integrated into Swarm Mode.
+
+	D. Sends an email to the system operator
+
+Answer: B. Shuts the corresponding task down and starts a new one
+
+------------------------------------------------------------------------------------
+33. Which of the following would you use to avoid recreating a task on a recoverable application failure?
+
+	A. retries
+
+	B. timeout
+
+	C. interval
+
+	D. CMD
+
+Answer: A. retries
+
+------------------------------------------------------------------------------------
+34. If you want to perform maintenance on a node, to what availability should you change it?
+
+	A. Ready
+
+	B. Down
+
+	C. Drain
+
+	D. Pause
+
+	E. Active
+
+Answer: C. Drain
+
+------------------------------------------------------------------------------------
+35. Assuming you have a stack called APIS, what is the equivalent of docker service ps for stacks?
+
+	A. docker stack deploy
+
+	B. docker stack ls
+
+	C. docker stack ps APIS
+
+	D. docker stack services APIS
+
+Answer: C. docker stack ps APIS
+
+------------------------------------------------------------------------------------
+36. When a service is updated that requires a change in the running container, what happens to the corresponding task?
+
+	A. The existing task is kept and its metadata is updated.
+
+	B. A new task is also created.
+
+	C. The existing task is kept.
+
+Answer: B. A new task is also created.
+
+------------------------------------------------------------------------------------
+37. What happens when a new node is attached to the cluster that matches the constraints of a pending replicated service?
+
+	A. The pending task for the service will be assigned to the new node and a container will be started.
+
+	B. The existing containers for the service will be rebalanced so that a fair share are placed onto the new node.
+
+	C. A new task will be allocated to the new node for the global service.
+
+	D. Nothing will run on the new node unless you change the service.
+
+Answer: A. The pending task for the service will be assigned to the new node and a container will be started.
+
+------------------------------------------------------------------------------------
+38. If you don't want a service to run, but you don't want to remove it, what's the safest thing to do?
+
+	A. Add constraints that aren't fulfilled.
+
+	B. Scale it to zero.
+
+	C. Manually mark it pending.
+
+Answer: B. Scale it to zero.
+
+------------------------------------------------------------------------------------
+39. In the "Manager Status" column in the output of docker node ls, what shows for worker nodes?
+
+	A. Worker
+
+	B. Nothing
+
+	C. Leader
+
+	D. Reachable
+
+Answer: B. Nothing
+
+------------------------------------------------------------------------------------
+40. Which service mode puts a task and a container on each node in the cluster?
+
+	A. Global
+
+	B. Per Node
+
+	C. Replicated
+
+Answer: A. Global
+
+------------------------------------------------------------------------------------
+41. Which of the following would you use to stop a health check that's running for a long time?
+
+	A. timeout
+
+	B. interval
+
+	C. CMD
+
+	D. retries
+
+Answer: A. timeout 
+
+------------------------------------------------------------------------------------
+42. Which node role maintains the state of the cluster?
+
+	A. Manager
+
+	B. Replica
+
+	C. Slave
+
+	D. Worker
+
+Answer: A. Manager
+
+------------------------------------------------------------------------------------
+43. Which service mode allows you to arbitrarily scale your service?
+
+	A. Replicated 
+
+	B. Global
+
+	C. Per Node
+
+Answer: A. Replicated 
+
+------------------------------------------------------------------------------------
+44. If you want to convert a manager node into a worker node, what do you use?
+
+	A. docker node promote
+
+	B. docker node demote
+
+	C. docker swarm manager
+
+	D. docker swarm worker
+
+	E. docker node rm
+
+Answer: B. docker node demote
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	Containers and Images: The Big Picture
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1. How are Docker and rkt container images structured on disk?
+    
+	A. Each container has access to the host filesystem for common files and then a special directory for apps unique to the container.
+
+	B. Images are typically split into readonly layers that can be shared between containers.
+
+	C. Each container has its own extracted, isolated copy of the filesystem from an image.
+
+	D. Images are extracted into a readonly directory that can be shared between containers.
+
+Answer: B. Images are typically split into readonly layers that can be shared between containers.
+
+------------------------------------------------------------------------------------
+2. What is the net effect of a separate mount namespace? Each process can have an entirely separate ________ .
+
+	A. ipc
+
+	B. network stack
+
+	C. filesystem
+
+	D. hostname
+
+Answer: C. filesystem
+
+------------------------------------------------------------------------------------
+3. Virtual Memory is similar to which of the following?
+
+	A. Capabilities
+
+	B. AppArmor
+
+	C. SELinux
+
+	D. Namespaces
+
+	E. Control Groups
+
+Answer: D. Namespaces
+
+------------------------------------------------------------------------------------
+4. Why is networking a concern with containers?
+
+	A. Because container networking is a new frontier and is different than how you network VMs and physical machines
+
+	B. Because you have to use port forwarding to share the host's physical network adapter
+
+	C. Because you don't want applications to have port conflicts
+
+	D. Because each container usually has its own network namespace that needs configuring
+
+	E. All of these
+
+Answer: D. Because each container usually has its own network namespace that needs configuring
+
+------------------------------------------------------------------------------------
+5. What can you use to create persistent storage in a container?
+
+	A. Volume
+
+	B. Share the container host's (root) mount namespace
+
+	C. Root file system
+
+	D. Image layers
+
+Answer: A. Volume
+
+------------------------------------------------------------------------------------
+6. What is one reason for a top Container Layer added to the underlying image layers when creating the filesystem for a container?
+
+	A. Easily provide a filesystem for containers from a pre-built image extracted into the top container layer
+
+	B. Easily create a new image by snapshotting the top container layer
+
+	C. Easily configure the networking stack for a container via the top container layer
+
+Answer: B. Easily create a new image by snapshotting the top container layer
+
+------------------------------------------------------------------------------------
+7. What is a host or container host?
+
+	A. A process running in the root namespaces on a system
+
+	B. A process running in a namespace labeled "host"
+
+	C. A process running outside of all namespaces
+
+Answer: A. A process running in the root namespaces on a system
+
+------------------------------------------------------------------------------------
+8. Why do you use mount namespaces?
+
+	A. To isolate networking and avoid issues with port conflicts
+
+	B. To isolate hostnames to make it appear as if a process is running on a separate machine
+
+	C. To isolate the list of processes with which a process can interact
+
+	D. To isolate the filesystem and only provide files that a single application needs
+
+Answer: D. To isolate the filesystem and only provide files that a single application needs
+
+------------------------------------------------------------------------------------
+9. What cluster component helps you find the IP address of another application?
+
+	A. Service Discovery
+
+	B. Provisioner
+
+	C. Scheduler
+
+	D. Persistent Storage
+
+Answer: A. Service Discovery
+
+------------------------------------------------------------------------------------
+10. What can you use to run multiple containers from a single YAML file?
+
+	A. Dockerfile
+
+	B. docker run
+
+	C. docker-compose
+
+	D. docker run containers.yml
+
+Answer: C. docker-compose
+
+------------------------------------------------------------------------------------
+11. Which of the following is not a benefit of Virtual Memory?
+
+	A. Use more memory than is physically available
+
+	B. Processes can use memory as if they are the only process running
+
+	C. Compress data stored in memory to increase capacity
+
+	D. Don't have to save entire contents of memory when switching processes
+
+Answer: C. Compress data stored in memory to increase capacity
+
+------------------------------------------------------------------------------------
+12. Which of the following is not a benefit of a union filesystem for containers?
+
+	A. Decrease startup time for containers with images pre-extracted into an image cache
+
+	B. Save disk space by sharing common files with the host OS filesystem via symbolic links
+
+	C. Share page cache entries to reduce memory overhead
+
+	D. Save disk space with readonly layers reused among containers
+
+Answer: B. Save disk space by sharing common files with the host OS filesystem via symbolic links
+
+------------------------------------------------------------------------------------
+13. What does it mean for two containers to share a network namespace?
+
+	A. They share the host's (or root) network namespace.
+
+	B. They have isolated virtual network adapters.
+
+	C. They share a virtual network but still have isolated virtual network adapters.
+
+	D. They share a single network stack.
+
+Answer: D. They share a single network stack.
+
+------------------------------------------------------------------------------------
+14. Which networking approach would you use if you don't trust an application?
+
+	A. Share network with other containers
+
+	B. None 
+
+	C. Share with host
+
+	D. Virtual network
+
+Answer: B. None 
+
+------------------------------------------------------------------------------------
+15. When you create a process with separate namespaces (network, mount, IPC, UTS, PID, and user), what is the net effect?
+
+	A. It appears as if the process is running on a different machine.
+
+	B. Processses get their own isolated instances of system resources.
+
+	C. Processes can share system resources.
+
+Answer: A. It appears as if the process is running on a different machine.
+
+------------------------------------------------------------------------------------
+16. Why do you use tools like Docker, LXC and rkt?
+
+	A. To kill processes that consume too much of a system resource
+
+	B. To configure the additional isolation necessary to create a container
+
+	C. To create VMs to isolate processes
+
+	D. To emulate virtual resources per process
+
+Answer: B. To configure the additional isolation necessary to create a container
+
+------------------------------------------------------------------------------------
+17. When a mount namespace is created, what does it contain?
+
+	A. An empty list of mount points
+
+	B. The list of mount points passed when creating the new mount namespace
+
+	C. A default set of mount points from /etc/mountns.defaults
+
+	D. Essentially a copy of the existing filesystem
+
+Answer: D. Essentially a copy of the existing filesystem
+
+------------------------------------------------------------------------------------
+18. What does Layered Responsibility mean?
+
+	A. You can rely upon others for base layers in container images.
+
+	B. You can't see the layers beneath yours in container images.
+
+	C. You don't ever have to see the layers beneath yours in container images.
+
+	D. You need to validate that all layers are built properly when using an image.
+
+Answer: A. You can rely upon others for base layers in container images.  
+
+------------------------------------------------------------------------------------
+19. What is a context switch?
+
+	A. When the executing process is changed
+
+	B. When the executing cgroup is changed
+
+	C. When the contents of virtual memory is loaded into physical memory
+
+	D. When the contents of physical memory is swapped to disk
+
+Answer: A. When the executing process is changed 
+
+------------------------------------------------------------------------------------
+20. What is a substantial reason for moving from a single node to a multi-node cluster?
+
+	A. It's a best practice to use multi-node clusters in production.
+
+	B. It's a best practice to run individual containers on individual nodes.
+
+	C. When containers saturate the resources of a single node
+
+	D. When containers conflict with each other, i.e. port conflicts or file system conflicts
+
+Answer: C. When containers saturate the resources of a single node 
+
+------------------------------------------------------------------------------------
+21. Where is there a natural separation in responsibility when building a cluster?
+
+	A. Running apps & running VMs
+
+	B. Node operating system & cluster services
+
+	C. Machine hardware & operating system
+
+	D. Provisioning nodes & running apps
+
+Answer: D. Provisioning nodes & running apps 
+
+------------------------------------------------------------------------------------
+22. What is the net effect of a separate network namespace? Each process can have an entirely separate ________ .
+
+	A. hostname
+
+	B. IP address
+
+	C. filesystem
+
+	D. list of processes
+
+Answer: B. IP address
+
+------------------------------------------------------------------------------------
+23. What runtime or execution environments can be used with a cluster?
+
+	A. Containers
+
+	B. chroot Processes
+
+	C. All of these
+
+	D. Virtual Machines
+
+Answer: C. All of these 
+
+------------------------------------------------------------------------------------
+24. What does an Image from a site like Docker Hub provide?
+
+	A. A container's hostname
+
+	B. The host filesystem to run a container 
+
+	C. A container's network configuration
+
+	D. The entire host filesystem
+
+	E. A container's filesystem
+
+Answer: E. A container's filesystem 
+
+------------------------------------------------------------------------------------
+25. What is the net effect of a separate IPC namespace? Each process can have an entirely separate ________ .
+
+	A. message queue
+
+	B. IP address
+
+	C. filesystem
+	
+	D. list of processes
+
+	E. hostname
+
+Answer: A. message queue 
+
+------------------------------------------------------------------------------------
+26. What does a system container run?
+
+	A. Runs an OS init process, effectively emulating a VM
+
+	B. Runs a single application
+
+	C. Runs the container runtime
+
+	D. Runs the host OS init process
+
+Answer: A. Runs an OS init process, effectively emulating a VM
+
+------------------------------------------------------------------------------------
+27. Why are images so valuable?
+
+	A. Manually configuring a hostname for a container is hard work.
+
+	B. Manually building a filesystem for a container is hard work.
+
+	C. Manually configuring service discovery for a container is hard work.
+
+	D. Manually configuring networking for a container is hard work.
+
+Answer: B. Manually building a filesystem for a container is hard work.
+
+------------------------------------------------------------------------------------
+28. What do capabilities isolate?
+
+	A. Privileged operations
+
+	B. Unprivileged processes
+
+	C. Privileged processes
+
+	D. Unprivileged operations
+
+Answer: A. Privileged operations
+
+------------------------------------------------------------------------------------
+29. Which of the following is NOT an analogy for namespaces?
+
+	A. A slice of a pizza per process
+
+	B. A whole pizza per process
+
+	C. Database
+
+	D. List
+
+Answer: A. A slice of a pizza per process
+
+------------------------------------------------------------------------------------
+30. What type of software deals with running (placement) applications on a given node in the cluster?
+
+	A. Placer
+
+	B. VM runtime
+
+	C. Container runtime
+
+	D. Provisioner
+
+	E. Scheduler
+
+Answer: E. Scheduler
+
+------------------------------------------------------------------------------------
+31. What is the net effect of a separate PID namespace? Each process can have an entirely separate ________ .
+
+	A. filesystem
+
+	B. network stack
+
+	C. hostname
+
+	D. list of processes 
+
+Answer: D. list of processes 
+
+------------------------------------------------------------------------------------
+32. How would you avoid port conflicts? Use separate _____ namespaces per process.
+
+	A. mount
+
+	B. PID
+
+	C. network
+
+	D. IPC
+
+	E. UTS
+
+Answer: C. network
+
+------------------------------------------------------------------------------------
+33. How would you avoid shared library conflicts between processes? Use separate _____ namespaces per process.
+
+	A. UTS
+
+	B. mount
+
+	C. network
+
+	D. PID
+
+	E. IPC
+
+Answer: B. mount 
+
+------------------------------------------------------------------------------------
+34. What is the net effect of a separate UTS namespace? Each process can have an entirely separate ________ .
+
+	A. list of processes
+
+	B. filesystem
+
+	C. hostname
+
+	D. IPC
+
+	E. IP address
+
+Answer: C. hostname
+
+------------------------------------------------------------------------------------
+35. What's the benefit of a user namespace?
+
+	A. Provide each process with its own networking stack and IP addresses
+
+	B. Allow privileged operations on resources in the namespaces associated with a process but not system-wide
+
+	C. Allow privileged operations on all system resources
+
+	D. Create users specific to only a given user namespace
+
+	E. Provide each process with its own filesystem
+
+Answer: B. Allow privileged operations on resources in the namespaces associated with a process but not system-wide
+ 
+------------------------------------------------------------------------------------
+36. What does an app container run?
+
+	A. A single application
+
+	B. Runs the container runtime
+
+	C. Runs the host OS init process
+
+	D. Runs an OS init process to emulate a VM
+
+Answer: A. A single application
+
+------------------------------------------------------------------------------------
+37. What aspect of a scheduler handles app failure?
+
+	A. Load Balancing
+
+	B. Service Discovery
+
+	C. Enforce Desired State
+	
+	D. Scaler
+
+Answer: C. Enforce Desired State
+
+------------------------------------------------------------------------------------
+38. What is a root namespace, i.e. a root network namespace?
+
+	A. A namespace for processes run by root, i.e. a network namespace for processes run by root
+
+	B. A type of namespace with access to all system resources, i.e. to all network devices in all network namespaces
+
+	C. A default namespace, i.e. the default network namespace
+
+	D. A namespace for root processes, i.e. a network namespace for root processes
+
+Answer: C. A default namespace, i.e. the default network namespace
+
+------------------------------------------------------------------------------------
+39. What can you use to find vulnerabilities in images?
+
+	A. Isolate container networking to avoid malicious processes from talking to other processes
+
+	B. Run anti-virus services inside containers
+
+	C. Image registries with security scanning
+
+	D. Image signing and verification
+
+Answer: C. Image registries with security scanning 
+
+------------------------------------------------------------------------------------
+40. What do cgroups isolate?
+
+	A. Which CPUs a process can use
+
+	B. None of these
+
+	C. Specific device access
+
+	D. All of these
+	
+	E. The amount of a resource a process can use
+
+Answer: D. All of these
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------

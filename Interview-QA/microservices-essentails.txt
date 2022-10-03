@@ -1,0 +1,204 @@
+
+		 Microservices Architecture Essential
+
+***********************************************************************************************************************************************************************
+        	Microservices Architecture
+	
+***********************************************************************************************************************************************************************
+1. What unique feature does virtualization provide as a hosting option?
+
+	A. Quick setup times
+
+	B. Containers
+
+	C. Nested virtualization
+
+	D. Snapshots
+
+	E. Quick load times
+
+Answer: D. Snapshots
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2. API Gateway can be used for...
+
+	A. Load balancing
+
+	B. Hosting
+
+	C. Deployment
+
+	D. Shared databases
+
+	E. Continous integration
+
+Answer: A. Load balancing
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+3. Which of these can be converted to microservices?
+
+	A. Events
+
+	B. Classes
+
+	C. Methods
+
+	D. Bounded contexts
+
+	E. Delegates
+
+Answer: D. Bounded contexts
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+4. What type should the initial high-level design be for a greenfield microservices system?
+
+	A. Minature
+
+	B. Monolithic
+
+	C. Micro
+
+	D. Observable
+
+	E. Autonomous
+
+Answer: B. Monolithic
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+5. Traditional software architecture with a large code base is known as a...?
+
+	A. Command line level system
+
+	B. Continous integration system
+
+	C. Microservices type system
+
+	D. Monolithic type system
+
+Answer: D. Monolithic type system
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+6. What microservice design principle dictates that a service should have a single focus?
+
+	A. Observable
+
+	B. Resilience
+ 
+	C. High cohesion
+
+	D. Automation
+
+Answer: C. High cohesion
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+7. What microservice design principle dictates that a service should have centralized logging?
+
+	A. Automation
+
+	B. Observable
+ 
+	C. Resilience
+
+	D. High Cohesion
+
+Answer: B. Observable
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+8. To ensure microservices are loosely coupled, we should avoid the use of...
+
+	A. Web-API
+
+	B. Client libraries
+ 
+	C. Asynchronous communication
+
+	D. Continous integration
+
+Answer: B. Client libraries
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+9. To make microservices architecture more resilient, you should design the service to cater to...
+ 
+	A. Config files
+
+	B. Shared databases
+ 
+	C. Synchronous communication
+
+	D. Known failures and connection timeouts
+
+	E. Software viruses
+
+Answer: D. Known failures and connection timeouts
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+10. To make distributed transactions easier to trace, microservices should log what extra piece of information?
+
+	A. Entity ID
+
+	B. Senders address
+ 
+	C. Recipients address
+
+	D. Foreign key ID
+
+	E. Correlation ID
+
+Answer: E. Correlation ID
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+11. What microservice design principle dictates that tools should be used for quick deployment?
+
+	A. Observable
+
+	B. Autonomous
+ 
+	C. Automation
+
+	D. Resilience
+
+Answer: C. Automation
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+12. Asynchronous communication can be implemented using a...
+
+	A. Message queueing protocol
+
+	B. RPC protocol
+ 
+	C. Synchronous communication protocol
+
+	D. Testing protocol
+
+	E. Integration protocol
+
+Answer: A. Message queueing protocol
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+13. What has to be identified at code level in order to ready your codebase for a microservices architecture?
+
+	A. Seams
+
+	B. Defects
+ 
+	C. Bottlenecks
+
+	D. Deadlocks
+
+	E. Projects
+
+Answer: A. Seams
+
+***********************************************************************************************************************************************************************

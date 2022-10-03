@@ -1,0 +1,408 @@
+1. Which objects in Git have a SHA1 hash?
+a. Only Blobs and Trees
+b. Each object in the database
+c. Each object in the database, and the same object can have multiple SHA1 hashes
+d. Only Commits
+
+Ans : Each object in the database
+
+2. Can an object in Git be safely modified?
+
+a. No: if you changed even one bit, then you'd get a different object with its own SHA1.
+b. Yes: you can edit the content of the file that stores the object.
+c. Yes: you can ask Git to generate a new SHA1 for the object.
+d. No: you might get the same SHA1 as another object
+
+Ans : No: if you changed even one bit, then you'd get a different object with its own SHA1.
+
+3. Where does Git store the names of files and directories?
+
+a. In the object database, inside the trees that point to the objects
+b. In the object database, inside the blobs and trees that store files and directories
+c. Nowhere
+d. In the “.git/links” subdirectory
+
+Ans : In the object database, inside the trees that point to the objects
+
+4. What happens when you commit?
+
+a. Both HEAD and the current branch change.
+b. Neither HEAD nor the current branch change.
+c. HEAD changes, the current branch doesn't.
+d. The current branch changes, HEAD doesn't.
+
+Ans : The current branch changes, HEAD doesn't.
+
+5. Which objects are created when you merge?
+
+a. Merges don't create new objects.
+b. Exactly one commit and nothing else
+c. Zero or one commit and nothing else
+d. Zero or one commit, and possibly new trees and blobs
+
+Ans : Zero or one commit, and possibly new trees and blobs
+
+6. Where can HEAD point?
+
+a. To a branch
+b. To a branch or nowhere
+c. To a branch or a commit
+d. To a branch, a commit, a tree, or a blob
+
+Ans : To a branch or a commit
+
+7. How does "git rebase" move an existing commit?
+
+a. It copies over the commit to a new commit with a different parent and SHA1.
+b. None of these
+c. It just changes the parent in the commit file.
+d. It changes the commit's parent and its SHA1.
+
+Ans : It copies over the commit to a new commit with a different parent and SHA1.
+
+8. What's one difference between merges and rebases?
+
+a. Rebases change history, merges don't.
+b. None of these
+c. Rebases create commits with multiple parents, merges don't.
+d. Merges create a new commit object, rebases don't
+
+Ans : Rebases change history, merges don't.
+
+9. What's a "pull"?
+
+a. A "merge" followed by a "push"
+b. A "push" followed by a "merge"
+c. A "fetch" followed by a "push"
+d. A "fetch" followed by a "merge"
+
+ Ans : A "fetch" followed by a "merge"
+
+10. Which of these is not a Git command?
+
+a. git fetch
+b. git fork
+c. git push
+d. git clone
+
+Ans : git fork
+
+11. The setting, core.autocrlf, configures:
+
+a. automatic addition of line breaks to commit messages.
+b. autocorrection of spelling errors in commit messages.
+c. conversion of line endings between the repository and working copy.
+d. stripping extra line breaks from the end of files.
+
+Ans : conversion of line endings between the repository and working copy.
+
+12. Which command creates a local git repository?
+a. git localrepo
+b. git init
+c. git repo
+d. git initrepo
+
+Ans : git init
+
+13. Performing a git pull is equivalent to a git fetch followed by:
+a. git merge
+b. git rebase
+c. git cherry-pick
+d. git reset --hard
+
+Ans : git merge
+
+14. Cherry-picking a commit will:
+a. apply only that commit to the current branch.
+b. remove the commit from its source branch and apply it to the current branch.
+c. apply that commit and all subsequent commit to the current branch.
+d. apply that commit and all previous commits to the current branch.
+
+Ans : apply only that commit to the current branch.
+
+15. The advantage of a DVCs is:
+a. full local history
+b. easy backups
+c. all of these
+d. reliable branching/merging
+e. different topologies
+
+Ans : all of these
+
+16. To remove and discard the changes from the last commit on your current branch, you should use:
+a. git reset --soft HEAD
+b. git revert HEAD
+c. git revert HEAD~1
+d. git reset --hard HEAD
+e. git reset --hard HEAD~1
+
+Ans : git reset --hard HEAD~1
+
+17. Which URL style should you use if you want to avoid using passwords?
+
+a. http://github.com/username/repository.git
+b. git@github.com:username/repository.git
+c. git://github.com/username/repository.git
+d. https://github.com/username/repository.git
+
+Ans : git@github.com:username/repository.git
+
+18. Given an unmerged feature branch, feature1, what is the effect of running "git branch -d feature1"?
+a. Deletion of feature1 will fail silently
+b. feature1 will not be deleted and an error message will be displayed
+c. Git will display the prompt "Unmerged changes. Confirm delete? (y/N)"
+d. feature1 will be deleted
+
+Ans : feature1 will not be deleted and an error message will be displayed
+
+19. User-level configuration in Git can be modified using:
+a. git config --system
+b. git config
+c. git config --user
+d. git config --global
+
+Ans : git config --global
+
+20. Which file lists the files and directories that should not be committed to the repository?
+a. .git/config
+b. .gitnocommit
+c. .gitattributes
+d. .gitignore
+
+Ans : .gitignore
+
+21. What feature in Git allows you to become more efficient at the command line?
+a. Speech recognition
+b. Keyboard shortcuts
+c. Snippets
+d. Aliases
+
+Ans : Aliases
+
+22. When is a commit A said to be reachable from another commit B?
+a. When B is an ancestor of A
+b. When A is the direct parent of B
+c. When A and B are patch equivalent
+d. When A is an ancestor of B
+
+Ans : When A is an ancestor of B
+
+23. How can Git calculate patches on the fly?
+a. It's really good at math.
+b. It uses the patience algorithm.
+c. It stores the entire files in the working directory for each commit.
+d. It stores deltas between files in the working directory.
+
+Ans : c. It stores the entire files in the working directory for each commit.
+
+24. What is the difference between the -S and -G options of git log?
+a. -S searches for matching lines that are removed, while -G searches for lines that are added.
+b. -S searches for matching lines that are either added, removed, or modified, while -G only includes lines that are modified.
+c. -S searches for matching lines that are either added or removed, while -G also includes lines that are modified.
+d. -S searches for matching lines that are either added or removed, while -G also includes lines that are modified.
+
+Ans : c. -S searches for matching lines that are either added or removed, while -G also includes lines that are modified.
+
+25. In which scenario is git rerere useful?
+a. When dealing with complex merge conflicts
+b. When merging more than two branches
+c. When dealing with a lot of different merge conflicts
+d. When dealing with the same merge conflict more than once
+
+Ans : d. When dealing with the same merge conflict more than once
+
+26. What are the fundamental concepts in Git's object model?
+a. Commits, trees and leaves
+b. Commits, files and branches
+c. Commits, tags and branches
+d. Commits, snapshots, and references
+
+Ans : d. Commits, snapshots, and references
+
+27. What are the characteristics of a well-formed commit message?
+a. It should consist of a short one-sentence summary followed by an optional longer description.
+b. It should have a total maximum length of 50 characters.
+c. It should be short and concise.
+d. It should have lines that are no longer than 72 characters.
+
+Ans : a. It should consist of a short one-sentence summary followed by an optional longer description.
+
+28. What is the merge-base between two commits?
+a. The list of all common parents of the two commits
+b. The first common parent of the two commits
+c. The oldest common parent of the two commits
+d. A special reference pointing to the commit that is being merged into the other one
+
+Ans : b. The first common parent of the two commits
+
+29. How do you make sure that each commit represents a single set of changes?
+a. You use the index to select which changes are going to be part of the commit.
+b. You make sure that all the changes in our working directory are related.
+c. You always work on one kind of change at a time.
+d. You use branches to isolate different kinds of changes.
+
+Ans : a. You use the index to select which changes are going to be part of the commit.
+
+30.  Why is the reflog important when rewriting history?
+a. Because it allows you to see a list of references currently in the repository
+b. Because it allows you to amend existing commits
+c. Because it allows you to see a log of the commits currently in the repository
+d. Because it allows you to restore history to a previous state
+
+Ans : d. Because it allows you to restore history to a previous state
+
+31. TFS Pull Request Notifications can only be configured at the team level.
+a. True
+b. False
+
+Ans : b. False
+
+32. How do you get commits to a remote repository such as GitHub?
+a. Checkin
+b. Push
+c. Commit
+d. Upload
+
+Ans :  b. Push
+
+33. How many options do you have for source control in TFS 2013?
+a. 2
+b. 3
+c. 4
+d. 1
+
+Ans :  a. 2
+
+34. You can include external Git repositories in an automated TFS Build.
+a. false
+b. true
+
+Ans : b. true
+
+35. When do Reference CodeLens Indicators get updated on a Method definition?
+a. When you commit your changes locally
+b. As soon as you add code that references that method
+c. When you compile your code
+d. When you push your changes to the server
+
+Ans : b. As soon as you add code that references that method
+
+36. What information can you see on the Pull Request details screen in TFS?
+a. Code Changes
+b. Source branch
+c. File listing
+d. Target branch
+e. Discussion
+f. All of these
+g. Reviewers
+
+Ans : f. All of these
+
+37. What version control approaches are used by Centralized Version Control systems?
+a. All of the Above
+b. Edit/Commit
+c. None of the Above
+d. Check-in/Check-out
+
+Ans : a. All of the Above
+
+38. Pushing your local repository to a central Git repository includes all your commits.
+a. true
+b. false
+
+Ans : a. true
+
+39. To access a file's history in Git, you must access a central repository.
+a. False
+b. True
+
+Ans : a. False
+
+40. If you create a new method, when does the CodeLens History indicator reflect that you are the author?
+a. When you compile your code
+b. When you push your changes to the server
+c. As soon as the method is created
+d. When you commit your changes locally
+
+Ans : d. When you commit your changes locally
+
+41. If your co-worker changes a method and pushes the change to the server, when does CodeLens tell you about the change? 
+a. When you push your changes to the server
+b. When she commits her changes locally
+c. When you pull her changes from the server
+d. As soon she pushes her changes to the server
+
+Ans : c. When you pull her changes from the server
+
+42. What should you use to work with a local Git Repository and a centralized TFS source control repository?
+a. Git Source Control Provider
+b. Git-TF
+c. Visual Studio Git Extensions
+
+Ans : Git-TF
+
+43. To create a Git branch, you must first create it in a shared repository and then copy that branch to your local repository.
+a. False
+b. True
+
+Ans : a. False
+
+
+44. What version control approaches are used by Centralized Version Control systems?
+a. Check-in/Check-out
+b. None of the Above
+c. Edit/Commit
+d. All of the Above
+
+Ans : All of the Above
+
+45. If a Pull Request is rejected, can you make code changes and submit a revision?
+a. Yes
+b. No
+
+Ans : Yes
+
+46. Which section of GitHub can you use to track tasks? (Not Include in Questions)*****
+a. Issues
+b. Pages
+c. Pages
+d. Pages
+e. Work Items
+
+Ans : a. Issues
+
+47.  Which operation in GitHub for Windows will automatically commit a new change to your local repository that does the opposite changes of a previous commit, effectively eliminating a previous commit?
+a. roll back
+b. undo
+c. revert
+d. reverse
+
+Ans : c. revert
+
+48. Which of these can you change in your GitHub for Windows Options window?
+a. default diff viewer
+b. push behavior
+c. default storage directory
+d. default repository name
+e. sync refresh timing
+
+Ans : c. default storage directory
+
+49. Which operation will combine two branches by changing the order of the commits such that one branch now appears to have happened after the other?
+a. Combine 
+b. Merge
+c. Reconstitute
+d. Rebase
+
+Ans : d. Rebase
+
+50. What happens if you are viewing a GitHub repository in your browser and drag the URL directly into the GitHub for Windows application?
+a. It creates a fork of the repository in GitHub.
+b. A bookmark is stored in GitHub for Windows.
+c. A zip file of the repository is downloaded.
+d. The repository is cloned and tracked locally.
+
+Ans : d. The repository is cloned and tracked locally.
+
+
+

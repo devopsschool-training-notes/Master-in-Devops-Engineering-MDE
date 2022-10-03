@@ -1,0 +1,169 @@
+
+Course Name:  Managing Ingress Traffic Patterns for Kubernetes Services
+
+
+1. What is the main reason why the Ingress API has not been developed beyond its original specification?
+
+A. It was delivered to test ingress use cases, but annotations took over and now there’s no going back
+B. It was intended to accommodate a wide range of technologies as a lowest common denominator
+C. It’s developers were aware that Istio was coming down the line, with a more sophisticated ingress capability
+
+Ans:   B. It was intended to accommodate a wide range of technologies as a lowest common denominator
+
+
+2. Which proxy technology underpins Contour, Ambassador and Istio?
+
+A. Nginx
+B. Envoy
+C. HAProxy
+
+Ans:  B. Envoy
+
+
+3. If a service of type NodePort has its externalTrafficPolicy set to Local, what will happen to ingress traffic that arrives at a particular node that isn't running a service endpoint (pod)?
+
+A. Packets will get dropped, as the policy prohibits routing traffic to an endpoint on another node
+B. The packets will get routed to an appropriate endpoint, courtesy of Kubernetes' flat network model
+C. The source IP address of packets arriving at the node will be changed (SNAT) to that of the node
+
+Ans:  A. Packets will get dropped, as the policy prohibits routing traffic to an endpoint on another node
+
+
+4. Why does a service of either type, NodePort or LoadBalanacer, result in a clusterIP being allocated for the service?
+
+A. So that external requests can be load balanced across the service's endpoints, via the clusterIP
+B. For backwards compatibility - the kube-proxy in 'userspace' proxy mode requires it, but it is entirely optional when operating in 'iptables' or 'ipvs' mode
+C. Without the clusterIP, a NodePort service with externalTrafficPolicy set to Local, will fail to route traffic to endpoints on other nodes
+
+Ans:  A. So that external requests can be load balanced across the service's endpoints, via the clusterIP
+
+
+5. With regular expression syntax used in the following ingress definition for the nginx ingress controller, which of the following path rewrites is correct?
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: path-rule-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+spec:
+  rules:
+  - host: dibble.sh
+    http:
+      paths:
+      - backend:
+          serviceName: nginxhello-blue
+          servicePort: 80
+        path: /blue/?(.*)
+		
+A. dibble.sh/blueberry rewrites to dibble.sh/blue
+B. dibble.sh/ rewrites to dibble.sh/blue/
+C. dibble.sh/blue rewrites to dibble.sh/
+
+Ans:  C. dibble.sh/blue rewrites to dibble.sh/
+
+
+
+6. What is the primary purpose for annotations in Ingess API definitions?
+
+A. The primary Kubernetes API mechanism for defining ingress configuration
+B. A means of circumventing the limitations in the Ingress API
+C. A method for differentiating between different ingress controller capabilities
+
+Ans:  B. A means of circumventing the limitations in the Ingress API
+
+
+7. What is the best technique for handling X.509 certificate renewals with cert-manager?
+
+A. Create a cron job to periodically check the validity of the certificate, and generate a new Certificate object 30 days before expiry
+B. Relax, cert-manager is aware of the renewal window for certificates, and will attempt to renew the certificate in the renewal window
+C. Cert-manager requires the deployment of Certbot in the cluster, which handles certificate renewals on its behalf
+
+Ans:  B. Relax, cert-manager is aware of the renewal window for certificates, and will attempt to renew the certificate in the renewal window
+
+
+8. Which ACME challenge type needs to be configured for obtaining a wildcard certificate from Let's Encrypt using cert-manager?
+
+A. Cert-manager is unable to obtain wildcard certificates from Let's Encrypt
+B. Either of DNS01 or HTTP01. A DNS01 challenge explicitly establishes control of a domain, whilst a HTTP01 challenge implicitly establishes control of a domain
+C. DNS01, because the challenge establishes control of a domain
+
+Ans:  C. DNS01, because the challenge establishes control of a domain
+
+
+9. Which of the following is NOT a technique for setting the ingress class of an ingress controller?
+
+A. A configuration override applied to a Helm chart during installation
+B. An annotation set in an ingress resource definition
+C. A command line argument defined in a Deployment definition for the ingress controller
+
+Ans:  B. An annotation set in an ingress resource definition
+
+
+
+10. Which of the following is NOT a mechanism for configuring an ingress controller?
+
+A. Labels
+B. Annotations
+C. Command line arguments
+
+Ans:  A. Labels
+
+
+11. Why might it be necessary to deploy a default backend service?
+
+A. Without a default backend service, ingress definitions will fail to be configured when applied
+B. To provide a coherent, customized experience for clients presenting invalid HTTP requests
+C. Invalid client requests will otherwise be randomly routed to one of the available backend services
+
+Ans:  B. To provide a coherent, customized experience for clients presenting invalid HTTP requests
+
+
+12. Which of the following is NOT a perceived limitation of using a Service object to handle ingress traffic?
+
+A. Any external TCP/UDP traffic can be proxied to a service's virtual IP address
+B. Routing of HTTP/S traffic based on hostname or path is not supported
+C. Client IP addresses are subject to source network address translation (SNAT)
+
+Ans:   A. Any external TCP/UDP traffic can be proxied to a service's virtual IP address
+
+
+13. Which Kubernetes API resource types do you think cert-manager need access to, in order to manager certificate lifecycles?
+
+A. ConfigMap, Secret, Event, Service, Pod
+B. ConfigMap, Event, Service, Pod, Ingress
+C. ConfigMap, Secret, Event, Service, Pod, Ingress
+
+Ans:  C. ConfigMap, Secret, Event, Service, Pod, Ingress
+
+
+14. Which of the following ingress options is the only one that fully supports the Ingress API?
+
+A. Contour ingress controller
+B. Ambassador API gateway
+C. Istio service mesh
+
+Ans:  A. Contour ingress controller
+
+
+15. Which of the following ensures maximum availability of an ingress controller in a Kubernetes cluster?
+
+A. Define multiple Deployments of the ingress controller, scoped to different namespaces
+B. Use a DaemonSet to invoke an ingress controller pod on each of the cluster's nodes
+C. Configure a Deployment with more than one replica specified in its definition
+
+Ans:   B. Use a DaemonSet to invoke an ingress controller pod on each of the cluster's nodes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,81 @@
+Q1: IBM UrbanCode Deploy provides two types of plugins to define
+deployment processes, with one type being referred to as Source
+Configuration plugins. What is the other plugin type?
+A. Workflow
+B. Automation
+C. Process
+D. Step Library
+
+Answer Key:
+1. B
+
+
+Q2: What is the difference between an application process and a
+component process?
+A. An application process coordinates component processes, while a
+component process models automation of artifact deployment using plugin steps.
+B. While both application and component processes model the automation
+of deployments they have different targets.
+C. The application process is a generic process for a specific technology and
+the component process is based on the application process.
+D. The application process is used when deploying a simple application and a
+component process is used when deploying a complex application.
+Answer Key:
+2. A
+
+
+Q3: What can a snapshot capture?
+A. Only component versions deployed in a environment
+B. Only latest component versions
+C. Versions of components, processes, and properties
+D. Models of the deployment environment
+Answer Key:
+3. C
+
+Q4: Which statement is true about a locked snapshot?
+A. It allows you to avoid picking up latest untested changes at deployment time.
+B. It cannot be changed.
+C. It is meant to lock certain users out of deploying a certain application.
+D. It is not supported by IBM UrbanCode Deploy.
+
+Answer Key:
+4. A
+
+Q5: Which is default port uDeploy server runs in HTTPS?
+A	8080
+B	8090
+C	80
+D	8443
+
+Q5: Which is default port uDeploy agent talk to server runs using JMS?
+A	7918
+B	7919
+C	7920
+D	8421
+
+Q7: Is it right statement about Role?
+A role is a list of permissions that users have on the IBM® UrbanCode™ Deploy server. These permissions include the ability to create, edit, and delete objects, such as applications, environments, and components. The permission also includes the parts of the server interface that users can access.
+A Yes
+B NO
+Answer- YES
+
+Q8: Is it right statement about Team?
+A role is a list of permissions that users have on the IBM® UrbanCode™ Deploy server. These permissions include the ability to create, edit, and delete objects, such as applications, environments, and components. The permission also includes the parts of the server interface that users can access.
+A Yes
+B NO
+
+Answer- YES
+
+Q9: Is it right statement about Environment Resources?
+Represents what is going into a Deployment.That includes What content is being deployed(Component) and where it is being deployed(Agents)
+A Yes
+B NO
+
+Answer- YES
+
+Q10: Is it right statement about Team?
+Users and groups are assigned roles when they are added to teams.
+Teams provide two important functions. First, a team provides the mechanism to assign users roles. When a user is assigned a role, all permissions that are granted to the role are automatically granted to the user. Second, teams secure product resources. When a team is attached to a resource, only team members with the appropriate permissions can interact with the affected resource.
+A Yes
+B NO
+Answer- YES

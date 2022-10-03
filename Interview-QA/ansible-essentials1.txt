@@ -1,0 +1,990 @@
+
+		Note 6 - Ansible
+
+**********************************************************************************************************************************************************************
+		
+		Hands-on Ansible
+
+**********************************************************************************************************************************************************************
+
+1. You can merge multiple inventory files to scale out.
+
+	A. True
+
+	B. False 
+
+Answer: B. False 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2. A ______ module may be pulled from repository at a future time.
+
+	A. Bronze
+
+	B. Core
+
+	C. Deprecated
+
+	D. Extra 
+
+Answer: C. Deprecated 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+3. The location with the highest precedence value (most preferred) for configuration options is:
+
+	A. Environment Variable
+
+	B. It’s the first loaded configuration file.
+
+	C. ansible.cfg in current directory
+
+	D. .ansible.cfg in user home directory 
+
+Answer: A. Environment Variable
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+4. What variable type describes the remote host’s system data?
+
+	A. Fact Data Variable
+
+	B. Dynamic Variable
+
+	C. Host Variable  
+
+	D. Python Data Variable 
+
+Answer: A. Fact Data Variable
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+5. Which of the following transport protocols allows communications for Ansible?
+
+	A. RDP
+
+	B. SSH
+
+	C. Telnet
+
+	D. RSH 
+
+Answer: B. SSH
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+6. If a host fails a task, it will continue executing the plays.
+
+	A. False
+
+	B. True 
+
+Answer: A. False 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+7. Which component defines the hosts for Ansible to communicate to?
+
+	A. Configuration
+
+	B. Inventory
+
+	C. Playbook
+
+	D. Modules 
+
+Answer: B. Inventory 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+8. Which binary executable installs Ansible Galaxy roles?
+
+	A. ansible-galaxy
+
+	B. ansible
+
+	C. ansible-playbook
+
+	D. ansible-role
+
+Answer: A. ansible-galaxy
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+9. If Group1 had: host1, host2, and host3 AND Group2 had: host2, host3, and host6, then the following target pattern would target which hosts?
+
+	A. host1 and host6
+
+	B. host2 and host3
+
+	C. Only Group2 hosts 
+
+	D. All hosts in Group1 and Group2 
+
+Answer: B. host2 and host3
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+10. Which of the following functions does Ansible provide?
+
+	A. Storage management
+
+	B. Change management
+
+	C. Authentication
+
+	D. Certification 
+
+Answer: B. Change management
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+11. A play maps ____ to a set of tasks.
+
+	A. hosts
+
+	B. a playbook
+
+	C. YAML
+
+	D. variables 
+
+Answer: A. hosts 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+12. When building roles, which of the following is how Ansible learns of your files?
+
+	A. Ansible Configuration
+
+	B. Playbooks
+
+	C. YAML file that defines all the locations
+
+	D. Defined directory structure
+
+Answer: D. Defined directory structure 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+13. Handlers will execute tasks, but only ______.
+
+	A. if the task fails
+
+	B. when it's been notified more than once
+
+	C. if the host allows it
+
+	D. if the task notifies it 
+
+Answer: D. if the task notifies it 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+14. What’s the name of the clause to use when choosing whether to run a task?
+
+	A. When
+
+	B. If
+
+	C. Where
+
+	D. While 
+
+Answer: A. When
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+15. Which execution type is the default?
+
+	A. Process
+
+	B. Cloud
+
+	C. Local
+
+	D. Remote
+
+Answer: D. Remote 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+16. Which file is meant to be a playbook for your entire infrastructure?
+
+	A. ansible.cfg
+
+	B. site.yaml
+
+	C. main.yaml
+
+	D. root.yaml 
+
+Answer: B. site.yaml
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+17. The command “ansible-doc” requires an internet connection to lookup module references.
+
+	A. True
+
+	B. Only if there is a valid internet connection
+
+	C. False 
+
+Answer: C. False  
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+18. You can define variables in separate files outside of the inventory file.
+
+	A. Only when you use the INCLUDE statement
+
+	B. True
+
+	C. False 
+
+Answer: B. True 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+19. What is the minimum Python version for Ansible Control Server?
+
+	A. Python 3.0
+
+	B. Python 2.4
+
+	C. Python 2.5
+
+	D. Python 2.6 
+
+Answer: D. Python 2.6  
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+20. You can add groups inside of groups when:
+
+	A. You add existing group names under a [groupname:children] definition
+
+	B. You cannot add groups within groups.
+
+	C. You add existing group names under a [groupname] definition 
+
+Answer: A. You add existing group names under a [groupname:children] definition
+
+**********************************************************************************************************************************************************************
+		
+		Continuous Delivery Using Docker And Ansible
+
+**********************************************************************************************************************************************************************
+
+1. Which statement describes the best approach to integration testing across system boundaries?
+
+	A. Create a single Docker container, run both systems inside the container.
+
+	B. Create a single Docker container for the application, and run the other system on your local machine.
+
+	C. Create a single Docker container for the application, and run the other system in the cloud.
+
+	D. Create a Docker container for each system. 
+
+Answer: D. Create a Docker container for each system.  
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2. What does the .PHONY directive in a Makefile do?
+
+	A. Ignores files of the same name as the task
+
+	B. Ensures make tasks always run
+
+	C. Provides high-level declaration of all of the make tasks you want to execute
+
+	D. All of these
+
+Answer: D. All of these 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+3. What is the effect of the docker-compose pull command?
+
+	A. It forces the download of any external image referenced by the image configuration option in each service.
+
+	B. It downloads any external image referenced by the image configuration option in each service, but only if a more up-to-date version exists.
+
+	C. It downloads all external images, including parent images of services built dynamically, but only if a more up-to-date version exists.
+
+	D. It forces the download of all external images, including parent images of services built dynamically.
+
+Answer: B. It downloads any external image referenced by the image configuration option in each service, but only if a more up-to-date version exists.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+4. How do you configure an EC2 Instance to join an EC2 Container Service Cluster?
+
+	A. Add an entry to the ecs.config file on the EC2 Container Service
+
+	B. Run an Ansible playbook
+
+	C. SSH to the instance and run an ECS init script 
+
+	D. Configure this via the EC2 Container Service dashboard 
+
+Answer: A. Add an entry to the ecs.config file on the EC2 Container Service
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+5. How can you use your own custom modules in Ansible playbooks?
+
+	A. Place the modules in a folder called library next to your playbook(s).
+
+	B. Place the modules in a folder called /etc/ansible/roles on your system.
+
+	C. You can't do this. 
+
+	D. Fork the Ansible project and add your modules to the appropriate location in the Ansible source.
+
+Answer: A. Place the modules in a folder called library next to your playbook(s).
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+6. Which of the following is a type of Python-built distribution?
+
+	A. TAR file
+
+	B. Gzip archive
+
+	C. Wheel
+
+	D. Package 
+
+Answer: C. Wheel 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+7. In a Docker-based workflow, how do you ensure the release image has the most up-to-date application artifacts?
+
+	A. Run docker-compose up.
+
+	B. Create a new service that ensures the artifacts are up to date.
+
+	C. You don't need to worry about this, it automatically happens.
+
+	D. Run docker-compose build. 
+
+Answer: D. Run docker-compose build.  
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+8. Which statement is true about acceptance testing?
+
+	A. Acceptance tests are always defined in an Excel spreadsheet.
+
+	B. You can use a separate project and different language to write your acceptance tests.
+
+	C. You must always place your acceptance tests in the same project as your application.
+
+	D. You should never automate acceptance tests.
+
+Answer: B. You can use a separate project and different language to write your acceptance tests.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+9. Which statement best describes acceptance testing?
+
+	A. Externally focused testing
+
+	B. Internally focused testing that may test across system boundaries
+
+	C. Internally focused testing that never tests across class boundaries 
+
+	D. Internally focused testing that never tests across system boundaries 
+
+Answer: A. Externally focused testing
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+10. What are the four stages of the continuous delivery workflow?
+
+	A. Develop, Test, Refactor, Deploy
+
+	B. Compile, Build, Package, Deploy
+
+	C. Compile, Test, Build, Release
+
+	D. Test, Build, Release, Deploy 
+
+Answer: D. Test, Build, Release, Deploy 
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+11. Which type of testing would you NOT typically perform during the release stage?
+
+	A. Performance Testing
+
+	B. Security Testing
+
+	C. Acceptance Testing
+
+	D. Unit and Integration Testing 
+
+Answer: D. Unit and Integration Testing 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+12. Which of the following represents the highest level of automation in the continuous delivery workflow?
+
+	A. docker commands
+
+	B. docker-compose commands
+
+	C. make commands
+
+	D. Dockerfile directives
+
+Answer: C. make commands 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+13. What format is used for Jenkins Pipeline scripts?
+
+	A. YAML
+
+	B. JSON
+
+	C. Groovy
+
+	D. JavaScript
+
+Answer: C. Groovy
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+14. When considering the test and build stages, when should you download application dependencies?
+
+	A. Never
+
+	B. Once, at the beginning of the test stage
+
+	C. Once, at the beginning of each stage
+
+	D. Whenever dependencies are required
+
+Answer: B. Once, at the beginning of the test stage
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+15. How can you capture module and task output in Ansible playbooks?
+
+	A. Use the register action.
+
+	B. Use the set_fact action.
+
+	C. Use the with_items action.
+
+	D. You can't do this. 
+
+Answer: A. Use the register action. 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+16. Which statement best describes integration testing?
+
+	A. Internally focused testing that may test across system boundaries
+
+	B. Internally focused testing that never tests across class boundaries 
+
+	C. Internally focused testing that never tests across system boundaries
+
+	D. Externally focused testing 
+
+Answer: A. Internally focused testing that may test across system boundaries
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+17. When would you want to capture test reports?
+
+	A. On success or failure
+
+	B. Never
+
+	C. Only on failure
+
+	D. Only on success 
+
+Answer: A. On success or failure
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+18. What is the most effective way to install the latest version of Ansible?
+
+	A. From the latest source
+
+	B. Using your operating system package manager
+
+	C. Using Python's package manager called PIP
+
+	D. Download from Ansible 
+
+Answer: C. Using Python's package manager called PIP 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+19. How would you ensure your application is configured correctly for different types of tests?
+
+	A. This is not possible.
+
+	B. Create multiple configuration files for your application, one per type of test.
+
+	C. Use multiple machines, one per type of test.
+
+	D. Clone multiple copies of your application, one per type of test. 
+
+Answer: B. Create multiple configuration files for your application, one per type of test. 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+20. Which statement best describes Docker Compose?
+
+	A. A file that describes how to build a single Docker image
+
+	B. Tooling that allows you to build a hierarchy of Docker images
+
+	C. Tooling that describes a multi-container environment and runs services in that environment
+
+	D. A file that describes a multi-container environment
+
+Answer: C. Tooling that describes a multi-container environment and runs services in that environment
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+21. What format is used for AWS CloudFormation templates?
+
+	A. JavaScript
+
+	B. Groovy
+
+	C. JSON 
+
+	D. YAML 
+
+Answer: C. JSON 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+22. When you install a source distribution, which of the following tasks is required?
+
+	A. The distribution is extracted and copied to the target file system
+
+	B. The application source is built
+
+	C. All of these
+
+	D. The application source is compiled 
+
+Answer: C. All of these
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+23. Which of the following describes how the Ansible module typically operates when using AWS modules?
+
+	A. Ansible connects to your local machine using a local connection, which then communicates with AWS services.
+
+	B. Ansible connects to a remote host using HTTP, which then communicates with AWS services.
+
+	C. Ansible connects to a remote host using SSH, which then communicates with AWS services.
+
+	D. Ansible connects to your local machine using SSH, which then communicates with AWS services.  
+
+Answer: A. Ansible connects to your local machine using a local connection, which then communicates with AWS services.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+24. Which of the following are examples of clean up commands in a Docker Compose environment?
+
+	A. docker-compose kill
+
+	B. All of these
+
+	C. docker-compose run --rm
+
+	D. docker-compose rm
+
+Answer: B. All of these 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+25. Which of the following is created during the build stage?
+
+	A. Application Artifacts
+
+	B. Docker Images
+
+	C. Virtual Machine Images
+
+	D. All of these
+
+Answer: A. Application Artifacts
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+26. Which metadata property lists the current tags associated with an image? 
+
+	A. CurrentLabels
+
+	B. RepoTags
+
+	C. CurrentTags  
+
+	D. RepoLabels 
+
+Answer: B. RepoTags
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+27. Which of the following represents the lowest level of automation in the continuous delivery workflow?
+
+	A. docker-compose commands
+
+	B. docker commands
+
+	C. make commands
+
+	D. Dockerfile directives
+
+Answer: D. Dockerfile directives
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+28. Which of the following is used to automate creation of multi-container environments?
+
+	A. Docker Compose
+
+	B. Docker Machine
+
+	C. Docker Engine
+
+	D. Docker Client 
+
+Answer: A. Docker Compose
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+29. What is the first stage of a continuous delivery workflow?
+
+	A. Test
+
+	B. Build
+
+	C. Release
+
+	D. Deploy 
+
+Answer: A. Test 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+30. You would NOT typically use changes to the _____________ as a trigger for your continuous delivery workflow.
+
+	A. Application source code
+
+	B. Parent image of your base image
+
+	C. Development image
+
+	D. Base image 
+
+Answer: C. Development image
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+31. What form of testing is performed during the release phase of continuous delivery?
+
+	A. Integration testing
+
+	B. Manual testing
+
+	C. Acceptance testing 
+
+	D. Unit testing 
+
+Answer: C. Acceptance testing 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+32. What is the best approach to speed up the installation process of application dependencies in a Docker container?
+
+	A. Create a cache folder in the container to cache downloaded dependencies.
+
+	B. Use a faster computer.
+
+	C. Use a volume container to cache downloaded dependencies.
+
+	D. Use a faster Internet connection. 
+
+Answer: C. Use a volume container to cache downloaded dependencies. 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+33. Which type of character is required to separate rules in a make target?
+
+	A. Space
+
+	B. Tab
+
+	C. Comma
+
+	D. Colon 
+
+Answer: B. Tab
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+34. When is it acceptable to use volume mappings?
+
+	A. All of these
+
+	B. When you need to exchange files between Docker containers and the Docker Client
+
+	C. When you need to exchange files between Docker containers and the Docker Swarm Cluster
+
+	D. When you need to exchange files between Docker containers and the Docker Host 
+
+Answer: D. When you need to exchange files between Docker containers and the Docker Host  
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+35. Which docker-compose command can be used to override the settings of a defined service?
+
+	A. docker-compose up
+
+	B. docker-compose attach
+
+	C. docker-compose exec
+
+	D. docker-compose run 
+
+Answer: D. docker-compose run 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+36. Which type of volume would you use if you need to persist data across multiple workflow runs?
+
+	A. Internal Volume
+
+	B. Volume Mapping
+
+	C. Volume Container
+
+	D. External Volume
+
+Answer: D. External Volume 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+37. Which of the following are examples of initialisation tasks you need to perform in the release environment?
+
+	A. Adding a required operating system package to the base image
+
+	B. Adding a required operating system package to the parent image
+
+	C. All of these
+
+	D. Populating the database with schema, tables and sample data 
+
+Answer: D. Populating the database with schema, tables and sample data
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+38. Which of the following best describes an ECS Task?
+
+	A. An application process that runs and then exits
+
+	B. An application process that runs continuously
+
+	C. A Docker container that runs continuously
+
+	D. A Docker container that runs and then exits
+
+Answer: D. A Docker container that runs and then exits
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+39. How do you reduce the size of the Docker build context?
+
+	A. Exclude unneeded folders using .dockerignore.
+
+	B. Exclude unneeded folders in your Dockerfile.
+
+	C. This is not possible.
+
+	D. Exclude unneeded folders using .gitignore. 
+
+Answer: A. Exclude unneeded folders using .dockerignore. 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+40. What is the best way to allow a Docker client running in a container access to the underlying Docker host?
+
+	A. Map the root filesystem to the container.
+
+	B. You shouldn't do this; instead, run Docker in Docker.
+
+	C. Configure the container to communicate with the Docker Host over a network socket.
+
+	D. Map /var/run/docker.sock to the container. 
+
+Answer: D. Map /var/run/docker.sock to the container.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+41. Which of the following is the most efficient method of obtaining configuration data about your AWS resources and services in Ansible playbooks?
+
+	A. Use the AWS CLI to query your resources.
+
+	B. Organize your resources into CloudFormation stacks, and define stack outputs as required to meet your needs.
+
+	C. Organize your resources into CloudFormation stacks, and refer to the resource outputs to obtain configuration data. 
+
+	D. Use the AWS Console to query your resources. 
+
+Answer: B. Organize your resources into CloudFormation stacks, and define stack outputs as required to meet your needs.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+42. Which of the following statements is true about continuous delivery?
+
+	A. You release lots of features at once.
+
+	B. You release in two-week sprints.
+
+	C. You release small changes.
+
+	D. You always release immediately to production.
+
+Answer: C. You release small changes. 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+43. Which statement best describes a dangling image?
+
+	A. An image layer that is not the top level layer in the image
+
+	B. An image that has no running containers
+
+	C. An image whose volumes have been deleted
+
+	D. An image whose tag has been superseded by a newer image 
+
+Answer: D. An image whose tag has been superseded by a newer image 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+44. Which of the following can trigger the continuous delivery pipeline?
+
+	A. Automated build of the parent image of the base image for your Docker application
+
+	B. Commit to Git repository
+
+	C. Automated build of base image for your Docker application 
+
+	D. All of these 
+
+Answer: D. All of these
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+45. An application is not terminating gracefully when its Docker container is stopped. Why would this happen?
+
+	A. Docker needs to be configured to terminate the container gracefully.
+
+	B. Docker doesn't support terminating containers gracefully.
+
+	C. The application needs to be configured to terminate gracefully when it receives a SIGKILL signal.
+
+	D. The application is not running as the parent process in the Docker container. 
+
+Answer: D. The application is not running as the parent process in the Docker container.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+46. Which strategies can be used to exchange files between a Docker Client and Docker Containers?
+
+	A. Use the docker cp command to copy files from Docker Containers to the Docker Client.
+
+	B. Use the COPY or ADD directive to copy files into a Docker image.
+
+	C. All of these
+
+	D. Use the docker cp command to copy files to Docker Containers from the Docker Client. 
+
+Answer: C. All of these 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+47. What is the best way to avoid having to add sensitive AWS credentials to a Jenkins deployment job?
+
+	A. Specify the credentials as a password build parameter on each run.
+
+	B. Specify the credentials as a password build parameter with a default value.
+
+	C. Assign an EC2 IAM role to the Jenkins EC2 instance with appropriate permissions to access AWS services.
+
+	D. Create an AWS credential profile on each Jenkins host. 
+
+Answer: C. Assign an EC2 IAM role to the Jenkins EC2 instance with appropriate permissions to access AWS services.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+48. Which of the following platforms is supported by Docker Machine?
+
+	A. VMWare Fusion
+
+	B. Parallels
+
+	C. All of these 
+
+	D. VirtualBox 
+
+Answer: C. All of these 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+49. Which of the following build triggers can Jenkins automatically manage for you?
+
+	A. GitHub
+
+	B. None of these
+
+	C. Docker Hub
+
+	D. GitHub and Docker Hub 
+
+Answer: A. GitHub 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+50. How can you best deal with waiting for a service dependency to fully initialize in a Docker Compose environment?
+
+	A. Make containers that rely on the service depencency sleep for 30 seconds.
+
+	B. Create your own service that probes if the service dependency has fully initialized.
+
+	C. There is no way to deal with this currently.
+
+	D. Use the wait_for Docker Compose configuration option. 
+
+Answer: B. Create your own service that probes if the service dependency has fully initialized.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+51. What is the registry name for Docker Hub?
+
+	A. docker.com
+
+	B. docker.io
+
+	C. registry.docker.com 
+
+	D. index.docker.io 
+
+Answer: B. docker.io
+
+**********************************************************************************************************************************************************************

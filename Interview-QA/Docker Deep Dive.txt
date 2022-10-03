@@ -1,0 +1,330 @@
+
+Course:  Docker Deep Dive
+
+1. Which of the following is needed to deploy a Docker Stack?
+
+A. Compose v2 file format
+B. Kubernetes
+C. Compose v3 file format
+D. Docker Cloud
+
+Ans:  C. Compose v3 file format
+
+
+2. What is the name of the configuration file that describes how to build a new Docker image with your app-code inside?
+
+A. dockerfile
+B. config.json
+C. docker-file
+D. dockerfile.json
+
+Ans:   A. dockerfile
+
+
+3. Which of the following is the worst number of managers for high availability?
+
+A. 1
+B. 5
+C. 2
+D. 7
+
+Ans:  C. 2
+
+
+4. Which command can you use to get a shell session inside of a container?
+
+A. docker container login
+B. docker container exec
+C. docker container shell
+D. docker container ssh
+
+Ans:  B. docker container exec
+
+
+5. Which Docker EE technology performs layer-7 (application layer) load balancing?
+
+A. The ingress network
+B. The Service Mesh
+C. The HTTP Routing Mesh (HRM)
+
+Ans:  C. The HTTP Routing Mesh (HRM)
+
+
+6. Which of the following best decribes a Docker Image?
+
+A. A read-write template for starting one or more containers
+B. A point-in-time snapshot of a container used for backups
+C. A data volume that can be mounted inside of a container
+D. A read-only template for starting one or more containers
+
+Ans:  D. A read-only template for starting one or more containers
+
+
+7. You have two services running on a Swarm, but they cannot find each other by name. Which of the following could be the reason why?
+
+A. They are on different overlay networks
+B. They were not manually registered with the Swarm DNS when they were created
+C. Service discovery only works on bridge/NAT networks
+D. You did not create the Swarm DNS
+
+Ans:   A. They are on different overlay networks
+
+
+8. Which of the following is a loose definition of a Docker container?
+
+A. A VM running a shared kernel with resource limits applied
+B. A unikernel running on a hypervisor with resource limits applied
+C. An isolated area of an Operating System with resource limits applied
+
+Ans:  C. An isolated area of an Operating System with resource limits applied
+
+
+9. What will happen if you start a new container or service and specify a volume that does not currently exist?
+
+A. You will be prompted to create the new volume
+B. The command will complete but the container/service will fail to start
+C. The command will fail
+D. Docker will create the volume for you
+
+Ans:   D. Docker will create the volume for you
+
+
+10. What are the base requirements to be able to use Docker Secrets?
+
+A. Swarm mode and an external CA
+B. Swarm mode and self-encrypting disks for the cluster store
+C. Docker in Swarm mode
+D. Docker
+
+Ans:  C. Docker in Swarm mode
+
+
+11. Which of the following are top-level keys in a stack file (Compose v3 file)?
+
+A. Version, deployments, networks, volumes
+B. Version and services
+C. Version, services, networks, volumes
+D. Services, pods, networks, volumes
+
+Ans:   C. Version, services, networks, volumes
+
+
+12. Which of the following is an advantage of Multi-stage Builds?
+
+A. Multi-platform images
+B. Better image documentation
+C. Faster image builds
+D. Smaller images
+
+Ans:   D. Smaller images
+
+
+13. Which of the following is a recommended number of Swarm managers for high availability?
+
+A. 4
+B. 3
+C. 2
+
+Ans:  B. 3
+
+
+14. Which of the following best describes a Bridge (NAT on Windows) network in Docker?
+
+A. Token-ring
+B. Multi-host overlay network
+C. A single-host network
+
+Ans:   C. A single-host network
+
+
+15. How does the HRM know how to route traffic to the correct service?
+
+A. iptables rules
+B. It inspects HTTP host headers
+C. DNS labels
+D. Custom load balancer rules
+
+Ans:  B. It inspects HTTP host headers
+
+
+16. By default, where are Docker daemon logs sent to on a Linux system running systemd?
+
+A. syslog
+B. The Linux event viewer
+C. journald
+
+Ans:   C. journald
+
+
+17. Which of the following is a major goal of Docker volumes?
+
+A. Data replication
+B. Data encryption at-rest
+C. Object storage
+D. Persistent data
+E. RAID
+
+Ans:   D. Persistent data
+
+
+18. Which are the two major kernel building blocks that containers are built from?
+
+A. Capabilities and seccomp
+B. Namespaces and kernels
+C. Namespaces and control groups
+D. Capabilities and control groups
+
+Ans:   C. Namespaces and control groups
+
+
+19. Which of the following is a recommended best practice?
+
+A. Keep your images small
+B. Never use the latest image in a repo
+C. Use large images containing lots of tools
+D. Only use Docker Hub
+
+Ans:   A. Keep your images small
+
+
+20. Where are Secrets mounted on Linux-based Docker hosts?
+
+A. An encrypted volume mounted at /run/secrets
+B. An in memory (tempfs) volume at /run/secrets
+C. initramfs
+D. Solid state volume
+
+Ans:  B. An in memory (tempfs) volume at /run/secrets
+
+
+21. How are Docker Secrets created on the command line?
+
+A. docker secret create
+B. docker swarm secret create
+C. They cannot be created on the command line
+
+Ans:   A. docker secret create
+
+
+22. Which of the following is the best high-level description of a Swarm?
+
+A. A secure cluster of Docker nodes
+B. A tightly-coupled cluster of Docker container
+C. A secure cluster of Docker containers
+D. I tightly-coupled cluster of Linux nodes
+
+Ans:  A. A secure cluster of Docker nodes
+
+
+23. What is the atomic unit of scheduling in Docker?
+
+A. The service
+B. The container
+C. The pod
+D. The stack
+E. The swarm
+
+
+Ans:   B. The container
+
+
+24. Which of the following commands lets you deploy a Docker Stack called stack1 using a Compose file called myapp.yml?
+
+A. docker service deploy -c myapp.yml stack1
+B. docker stack deploy -c myapp.yml stack1
+C. docker stack deploy stack1 myapp.yml
+D. docker service deploy stack1 myapp.yml
+
+Ans:  B. docker stack deploy -c myapp.yml stack1
+
+
+25. Which of the following open-source tools is the underlying technology for Docker Swarm?
+
+A. containerd
+B. SwarmKit
+C. Kubernetes
+D. InfraKit
+E. The Docker daemon
+
+
+Ans:   B. SwarmKit
+
+
+26. Docker UCP implements RBAC via Grants. Which of the following make up a Grant?
+
+A. Subjects, roles, and nodes
+B. Subjects, roles, and collections
+C. Roles and collections
+
+
+Ans:   B. Subjects, roles, and collections
+
+
+
+27. Which of the following built-in Docker networks creates a single layer-2 container-only network across multiple Docker hosts that can be on different underlying networks?
+
+A. Bridge
+B. MACVLAN
+C. Overlay
+D. NAT
+
+Ans:   C. Overlay
+
+
+28. Which Docker command shows the network ports that a container is exposed on?
+
+A. docker container ports
+B. docker port
+C. docker network --port
+
+
+Ans:   B. docker port
+
+
+29. What happens when you perform a docker volume rm against a volume attached to a running container?
+
+A. The command will fail
+B. The volume will be deleted
+C. The volume and the container will be deleted
+D. You will be asked to confirm the command
+
+Ans:   A. The command will fail
+
+
+30. Which set of container-related Linux tools did Docker's `libcontainer` replace?
+
+A. LXD
+B. libc
+C. AUFS
+D. LXC
+
+
+Ans:  D. LXC
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

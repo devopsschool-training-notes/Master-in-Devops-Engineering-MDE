@@ -1,0 +1,146 @@
+When checking out code from SVN you usually want to check out from ________ not from the root of the repository.
+
+1. repo
+2. tags
+3. trunk
+4. branches
+
+Ans : 3. trunk
+
+A source control system that requires users to checkout a file in a way that no one else can edit that file is _________.
+
+1. branching
+2. locking	
+3. distributed
+4. merging
+
+Ans : 2. locking
+ 
+A source control system that allows different users to edit the same file, but requires conflicts between their changes to be resolved on a central server is ________.
+1. branching
+2. locking
+3. distributed
+4. merging
+
+Ans : 4. merging
+
+Which of these is NOT in the set of default root folders in a SVN repository?
+
+1. trunk
+2. branches
+3. lines
+4. tags
+
+Ans : 3. lines
+
+In SVN, the switch command does what?
+1. switches the view of the files you are looking at
+2. switches the user logged in
+3. switches your working copy to a different branch
+4. switches modifications that you have stashed
+
+Ans : 3. switches your working copy to a different branch
+
+The svn:ignore property is set on ________.
+1. the folder or file you want to ignore
+2. a repository itself
+3. the parent of the folder or file you want to ignore
+4. the root directory of the project
+
+Ans : 1. the folder or file you want to ignore
+
+The revert command will _________.
+1. restore a file or folder to the current latest version in SVN
+2. do nothing, but prevent changes from being committed
+3. restore a file or folder to what the original checked out version was
+4. restore a file to a specific point in time that must be specified when the command is used
+
+Ans : 3. restore a file or folder to what the original checked out version was
+
+
+When a conflict has been fixed in SVN, you should mark it as ________.
+1. finished
+2. resolved
+3. fixed
+4. done
+Ans : 2. resolved
+
+There is only one packaged version of SVN server
+1. True
+2. False
+Ans : 2. False
+
+Every commit to SVN can have an optional ______.
+1. status flag
+2. rollback
+3. macro
+4. commit message
+Ans : 4. commit message
+-----------------------------------------------------*********
+Before using a repository in SVN you must first create a least one _______.
+1. branch
+2. user
+3. hook
+4. tag
+
+Ans : 2. user
+
+SVN requires users to check a local copy of the repository also known as ________.
+1. a replication
+2. a working copy
+3. a hub
+4. a local repo
+
+Ans : 2. a working copy
+
+When creating a new file in SVN that file must be ________ in order to be committed.
+1. modified
+2. added
+3. deleted
+4. non empty
+
+Ans : 2. added
+
+Add and delete operations in SVN ______.
+1. are the same thing
+2. should be done using an SVN command, not just in the file system
+3. should only be done in the file system
+4. should do not really exist, svn just mimics what it sees happen in the file system
+
+Ans : 2. should be done using an SVN command, not just in the file system
+
+The rename command in SVN actually does _____.
+1. a rename
+2. a delete and an add
+3. just an add
+4. a copy and delete
+
+Ans: 2. a delete and an add
+
+Which of the following is NOT a good reason for creating a branch?
+1. to label a specific section of the source
+2. to create a new version of the software
+3. to allow a feature to be worked in independently
+4. to create a separate code line corresponding with a software release
+ 
+Ans :1. to label a specific section of the source
+
+SVN is currently maintained by what open source foundation?
+1. Mono
+2. Klingon
+3. Nomad
+4. Apache
+
+Ans: 4. Apache
+
+1.
+2.
+3.
+4.
+
+
+
+1.
+2.
+3.
+4.

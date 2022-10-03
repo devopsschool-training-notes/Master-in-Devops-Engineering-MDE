@@ -1,0 +1,114 @@
+1. IBM UrbanCode Build (uBuild) can be only installed in Windows?
+True
+False
+
+Answer - False
+
+2. What is the embedded database for IBM UrbanCode Build (uBuild) server?
+Derby
+Oracle database
+MySQL database
+Microsoft SQL Server database
+
+Answer - Derby
+
+3. Can you install multiple IBM UrbanCode Build (uBuild) agent on a single agent per host computer
+Yes
+No
+
+- YES
+
+4. Dependencies can be configured on build processes to provide artifacts and build triggering between projects and/or third-party artifacts such as open-source libraries. When you create a dependency, you are saying that your build needs the dependent build's artifacts in order to run or build. Is it true?
+YES
+NO
+
+YES
+
+5. Templates are skeleton configuration that define the majority of the configuration of a project and processes. Each template represents a type of project. Is it true?
+
+YES
+NO
+
+Answer - YES
+
+6. IBM UrbanCode Build (uBuild) server and agent required JAVA_HOME to be set to 
+only JRE 
+only JDK 
+Either JRE or JDK
+
+Answer - Either JRE or JDK
+
+7. What is the default port on which the IBM UrbanCode Build (uBuild) Web UI should listen for secure HTTPS requests
+8443
+443
+844
+843
+
+Answer - 8443
+
+8. What is the default port on which the IBM UrbanCode Build (uBuild) Web UI should redirect unsecured HTTP requests.
+
+80
+8081
+9090
+8080
+
+Answer - 8080
+
+9. What is the default port on which the IBM UrbanCode Build (uBuild) agent uses for communication
+
+7919
+7900
+9198
+5600
+
+Answer- 7919
+
+10. Projects contain one or more build processes. A build process is a configuration that can be executed to perform a build on some source and typically produces artifacts. A build process defines everything that happens during the build and everything that is needed to do the build. It defines where to get source and dependencies, what tools to build with and what tests to run. Is it true?
+
+YES
+NO
+
+Answer- YES
+
+11. Artifact Sets are groupings for the artifacts (files) that are produced by a build. Artifact Sets allow the consumption of build artifacts in a more fine grained manner. Is it right defnition of Artifact Sets?
+
+YES
+NO
+
+Ans- YES
+
+12. Which tab can you find create "Notification Schemes"
+
+Search Tab
+Reporting Tab
+Code Station Tab
+System Tab
+
+Ans - System Tab
+
+
+13. "Internal Authentication" store the authencated users in?
+
+1. LDAP
+2. Database
+3. Config file
+4. Shared dir
+
+Ans -Database
+
+14. Which is not default "Job Pre-Condition Scripts"
+1. All Ancestor Jobs Success
+2. All Ancestor Jobs Success or Not Needed	
+3. Fail Iterated Job Fast
+4. Run on One Failure
+
+Ans - 4. Run on One Failure
+
+15. Which template is not needed for projects?
+1. Job Template
+2. Source Template
+3. Process Template
+4. Notification Templates
+
+Ans - Notification Templates

@@ -1,0 +1,127 @@
+Q.1 - How to Compute object ID and optionally creates a blob from a file?
+
+1. git hash-object
+2. git cat-file
+3. git update-ref
+4. git count-objects
+
+Answer  - 1. git hash-object
+
+Q.2 - How to Update the object name stored in a ref safely?
+
+1. git hash-object
+2. git cat-file
+3. git update-ref
+4. git count-objects
+
+Answer  - 3. git update-ref
+
+Q.3 - Which commands will Reference logs or record when the tips of branches and other references were updated in the local repository. 
+
+1. git log
+2. git reflog
+3. git update-ref
+4. git count-objects
+
+Answer  - 2. git reflog
+
+Q.4 - git stores different types of objects in .git/objects. Which is wrong objecst type?
+
+1. commit
+2. tree
+3. blob
+4. parent
+Answer  - 4. parent
+
+Q.5 - How to show the contents of the hashed files in .git/objects?
+
+1. git show
+2. git reflog
+3. git log
+4. git cat-file
+
+Answer  - 4. git cat-file
+
+Q. 6 - How to shows us the type of the object represented by a particular hash?
+
+1. git cat-file -t
+2. git cat-file -p
+3. git cat-file -k
+4. git cat-file -type
+
+Answer - 1. git cat-file -t
+
+Q. 7 - How does "git rebase" move an existing commit?
+
+1. It just changes the parent in the commit file.
+2. It changes the commit's parent and its SHA1.
+3. None of these
+4. It copies over the commit to a new commit with a different parent and SHA1.
+Answer - 4. It copies over the commit to a new commit with a different parent and SHA1.
+
+Q. 8 - What happens to unreachable objects in the database?
+
+1. They immediately get deleted.
+2. You can never make an object unreachable in Git.
+3. They stay there forever, in case you want to retrieve them.
+4. They can eventually get garbage-collected.
+Answer -  4. They can eventually get garbage-collected.
+
+Q. 9 - What's a "pull"?
+
+1. A "merge" followed by a "push"
+2. A "push" followed by a "merge"
+3. A "fetch" followed by a "push"
+4. A "fetch" followed by a "merge"
+Answer -  4. A "fetch" followed by a "merge"
+
+Q. 10 - Can an object in Git be safely modified?
+
+1. No: you might get the same SHA1 as another object.
+2. No: if you changed even one bit, then you'd get a different object with its own SHA1.
+3. Yes: you can edit the content of the file that stores the object.
+4. Yes: you can ask Git to generate a new SHA1 for the object.
+Answer - 2. No: if you changed even one bit, then you'd get a different object with its own SHA1.
+
+Q. 11 - What are the four types of objects in the Git database?
+
+1. Blobs, Trees, Commits and Versions
+2. Files, Directories, Commits and Tags
+3. Blobs, Trees, Commits and Annotated Tags
+4. Blobs, Trees, Commits and Branches
+Answer - 3. Blobs, Trees, Commits and Annotated Tags
+
+Q. 12 - What happens when you commit?
+
+1. The current branch changes, HEAD doesn't.
+2. HEAD changes, the current branch doesn't.
+3. Neither HEAD nor the current branch change.
+4. Both HEAD and the current branch change.
+Answer - 1. The current branch changes, HEAD doesn't. 
+
+Q. 13 - Which objects are created when you merge?
+
+1. Zero or one commit and nothing else
+2. Merges don't create new objects.
+3. Zero or one commit, and possibly new trees and blobs
+4. Exactly one commit and nothing else
+Answer - 3. Zero or one commit, and possibly new trees and blobs 
+
+Q. 14 - Where can HEAD point?
+
+1. To a branch, a commit, a tree, or a blob
+2. To a branch
+3. To a branch or a commit
+4. To a branch or nowhere
+Answer - 3. To a branch or a commit
+
+Q. 15 - Which of these is not a Git command?
+
+1. git clone
+2. git fork
+3. git push
+4. git fetch
+Answer - 2. git fork
+
+
+ 

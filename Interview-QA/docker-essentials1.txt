@@ -1,0 +1,1854 @@
+	Note - 1 - Docker Essential
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	 Docker for Web Developers
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1. Docker Images consist of read-only layers.
+
+	A. False
+
+	B. True
+
+Answer: B. True
+
+------------------------------------------------------------------------------------
+2. What task does Docker Machine perform?
+
+	A. All of these
+
+	B. Find and install Docker images
+
+	C. Create and manage local machines
+
+	D. Create and manage Docker images
+
+	E. Create and manage containers
+
+Answer: C. Create and manage local machines
+
+------------------------------------------------------------------------------------
+3. Specific framework versions (Node.js, ASP.NET, etc.) can be loaded on a developer machine by creating a custom Dockerfile.
+
+	A. True
+
+	B. False
+
+Answer: A. True
+
+------------------------------------------------------------------------------------
+4. What file does Docker Compose use to define services?
+
+	A. compose.xml
+
+	B. Dockerfile
+
+	C. docker-compose.son
+
+	D. docker-compose.yml
+
+Answer: D. docker-compose.yml
+
+------------------------------------------------------------------------------------
+5. What Dockerfile instruction can be used to execute "npm install" when creating a custom Image?
+
+	A. None of these
+
+	B. npm install
+
+	C. EXECUTE npm install
+
+	D. RUN npm install
+
+Answer: D. RUN npm install
+
+------------------------------------------------------------------------------------
+6. What command-line switches are used with legacy linking?
+
+	A. --run and --link
+
+	B. --com and --name
+
+	C. --link and --name
+
+	D. --net and --name
+
+Answer: C. --link and --name
+
+------------------------------------------------------------------------------------
+7. Bridge networks can be defined in Docker Compose files.
+
+	A. True
+
+	B. False
+
+Answer: A. True
+
+------------------------------------------------------------------------------------
+8. Docker Kitematic provides a way to visually search for images hosted on ________?
+
+	A. Docker Hub
+
+	B. VirtualBox
+
+	C. Docker Client
+
+	D. Docker Machine
+
+Answer: A. Docker Hub
+
+------------------------------------------------------------------------------------
+9. Docker containers can be started and stopped.
+
+	A. True
+
+	B. False 
+
+Answer: A. True
+
+------------------------------------------------------------------------------------
+10. Which of the following tasks can Docker Cloud perform?
+
+	A. Create nodes
+
+	B. None of these
+
+	C. Start and stop services
+
+	D. All of these
+
+	E. Create stacks
+
+Answer: D. All of these
+
+------------------------------------------------------------------------------------
+11. What is the role of Docker images?
+
+	A. Provides virtualization functionality across environments
+
+	B. Used to execute code at runtime
+
+	C. Acts as a blueprint or template that is used to create containers
+
+	D. All of these
+
+Answer: C. Acts as a blueprint or template that is used to create containers
+
+------------------------------------------------------------------------------------
+12. Which of the following options can be used in a Docker Compose file?
+
+	A. env_file
+
+	B. All of these
+
+	C. container_name
+
+	D. networks
+
+Answer: B. All of these
+
+------------------------------------------------------------------------------------
+13. Environment variables can be defined in Docker Compose files.
+
+	A. False
+
+	B. True
+
+Answer: B. True
+
+------------------------------------------------------------------------------------
+14. How do you show all containers on a machine?
+
+	A. docker rmi -p
+
+	B. docker showAllContainers -a
+
+	C. docker ps -a
+
+	D. docker-machine ps -a
+
+Answer: C. docker ps -a
+
+------------------------------------------------------------------------------------
+15. What syntax can be used to create a volume that "hooks" to a source code folder on your machine?
+
+	A. docker run -v $(pwd):/app imageName
+
+	B. docker run -vol /var/temp imageName
+
+	C. None of these
+
+	D. docker run -v /var/www imageName
+
+Answer: A. docker run -v $(pwd):/app imageName
+
+------------------------------------------------------------------------------------
+16. What Docker command can be used to view information about a custom network?
+
+	A. None of these
+
+	B. docker network inspect <network_name>
+
+	C. docker network view <network_name>
+
+	D. docker view network <network_name>
+
+Answer: B. docker network inspect <network_name>
+
+------------------------------------------------------------------------------------
+17. What syntax can be used to publish an image to Docker Hub?
+
+	A. docker create <username>/imageName
+
+	B. docker publish <username>/imageName
+
+	C. docker move <username>/imageName
+
+	D. docker push <username>/imageName
+
+Answer: D. docker push <username>/imageName
+
+------------------------------------------------------------------------------------
+18. What benefits do container networks offer?
+
+	A. Allow containers to communicate with each other in an isolated network
+
+	B. Allow local containers to communicate with external host containers
+
+	C. Allow local containers to communicate directly with host processes
+
+	D. All of these
+
+Answer: A. Allow containers to communicate with each other in an isolated network
+
+------------------------------------------------------------------------------------
+19. What tool can be used to visually work with images and containers?
+
+	A. None of these
+
+	B. VirtualBox
+
+	C. Docker Engine
+
+	D. Docker Kitematic
+
+Answer: D. Docker Kitematic
+
+------------------------------------------------------------------------------------
+20. What cloud provider does Docker Compose support?
+
+	A. Amazon Web Services
+
+	B. All of these
+
+	C. Digital Ocean
+
+	D. Microsoft Azure
+
+Answer: B. All of these
+
+------------------------------------------------------------------------------------
+21. What command-line switch can be used to define a custom Dockerfile file name (such as node.dockerfile) when building a custom image?
+
+	A. -t
+
+	B. -customfile
+
+	C. -f
+
+	D. -v
+
+Answer: C. -f
+
+------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------
+22. Which of the following tasks can Docker Compose perform?
+
+	A. Start and stop containers
+
+	B. View service logs
+
+	C. None of these
+
+	D. All of these
+
+	E. Build services
+
+Answer: D. All of these
+
+------------------------------------------------------------------------------------
+23. What command can be used to start a container?
+
+	A. docker rm [image name]
+
+	B. docker ps -a
+
+	C. docker run [image name]
+
+	D. docker go [image name]
+
+Answer: C. docker run [image name]
+
+------------------------------------------------------------------------------------
+24. Docker Cloud YAML files are identical to Docker Compose YAML files.
+
+	A. False
+
+	B. True
+
+Answer: A. False
+
+------------------------------------------------------------------------------------
+25. What Docker Client command can be used to create a container network?
+
+	A. docker network create
+
+	B. docker build network
+
+	C. docker createNetwork
+
+	D. docker ps network
+
+Answer: A. docker network create
+
+------------------------------------------------------------------------------------
+26. Key benefits of Docker for web developers includes:
+
+	A. Setup a development environment quickly
+
+	B. All of these
+
+	C. Simplify working with multiple framework versions
+
+	D. Consistency between environments
+	
+	E. Ship code faster
+
+Answer: B. All of these
+
+------------------------------------------------------------------------------------
+27. A Docker _______ has a "thin R/W layer."
+
+	A. Image
+
+	B. File
+
+	C. None of these
+
+	D. Container
+
+Answer: D. Container
+
+------------------------------------------------------------------------------------
+28. What Docker technologies are available to support communication between containers?
+
+	A. Docker connect and alias networks
+
+	B. None of these
+
+	C. Docker linking and bridge networks
+
+	D. Docker connect and bridge networks
+
+Answer: C. Docker linking and bridge networks
+
+------------------------------------------------------------------------------------
+29. What Docker Compose command can be used to start multiple service containers?
+
+	A. None of these
+
+	B. docker-compose start
+
+	C. docker-compose up
+
+	D. docker run
+
+Answer: C. docker-compose up
+
+------------------------------------------------------------------------------------
+30. Docker Kitematic can ONLY be used to download Docker images.
+
+	A. True
+
+	B. False
+
+Answer: B. False
+
+------------------------------------------------------------------------------------
+31. Services can be organized into ______ with Docker Cloud.
+
+	A. roles
+
+	B. stacks
+
+	C. zones
+
+	D. groups
+
+Answer: B. stacks
+
+------------------------------------------------------------------------------------
+32. Docker works the same way as virtual machines.
+
+	A. False
+
+	B. True
+
+Answer: A. False
+
+------------------------------------------------------------------------------------
+33. What Docker Compose command can be used to create service images?
+
+	A. docker-compose create
+
+	B. docker compose
+
+	C. docker-compose build
+
+	D. docker-compose make
+
+Answer: C. docker-compose build
+
+------------------------------------------------------------------------------------
+34. Docker Toolbox can only be installed and run on Linux.
+
+	A. False
+
+	B. True
+
+Answer: A. False
+
+------------------------------------------------------------------------------------
+35. Each instruction in a Dockerfile creates an intermediate container as the image is built.
+
+	A. True
+
+	B. False
+
+Answer: A. True
+
+------------------------------------------------------------------------------------
+36. What key concepts does Docker rely on?
+
+	A. Images and containers
+
+	B. Images and archives
+
+	C. Images and virtual machines
+
+	D. Virtual machines and LXC
+
+Answer: A. Images and containers
+
+------------------------------------------------------------------------------------
+37. Setting up communications between multiple containers always requires multiple Docker run statements to be executed.
+
+	A. False
+
+	B. True
+
+Answer: A. False
+
+------------------------------------------------------------------------------------
+38. Docker volumes are persisted even after a container is deleted.
+
+	A. True
+
+	B. False
+
+Answer: A. True
+
+------------------------------------------------------------------------------------
+39. Docker Cloud provides a browser-based terminal for services.
+
+	A. False
+
+	B. True
+
+Answer: B. True
+
+------------------------------------------------------------------------------------
+40. You've run the "docker ps" command but no containers are showing. Why?
+
+	A. You don't have an image for the container.
+
+	B. All containers are stopped.
+
+	C. None of these
+
+	D. All containers are running.
+
+Answer: B. All containers are stopped.
+
+------------------------------------------------------------------------------------
+41. What options are available for getting source code into Docker Containers?
+
+	A. Create a custom docker image with the source code or create a data volume pointing to your dev machine
+
+	B. Use the Dockerfile "embedcode" instruction
+
+	C. Create a custom container with the source code and use the "mount" command to point to your dev machine
+
+	D. None of these
+
+Answer: A. Create a custom docker image with the source code or create a data volume pointing to your dev machine
+
+------------------------------------------------------------------------------------
+42. What command can be used to "link" a command terminal window to a Docker machine?
+
+	A. docker env [machine name]
+
+	B. docker-machine environment [machine name]
+
+	C. docker-machine env [machine name]
+
+	D. docker rm [machine name]
+
+Answer: C. docker-machine env [machine name]
+
+------------------------------------------------------------------------------------
+43. What syntax can be used to delete a Docker volume and a container?
+
+	A. docker rm remove-volume containerName
+
+	B. docker rm -rv containerName
+
+	C. docker rm volume containerName
+
+	D. docker rm -v containerName
+
+Answer: D. docker rm -v containerName
+
+------------------------------------------------------------------------------------
+44. VirtualBox is required to use Docker on Mac and Windows dev machines.
+
+	A. True
+
+	B. False
+
+Answer: A. True
+
+------------------------------------------------------------------------------------
+45. Which of the following use Docker's layered file system?
+
+	A. Docker images only
+
+	B. Docker containers only
+
+	C. All of these
+
+	D. VirtualBox
+
+	E. Docker images and containers
+
+Answer: E. Docker images and containers
+
+------------------------------------------------------------------------------------
+46. What syntax can be used to create a volume that Docker manages?
+
+	A. docker run -v /temp:/var/temp imageName
+
+	B. docker run -vol /temp:/var/temp imageName
+
+	C. None of these
+
+	D. docker run -v /var/www imageName
+
+Answer: D. docker run -v /var/www imageName
+
+------------------------------------------------------------------------------------
+47. What syntax can be used to convert a Dockerfile into an Image?
+
+	A. docker run -t <username>/tagName .
+
+	B. docker create -t <username>/tagName .
+
+	C. docker convert -t <username>/tagName .
+
+	D. docker build -t <username>/tagName .
+
+Answer: D. docker build -t <username>/tagName .
+
+------------------------------------------------------------------------------------
+48. Which of the following tools are included in Docker Toolbox?
+
+	A. Docker Client
+
+	B. VirtualBox
+
+	C. All of these
+
+	D. Docker Kitematic
+
+	E. Docker Machine
+
+Answer: C. All of these
+
+------------------------------------------------------------------------------------
+49. What command can be run to download an image from Docker Hub?
+
+	A. docker ps -a
+
+	B. docker pull [image name]
+
+	C. docker rmi [image name]
+
+	D. docker images
+
+Answer: B. docker pull [image name]
+
+------------------------------------------------------------------------------------
+50. What Docker Client command can be used to convert a Dockerfile into an Image?
+
+	A. docker createimage
+
+	B. docker buildimage
+
+	C. docker build
+
+	D. docker create
+
+Answer: C. docker build
+
+------------------------------------------------------------------------------------
+51. Which of the following statements accurately describe a Docker volume?
+
+	A. Persisted even after a container is deleted
+
+	B. All of these
+
+	C. Can be shared and reused among containers
+
+	D. Special type of directory in a container
+
+	E. Are not affected by updates to images
+
+Answer: B. All of these
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	 Docker Deep Dive
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1. Which option can we pass to the Docker daemon to make it assign the Docker bridge a specific IP range?
+
+	A. --bip
+
+	B. --network
+
+	C. --ip-range
+
+	D. --cidr
+
+Answer: A. --bip
+
+------------------------------------------------------------------------------------
+2. Which Dockerfile Instruction is the preferred instruction for setting the main process to run inside a container?
+
+	A. DEFAULT
+
+	B. ENTRYPOINT
+
+	C. CMD
+
+	D. RUN
+
+Answer: B. ENTRYPOINT
+
+------------------------------------------------------------------------------------
+3. Which command shows us detailed container info including the containers PID within the Docker Hosts process tree?
+
+	A. docker config <container>
+
+	B. docker detail <container>
+
+	C. docker inspect <container>
+
+	D. docker pid <container>
+
+Answer: C. docker inspect <container>
+
+------------------------------------------------------------------------------------
+4. When using the ENTRYPOINT Instruction in a Dockerfile, how are CMD Instructions treated?
+
+	A. CMD Instructions are treated as arguments to the ENTRYPOINT Instruction
+
+	B. CMD Instructions override ENTRYPOINT Instructions
+
+	C. ENTRYPOINT Instructions are ignored
+
+	D. CMD Instructions are ignored
+
+Answer: A. CMD Instructions are treated as arguments to the ENTRYPOINT Instruction
+
+
+------------------------------------------------------------------------------------
+5. Which Dockerfile Instruction do we use to install packages to our new Image?
+
+	A. FROM
+
+	B. RUN
+
+	C. apt-get install
+
+	D. CMD
+
+Answer: B. RUN
+
+------------------------------------------------------------------------------------
+6. What is the name of the primary virtual Ethernet NIC inside of each Docker container?
+
+	A. veth0
+
+	B. eth1
+
+	C. veth1
+
+	D. eth0
+
+Answer: D. eth0
+
+------------------------------------------------------------------------------------
+7. Which Docker command lets us attach to a running container?
+
+	A. docker ssh <container>
+
+	B. docker login <container>
+
+	C. docker telnet <container>
+
+	D. docker attach <container>
+
+Answer: D. docker attach <container>
+
+------------------------------------------------------------------------------------
+8. Which of the following docker run commands will start a Container based on an Ubuntu 14.04 Base Image?
+
+	A. docker run Ubuntu:14.04 ....
+
+	B. docker run ubuntu -v 14.04 .....
+
+	C. docker run ubuntu:14.04 ....
+
+	D. docker run ubuntu --version=14.04 ....
+
+Answer: C. docker run ubuntu:14.04 ....
+
+------------------------------------------------------------------------------------
+9. Which of the following commands will install the Docker engine on an Ubuntu server?
+
+	A. cf install docker.io
+
+	B. rkt install docker
+
+	C. yum install docker
+
+	D. apt-get install docker.io
+
+Answer: D. apt-get install docker.io
+
+------------------------------------------------------------------------------------
+10. Virtual Machines are a form of what type of virtualization?
+
+	A. Container
+
+	B. Hypervisor
+
+	C. VLAN
+
+	D. Mainframe
+
+Answer: B. Hypervisor
+
+------------------------------------------------------------------------------------
+11. How do recipient containers learn about the networking config of source containers they are linked to?
+
+	A. By querying the Docker daemon
+
+	B. Via a sub-space secure channel to the source container
+
+	C. Environment variables + entries in the /etc/hosts file
+
+	D. The /link file in the root filesystem of the container
+
+Answer: C. Environment variables + entries in the /etc/hosts file
+
+------------------------------------------------------------------------------------
+12. Which of the following commands will show version information for the various installed Docker components?
+
+	A. docker version
+
+	B. apt-get update
+
+	C. docker detail
+
+	D. rkt version
+
+Answer: A. docker version
+
+------------------------------------------------------------------------------------
+13. Which Docker command builds a new image from a Dockerfile in the current directory?
+
+	A. docker build
+
+	B. docker build-image .
+
+	C. docker image .
+
+	D. docker build .
+
+Answer: D. docker build .
+
+------------------------------------------------------------------------------------
+14. What does pressing Control+P+Q inside of a container do?
+
+	A. Issues a print-screen of the current contents of the terminal window
+
+	B. Detaches the Docker Hosts terminal from the container
+
+	C. Kills the container
+
+	D. Generates a stack trace of the container
+
+Answer: B. Detaches the Docker Hosts terminal from the container
+
+------------------------------------------------------------------------------------
+15. Which Docker command shows running Docker Containers?
+
+	A. docker ps
+
+	B. docker list containers
+
+	C. docker show containers
+
+	D. rkt ps
+
+Answer: A. docker ps
+
+------------------------------------------------------------------------------------
+16. Which of the following is a major advantage of Containers over Virtual Machines?
+
+	A. Containers are more lightweight than Virtual Machines.
+
+	B. Containers are encrypted by default.
+
+	C. A single Container can host more apps than a Virtual Machine.
+
+	D. Containers are cross-platform.
+
+Answer: A. Containers are more lightweight than Virtual Machines.
+
+------------------------------------------------------------------------------------
+17. Which of the following is an advantage of Linking Containers when compared to exposing ports?
+
+	A. Linking containers is more efficient on memory.
+
+	B. Linking containers allow more active network connections.
+
+	C. Linking containers allows for faster container startup times.
+
+	D. Linking containers is considered more secure.
+
+Answer: D. Linking containers is considered more secure.
+
+
+------------------------------------------------------------------------------------
+18. What is the correct syntax to mount the /project/data directory from the Docker host into a directory called /data in a container?
+
+	A. docker run -v /data:/project/data
+
+	B. docker run -volumes-from /project/data:/data
+
+	C. docker run -v /project/data:/data
+
+	D. docker run -volumes-from /data:/project/data
+
+Answer: C. docker run -v /project/data:/data
+
+------------------------------------------------------------------------------------
+19. By default, what happens to a Docker Container when the process it is running exits?
+
+	A. The Container exits.
+
+	B. The Container reboots and restarts the process.
+
+	C. The Container performs a crash dump.
+
+	D. The Container continues running in detached mode with a Bash prompt available.
+
+Answer: A. The Container exits.
+
+------------------------------------------------------------------------------------
+20. Which of the following commands will install the Docker engine on a CentOS server?
+
+	A. yum install docker.io
+
+	B. apt-get install docker.io
+
+	C. yum install docker
+
+	D. apt-get install docker
+
+Answer: C. yum install docker
+
+------------------------------------------------------------------------------------
+21. In a default installation, how does the Docker daemon natively access features like kernel namespaces and cgroups?
+
+	A. via capabilities
+
+	B. via devicemapper
+
+	C. via LXC
+
+	D. via libcontainer
+
+Answer: D. via libcontainer
+
+------------------------------------------------------------------------------------
+22. How are comments added to a Dockerfile?
+
+	A. Any line starting with a #
+
+	B. Any text following a #
+
+	C. Any text following //
+
+	D. Any line starting with //
+
+Answer: A. Any line starting with a #
+
+------------------------------------------------------------------------------------
+23. Which Dockerfile Instruction must be the first Instruction in a Dockerfile?
+
+	A. MAINTAINER
+
+	B. RUN
+
+	C. A comment
+
+	D. FROM
+
+Answer: D. FROM
+
+------------------------------------------------------------------------------------
+24. Which transient image layer exists below the rootfs while a container starts?
+
+	A. The datalink layer
+
+	B. Layer 1
+
+	C. Block aggregation layer
+
+	D. Bootfs
+
+Answer: D. Bootfs
+
+------------------------------------------------------------------------------------
+25. Which Dockerfile instruction defines the base image to build from?
+
+	A. BASEIMAGE
+
+	B. FROM
+
+	C. BaseImage
+
+	D. BASE
+
+Answer: B. FROM
+
+------------------------------------------------------------------------------------
+26. At the time of recording the course, what is the default storage driver used by CentOS for Docker containers?
+
+	A. OverlayFS
+
+	B. NTFS.SYS
+
+	C. AUFS
+
+	D. devicemapper
+
+Answer: D. devicemapper
+
+------------------------------------------------------------------------------------
+27. Which of the following is the correct way to name a Dockerfile?
+
+	A. DockerFile
+
+	B. DOCKERFILE
+
+	C. Dockerfile
+
+	D. dockerfile
+
+Answer: C. Dockerfile
+
+------------------------------------------------------------------------------------
+28. Which of the following is true about RUN Instructions in a Dockerfile?
+
+	A. All RUN lines are compiled down to a single RUN Instruction
+
+	B. Each Dockerfile can only contain one
+
+	C. Each new RUN line creates a new image layer
+
+	D. RUN Instructions only work with containers that have elevated privileges
+
+Answer: C. Each new RUN line creates a new image layer
+
+------------------------------------------------------------------------------------
+29. From a Docker Host, which command can we use to stop a container?
+
+	A. docker stp <container>
+
+	B. docker halt <container>
+
+	C. docker stop <container>
+
+	D. docker-stop <container>
+
+Answer: C. docker stop <container>
+
+------------------------------------------------------------------------------------
+30. Which of the following is another term to describe container virtualization?
+
+	A. Storage virtualization
+
+	B. Hypervisor virtualization
+
+	C. OS level virtualization
+
+	D. Software Defined Data Center
+
+Answer: C. OS level virtualization
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	 Getting Started with Docker on Windows
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1. What is a dangling volume?
+
+	A. A volume created without a name
+
+	B. A volume that's not associated with a container
+
+	C. A volume that's removed from a running container
+
+	D. The default volume for the container file system that's unpacked from the image
+
+Answer: B. A volume that's not associated with a container
+
+------------------------------------------------------------------------------------
+2. What image type is blessed by both Docker and the people behind the software it contains?
+
+	A. Blessed
+
+	B. Official
+
+	C. Trusted
+
+	D. Automated Build
+
+Answer: B. Official
+
+------------------------------------------------------------------------------------
+3. What does docker history do?
+
+	A. Shows commands that we ran inside a given container
+
+	B. Shows image history
+
+	C. Shows container history
+
+	D. Shows a diff of changes in the container layer
+
+Answer: B. Shows image history
+
+
+------------------------------------------------------------------------------------
+4. Why does Docker for Windows need Hyper-V?
+
+	A. To run windows containers inside a Windows Server VM and linux containers inside a linux VM
+
+	B. To run windows containers inside a Windows Server VM
+
+	C. To run linux containers inside a linux VM
+
+	D. To run linux containers inside a linux VM and Hyper-V windows containers
+
+Answer: D. To run linux containers inside a linux VM and Hyper-V windows containers
+
+------------------------------------------------------------------------------------
+5. In the past we had to install software before we could run it. What is the equivalent step with Docker to be able to run software?
+
+	A. Run a container
+
+	B. Installs a container
+
+	C. Create a container
+
+	D. Pulls a container
+
+Answer: C. Create a container
+
+------------------------------------------------------------------------------------
+6. What docker command executes software?
+
+	A. `docker pull`
+
+	B. `docker run`
+
+	C. `docker ps`
+
+	D. `docker stop`
+
+Answer: B. `docker run`
+
+------------------------------------------------------------------------------------
+7. When executing the command "docker pull microsoft/aspnet:4.6.2" what does "microsoft/aspnet:4.6.2" refer to?
+
+	A. Repository
+
+	B. User
+
+	C. Registry
+
+	D. Tag
+
+	E. Image
+
+Answer: E. Image
+
+------------------------------------------------------------------------------------
+8. When using docker-compose, by default, what network are linux containers connected to?
+
+	A. host
+
+	B. none
+
+	C. bridge
+
+	D. user defined network
+
+Answer: D. user defined network
+
+------------------------------------------------------------------------------------
+9. What is a tag?
+
+	A. A reference to a registry
+
+	B. A reference to a repository
+
+	C. A reference to a specific image in a repository
+
+	D. A reference to a specific image in a registry
+
+Answer: C. A reference to a specific image in a repository
+
+------------------------------------------------------------------------------------
+10. Why are image layers read only?
+
+	A. So they can be compressed to reduce disk space
+
+	B. So we cannot write data inside a container
+
+	C. So they can be reused
+
+Answer: C. So they can be reused
+
+------------------------------------------------------------------------------------
+11. Which of the following container types doesn't use namespace isolation?
+
+	A. Windows Server Container
+
+	B. Hyper-V Container
+
+	C. Linux Container
+
+Answer: B. Hyper-V Container
+
+------------------------------------------------------------------------------------
+12. Which of the following provides the initial container file system?
+
+	A. Volume(s)
+
+	B. Network drive
+
+	C. Host file system
+
+	D. Image
+
+Answer: D. Image
+
+------------------------------------------------------------------------------------
+
+13. Database data should be stored in:
+
+	A. Image layer
+
+	B. Volume
+
+	C. Container Read/Write layer
+
+Answer: B. Volume
+
+------------------------------------------------------------------------------------
+14. In the past, to find software, we often used standalone web sites hosted by the creator of the software. Now, with Docker, how do we discover software?
+
+	A. Package Managers
+
+	B. Still use standalone web sites
+
+	C. Docker Engine
+
+	D. App Stores
+
+	E. Docker Hub
+
+Answer: E. Docker Hub
+
+------------------------------------------------------------------------------------
+15. In the past, we usually downloaded software in some sort of package to install it, for example a zip file or MSI file. Now, with Docker, how do we download 
+    software?
+
+	A. `docker pull`
+
+	B. `docker start`
+
+	C. `docker ps`
+
+	D. `docker download`
+
+Answer: A. `docker pull`
+
+------------------------------------------------------------------------------------
+16. When executing the command "docker pull microsoft/aspnet:4.6.2" what is the "microsoft" piece called?
+
+	A. User
+
+	B. Image
+
+	C. Tag
+
+	D. Registry
+
+	E. Repository
+
+Answer: A. User
+
+------------------------------------------------------------------------------------
+17. On a computer, with either Linux or Windows installed, there's a program that runs in a privileged mode that abstracts hardware and provides services to other 
+    processes. What is this program?
+
+	A. User
+
+	B. User space
+
+	C. Kernel
+
+	D. Kernel space
+
+	E. Application
+
+Answer: C. Kernel
+
+------------------------------------------------------------------------------------
+18. After stopping a container, how do you run the application in it again?
+
+	A. docker run <Container ID/Name>
+
+	B. docker start <Container ID/Name>
+
+	C. docker pull <Container ID/Name>
+
+	D. docker restart <Container ID/Name>
+
+Answer: B. docker start <Container ID/Name>
+
+------------------------------------------------------------------------------------
+19. What's the primary purpose of docker-compose?
+
+	A. Build containers, volumes, and networks
+
+	B. Build images
+
+	C. Pull and push images
+
+	D. Cleanup containers.
+
+	E. Build containers
+
+Answer: A. Build containers, volumes, and networks
+
+------------------------------------------------------------------------------------
+20. What does the -d in docker run -d nginx do?
+
+	A. Runs an attached container
+
+	B. Runs a container that will display output from the NGINX process in our console
+
+	C. Deletes the container when we stop the NGINX proces
+
+	D. Runs a detached container
+
+Answer: D. Runs a detached container
+
+------------------------------------------------------------------------------------
+21. Where does the file system come from for a container?
+
+	A. From the machine the container is started on
+
+	B. From the image used to create the container
+
+	C. From another special container called a parent container
+
+	D. From a remote network share hosted through Hyper-V
+
+Answer: B. From the image used to create the container
+
+------------------------------------------------------------------------------------
+22. Which of the following allows you to share the host file system with a process in a container?
+
+	A. Network drive(s)
+
+	B. Image(s)
+
+	C. symlinks
+
+	D. Volume(s)
+
+Answer: D. Volume(s)
+
+------------------------------------------------------------------------------------
+23. How can you see the output of a process running in a detached container?
+
+	A. docker output
+
+	B. docker Is
+
+	C. docker run -it
+
+	D. docker exec -it
+
+	E. docker logs
+
+Answer: E. docker logs
+
+------------------------------------------------------------------------------------
+24. What does docker commit do?
+
+	A. Copies files into a container
+
+	B. Creates a container
+
+	C. Duplicates a container
+
+	D. Creates a snapshot of a running container for rolling back
+
+	E. Creates an image
+
+Answer: E. Creates an image
+
+------------------------------------------------------------------------------------
+25. Which of the following is a good analogy for creating a container?
+
+	A. Installing software
+
+	B. Downloading software
+
+	C. Extracting a zip file
+
+	D. Running software
+
+Answer: A. Installing software
+
+------------------------------------------------------------------------------------
+26. How can processes in different containers talk to each other when using docker-compose?
+
+	A. Embedded DNS for Service Discovery
+
+	B. Pass IP addresses in configuration files
+
+	C. Pass IP addresses in environment variables
+
+	D. Linking containers
+
+Answer: A. Embedded DNS for Service Discovery
+
+------------------------------------------------------------------------------------
+27. What does an image contain?
+
+	A. The user space files
+
+	B. Only an application's files
+
+	C. Both the user and kernel space files
+
+	D. The kernel space files
+
+	E. The operating system
+
+Answer: A. The user space files
+
+------------------------------------------------------------------------------------
+28. Removing an image is akin to what in traditional software management?
+
+	A. Deleting an installer file or zip file
+
+	B. Uninstalling an application
+
+	C. Restarting an application
+
+	D. Stopping an application
+
+Answer: A. Deleting an installer file or zip file
+
+------------------------------------------------------------------------------------
+29. With Docker for Windows, what container types can you run?
+
+	A. Only Windows
+
+	B. Windows and macOS
+
+	C. Windows and Linux
+
+	D. Only Linux
+
+Answer: C. Windows and Linux
+
+------------------------------------------------------------------------------------
+30. Which of the following is an accurate statement about processes in a container?
+
+	A. Container processes are different from machine processes
+
+	B. Container processes are regular machine processes
+
+	C. Container processes run in a VM
+
+	D. Container processes do not show in the Windows Task Manager
+
+Answer: B. Container processes are regular machine processes
+
+------------------------------------------------------------------------------------
+31. What does docker-compose help us avoid? Excessive calls to ____?
+
+	A. docker stop
+
+	B. docker build
+
+	C. docker rm
+
+	D. docker run
+
+	E. docker pull
+
+Answer: D. docker run
+
+------------------------------------------------------------------------------------
+32. What is a Docker volume?
+
+	A. A directory that bypasses the container's union file system
+
+	B. The union file system for a container
+
+	C. A directory that mounts remote files
+
+	D. The host file system
+
+Answer: A. A directory that bypasses the container's union file system
+
+------------------------------------------------------------------------------------
+33. How can you get files out of a container onto the host? Assume a process in a container is writing files, like ffmpeg saving the contents of a converted video. 
+    Where do you write this data?
+
+	A. Write files to a volume mounted from the host
+
+	B. Write files to the default host file system mounts at C:\host or /mnt/host on Linux
+
+	C. Write files to network shares
+
+	D. Write files to the container file system, all writes are automatically copied to the host file system in the same folder 
+
+Answer: A. Write files to a volume mounted from the host
+
+------------------------------------------------------------------------------------
+34. On Windows 10 which container types can you run?
+
+	A. Hyper-V Containers
+
+	B. Windows 10 Containers
+
+	C. Both Hyper-V and Windows Server Containers
+
+	D. Windows Server Containers
+
+Answer: A. Hyper-V Containers
+
+------------------------------------------------------------------------------------
+35. In the past, we often download applications packaged in a zip file, or MSI, or some other package format. With Docker, what format is used to distribute software?
+
+	A. Image
+
+	B. DMG
+
+	C. ISO
+
+	D. Zip file
+
+	E. VHD
+
+Answer: A. Image
+
+------------------------------------------------------------------------------------
+36. Which of the following allows you to add files from the host to a running container?
+
+	A. docker cp
+
+	B. docker volumes
+
+	C. docker add
+
+	D. docker commit
+
+	E. docker share
+
+Answer: A. docker cp
+
+------------------------------------------------------------------------------------
+37. When executing the command "docker pull microsoft/aspnet:4.6.2" what is the "4.6.2" piece called?
+
+	A. Repository
+
+	B. Registry
+
+	C. Image
+
+	D. Tag
+
+	E. User
+
+Answer: D. Tag
+
+------------------------------------------------------------------------------------
+38. What's a good analogy for `docker stop`?
+
+	A. Uninstalls the container
+
+	B. Stops a single process in a container
+
+	C. Stops the processes running in a container
+
+	D. Removes the container
+
+Answer: C. Stops the processes running in a container
+
+------------------------------------------------------------------------------------
+39. To get Ctrl+C to work to kill a container, what should you pass when running the container?
+
+	A. --name
+
+	B. -it
+
+	C. -p
+
+	D. -d
+
+Answer: B. -it
+
+------------------------------------------------------------------------------------
+40. How is it possible that we can run a command prompt in a container created from the microsoft/dotnet image?
+
+	A. It's not possible to run anything but the one application provided by the image
+
+	B. Common OS applications like CMD.exe are mapped into the container by default
+
+	C. The image also provides CMD.exe
+
+	D. We have access to all apps on the machine in addition to those in the container
+
+Answer: C. The image also provides CMD.exe
+
+------------------------------------------------------------------------------------
+41. What format does Docker use to export images?
+
+	A. tar
+
+	B. dmg
+
+	C. zip
+
+	D. Image
+
+	E. iso
+
+Answer: A. tar
+
+------------------------------------------------------------------------------------
+42. On Windows Server 2016 which container types can you run?
+
+	A. Both Hyper-V and Windows Server Containers
+
+	B. Windows Server Containers
+
+	C. Windows 10 Containers
+
+	D. Hyper-V Containers
+
+Answer: A. Both Hyper-V and Windows Server Containers
+
+
+------------------------------------------------------------------------------------
+43. Where do dangling images typically come from?
+
+	A. When you stop many of the same containers
+
+	B. When running lots of containers from the same image
+
+	C. When building custom docker images
+
+	D. When downloading images from Docker hub
+
+Answer: C. When building custom docker images
+
+------------------------------------------------------------------------------------
+44. Why do containers exist?
+
+	A. To make it easier to use virtual machines
+
+	B. A replacement for monolithic operating systems
+
+	C. A replacement for virtual machines
+
+	D. To make it easier to use software
+
+Answer: D. To make it easier to use software
+
+------------------------------------------------------------------------------------
+45. What's a good analogy for `docker exec`?
+
+	A. Allows you to run additional processes in new containers
+
+	B. It's similar to installing software
+
+	C. Allows you to run additional processes in a container
+
+	D. Allows you to run additional processes outside a container
+
+Answer: C. Allows you to run additional processes in a container
+
+
+------------------------------------------------------------------------------------
+46. What is a repository on Docker Hub?
+
+	A. An image ta
+
+	B. A user account
+
+	C. A single image
+
+	D. A collection of images
+
+Answer: D. A collection of images
+
+------------------------------------------------------------------------------------
+47. What is used to resolve ip addresses with the embedded DNS in user-defined networks? What value is pulled from the docker-compose.yml file?
+
+	A. DNS name
+
+	B. environment
+
+	C. Service name
+
+	D. Image name
+
+Answer: C. Service name
+
+------------------------------------------------------------------------------------
+48. How can I run another process inside a running container?
+
+	A. docker start
+
+	B. docker ps
+
+	C. docker run
+
+	D. docker exec
+
+Answer: D. docker exec
+
+------------------------------------------------------------------------------------
+49. Images contain the entire user space, in other words the entire file system for a container. How is this not horribly inefficient in terms of disk space?
+
+	A. Images are layered and common layers are shared
+
+	B. Images use state of the art compression to reduce the disk space requirements
+
+	C. You only pull down the image layers that you need to run your application
+
+	D. Image layers are highly optimized to reduce unnecessary components.
+
+Answer: A. Images are layered and common layers are shared
+
+------------------------------------------------------------------------------------
+50. Say you have the following output from docker ps:
+    57cf9c689955 docs/docker.github.io "/bin/sh -c 'jekyll s" About an hour ago Exited (137) About an hour ago grave_tesla
+
+   Which of the following does not work as a container identifier (CID) when running a command like the following?
+   docker stop <CID>
+   docker start <CID>
+   docker rm <CID>
+
+	A. 57
+
+	B. 57cf9c689955
+
+	C. grave_tesla
+
+	D. gra
+
+Answer: D. gra
+
+------------------------------------------------------------------------------------
+51. How do you terminate software running in a container?
+
+	A. docker stop
+
+	B. docker rm
+
+	C. docker terminate
+
+	D. docker kill
+
+Answer: A. docker stop 
+
+------------------------------------------------------------------------------------
+52. Which of the following Windows Features do you need to use Windows Server containers?
+
+	A. Docker
+
+	B. Containers
+
+	C. Hyper-V and Containers
+
+	D. Hyper-V
+
+Answer: B. Containers
+
+------------------------------------------------------------------------------------
+53. Which of the following stops all running containers?
+
+	A. docker stop $(docker ps -q)
+
+	B. docker rmi $(docker ps -q)
+
+	C. docker halt $(docker ps -q)
+
+	D. docker rm -f $(docker ps -q)
+
+Answer: A. docker stop $(docker ps -q)
+
+------------------------------------------------------------------------------------
+54. Where do dangling volumes typically come from?
+
+	A. Containers that we manually mount managed volumes into
+
+	B. Images that have a VOLUME instruction
+
+	C. Containers that we bind-mount host volumes into
+
+	D. Every container that is created has a volume created as well
+
+Answer: B. Images that have a VOLUME instruction
+
+------------------------------------------------------------------------------------
+55. Where are created, modified, and deleted files stored in a container?
+
+	A. In a volume mounted in the container
+
+	B. In an R/W container layer
+
+	C. In the bottom most layer from the image it was created from
+
+	D. In the top most layer from the image it was created from
+
+Answer: B. In an R/W container layer
+
+------------------------------------------------------------------------------------
+56. In the past, to launch an installed application, we would run an executable file. How does Docker run software?
+
+	A. Pull a container
+
+	B. Install a container
+
+	C. Runs an executable
+
+	D. Create a container
+
+Answer: C. Runs an executable
+
+------------------------------------------------------------------------------------
+57. How are image layers coalesced to form a container's file system?
+
+	A. Files are copied out of layers when creating a container into a union mount point
+
+	B. A union file system is used to create a union mount point
+
+	C. Container file systems exist in memory, in a RAM disk, aggregated from image layers
+
+Answer: B. A union file system is used to create a union mount point
+
+------------------------------------------------------------------------------------
+58. How can you connect a container to a user defined network?
+
+	A. --udf NETWORK_NAME
+
+	B. docker connect
+
+	C. --net NETWORK_NAME
+
+	D. docker attach
+
+	E. docker disconnect
+
+Answer: C. --net NETWORK_NAME
+
+------------------------------------------------------------------------------------
+59. In traditional software management, we uninstall software to remove it from a machine, what's the equivalent with Docker?
+
+	A. Remove an image
+
+	B. Uninstall a container
+
+	C. Remove a container
+
+	D. Stop an image
+
+	E. Stop a container
+
+Answer: C. Remove a container
+
+------------------------------------------------------------------------------------
+60. When you extract an image with docker save what is inside the tar archive?
+
+	A. The contents of all layers flattened into one folder
+
+	B. A folder for the entire image and also a layers folder with each layer nested inside
+
+	C. A folder for each image layer
+
+Answer: C. A folder for each image layer
+
+------------------------------------------------------------------------------------
+61. The docker history command shows output similar to which of the following?
+
+	A. Dockerfile
+
+	B. docker ps
+
+	C. docker images
+
+	D. docker-compose.yml
+
+	E. docker layers
+
+Answer: A. Dockerfile
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------

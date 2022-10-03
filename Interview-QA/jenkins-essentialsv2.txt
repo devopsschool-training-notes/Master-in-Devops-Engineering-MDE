@@ -1,0 +1,240 @@
+
+	Note 4 - Jenkins
+
+**********************************************************************************************************************************************************************
+	Getting Started With Jenkins Continuous Integration
+**********************************************************************************************************************************************************************
+
+1. The easiest way to get a plugin for Jenkins is _________.
+
+	A. from inside Jenkins itself
+
+	B. by building it from source
+
+	C. creating a plugin request call 
+
+	D. downloading an installer package 
+
+Answer: A. from inside Jenkins itself
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2. Which of the following is REQUIRED for using Jenkins?
+
+	A. Java in your Path
+
+	B. .NET framework
+
+	C. Web server
+
+	D. Java 1.5 or higher
+
+Answer: D. Java 1.5 or higher
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+3. A workspace is _______.
+
+	A. the central configuration area for Jenkins
+
+	B. the directory Jenkins checks source code out to
+
+	C. the only part of Jenkins that lives in the cloud
+
+	D. the directory that Jenkins caches files at 
+
+Answer: B. the directory Jenkins checks source code out to 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+4. One of the primary problems that continuous integration addresses is _________.
+
+	A. language choice
+
+	B. group think
+
+	C. isolated development
+
+	D. formatting code
+
+Answer: C. isolated development 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+5. Parallelization in Jenkins can best be achieved by _________.
+
+	A. setting parallel to true in the Jenkins config
+
+	B. breaking up your build into multiple jobs
+
+	C. writing multi-threaded job scripts
+
+	D. using multiple jenkins master servers 
+
+Answer: B. breaking up your build into multiple jobs
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+6. Jenkins can be started from the command line by using what command?
+
+	A. jar jenkins.war
+
+	B. java -run jenkins.war
+
+	C. java -jar jenkins.war 
+
+	D. run jenkins.war 
+
+Answer: C. java -jar jenkins.war  
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+7. When implementing unit testing in Jenkins it is important to never _________.
+
+	A. run the tests in parallel to anything else
+
+	B. leave tests broken
+
+	C. write small tests
+
+	D. report the test results
+
+Answer: B. leave tests broken 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+8. Jenkins is really a tool that can be used to __________ most aspects of continuous integration?
+
+	A. undo
+
+	B. reverse engineer
+
+	C. automate
+
+	D. dispel 
+
+Answer: C. automate 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+9. Security can be set at an individual job level in Jenkins.
+
+	A. false
+
+	B. true 
+
+Answer: B. true  
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+10. A good first step for moving a build over to Jenkins is to ________.
+
+	A. conver everything to Java
+
+	B. disable unit tests
+
+	C. diagram the manual process
+
+	D. get a full build in a failed state 
+
+Answer: C. diagram the manual process
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+11. An important step in making sure that the build process is taken seriously is to _________.
+
+	A. have management introduce the new build process
+
+	B. never leave the build in a broken state 
+
+	C. send out a report on each build 
+
+	D. set off the smoke alarm every time the build breaks 
+
+Answer: B. never leave the build in a broken state 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+12. Jenkins used to be called _______.
+
+	A. burly
+
+	B. hudson
+
+	C. jeeves
+
+	D. cheeves
+
+Answer: B. hudson 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+13. The Join trigger plugin _______.
+
+	A. makes 2 jobs run at the same time
+
+	B. makes a single job split into many jobs
+
+	C. makes sure multiple jobs are complete before downstream jobs can run
+
+	D. makes jenkins show a different icon
+
+Answer: C. makes sure multiple jobs are complete before downstream jobs can run
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+14. What should the http port be set to in order to disable regular http in favor of https?
+
+	A. 0
+
+	B. 43
+
+	C. 8080
+
+	D. -1
+
+Answer: D. -1  
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+15. What technology allows for connecting a slave node directly from in the browser?
+
+	A. .NET remoting
+
+	B. JNLP
+
+	C. SSL 
+
+	D. RDP
+
+Answer: B. JNLP
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+16. One of the major conflicts that led to a split of the early Jenkins project was _______.
+
+	A. whether or not it should only work with Java applications
+
+	B. how much to charge for it
+
+	C. what language to write it in
+
+	D. whether or not to keep the project on Java.net 
+
+Answer: D. whether or not to keep the project on Java.net 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+17. Jenkins is primarily written in ______.
+
+	A. ruby
+
+	B. python
+
+	C. C# 
+
+	D. java1 
+
+Answer: D. java1 
+
+**********************************************************************************************************************************************************************

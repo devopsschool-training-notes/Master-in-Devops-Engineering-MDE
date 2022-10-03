@@ -1,0 +1,236 @@
+===================================================
+Is it right definition of Sonarqube?
+
+SonarQube (formerly Sonar) is a quality management platform focusing on continuous analysis of source code quality.
+
+Answer - YES
+
+===================================================
+
+Which is not a severities in this list
+Blocker
+Critical
+Major
+Biggest
+
+Answer - Biggest
+===================================================
+Is it right defintion of SonarQube Scanners?
+
+The SonarQube Scanner is recommended as the default launcher to analyze a project with SonarQube.
+
+Answer- YES
+
+===================================================
+
+How to extend the functionality of SonarQube?
+Modules
+Plugins
+Extension
+Ads on
+
+Answer =  Plugins
+===================================================
+
+Which statement is correct?
+
+Sonar will run CheckStyle, FindBugs and PMD by default for Java projects
+Sonar will run Checkmate by default for Java projects
+Sonar will run FindIssue by default for Java projects
+Sonar will run PMDtest by default for Java projects
+
+Answer - 
+Sonar will run CheckStyle, FindBugs and PMD by default for Java projects
+===================================================
+
+
+Which is not a axis of code quality in SonarQube?
+
+Architecture and Design
+Complexity
+Potential bugs
+Code Coverage
+
+Answer -Code Coverage 
+
+===================================================
+What is the prerequisite for SonarQube Installation?
+
+Java
+DOTNET
+JavaScript
+Php
+
+ANswer - Java
+
+====================================
+Which is not part of Code Technical Review in SoanrQube?
+
+Confirm 
+Change Severity
+Resolve 
+Submited
+
+Answer - Submited
+
+=========================================
+What is not a search criteria for the rules in SonarQube?
+
+Language
+Type
+Tag
+Develop
+
+Answer   - Develop
+=========================================
+Which is the not found in sonar-project.properties?
+
+sonar.projectVersion
+sonar.sources
+sonar.code
+sonar.language
+
+Answer - sonar.code
+
+Questions 1
+=========================================================================
+Which property should be decalred for SonarQube Project base dir?
+
+Options
+=========
+sonar.projectBaseDir
+sonar.working.directory
+sonar.basedir
+sonar.projectdir
+
+Answer
+=========
+sonar.projectBaseDir
+
+Questions 2
+=========================================================================
+Which property should be decalred to tell SonarQube which SCM plugin should be used to grab SCM data on the project
+
+Options
+=========
+sonar.scm.provider
+sonar.scm
+sonar.git
+sonar.version
+
+Answer
+=========
+sonar.scm.provider
+
+Questions 3
+=========================================================================
+Which property should be decalred to tell SonarQube log level?
+
+Options
+=========
+INFO 
+DEBUG 
+TRACE 
+ERROR
+
+Answer
+=========
+ERROR
+
+Questions 4
+=========================================================================
+Which is not supported Log Level in SonarQube?
+
+Options
+=========
+sonar.log.level
+sonar.verbose
+sonar.log
+sonar.loglevel
+
+Answer
+=========
+sonar.verbose
+
+
+Questions 5
+=========================================================================
+Is it right definition of Code Smell? A maintainability-related issue in the code. Leaving it as-is means that at best maintainers will have a harder time than they should making changes to the code. At worst, they'll be so confused by the state of the code that they'll introduce additional errors as they make changes.
+
+Options
+YES
+NO
+
+Answer
+=========
+YES
+
+Questions 6
+=========================================================================
+Is it right definition of Coding Rule? A good coding practice. Not complying to coding rules leads to quality flaws and creation of issues in SonarQube. Coding rules can check quality on files, unit tests or packages.
+
+Options
+YES
+NO
+
+Answer
+=========
+YES
+
+Questions 7
+=========================================================================
+Is it right definition of Analyzer? A client application that analyzes the source code to compute snapshots.
+
+Options
+YES
+NO
+
+Answer
+=========
+YES
+
+Questions 8
+=========================================================================
+Which is not severities in Sonarqube?
+
+Options
+Blocker
+Major
+Critical
+Issues
+
+Answer
+=========
+Issues
+
+
+Questions 9
+=========================================================================
+Is it possible to Copy the rules from one profile to another?
+
+Options
+YES
+NOT
+
+Answer
+=========
+YES
+
+Questions 9
+=========================================================================
+Is it possible to Copy a profile from one SonarQube instance to another?
+
+Options
+YES
+NOT
+
+Answer
+=========
+YES
+
+
+
+
+
+
+

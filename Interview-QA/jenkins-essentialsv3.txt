@@ -1,0 +1,240 @@
+		
+		Note 5 - Jenkins
+
+**********************************************************************************************************************************************************************
+		Gradle Fundamentals
+**********************************************************************************************************************************************************************
+
+1. What are the parts of the task lifecycle
+
+	A. Execution
+
+	B. Initialization, Configuration, Execution
+
+	C. Initialization, Configuration, Execution, Finalization 
+
+	D. Configuration, Execution 
+
+Answer: B. Initialization, Configuration, Execution 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2. How do you declare a typed task?
+
+	A. task copyImages (type: Copy)
+
+	B. Copy copyImages
+
+	C. task copyImages (Copy)
+
+Answer: A. task copyImages (type: Copy)
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+3. In a multi project build which two files do I need to add to the top level project?
+
+	A. build.gradle and build.settings
+
+	B. multi.gradle and settings.gradle
+
+	C. build.gradle and settings.gradle
+
+	D. build.gradle and settings.properties 
+
+Answer: C. build.gradle and settings.gradle 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+4. What does the wrapper task do?
+
+	A. Wraps up the code so that any exceptions are caught
+
+	B. Wraps gradle so it can be used from an IDE such as Eclipse
+
+	C. Installs an extra set of Java tasks to make testing easier
+
+	D. Ensures that all developers use the same version of Gradle to build the code 
+
+Answer: D. Ensures that all developers use the same version of Gradle to build the code 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+5. What is the syntax for filtering tests in gradle?
+
+	A. add a test { filter {} } closure
+
+	B. build only the tests you want to run
+
+	C. you have to run all the tests, you cannot filter
+
+	D. add the test-filter plugin
+
+Answer: A. add a test { filter {} } closure
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+6. What does taskA.finalizedBy taskB do?
+
+	A. Causes taskB to run before taskA
+
+	B. Nothing, this is not yet available in Gradle
+
+	C. Causes taskB to run after taskA
+
+	D. Causes taskA and taskB to run in parallel 
+
+Answer: C. Causes taskB to run after taskA  
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+7. How do you declare a task?
+
+	A. Task taskName
+
+	B. Task.withName taskName
+
+	C. taskName: Task
+
+	D. Task: taskName
+
+Answer: A. Task taskName
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+8. When copying files you can use which method to replace text?
+
+	A. expand
+
+	B. replace
+
+	C. insert
+
+	D. regex 
+
+Answer: A. expand 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+9. How do you declare dependencies between tasks?
+
+	A. taskA : taskB
+
+	B. taskB.runsBefore taskA
+
+	C. taskA.depends taskB
+
+	D. taskA.dependsOn taskB 
+
+Answer: D. taskA.dependsOn taskB  
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+10. Which of the following is valid gradle syntax to add a compile dependency on junit?
+
+	A. compile name=junit version=4.1.2
+
+	B. compile 'junit:junit:4.1.12'
+
+	C. compile 'junit:4.12'
+
+	D. compile 'junit:version:4.1.12' 
+
+Answer: B. compile 'junit:junit:4.1.12'
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+11. What is the syntax for defining a repository in Gradle?
+
+	A. use jcenter()
+
+	B. repositories { jcenter() }
+
+	C. repository: jcenter() 
+
+	D. repositories: jcenter() 
+
+Answer: B. repositories { jcenter() }
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+12. When you call doLast on a task twice passing different closures what happens?
+
+	A. Only the first closure is executed
+
+	B. Neither closure is executed, it is an error
+
+	C. Only the last closure is executed
+
+	D. Both closures are executed
+
+Answer: D. Both closures are executed
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+13. How do you add the java plugin?
+
+	A. apply java plugin
+
+	B. apply plugin 'java'
+
+	C. java 'plugin'
+
+	D. Do nothing. The plugin is always enabled 
+
+Answer: B. apply plugin 'java' 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+14. If you use the gradle-testsets-plugin how do you add an integrationTest sourceset in gradle?
+
+	A. testSets { integrationTest = 'myDir' }
+
+	B. integrationTest { dirName='myDir'}
+
+	C. testSets { integrationTest { dirName='myDir' } }
+
+	D. testSets { dirName='myDir'} 
+
+Answer: C. testSets { integrationTest { dirName='myDir' } } 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+15. When you use the << syntax which method on the task is executed?
+
+	A. last
+
+	B. first
+
+	C. doFirst
+
+	D. doLast 
+
+Answer: D. doLast
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+16. When you taskA.mustRunAfter taskB
+
+	A. taskB always runs after
+
+	B. taskA always runs after taskB
+
+	C. taskA runs after taskB only if both tasks are scheduled to run 
+
+Answer: C. taskA runs after taskB only if both tasks are scheduled to run
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+17. If I want to run a java application which plugin do I use?
+
+	A. java-runner
+
+	B. java
+
+	C. run
+
+	D. application 
+
+Answer: D. application 
+
+**********************************************************************************************************************************************************************
