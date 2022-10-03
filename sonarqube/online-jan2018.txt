@@ -1,0 +1,178 @@
+SonarQube
+========================================
+
+What is SonarQube?
+	Static Code Ananlysis tool - Wrong
+	Quality mgmt tool
+	Free
+	Open Source
+	Developed using Java
+	Nice Dashboard
+	Extend using Plugins
+	But you can store other reports
+
+Why we need Quality mgmt tool and of What?
+	- We need the manage the quality of the source code
+	Source Code
+			Good
+			Bad
+	70% of the BUGS FOUND in a released Product COZ of Bad Code Quality
+
+How do you know quality of the software?
+	Peer Code Review - Review will be done based on the skills of the reviewer
+	Static code Review tool - collections of tools which you run on code and tools will give you quality reports
+
+What are the static code analysis tools?
+https://en.wikipedia.org/wiki/List_of_tools_for_static_code_analysis
+
+Who is writing the source code
+	DEV
+
+How to install SonarQube?
+	JDK OR JRE
+	
+	Download SonarQube
+	https://www.sonarqube.org/downloads/
+
+	unzip
+
+How to start the SonarQube?
+	
+SonarQube 5.0
+
+SonarQube 6.0
+	elasticsearch
+		CANT NOT RUN WITH ROOT
+
+	
+
+Error
+===============================
+--> Wrapper Started as Daemon
+Launching a JVM...
+Unable to start JVM: No such file or directory (2)
+JVM exited while loading the application.
+JVM Restarts disabled.  Shutting down.
+<-- Wrapper Stopped
+--> Wrapper Started as Daemon
+Launching a JVM...
+Unable to start JVM: No such file or directory (2)
+JVM exited while loading the application.
+JVM Restarts disabled.  Shutting down.
+<-- Wrapper Stopped
+--> Wrapper Started as Daemon
+Launching a JVM...
+Unable to start JVM: No such file or directory (2)
+JVM exited while loading the application.
+JVM Restarts disabled.  Shutting down.
+<-- Wrapper Stopped
+
+Answer -
+Java is not installed or set
+
+Error
+================
+--> Wrapper Started as Daemon
+Launching a JVM...
+Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+  Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+
+2018.01.07 04:33:31 INFO  app[][o.s.a.AppFileSystem] Cleaning or creating temp directory /opt/so
+narqube/temp
+2018.01.07 04:33:31 INFO  app[][o.s.a.es.EsSettings] Elasticsearch listening on /127.0.0.1:9001
+2018.01.07 04:33:31 INFO  app[][o.s.a.p.ProcessLauncherImpl] Launch process[[key='es', ipcIndex=
+1, logFilenamePrefix=es]] from [/opt/sonarqube/elasticsearch]: /opt/sonarqube/elasticsearch/bin/
+elasticsearch -Epath.conf=/opt/sonarqube/temp/conf/es
+2018.01.07 04:33:31 INFO  app[][o.s.a.SchedulerImpl] Waiting for Elasticsearch to be up and runn
+ing
+2018.01.07 04:33:32 INFO  app[][o.e.p.PluginsService] no modules loaded
+2018.01.07 04:33:32 INFO  app[][o.e.p.PluginsService] loaded plugin [org.elasticsearch.transport
+.Netty4Plugin]
+2018.01.07 04:33:33 WARN  app[][o.s.a.p.AbstractProcessMonitor] Process exited with exit value [
+es]: 1
+2018.01.07 04:33:33 INFO  app[][o.s.a.SchedulerImpl] Process [es] is stopped
+2018.01.07 04:33:33 INFO  app[][o.s.a.SchedulerImpl] SonarQube is stopped
+<-- Wrapper Stopped
+
+
+
+SONARQUBE RUNNING AT  - http://13.127.44.123:9000/about
+			admin/admin
+
+CONF FILE - /opt/sonar/conf/sonar.properties
+
+
+ARCHITECTURE OF SONARQUBE
+===========================================
+
+Refer images
+
+
+
+ERROR
+=======================================================
+C:\Tools\sonarscanner30\src>C:\Tools\sonarscanner30\scannner\bin\sonar-scanner.bat
+INFO: Scanner configuration file: C:\Tools\sonarscanner30\scannner\bin\..\conf\sonar-scanner.properties
+INFO: Project root configuration file: C:\Tools\sonarscanner30\src\sonar-project.properties
+INFO: SonarQube Scanner 3.0.3.778
+INFO: Java 1.8.0_121 Oracle Corporation (64-bit)
+INFO: Windows 10 10.0 amd64
+INFO: User cache: C:\Users\Rajesh\.sonar\cache
+ERROR: SonarQube server [http://localhost:9000] can not be reached
+INFO: ------------------------------------------------------------------------
+INFO: EXECUTION FAILURE
+INFO: ------------------------------------------------------------------------
+INFO: Total time: 3.388s
+INFO: Final Memory: 4M/123M
+INFO: ------------------------------------------------------------------------
+ERROR: Error during SonarQube Scanner execution
+org.sonarsource.scanner.api.internal.ScannerException: Unable to execute SonarQube
+        at org.sonarsource.scanner.api.internal.IsolatedLauncherFactory$1.run(IsolatedLauncherFactory.java:84)
+        at org.sonarsource.scanner.api.internal.IsolatedLauncherFactory$1.run(IsolatedLauncherFactory.java:71)
+        at java.security.AccessController.doPrivileged(Native Method)
+        at org.sonarsource.scanner.api.internal.IsolatedLauncherFactory.createLauncher(IsolatedLauncherFactory.java:71)
+        at org.sonarsource.scanner.api.internal.IsolatedLauncherFactory.createLauncher(IsolatedLauncherFactory.java:67)
+        at org.sonarsource.scanner.api.EmbeddedScanner.doStart(EmbeddedScanner.java:218)
+        at org.sonarsource.scanner.api.EmbeddedScanner.start(EmbeddedScanner.java:156)
+        at org.sonarsource.scanner.cli.Main.execute(Main.java:74)
+        at org.sonarsource.scanner.cli.Main.main(Main.java:61)
+Caused by: java.lang.IllegalStateException: Fail to get bootstrap index from server
+        at org.sonarsource.scanner.api.internal.Jars.getBootstrapIndex(Jars.java:100)
+        at org.sonarsource.scanner.api.internal.Jars.getScannerEngineFiles(Jars.java:76)
+        at org.sonarsource.scanner.api.internal.Jars.download(Jars.java:70)
+        at org.sonarsource.scanner.api.internal.JarDownloader.download(JarDownloader.java:39)
+        at org.sonarsource.scanner.api.internal.IsolatedLauncherFactory$1.run(IsolatedLauncherFactory.java:75)
+        ... 8 more
+Caused by: java.net.ConnectException: Failed to connect to localhost/0:0:0:0:0:0:0:1:9000
+        at org.sonarsource.scanner.api.internal.shaded.okhttp.internal.connection.RealConnection.connectSocket(RealConnection.java:222)
+        at org.sonarsource.scanner.api.internal.shaded.okhttp.internal.connection.RealConnection.connect(RealConnection.java:146)
+        at org.sonarsource.scanner.api.internal.shaded.okhttp.internal.connection.StreamAllocation.findConnection(StreamAllocation.java:186)
+        at org.sonarsource.scanner.api.internal.shaded.okhttp.internal.connection.StreamAllocation.findHealthyConnection(StreamAllocation.java:121)
+        at org.sonarsource.scanner.api.internal.shaded.okhttp.internal.connection.StreamAllocation.newStream(StreamAllocation.java:100)
+        at org.sonarsource.scanner.api.internal.shaded.okhttp.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:42)
+        at org.sonarsource.scanner.api.internal.shaded.okhttp.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:92)
+        at org.sonarsource.scanner.api.internal.shaded.okhttp.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:67)
+        at org.sonarsource.scanner.api.internal.shaded.okhttp.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:93)
+        at org.sonarsource.scanner.api.internal.shaded.okhttp.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:92)
+        at org.sonarsource.scanner.api.internal.shaded.okhttp.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:67)
+        at org.sonarsource.scanner.api.internal.shaded.okhttp.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.java:93)
+        at org.sonarsource.scanner.api.internal.shaded.okhttp.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:92)
+        at org.sonarsource.scanner.api.internal.shaded.okhttp.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:120)
+        at org.sonarsource.scanner.api.internal.shaded.okhttp.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:92)
+        at org.sonarsource.scanner.api.internal.shaded.okhttp.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:67)
+        at org.sonarsource.scanner.api.internal.shaded.okhttp.RealCall.getResponseWithInterceptorChain(RealCall.java:179)
+        at org.sonarsource.scanner.api.internal.shaded.okhttp.RealCall.execute(RealCall.java:63)
+        at org.sonarsource.scanner.api.internal.ServerConnection.callUrl(ServerConnection.java:113)
+        at org.sonarsource.scanner.api.internal.ServerConnection.downloadString(ServerConnection.java:98)
+        at org.sonarsource.scanner.api.internal.Jars.getBootstrapIndex(Jars.java:96)
+        ... 12 more
+Caused by: java.net.ConnectException: Connection refused: connect
+        at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+        at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+        at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+        at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+        at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+        at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+        at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+
+SOlutuon - -- Check the SCanner conf and sonarqube server location

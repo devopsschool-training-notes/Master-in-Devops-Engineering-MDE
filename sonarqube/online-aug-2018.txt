@@ -1,0 +1,95 @@
+SonarQube
+Maven
+===================================
+
+JIRA --> GIT --> SonarQube
+====================================
+
+What is SonarQube?
+	Quality managemet tool
+	Open Source
+	Version
+		Community
+		Enterprise
+		Data version
+
+Quality
+	Source Code Quality --> Using Static Analysis Tool
+	https://en.wikipedia.org/wiki/List_of_tools_for_static_code_analysis
+
+	Test Quality
+	https://stackify.com/code-coverage-tools/
+
+Managment	
+	Rules Managment
+	Project mgmt
+	Access Mgmt
+	Dashboard
+	Histogram
+	Quality wall
+	Backup
+	Analysis....
+	Who - What - How????
+
+
+Why do need it??
+	Avoid technical Debt....
+	Avoid bad code in the prod....
+
+How to install it??
+13.232.167.17
+
+JRE | JDK
+
+
+$ cd
+$ sudo yum install git
+$ sudo yum install wget -y
+$ sudo yum install unzip
+$ wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+$ sudo rpm -ivh jdk-8u131-linux-x64.rpm
+$ java -version
+
+SONARQBE RUNS AS A NORMAL USER
+---------------------------------
+
+$ wget https://sonarsource.bintray.com/Distribution/sonarqube/sonarqube-7.2.1.zip
+$ unzip sonarqube-7.2.1.zip
+$ mv sonarqube-6.7.5 sonarqube
+$ cd linux-x86-64
+$ ./sonar.sh start
+$ ./sonar.sh status
+
+http://13.232.167.17:9000/
+admin
+admin
+
+SonarQube architecture.......
+	SonarQube Server
+		http://13.232.167.17:9000/
+	SonarQube Scanner
+		$ wget https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.2.0.1227-linux.zip
+		$ unzip sonar-scanner-cli-3.2.0.1227-linux.zip
+		$ mv sonar-scanner-3.2.0.1227-linux scan
+	Source Code 
+		$ git clone https://github.com/scmgalaxy/java-sonar-runner-simple.git
+		$ mv java-sonar-runner-simple/ src
+		Sonar Property file..
+
+
+NOW ==== RUN SCANNER ON SOURCE CODE
+/home/ec2-user/rajesh/scan/bin/sonar-scanner
+===================================================
+Security
+	Code
+	Build
+	Infra
+	Access
+	App
+	Tran	
+	Key
+
+
+
+
+

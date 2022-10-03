@@ -1,0 +1,57 @@
+What is SonarQube?
+	QUALITY MGMT TOOL
+
+What is Quality?
+	Code Quality
+		Code Review
+	Test Quality 
+	Coverage Quality
+
+		SonarQube maanges this quality for entire project.
+
+Why SonarQube?	
+	70% of the bugs gets introduce in product coz of bad code
+
+Other tools 
+	Fortify
+	Coverity
+
+What is Static Code Analysis tools?
+https://en.wikipedia.org/wiki/List_of_tools_for_static_code_analysis#Java
+
+Architecture of SonarQube?
+	SonarQube Server
+	Source Code 
+	Scanner
+
+
+How to install SonarQube?
+
+$ yum install wget
+
+> wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+
+> rpm -ivh jdk-8u131-linux-x64.rpm
+
+> wget https://sonarsource.bintray.com/Distribution/sonarqube/sonarqube-7.0.zip
+
+> unzip sonarqube-7.0.zip
+
+http://13.233.59.176:9000/
+admin
+admin
+
+SOURCE CODE
+https://github.com/scmgalaxy/java-sonar-runner-simple
+
+How to install Scanner?
+=========================================
+Linux
+> wget https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.0.3.778-linux.zip
+> unzip sonar-scanner-cli-3.0.3.778-linux.zip
+
+LAST THING
+==================================
+
+RUN SCANNER ON SRC CODE
+/home/ec2-user/scanner/bin

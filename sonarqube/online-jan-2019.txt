@@ -1,0 +1,48 @@
+What is SonarQube?
+	Quality mgmt tool.
+	Version
+		Community
+		Enterprise
+	Developed in Java -- By SonarSource
+
+What is Quality
+		Quality of Code	
+			Static Code Analysis
+		Quality of Test/Coverage....
+
+thus using SonarQube, you can manage a Quality of Code && Quality of Test/Coverage.
+
+Why we need SonarQube?
+	Quality is play very important role in Cloud SLDC.
+
+Other --
+	Findbugs, Fortify,  Coverity...
+
+How to install it?
+	JRE OR JDK
+
+How to install SonarQube?
+
+$ sudo yum install wget
+
+> wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+
+> sudo rpm -ivh jdk-8u131-linux-x64.rpm
+
+> wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-7.5.zip
+
+> unzip sonarqube-7.0.zip
+
+
+
+Architecure of SonarQube.....
+	SonarQube Server
+	http://13.232.233.53:9000/about
+	admin/admin
+
+	Code
+	 
+	Scanner
+	/home/ec2-user/scanner/bin/sonar-scanner
+
+

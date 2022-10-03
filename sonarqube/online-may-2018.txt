@@ -1,0 +1,108 @@
+
+What is a Static Code Analysis
+	Static code analsys is rules written for specific tools to check the issues in the src code.
+		Potential bug
+		Security 
+		Comment
+		Code Duplicate
+		Best Practice
+https://en.wikipedia.org/wiki/List_of_tools_for_static_code_analysis
+
+
+What is SonarQube?
+	Free
+	Open Source
+	Rich Dashboard
+	Java Based
+	Static Code Analysis tools - Wrong
+	Quality Management Tool.
+		Qulity
+			Code Quality
+			Test Quality
+		Management
+			Of Quality
+		Tool
+			Which can save time, cost and Improve the quality of the software
+
+Why SonarQube?
+====Answer - SonarQube
+
+What are other tools?
+Coverity
+veracode
+
+Architecture of SonarQube
+In order to run one scan...
+	SonarQube Server	DONE
+	Database(H2)		DONE
+	Source Code		DONE
+	Scanner
+	
+
+How to install it?
+WINDOWS
+	JRE OR JDK
+	http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+
+LINUX
+	> sudo -s	
+	> yum install wget
+	> wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+	> rpm -ivh jdk-8u131-linux-x64.rpm
+
+How to install SonarQube
+	Download the zip
+	> cd /opt
+	> wget https://sonarsource.bintray.com/Distribution/sonarqube/sonarqube-7.1.zip
+
+	Extact it	
+	> sudo yum install unzip -y
+	> unzip sonarqube-7.1.zip
+	
+[root@ip-172-31-24-128 sonarqube-7.1]# ls -1
+bin			# START STOP 
+conf			# SonarQube Config
+COPYING
+data			# h2 Default Data
+elasticsearch		# Searching, Indexing -- NEW TOOLS
+			
+extensions		# Install Sonar Plugins
+lib			# SonarQube Lib
+logs			# Log
+temp
+web			# CSS, HTMl, jS for Dashboard
+
+# elasticsearch can not run with root.
+
+MYSQL ---
+
+	Run it
+	unzip sonarqube-7.1.zip
+	cd sonarqube-7.1
+	cd bin/
+	cd linux-x86-64
+	./sonar.sh start
+	http://13.126.255.232:9000/about
+	admin
+	admin
+
+
+SCANNER 
+	https://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner
+	> wget https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.1.0.1141-linux.zip
+
+
+LAST STATEMENT - RUN THE SCANNER ON THE SOURCE CODE
+/home/ec2-user/scanner/bin/sonar-scanner
+C:\Tools\sonarscanner30\scannner\bin\sonar-scanner.bat
+
+
+
+
+
+
+
+
+
+How to implement SonarQube?
+

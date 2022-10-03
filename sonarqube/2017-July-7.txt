@@ -1,0 +1,57 @@
+What is SonarQube?
+SonarQube is a Quality mgmt tool which manage the Static Code Analysis reports
+
+What is Static code Analysis?
+	is a way to find a 7 kind of issues in the code
+	 - Architect and Design
+	 - Comments
+	 - Coding  Rules
+	 - Potential Bugs
+	 - Complexity
+	 - Duplications
+	 - Unites Test
+
+What is the Quality mgmt?
+Quality mgmt is way to manage the differene sort of quality over the period of time for any run.
+
+How to install SonarQube?
+	Download the sonarqube - 
+	> wget https://sonarsource.bintray.com/Distribution/sonarqube/sonarqube-6.4.zip
+	> unzip 
+	> install java ---- yum install java-1.8.0-openjdk-devel
+	> cd /opt/sonarqube-6.4/bin/linux-x86-64	
+	> ./sonar.sh start
+
+Start on the browsers
+http://35.182.19.101:9000/
+
+
+How to use it?
+	Method 1 - Manual way / Command line
+	- Source Code - https://github.com/scmgalaxy/java-sonar-runner-simple
+	# Sample Source Code - https://github.com/SonarSource/sonar-scanning-examples/archive/master.zip
+	- SonarQube Properties file   - sonar-project.properties
+	- SonarQube Server - http://35.182.19.101:9000/
+	- SonarQube Scanner - https://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner
+	/home/ec2-user/scan/bin/sonar-scanner
+
+	HOW TO GENERATE THE REPORT - RUN THE SCANNER ON THE SOURCE CODE
+	
+	Method 2 - Maven Way
+	https://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner+for+Maven
+
+
+	Method 3 - Ant Way
+	https://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner+for+Ant
+
+
+	Method 4 - MSBUILD
+	https://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner+for+MSBuild4
+	
+	Gradle
+	https://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner+for+Gradle
+
+	Jenkins
+	https://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner+for+Jenkins
+	
+

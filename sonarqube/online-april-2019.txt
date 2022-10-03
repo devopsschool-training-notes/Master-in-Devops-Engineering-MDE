@@ -1,0 +1,40 @@
+Code Review
+	Peers Code Review	
+	Static Code Review
+		Tools.....
+	
+What is SonarQube?
+	Static Code Review - NOT
+	Quality mgmt tool
+		Code Quality
+			Static Code Analysis Tool.
+			https://en.wikipedia.org/wiki/List_of_tools_for_static_code_analysis#Java
+		Test Quality
+
+Why SonarQube?
+
+How to install SonarQube?
+
+
+Architecture of SonarQube?
+SonarQube Server
+	JAVA
+	JAVA_HOME
+	ALWAYS USE NORMAL USERS...
+	-----------------------------
+
+http://35.200.170.213:9000
+admin
+admin
+	
+Scanner
+
+Source Code
+https://github.com/scmgalaxy/java-sonar-runner-simple
+
+
+
+
+C:\Tools\sonarqube\scanner\bin\sonar-scanner.bat
+ON
+C:\Tools\sonarqube\src

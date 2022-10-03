@@ -1,0 +1,79 @@
+What is SonarQube?
+	Quality mgmt tool
+	Free
+	OS
+	Dev in JAVA
+	VERSION
+		Community
+		Enterprise
+
+What is Quality?
+	of Source Code 
+	of Test Code
+
+What is mgmt?
+	Managing the source code quality and test quality.
+
+List of StatiC analysis tools?
+	Code Review Automated way....
+
+We have a prb....
+	Where can we store multiples tools and their rules?
+	https://en.wikipedia.org/wiki/List_of_tools_for_static_code_analysis#Java
+	Where can we store history of Reports?
+	How can we get 
+			What is prb
+			Who has introduced it?
+			Where it is?
+			How can u fix?
+---------------------------
+	SONARQUBE
+
+
+
+Other tool - Coverity , Forifty....PAID
+
+Architecture of SONARQUBE?
+	SERVER			DONE
+	SCANNER			DONE
+	DATABASE		DONE
+		H2 (Default)
+		RDBMS
+	WEB DASHBOARD		DONE
+	SOURCE CODE		DONE
+	https://github.com/scmgalaxy/java-sonar-runner-simple
+
+http://13.127.40.43:9000/about
+admin
+admin
+
+How to install ?
+====================
+How to install SonarQube Server?
+	JRE OR JDK
+> yum install wget 
+> yum install unzip 
+
+> cd /opt
+==========================
+SONARQUBE SHOULD BE RUNNING WIHTOUT ROOT...
+===========================
+$ wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+
+> rpm -ivh jdk-8u131-linux-x64.rpm
+
+> wget https://sonarsource.bintray.com/Distribution/sonarqube/sonarqube-7.0.zip
+
+> unzip sonarqube-7.0.zip
+
+How to install Scanner?
+=========================================
+Linux
+> wget https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.0.3.778-linux.zip
+> unzip sonar-scanner-cli-3.0.3.778-linux.zip
+
+
+/home/ec2-user/scanner/bin/sonar-scanner ON /home/ec2-user/java-sonar-runner-simple
+
+
+

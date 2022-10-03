@@ -1,0 +1,100 @@
+What is SonarQube?
+	Quality Management tool.
+	DASHBORAD Solution
+	Free
+	OS
+	MOST POPULAR
+	Developed in java
+	FOR ANY TECH
+
+Quality 
+	-> Quality of Source Code
+	-> Quality of Binary
+	-> Quality of Tests Results
+Management
+	-> Manage the Quality
+	-> See the quality repoorts
+	-> Analyze the reports
+	-> Take a action it it
+	-> Help you build decisions
+	-> help you find the quality of product src code n test results.
+Tool
+	- SonarQube
+============================
+How do you generate quality reports of source code?
+https://en.wikipedia.org/wiki/List_of_tools_for_static_code_analysis
+
+How to you generate quality reports of the Test Results?
+https://stackify.com/code-coverage-tools/
+
+What you need?
+	You generate a quality reports everyday for your products of.
+	How can you keep it one location 
+	Analyze it
+	Take action on it to imrpove
+
+	Solution - SonarQube
+
+Why do need SonarQube?
+	Quality Release is highest priorority than before
+
+Architecture of SonarQube?
+	Src Code
+	SonarQube SERVER
+	Scanner
+		- maven
+		- gradle
+		- Integrate with your IDE - sonarlint
+	
+
+How to install it?
+	> yum install -y
+	> wget  wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+	> wget https://sonarsource.bintray.com/Distribution/sonarqube/sonarqube-7.0.zip
+
+MOST IMPO - 
+	Sonarqube 5.X - You can use any user for Runnign the services inc root
+	SonarQube 6.X, 7.X - Required normal user
+		Why not root?
+			SonarQube was integretd with ElasticSearch which needs non root.
+
+[ec2-user@ip-172-31-28-3 sonarqube]$ ls -1
+bin		- START STOP SCRIPTS				#IMP
+conf		- Config of SonarQube				#IMP
+COPYING	
+data		- DEFAULT DB(h2) - Mysql, Oracle, any RDBMS	#IMP
+elasticsearch	- For indexing and analysis
+extensions	- Plugins to extend the feature of SonarQube
+lib		- SonarQube APPS JARS.
+logs	
+temp	
+web		- SOnarQube Dashboard
+
+http://13.126.216.168:9000/about
+
+admin
+admin
+
+
+Scanner
+	> wget https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.1.0.1141-linux.zip
+
+Code Commit -> SCA -> BUILD - UT - PACk - REpo - DEP - AT - CC - RELEASE
+
+===================================
+ADMIN
+	BACKUP
+		conf
+		data
+		extensions
+	UPGRADE
+
+
+===================
+Puppet
+Ansible
+Chef
+Salt
+
+
+

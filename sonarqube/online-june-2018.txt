@@ -1,0 +1,26 @@
+
+18.205.150.104
+SQLC Cycle
+---------------------------------
+Planning -> Coding -> Review -> Build -> UNit -> Packaging -> Storing2Repo --> Deployment -> AT -> CodeCoverage - Release
+			SONARQUBE
+
+What is SonarQube?
+---
+	Quality mgmt tool
+	Free
+	OpenSource
+	Written IN java
+	Code Quality
+	Test Quality
+Static Code Analysis tool - https://en.wikipedia.org/wiki/List_of_tools_for_static_code_analysis111
+
+Architecture of Sonarqube
+	SonarQube Server
+	Src
+	Scanner
+
+
+How to install SonarQube?
+
+

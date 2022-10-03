@@ -1,0 +1,72 @@
+What is SonarQube?
+	Quality mgmt platform
+	Open Source
+	Free
+	Developed in Java
+	
+Verion
+	Community
+	Enterrprise
+
+What is Quality 
+	Code Quality
+	Test Quality
+		Code Coverage
+
+How to generate Code Quality?
+https://en.wikipedia.org/wiki/List_of_tools_for_static_code_analysis
+
+Architecture of SonarQube.
+	Source Code	
+		Prop
+	Scanner
+	SonarQube Server
+
+How to install SonarQube?
+13.232.177.141
+
+$ sudo -s
+$ cd
+$ yum install wget -y
+$  wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+$ rpm -ivh jdk-8u131-linux-x64.rpm
+$ java -version
+
+SONARQBE RUNS AS A NORMAL USER
+---------------------------------
+
+wget https://sonarsource.bintray.com/Distribution/sonarqube/sonarqube-7.2.1.zip
+
+[root@ip-172-31-19-174 sonarqube-7.2.1]# ls -1
+bin		- Contains executables of SQ
+conf		- Config/Prop
+COPYING
+data		- h2 DB(Default)
+elasticsearch	- Index n Searh
+extensions	- Plugins
+lib		- SQ lib	
+logs
+temp
+web	
+
+SonarQube Server
+http://13.232.177.141:9000/
+admin
+password
+
+Source
+---------------------
+https://github.com/scmgalaxy/java-sonar-runner-simple
+
+Scanner
+DONE
+
+RUN SCANNER ON SRC CODE(a place where prop file is therre)
+/home/ec2-user/scanner/bin/sonar-scanner
+
+
+
+
+
+
+

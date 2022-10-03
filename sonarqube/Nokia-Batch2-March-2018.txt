@@ -1,0 +1,78 @@
+What is StaticCode Analysis?
+	Review of the code using
+	Coverity
+
+Qs
+	How to manage reports of everyday analysis
+	Who has changed it?
+	Where it is?
+	What is the issues?
+	How to fix it?
+	Wther it is solved?
+	Timeline
+
+Answer - SonarQube
+
+What is SonarQube?
+	IS NOT A STATIC CODE ANALYSIS TOOL
+	IS a Quality Management tool.
+	Web Based Dashboard Solution
+	Developed in Java
+	Free
+	Open Source
+
+How to Install it?
+	JRE OR JDK 8
+
+wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+
+rpm -ivh jdk-8u131-linux-x64.rpm
+
+wget https://sonarsource.bintray.com/Distribution/sonarqube/sonarqube-7.0.zip
+
+./sonar.sh start
+./sonar.sh status
+
+http://13.127.69.201:9000/about
+admin/admin
+
+
+Where does SonarQube Stre all the reports?
+	DATABASE
+	Default - H2
+	MYSQL
+	ORACLE
+	POS
+	MSSQL
+
+
+How to install Scanner?
+wget https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.0.3.778-linux.zip
+
+
+How to get source code?
+git clone https://github.com/scmgalaxy/java-sonar-runner-simple.git source-dir
+
+FINAL - 
+/home/ec2-user/scanner/bin/sonar-scanner on THE source Code
+
+
+1 13.127.201.5
+2 13.126.57.125
+3 13.127.207.183
+4 35.154.253.57
+5 13.127.182.66
+6 13.127.156.11
+7 13.127.173.43
+8 13.127.209.1
+9 13.127.141.98
+10 13.127.37.153
+11 52.66.84.51
+12 35.154.154.113
+13 13.127.234.181
+14 13.126.244.121
+15 13.126.4.19
+16 13.127.69.201
+
+
+

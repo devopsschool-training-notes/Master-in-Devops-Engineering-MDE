@@ -1,0 +1,91 @@
+What is SonarQube?
+	Static code Analysis Tool -- 	WRONG X
+	Code Analysis Tool		WRONG X
+	
+	Quality managment tool
+	Free
+	Open Source
+	Developed in Java
+	44+ Languages
+	Extended using Plugins
+	It manages the 7 Axis of the code Quality
+
+
+
+Why Code Analysis?
+	Not everyone in a project writes the same quality of code
+	Guide > Follow best practice of coding standard
+		
+	Tool -
+	https://en.wikipedia.org/wiki/List_of_tools_for_static_code_analysis
+
+	70% of bugs is found coz bad programming
+	To reduce Technical Debt
+
+Why SonarQube?
+	Visualization of the quality of the code over the period of time
+	Finding out who is the culprint
+	What are the issues it has 
+	How to fix - Tips - Best practices
+	Integration with All DevOps Tools | IDE
+
+Other tools
+	- Coverity
+
+SonarQube Architecture
+	DONE
+
+How to install SonarQube Server?
+	JRE OR JDK
+> yum install wget 
+> yum install unzip 
+
+> cd /opt
+
+> wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+
+> rpm -ivh jdk-8u131-linux-x64.rpm
+
+> wget https://sonarsource.bintray.com/Distribution/sonarqube/sonarqube-7.0.zip
+
+> unzip sonarqube-7.0.zip
+
+How to install Scanner?
+=========================================
+Linux
+> wget https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.0.3.778-linux.zip
+> unzip sonar-scanner-cli-3.0.3.778-linux.zip
+
+
+How to get Source Code?
+==============================================
+> git clone https://github.com/scmgalaxy/java-sonar-runner-simple
+> git clone https://github.com/scmgalaxy/sonar-scanning-examples.git
+
+LAST FLOW- 
+/home/ec2-user/scanner/bin/sonar-scanner
+
+INFO: 2 files indexed
+INFO: Quality profile for java: Sonar way
+
+
+1	13.126.68.67
+2	13.126.93.135
+3	13.126.101.102
+4	13.126.137.195
+5	13.127.46.231
+6	13.127.98.155
+7	13.127.187.143
+8	13.127.199.125
+9	13.127.204.84
+10	35.154.0.232
+11	35.154.25.243
+12	35.154.71.202
+13	35.154.187.253
+14	52.66.4.18
+15	52.66.168.51
+16 	35.154.18.249
+
+/opt/puppetlabs/puppet/bin/puppet agent --no-daemonize
+
+

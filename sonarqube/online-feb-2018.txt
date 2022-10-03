@@ -1,0 +1,67 @@
+What is SonarQube
+	Static Code analysis 	- WRONG
+	https://en.wikipedia.org/wiki/List_of_tools_for_static_code_analysis
+	
+	Code Analysis 		- WRONG
+
+	A continuous inspection engine to manage the technical debt: unit tests, complexity, duplication, 		design, comments, coding standards and potential problems. Supports languages: ABAP, Android (Java), C, C++, CSS, Objective-C, COBOL, C#, Flex, Forms, Groovy, Java, JavaScript, Natural, PHP, PL/SQL, 	Swift, Visual Basic 6, Web, XML, Python.
+
+
+	Quality management tool
+	Free
+	OS
+	Dev using jAVA
+	cAN BE USED FOR ANY TECH
+
+
+Why SonarQube?
+	Quality matters a lot
+			Bad Source Code Quality ---> Contributes 70% of the bugs in d future
+					Increase d cost
+
+	PEER CODE REVIEW
+
+	
+	AUTOMATION 
+
+
+How to install SonarQube?
+	JRE + JDK
+	Sonarqube
+
+Sonarqube Archietecture
+------------------------------
+SONARQUBE SERVER(DB-h2,mysql,oracle,mssql) - DONE - http://13.127.147.134:9000
+
+SCANNER	
+https://docs.sonarqube.org/display/SCAN/Analyzing+Source+Code
+https://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner
+
+
+Connection between Scanner & SonarQube
+C:\Tools\sonar-scanner-2.6.1\conf\sonar-scanner.properties
+
+SOURCE CODE
+https://github.com/SonarSource/sonar-scanning-examples
+
+LAST - RUN SCANNER ON THE SOURCE CODE
+
+C:\Tools\sonar-scanner-2.6.1\bin\sonar-scanner.bat ON C:\Tools\sonar-examples-master\java
+
+C:\Tools\sonarscanner30\scannner\bin\sonar-scanner.bat on C:\Tools\sonarscanner30\src
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

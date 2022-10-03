@@ -1,0 +1,109 @@
+SonarQube
+========================================
+
+What is SonarQube?
+	Free
+	Quality mgmt 
+	Developed in Java
+	For all Code review n mgmt
+
+
+The Problem
+=========================================
+Earlier Code Improvement 
+	Peer Code Review
+
+	Code Size
+	Duplicate
+	More RAM n CPU
+	Not as per the best stanard
+	Security Issues
+	Potentional bugs
+
+The Solution
+=================================
+Static Analysis Tools
+		Are the Rules book for the program which states u write a good code or bad code
+
+PMD
+CHECKSTYLCE
+FINDBUGS
+EMMA
+
+NEXT PROBLEM
+====================================
+	REPORTS EVERYDAY ---Where you are going to store the everyday analysis
+	MULTIPLE TOOLS - ??????
+	DASHBORAD | WEB UI
+	PROJECT MGMT - ???
+	Historial Data
+	
+	Easy way to add/remove tools
+	Easy way to add/remove rules
+	Backup
+	
+	What is minor issues
+	What is Major Issues
+	What is Critical
+
+	Quality Gate ????
+
+NEXT PROBLEM SOLUTION
+====================================
+SonarQube
+	Web based Quality mgmt tool
+
+Architecture of the SonarQube?
+====================================
+
+How can you Install SonarQube?
+=====================================
+
+How SonarQube Works?
+------------------------------------
+RULES ==== FROM Static Analysis Tools ----PMD, Check(======RULES
+Source Code - Where you run the SAT
+Scanner === Broker
+Database -  A Place where you store the reports
+
+============================
+DEMO
+SONARQUBE SERVER	- DONE
+DATABASE		- DONE
+SCANNER			- COMMAND LINE - MAVEN - DONE
+SOURCE CODE		- DONE
+
+
+
+C:\Tools\weekend\scanner\bin\sonar-scanner.bat ONTO C:\Tools\weekend\src\sonarqube-scanner
+/opt/sonar-scanner-3.0.3.778-linux/bin/sonar-scanner
+
+
+How to Install SONARQUBE SERVER?
+-------------------------------
+	JAVA
+		JRE
+		JDK - yum install java-1.8.0-openjdk-devel
+		wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u151-b12/e758a0de34e24606bca991d704f6dcbf/jdk-8u151-linux-x64.tar.gz
+
+		export JAVA_HOME=/opt/jdk1.8.0_151
+		export PATH=/opt/jdk1.8.0_151/bin:$PATH
+
+
+	SONARQUBE
+		Download the zip
+		https://sonarsource.bintray.com/Distribution/sonarqube/sonarqube-6.6.zip
+
+		Extract it
+
+		Run it
+
+======================================
+Troubleshooting
+
+
+
+	
+
+
+

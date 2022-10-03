@@ -1,0 +1,68 @@
+How to Install SonarQube 6 Server in Linux?
+
+Pre
+-----
+JDK 1.8
+	Download the JDK
+	Install it
+	Set the PATH
+
+
+
+> sudo -s
+> cd
+> yum install java-1.8.0-openjdk
+> java -version
+
+Download the SonarQube
+> wget https://sonarsource.bintray.com/Distribution/sonarqube/sonarqube-6.5.zip
+> yum install wget 
+> mv sonarqube-6.5.zip /opt
+> cd /opt
+> yum install unzip
+> unzip sonarqube-6.5.zip
+> rm -rf sonarqube-6.5.zip
+> cd sonarqube-6.5
+> cd bin
+> cd linux-x86-64
+> ./sonar.sh start
+> ./sonar.sh stop
+> ./sonar.sh status
+> ./sonar.sh start
+ACESS - http://13.126.32.16:9000/
+admin
+admin
+
+
+SOURCE CODE - https://github.com/scmgalaxy/sonar-scanning-examples
+
+SETTING UP WITH MAVEN
+====================================
+JAVA_HOME ---> JDK
+MAVEN_HOME/bin --> PATH
+
+
+
+Run this
+
+mvn verify
+mvn sonar:sonar -Dsonar.host.url=http://35.154.54.155:9000 -Dsonar.login=f830298c85ff9ac19c34082d616ddac78e8a78ec 
+
+How to setup maven in Linux?
+maven in /opt/maven
+==================================================
+export PATH=$PATH:/opt/maven/bin
+export JAVA_HOME=/opt/java
+export PATH=$PATH:$JAVA_HOME
+
+
+
+
+GRADLE
+plugins {
+  id "org.sonarqube" version "2.5"
+}
+
+./gradlew sonarqube \
+  -Dsonar.host.url=http://13.126.32.16:9000 \
+  -Dsonar.login=25ad4c4e9f279806df9b385d4e825d22d20c64cf

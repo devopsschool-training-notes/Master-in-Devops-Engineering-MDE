@@ -1,0 +1,43 @@
+What is SonarQube?
+	Quality Mgmt tool
+	Rich GUI based
+		History of reports
+		Multiple tools SCA
+		Customization of Rule
+		WHO - WHERE - How - Track
+	by SonarSource
+	Community - Enterprise - Hosted
+	Written in Java
+	run as a Regular user
+	
+
+What is Quality 
+	Code Quality 
+	Test Quality
+
+Static Code Analsis - tools
+https://en.wikipedia.org/wiki/List_of_tools_for_static_code_analysis#Java
+
+
+Why SonarQube?
+--------------------------------------
+
+Arch of SonarQube
+	SonarQube Server
+	http://13.232.126.178:9000/
+	
+	Source Code
+	https://github.com/scmgalaxy/java-sonar-runner-simple
+
+	Scanner
+====================================
+$ sudo yum install wget -y
+$ wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+$ sudo rpm -ivh jdk-8u131-linux-x64.rpm
+$ java -version
+
+http://13.232.126.178:9000/projects
+admin
+admin
+
+13.232.126.178

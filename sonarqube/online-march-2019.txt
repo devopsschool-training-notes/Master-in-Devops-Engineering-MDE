@@ -1,0 +1,49 @@
+What is SonarQube?
+	Quality mgmt tool.
+	From SonarSource
+	Written in Java
+	Release
+		Community Edition - FREE
+		Dev Edition		- FREE
+		Hosted / Enterprise Edition	- PAID
+What is Quality 
+	Code Quality 
+	Test Quality
+
+Why SonarQube?
+	Code Analysis
+		WHO
+		WHERE
+		HOW
+		WHEN
+	Technical debt can be reduced a lot by using this tool.
+
+Other tool - Fortify, Coverity
+
+How to install SonarQube?
+	JRE or JDK
+$ sudo yum install wget
+$ wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+$ sudo rpm -ivh jdk-8u131-linux-x64.rpm
+
+
+	
+SonarQube
+Architecutre of SonarQube.
+	SonarQube Server  - DONE
+		http://13.233.143.69:9000/
+		admin
+		admin
+
+	Scanner
+	
+	Source Code
+		https://github.com/scmgalaxy/java-sonar-runner-simple
+
+
+LAST
+/home/ec2-user/scanner/bin/sonar-scanner
+C:\Tools\sonarqube\scanner\bin\sonar-scanner.bat
+
+
+

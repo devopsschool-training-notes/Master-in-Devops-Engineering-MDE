@@ -1,0 +1,51 @@
+What is SonarQube?
+	Quality mgmt tool
+	Version
+		Community - Covering
+		Enterprise
+	Free
+	Open Source
+	Java
+	From SonarSource
+
+What is Quality
+	Code Quality
+	Test Quality
+
+Why we need?
+	70% of the bugs found in the software is coz of Code issues
+
+How to write Good code?
+	Peer Code review
+	Staic Code review
+	https://en.wikipedia.org/wiki/List_of_tools_for_static_code_analysis
+
+How to install SonarQube?
+	Using normal user only...
+		Why - uses elastic Search--- run as a normal users
+
+http://13.234.239.99:9000/about
+admin
+admin
+
+SonArqube Architecture
+================================
+Server
+http://13.234.239.99:9000/about
+admin
+admin
+
+Source Code
+=====================
+https://github.com/scmgalaxy/java-sonar-runner-simple
+	
+Scanner
+=====================
+https://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner
+
+
+C:\Tools\sonarqube\scanner\bin\sonar-scanner.bat
+
+
+
+
