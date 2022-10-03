@@ -1,0 +1,177 @@
+PROGRAMMING-JAVA
+	SRC	BINARY
+	.JAVA	.CLASS
+
+10000 CLASS + ENV VARI + REGIS + INSTALL + UPDATE + UN
+
+PACKAGE == 50 PACKAGE
+
+Sonatype Nexus
+==============================
+
+WHAT IS A PACKAGE?
+System Based Packages
+	EXE
+	MSI
+	RPM
+	DEB
+	DMG
+
+Application Based Pakages
+	ZIP
+	TAR
+	JAR
+	WAR
+	EAR
+	BIN
+	DLL
+
+20 BUILD == 20 PACKAGES === 600 PACKAGES IN A MONTH
+
+LEGACY MODE - FTP n SHARE DRIVE
+======================================
+
+Why? === Problem??
+------------------------------
+	Lots of Package which we generate everyday
+	PACKAGE 24/7 availability
+	Package Security
+	Package Integrity should be maintain eg. package corruption
+	IT SHOULD RESPECT(iNTEGRATE) THE BUILD TOOLS(ANT, MAVEN, GRADLE, MSBUILD)
+	SET STANRDARD PROCESS ACROSS THE PROJECT
+
+	ADMIN
+	EASY ACCESS MGMT
+	EASY BACKUP AND RESTORE
+	EASY CLEANUP & mAINTAINCE
+
+SOLUTION==
+	NEXUS		SONATYPE	
+	ARTIFACTORY	JFROG
+	ARCHIVA		APACHE
+	NUGET		MS
+
+PUBLIC REPO MGMT SYSTEM
+	PLAY STORE
+	APP STORE
+SYSTEM REPO MGMT SYSTEM
+	YUM
+	APT-GET
+
+===========================
+WHY NEXUS
+	EASY TO USE
+	Proprietary
+	70% market share
+	
+VERSION
+	COMMUNITY - OSS
+	ENTERRISE  - PROFESSIONAL
+
+SVN VS NEXUS ||| GIT VS NEXUS
+
+SOURCE CODE MGMT - TEXT BASED FILE === GIT,SVN,P4,CC,CVS ===VERSIONIG==HISTORY
+PACKAGE MGMT -- BINARY -- COMPILED
+
+WHY YOU SHOULD NOT STORE PACKAGE IN THE SOURCE CODE MGMT TOOL?
+
+
+How to Install Nexus?
+=======================================
+JAVA
+	JRE
+	JDK
+DOWNLOAD
+
+INSTALL
+http://www.scmgalaxy.com/tutorials/complete-guide-of-java-installation-in-linux
+http://www.scmgalaxy.com/tutorials/install-sonatype-nexus-community-version
+
+==============================================================
+TERMINOLOGY
+
+repository === FOLDER
+	Contains the multiple packages
+
+REPO TYPE
+	PROXY
+	HOSTED
+	GROUP
+
+	VIRTUAL
+
+FORMAT
+	Bower  Docker  Git-LFS  Maven  npm  NuGet  PyPI  Ruby Gems  Yum Proxy
+===========================================================================
+Creating A repo
+	weekend-hosted-release	http://13.126.9.179:8081/repository/weekend-hosted-release/
+	weekend-hosted-snapshot	http://13.126.9.179:8081/repository/weekend-hosted-snapshot/
+	weekend-proxy ---ONE REPO AT REMOTE - https://repo1.maven.org/maven2/
+	weekend-group - http://13.126.9.179:8081/repository/weekend-group/
+
+BUILD TOOL - ---- MAVEN
+INTEGRATION WITH NEXUS
+	UPLOAD A PACKAGE
+	DOWNLOAD A PACKAGE
+
+MAVEN RELEASE
+		RELEASE --- STABLE PACKAGE
+		SNAPSHOT --- NOT STABLE
+
+=========================================
+PERMISSSION
+		PRIVIL
+		ROLES
+		USER
+
+UPLOAD
+===============================================
+UPLOAD  		--- 	DOWNLOAD USING MAVEN
+mvn deploy		---	mvn any-others
+
+PRIVATE REPO - http://13.126.9.179:8081/
+PUBLIC REPO - https://repo1.maven.org/maven2/
+LOCAL REPO  - C:\Users\Rajesh\.m2\repository	(CACHE)
+
+UPLOAD A PACKAGE TO NEXUS VIA MAVEN
+	pom.xml with repo location		PROJECT LOCATION
+	
+			
+	setting.xml with access			WEHERE U HAVE INSTALLED THE MAVEN
+	C:\Tools\maven\conf
+	
+	Maven Sample Projects
+
+GOAL NAME - mvn deploy
+	
+	
+DOWNLOAD
+===============================================
+1. Change the Mirror setting in setting.xml ---- REPO CHANGE(PUBLIC TO PRIVATE)
+
+How to download? via maven
+2. Modify the pom.xml add the dependency
+
+LEARNING CURVE
+==============================================
+MAVEN --> NEXUS -
+
+15 TOOLS
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+
+
+	

@@ -1,0 +1,69 @@
+What is Nexus?
+Its a private repostory?
+
+What we store in Nexus?
+libarary
+artifact
+Binary Package
+
+Why we need a Nexus Repo mgmt system?
+Security
+md5 | checksum
+who | what | why
+Integrity of the package
+Process and Layout
+Mgmt and Administration
+backup and Restore
+24/7 Package availability
+
+Other tools
+NEXUS ALL PLAT SONATYPE
+ARTIFACTORY ALL PLA JFROG
+ARCHIVA MAINLY JAVA BASED FREE BY APACHE
+NUGET DOT NOT MS
+
+Pre
+JDK
+JAVA_HOME
+
+> yum install java-1.8.0-openjdk-devel
+
+How to install and Configure?
+> cd /opt
+> wget http://download.sonatype.com/nexus/3/latest-unix.tar.gz
+> tar -zxvf latest-unix.tar.gz
+> cd nexus-3.3.0-01
+> cd bin/
+> ./nexus start
+
+LINUX
+------------
+ps -eaf | grep nexus
+
+PORT - 8081
+---------
+To get into the root
+> su root
+
+To stop the firewall
+> systemctl stop firewalld
+
+How many kind of repo you have in Nexus?
+Hosted RW
+- RELEASE well-hosted-rel
+- SNAPSHOT well-hosted-snap
+Proxy R well-proxy-central
+Group R OR RW well-group
+
+https://repo1.maven.org/maven2/
+
+ACCESS MGMT
+-----------------------
+
+mvn deploy
+======================
+How to upload a Artifact in Maven?
+update your pom.xml with the repository
+Uppdate your setting.xml with user name / password
+
+How to download Artifact from maven?

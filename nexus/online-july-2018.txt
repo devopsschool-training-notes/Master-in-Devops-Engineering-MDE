@@ -1,0 +1,31 @@
+What is Nexus?
+	Repo
+
+Why Nexus?
+
+How to install Nexus?
+	JDK
+	
+
+Nexus
+	OSS - Free
+	PRO -
+
+http://13.232.177.141:8081/
+admin
+admin123
+
+
+
+Upload 
+	Repo	-> pom.xml
+		HOST	http://13.232.177.141:8081/repository/hosted/
+		PROXY	http://13.232.177.141:8081/repository/proxy/
+		GROUP	http://13.232.177.141:8081/repository/group/
+	User	-> setting.xml
+	password -> setting.xml
+$ mvn deploy
+
+& 
+
+Download

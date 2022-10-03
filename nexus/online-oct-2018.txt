@@ -1,0 +1,157 @@
+NEXUS
+============================
+What is Nexus?
+	Repository mgmt system
+		Artifact
+		Binary
+		Packages
+		Files
+	From SonaType
+	Version
+		Community
+		Pro - Paid
+	Developed in Java
+
+Why we need nexus?
+	Package security
+	Package versioning
+	Package Integrity
+	Easy maintaince and Cleanup
+	Authentication & Athrization
+
+Other tools
+	Artifactory
+	Nuget
+	Archiva
+
+How to install it?
+	JDK
+	NEXUS
+
+    2  yum install wget
+    3  wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+    4  rpm -ivh jdk-8u131-linux-x64.rpm
+    5  java -version
+    6  cd /opt/
+    7  ls
+    8  wget http://download.sonatype.com/nexus/3/latest-unix.tar.gz
+    9  ls
+   10  tar -zxvf latest-unix.tar.gz
+   11  clea
+   12  clear
+   13  ls
+   14  mv nexus-3.12.1-01 nexuss
+   15  mv nexuss/ nexus
+   16  ls
+   17  cd nexus
+
+
+Machine -     2  yum install wget
+    3  wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+    4  rpm -ivh jdk-8u131-linux-x64.rpm
+    5  java -version
+    6  cd /opt/
+    7  ls
+    8  wget http://download.sonatype.com/nexus/3/latest-unix.tar.gz
+    9  ls
+   10  tar -zxvf latest-unix.tar.gz
+   11  clea
+   12  clear
+   13  ls
+   14  mv nexus-3.12.1-01 nexuss
+   15  mv nexuss/ nexus
+   16  ls
+   17  cd nexus
+
+
+http://13.232.157.226:8081
+admin
+admin123
+===================================
+Repository FORMAT/recipe  - Maven
+Repository Types (Maven)
+		HOSTED -> Package will be uploaded to this repo/download as well
+		PROXY - CACHE OF HOSTED REPO AT DIFF
+		GROUP - HOSTED[S] + PROXY [S]
+Authorization = privileges
+	http://13.232.157.226:8081/#admin/security/privileges
+
+Authentication
+	USER & PASSWORD(Self DD)
+	LDAP 	- http://13.232.157.226:8081/#admin/security/ldap
+
+
+How to upload into Maven repo?
+Repo
+	HOSTED - http://13.232.157.226:8081/repository/saturday/
+	PROXY -  http://13.232.157.226:8081/repository/sat-proxy/
+	GROUP - http://13.232.157.226:8081/repository/sat-group/
+	
+
+1. Modify pom.xml with repo location
+<distributionManagement>
+	<repository>
+		<id>tata</id>
+		<name>Internal Releases</name>
+		<url>http://13.127.163.182:8081/repository/scmgalaxy/</url>
+	</repository>
+ 
+	<snapshotRepository>
+		<id>tata</id>
+		<name>Internal Releases</name>
+		<url>http://52.66.106.91:8081/nexus/content/repositories/snapshot/</url>
+	</snapshotRepository>
+</distributionManagement>
+
+2. Modify setting.xml with access of nexus
+	C:\Tools\maven\conf
+
+<server>
+		<id>saturday</id>
+		<username>deploy</username>
+		<password>deploy123</password>
+</server>
+
+
+3. mvn deploy
+
+Reference
+https://github.com/scmgalaxy/helloworld-java-maven
+
+
+
+How to download from maven repo?
+1. Have a dependency in pom.xml
+	<dependency>
+      <groupId>com.devopsschool.software</groupId>
+      <artifactId>chat</artifactId>
+      <version>2.0</version>
+      <scope>test</scope>
+    </dependency>
+
+2. modify the mirror
+<mirror>
+      <id>nexus</id>
+      <name>Maven Repository Manager running on repo.mycompany.com</name>
+      <url>http://13.232.157.226:8081/repository/sat-group/</url>
+      <mirrorOf>*</mirrorOf>
+</mirror>
+	
+
+3. Do whatevre with maven goal...
+	
+		
+
+
+
+$ docker pull image-nme
+$ docker pull hub.docker.io/image-nme
+$ docker pull 13.232.157.226:8081/repository/sass/
+
+
+
+http://13.232.157.226:8081/repository/sass/
+
+
+
+

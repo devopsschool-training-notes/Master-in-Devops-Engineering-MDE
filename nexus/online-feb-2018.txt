@@ -1,0 +1,109 @@
+Planning-> Coding->Build->Package->Archive->Deploy->QA->CC-> RELEASE
+JIRA	   GIT 	   Maven --JAR  NEXUS  --> Puppet
+
+What is Nexus?
+	SonaType Nexus
+	A Repository mgmt system
+		Packages
+	https://www.sonatype.com/nexus-repository-oss-vs.-pro-features
+	Dev using JAVA
+
+Why nexus?
+	Package Security  
+	Integrity of the Packages
+	Process - Cleanup
+	Access mgmt
+	Backup & Restore
+	Integration with all Tools is easy
+
+Other Tools
+	Artifactory From JFROG
+	Archiva From Apache
+	Nuget From MS
+
+How to Install Nexus?
+	JRE oR JDK
+	NEXUS
+		--> OSS - Free for Open Source Projects
+		--> PRO - Paid
+
+    1  clear
+    2  ls
+    3  cd /opt/
+    4  ls
+    5  yum install wget
+    6  clear
+    7  wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+    8  clear
+    9  ls
+   10  rpm -ivh jdk-8u131-linux-x64.rpm
+   11  java -v
+   12  java -version
+   13  history
+   14  wget http://download.sonatype.com/nexus/3/latest-unix.tar.gz
+
+
+Manual  - Docker - 
+
+33  ./nexus start
+   34  ./nexus status
+   35  cd ..
+   36  ls
+   37  cd etc
+   38  clear
+   39  ls
+   40  more nexus-default.properties
+
+
+http://13.126.117.6:8081/
+admin
+admin123
+
+What are the packages you can store ?
+https://www.sonatype.com/nexus-repository-oss-vs.-pro-features
+
+
+What are repo type you have in nexus for maven?
+	MAVEN 
+		RELEASE	
+		SNAPSHOT
+		
+	REPO WITH MAVEN
+		RELEASE	
+		SNAPSHOT
+		MIXED
+		  
+WHAT ARE KIND OF REPO YOU CAN CREATE IN NEXUS
+	HOSTED  --- LOCAL REPO
+	maven-hosted-release -- >http://13.126.117.6:8081/repository/maven-hosted-release/
+	maven-hosted-snapshot  - http://13.126.117.6:8081/repository/maven-hosted-snapshot/
+
+	PROXY   --- CACHE OF THE REMOTE REPO
+	http://13.126.117.6:8081/repository/maven-proxy/
+
+	GROUP   --- MUL HOSTED + MUL PROXY ===ONE (GROUP)
+	http://13.126.117.6:8081/repository/scmgalaxy/
+
+
+
+How to Upload a Package?
+mvn compile
+mvn test
+mvn package
+mvn install - Local Repo of Maven
+
+mvn deploy - To Remote Repo - NEXUS
+	Add Repo Location in POM.xml  --- A FILE WHICH IS KEEPING EVERYTHIGN FOR PROJECT
+	ADD Access in Setting.xml
+		admin/admin123
+		member1/member1123
+	mvn deploy
+
+How to download a Package from nexus
+	setting.xml
+		mirror
+
+
+
+
+			

@@ -1,0 +1,107 @@
+What is Nexus?
+	Repository management software
+	of what???
+		Artifactory
+		files
+		binary
+		Pakcages
+	NOT SOURCE CODE
+
+Why Nexus?
+	Security
+	Availability
+	Integrity
+	Mgtm
+		Access
+		Authorization
+		Authication
+		Permission
+		backup
+		cleanup
+
+Nexus Release
+		OSS  Free
+		Pro  Paid
+What kind of package you can store?
+https://help.sonatype.com/repomanager3/supported-formats
+
+What are other tools we have?
+	Artifactry
+	Archiva
+	Nuget
+
+How to install Nexus
+	JRE
+	Nexus
+
+[root@ip-172-31-31-0 bin]# history
+    1  clear
+    2  yum install wget
+    3  wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+    4  rpm -ivh jdk-8u131-linux-x64.rpm
+    5  java -version
+    6  cd /opt/
+    7  ls
+    8  wget http://download.sonatype.com/nexus/3/latest-unix.tar.gz
+    9  ls
+   10  tar -zxvf latest-unix.tar.gz
+   11  clea
+   12  clear
+   13  ls
+   14  mv nexus-3.12.1-01 nexuss
+   15  mv nexuss/ nexus
+   16  ls
+   17  cd nexus
+   18  ls
+   19  cd bin/
+   20  ls
+   21  ./nexus start
+   22  ./nexus status
+   23  history
+
+
+http://13.127.30.125:8081/
+admin
+admin123
+
+Repository - in Maven
+	 	Release 
+			RELEASE
+			SNAPSHOT
+
+Nexus has 3 kind of repo
+	HOSTED	- LOCAL - rw	
+	PROXY   - remote - Read Only
+	GROUPS
+		Hosted
+		Proxy
+	weekend-hosted-release	http://13.127.30.125:8081/repository/weekend-hosted-release/
+	weekend-hosted-snapshot	http://13.127.30.125:8081/repository/weekend-hosted-snapshot/
+
+	
+	weekend-group		http://13.127.30.125:8081/repository/weekend-group/
+	weekend-proxy		http://13.127.30.125:8081/repository/weekend-proxy/	
+
+	USER		user1/user1123
+	Roles
+	PERMISION
+
+	UPLOAD 	
+		in maven
+		pox.xml with repo location
+		Setting.xml with access
+		pom.xml repo id and setting.xml server id should match
+		mvn deploy
+
+		Verion - 212.1.0
+
+	DOWNLOAD
+		in maven
+		setting.xml with mirror
+
+
+
+
+
+
+

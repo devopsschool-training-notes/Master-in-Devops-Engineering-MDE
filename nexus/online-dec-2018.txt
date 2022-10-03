@@ -1,0 +1,190 @@
+What is Nexus?
+	Nexus a repo mgmt system for Artifacts/Binary/Package
+	From SonaType
+	Written in java
+	Version
+		Community OSS - Free
+		Pro - Paid
+	OSS Vs Pro	
+	https://www.sonatype.com/nexus-repository-oss-vs.-pro-features
+
+What are the kind of package we can store in nexus?
+https://help.sonatype.com/repomanager3/supported-formats
+
+Why Nexus?	
+	We want Artifacts/Binaries/Packages should available for entire team easily.
+	Security
+	Integrity by md5, sha2, checksum
+	Admin Activity easy
+	user/group access
+	backup
+	Proxy repo frm remote 
+
+What are the tools we have?
+	Nexus 
+	Artifactory 
+	Archiva
+	Nuget
+	Choclate
+
+
+how to install Nexus?
+
+ 2  yum install wget
+    3  wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+    4  rpm -ivh jdk-8u131-linux-x64.rpm
+    5  java -version
+    6  cd /opt/
+    7  ls
+    8  wget http://download.sonatype.com/nexus/3/latest-unix.tar.gz
+    9  ls
+   10  tar -zxvf latest-unix.tar.gz
+   11  clea
+   12  clear
+   13  ls
+   14  mv nexus-3.12.1-01 nexuss
+   15  mv nexuss/ nexus
+   16  ls
+   17  cd nexus
+========================
+   1  clear
+    2  ls
+    3  yum install wget
+    4  wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+    5  rpm -ivh jdk-8u131-linux-x64.rpm
+    6  cd /opt
+    7  wget http://download.sonatype.com/nexus/3/latest-unix.tar.gz
+    8  tar -zxvf latest-unix.tar.gz
+    9  clear
+   10  ls
+   11  mv nexus-3.14.0-04 nexus
+   12  cd nexus/
+   13  ls
+   14  clear
+   15  ls
+   16  cd etc
+   17  ls
+   18  more nexus-default.properties
+   19  cd ..
+   20  ls
+   21  cd bin/
+   22  ls
+   23  ./nexus start
+   24  ./nexus status
+   25  history
+
+==================================
+http://13.232.77.199:8081/
+admin
+admin123
+
+TYPE OF REPO
+APT* 
+Composer
+Composer* 
+Conan
+Conan* 
+CPAN
+CPAN* 
+Docker
+Docker 
+ELPA
+ELPA* 
+Git LFS
+Git LFS 
+Helm
+Helm* 
+Maven
+Maven 
+npm
+npm 
+NuGet
+NuGet 
+P2
+P2* 
+PyPI
+PyPI 
+R
+R* 
+Raw
+Raw 
+RubyGems
+RubyGems 
+Yum
+Yum 
+
+
+Maven generate following kinds of packages
+	jar
+	war
+	ear
+	pom
+
+Maven has two kind of relase
+	RELEASE
+	SNAPSHOT
+Step 1-  Create a Repo	using Maven
+	3 kinds of repo we have
+	1. Hosted	- READ & WRITE / READ/WRITE
+		http://13.232.77.199:8081/repository/maven-hosted-raj/
+		http://13.232.77.199:8081/repository/maven-hosted-raj-snapshot/
+	2. Proxy		READ ONLY .Its used for remote cache only
+		http://13.232.77.199:8081/repository/maven-proxy-raj/
+	3. Group = HOSTED Repo(S) + PRoxy Repo(S)
+		http://13.232.77.199:8081/repository/maven-group-raj/
+
+
+Step 2- Create a role and assign a privillage and add a user to the role.
+deploy/deploy123
+
+Step 3 - Upload a maven package to Nexus?
+	1. Modify a pom.xml with Repo url
+<distributionManagement>
+	<repository>
+		<id>thrusday</id>
+		<name>Internal Releases</name>
+		<url>http://13.232.77.199:8081/repository/maven-hosted-raj/</url>
+	</repository>
+ 
+	<snapshotRepository>
+		<id>thrusday</id>
+		<name>Internal Releases</name>
+		<url>http://13.232.77.199:8081/repository/maven-hosted-raj-snapshot/</url>
+	</snapshotRepository>
+</distributionManagement>
+
+	2. Modify a setting.xml with Nexus access	
+		-- Maven Install loc
+		-- maven local repo .m2
+
+  <server>
+		
+	<id>thrusday</id>
+		
+	<username>deploy</username>
+		
+	<password>deploy123</password>
+	
+ </server>
+	3. mvn deploy
+
+
+How to download it?
+	chat 
+	mailing
+		Depends on Chat jar...
+
+
+How to make a default repo NEXUS instead of Central
+	setting.xml with group repo
+
+      <mirror>
+      <id>nexus</id>
+      <name>Maven Repository Manager running on repo.mycompany.com</name>
+      <url>http://13.232.77.199:8081/repository/maven-group-raj/</url>
+      <mirrorOf>*</mirrorOf>
+    </mirror>
+
+
+
+

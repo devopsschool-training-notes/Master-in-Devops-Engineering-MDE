@@ -1,0 +1,171 @@
+What is Nexus?
+	Repo(S) mgmt tool.
+	Dev in Java
+	From SonarSource.
+	release
+		OSS - Free ----
+				MAVEN
+				YUM
+		https://www.sonatype.com/download-oss-sonatype
+
+		Pro	
+			Paid	- Trial
+		https://www.sonatype.com/nexus-repository-oss-vs.-pro-features
+		
+	
+What is there in the repos?
+	Packages | Binary | Exe | Application
+
+Why Nexus?
+	For Version of the packages.
+	Security
+	Integrrity of the packages
+	Admin
+		Cleanup	
+	Enterprise
+		USERS
+		GROUPS
+		Permission
+
+https://www.devopsschool.com/path/
+
+
+other tools - 
+	Archiava, Artifactory, Nuget, Choclate
+
+How to install it?
+
+   3   yum install wget -y
+    4  wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+    5  $ rpm -ivh jdk-8u131-linux-x64.rpm
+    6  rpm -ivh jdk-8u131-linux-x64.rpm
+    7  java -version
+
+
+wget http://download.sonatype.com/nexus/3/latest-unix.tar.gz
+[root@instance-6 etc]# history
+    1  cleear
+    2  ls
+    3  clear
+    4  yum install wget -y
+    5   wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+    6  clear
+    7  ls
+    8  rpm -ivh jdk-8u131-linux-x64.rpm
+    9  java -version
+   10  clear
+   11  cd /opt/
+   12  ls
+   13  wget http://download.sonatype.com/nexus/3/latest-unix.tar.gz
+   14  clear
+   15  ls
+   16  df -kh
+   17  cd /
+   18  ls
+   19  cler
+   20  cleaar
+   21  clear
+   22  cd /opt/
+   23  l
+   24  ls
+   25  tar -zxvf latest-unix.tar.gz
+   26  clear
+   27  ls
+   28  mv nexus-3.16.1-02 nexus
+   29  clear
+   30  ls
+   31  clear
+   32  cd nexus/
+   33  s
+   34  ls
+   35  cd bin/
+   36  ls
+   37  ./nexus start
+   38  ps -eaf | grep nexus
+   39  clear
+   40  ls
+   41  cd ..
+   42  ls
+   43  clear
+   44  ls
+   45  cd etc/
+   46  ls
+   47  more nexus-default.properties
+   48  clear
+   49  history
+
+http://35.200.170.213:8081/
+admin
+admin123
+
+
+Step 1 - Granting a access in NEXUS
+User Name - deploy
+Password - deploy123
+
+USER(S) ===>ROLE(S) == Permission(S)
+
+
+Step 2 - Creating a Repo = Maven
+	   Kinds of Repo
+		- Hosted - READ - WRITE
+		http://35.200.170.213:8081/repository/rajesh-hosted-release/
+		http://35.200.170.213:8081/repository/rajesh-hosted-snapshot/
+		
+		- Proxy - READ
+		http://35.200.170.213:8081/repository/apache/
+
+		- Group === HOSTED + PROXY
+		http://35.200.170.213:8081/repository/group/
+	
+Maven RELEASE TYPE
+		RELEASE
+		SNAPSHOT
+
+Step 3 - Setting up a Maven Project with NEXUS
+	1. Pom.xml with repo url
+	2. setting.xml with access
+	
+https://github.com/scmgalaxy/helloworld-java-maven
+
+Step 4 - 
+	mvn deploy
+
+Hw to download?
+Setup a Group in Setting.xml with mirro elements.
+==========================================================
+Privileges
+Roles
+User
+
+
+deploy
+deploy123
+
+===========================================
+How to upload a package in Nexus via maven?
+1. Modify pom.xml with repo location
+2. Modify setting.xml with userid/pass
+3. mvn deploy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

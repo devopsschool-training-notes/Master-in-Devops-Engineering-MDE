@@ -1,0 +1,104 @@
+What is Nexus?
+	Artifacts == Binary == Packages
+	Dev using Java
+	Sonatype
+	version
+		Community 
+		Pro
+
+Why nexus?
+	Security
+	Availability
+	Cleanup
+	Admin 
+		USERS
+		GROUPS
+		ACCESS
+------------------------
+
+Other tool - Artifactory, Archiva, Nuget, Choclate
+
+How to install Nexus?
+	JRE  	JDK
+			JRE
+
+   3   yum install wget -y
+    4  wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+    5  $ rpm -ivh jdk-8u131-linux-x64.rpm
+    6  rpm -ivh jdk-8u131-linux-x64.rpm
+    7  java -version
+
+	Nexus
+
+ 29  wget http://download.sonatype.com/nexus/3/latest-unix.tar.gz
+   30  ls
+   31  clear
+   32  ls
+   33  tar -zxvf latest-unix.tar.gz
+   34  clear
+   35  s
+   36  ls
+   37  cd nexus-3.15.2-01
+   38  ls
+   39  cd ls
+   40  ls
+   41  cd etc
+   42  ls
+   43  more nexus-default.properties
+   44  cd ..
+   45  ls
+   46  cd bin/
+   47  ls
+   48  ./nexus start
+   49  ./nexus statuss
+   50  ./nexus status
+   51  history
+===============================================
+
+http://13.233.207.53:8081/
+admin
+admin123
+
+How to craete access?
+user1
+user1123
+	
+Nexus has 3 kind of repo
+	Hosted - READ & WRITE
+		http://13.233.207.53:8081/repository/tuesday-snapshot/
+		http://13.233.207.53:8081/repository/tuesday-release/
+	Proxy - Cache of Remote - read only
+		http://13.233.207.53:8081/repository/tuesday-proxy/
+	group - Hosted + Proxy	
+		http://13.233.207.53:8081/repository/tuesday-group/
+
+How to upload a artifacts usig Maven?
+Step 1 - Update pom.xml with Repo url
+Step 2 - Update setting.xml with Access
+Step 3 - mvn deploy
+
+How to download artifacts using maven from nexus?
+Step 1 - modify settting.xml with mirror
+Step 2 - mvn deploy
+
+
+
+Chat 1.0
+Mail 3.0
+
+
+CHAT 1.0 is dependent on Mail 3.0
+
+
+mvn install vs 
+copy a package into .m2
+
+mvn deploy
+copy a package from .m2 to Nexus
+
+
+
+
+
+
+	 

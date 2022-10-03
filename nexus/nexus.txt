@@ -1,0 +1,97 @@
+What is Nexus?	
+	A Repository mgmt system for privates packages.
+
+
+Why we user repository mgmt system?
+	To store a packages
+	Package Integrity
+	security
+	Availability
+	Streamline Process
+	Easy admin mgmt
+	Backup & Restore
+	
+
+
+What are ther others solutions?
+	NEXUS		- 70%
+	NUGET
+	Archiva
+	Artifactory
+
+
+How to install & configure
+
+	JRE & JDK
+
+Version
+OSS - PRO
+
+How to install...
+
+wget http://download.sonatype.com/nexus/3/latest-unix.tar.gz
+tar -zxvf latest-unix.tar.gz
+cd nexus
+cd bin
+./nexus start
+
+http://13.126.73.45:8081/
+
+
+============================================
+Nexus has 3 kinds of repo
+===============================
+	HOSTED		R W
+	PROXY
+	GROUP
+
+
+Maven 
+	RELEASE
+	SNAPSHOT
+
+MAIN OBJECTING OF THE NEXUS
+	UPLOAD 
+	DOWNLOAD
+
+
+UPLOAD NOW
+========================
+1. setting.xml	with user name / password of nexus
+deployment
+deployment123
+
+2. pom.xml	with repos url of nexus
+
+
+3. mvn deploy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+

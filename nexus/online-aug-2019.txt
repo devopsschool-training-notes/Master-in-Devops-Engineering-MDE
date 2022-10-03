@@ -1,0 +1,214 @@
+What is Nexus?
+	Repostory mgmt tool.
+	Dev in Java	
+	From SonaType
+	Version
+		Community
+		Pro
+		3.x
+
+What kind of Repostory?
+	Artifacts
+	Binary
+	Etc
+		JAR
+		WAR
+		exe
+		rpm
+		yum
+		apt
+		docker
+		python
+		ruby	
+
+Why do we need it?
+---------------------------
+	Build versining automatic way
+	Package availability to all - ON DEMAND.
+	Security 
+	rich ACLS..
+		Authentication
+		Authrization
+	Easy Admin wrk
+		Cleanup
+		Backup
+	Integ-	
+		MANY TOOLS.
+
+Other tools - Archiva - Artifactory - nuget gallery - gitLFS
+====================================
+How to install Nexus?
+	13.233.190.133
+
+   1  clear
+    2  cd
+    3  s
+    4  ls
+    5  yum install wget -y
+    6  wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+    7  rpm -ivh jdk-8u131-linux-x64.rpm
+    8  java -version
+    9  wget http://download.sonatype.com/nexus/3/latest-unix.tar.gz
+   10  tar -zxvf latest-unix.tar.gz
+   11  ls
+   12  clear
+   13  ls
+   14  mv nexus-3.18.1-01 sonatype-work
+   15  clear
+   16  ls
+   17  cd /opt/
+   18  ls
+   19  hisotyr
+   20  history
+   21  cd -
+   22  ls
+   23  rm -rf sonatype-work
+   24  tar -zxvf latest-unix.tar.gz
+   25  clear
+   26  ls
+   27  mv  nexus-3.18.1-01 sonatype-work /opt/
+   28  ls
+   29  cd /opt/
+   30  ls
+   31  cdnexus-3.18.1-01
+   32  cd nexus-3.18.1-01
+   33  ls
+   34  cd etc
+   35  ls
+   36  vi nexus-default.properties
+   37  cd ...
+   38  cd ..
+   39  ls
+   40  cd bin/
+   41  clear
+   42  lls
+   43  ls
+   44  ./nexus start
+   45  ./nexus status
+   46  history
+
+http://13.233.190.133:8081/
+	admin
+	admin123
+
+Forgot admin password
+https://support.sonatype.com/hc/en-us/articles/213467158-How-to-reset-a-forgotten-admin-password-in-Nexus-3-x
+----------------------------
+nexus Arch
+	-- nexus-3.18.1-01	
+		----- APPLICATION and Conf
+	-- sonatype-work
+		---- Ext tools + Db + Cyption
+		DB -  OrientDB
+			In Build User/Pass
+			LDAP
+		Indexing - ElasticSearch
+		Algortoh - Java Crypr
+		App - Jetty
+---------------------------
+Troubleshooting
+----------------------
+JAVA - 8081
+--------------------
+
+WHAT TYP OF REPO
+======================
+APT 
+Composer
+Composer* 
+Conan
+Conan* 
+CPAN
+CPAN* 
+Docker
+Docker 
+ELPA
+ELPA* 
+Git LFS
+Git LFS 
+Go
+Go 
+Helm
+Helm* 
+Maven
+Maven 
+npm
+npm 
+NuGet
+NuGet 
+P2
+P2* 
+PyPI
+PyPI 
+R
+R* 
+Raw
+Raw 
+RubyGems
+RubyGems 
+Yum
+Yum 
+
+Each repo has kind...
+============================
+	Hosted
+	Proxy
+	Group
+----------------------------
+Working with Authenticaion and Auth using DB
+role - sunday
+user - deploy/deploy123
+
+What is your Type - Maven
+
+	Hosted - READ -- WRITE - LOCAL
+	http://13.233.190.133:8081/repository/sunday-hosted/
+	Proxy - Read - Remote - CACHE
+	http://13.233.190.133:8081/repository/sunday-proxy/
+	Group - Collection of Hosted + Proxy
+	http://13.233.190.133:8081/repository/sunday-group/ 
+
+Maven Release
+	SNAPSHOT 1.5-SNAPSHOT
+	RELEASE	1.4 4.4
+			
+===============================================
+UPLOAD and DOWNLOAD	
+	USING Maven.........................
+
+How to upload Package into Nexus using maven?
+
+	1 repository element in pom.xml
+	2 access element in setting.xml
+	3 id of pom.xml and setting.xml MUST MATCh
+	4 mvn deploy
+
+How to Download Package into Nexusing Using Maven?
+
+	1 mirror element in setting.xml
+	3 mvn ANY[[[[GOAL]]
+
+Example - 
+https://github.com/devops-school/helloworld-java-maven
+=======================================================================
+Software Dev
+----
+PHASE ------23
+https://maven.apache.org/ref/3.5.0/maven-core/lifecycles.html
+
+compile	 	----> GOAL compile
+test		----> GOAL test		
+package		----> GOAL package		
+install		----> GOAL install		
+deploy		----> GOAL deploy		
+
+
+
+
+
+
+
+
+
+
+

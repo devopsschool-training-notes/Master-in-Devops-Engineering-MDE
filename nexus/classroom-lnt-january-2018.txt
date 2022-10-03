@@ -1,0 +1,112 @@
+What is Nexus?
+	A repo mgmt system for binary package
+	From SonaType
+	Release - OSS - PRO
+	Dev in Java
+	Mature Product
+
+
+Why do we need it?
+	Good Integration with build tools
+	Security 
+	In built versioning
+	Integrity Check
+	Standard Process and Layout
+	Admin
+		clean up
+		deletion
+	LDAP
+	USERS n GROUPS n PERMI
+
+Other tools
+	Jfrog Artifactory
+	Apache Archiva
+	NUget
+
+
+How to install it?
+	JRE + JDK
+	>  wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+
+	Download the package (Zip + Tar)
+	>  wget http://download.sonatype.com/nexus/3/latest-unix.tar.gz
+	extract it
+	copy 
+	run
+	
+	exe | rpms | gunzip
+	> cd nexus/bin
+	>  ./nexus status
+	>  ./nexus start
+http://35.154.247.118:8081/
+
+# nexus-default.properties under etc directory
+How to upload a artifact in Nexus? === How to make "mvn deploy" working?
+
+1. pom.xml with the repo			DONE
+2. setting.xml with the access of the repo
+3. > mvn deploy
+
+Types of Repo in Nexus
+============================
+Hosted
+	LOCAL REPO where you do read n write
+	lntx-hosted-release		http://35.154.247.118:8081/repository/lntx-hosted-release/
+	lntx-hosted-snapshot		http://35.154.247.118:8081/repository/lntx-hosted-snapshot/
+
+Proxy
+	Remote remo where you only read	
+					 http://35.154.247.118:8081/repository/lntpublic-repo/
+Group
+	Group of Hoested and Proxy repo
+					http://35.154.247.118:8081/repository/lnt-group/
+
+
+
+
+How to download
+==============================
+
+
+COMMAND
+====================
+   13  clear
+   14  ls
+   15  rpm -ivh jdk-8u131-linux-x64.rpm
+   16  java
+   17  java -version
+   18  clear
+   19  ls
+   20  wget http://download.sonatype.com/nexus/3/latest-unix.tar.gz
+   21  clear
+   22  ls
+   23  gunzip latest-unix.tar.gz
+   24  ls
+   25  tar -xvf latest-unix.tar
+   26  clear
+   27  ls
+   28  mv nexus-3.7.1-02 nexus
+   29  clear
+   30  history
+ 44  ./nexus start
+   45  ./nexus status
+   46  cd ..
+   47  ls
+   48  cd public
+   49  ls
+   50  cd ..
+   51  ls
+   52  clear
+   53  ls
+   54  cd bin
+   55  ./nexus status
+   56  ps -eaf | grep nexus
+   57  clear
+   58  ls
+   59  cd ..
+   60  ls
+   61  cd etc/
+   62  ls
+   63  more nexus-default.properties
+
+

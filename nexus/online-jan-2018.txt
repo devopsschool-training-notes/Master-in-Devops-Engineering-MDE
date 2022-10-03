@@ -1,0 +1,76 @@
+What is Nexus?
+	Nexus is repo mgmt tool for the packages
+	Dev in Java
+	Large set of packages ext supported
+	Release - OSS(Free) - Pro(Paid)
+
+But For what?
+	Binary package
+
+How come?
+Code --> Git --> SonarQube -> Compile -> UT -> Packagin-> Dep2Repo
+
+Why nexus?
+	Integrity Check of packge - md5, checksum
+	Security of  the package
+	Build Versioning
+	High availability
+	Admin
+		backup
+		cleanup
+		users-groups etc
+
+Othertools - Artifactry, Archiva, Nuget
+
+How to install it?
+How to install it?
+	JRE + JDK
+>  wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+> rpm -ivh jdk-8u131-linux-x64.rpm
+
+	Download the package (Zip + Tar)
+	>  wget http://download.sonatype.com/nexus/3/latest-unix.tar.gz
+	extract it
+	> tar -zxvf latest-unix.tar.gz
+	copy 
+	run ---> http://13.127.92.110:8081/
+		  admin	
+		  admin123
+
+================================================
+What kind of repo you can create in nexus?
+	HOSTED - RW -- Your Own Package
+	PROXY  - RO --- Cache of another remote repo
+	GROUP  -  Group is of multiple Hosted and proxy added into this.
+
+Maven  - Release
+	----> RELEASE 		2.1 2.3.3
+	----> SNAPSHOT		2.1-SNAPSHOT 2.3.3-SNAPSHOT
+
+Prox-Release	http://13.127.92.110:8081/repository/Prox-Release/
+Prox-Snapshot	http://13.127.92.110:8081/repository/Prox-Snapshot/
+Proxy-  --http://13.127.92.110:8081/repository/pROX/
+
+How to upload into these repo using maven?
+
+1. Modify pom.xml with the hosted repo
+2. Modify setting.xml with Access of nexus
+> mvn deploy
+
+access
+	upload / upload123
+
+How do i tell my maven to download from nexus than central?
+setting.xml
+
+ <mirror>
+      <id>nexus1</id>
+      <name>Maven Repository Manager running on repo.mycompany.com</name>
+      <url>http://35.154.247.118:8081/repository/lnt-group/</url>
+      <mirrorOf>*</mirrorOf>
+    </mirror>
+
+
+
+
+

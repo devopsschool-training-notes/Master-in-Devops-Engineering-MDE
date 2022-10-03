@@ -1,0 +1,96 @@
+What is Nexus?
+	A Repo mgmt system
+	Of Artifacts?
+	Artifacts - Packages of Binary or files?
+	From SonaType
+	Developed using JAVA
+	Release
+	OSS - PRO
+
+Why Nexus?
+	Package availablity - 24/7 n Immediate
+	Package Security
+	Package Integrity
+	Integration - Maven --Docker, rpm, npm - 20++++
+
+	Admin
+		EASY CLEAN UP
+		EASY BACKUP
+		ACCESS MGMT
+OTHER Toools
+	Artifactory from JFrog
+	Archiva from Apache
+
+	Nuget
+	Choclate
+
+	
+Planning->Code->Build->Packge->Repo->Deploy->AT->CC->RELEASE
+JIRA    -->GIT --> Maven ->JAR -> NEXUS-->
+
+How to install it?
+
+    1  clear
+    2  ls
+    3  cd /opt/
+    4  ls
+    5  yum install wget
+    6  clear
+    7  wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+    8  clear
+    9  ls
+   10  rpm -ivh jdk-8u131-linux-x64.rpm
+   11  java -v
+   12  java -version
+   13  history
+   14  wget http://download.sonatype.com/nexus/3/latest-unix.tar.gz
+
+
+Manual  - Docker - 
+
+33  ./nexus start
+   34  ./nexus status
+   35  cd ..
+   36  ls
+   37  cd etc
+   38  clear
+   39  ls
+   40  more nexus-default.properties
+
+
+http://13.126.117.6:8081/
+admin
+admin123
+
+============================================
+Package Type - 
+https://www.sonatype.com/nexus-repository-oss-vs.-pro-features
+
+Maven
+	LOCAL
+	CENTRAL
+	PRIVATE ----NEXUS
+
+	RELEASE
+	SNAPSHOT
+
+REPO TYPE IN NEXUS
+	HOSTED ----> LOCAL --> RW
+		http://13.127.140.80:8081/repository/maven-hosted-release/
+		http://13.127.140.80:8081/repository/maven-hosted-snapshot/
+	PROXY  --> Remote Repo Cache COpy
+	GROUP  --> Multiple Hosted+Proxy Labeled to one.
+
+How to Upload a Package using
+	1. Update a pom.xml with repo		- DONE
+	2. Update a setting.xml with access     - DONE
+	3. mvn deploy				- DONE
+	
+HOW TO DOWNLOAD using maven?
+	1. Modify the setting with mirror element
+
+Access - 
+	Privillage
+	Roles
+	User
+

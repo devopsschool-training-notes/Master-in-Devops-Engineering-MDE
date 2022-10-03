@@ -1,0 +1,129 @@
+What is Nexus?
+	A repository mgmt system
+	Java
+	WEB BASED
+
+For what?
+	For storing the Packages
+
+WHY WE NEED IT?
+	Stanard way to store the artifacts
+		Maven way
+		npm way
+		py
+		Docker way
+	Package Security 
+	Package Integrity
+	Backup and Restore
+	Easy Cleanup
+
+Other tools - Archiva, Artifactory, nuget
+
+How to Install Nexus?
+
+JAVA -
+	JDK OR JRE
+	Download
+	Extract
+	Copy to desired location
+	Start
+
+wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/8u144-b01/090f390dda5b47b9b721c7dfaa008135/jdk-8u144-linux-x64.rpm"
+
+wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/8u144-b01/090f390dda5b47b9b721c7dfaa008135/jdk-8u144-linux-x64.tar.gz"
+
+
+> cd /opt
+> tar -zxvf jdk-8u144-linux-x64.tar.gz
+export JAVA_HOME=
+export PATH=$PATH;$JAVA_HOME/bin
+
+http://download.oracle.com/otn-pub/java/jdk/8u144-b01/090f390dda5b47b9b721c7dfaa008135/jdk-8u144-linux-x64.rpm
+
+Nexus Version
+=============================
+	Community Edition - FREE
+	Pro - PAID
+	http://download.sonatype.com/nexus/3/latest-unix.tar.gz
+
+DEFAULT PORT - 8081
+
+DEFAULT PROPERTY FILE - etc/nexus-default.properties
+
+===============================================================
+
+NEXUS REPOSITORY MANAGER
+	REPOSITORY
+	REPOSITORY 
+	REPOSITORY 
+	REPOSITORY 
+	REPOSITORY 
+
+REPOSITORY 
+	PACKAGE STORED IN CERTRAIN WAY
+
+TYPE OF REPOSITORY?
+	HOSTED - STORE YOUR OWN PACKAGES
+	PROXY  - TO CREATE A LOCAL CACHE COPY OF REMOTE REPO
+	GROUP - MULITPLE HOSTED + MULITPLE  PROXY
+
+	MAVEN RELEASE
+		RELEASE
+		SNAPSHOT
+		
+USER ID n PASSWORD - admin | admin123
+
+	weekend-release
+	weekend-snapshot
+
+	weekend-proxy
+		https://repo1.maven.org/maven2/
+
+	weekend-group
+
+
+SECURITY
+	Privileges
+		ALL SORT OF ACCESS
+
+	ROLE 
+		SOME OF THE Privileges
+
+	USER	
+		ASSIG ROLE INTO THIS
+
+rajesh
+rajesh123
+
+DOWNLOAD & UPLOAD
+=====================================
+
+UPLOAD USING MAVEN
+	1. pom.xml with repo
+	2. setting.xml with access
+	ID of POM and SETTING.xml
+	3. mvn deploy
+
+
+DOWNLOAD USING MAVEN
+	YOU NEED TO UPATE MIRROR ELEMENTS IN SETTING.xml
+	mirrors
+	
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

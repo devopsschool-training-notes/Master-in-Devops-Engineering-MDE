@@ -1,0 +1,129 @@
+What is Nexus?
+===========================
+	Repo mgmt system for Artifact
+	Artifacts - Package of Binary or any other files
+	Community(OSS) + Pro - PAID(Company)
+	From SonaType
+	Developing using JAVA
+
+Why Nexus?
+	Vs FTP + Share Drives
+	
+	Security of packages
+	Integrity of Packages(md5, sha1)
+	Easy Admin activity
+		Backup
+		Usr mgmt
+		Restre
+		Cleanup
+	Process Driven
+	Integration with wide tools
+	https://www.sonatype.com/nexus-repository-oss-vs.-pro-features
+	Availability
+
+Other Tools - 
+	Artifactory
+	Archiva
+	Nuget
+	Choc 
+How to install it?
+	JDK OR Jre
+
+    5  yum install wget
+    6  clear
+    7  ls
+    8  wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+    9  ls
+   10  rpm -ivh jdk-8u131-linux-x64.rpm
+   11  java -v
+   12  java -version
+   13  clear
+   14  ls
+   15  cd /opt/
+   16  wget http://download.sonatype.com/nexus/3/latest-unix.tar.gz
+   17  clear
+   18  s
+   19  lear
+   20  clear
+   21  ls
+   22  tar -zxvf latest-unix.tar.gz
+   23  clear
+   24  ls
+   25  pwd
+   26  mv nexus-3.8.0-02 nexus
+   27  ls
+   28  cd nexus/
+   29  ls
+   30  cd etc
+   31  ls
+   32  more nexus-default.properties
+   33  cd ..
+   34  ls
+   35  cd bin/
+   36  ls
+   37  ./nexus
+   38  ./nexus start
+   39  ./nexus status
+   40  history
+
+==========================================
+
+What are kind of Repo?
+	HOSTED - RW --- A Place where you can store your own Packages
+	PROXY  --RO ---You are just copying a Copy of the Another Repo
+	GROUP  -- Hosted + Proxy ===ONE NAME
+
+NEXUS Integration--> MAVEN
+
+Maven 
+	LOCAL
+	CENTRAL
+	PRIVATE ==== NEXUS
+
+VERSION
+	RELEASE
+	SNAPSHOT
+
+NEXUS UNDERSTAND MAVEN
+-------------------------
+http://13.127.222.110:8081/
+admin
+admin123
+	
+Hosted
+	scmgalaxy-release
+	http://13.127.222.110:8081/repository/scmgalaxy-release/
+	scmgalaxy-snapshot
+	http://13.127.222.110:8081/repository/scmgalaxy-snapshot/
+
+	scmgalaxy-proxy
+	https://repo1.maven.org/maven2/ TOOOO
+	http://13.127.222.110:8081/repository/scmgalaxy-proxy/
+	
+	scmgalaxy-group
+	http://13.127.222.110:8081/repository/scmgalaxy-group/
+
+uSER- deploy
+Pass - deploy123	
+
+	How to Upload Via Maven
+		repo address in pom.xml
+		access in setting.xml
+		mvn deploy
+	How to Download Via Maven FROM NEXUS		
+		mirror elements in d setting.xml
+
+
+Where is Setting.xml?
+> mvn -X
+[DEBUG] Reading global settings from C:\Tools\maven\conf\settings.xml
+[DEBUG] Reading user settings from C:\Users\Rajesh\.m2\settings.xml
+
+	
+
+
+
+	
+	
+	
+	

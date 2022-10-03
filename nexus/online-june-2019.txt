@@ -1,0 +1,113 @@
+What is Nexus?
+	repo mgmt tool.
+	From SonaType
+	Dev in Java
+	Version
+		Community - Free
+		Pro - Paid
+
+What is Repo
+	For packages, artifact etc...
+	Any binary 
+
+Why we need it?
+	Availability
+	Security
+	Ease of Task
+	Admin activity
+		USER-GROUP
+		Cleanup
+		Backup
+	Monitor
+
+How to install it?
+   1  clear
+    2  l
+    3  yum install wget -y
+    4  wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+    5  rpm -ivh jdk-8u131-linux-x64.rpm
+    6  java -version
+    7  cd /opt/
+    8  ls
+    9  wget http://download.sonatype.com/nexus/3/latest-unix.tar.gz
+   10  ls
+   11  tar -zxvf latest-unix.tar.gz
+   12  ls
+   13  clear
+   14  ls
+   15  cd nexus-3.17.0-01
+   16  ls
+   17  cd etc
+   18  ls
+   19  more nexus-default.properties
+   20  cd ..
+   21  ls
+   22  cd bin
+   23  ls
+   24  ./nexus start
+   25  ./nexus status
+   26  ./nexus status
+   27  history
+http://13.233.21.16:8081/
+admin
+password
+
+Repository Formats: maven
+------------------------------
+Repo Type	
+	Hosted 	- RW - Local Repo
+	Proxy   - RO Loca Repo but cached from REMOTE REPO
+	Group   - Hosted(S) + Proxy(S)
+===========================================
+Maven Release TYPE
+		RELEASE		4.5
+		SNAPSHOT	4.5-SNAPSHOT
+=================================================
+Maven	HOSTED RELEASE	sat-hosted-release http://13.233.21.16:8081/repository/sat-hosted-release/
+MAVEN	HOSTED SNAPSHOT	sat-hosted-snapshot http://13.233.21.16:8081/repository/sat-hosted-snapshot/
+MAVEN	PROXY	http://repo.maven.apache.org/maven2/ http://13.233.21.16:8081/repository/sat-proxy/	
+MAVEN	GROUP	sat-group	http://13.233.21.16:8081/repository/sat-group/
+		
+
+Privileges
+Roles
+User
+
+
+deploy
+deploy123
+
+===========================================
+How to upload a package in Nexus via maven?
+1. Modify pom.xml with repo location
+2. Modify setting.xml with userid/pass
+3. ID of pom.xml(repository) and setting.xml(server) elements must be same.
+3. mvn deploy
+https://github.com/scmgalaxy/helloworld-java-maven
+
+How to download using maven?
+=======================
+Module 1 is dependent on Module 2 in pom.xml
+======================================
+
+How to make Maven setup for Nexus?
+1. In setting.xml. 
+		Add mirror whereas ID should match with server....
+
+<mirror>
+      <id>saturday</id>
+      <name>Maven Repository Manager running on repo.mycompany.com</name>
+      <url>http://13.233.21.16:8081/repository/sat-proxy/</url>
+      <mirrorOf>*</mirrorOf>
+    </mirror>
+
+============================
+mvn deploy
+
+
+
+
+
+
+
+
