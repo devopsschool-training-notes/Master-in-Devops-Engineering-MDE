@@ -1,0 +1,125 @@
+What is Ant?
+	Build mgmt tool
+	Build tool
+	Free
+	From Apache
+	Open Source
+	Developed using Java
+	But you can use for any technology
+	is Decalarative Lang
+
+Declarative Lang - Ant, Makefile, MSbuild, NANT, Gradle
+Proced - -- Maven
+
+Why Ant?
+	Automating the build process.
+
+	Create a dir
+	Copy the source file
+	Checkout/Copy the src code
+	making dir
+	Copy the external /Dep
+	Set the compiler
+	Set the env
+	Set the config
+	Compile
+	test
+	Package
+  ------------------------------------------------
+	20 times in a day
+
+Automation - 
+		EASY TO LEARN | SHARE | EXTEND | DEBUG
+	Build Tool - 		
+	Declarative Lang - Ant, Makefile, MSbuild, NANT, Gradle
+	Proced - -- Maven
+
+Today - Apache Ant - 
+
+How to Install?
+=============================================
+JRE OR JDK
+
+Download
+wget http://mirror.ibcp.fr/pub/apache//ant/binaries/apache-ant-1.10.2-bin.zip
+Extract & Copy to desire
+
+export ANT_HOME=/home/ec2-user/ant/
+export PATH=$PATH:$ANT_HOME/bin
+
+How to verify?
+ant
+ant -v
+
+=====================
+Where is the automation is been written?
+filename - build.xml | filename.xml
+
+How to execute?
+> ant
+> ant -f filename.xml
+
+How to write build.xml?
+============================================
+
+PROJECT 	- 1
+PROPERTY	- MAX
+TASKS		- As many task you want to do?
+	Built it - https://ant.apache.org/manual/tasklist.html	-
+	EXTERNAL - https://ant.apache.org/external.html
+TARGET
+
+<project name="nokia" basedir="." default="package">
+
+<property name="age" value="28" />
+<property name="src" value="src" />
+<property name="build" value="build" />
+<property name="lib" value="lib" />
+
+<target name="clean">
+<delete dir="${src}"/>
+<delete dir="${build}"/>
+<delete dir="${lib}"/>
+</target>
+
+<target name="print">
+<echo message="This is my first ant Program"/>
+<echo message="my age is ${age}"/>
+</target>
+
+<target name="init" depends="clean">
+<mkdir dir="${src}"/>
+<mkdir dir="${build}"/>
+<mkdir dir="${lib}"/>
+</target>
+
+<target name="copy" depends="init">
+<exec executable="/usr/bin/git">
+  <arg value="clone"/>
+  <arg value="https://github.com/scmgalaxy/helloworld-cpp-ant.git"/>
+  <arg value="src"/>
+</exec>
+</target>
+
+<target name="compile" depends="copy">
+<exec dir="${src}" executable="/usr/bin/make">
+</exec>
+</target>
+
+<target name="package" depends="compile">
+<copy todir="${build}">
+    <fileset dir="${src}">
+        <include name="**/*.o"/>
+    </fileset>
+</copy>
+
+<zip destfile="${lib}/nokia.zip"
+       basedir="${build}"/>
+</target>
+
+</project>
+
+
+
+
+

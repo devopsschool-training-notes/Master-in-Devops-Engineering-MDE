@@ -1,0 +1,152 @@
+What is Apache Ant?
+	A Build tool
+	From Apache
+	free
+	Open Source
+	Dev in Java
+	For any Lang
+	xml based file
+	decalare
+
+Why do you need a build tool?
+	Automated the rep task what we do in Build mgmt process
+
+	1. create a dir struc
+	2. copy the src code
+	3. Set the compilers
+	4. set the env
+	5. Set the pre tools
+	6. compile
+	7. package
+	8. UnitT
+	9. ftp/share/nexuys
+	===========================
+	20 times a day
+
+Automation --> How?
+	CPP Developers
+	
+	CPP - SCRIPT FOR BUILD ---
+	JAVA
+	PERL
+	PYTHON
+
+	DIFF TO SHARE
+	DIFF TO LEARN
+	DIFF TO EXTEND
+	DIFF TO TEST
+-----------------------------------
+	EASY TO SHARE
+	EASY TO LEARN
+	EASY TO EXTEND
+	EASY TO TEST
+
+BUILD MGMT 
+TOOl - 
+	makefile --> Ant [MUL]--> maven[JAVA] --> Gradle [JAVA]
+	makefile --> NANT  --> Msbuild
+-----------------------------------
+ANT == NANT == MSBUILD
+===================================
+
+How to Install it?
+	JDK or JRE
+	
+> wget wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+
+> rpm -ivh jdk-8u131-linux-x64.rpm
+
+Download ANT
+> wget http://apache.mindstudios.com//ant/binaries/apache-ant-1.10.2-bin.zip
+> unzip apache-ant-1.10.2-bin.zip
+
+How to set the config
+ANT_HOME
+export ANT_HOME=/opt/ant
+
+ANT_HOME/bin --> PATH
+export PATH=$PATH:/opt/ant/bin
+
+How to verify?
+> ant
+> ant -version
+> ant -help
+
+===========================================================
+ANT  -- 
+	Default name of the file - build.xml
+	Any time - - filename.xml
+
+How can you run the ant script?
+> ant			[[[[[[[[build.xml]]]]]]]]]
+> ant <<target-name>>>	[[[[[[[[build.xml]]]]]]]]]
+
+> ant -f filename.xml			[[[[[[[[filename.xml]]]]]]]]]
+> ant -f filename.xml <<target-name>>>	[[[[[[[[filename.xml]]]]]]]]
+
+How to write build.xml?
+
+PROJECT		- 1
+TASKS		- MUL
+	 	IN BUILT TASK - https://ant.apache.org/manual/tasklist.html
+		CUSTOM - https://ant.apache.org/external.html
+PROPERTY	- MUL
+TARGET		- MUL ( Group of Tasks)
+
+CONTENT OF BUILD.XML
+============================================
+<project name="nokiaX" basedir="." default="compile">
+
+	<property name="src" value="src" />
+	<property name="build" value="build" />
+
+	<target name="clean">
+		<delete dir="${src}"/>
+		<delete dir="${build}"/>
+	</target>
+	
+	<target name="echo" depends="clean">
+		<echo message="Hello, world"/>
+	</target>
+
+	<target name="create" depends="echo">
+		<mkdir dir="${build}"/>
+		<mkdir dir="${src}"/>
+	</target>
+
+	<target name="copy" depends="create">
+		<copy file="/opt/HelloWorld.java" todir="${src}"/>
+	</target>
+
+	<target name="compile" depends="copy">
+		<javac srcdir="src" destdir="${build}"/>
+	</target>
+	
+</project>
+
+
+<project name="nokiaX" basedir="." default="compile">
+
+
+	<target name="compile">
+		<exec executable="make">
+		</exec>
+	</target>
+
+</project>
+
+
+
+
+
+
+
+
+
+
+     
+
+	
+	
+	
+	

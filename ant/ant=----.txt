@@ -1,0 +1,136 @@
+DevOps - 
+Docker - 
+Git - SRC
+
+Src - Binary
+	--> Package
+
+1. Multiple Modules -(Java + C + C++ + Php + Perl)
+2. Inter dependency of modules
+3. External dependent
+4. Multiple env / config
+5. Linux | Windowx| Mac
+
+100 times in week---
+
+Simple - Automation ---
+
+How can you automate --- java, dot net, perl |
+We have selected - Ant, Maven, MsBuild, Gradel
+
+Learn faster
+Do faster
+maintain easily 
+extend easily
+save time | cost
+
+Why?
+What 
+Build Automation
+Free
+Open Source
+Devloped using java - Platform ind
+Rich Doc
+
+
+
+How can you install Ant?
+Install JDK - JAVA_HOME
+ANT_HOME=C:\Tools\ant
+
+PATH=C:\Tools\ant\bin
+
+
+export ANT_HOME=C:\Tools\ant\
+export PATH=$PATH:C:\Tools\ant\bin
+
+
+ant
+ant -version
+
+===========================
+How can i write script?
+
+Requirement - 
+1. Get a src code - DONE
+2. Create a build infra - DONE
+3. Setup the required prop - DONE
+4. Copy the src code into build env - DONE
+5. Compile  - DONE
+6. Package - DONE
+
+Every timme it should be clean
+
+
+build.xml| filename.xml
+ant	| ant -f filename.xml
+
+PROJECT - 1
+PROPERtY - MUL
+TASKS - MUL
+TARGET - MUL
+
+=======================================
+<project name="first" basedir=".">
+
+<property name="name" value="raj" />
+<property name="age" value="30" />
+
+<property name="src" value="src" />
+<property name="build" value="build" />
+<property name="lib" value="lib" />
+
+<echo message="My Nane is :${name}"/>
+<echo message="My Age is: ${age}"/>
+
+<mkdir dir="${src}"/>
+<mkdir dir="${build}"/>
+<mkdir dir="${lib}"/>
+
+
+</project>
+
+
+
+Maven Funda
+Advance
+
+
+
+Apache Ant Tasks
+External Tasks
+Custom Tasks - Java 
+
+
+
+JAVA - SRC + Compile
+
+Perl - SRC + Interpreter
+Pythong - SRC + Compiler
+C - SRC + Compiler
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
