@@ -1,0 +1,407 @@
+shttps://www.devopsschool.com/notes/devops/DeBold.txt
+Tools - 
+====================================
+DevOps - DONE
+Jira - DONE
+Git - DNE
+SonarQube - DONE
+Maven - 
+Jenkins
+Puppet
+Jacoco |Cover
+Nagios--
+
+Docker
+Kubernetes
+====================================
+
+Certification - 
+========================
+
+2 DAYS
+=====================
+ALL 
+
+
+
+2 DAYS
+=====================
+Docker
+Kubernetes
+============================================================
+Lets Disusss why you should use what tool?
+https://www.devopsschool.com/path/
+
+AWS - IAM
+GROUP --> PERMISSION
+USER
+
+https://devopsschool.signin.aws.amazon.com/console
+dev
+Debold$123
+
+
+EC2 Instance
+CPU + TEMP STORAGE + OS + ACCESS
+
+13.232.50.151
+
+Jira on AWS
+===================================
+$ sudo -s
+$ cd /opt
+$ yum install wget -y
+$ wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+$ rpm -ivh jdk-8u131-linux-x64.rpm
+$ java -version
+
+$ wget https://product-downloads.atlassian.com/software/jira/downloads/atlassian-jira-software-7.13.0-x64.bin
+
+$ chmod 755 atlassian-jira-software-7.13.0-x64.bin
+
+$ ./atlassian-jira-software-7.13.0-x64.bin
+
+http://13.232.50.151:8080/
+admin
+admin123
+--------------------
+1. Name - ProjX 
+	
+=====================================================
+What is Git?
+	VERSION CONTROL TOOl
+	Free
+	OpenSource
+	Distrubuted
+	Linus
+
+		WHO | WHAT | WHY | WHRER | WHEN
+How to install git?
+	WIndows - https://git-scm.com/ git-bash
+	Linux 
+		sudo apt-get install git
+		sudo yum install git
+
+SERVER-CLIENT VS DISTRIBUTED
+-----------------------------------
+cd /c
+mkdir debold
+cd bedold
+
+
+Step 1 - create a repo
+$ git init
+
+Step 2 - Create a file
+Using Editor
+
+Step 3 - Mving a file from Wrking Dir to Staging Area
+$ git add filename
+
+# username - git config user.name "Rajesh Kumar"
+# email - git config user.email "DevOps@RajeshKumar.xyz"
+# git config --list
+
+Step 4 - Commit a file = Moving a changes from Staging to Repo
+$ git commit -m"adding my first file"
+
+Step 5 - Histoyr
+$ git log
+
+Step 6 - Where
+$ git show cmmit-id
+======================================
+
+SSH rajesh@10.6.6.6://d/debold/.git
+
+How to add all?
+How come commit selective?
+How to delete?
+How to rename?
+How to modify a file?
+
+ 536  git status
+  537  git add .
+  538  git status
+  539  clear
+  540  ls
+  541  vi file1.txt
+  542  git status
+  543  git add .
+  544  git status
+  545  clear
+  546  git commit -m"commit" file4.txt
+  547  clear
+  548  git status
+  549  git log
+  550  c
+  551  clear
+  552  ls
+  553  git status
+  554  git commit -m"commit all"
+  555  clear
+  556  git status
+  557  ls
+  558  git rm file1.txt
+  559  git status
+  560  ls
+  561  git commit -m"dele"
+  562  git status
+  563  ls
+  564  git log
+  565  clear
+  566  git log
+  567  git log --oneline
+  568  clear
+  569  git log --oneline
+  570  git checkout 4d597c8
+  571  ls
+  572  git checkout master
+  573  clear
+  574  ls
+
+
+
+Branching
+	Local branch  - RW
+	Temp - RW 
+	Remote Branch - RO
+	
+Merging
+Conflict Resu
+==================================================
+What is SonarQube?
+	Quality Mgmt Tool
+	Free
+	Version
+		Community - Free + OS
+		Enterrise - PAID
+		CLOUD - PAID
+	Java
+	From SonarSource
+	
+	
+Quality
+	CODE - STATIC CODE ANALYSIS TOOL
+	TEST - CODE COVERAGE TOOL.
+
+SonarQube Review the 7 AXIS of Quality.
+============================================
+
+Arch of SonarQube?
+	SonarQube Server - DONE
+	Scanner
+	Src  - https://github.com/scmgalaxy/java-sonar-runner-simple
+
+USING NON-ROOT uSER
+     8  wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-7.6.zip
+    9  unzip sonarqube-7.6.zip
+   10  clear
+   11  cd ..
+   12  cd
+   13  ls
+   14  cd sonarqube-7.6
+   15  ls
+   16  cd bin/
+   17  ls
+   18  cd linux-x86-64
+   19  ls
+   20  ./sonar.sh start
+   21  ./sonar.sh status
+   45  cd bin/
+   46  ls
+   47  cd windows-x86-64
+   48  cd ..
+   49  ls
+   50  cd linux-x86-64
+   51  ls
+   52  ./sonar.sh start
+   53  ./sonar.sh status
+   54  cd .
+
+http://13.233.125.110:9000/projects
+admin
+admin
+
+
+
+LAST ONE - RUN SCANNER ON SRC
+/home/ec2-user/scanner/bin/sonar-scanner 
+=================================================
+
+=============================================
+Convert Source Code into Binary....
+----------------------------------------
+	1. Create a dir	
+	2. Install GIT
+	3. Download Code
+	4. Install JDK
+	5. Download Depen
+	6. Compiler Set...
+		Compile
+		Unitest
+		Package
+		Dep2Repo
+	-------------------------
+	20 TIMES
+	Automate-
+		Batch Script
+		Shell Script | PERL
+	------------------------
+	Makefile -> Ant -> Maven/MSBuild -> Gradle
+===========================================
+What is Maven?
+	IS NOT A BUILD TOOL.
+	PROJECT MGMT TOOL
+		Build Automation
+	Free
+	OS 
+	FOR JAVA--
+	Dependency mgmt tool.
+	
+	
+How Maven works?
+================================
+HUMEN LIFE CYCLE
+---------------------------------
+BORN -> KID -> TEEN -> YOUNG - mID --> OLD - DIE
+---------------------------------------------------
+Sft Dev Lifecycle
+------------------
+Compile->UT->Pack->Dep2Repo->Dep2QA->AT->CC
+------------------------------------------------------------
+Maven has 3 life cycle
+http://maven.apache.org/ref/3.3.3/maven-core/lifecycles.htmls
+
+PHASE		HOW TO REACH TO THAT PH?=GOAL	Plugins
+compile		compile				JAR - Core Plugins 			test		test				JAR - Core Plugins 
+package		package				JAR - Core Plugins 
+install		install				JAR - Core Plugins 
+deploy		deploy				JAR - Core Plugins 
+----------------------------------
+Maven Architect...
+Made up from Plugins.....
+
+Maven
+	Core
+	Plugins
+		Core Plugins - Written by Apache
+		External Plu - Community
+================================================
+
+What is group ID
+What is Artifact ID
+==========================
+MS
+	word
+	slide
+	excel
+	outlook
+	common
+
+group ID = com.microsfot.software
+Artifact ID	word
+==========================================================	
+
+
+mvn archetype:generate -DgroupId=com.microsfot.software -DartifactId=word -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false	
+	
+How to install Maven?
+	JDK
+https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+JAVA_HOME C:\Tools\Java
+PATH = C:\Tools\Java\bin
+
+https://maven.apache.org/download.cgi
+
+
+PATH  - C:\Tools\maven\bin
+
+$ mvn 
+
+
+PACK TYPE - jar | war | war | pom
+VERSION TYPE
+		RELEASE
+		SNAPSHOT
+	
+=======================================
+==============================================================
+JENKINS
+==============================================================
+What is jenkins?
+	CI tools
+	ITS DUMB TOOL
+		BUT WITH PLUGINS its VERY POWERFUL.
+	Release
+		Free
+		Enterprise - by Cloudbees
+	Dev in Java
+
+What is CI?
+	Auto Build + Auto Test  + Imm feedback
+
+Plan->Code->Ana->UT->Pack-Dep2Repo->Dep2QA->AT->CC-RELEAE
+=========================================================
+			IMM FEEDBACK
+JIRA->GIT->SOnar->Junit->JAR-Nexus->Puppet->Sel->jaco---
+------------------------------------------------------------
+			JENKINS
+				WEB GUI
+				Scheduling
+				Feedback
+					Email
+						SIMPLE
+						ADVACNE
+					Chat
+					Dashboard
+						SIMPLE - Build Pipeline
+						ADVANCE - Pipline
+
+How to insall Jenkins?
+	JRE+JDK
+https://www.devopsschool.com/tutorial/jenkins/jenkins-installation-and-configuration.html	
+	
+==========================
+Secret of Jenkins
+	What is your technology - JAVA
+	Where is the source code?
+	https://github.com/scmgalaxy/helloworld-java-maven
+	What is your Builder?
+	maven
+============================
+How to schedule a job?
+	on Fixed Time = Build periodically
+	on Fixed Time but only when SCM Changes == Poll SCM
+	When another Job Build? = Build after other projects are built
+	When smeone push into github?
+	http://www.scmgalaxy.com/tutorials/how-to-build-when-a-change-is-pushed-to-github-in-jenkins/
+	
+	Using Script?
+	Trigger builds remotely (e.g., from scripts)
+	http://www.scmgalaxy.com/tutorials/how-to-trigger-builds-remotely-in-jenkins/
+	
+
+===================================================================
+===================================================================
+
+
+==================================================================
+====================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

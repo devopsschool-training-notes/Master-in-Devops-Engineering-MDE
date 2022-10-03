@@ -1,0 +1,69 @@
+Prod - NokiaX
+Project Mgr  - Mgrx
+==================================
+Hiring
+
+Architect  - 1
+Dev		- 10
+QA		- 8
+BR		- 1
+IT		- 1
+Net		- 1
+DB		- 1
+OPS		- 2
+LEADS		- 2
+==================================
+		30 
+
+Requirement Ana ---> JIRA
+Dev		- 10 MOD - 10 ENG
+	Code Integration ->> Git
+	Code Review - --->> SonarQube
+	https://en.wikipedia.org/wiki/List_of_tools_for_static_code_analysis
+	
+	Build
+		20 Steps X 20 times in a day
+		ant, maven, gradle, msbuild, makefile, nant
+
+	Unit - Junit, NUNIT
+
+	Packaging - 20 Package
+
+	Repo mgmt - Artifactory
+
+	Dep2QA	- 200 SERVERS
+
+	WINDOS - 50
+	LINUX  - 150
+
+	MYSQL
+	MSSQL
+	ORACLE
+	POST
+
+	JBOSS
+	TOMCAT
+	WB
+	WS
+
+	100 CONFIG
+=========================================
+	10 MINS 		1 SEC
+	Puppet			DOCKER
+	Chef
+	Anisble
+
+==========================
+	AUTO AT
+
+=====================
+	CC
+	 5 SEC
+	===================
+	RELEASE
+==============================================================================
+Planning -> Code -> Analysis -> BUILD ->Packaging ->Dep2Repo -> Dep2QA --> AT -> CC
+
+JIRA	-> Git -> SonarQube  -->ANT -> X Tools -> Artifactory -->Puppet> JUNIT --> JACOCO
+
+

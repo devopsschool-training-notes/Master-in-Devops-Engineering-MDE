@@ -1,0 +1,82 @@
+DevOps -
+https://www.devopsschool.com/tutorial/devops/
+http://www.devopsschool.com/quiz/
+https://www.devopsschool.com/notes/devops 
+https://www.devopsschool.com/video/devops/Complete-CICD-Implementation-from-Scratch.html
+
+Quiz
+https://www.devopsschool.com/quiz/index.php/quiz/quiz_detail/14/DevOps+1
+
+
+
+Mgr - Mgrx
+Product - YoodleX
+=======================
+Cost reduction
+Imm Release
+Quality 
+=======================
+ARCH - 1
+DEV - 20
+QA - 5
+IT - 1
+DB - 1
+LEAD - 2
+NET - 1
+SEC - 1
+OPS - 2
+----------------------------
+Plan --> Version1 | JIRA
+Source Integ -> P4 - git 
+Code Ana - SonarQube
+https://en.wikipedia.org/wiki/List_of_tools_for_static_code_analysis
+Build - Maven, Ant, 
+Unit testing - Junit 
+Packing - 
+	SYSTEM - EXE, MSI, DMG, RPM, DEB
+	APP - Jar
+Package mgt / repo mgmt tool - 
+		NEXUS
+Deploy 2 QA
+		200 BOX  - 1mins
+			------------AWS
+			------------OPENSTAKE -VMWARE
+			100 WIN
+			100 LINX
+	
+			50 O - 50 - MYSQ - MSSQ - POS
+
+			50 IIS - 50 JS - 50 WL - 50 TO
+			100
+			-----------------------
+			1 Dep - 4 mins
+			200 - 4 mins
+			----------------
+			5 mins
+
+			SCRIPTING - 
+			CM TOOLs - 
+			Puppet, Chef, Asnible, Salt, 
+			OCT, UDEP
+
+			IDEOMPOTENT
+			5 STEPS - 5 mins
+			1  - 1 mins
+			===============
+			1 SEC - Container - Docker
+AT - 
+============================================================
+GIT 
+JENKINS
+	CI tool
+CI -
+Auto Build + Auto Test + Imm feedback
+-----------------------------------------
+Code -> Build -> UT -> pack - Dep - AT - CC - > RELEASE
+
+
+
+
+
+
+

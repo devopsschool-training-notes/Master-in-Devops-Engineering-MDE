@@ -1,0 +1,23 @@
+Publishing The calender - 
+Training - 
+	PPT- Google Drive -
+	WEB - ScmGalaxy.com
+	Quiz - I will send you	 - http://scmgalaxy.com/component/com_ariquizlite/Itemid,536/task,quiz_list/view,quizzes/
+	Assignment - bestDevOps.com
+	Videos - YouTube
+Fundament First -- Some time --Advance
+Customiztion - Spcial - Saturday
+
+
+where to do the Lab Class?
+	1. Cloud - 12 hours 
+	2. AWS Amazon - Free Account - 1000 hours.. (s2)
+	3. VirtualBox - Vm - CUP + RAM + STORAGE
+	
+	4. Docker -- learn + Container based + cheap (Recommdended)
+
+
+Class - 70+80(LAB) - Discussion
+
+
+

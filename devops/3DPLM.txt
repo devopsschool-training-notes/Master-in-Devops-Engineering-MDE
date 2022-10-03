@@ -1,0 +1,192 @@
+Project Name - RafX
+Manager - Anil
+
+Architect - 2			
+Planning -----> TRELLO + JIRA + TFS ONLINE
+RafX - Core + features = 10 
+
+DEV - 10 
+PROBLEM -Code Integration - GIT
+
+Code Analysys -----> SonarQube
+
+Build tool --> Ant, Maven, Gradle, Msbuild, makefile
+	Create a dir sturcure
+	Copy the src code
+	set the compil
+	Dependecy
+		internal	
+		external
+	compile
+	===========================
+	20 times in a day
+
+UT - JUNUT, NUIT
+
+Packaging == IA, IS, WISE WIX, RPMBUID
+	SYSTEM
+		WIN	exe, msi
+		LIN	rpm, deb
+		MAC	dmg
+	APPLICATION
+		JAVA	jar,ear, war, bin
+		DONNET	dll, exe
+	Common - zip,, tar
+Repository
+	NEXUS
+	ARTIFACTORY
+	NUGET
+	ARCHIVA
+DEPLOYMENT - MANI
+	1 PACK  --> 100 SERVERS
+		50 WIN
+		50 LIN
+	
+		25 MYSQL
+		25 MS
+		25 ORC
+		25 POST
+
+		25 TOMCT
+		25 WL
+		25 IIS
+		26 JBOSS
+
+		100 CONFIG
+============================================
+		5 mins
+
+	PROMLEM - 100 SERVERS - 1 mins-- HOW -- PUB - PVT
+	DEP - 100 SERVER - 4 mins - HOW === CHEF - PUPPET - ANSBILE- SALT (Configuration mgmt tool)
+
+	100 PHYSICAL 
+		1/sep -100 APP (5 days)
+		2/Sep - 100 APP
+	CONTAINERIZATION - DOCKER
+	100  SERVRS - 1 SECOND - 5 SERVERS
+
+AT - 100%
+
+Code Coverage --- > JACOCO, COBERTURA, COV, NNCOVER
+
+RELEASE TO 
+
+PROD
+
+SERERS MONITORIN
+LOG PER
+PE
+
+===================================================================
+NEXT 3 HOURS - DEMO 
+
+JIRA --> GIT --> SonarQube --> Maven --> JUNIT --> jar --> NEXUS --> CHEF(DOCKER) --> SELENIUM --> JACOCO -- REELEASE
+========================================================================================================
+
+CLOUD - PUBLIC - AWS
+
+WHAT IS CI -->
+A Build + A test + Imm feedack
+==============================================JENKINS
+
+NEXUS
+
+
+AT 
+
+==================================================================
+
+	
+JIRA
+docker run --detach --publish 8090:8080 cptactionhank/atlassian-jira:latest
+52.66.106.91:8090
+
+GIT
+https://github.com/scmgalaxy/helloworld-java-maven
+
+SonarQube
+	SERVER
+	docker run -d --name sonarqube -p 9000:9000 -p 9092:9092 sonarqube
+	52.66.106.91:9000
+	SCANNER
+
+	SRC
+
+Maven -- Build Automation DONE
+
+UT - using JNUNIT
+
+JAR
+
+NEXUS
+docker run -d -p 8081:8081 --name nexus sonatype/nexus:oss
+
+http://52.66.106.91:8081/nexus/#welcome
+	Repository
+			release
+			http://52.66.106.91:8081/nexus/content/repositories/release/
+			snapshot	
+			http://52.66.106.91:8081/nexus/content/repositories/snapshot/
+
+admin
+admin123
+
+SETP 1
+---------------
+Tell your pom.xml of nexus repo path
+tell you setting.xml with user/name
+run > mvn deploy
+
+
+DEPLOYMENT IS DONE USING CHEF
+
+
+AT 
+https://github.com/scmgalaxy/Basic-Selenium-Java
+
+TEST COVERAGE
+JACOCO
+JACOCO 
+https://github.com/scmgalaxy/jacoco-maven-unittestv2
+
+JENKINS
+52.66.106.91:8080
+
+
+	
+
+==============================================
+Where is your source code?
+How to builder/execute/intrepreter
+	maven
+	shell
+	batch
+	perl
+What is your compiler
+		JDK
+		DOT NET
+
+
+https://github.com/scmgalaxy/helloworld-java-maven
+maven
+jdk
+
+
+
+
+
+
+
+
+
+		
+
+
+QA - 5
+IT - 1
+BR - 1
+DB- 1
+LEAD - 2
+RELEASE - 1
+OPS - 2
+======================

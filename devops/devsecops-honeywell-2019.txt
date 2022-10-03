@@ -1,0 +1,419 @@
+DEVSECOPS using Bamboo
+==================================
+DEV SEC OPS
+	DEVOPS with Security
+	
+What is DevOps?
+---------------------
+https://www.devopsschool.com/video/
+
+What is Security?
+---------------------------
+
+Prod - HoneyX
+------------------------
+Mgr - Mgrx
+
+Objective
+	- - Immediate release 
+	- - Quality(redefined)'
+	- - Cost Reduction
+	
+---------------------------------
+----------SDLC----------------
+Hiring a team
+	Architect - 2 Requirement+Planning - 10 Module = JIRA + Confluence
+
+Dev - 10 Dev - 10 Module
+	Code Integration -> Git using Bitbucket
+	Code Analysis ->
+		Peer Code == Bitbuket + Gerrit + Code Collab
+		Static Code Analysis
+			SonarQube + Coverity 
+		Security Analsys of Code
+
+	Build Integ
+		Maven + MSBuild 
+			Encode Package
+			Encrypt Binary
+
+	Unit Testing
+		Junit  + Nunit
+			Security AT testing
+	
+	Packaging
+		APP - jar, war, dll, zip, tar, ex
+
+		SYSTEM
+			exe, rpm, deb, dmg, msi
+	Archiving a Package
+		Artifactory - Nexus
+		Security
+			Un-authorized Changes in Package
+			Integrrity - Md5 - Checksum
+			Signing Packages
+	Deplyment to 
+			QA
+			Intg
+			Staging
+			Preprod
+			Prod
+	To --- 200 BOXES
+	-------------------------
+	50 W 50 R 50 U 50 M
+	50 MY 50 MS 50 OR 50 PS
+	50 N 50 A
+	50 TOM 50 JBOS 50 WL 50 WS
+	100
+	--------------------------
+	1 Deployment - 9 mins
+	200 Dep ---- 9+1 mins
+	---------------------------
+			10 mins
+	Parrel dep -
+	Like Programming - Ansible - Puppet - Chef
+	Like GUI - Octopus Deploy, UDeploy
+	
+	1 min? --> 200 Boxes?
+	Cloud --- AWZ, Azure, GC, Vmware
+	----------------------------------
+	200 Dep - 200 SPEC ----> 1 Sec
+		Container - -Docker --> Kubernetes
+	--------------------------------
+	Security -
+		How to you transfer a package Secured?
+		How can you validate a package is right or wrong?
+				Singing Process
+				Encryption proces
+
+
+
+
+	AT 
+		
+
+	Seccurity 
+		Security testing
+	--------------------------------------------
+	Coverage 
+		Jacoco - Cobertura - Ncover	
+		Security Coverage
+==================================================================================
+PLAN --> Code -> Review -> UT -> Pack -> Archive -> Dep2QA -> AT  -> CC -> RELEASE	
+---------------------------------------------------------------------------------
+Jira -> git -> SonarQube -> Junit -> Jar -> Artifactory -> OD -> Sel -> Jacoco ---->RELEASE
+====================================================================================
+				BAMBOO
+					JENKINS
+							TEAMCITY
+====================================================================================
+		- Integration of Tools
+		- Scheduling 
+		- Notification
+		- Collabration for team
+======================================================
+What Bamboo
+	CI tool
+	Atlassion
+		Jira		- Planning and Project mgmt
+		Bitbucket	- Code Integ
+		Crucible	- Coll coll and review
+		Coverity	- Static Code Anallsys
+		Bamboo		- CI
+		Fish Eye	- Code Index and Search	
+		crowd 		- Enterprise Authenntication
+		hip chat	-- IM
+		Clover - 	--- Clover is a Java code coverage analysis utility bought and further developed by Atlassian.
+			
+	JAVA Based
+		JRE + JDK
+		Platform Inde
+	6.X
+	
+
+What is CI?
+	https://www.devopsschool.com/video/devops/cicd-pipeline-using-jenkins.html
+	Auto Build  --> Auto Testing --> IMm feedback
+	
+What is CD?
+	Continous Delivery
+	Continous Deployment
+
+MICROSERVICE using Docker and Kubernetes
+---------------------------------------	
+How to install Bamboo 
+13.126.67.124
+
+
+	Pre
+		JRE 
+		JDK  1.8
+
+    2  clear
+    3  yum install wget -y
+    4  wget
+    5  cd /opt/
+    6  clear
+    7  ls
+    8  wget https://scmgalaxy.s3.ap-south-1.amazonaws.com/jdk-8u221-linux-x64.tar.gz
+    9  clear
+   10  ls
+   11  tar -zxvf jdk-8u221-linux-x64.tar.gz
+   12  clear
+   13  ls
+   14  export JAVA_HOME=/opt/jdk1.8.0_221
+   15  export PATH=$JAVA_HOME/bin:$PATH
+   16  echo $JAVA_HOME
+   17  java -version
+   18  history
+
+
+
+	Download adn Install Bamboo
+	------------------------------
+cd /opt
+wget https://product-downloads.atlassian.com/software/bamboo/downloads/atlassian-bamboo-6.9.2.tar.gz
+tar -zxvf atlassian-bamboo-6.9.2.tar.gz
+cd atlassian-bamboo-6.9.2/bin
+./start-bamboo.sh
+
+Lets understand more about Bamboo
+========================================
+SERVER 	- 	CLIENT
+
+BAMBOO SERVER ----- BAMBOO AGENT
+			- LOCAL
+			- Remote Machine
+			- Docker Container
+			- Elastic using Cloud AWS
+----------------------------------------------------
+Java Container - TOMCAT
+DB  - All RDBMS
+	H2(Default)
+
+
+Configuration directory (required)
+/opt/bamboo/xml-data/configuration
+
+Build data directory (required)
+/opt/bamboo/xml-data/builds
+
+Build working directory (required)
+/opt/bamboo/xml-data/build-dir
+
+Artifacts directory (required)
+/opt/bamboo/artifacts
+
+Repository logs directory
+/opt/bamboo/xml-data/repository-specs
+
+-----------------------------------------------
+http://13.126.67.124:8085/
+root
+root123
+==========================================================
+Next - Understanding Bamboo terminology
+	
+==========================================================================
+Project Name - HoneyX
+	Plan 1 	- HoneyX-Server
+				Stage - Build-UT
+					JOB 1 - Build-UT For HoneyX-Server-Submod1
+						Build 		(TASK)
+						UT		(TASK)
+						Package		(TASK)
+						Dep2Repo	(TASK)
+						Dep2QA		(TASK)	
+					JOB 2 - Build-UT For HoneyX-Server-Submod2
+						Build		(TASK)
+						UT		(TASK)			
+						Package		(TASK)
+						Dep2Repo	(TASK)
+						Dep2QA		(TASK)
+					JOB 2 - Build-UT For HoneyX-Server-Submod3
+						Build		(TASK)
+						UT		(TASK)
+						Package		(TASK)
+						Dep2Repo	(TASK)	
+						Dep2QA		(TASK)
+				Stage - AT
+					JOB 2 - AT 1 - 30 Functional TEST
+						
+					JOB 2 - AT 2 - 30 Functional TEST
+				
+					JOB 2 - AT 3 - 30 Functional TEST
+				---------------MANUAL------------------------------
+				Stage - Dep2Pro
+
+				
+				
+
+	Plan 2	- HoneyX-middle
+	Plan 3	- HoneyX-UI
+==============================================================================
+Bamboo Athorization and Authenticatin
+=======================================================	
+
+Bamboo Authenticatin = How to get inside Bamboo?
+
+Bamboo Athorization
+		Bamboo Internal Directory
+		LDAP
+		AD
+		Permission (Global + Plan)
+			--> GROUP
+				honeyx-dev
+				honeyx-qa
+				--> USERS	
+					raju-dev
+					ramu-qa
+
+	
+Bamboo Notication
+		Email --> SMTP Server -> 
+		http://13.126.67.124:8085/admin/viewMailServer.action
+
+		Chat
+			Jabbar
+			CC
+			Hip chat
+			Slack
+============================================================================
+SECRET FORUMULA TO SETUP 
+	PLAN -> STage -> Jobs -> TAsk
+
+Asking Few Questions - 
+		YOURSELF
+		or
+		task aSSIGNED PERSON
+
+What is your technology?
+	JAVA - DOTNET - PERL - RUBY
+	Which java?
+	JAVA
+
+
+Where is your Source Code and how to access?
+https://github.com/scmgalaxy/helloworld-java-maven
+https://github.com/scmgalaxy/hello-world-java-war
+https://github.com/scmgalaxy/msbuild-helloworld
+
+
+What is Your Builder?
+	Maven - Shell -Bash - nat - Msbuid - Perl - Python
+
+	maven
+	msbuil
+
+What do you want this job to be triggered?
+		Hourly
+		Daily
+		XXXX
+
+		hourly
+
+How you would like to get it Notified?
+		Email 
+		IM
+=======================================================
+		devops@Rajeshkumar.xyz
+
+
+==================================================================================
+PLAN --> Code -> Review -> UT -> Pack -> Archive -> Dep2QA -> AT  -> CC -> RELEASE	
+---------------------------------------------------------------------------------
+Jira -> git -> SonarQube -> Junit -> Jar -> Artifactory -> OD -> Sel -> Jacoco ---->RELEASE
+====================================================================================	
+--------------STAGE1----------------------------------|----STAGE2--|-STAGE3------------
+		BUILD					 DEPLOY		Dep2Prod
+	Build2Repo-
+		compile	
+		ut
+		jar
+		artifactory
+	CodeAnalysis
+		static code
+
+		
+		
+			
+Docker Ref
+https://www.devopsschool.com/tutorial/docker/
+
+=======================================================
+How to add remote agent?
+==========================================
+Pre - Install Java
+
+cd /opt/
+mkdir /opt/agent1
+cd /opt/agent1
+wget http://13.126.67.124:8085/agentServer/agentInstaller/atlassian-bamboo-agent-installer-6.9.2.jar
+java -jar atlassian-bamboo-agent-installer-6.9.2.jar http://13.126.67.124:8085/agentServer/ installntservice
+
+mkdir /opt/agent2
+cd /opt/agent2
+wget http://13.126.67.124:8085/agentServer/agentInstaller/atlassian-bamboo-agent-installer-6.9.2.jar
+java -jar -Dbamboo.home=/opt/agent2 atlassian-bamboo-agent-installer-6.9.2.jar http://13.126.67.124:8085/agentServer/ installntservice
+
+
+How many remote or Local agent you can run in ONE box?
+=====================================================
+Multiple BUT with separate workdir
+
+How can you run Concurrent Plan/Job in Agent?
+==========================================================
+
+Commit - 10 AM
+Build - 10.1 --> 12 PM
+UT - 12.1--> 1 PM
+-------------------------
+		1PM
+				--- Agent1
+Commit - 10.05 AM
+Build - 10.1 --> 12 PM
+UT - 12.1--> 1 PM
+-------------------------
+		1PM
+				--- Agent2
+	
+Concurrent 	
+		
+
+
+==================================================================
+JIRA
+SONARQUBE
+ARTIFACTORY
+OCTOPUS DEPLOY
+
+52.66.208.78
+
+
+http://52.66.208.78:8080
+
+DevOps@RajeshKumar.xyz
+=================================
+How to upload artifact in Artifactory?
+=============================================
+1. pom. with repo location
+2 setting.xml with access
+3. mvn deploy
+https://www.devopsschool.com/blog/how-to-upload-the-artifacts-in-sonatype-nexus/
+
+SonarQube
+=============================
+SonarQube Server
+SonarQube Scanner
+Src code - 
+
+
+http://13.126.67.124:8085
+root
+root123
+
+
+
+	
+	
+	

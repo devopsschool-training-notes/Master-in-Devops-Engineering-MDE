@@ -1,0 +1,160 @@
+What is CI?
+	Continous Integration
+	Continous
+	Integration
+
+Software Development Process
+
+Plan-> Coding -> SCA -> Build -> UT -> Pack -> Dep2Repo -> Dep2QA -> AT -> CC -> REL
+-------------------------------------Integrat---------------------------------------
+				IMMEDIATE FEEDBACK
+
+WaterFall -> Once in a while --- 1 days/2 Days / 1 w / 1M / 1 Y
+DevOps -> Every Code Commit / 1 hour
+
+- Every Code Commit should be the release candidate 
+
+CI is process/concept
+	AUTO B + AUTO TES + Imm Feedback
+
+===================================================
+Jenkins is CI tool
+teamcity is CI tool
+Bamboo is CI tool
+==============================================
+Jenkins help you to do everything automated/integrated/Immediate feedback
+Plan-> Coding -> SCA -> Build -> UT -> Pack -> Dep2Repo -> Dep2QA -> AT -> CC -> REL
+
+Plan - Jira, TFS, Trello		- JIRA
+Coding- Git, SVN, CC, p4,		- GIT
+SCA - 100S (SonarQube)			- SonarQube
+Build - Maven, Ant, Gradle, MSBu,	- Maven
+UNITTEST - JUnit, Nunit, Rspec		- Jnuit
+Dep2Repo - Nexus, Artifactory,Nuget 	- Nexus
+Dep2QA -> Chef, Puppet, Ansible, Docker	- Puppet
+AT - Sel, QTP, HPQC			- Sel
+CC - Jacoco, Cobetura coverity		- Jacoc
+================================================================
+			JENKINS
+
+13.127.163.182 - 
+JIRA - http://13.127.163.182:8080
+SonarQube - http://13.127.163.182:9000/about
+Nexus - http://13.127.163.182:8081
+
+13.127.91.150 - JENKINS ONLY
+13.127.91.150:8080
+
+What is Jenkins?
+=============================
+	CI tool	
+	Free
+	OS
+	Dumb Tool
+	BUT with 1000 plugins - its become superman
+	Dev by Community
+	Dev using JAVA
+
+How to Install Jenkins?
+	JDK OR JRE
+==============================================
+How to setup a job in Jenkins?
+	
+	Where is your source code? - GIT(PATH) - SVN - CVS - TFS
+	What is your compiler - JDK - DOTNET - PY - PER - RUBY
+
+	What is your builder?
+				Maven - pom.xml
+				Ant - build.xml
+				MS - default.msbuild
+				GRa - default.gradle
+				Shell
+				Batch
+
+=====================================================
+	JOB 1 - 
+	Where is your source code? 
+	GIT - 
+
+
+	What is your compiler
+	JDK 8
+
+	What is your builder?
+	mvn compile
+	mvn test
+	mvn package
+
+
+	
+
+
+
+How to integrate 
+	Jenkins ---> JIRA
+	GIT --> Jira
+	Jenkins --> Git
+	Jenkins -> SonarQube
+			Server
+			Scanner
+			Source Code
+	jenkins --> Maven
+	Jenkins --> Maven --> Junut
+			mvn test
+	jenkins -> Packaging
+	
+		pom.xml	- Yo gave the URL of nexus repo
+		setting.xml --> user id n pass
+				"mvn deploy" using jenkins
+	jenkins --> Maven --> nexus
+
+	Dep2QA	- 300 SERVER
+	Jenkins ->
+
+	QA --> Sel
+		QTP
+		  HP
+	Jenkins ---> pom.xml
+		How to integrate maven+sele
+
+	Jenkins --- JAcoco
+==========================================================================
+IMMEDIATE FEEDBACK
+	EMAIL	
+		SMTP	
+		Email Template 
+		WHOM
+	SMS	
+		
+	CHAT
+		WATSAPP
+		HIP
+		Slake
+	DASHBOARD
+		PIPELINE
+
+	
+
+
+First - 
+	How to do that Manually?
+	Auto
+		Jenkins Command ---->http://13.127.91.150:8080/cli/
+		Jenkins API
+				http://13.127.91.150:8080/job/BUILD/api/json
+		Jenkins Grovvy ---> http://13.127.91.150:8080/script
+			DSL Plugins
+		Jenkins DSL
+		
+QS -
+Notification
+How to add a slave
+	Windows
+	Linux
+		Worksapce	/opt/jenkins
+		Hostname | IP	13.127.163.182
+		USer		ec2-user
+		PASS		
+
+
+

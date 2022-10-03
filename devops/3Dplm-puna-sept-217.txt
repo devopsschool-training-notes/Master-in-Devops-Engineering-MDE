@@ -1,0 +1,156 @@
+Product Name - 3Dx
+Project Mgr - Manoj
+------------------------
+Architect - 2 ==== Trello + VSONLINE + JIRA
+Foundation Engine == F1 + F2 + F3
+
+Module - 20
+
+Dev - 20 - Each Dev - One Module
+PROBELM - INTEG OF SRC CODE
+SOLUTION - SCCM-CVS-SVN=======GIT
+
+PROBLEM - CODE REVIEW - STATIC CODE ANALYS
+SOLUTION - SONARQUBE
+
+PROBLEM - SOURCE T0 BINARY
+		DOwnload the src
+		Download the dep lib
+				3rd party
+		Create eng
+		Set Compiler
+		Set Config
+		10 Diff
+	------------------------
+		20 times in day
+SOLUTION -----> makefile,ant,maven,msbuild,gradle ==maven
+
+PROBLEM ---> Packaging mgmt 
+
+	SYSTEM BASED INSTALL
+		WINDOWS -  EXE, MSI
+		LINUX	
+			RHEL - RPM
+			UB - DEB
+		MAC - DMG	
+	APPL BASED INSTALL
+		zip,tar,jar,war,exe,msi
+
+Solution - IA,IS,WS,WNZIP, TAR,RPMBUILD
+
+PROBLEM - Repository mgmt
+	Package Integtory
+	Security
+	Packag
+	24/4
+	Available
+SOLUTION - NEXUS | Artifactory |Arhciva | Nuget |  == NEXUS 
+	   Play Store | Apple 
+		yum | apt-get
+
+
+PROBLEM  Deployment
+		100 SERVERS
+		50 WIN
+		50 LINUX
+	
+		25 TOM
+		25 JBOSS
+		25 IIS
+		25 WL
+
+		25 MYSQL
+		25 ORACLE
+		25 MSSQL
+		25 POST
+
+		100 CONF
+=============================
+		DELIVERY TIME - 3.15
+		TEST TIME - 3 Hours
+
+		100 SERVER == 100 SPEC = 5 MINS
+
+		1. 100 SERVERS - 1 MINS
+		2. 100 DEP - 100 SEC - 4 mins
+SOLUTION - 	
+		VIRTAULIZATIOn - VMWARE-AWS-AUZRE-GC
+		DEP - CHEF, pUPPET, ANSIBLE
+
+		1 SEC = 
+		CONTAINERIZATION - DOCKER WITH KUB/SWARM
+
+AT - 		
+	
+TEST REPORTS		==> DASHBOARD
+
+TEST COVERAGE	- jacoco, ncover, cobertura, coverity
+
+TEST MGR -->>
+	CHEF-PUPPET - PRODUCTTION
+	
+	LOG MONIROING = ELBK (ELASTIC-LOGSTASH-BEAT-KIBANA)
+	SPLUNK - 	
+	
+	SERVER - APPDY, NAGIOS, 
+
+CONCLUDE
+===========================================JAVA-MSBUID
+JIRA
+docker run --detach --publish 8090:8080 cptactionhank/atlassian-jira:latest
+
+GIT		= BITBUCKET
+docker volume create --name bitbucketVolume
+docker run -v bitbucketVolume:/var/atlassian/application-data/bitbucket --name="bitbucket" -d -p 7990:7990 -p 7999:7999 atlassian/bitbucket-server
+
+SONARQUBE === HOLD
+docker run -d --name sonarqube -p 9000:9000 -p 9092:9092 sonarqube
+
+
+maven		BUILD DONE	
+JNUNIT		UT DONE
+jar		PACKAGE
+
+NEXUS 
+docker run -d -p 8081:8081 --name nexus sonatype/nexus:oss
+
+POM.XML
+-- http://35.154.93.188:8081/nexus/content/repositories/releases/
+-- http://35.154.93.188:8081/nexus/content/repositories/snapshots/
+
+SETTING.XML
+
+
+CHEF ===== HOLD
+
+
+
+SELENIUM === AT
+
+
+JAOCOC = HOLD
+
+
+PLATFORM - AWS  == DOCKER
+
+
+LAST TOOLS FOR SHARING AND MONTITORING
+==========================================
+jenkins:
+35.154.93.188:8080
+docker run -d -p 8080:8080 -p 50000:50000 jenkins
+
+
+
+	
+
+
+
+
+
+QA - 10
+IT - 2
+DB - 2
+BR - 2
+LEAD - 3
+OPS - 2

@@ -1,0 +1,170 @@
+Product  Name - 3DX
+Mgr - MgrX
+	3DX - Modular
+		Core
+	   	Plugins - EVERY WEEK FEAURES in Form Plugins.
+
+Objective -
+	There should not any FUNTIONAL ISSUES IN THE Code after release.
+	======QUality release=========
+
+	100 mil.
+	=====Less budgets ============
+
+	Any commit should lead to prod.....	
+	Immediate release
+
+Architect	- 2		JIRA, SERVICENOW, TRello, VS
+DEV		- 20		CVS --> SVN --> GIT	
+				UT - 
+				Static Code Ana	--SonarQube
+				Source Code into Binary --> makefile,ant,msbuild,maven,gradle
+					Standard dire
+					Copy Src
+					Copy lib
+					Copy Dep
+					Set compi
+					Set the env
+					-------------------
+					20 times.......
+				Package 
+					SYSTEM - EXE, MSI, RPM, DEB, DMG
+					APP- exe, zip, tar, jar, ear, war, dll
+					MObile - apk
+				Repo - NEXUS, Artifactory, Archiva
+				Dep2Qa 
+					3DX to 200 SERVERS
+				GET A 200 SERVER
+					- 2 mins ----20 mins - 2 day
+					pub/pvt	  ----------------
+				50 WIND
+				100 LINU
+					RHEL			
+					DEB
+				50 MAC
+
+				50 MYSQL
+				50 MSQL
+				50 ORA
+				50 POS
+
+				50 APACE, NGIXX, IISSS
+
+				TOMCAT, JOSS, WL, WS, IIS
+
+				100 DIFF CONFIG
+				=======================
+				6 MINS
+				CHEF -PUPPET -ANSIBLE-SALT
+
+				6 SEC
+				DOCKER
+
+				AT
+
+				Code Coverage
+		======================================
+				JENKINS
+
+PROBLEM 1
+				DEV - STAGE - QA - PREp - PROD
+	VAGRANT(PRIVATE ) - 
+	TERRAFORM
+	CLOUDFORM- AWS
+	
+
+
+
+PROBLEM 2 
+
+SYSTEM LOG
+APPLICATION LOG
+		WEB 
+		APP
+		DB 
+
+	STORE 		--> PARSE - ANALYS - REPORT - ACTION
+FREE	ELASTICSEAC	-----LOGSTASH ---    KIBANA --
+PAID	SPLUNK 
+
+APPDYN
+==================================
+JIRA		????
+GIT
+SONAR		????
+JUNIT
+JAR
+NEXUS		????
+ANSIBLE
+JUNIT
+JACOCO
+========================
+JENKINS - 13.126.206.250:8080
+
+MAIN SERVER - 13.232.53.166
+
+JIRA - http://13.232.53.166:8080
+		rajesh/rajesh123
+Sonarqube - http://13.232.53.166:9000
+		admin / admin
+
+NEXSU - http://13.232.53.166:8081/nexus
+	admin/admin123
+	http://13.232.53.166:8081/nexus/content/repositories/3dx/
+
+	REP PATH - in pom.xml
+	access in setting.xml
+   
+ <server>
+      <id>cts-nexus</id>
+      <username>admin</username>
+      <password>admin123</password>
+    </server>
+
+			
+PROJECT CODE - 
+	SCA -> BUILD -> JUNIT -> JAR -> NEXUS -> ANSIBLE -> -JUNIT -> JAOCOC
+	SONARQUBE - https://github.com/scmgalaxy/java-sonar-runner-simple
+
+	BULILD
+	https://github.com/scmgalaxy/helloworld-java-maven
+
+==================================================
+http://www.devopsschool.com/video/devops/DevOps-Essentials.html - 4
+http://www.devopsschool.com/video/devops/Complete-CICD-Implementation-from-Scratch.html - 8hou
+http://www.devopsschool.com/video/devops/cicd-pipeline-using-jenkins.html - 3 hours
+
+Rajesh Kumar
+CV - http://rajeshkumar.xyz/cv
+Email - DevOps@RajeshkUmar.xyz
+
+I Do write tutorials
+	http://www.scmgalaxy.com/tutorials
+	http://www.devopsschool.com/
+
+I Support the courses 
+	http://www.scmgalaxy.com/courses/
+
+
+What i Need from you?
+	
+SUBJECT LIne  - DevOps - 3DPLM - Pune - may - 2018
+
+Content
+Full Name
+Mobile Number - 
+Email Address - personal 
+Email Address - official
+Role - 
+
+INFO@scmGALaxy.COM
+
+
+
+
+
+
+
+	
+
+	

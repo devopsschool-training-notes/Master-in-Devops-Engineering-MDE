@@ -1,0 +1,91 @@
+Product Name - NokiaX
+Project Mgr - MgrX
+
+Architect  - 1
+Dev  - 20 
+QA   - 10
+IT  - 2
+DB  - 1
+BR  - 1
+Ops - 2
+Net  - 1
+Lead  - 3
+===================================
+Architect		- Jira
+Dev			- 20 Dev --- 20 Module
+			Code Integration..
+				What 
+				Where
+				Who
+				When
+
+		Solution - GIT SVN p4, CVS, SVN, CC
+
+Code Anal -	SonarQube
+
+
+Build mgmt 
+			Create a dir
+			Copy src code
+			Copy the Dep
+			Set the coompiler
+			Set the builders
+			100 More thing....
+			--------------------
+			10 Times inn day
+		Solution - Makefile, Ant, Maven, MSbuild, gradle
+
+Unit Testing
+			JUNIT
+			NUIT
+
+Pack mgmt ----
+			App Pack
+			System Pack
+		Solution - 100 diff
+
+Artifact mgmt tool -
+		Solution - Nexus, Artifactory, Nuget, Choc,
+
+Deploy 2 QA	
+		100 Server
+			50 Server WIND
+			50 LIn
+				RHL
+				UB
+			MAC
+		
+			MSSQL
+			MYSQL
+			ORACLE
+			POSST
+
+			TOMCAT
+			JBOSS
+			IIS
+			WS
+	--------------------------------
+			2 mins
+		FEEDBACK - 1 Hours / 57 MINS
+
+	Solution - 20 mins --- Chef, Puppet, Ansible, Salt
+		     2 sec ---- Docker
+
+
+AT ---
+		
+
+Code Coverge - 
+
+RELEASE
+====================================================================================================
+Planning -> Code -> Code Review - > Build -> Pack  -->Dep2Repo	   ->Dep2Qa  -> AT	   - CC	
+Jira    ->  GIT ->  SonarQube   - > Ant  -> JAR|EXE -> Artifactory -> Puppet  -> Sel|JUNIT - Jacoco
+
+===================================
+JENKINS
+		 
+
+
+
+

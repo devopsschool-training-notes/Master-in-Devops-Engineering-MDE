@@ -1,0 +1,43 @@
+My Name - Rajesh Kumar
+http://rajeshkumar.xyz/
+
+How to connect to session?
+	WEB
+	https://www.gotomeeting.com/en-in
+	Desktop
+What is Calender?
+https://www.devopsschool.com/calender/
+
+Where to get training/Course Material
+	Notes
+	Slides
+	Web tutorials
+	Lab					==LMS
+	Quiz - Interview - Certifications Dump	==LMS
+	Video
+	Referenece	
+	Sample Program
+https://www.devopsschool.com/kit/devops-online-new.html
+What is LMS?
+
+What you can find on LMS?
+	LAB
+	EXCERCISE
+	PROJECTS
+	QUIZ
+	Interview KIT
+	Certifications Dump
+	SAMPLME PROGRAMS
+==========================
+We are not a Support Platform....
+	What you tryig
+	What you did?
+	Where you stuck?
+-----------------------
+OPEN SOURECE - 	PAID
+	
+What is DevOps?
+
+
+
+	

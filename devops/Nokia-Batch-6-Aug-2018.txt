@@ -1,0 +1,68 @@
+Product - NokiaX
+Mgr - Mgrx
+
+Architect - 1
+Dev - 10
+QA - 5
+IT  - 1
+DB - 1
+Lead - 2
+BR - 1
+------------------------
+
+
+Planning - PROCESS | TOOLS - JIRA
+Coding ->  Code Integration -> GIT
+Code Analsys - SonarQube
+Build mgmt - Maven
+Unit Testing  -  Junit
+Packaging - jar
+Rep - Nexus
+Depoly
+------------------------------------------
+	  -  200 SERVERS	
+			- 2 DAYS
+			- 2 HOURS 
+			- 2 MINS --> OPENSTAKE | AWS
+			- 2 SEC	-> Container
+----------------------------------------------------------------------
+	 - 100 WIN - 100 LIN
+	- 50 MYSQL - 50 MSSQ - 50 ORACLE - 50 POS
+	- 50 TOMCAT - 50 IIS - 50 JB - 50 WL
+	- 1000 diff config
+	-----------------------------
+	10 mins  X 200 === 10 MINS..
+	===============================
+	Ansible, Puppet, Salt, Chef
+
+ -
+
+	FEEDBACK
+Code Coverge  
+==========================================
+DAY 1 - DevOps(2 Hours) + Puppet (6 Hours) 	
+Day 2 - Docker					
+Day 3 - Open Stack + Jenkins Pipeline(1.5 hours)				
+Day 4 - Terraform using OPENSTACK		
+Day 5 – IRONIC(Only) Baremetal(4 Hours) + Kubernetes (4 Hours)	
+
+Removed- 	
+	Ansible
+	AWS
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		

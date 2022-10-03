@@ -1,0 +1,191 @@
+Product Name - ProdX
+---------------------
+- Quality Release
+- Imm Rel
+- Cost Reduction
+------------------------
+Mgr - mgrx
+==============================
+Hire
+--------------
+Planning  - Architect - 2	-----JIRA, Confluence, MSProject
+-------------------------------
+	FOUNDATION (Core)
+		-- 1 Plugins = FEATURES
+		-- 10 Plugins = FEATURES
+Dev - 10 === MODULE 10
+	Coding ECLIPSE 
+	Code Integ -> Git
+	Code Analysis
+		PEER - Code Collab - Gerrit
+		Static- SonarQube
+	Build mgmt - Maven
+	UT 	- Junit
+	Packaging -
+		SYSTEM - RPM - EXE - DMG
+		APP - Jar - WAR - EAR - ZIp - DLL - TAR
+	Repo mgmt  - Nexus, Artifactory	
+	Dep 2 INT
+		STAG
+		   QA
+	--------------------------
+	1 Dep - 9 mins
+	200 DEP - 9+1= 10 MINS
+	================================
+	50 W 50 L 50 R 50 L
+	100 A - 100 N 
+	50 MYQL 50 MS 50 PS 50 OR
+	50 T 50 50 50
+	---------------------------------
+	Ansible - Puppet - Chef
+	----------------------------
+	How to setup a 200 Boxes?
+	------------------
+		AWS
+		GS
+		AZURE
+	
+	AT 	-------------------CU - Sele
+		Func
+		Int
+		per
+		black
+		white
+
+	Code Coverage 
+		Jacoco - Coberutra
+==============================================================
+PLAN->CODe->Ana->Build->UT->Pack->Dep2REpo->Dep2Qa->AT->CC->Release
+========================================================================
+JIRA-GIT-SonarQube-Maven-Junit-JAR-Nexus>Ansibe-Sel-Jacoco----
+=========================================================================
+Architect --> Dev ---INT --> QA ->OPS --RELASE
+				JENKINS		
+						FEEDBACK
+					SCHEDULING
+					SHARING
+===========================================================================	
+			 	1 DAY
+=============================================================================
+				30 MINS...
+--------------------------------
+MICROSERVICES
+20 mins - Build -- 3 mins
+20 Mind - UT	-- 2 mins
+5 Pack - Pack 	-- 1 mins
+10 Min - Dep 	-- 2 mins
+20 Testing 	- 5 mins
+========================================================================================					1 SECOND
+Container 
+	Docker - > Kubernetes			
+	
+=========================================================================
+				DEV SEC OPS
+========================================================================
+
+				SERVELESS		
+	
+===========================================================================
+
+
+
+What is terraform?
+What is Packer?
+=================================================================
+	
+JIRA-GIT-SonarQube-Maven-Junit-JAR-Nexus>	Ansible  -Sel-Jacoco----
+=======================================================
+JIRA - SONARQUBE - NEXUS
+13.233.65.16	
+	
+http://13.233.65.16:8080
+	
+http://13.233.65.16:9000
+admin
+admin
+
+http://13.233.65.16:8081
+admin
+76be29b1-5080-4009-b11b-2709d946624d	
+
+JENKINS
+http://13.126.53.212:8080/login?from=%2F
+================================================================
+
+
+Jira -> RAJDEV -> Code ->> GIT ->   
+	ANALYZE using SonarQube
+
+SonarQube Server
+http://13.233.65.16:9000
+admin
+admin
+
+Scanner
+
+Src - https://github.com/scmgalaxy/java-sonar-runner-simple
+
+
+
+
+	---------> BULlD		
+	---------UT - 
+	Pack
+
+
+fcb84a239dbe816341a13053b9576acb1f7b2290
+
+
+http://13.233.65.16:8081/repository/devopsschool/
+
+============================
+DEP 2 QA Server
+====================
+
+Ansible 
+
+Playboook
+https://github.com/devops-school/ansible-hello-world-role
+
+Inventory
+13.234.116.158
+13.233.87.78
+
+===============================================
+PACK - JAR ===> Docker Image
+Dep2Qa ==> Kubernetes
+
+======================================
+JENKINS --> CRAERE IMAGE  --> DEP2QA
+	     ---VM ------    ---KUBER----
+		DOCKER
+
+
+
+scmgalaxy/nginx-devopsschoolv1
+
+
+  mkdir -p $HOME/.kube
+  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+You should now deploy a pod network to the cluster.
+Run "kubectl apply -f [podnetwork].yaml" with one of the options listed at:
+  https://kubernetes.io/docs/concepts/cluster-administration/addons/
+
+Then you can join any number of worker nodes by running the following on each as root:
+
+kubeadm join 172.31.19.122:6443 --token 4sz8x8.hogvpqmn6amsn5wo \
+    --discovery-token-ca-cert-hash sha256:63939cb9023e139b5dfa3a07a17719fea4bfa79dfc679de4d938bc510e431342
+
+
+kubectl taint node mymasternode node-role.kubernetes.io/master:NoSchedule-
+kubectl taint node ip-172-31-19-122.ap-south-1.compute.internal node-role.kubernetes.io/master:NoSchedule-
+
+
+QA
+Int
+IT
+Db
+Ops
+lead

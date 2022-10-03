@@ -1,0 +1,531 @@
+https://www.devopsschool.com/path/
+https://www.devopsschool.com/video/devops/
+https://www.devopsschool.com/notes/devops/2019/
+
+1 Saturday 
+- 2 Hours  = DevOps	DONE
+- 1 Hour = Git		DONE
+- 1 Hour = SonarQube	DONE
+- 1 Hour = Maven	=> Jar
+- 1 Hours = Nexus	
+- 2 Hours = Ansible
+- 
+- 
+
+2 Sunday
+- 2 Hours = Ansible
+- 6 Hours = Jenkins
+
+3 Saturday	
+- 8 Hours = Docker
+
+4 Sunday
+- 8 Hours = Kubernetes
+
+Lab === AWS
+https://www.devopsschool.com/video/devops/
+=========================================================
+AWS 
+-----
+Regions
+	Avaiability Zone...
+
+VPC
+	Compute = Ec2
+	Storage 
+	Database
+======================
+Git 
+-----
+ 	Source code mgmt tool.
+		What 
+		Who
+		Where
+		When
+
+	free
+	Os
+	
+Why Git?
+	verisioning of the code
+
+Other tool
+------------SERVER CLIENT ------------------
+Cvs --> SVN -> 
+P4, CC, VSS, TFS, TSTS
+
+Git
+---------DISTRIBUTED-------------------
+
+SERVER CLIENT VS DISTRIBUTED
+
+How to install git?
+	Linux
+	sudo yum install git
+	sudo apt-get install git
+	 - EXE FRoM 
+		https://git-scm.com/
+		-git-gui
+		-git-cmd
+		-git-bash
+
+Step  1- Create a repo
+$ git init
+
+Step 2 - Create a file using your own editor
+
+Step 3 - Add a file to git [ Add a file from working dir to staging]
+$ git add file1.txt
+
+##### ONE TIME
+##### 
+git config user.name "Rajesh Kumar"
+git config user.email "rajesh@scmgalaxy.com"
+
+Step 4 - Commit a file. [Commit a file from staging to rep]
+$ git commit -m"adding a file1.txt" 
+
+
+Step 5 - See the logs..
+$ git log
+
+Step 6 - See the Content of each commit...
+git show e930498b0da0e238a7424aff9d3dc2509b48aa76
+
+
+
+/d/debold - Working dir
+.git - repo
+
+Host Remote rep --
+	github
+	bitbucket
+	gitlab
+	gerrit
+
+538  git push https://github.com/devopsinstitute/debold.git master
+  539  git push https://github.com/devopsinstitute/debold.git master
+  540  cd ..
+  541  ls
+  542  cd rajesh1
+  543  mkdir rajesh1
+  544  cd rajesh1
+  545  git clone
+  546  git clone https://github.com/devopsinstitute/debold.git
+  547  ls
+  548  cd debold/
+  549  ls -la
+  550  git log
+  551  touhc raj.txt
+  552  touch raj.txt
+  553  git add raj.txt
+  554  git add .
+  555  git commit -m"raj txt"
+  556  git config user.name "Rajesh Kumar"
+  557  git config user.email "rajesh@scmgalaxy.com"
+  558  git commit -m"raj txt"
+  559  git push origin master
+  560  history
+
+  493  ls
+  494  cd video/
+  495  git pull origin masterr
+  496  git pull origin master
+  497  clear
+  498  git pull origin master
+  499  minikube ssh
+  500  cd /d
+  501  cd debold
+  502  ls
+  503  git remote add origin
+  504  git remote add origin https://github.com/devopsinstitute/debold.git
+  505  git pull origin master
+  506  ls
+=============================================
+==============================================
+What is SonarQube?
+		Quality mgmt tool
+			Code Quality
+			test Quality	
+How to generate a code quality auto?
+		
+	Code review 
+		Static code ana - SOnarqube
+		https://en.wikipedia.org/wiki/List_of_tools_for_static_code_analysis#Java
+		peer code
+		Version
+			Community version
+			Ent
+	From SonarSourse
+	Java
+
+other tool
+	Fortify, Cobertura, Confluence
+
+Why?
+	70% of the correction waste are coz of bad code quality
+	Peer code review.
+
+Architecture of SonarQube..
+
+SonarQube Sever
+- exe
+http://localhost:9000/
+admin
+admin
+
+
+SonarQube Scanner
+
+Source Code
+https://github.com/scmgalaxy/java-sonar-runner-simple
+
+
+C:\Tools\sonarqube\scanner\bin\sonar-scanner.bat
+
+=================================================
+=================================================
+MAVEN
+------------
+What is Maven?
+	Prj mgmt tool
+		Build cap
+	Dep mgmt
+	Free
+	Open Source
+	Dev for JAVa in JAVA
+
+Why Maven?
+------------
+
+How to install maven?
+----------------
+JDK
+maven
+
+
+C:\Tools\maven\bin => pATH
+========================================
+Maven Arch....
+	Core Maven
+	Plugins
+		Core Plugins
+		Community
+=========================================
+Project Life Cycle..
+------------------------
+	Default - 23 Phase
+	Site - 4 
+	Clean - 3
+	https://maven.apache.org/ref/3.5.0/maven-core/lifecycles.html
+
+compile - test - package - install - deploy
+
+	
+Humen Life Cycle..
+Born-> Kid -> teen -> Young -> Mid -> Old -> Die
+=====================================================
+Phases		GOAL
+
+compile		compile	Core Plugins
+test		test	Core Plugins
+package		package	Core Plugins
+install		install	Core Plugins
+deploy		deploy	Core Plugins
+======================================================
+Naming Convention....
+
+	How can you name?
+	How can you ref it?
+
+Micorsoft  ==== GROUP ID
+	Word	=== ARTITCAT ID	VERSION - 
+	Excel	=== ARTITCAT ID
+	pp	=== ARTITCAT ID
+	acc	=== ARTITCAT ID
+	front	=== ARTITCAT ID
+	common	=== ARTITCAT ID
+
+
+VERSION 
+	RELEASE		1.0 2.3.3.3
+	SNAPSHOT	1.0-SNAPSHOT 2.3.3.3-SNAPSHOT
+===================================================
+
+mvn archetype:generate
+-DgroupId=com.companyname.software
+-DartifactId=devopsschool
+-DarchetypeArtifactId=maven-archetype-quickstart
+-DinteractiveMode=false
+
+mvn archetype:generate -DgroupId=com.companyname.chat -DartifactId=devopsschool -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+===============================================================================
+===============================================================================
+What is nexus?
+	Artifacts/Packages
+	https://www.sonatype.com/nexus-repository-oss-vs.-pro-features
+	Java
+
+other  - 
+	Artifactory
+
+How to install?
+http://35.154.249.73:8081/
+admin
+admin123
+
+Nexus Repo Types?
+	Hosted  === R W == LOCAL
+	Proxy	=== R O == Remote
+	Group 	=== HOSted + Proxy
+
+
+Maven Dependencies
+===============================
+
+========================================
+How to upload a package in Nexus?
+- 1 Create a repo
+	http://35.154.249.73:8081/repository/devopsschool-release/
+	http://35.154.249.73:8081/repository/devopsschool-snapshot/
+	http://35.154.249.73:8081/repository/devopsschool-proxy/
+	http://35.154.249.73:8081/repository/devopsschool-group/
+- 2 Create a access	
+	devopsschool
+	devopsschool123	
+- 3 Update a pom.xml with repo location
+	https://github.com/scmgalaxy/helloworld-java-maven
+
+- 4 Update a setting.xml wtt access of nexus
+
+- 5 mvn deploy
+
+How to downlad a package from nexus usign Maven
+=======================================================
+
+https://github.com/scmgalaxy/helloworld-java-maven
+
+========================================================
+
+Ansible....
+============================================
+What is Ansible?
+	Config mgmt tool.
+
+What is Config mgt
+	SERVER(S) config mgmt
+
+What is there in SERVER(S) to manage?
+	file
+	package
+	services
+	users
+	grups
+	yum
+	apt
+	script
+	execute
+
+Why Ansible?
+	X Package -- 200 SERVER
+	
+	50 - 50 - 50 - 50
+	50 - 50 - 50 - 50
+	50 - 50 - 50 - 50
+	50 100 50
+	100
+	-------------------------
+	1 - 8 mins
+	200 - 10 mins
+
+	Parrell Dep
+		Chef Or Puppet Or Ansible Or UDeploy Octopus Deploy
+	---------------------------------
+	---------------------------------
+	200 - 2 Sec..... == DOCKER  + KUBER
+	==================================
+
+	Easy to learn/extend/test/debug/share 
+		
+	Crross platt
+
+	IDEOMPOTENT
+
+===================================
+What are the roles you play in Ansible?
+	Dev  - Those who deve Ansible Program
+	Ops  - Those who apply ansble program in Sererss...
+	
+
+Arch of Ansible......
+
+
+Ansible Control Server
+	Modules	 such as yum, cp, systemctl
+https://docs.ansible.com/ansible/latest/modules/modules_by_category.html
+	
+	Playbook - List of Tasks in a file, called playbook. Yaml....
+
+	Inventory - a file which has IP address of remote machine.
+	Config - /etc/ansible/ansible.cfg
+
+Ansible Remote Server
+	
+
+Project 
+Install a Webserver(httpd) in 100 servers and update index.html to web dir.
+1 - Install a httpd
+2 - Copy a index.html from NEXUS to web server /var/lib/ww
+3 - start a web ser
+
+yum install httpd
+cp index.html /var/lib/www
+systemctl start httpd
+
+-----------PLAYBOOK----------------------------
+- name: remove the apache package
+  package:
+    name: httpd
+    state: present
+
+- copy:
+    src: /opt/index.html
+    dest: /var/lib/www
+
+- name: Start service httpd, if not started
+  service:
+    name: httpd
+    state: started
+===============================================
+Ansible control server
+13.233.88.81
+ec2-user
+sudo 0s
+
+How to install Ansible in RHEL?
+> yum install wget -y
+> wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+> sudo rpm -i epel-release-latest-7.noarch.rpm
+> sudo yum update -y 
+> sudo yum install ansible -y
+
+
+Ansible remote
+1 13.232.182.230
+2 13.126.120.2
+
+3 13.234.118.142
+4 52.66.214.160
+5 13.127.34.38
+6 13.233.142.232
+7 52.66.201.142
+8 13.234.122.14
+9 13.233.148.20
+
+webserver.yaml
+======================================
+
+---
+- hosts: web
+  sudo: yes
+
+  tasks:
+  - name: Ensure that Apache is installed
+    yum: name=httpd state=present
+  - copy:
+     src: /opt/index.html
+     dest: /var/www/html/
+  - name: Start Apache Services
+    service: name=httpd enabled=yes state=started
+
+
+
+---COMMAND
+
+$ ansible-playbook -i inventory webserver.yaml
+
+$ ansible-playbook -i inventory webserver.yaml -u ec2-user --key-file=/opt/node.pem
+=======================================================================
+=======================================================================
+Jenkins
+=======================================================
+What is Jenkins?
+	CI tool
+	Free
+	Os
+	Java
+	For ALL
+
+	Automation
+	Integration
+	Dashboard
+	Scheduling
+	Notification
+	
+Integration
+	Team
+	Tools
+
+Code->Analysis->Build->UT->Pack->Dep2Repo->Dep2QA->AT->CC->RELEASE
+-------------------------------------------------------------------
+Git->SonarQube->Maven->Junit->Nexus->    Ansible ------------------
+==============================JENKINS================================
+
+How to install Jenkins?
+https://www.devopsschool.com/tutorial/jenkins/jenkins-installation-and-configuration.html
+
+
+	
+http://13.126.31.77:8080/
+admin
+admin123
+
+Secret Formula of Setting up a jobs in Jenkins?
+- What is your tech?	JAVA | JDK
+
+- Where is your source?	
+https://github.com/scmgalaxy/helloworld-java-maven
+
+- What is your builder?
+Maven
+
+- How often you want build?
+---- NA
+
+- Where i should notify you?
+--- NA
+--------------------------------
+RK-Build
+
+
+Jenkins == SonarQube..
+
+SonarServer 
+Src
+Scanne
+
+
+target/surefire-reports/*.xml
+====================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

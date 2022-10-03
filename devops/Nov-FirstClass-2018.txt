@@ -1,0 +1,64 @@
+My name - Rajesh Kumar
+About me? -
+http://rajeshkumar.xyz/
+
+Agenda of the Course? - https://www.devopsschool.com/kit/devops-online-new.html
+
+Decide your DevOps Journey - https://www.devopsschool.com/path/
+
+3 HOURS
+
+Training Calender - https://www.devopsschool.com/calender/
+	WEEKDAY - 2 - T & T = 8:30 PM IST
+	WEEKEND - 2 - S & S = 8:30 AM IST
+	----------------------------------
+	VIDEOS --> GOOGLE GROUPS
+
+DevOps Jobs
+	LINKEDIN
+	https://www.devopsschool.com/jobs/
+
+CV & Upload -
+	http://devopsschool.com/cv
+
+DevOps Community - https://www.devopsschool.com/community/index.html
+
+DevOps News & Updates - http://www.bestdevops.com/
+
+Tutorials | Videos | Quiz | Notes | Help(QA) | Blog
+https://www.devopsschool.com/kit/devops-online-new.html
+
+How to attend meeting?
+	Gotomeeting
+
+LMS - Learning Management System - Login 
+		QUIZ
+		EXCERCISE
+		LAB
+		PROJECTS
+		ASSIGNMENTS
+		Sample Projects
+https://www.devopsschool.com/lms
+
+How to Create a Lab infra
+		LAPTOP
+		
+		Virtual Machine ( Virtual Box + ISO)
+		
+		AWS - FREE TIER - 12 free
+		https://aws.amazon.com/free/
+	
+		Docker
+
+FAQ
+https://www.devopsschool.com/kit/faq-first-day.html
+
+What is DevOps?
+=================================
+1-2-3 NOT POSSIBLE
+https://www.devopsschool.com/video/devops/Complete-CICD-Implementation-from-Scratch.html - 8 HOURS
+	
+
+
+
+

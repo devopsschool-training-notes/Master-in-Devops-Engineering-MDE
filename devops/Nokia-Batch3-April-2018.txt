@@ -1,0 +1,36 @@
+Mgr - Mgrx
+Prod - ProdX
+======================
+Arch
+Dev
+QA
+IT
+DB
+Lead
+BR
+Rlease
+==============================
+Problem - Planning
+Solution  - Jira
+
+Problem - Code Collab
+Sol - Git
+
+Code Review - SonarQube
+
+Build - Maven
+
+UT - Junit 
+
+Packaging
+
+Repo -> Artifactory
+
+Dep -> Puppet - 3 mins
+		3 sec =====Docker
+
+AT - 
+
+Code Coerage  
+
+Release -- ----

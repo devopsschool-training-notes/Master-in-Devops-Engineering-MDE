@@ -1,0 +1,79 @@
+SoftwareX - 10 Modules
+ManagerX---
+Dev - 10
+QA - 5
+IT - 1
+DB - 1
+
+Integrate the code? -- PersonX --> Git
+===============================================
+Source to binary -- Build Integration  - PersonX - Ant, Maven, MSBuild
+	1. Multiple tech Java, C+, Ruby,
+	2. Multiple Modules
+	2. Multiple Compiler
+	2. Multiple Config
+	3. Internal Dependency
+	4. External Dependency
+	5. BUild infrastructure
+====================================
+	30 times in a day
+Packagaing Mgtm - -- personx - rpmbuild, deb, installanywhere, installshidled, 
+		Diff OS - Windows, Linux( Ubanntu, Centos)
+		Diff App Server - Jobss, Weblogic, WS, Tomcat
+		Diff config
+		Diff System Architec
+==============================================
+Release, SNapshot, 
+==============================================
+Where are you going to store the package ---
+repository mgtm system - PersonX ---> Nexus | Artifactory | Nuget | Archiva
+		1. Prcess to store the artifact
+		2. Clean is easy
+		3. Artifact security
+		4. Artifact integrity
+		5. Available on demand
+		
+===============================================
+How can you deploy the package with so much of challenges?
+	1. 100s server
+	2. Each server is having diff set of OS
+	3. Diff set of App Server (Tomcat, Jboss, WL, WS)
+	4. Diff database
+	5. DEV,QA, PRE PROD, INT, PROD
+	6. Diff
+=========================================
+	minimal time...in one go...
+		Personx - Chef | puppet | Ansible | Salt
+
+EARLIER
+WATERFALL
+Burn the CD, Diff Release version
+yearly Release | Once in six month
+DEV, QA, ------
+
+Agile 
+=================
+DEV --> QA -- 2Weeks
+
+How do you improve the productity????
+CI - Cont Integration (Buld+testing+feedback)
+CD - Cont Delivery
+Static Code Anaysis - Automated way of code review- SonarQube
+Test Coverage - Automated way to find the Test results - Jacoco, Cobertura
+
+Purpose- 
+QUality Release | reduce the time | Cost saving
+
+Who is your personX???
+DevOps Eng
+SCM Eng
+BR Eng
+
+
+CI tools - Jenkins 
+
+
+
+
+
+

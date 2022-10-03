@@ -1,0 +1,121 @@
+Project Name - 3DPLM
+Project Manager - Mgrx
+---------------------------'
+
+Less Cost
+Release based on each commit
+Quality Release
+
+-------------------------------
+Architect === 
+	Problem - ??
+	Solutions - Jira
+
+Dev = 20 People -- 20  Module
+	Code Collab?
+	Solution - => GIT
+
+	Static Code Analysis- SonarQube
+	https://en.wikipedia.org/wiki/List_of_tools_for_static_code_analysis
+
+	Build mgmt - 
+			20 rep tasks - 20 times
+	Solution - Ant, Maven, MSBUILD, Nant, makefile, gradle (Maven)
+			Python
+			EASY TO LEARN | SHARE | DEBUG | EXTEND
+
+	Unit Test 	Junit | NUnit | Rspec
+
+	Packaging
+			System - Exe, MSI, RPm, Deb, DMG
+			App - jar, war, ear, zip, tar
+			Solution ---
+	
+	Repository 	Artifactory | Nexus
+
+	Deployment	100 SERVERS
+			50 Linux
+			50 Win
+
+			25 T
+			25 JBOSS
+			25 WL
+			25 IIS
+
+			25 MYSQL
+			25 MS
+			25 ORACLE
+			
+			20....
+			-------------------
+			5 mins
+			Solutions - Chef, Puppet, Ansibe, SALT using Virtualization
+
+			5 SEC
+			Solution - Docker using Containerization
+
+	AT 		SEL
+		
+	Code Covergae - Jacoco
+================================================
+INTEGRATION
+ 		USING JENKINS
+
+CI TOOLS 
+	A Build + A Test + Imm Feedback 
+
+================================================
+Platform - AWS
+Tool Seups - Docker
+
+			
+
+JENKINS - 13.127.235.170
+http://13.127.235.170:8080/
+
+Jira
+http://13.127.215.253:8080
+	
+SonarQube
+http://13.126.251.126:9000
+
+Artifactory
+http://13.126.251.126:8080/artifactory/
+
+CI Project
+=======================================
+Jira->Git->Sonarqube->Maven->Jnit->Jar->Artifactory->Puppet->Sel->Jacoco---> RELEASE
+================================JENKINS==============================================
+	
+	
+Source Code - https://github.com/scmgalaxy/helloworld-java-maven
+Source- Java
+Builder - Maven
+
+Artifactory
+http://13.126.251.126:8080/artifactory/simple/dplm/
+
+
+
+  <server>
+      <id>3dplm</id>
+      <username>admin</username>
+      <password>password</password>
+    </server>
+
+
+
+3DPLM DevOps Pipeline
+				
+https://bit.ly/2GwmaqO
+	
+	
+
+	
+
+
+QA
+IT
+DB
+Networking
+Lead

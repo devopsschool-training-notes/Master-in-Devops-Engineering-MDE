@@ -1,0 +1,281 @@
+NameCheapX
+-----------------
+Mgmt - Deepak - 
+
+OBJECTIVES
+Quality Release
+Reduce the cost
+Freq Release
+
+==================================
+Architect - 2	- TRELLI - TFS - JIRA
+
+DEV - 20 - 20 MODULES
+PRB - Source Code Integration ->  GIT
+			WHAT 
+			WHERE
+			WHY
+			WHO
+
+PRB - Code Ananlysys - SonarQube
+
+PRB - SOURCE --> BINARY  ---> Maven  
+		Create a stanard dir structure
+		Copy the src
+		Dep
+			Internal	
+			External
+		Set the env
+		Compile
+=========================================
+		20 times in a day
+
+
+UT ---		JUNIT, NUNIT
+
+PRB - PACKAGING
+		System
+			EXE,MSI,RPM, DEB, DMG
+		Application
+			Jar, ear, war, dll, zip, tar
+		
+		SOL - IA, IS, WISE, WIX, WINZIP, rpmbuild
+
+PRB					 ARTIFACTORY
+		BUILD VERSIONING
+		600 Builds need to be strored in process orients
+		Secured
+		Integrity
+		Stanard direc stur
+		24/7
+		easy admin work
+
+PRB		100 SERVERS 
+			50 WINDOWS
+			50 LNUX
+		
+			25 MYSQL	
+			25 MSSQL
+			25 OR
+			25 POS
+
+			25 IIS
+			25 TOM
+			25 JB	
+			25 WL
+
+			100 CONFIG
+============================================
+			100 VMS - 5 mins (PUB CLOUD + PRIVATE)
+			TESTING - 25  (PUPPET ===? OCTOPUS DEP
+			MERGE THE TESTING REPORTS -- --> RELEASE
+	
+			5 SEC ===== DOCKER
+
+PRB 			AT
+
+PRB			FUNCTIONAL REPRTS
+				
+COVERAGE - 		JACOCO, EMMA, COVERAGE, COVERITY
+
+
+			PRODUCTION DEP
+		
+			MONITORING			
+				PERFORAMCE - NEWRELIC, SPLUNK - ELASTIC SEARCH (KIBANA0
+				SERVER - NAGIOS, ZABBIX, APP DYN			
+			
+======================================================================================
+
+			TEAMCITY
+
+SOLUTION
+		EASY TO LEARN
+		EASY TO EXTEND
+		EASY TO SHARE
+		PLATFRM IND
+
+		GOT THE VMS (IT) - (5 HOURS)
+		COPY THE ARTIFACT FROM ARTI TO THESE
+
+QA - 10
+BR - 2
+IT - 2
+DB - 2
+LEAD - 2
+OPS - 2
+CLIENT - 1
+========================================================================================================
+JIRA --> GIT --> SonarQube --> Maven --> JUNIT --> Jar --> ARTIFACTORY --> PUPPET --> Selenium --> JACOCO --> ELASTIC SEARCH
+===================================================================================================================
+					TEAMCITY
+				========================
+					VIRTULIZAION(AWS) + VIRTUALBOX
+
+=============JIRA USING DOCKER==================
+DOCKERS IN RUNNING THE APPS-
+		REPO --> IMAGES --> LOCAL IMAGE (RUN) == CONTAINER
+
+ACING LIKE A IT GUYS
+	SETUP JIRA
+https://hub.docker.com/r/cptactionhank/atlassian-jira/
+> docker pull cptactionhank/atlassian-jira
+> docker run --detach --publish 8085:8080 cptactionhank/atlassian-jira:latest
+13.126.182.214:8085
+
+
+ACTING LIKE A ARHITECT
+	CREATED A  TASK
+
+ACTING LIKE A DEV
+		JAVA
+		MAVEN 
+		NOTEPAD 
+mvn archetype:generate -DgroupId=com.namecheap.software -DartifactId=financialService -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+ACING LIKE A IT GUYS
+BITBUCKET
+	JAVA
+	Install
+
+> docker volume create --name bitbucketVolume
+> docker run -v bitbucketVolume1:/var/atlassian/application-data/bitbucket --name="bitbucket" -d -p 7995:7990 -p 7999:7999 atlassian/bitbucket-server
+http://13.126.182.214:7995/
+
+ACTING LIKE A DEV
+	Shared the Code
+
+
+ACTING DEVOPS - SETTING UP SONARQUBE
+
+http://13.126.182.214:9000
+
+mvn sonar:sonar \
+  -Dsonar.host.url=http://13.126.182.214:9000 \
+  -Dsonar.login=0d0dbe2960a827050b3826ecd70fd74a483f2a66
+
+mvn sonar:sonar -Dsonar.host.url=http://13.126.182.214:9000 -Dsonar.login=0d0dbe2960a827050b3826ecd70fd74a483f2a66 sonar.java.binaries
+
+
+ACTING LIKE A BUILD AND RELEASE ENGINEER? MAVEN
+
+compile - compile
+test - test
+Package - package
+Install - install
+Dep - deploy
+
+
+ACTING LIKE A DEV ENGINEER? FOR UT
+
+
+LAB SETUP INS
+==============================================================================
+1. Create a Ticket and Assign a Ticket for yourself. [JIRA] As MGR
+http://13.126.182.214:8085
+
+2. Install Maven
+	Install JDK
+	Set JAVA_HOME/bin --> PATH
+https://maven.apache.org/download.cgi
+
+3. Install git
+https://git-scm.com/download/win
+
+
+4. Create a Project directory structure using Maven in your laptop [MAVEN] as a DeveLopers
+> mvn archetype:generate -DgroupId=com.namecheap.software -DartifactId=financialService -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+
+5. Create a Git repos in Bitbucket [GIT] as a Manager
+http://13.126.182.214:7995/projects/NAM
+
+
+Artifactory
+docker run -d -p 8090:8080 mattgruter/artifactory
+13.126.156.25:8090
+=====================UPLOAD ARTIACT TO MAVEN================
+Step 1: Modify pom.xml with repo.
+
+<distributionManagement>
+    <repository>
+        <id>b0a057bd03b0</id>
+        <name>b0a057bd03b0-releases</name>
+        <url>http://13.126.156.25:8090/artifactory/namecheap</url>
+    </repository>
+    <snapshotRepository>
+        <id>b0a057bd03b0</id>
+        <name>b0a057bd03b0-snapshots</name>
+        <url>http://13.126.156.25:8090/artifactory/namecheap</url>
+    </snapshotRepository>
+</distributionManagement>
+
+
+Step 2: Modify setting.xml with user/pass (Server element)
+	1. USER_HOME
+	2. M2_HOME/conf
+
+Step 3: mvn deploy
+=====================UPLOAD ARTIACT TO MAVEN================
+http://www.devopsschool.com/notes/devops/
+
+=====================How to become a Puppet Programmer================
+Install Puppet Agent
+
+$ sudo rpm -ivh https://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm
+$ yum update
+$ sudo yum -y install puppet-agent
+$ sudo /opt/puppetlabs/bin/puppet resource service puppet ensure=running enable=true
+
+You Go to any directory and Start writing program
+
+
+FIRST PROGRAM
+=======================
+Filaname - first.pp
+
+notify { 'Hello World':}
+
+How to validate?
+> puppet parser validate first.pp
+> puppet apply first.pp
+
+
+Second Program - tata.pp
+==============================
+file { '/root/puppet/tata.txt':
+        ensure => 'file',
+        content => 'Welcome to Puppet Class',
+    }
+Third Program - package.pp
+================================
+package {'httpd':
+        ensure => 'installed',
+}
+
+service.pp
+=============================
+service { 'httpd':
+        ensure =>'running',
+}
+
+
+file.pp
+=============
+file { '/var/www/html/index.html':
+        ensure => 'file',
+        content => 'Welcome to Puppet Class',
+    }
+
+
+Master.pp (All)
+> puppet apply Master.pp
+
+
+
+
+
+
+
+
+

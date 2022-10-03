@@ -1,0 +1,223 @@
+Docker
+=======================================
+
+
+1990s
+===============================================
+10 APP SETUPS REQUIREMENT
+==============================================
+OS + JDk + JBOOSS + APP + DB
+==========================================
+Buy 10 PHYSICAL SERVER
+=========================
+10 CPU + 10 RAM + 10 HD + 10 OS
+
+DEMAND in SOFTWARE DEV INDU + DEMAND BY END USER
+10% - 15% ------WASTE
+
+2000s - Hypervisor
+===========================================
+vmware, ecx, oracle
+----------------------------------
+1 PHYSICAL
+10 APP SERVER - 10 VM MACHINE + 10 OS
+========================================
+70%
+
+
+OS
+	CPU
+	Memory
+	OS Cost
+=======================
+	NO.....
+
+Containerization
+==================================================================
+RUNNING MULIPLE APP
+-------------------------
+	Only using one OS
+
+
+--------------100 APP--------------------------------------
+
+		VIrTUALIZATION		CONT
+CPU			1		 1
+RAM			1		1
+HDD			1		1
+OS			100		1
+SERVER#	APP		100		200
+TIMING			1 hour		1 sec	
+
+HYPERVISOR IS TAKING MORE CPU + RAM COMPARE TO CONTAINER	
+======================================================
+
+
+HOW IT CAN HELP?
+
+Answer - Docker
+
+
+How docker Works
+=================================
+Kernal
+cgrousp
+namespace
+kernal capabilities
+
+=======================================================
+DOCKER CAN RUN ANYWHRRE
+===============================================
+PHYSICAL + AWS + AZURE + VM
+
+4 BASIC ELEMENTS
+==================================
+DOCKER ENGINE ===================== SOFTWARE
+DOCKER IMAGE ======
+DOCKER REPO  =======	https://hub.docker.com/
+DOCKER CONTAINER === RUNNING STATE OF THE IMAGE IS CALLED CONTAINER
+
+APPS
+=================================
+OS
+OS + JDK
+OS + JDk + JBOOS
+OS + JDK + JBOSS + Softx.com == JENKINS
+
+
+ONE IMAGES  ==== MULTIPLE APP(CONT)
+
+
+docker run X X X XX X XX X X X X
+================================================Docker Basics Commands
+
+How to verify docker version?
+> docker -v
+
+How do we see the Docker info and charact of sys?
+> docker info
+
+How do you see # of images?
+> docker images
+
+How do you pull the images?
+> docker pull <<image-name>>
+
+How do you run the images?
+> docker run
+> docker run -p 8080:8080 -p 50000:50000 jenkins/jenkins:lts
+> docker run -d -p 8080:8080 -p 50000:50000 jenkins/jenkins:lts
+> docker run -d -p 8090:8080 -p 50001:50000 jenkins/jenkins:lts
+> docker run -d -p 8085:8080 -p 50002:50000 jenkins/jenkins:lts
+
+-p 8080:8080
+-p 50000:50000
+-p external:internal
+
+SERVER === AGENT
+
+How do you running container?
+> docker ps
+
+How to get inside a container?
+> docker exec -it ba35bbbba7ee /bin/bash 
+
+jenkins@ba35bbbba7ee:/$ ls
+bin  boot  dev  docker-java-home  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+
+How to safly come out?
+> CTRL + P + Q
+
+How to stop the runnign container?
+
+how to start the stopped containers?
+> docker stop <<cont_id>>
+
+How to see the all including exit containers?
+> docker ps -a
+
+how to remove the container?
+> docker rm cont_id
+
+Trubleshooting Commands
+==================================
+stats       Display a live stream of container(s) resource usage statistics
+top         Display the running processes of a container
+inspect     Return low-level information on Docker objects
+
+
+==========================================================================================
+How to create images?
+
+WAY 1 - Using existing container
+	Whataever i do insite the container is being saved in the layers which is writable
+WAY 2 - Docker file
+
+
+git commit
+docker commit
+
+>  docker commit a"Rajesh Kumar" 564e28a487d8 weekend:sat
+
+ub - JDk --JBOOS --APP - CIMAGE=====> 1000s container -- few sec
+deb
+cent
+rhel
+window
+
+FROM ubuntu
+MAINTAINER Rajesh kumar
+COPY hello.txt /root/
+RUN apt-get update
+RUN apt-get install -y git
+
+
+docker build -t raj .
+
+
+LIMITAION OF DOCKER
+===========================================
+docker enginer is dedicated to one machine....
+
+docker compose
+	YOU WANT TO SETUP WHOLE STAKES IN ONE MACHINE
+		Create a image of latest AS, WS	
+		1 WEB SERVER
+		5 AP S
+		1 DB
+		WS --> AS
+		DB --> AS
+		NETWORKING
+		MOUNTS
+=======================================
+		200 everyday
+		bash script ---> Run --> Redo
+		docker compose - check n do if needed
+
+pre prod env
+		docker machine
+		DONE
+
+datacenters-----
+		docker swarm
+		kubernertes	============================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
