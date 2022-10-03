@@ -1,0 +1,173 @@
+What is Gradle?
+	tool which can do build - pack - test - doc
+	From gradle
+	For Project which is in Groovy
+				     ---> JAVA
+	For Java
+	Package mgmt system
+	dependecny mgt
+
+Why we need a gradle?
+	Build / CI Automation
+	Ant is a Declarative - and Not can not define a process..-- TOOO MANY LINES ARE NEEDED
+	Maven is a Procedudral - ONLY Follow a defined process ---- less lines of code than Ant.
+
+	- need to decalre + defined process
+	- less code  - more understanding
+	=== GRADLE
+
+HOw to install Gradle?
+
+C:\Users\Rajesh>gradle
+
+Welcome to Gradle 5.5!
+
+Here are the highlights of this release:
+ - Kickstart Gradle plugin development with gradle init
+ - Distribute organization-wide Gradle properties in custom Gradle distributions
+ - Transform dependency artifacts on resolution
+
+For more details see https://docs.gradle.org/5.5/release-notes.html
+
+Starting a Gradle Daemon (subsequent builds will be faster)
+
+> IDLE
+<-------------> 0% INITIALIZING [18ms]
+<-------------> 0% INITIALIZING [221ms]
+
+> Task :help
+
+Welcome to Gradle 5.5.
+
+To run a build, run gradle <task> ...
+
+To see a list of available tasks, run gradle tasks
+
+To see a list of command-line options, run gradle --help
+
+To see more detail about a task, run gradle help --task <task>
+
+For troubleshooting, visit https://help.gradle.org
+
+BUILD SUCCESSFUL in 24s
+1 actionable task: 1 executed
+C:\Users\Rajesh>start .
+
+C:\Users\Rajesh>
+
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project ''.
+> The project name must not be empty. Set the 'rootProject.name' or adjust the 'include' statement (see https://docs.gradle.org/5.5/dsl/org.gradle.api.initialization.Settings.html#org.gradle.api.initialization.Settings:include(java.lang.String[]) for more details).
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 3s
+=================================================================================
+Gradle is made up frm the plugins
+===========================================
+
+Core Plugins
+https://docs.gradle.org/current/userguide/plugin_reference.html
+
+External Plugins
+https://plugins.gradle.org/
+
+
+-----------------------------------
+Gradle Project file == build.gradle
+===================================
+HAS 
+	TYPE of follwing...
+		Core types
+			Project
+				Task(S)
+				  - CUSTOM
+				  - Task types
+	
+		Publishing types
+		Container types
+		Build Cache types
+		Input Normalization types
+		Help Task types
+		Task types
+		Reporting types
+		Eclipse/IDEA model types
+		Eclipse/IDEA task types
+		Xcode task types
+		Visual Studio task types
+		Artifact transform types
+		Native tool chain types
+		C++ component types	
+		C++ component task types
+
+
+build.gradle may contain
+	Tasks
+	And Plugins
+	And Dependencies
+	And Properties
+
+
+
+https://github.com/jabedhasan21/java-hello-world-with-gradle/blob/master/build.gradle
+===================================================
+def myname = "RajeshKumar"
+def age = "4"
+
+apply plugin: 'java'
+
+dependencies {
+    compile "joda-time:joda-time:2.2"
+    testCompile "junit:junit:4.12"
+}
+
+repositories {
+    mavenCentral()
+}
+
+project.task("Task1")
+{
+println "My name is $myname. This is a Task1"
+Task1.description = "This is Task 1 Description"
+doLast{
+		println "THIS IS DO LAST"
+	}
+doFirst{
+		println "THIS IS DO FIRST"
+	}
+
+}
+
+task copyDocs(type: Copy) {
+    from 'src'
+    into 'dest'
+}
+
+task makePretty(type: Delete) {
+  delete 'src', 'main.java'
+  followSymlinks = true
+}
+
+task("Task2")
+Task2.description = "This is Task 2 Description"
+
+
+task "Task3"
+Task3.description = "This is Task 3 Description"
+
+
+task Task4
+Task4.description = "This is Task 4 Description"
+
+
+
+
+
+
+

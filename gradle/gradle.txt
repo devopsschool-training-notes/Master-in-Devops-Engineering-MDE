@@ -1,0 +1,28 @@
+What is gradle?
+How it diff from Ant, Maven?
+How to install?
+How to write program?
+How to store a program?
+How to compile program?
+What is task
+	lifecycle
+	phases
+	depe- 
+	plugins
+	property
+
+Next Tasks -----
+Write a sample program in Grovy - DSL
+Run it
+Package
+Depen
+Plugins
+
+Publish - 3 hours Gradle -
+> ant target
+> 
+
+Install gradle plugins
+tasks
+
+

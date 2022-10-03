@@ -1,0 +1,145 @@
+Gradle Class 1 - Crash - No PPT
+Gradle Class 2 - Intermediate
+Gradle Class 3 - Advance
+========================================
+What is Gradle?
+------------------
+	- Build tool
+	- Developed in JAVA
+	- Write in 2 Format
+		DSL 	- Groovy 
+			- KOTLIN
+	- 10+ years 
+
+
+Why Gradle?
+------------------
+	- Automatating a Build Steps in CICD
+	- Less time to write - debug - test - implement
+	- Official Build tools for Android
+
+How to install Gradle?
+---------------------
+Pre 
+	JAVA must be installed with JAVA_HOME
+
+	Package Based - 
+	Manual 	
+		Download Zip
+		Extract it 
+		Set in path
+		Use it.
+
+Verify....
+$ gradle
+============================
+Working with Gradle
+================================
+file name - build.gradle (SIMILAR pom.xml)
+		- Contains DSL 
+
+BLOCK(S)
+	OF What???
+		Build script
+
+allprojects { }
+	TYPE OF TASK
+	TYPE OF TASK
+	TYPE OF TASK
+artifacts { }
+	TYPE OF TASK
+	TYPE OF TASK
+buildscript { }
+	TYPE OF TASK
+	TYPE OF TASK
+configurations { }
+	TYPE OF TASK
+	TYPE OF TASK
+dependencies { }
+	TYPE OF TASK
+	TYPE OF TASK
+repositories { }
+	TYPE OF TASK
+sourceSets { }
+	TYPE OF TASK
+subprojects { }
+publishing { }
+------------------------------------
+2 KIND of TASK
+	- FROM GRADLE
+	- CUSTOM
+
+Example 
+===========================================
+task wrapper(type: Wrapper) {
+    gradleVersion = '3.5'
+}
+
+
+Finally build.gradle would contain following...
+-------------------------
+Tasks
+	ACTION
+		DO LAST
+		DO FIRST
+And Plugins
+And Dependencies
+And Properties
+And Many More.....
+------------------------------
+What is the Tasks TYPES avaiable?
+	Core types	FROM GRADLE
+	
+	Publishing types		FROM PLUGINS
+	Container types			FROM PLUGINS
+	Build Cache types		FROM PLUGINS
+	Input Normalization types	FROM PLUGINS
+	Help Task types			FROM PLUGINS	
+	Task types			FROM PLUGINS	
+	Reporting types			FROM PLUGINS
+	Eclipse/IDEA model types	FROM PLUGINS
+
+=====================================
+What is Plugins?
+	AKA FEAUTURE IN GRADLE
+		Core Plugins - In Built - Powered --> Core types
+		External Plugins - NOT In Built - Powered --> EXTERNAL
+					SPECIFY PLUGINS NAME IN BUILD.GRADLe
+
+
+
+
+
+
+What is there in POM.xml
+------------------------
+project
+	co-ordinates
+	depedencies
+	build
+	properties
+	profile
+==================================
+	
+		
+What is gradle wrapper?
+================================
+gradle lightwight - WITHOUT WRAPPER - ONLY build.gradle-config-src-etc
+gradle complete - NO NEED TO HAVE GRADLE INSTALLED
+
+=================================================
+
+
+Maven 2 Changes
+---------
+pom.xml with distrutedmgt
+setting.xl - server. usrr
+-------------
+
+respo
+
+
+
+
+
+
