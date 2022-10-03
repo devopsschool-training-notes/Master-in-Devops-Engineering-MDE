@@ -1,0 +1,441 @@
+What is Chef Apply? 
+What is Chef(command line)
+What is Knife?
+What is Recipe?
+What is Cookbook?
+What is Attributes?
+What is Chef Server?
+What is node?
+What is Chef client?
+What is knife.rb?
+What is client.rb?
+What is organiztion?
+
+QA
+What is chef Apply?
+-chef apply is used to execute for single reciepe
+
+Tell about client.rb. in what situation we use it?
+- it contains the configuration settings necesary for chef client to communicat with chef server
+- client.rb is a configuration file which is read by chef-client to do the things as desiredd in the node.
+
+/etc/chef/client.rb [ NODE]
+https://docs.chef.io/config_rb_client.html
+
+What is the difference between client key and org validation key in knife.rb?
+
+How to configure client.rb automaticlaly?
+	- client.rb is being created automatically during bootstraps
+
+knife bootstrap
+	- download the chef client in the node
+	- install the install chef cleint
+	- create a client.pem using org validator
+	- crate a client.rb with the chef server info...
+https://docs.chef.io/config_rb_client.html
+
+
+
+
+You are the CHEF ADMIN
+	- 1000 servers.
+	- cookbooks
+
+Situaion is like this.
+	Not all cookbooks will run on the nodes(servers)
+	You dont have a time also you can spend whole running the cookbased depends on req
+
+	Default env  - php version --- 5.5
+	Dev --- php    php 5.6	---- default att
+
+	DEV --- 100 SERVER (Apache 2.3 + PHP 6.5 + mysql 5.6 + CTS3.5)	 	web1.0
+	QA --- 200 SERVER  (Apache 2.3 + PHP 6.4 + mysql 5.6 + CTS3.4)		web1.1
+	STAGING -  200 SERVER	(Apache 2.3 + PHP 6.3 + mysql 5.6 + CTS3.3)	web1.2
+	PRE PRO - 200 SERVER	(Apache 2.3 + PHP 6.2 + mysql 5.6 + CTS3.2)	web1.3
+	PROD ---  500 SERVER	(Apache 2.3 + PHP 6.1 + mysql 5.5 + CTS3.1)	web1.4
+
+Problem  
+-- Are you going to write diff version of cookbooks?
+-- How can deploy all the required cookboks in one go?
+-- How can you manage, org, cate, classified large number of servers.
+
+
+SOLUTION - What is Environments in Chef?
+=================================================================
+CHEF ENV
+ - env is kind of to group of nodes putting into the logical manner
+ - A Org can have multiple env.
+ - Each chef server has _default env which can not deleted.
+ - during the bootstrap if you do not specify the env, the by defaul it will _default env.
+
+How to create a env?
+> knife environment create <<dev>> 
+
+How to assign a node to the specific env?
+	1. command line using knife
+	2. using GUI chef server
+	3. During the bootstarp process 
+> knife bootstrap 52.66.65.192 --ssh-user ec2-user --sudo --identity-file node.pem --node-name cts1  --environment dev
+
+How to run chef client?
+> knife ssh 'name:*' 'sudo chef-client'	--ssh-user ec2-user --identity-file node.pem --environment dev
+> "chef-client" from node
+
+=====================================================================================================
+CHEF ROLES
+
+==============================================================================================
+Role is way to combine the list of serers from each environment to assig the only required cookbooks
+ORG ==========EBAY==========1000 SERVRSs
+	ENV
+	========================================
+	DEV  -- 300
+			db(50)	web(100)	app(50)	login(50)	loadbalanc	
+	QA - 200
+			db	web	app	login	loadbalanc
+	PROD	 - 500
+			db	web	app	login	loadbalanc
+Where 
+db(50) will be only executing the cookbooks which is related db
+db(50) will be only executing the cookbooks related?
+
+
+How can we create a role?
+> knife role create db
+> knife role create web
+
+How can we assign node to a role?
+> knife node edit cts1
+
+How can we assign cookbook to role 
+> run chef-client
+
+OR
+knife ssh "role:web" "uptime" 
+knife ssh 'role:web' 'sudo chef-client' --ssh-user ec2-user -i node.pem
+
+QA
+Your are saying .if we create a role we need to assign the runlist of specific node ryt?
+	------You create a role 
+		--- You assign list of cookbooks to the role as part of run list &&
+		--- you modify the node n say, this node belongs to X role.
+
+		run role - List of Servers --> cookbook --- >
+
+QA
+in a recipe file we have multiple recipies to install php,java,etc by defining all in same cookbook how can we prevent/execute a particular recipe only in a db server/webserver do we need to use guards please expain
+	cookbook - php
+	cookbook - java
+	cookbook - etc
+	role - PHP + JAVA + ECT
+
+DEV ----> PHP+JAVA+ETC 
+PROD ->> role - php --> cookbook
+	role java -- cookbok
+	role etc
+
+===================================================================
+
+
+LAB - 30 MINS.....
+
+
+=====================================================================
+Step 1. create a role
+Step 2. assign a cookbooks to a rle
+Step 3. label role with node
+run role
+
+
+===============================================================================
+===============================================================================
+CHEF SOLO
+===============================================================================
+===============================================================================
+
+What is Chef-solo?
+
+Understand the requirement/scnario
+ --- NO CHEF SERVER
+ --- EXECUTE MULTIPLE COOKBOOKS - Parrel - 100 SERVERS
+
+	HOW CAN YOU DO THAT?
+
+APPROACH 1: MANUAL
+	Each node you willl setup chef-client
+	Local mode
+	Cookbook 
+	client local - 1
+	client local - 1
+	client local - 1
+	client local - 1
+==================================
+	CRONTAB	
+	
+	TO UPDATE THE COOKBOOKS In ALL SERVER  - GIT pull n as a cron.	
+================================================================
+In absense of chef server - if you want execute multiple cookbooks, you can chef-solo
+
+HOW CAN YOU SETUP?
+
+How can you install chef-solo?
+---- Chefdk
+ 
+Can be installed stand alone too...
+===================================================
+https://docs.chef.io/config_rb_solo.html
+https://docs.chef.io/chef_solo.html
+
+How to configure chef-solo?
+	- chef-solo installation(chef-dk, chef-client, indep)
+	Step 1 - Write your chef-solo configuraion file "solo.rb"
+
+file_cache_path "/root/chef-solo"
+cookbook_path "/root/chef-repo/cookbooks"
+
+
+	Step 2 - Write a json file which content the run links
+
+	> vi web.json
+ 
+{
+	"run_list": [ "recipe[db]","recipe[starter]","recipe[web]" ]
+}
+
+
+	FINAL 
+	>chef-solo -c /root/chef-repo/solo.rb -j /root/chef-repo/web.json
+
+=============================================================================
+====================FOODCRITIC==================================
+=============================================================================
+
+In your project, how do you do Code review?
+
+git -wrong
+svn  - wrong
+
+	PEER TO PEER CODE - Manually
+	code review -- SonarQube - 
+	
+	Is it a code review tool? - NO
+	THis is qualityy mgmt tool where u can store the code review.
+
+	pmd, chef, find ,e
+========================================
+IN Chef, we do the cookbooks programming - Code review tool.
+
+	- foodcritic
+
+	- RuboCop
+
+How can you install foodcritic?
+	foodcritic is dev tools
+	You will get with the ChefDk
+
+cookbooks
+
+>  foodcritic cookbooks
+
+
+[root@ip-172-31-30-36 chef-repo]# foodcritic cookbooks
+Checking 9 files
+xxxxxxxxx
+FC008: Generated cookbook metadata needs updating: cookbooks/db/metadata.rb:2
+FC008: Generated cookbook metadata needs updating: cookbooks/db/metadata.rb:3
+
+FC008: Generated cookbook metadata needs updating: cookbooks/starter/metadata.rb:5
+FC008: Generated cookbook metadata needs updating: cookbooks/web/metadata.rb:2
+FC008: Generated cookbook metadata needs updating: cookbooks/web/metadata.rb:3
+FC011: Missing README in markdown format: cookbooks/starter/README.md:1
+FC064: Ensure issues_url is set in metadata: cookbooks/db/metadata.rb:1
+FC064: Ensure issues_url is set in metadata: cookbooks/starter/metadata.rb:1
+FC064: Ensure issues_url is set in metadata: cookbooks/web/metadata.rb:1
+FC065: Ensure source_url is set in metadata: cookbooks/db/metadata.rb:1
+FC065: Ensure source_url is set in metadata: cookbooks/starter/metadata.rb:1
+FC065: Ensure source_url is set in metadata: cookbooks/web/metadata.rb:1
+FC066: Ensure chef_version is set in metadata: cookbooks/starter/metadata.rb:1
+FC067: Ensure at least one platform supported in metadata: cookbooks/db/metadata.rb:1
+FC067: Ensure at least one platform supported in metadata: cookbooks/starter/metadata.rb:1
+FC067: Ensure at least one platform supported in metadata: cookbooks/web/metadata.rb:1
+FC068: Ensure license is set in metadata: cookbooks/starter/metadata.rb:1
+FC069: Ensure standardized license defined in metadata: cookbooks/starter/metadata.rb:1
+FC071: Missing LICENSE file: cookbooks/starter/LICENSE:1
+FC078: Ensure cookbook shared under an OSI-approved open source license: cookbooks/db/metadata.rb:1
+FC078: Ensure cookbook shared under an OSI-approved open source license: cookbooks/starter/metadata.rb:1
+FC078: Ensure cookbook shared under an OSI-approved open source license: cookbooks/web/metadata.rb:1
+FC093: Generated README text needs updating: cookbooks/db/README.md:1
+FC093: Generated README text needs updating: cookbooks/web/README.md:1
+
+
+How to fix the code quality issues in cookbooks?
+ - Get a BUGID ie. FC093
+ - Go to http://www.foodcritic.io/
+ - Fix it
+
+=================15 mins====================
+LAB TIME ------
+=============================================
+Lets have 15 mins---
+
+3.45 PM
+============
+
+
+=============================================================================
+====================CHEF DATA BAGS==================================
+=============================================================================
+
+What are the kind of Attributes you have Chef?
+	Default
+	normal	
+	Override
+	Automtic
+===================================
+Do you have any way to set Global Attributes?
+	copyright
+	password
+	key
+
+NO....
+
+Solution is CHEF Data Bags.
+	Global variable set can be used anywhere in servers.
+	It can encrypted
+https://docs.chef.io/data_bags.html
+
+How to create a data bag>
+> knife data bag create cts_data_bag1
+OR 
+Chef Server
+	cts_data_bag2
+
+How to Create data bag item?
+1. 
+> knife data bag create cts_data_bag1 cts_data_bag_item
+2. Using Chef Servers....
+
+{
+  "id": "cts_data_bag_item",
+   "name": "Welcome to scmGalaxy",
+   "age": "30",
+   "myname": "Rajeesh Kumar"
+}
+
+Data Bag Name - cts_data_bag1
+Data Bag Name Item - cts_data_bag_item
+Key : Value
+
+
+How can you search for it?
+=====================================================
+
+knife search cts_data_bag1 "(*)"
+knife search cts_data_bag1 "(NOT id:cts_data_bag_item)"
+
+How to use in Recipe?
+======================================
+temp = search(:cts_data_bag1, "id:cts_data_bag_item").first
+
+#{temp["myname"]}
+
+ROLE
+ENV
+RECIPE
+=============================================
+DATA BAG
+DATA BAG ITEM
+KEY N VALUE
+
+
+========================================================================
+======================================================================
+Test Kitchen
+=========================================================================
+====================================================================
+CHEF PROGRAMMING ----
+	Write	- Cookbook
+	Test - chef-clinet localmode |  knife test
+	Debug - knife cookbook test [COOKBOOKS...] (options)
+	Unit - ChefSpec Similar Junit, NUNIT
+	Code Revew - foodcritic or robocop
+	Acceptanace Testing - IT
+		QTP
+		FTP
+		Selenium
+	For Chef...
+		-- TEST KITCHEN
+		- Create a test case
+		- run in the dummy env(vagrant), verify...Publish to Chef Server --> PRODUCTION
+
+		How can i learn TEST KITCHEN step by step?
+		-- ONLY ONE - 
+	
+	
+
+========================
+For Course Materials......Plz fill this...
+https://goo.gl/XaXgYe
+
+=================================================================
+
+ABOUT ME
+RAJESH KUAMR
+
+ABOUT ME - http://www.rajeshkumar.xyz/cv/
+EMAIL - rajesh@scmgalaxy.com | DevOps@RajeshKumar.xyz
+========================================================
+Please submit Trainer Review here....
+https://goo.gl/oK4CWF
+
+
+Official Review for the trainer for CTS
+https://goo.gl/kUFvRA - 
+
+
+Day 1 - 
+	Chef Programming Essential		DONE
+Day 2 -
+	Chef Attributes 			DONE
+	Chef Conditional Programming		DONE		
+	Chef Subscribe and Notifies		DONE
+	Chef Supermarket			DONE		
+	Ohia					DONE			
+
+	Know the CHEF INFRA			DONE
+	Setting up Chef Server			DONE
+	Chef Server Complete Workflow		DONE
+	
+Day 3 - YOU ARE BEING A ADMIN....
+	Before Lunch=========
+	Chef Environment		DONE
+	Chef Roles			DONE
+
+	After Lunch==========
+	Chef Solo			DONE				
+	CHef Foodcritic			DONE
+	Chef Databags			DONE			
+	Course Materials		DONE
+	About me?			DONE
+	Feedback			DONE 20% - 80%
+	Test Kitchen			DONE
+	QA
+	=========================================================
+	ANY QUESTION
+	=========================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

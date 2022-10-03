@@ -1,0 +1,449 @@
+==============================
+Chef Attributes 
+==============================
+
+Variable = Value
+$Variable #Variable [ Program ]
+
+What is Attributes?
+	Attributes is way using you can set the variable and Value to the nodes for 
+			Recipe
+			Cookbooks
+			Roles
+			Environment
+			Nodes
+
+What are the kind of Attributes we have?
+
+default		recipe, cookbooks, attributes file
+force_default	recipe, cookbooks, attributes file, env, role
+normal		node	
+override	node
+force_override	node
+automatic ===========> FIXED ==> From Ohia
+
+What is Ohia?
+This is tool which comes with chef client and help to gather the system inforamtion.
+
+How to create a attributes dir/file?
+> cd /root/chef-repo
+> chef generate attribute cookbooks/web/ default
+
+Where to decalare attributes?
+	Attributes file - cookbooks/web/attributes/default.rb
+	default["cheftutorial"]["name"] = "Rajesh Kumar in attributes file"
+	default["cheftutorial"] = "Rajesh Kumar in attributes file"
+	
+	Recipe - cookbooks/web/recipes/default.rb
+	node.default["cheftutorial"]["name"] = "Rajesh Kumar in recipe file"
+
+
+	Recipe:: Default.rb
+	
+	log "Hello #{node['cheftutorial']['name']}" do
+  		level :info
+	end
+
+	file "/opt/cts.txt" do
+	   content node['cheftutorial']['name']
+	end
+
+
+How to test your cookbooks?
+> chef-client --local-mode --runlist 'recipe[web]'
+
+
+CONDITIONING WITH ATTRIBUTES
+Using attribute?() in an attributes file:
+if attribute?('ec2')
+  # ... set stuff related to EC2
+end
+
+Using attribute?() in a recipe:
+if node.attribute?('ec2')
+  # ... do stuff on EC2 nodes
+end
+
+
+Q & A
+==========================================
+1. Both 'cheftutorial' and 'name' are variables ?
+
+default["cheftutorial"]["ddd"]["name"] = "Rajesh Kumar in attributes file"
+
+cheftutorial - Cookbook name
+name - variable
+
+Q. 2 
+Hi Rajesh, I have small doubt,If we create a cookbook on workstation,will update to chef server after we need to add runlist that cookbook.Is it right way.
+
+
+Reference
+https://github.com/scmgalaxy/chef-repo
+https://docs.chef.io/attributes.html
+
+
+========================================================================
+=====================CHEF SUPERMARKET===================================
+========================================================================
+What is supermarket?
+	- A place where you get a free cookbooks contributed by Chef Programmer around the globe.
+
+
+DEMO TIME ON 
+https://supermarket.chef.io/	
+
+
+If you get more # of cookbooks options, which one your should pick up
+	- Updated
+	- Rnking -  44% 
+	- FOLLOWERS 
+
+
+How to download cookbooks from Supermarket?
+	Command Line - 
+		> knife cookbook site install php
+		> knife cookbook site download php
+	Through website - 
+		Check out the download link on the cookbook page
+	Github
+		Check out github
+
+
+========================================================================
+=====================CHEF CONDITIONS N LOOP============================
+========================================================================
+Conditions with attributes?
+=============================
+Using attribute?() in an attributes file:
+if attribute?('ec2')
+  # ... set stuff related to EC2
+end
+
+Using attribute?() in a recipe:
+if node.attribute?('ec2')
+  # ... do stuff on EC2 nodes
+end
+
+Conditions with Resources
+=============================
+not_if
+Prevent a resource from executing when the condition returns true.
+
+only_if
+Allow a resource to execute only if the condition returns true.
+
+
+execute 'bundle install' do
+  cwd '/myapp'
+  not_if 'bundle check' # This is run from /myapp
+end
+
+template '/tmp/somefile' do
+  mode '0755'
+  source 'somefile.erb'
+  not_if { node[:some_value] }
+end	
+
+template '/tmp/somefile' do
+  mode '0755'
+  source 'somefile.erb'
+  not_if do
+    File.exist?('/etc/passwd')
+  end
+end
+
+template '/tmp/somefile' do
+  mode '0755'
+  source 'somefile.erb'
+  only_if { node[:some_value] }
+end
+
+template '/tmp/somefile' do
+  mode '0755'
+  source 'somefile.erb'
+  only_if 'test -f /etc/passwd'
+end
+
+Conditional Inclusion of the recipe????
+--------------------------------------------------
+include_recipe 'python::repository' if node['python']['installrepo']
+
+
+If else conditions inclusion in Recipe
+=====================================================
+# Install it
+if node['platform_family'] == 'windows'
+  include_recipe 'python::install-windows'
+else
+  include_recipe 'python::install-linux'
+end
+
+
+LOOPING in RESOURCS RECIPE
+===================================
+[ "/srv/www/#{node['createdir']['shared_dir']}", "/srv/www/#{node['createdir']['config_dir']}" ].each do |path|
+  directory path do
+    mode node['createdir']['mode']
+    owner node['createdir']['owner']
+    group node['createdir']['group']
+    recursive true
+    action :create
+  end
+end
+
+=================LAB 10 MINS=======================
+1. Write a Cookbooks and set 2 attributs. If one of them is set to "centos", install httpd else use to "resurces" to print somthing.
+
+rajesh@scmgalaxy.com
+
+ANY ONE??????
+
+=========================Subscribe and Notifies==========================
+===========================================================================
+Nofify
+	When One resources is getting executed, and when you want ANOTHER resources to be executed during that prcess...you may use notify.
+
+Susb
+
+
+template '/etc/nagios3/configures-nagios.conf' do
+  # other parameters
+  notifies :run, 'execute[test-nagios-config]', :before
+end
+===========================
+:delayed 
+:run, 'execute[test-nagios-config] at the end of chef-client
+
+
+============================================
+template '/etc/nagios3/configures-nagios.conf' do
+  # other parameters
+
+  notifies :run, 'execute[test-nagios-config]', :immediately
+end
+
+execute 'test-nagios-config' do
+  command 'nagios3 --verify-config'
+  action :nothing
+end
+============================================
+
+
+template '/etc/nagios3/configures-nagios.conf' do
+  # other parameters
+
+  notifies :start, 'service[httpd]', :immediately
+end
+
+======================================
+Subscribes 
+	is not calling action.
+
+
+========Ohia==============
+is a tool which you get with chef-client
+	Ohia 	
+		will help you read the system char*
+
+
+More Reference
+https://docs.chef.io/ohai.html
+
+==================================================================================
+==================================================================================
+==================================================================================
+==================================================================================
+==================================================================================
+
+CHEF SERVER WORK FLOW;
+Flow 1 - From Worksation, you can send a command using Knife to Chef Server
+
+What is Worksation?
+ - a Machine where developers works, write a cookbook, test and sent a instructions to the chef server to eecute it
+
+How to Setup Workstation???
+	
+
+What is Knife?
+ - Knife is tool which help worksatations to connect with the chef server
+
+What is Chef Server?
+ - Collection of
+		Cookbooks	DONE
+		nodes		DONE
+		Organization	
+		roles
+		envirnment
+		databags
+
+2 Kind of Chef Server
+	- OPEN SOURCE - FREE - CAN BE USED BY THE COMMAND LINE
+	- COMMERCIAL - PAID - HAS GOOD GUI DASHBOARD (Chef Manage)
+
+What are the tools you can find in the chef server?
+run: bookshelf: (pid 19756) 37s; run: log: (pid 19788) 37s
+run: nginx: (pid 19588) 41s; run: log: (pid 20155) 33s
+run: oc_bifrost: (pid 19477) 43s; run: log: (pid 19553) 42s
+run: oc_id: (pid 19559) 42s; run: log: (pid 19565) 41s
+run: opscode-erchef: (pid 20009) 35s; run: log: (pid 19955) 36s
+run: opscode-expander: (pid 19641) 38s; run: log: (pid 19731) 38s
+run: opscode-solr4: (pid 19607) 40s; run: log: (pid 19624) 39s
+run: postgresql: (pid 19424) 44s; run: log: (pid 19461) 43s
+run: rabbitmq: (pid 20441) 28s; run: log: (pid 20182) 33s
+run: redis_lb: (pid 13276) 119s; run: log: (pid 20147) 34s
+
+
+
+How to upload cookbooks in Chef Server?
+How to add nodes a in Chef Server?
+How to create a org in Chef Chef Server
+
+
+How to connect Chef Server using Knife to do uploading cookbooks annd nodes?
+> using knife
+How to confiure knifee?
+	- Knife read one file for the chef server info
+		- knife.rb
+	- knife.rb is being look into CURR_DIR/.chef/knife.rb or USER_HOME/.chef/knife.rb
+	- in the knife.rb you have
+			- CHEF SEERVER HOST INFO
+			- KEYS
+			- ORG
+
+How to setup Chef Server?
+----MIN 4GB
+---- LINUX
+----- 64BIT
+=================13.127.61.53===================
+
+Setting up the Server
+===============================================
+http://www.devopsschool.com/tutorial/chef/chef-server-install-configuration-in-centos7.html
+
+127.0.1.1 13.127.61.53 chef-server
+127.0.0.1 localhost
+13.127.61.53 13.127.61.53 chef-server
+
+Setup access?
+command line
+> chef-server-ctl user-create rajesh Rajesh Kumar devops@rajeshkumar.xyz 'rajesh123' --filename rajesh.pem
+> chef-server-ctl user-list
+GUI
+
+Setup Organization
+===============================================
+What is Organization?
+CTS A -- EBAY -- 1000 Servers
+			Cookbooks
+			nodes
+CTS B -- INTEL -- 500 Servers
+			Cookbooks
+			nodes
+CTS C -- BOI --- 300 SERVERS
+----------------------------2 Approach----------------------------
+Dedicated DEVOPS N IT for each of the departtment
+		Costly
+
+
+Solution - CHEF SERVER --> MULTIPLE Organization	
+===============================================
+Each Org
+	OWN NODES
+	OWN COOKBOOKS
+	OWN ROLES
+	.........
+-------------------------------
+1 -2 ...SAVING COST  - TIME
+
+
+How to setup Organization?
+	Command Line
+>  chef-server-ctl org-create scmgalaxy 'scmGalay, Inc.' --association_user rajesh --filename scmgalaxy.pem
+	GUI
+
+
+============
+Set up a Chef Server -- -DNE
+Set up a Workstation
+	
+
+How to setup workstaion?
+	Workstaion ---> Knife --> knife.rb 
+					Host of the server
+					org
+					access
+
+How to create a knife.rb?
+	Manually
+	
+	CommandLine 
+	> knife cnfigure
+
+	Download the starter kit from Chef Server
+
+
+How to verify the access of chef server from the workstation?
+> knife ssl check
+> knife ssl fetch
+> knife ssl check
+
+Step 1 - How to upload cookbook?
+> knife cookbook upload <<<name>>>
+
+
+==========================LAB ------30 MINS.....===================================
+Set up a Chef Server - https://goo.gl/xMK8vP
+Setup a WorkStation - Chefdk
+Setup Knife
+and Verify
+
+
+===============================================================
+What is Nodes?
+	is the server which you manager via chef server
+	it has chef-client	
+	it recieve the json catalog from chef server and execute
+
+
+How to add Nodes in Chef Server?
+ ------AKA bootstarping process
+
+> knife bootstrap 13.127.43.208 --ssh-user ec2-user --sudo --identity-file node.pem --node-name cts1
+
+What is Bootstrapng process
+	--- installing a chef client
+	--- config the client.pem  with chef server and permission
+
+NODES 1 === 13.127.43.208
+
+Reference
+http://www.devopsschool.com/tutorial/chef/knife-command-line-reference.html
+
+How to assign a Cookbook(S) to the node???
+> knife node edit <<node>>
+
+SUPER FINAL -----
+RUN THE chef-client in the node?
+> chef-client
+
+RUN the chef-client from the server?
+> knife ssh 'name:cts1' 'sudo chef-client' --ssh-user ec2-user --identity-file node.pem
+
+
+==========================================
+if we have multiple servers, i want to add my cookbook few servers only. need to go with Script or Manually ?
+
+ANS - CHEF ROLE
+
+
+rajesh@scmgalaxy.com
+
+
+
+
+
+
+
+
+

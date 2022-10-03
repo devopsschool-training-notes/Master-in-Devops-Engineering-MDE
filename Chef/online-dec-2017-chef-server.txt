@@ -1,0 +1,97 @@
+CHEF ADMINIS
+	- CHEF SERVER
+	- CHEF ROLES
+	- CHEF ENV
+	- CHEF ORG
+	- KNIFE
+	- CHEF-CLIENT
+
+What is Org?	== DEPAREMNTS === ACCOUNTS
+	Classficaion of servers with complete diff sets of
+		cookbooks
+		nodes
+		access roles
+What is ENV?
+	Is a way to pass same Cookbooks with diff inputs, attributess 
+
+What is Roles?
+	Is a way to run the specific cookbooks to the sets of nodes.
+
+What is Node? == SERVER
+	Each node has a chef-client installd to communicate with the server
+
+What is Chef-client
+	is tool which is installed in a every node.
+
+1. Setting up the CHEF server
+http://www.devopsschool.com/tutorial/chef/chef-server-install-configuration-in-centos7.html
+13.127.27.32
+
+2. Setting up the workstaion
+13.127.98.11
+
+3. Setting up the admin accounts
+chef-server-ctl user-create rajesh Rajesh Kumar DevOps@Rajeshkumar.xyz 'password' --filename rajesh.pem
+
+4. create a Org?
+chef-server-ctl org-create scmgalaxy 'Morning Coffee, Inc.' --association_user rajesh --filename scmgalaxy.pem
+
+5. install n config chef-manage
+
+6. Setting up knife --- knife.rb
+			Ip Address of the Chef Servr
+			ORG
+			user
+			pass
+
+knife.rb must be in .chef directory..chef may be in CURR DIR or HOME DIR
+
+7. Uploaded my Cookbook
+
+8. Bootstarp a Node === Adding a a node in CHEF SERVER
+node 1 - 35.154.237.196
+node 2 - 13.126.198.178
+
+knife bootstrap 35.154.237.196 --ssh-user ec2-user --sudo --identity-file node.pem --node-name node1
+knife bootstrap 13.126.198.178 --ssh-user ec2-user --sudo --identity-file node.pem --node-name node2
+
+What is a Bootstarpping Process?
+	1. Chef Server will connect to node 
+	2. Install Chef-client
+	3. Configure chef-client (client.rb insite /etc/chef)
+
+8. Assign a Cookbook to node
+	GUI 
+	> knife node edit nodenaame
+
+9. RUN IT
+	FROM SERVER TO NODE 
+	> knife ssh 'name:node1' 'sudo chef-client' --ssh-user ec2-user --identity-file node.pem
+	> knife ssh 'name:*' 'sudo chef-client' --ssh-user ec2-user --identity-file node.pem
+	> knife ssh 'name:node*' 'sudo chef-client' --ssh-user ec2-user --identity-file node.pem
+	FROM NODE TO SERVER
+	> chef-client
+
+CHEF ATTRIBUTES === PROPERTIES
+---------------------------
+var=val
+Kind of attributes - Places of Attrbutes
+------------------------------
+default
+set
+automatic
+
+name = rajesh
+
+CHEF ENV
+===================================
+
+CHEF ROLES
+============================
+1. Create a role with cookbooks
+2. Assign a Node to a role instead of cookbook
+3. Run a role
+> knife ssh "role:webr" "sudo chef-client" --ssh-user ec2-user --identity-file node.pem
+
+
+

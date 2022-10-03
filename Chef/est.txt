@@ -1,0 +1,388 @@
+Deep dive into Chef Attributes in one hour
+
+Understand Chef Attributes
+===========================================================
+An attribute is nothing but a key-value pair which represents a specific detail about a node. Attributes are used by the chef-client to understand.
+The current state of the node
+What the state of the node was at the end of the previous chef-client run
+What the state of the node should be at the end of the current chef-client run
+
+Chef Attributes Locations
+===========================================================
+Attributes are defined and provided to the chef-client from the following locations:
+
+Nodes (collected by Ohai at the start of each chef-client run)
+Attribute files (in cookbooks)
+Recipes (in cookbooks)
+Environments
+Roles
+
+How chef-client work with Chef Attributes?
+===========================================================
+During every chef-client run, the chef-client builds the attribute list using:
+
+Data about the node collected by Ohai
+- The node object that was saved to the Chef server at the end of the previous chef-client run
+- The rebuilt node object from the current chef-client run, after it is updated for changes to cookbooks (attribute files and/or recipes), roles, and/or environments, and updated for any changes to the state of the node itself
+
+After the node object is rebuilt, all of the attributes are compared, and then the node is updated based on attribute precedence. At the end of every chef-client run, the node object that defines the current state of the node is uploaded to the Chef server so that it can be indexed for search. We can specify the attribute at node level while running chef-client. Those attributes are referred to as node attributes
+
+How chef-client work with different kinds of attributes?
+===========================================================
+At the beginning of a chef-client run, all attributes except for normal attributes are reset. The chef-client rebuilds them using  - Automatic attributes collected by Ohai at the beginning of the chef-client run and then 
+ - Using default and override attributes that are specified in cookbooks or by roles and environments.  
+ - All attributes are then merged and applied to the node according to attribute precedence. At the conclusion of the chef-client run, the attributes that were applied to the node are saved to the Chef server as part of the node object.
+
+
+Types of Chef Attribute
+===========================================================
+The chef-client uses six types of attributes to determine the value that is applied to a node during the chef-client run. attributes types is being used only for setting predence.
+
+
+Attribute Type
+force_default
+normal
+override
+force_override
+automatic		
+
+The sources of Chef attribute?
+===========================================================
+The chef-client sources attribute values from up to five locations.
+
+Nodes (collected by Ohai at the start of each chef-client run)
+Attribute files (in cookbooks)
+Recipes (in cookbooks)
+Environments
+Roles
+
+The sources of Chef attribute in Nodes
+=============================================
+Nodes (collected by Ohai at the start of each chef-client run) also Referred as Automatic attributes. Automatic attributes are detected by Ohai and are then used by the chef-client to ensure that they are handled properly during every chef-client run. All attributes collected by Ohai are unmodifiable by the chef-client. The most commonly accessed automatic attributes are:
+
+Attribute			Description
+node['platform']		The platform on which a node is running. This attribute helps determine which providers will be used.
+node['platform_version']	The version of the platform. This attribute helps determine which providers will be used.
+node['ipaddress']		The IP address for a node. If the node has a default route, this is the IPV4 address for the interface. If the node does not have a default route, the value for this attribute should be nil. The IP address for default route is the recommended default value.
+node['macaddress']		The MAC address for a node, determined by the same interface that detects the node['ipaddress'].
+node['fqdn']			The fully qualified domain name for a node. This is used as the name of a node unless otherwise set.
+node['hostname']		The host name for the node.
+node['domain']			The domain for the node.
+node['recipes']			A list of recipes associated with a node (and part of that node’s run-list).
+node['roles']			A list of roles associated with a node (and part of that node’s run-list).
+node['ohai_time']		The time at which Ohai was last run. This attribute is not commonly used in recipes, but it is saved to the Chef server and can be accessed using the knife status subcommand.
+
+<strong>To see which automatic attributes are collected by Ohai for a particular node, run the following command:</strong>
+<pre><code>
+$ find  /opt/chefdk/embedded/lib/ruby/gems/*/gems/ohai-*/lib -name "*.rb" -print | xargs grep -R "provides" -h |sed 's/^\s*//g'|sed "s/\\\"/\'/g"|sort|uniq|grep "\sprovides"
+
+$ cd /opt/chefdk/embedded/lib/ruby/gems/*/gems/ohai-*/lib
+
+$ ohai
+/code></pre>
+
+
+The sources of Chef attribute in Attribute files
+=============================================
+<p>An attribute file is located in the attributes/ sub-directory for a cookbook. </p>
+
+<p>When a cookbook is run against a node, the attributes contained in all attribute files are evaluated in the context of the node object. For example, 
+
+<strong>The apache2 cookbook contains an attribute file called default.rb, which contains the following attributes:</strong>
+
+<pre><code>
+default['apache']['dir']          = '/etc/apache2'
+default['apache']['listen_ports'] = [ '80','443' ]
+</code></pre>
+
+
+<strong>Node methods (when present) are used to set attribute values on a node.  The following example defines the node object itself as part of the attribute:</strong>
+<pre><code>
+node.default['apache']['dir']          = '/etc/apache2'
+node.default['apache']['listen_ports'] = [ '80','443' ] 
+</code></pre>
+
+<strong>Default attribute in /attributes/default.rb</strong>
+<pre><code>
+default['apache']['dir'] = '/etc/apache2'
+</code></pre>
+
+<strong>Normal attribute set as a cookbook attribute</strong>
+<pre><code>
+set['apache']['dir'] = '/etc/apache2'
+normal['apache']['dir'] = '/etc/apache2'  #set is an alias of normal.
+</code></pre>
+
+<strong>Override attribute in /attributes/default.rb</strong>
+<pre><code>
+override['apache']['dir'] = '/etc/apache2'
+</code></pre>
+
+The sources of Chef attribute in Recipes (in cookbooks)
+=============================================
+<p>In Recipe we allways need to set the node attributes. We can specify the attribute at node level while running chef-client. Those attributes are referred to as node attributes. You must precede the attribute name with node. when you set an attribute directly in a recipe.</p>
+
+<strong>Default attribute in node object in recipe</strong>
+<pre><code>
+node.default['apache']['dir'] = '/etc/apache2'
+</code></pre>
+
+Normal attribute set in a recipe</strong>
+<pre><code>
+node.normal['apache']['dir'] = '/etc/apache2'
+</code></pre>
+
+<strong>Override attribute in a node object (from a recipe)</strong>
+<pre><code>
+node.override['apache']['dir'] = '/etc/apache2'
+</code></pre>
+
+The sources of Chef attribute in Environments
+=============================================
+<strong>Default attribute in /environments/environment_name.rb</strong>
+<pre><code>
+default_attributes({ 'apache' => {'dir' => '/etc/apache2'}})
+</code></pre>
+
+<strong>Override attribute in /environments/environment_name.rb</strong>
+<pre><code>
+override_attributes({ 'apache' => {'dir' => '/etc/apache2'}})
+</code></pre>
+
+<strong>Default attribute and Override attribute in Ruby file of chef environment</strong>
+<pre><code>
+name 'dev'
+description 'The development environment'
+cookbook_versions  'couchdb' => '= 11.0.0'
+default_attributes 'apache2' => { 'listen_ports' => [ '80', '443' ] }
+</code></pre>
+
+<strong>Default attribute and Override attribute in JSON file of environment</strong>
+<pre><code>
+{
+  "name": "dev",
+  "default_attributes": {
+    "apache2": {
+      "listen_ports": [
+        "80",
+        "443"
+      ]
+    }
+  },
+  "json_class": "Chef::Environment",
+  "description": "",
+  "cookbook_versions": {
+    "couchdb": "= 11.0.0"
+  },
+  "chef_type": "environment"
+}
+</code></pre>
+
+<strong>Default attribute and Override attribute in JSON file of environment</strong>
+<pre><code>
+{
+  "name": "development",
+  "description": "The master development branch",
+  "cookbook_versions": {
+    "nginx": "<= 1.1.0",
+    "apt": "= 0.0.1"
+  },
+  "json_class": "Cheff:Environment",
+  "chef_type": "environment",
+  "default_attributes": {
+  },
+  "override_attributes": {
+    "nginx": {
+      "listen": [
+        "80",
+        "443"
+      ]
+    },
+    "mysql": {
+      "root_pass": "root"
+    }
+  }
+}
+</code></pre>
+
+The sources of Chef attribute in Roles
+=============================================
+<strong>Default attribute in /roles/role_name.rb</strong>
+<pre><code>
+default_attributes({ 'apache' => {'dir' => '/etc/apache2'}})
+</code></pre>
+
+<strong>Override attribute in /roles/role_name.rb</strong>
+<pre><code>
+override_attributes({ 'apache' => {'dir' => '/etc/apache2'}})
+</code></pre>
+
+<strong>Default attribute and Override attribute in Ruby file of role</strong>
+<pre><code>
+name "webserver"
+description "The base role for systems that serve HTTP traffic"
+run_list "recipe[apache2]", "recipe[apache2::mod_ssl]", "role[monitor]"
+env_run_lists "prod" => ["recipe[apache2]"], "staging" => ["recipe[apache2::staging]"], "_default" => []
+default_attributes "apache2" => { "listen_ports" => [ "80", "443" ] }
+override_attributes "apache2" => { "max_children" => "50" }
+</code></pre>
+
+<strong>Default attribute and Override attribute in Ruby file of role</strong>
+<pre><code>
+name "web_server"
+description "A role to configure our front-line web servers"
+run_list "recipe[apt]", "recipe[nginx]"
+env_run_lists "production" => ["recipe[nginx::config_prod]"], "testing" => ["recipe[nginx::config_test]"]
+default_attributes "nginx" => { "log_location" => "/var/log/nginx.log" }
+override_attributes "nginx" => { "gzip" => "on" }
+</code></pre>
+
+<strong>Default attribute and Override attribute in JSON file of role</strong>
+<pre><code>
+{
+  "name": "webserver",
+  "chef_type": "role",
+  "json_class": "Chef::Role",
+  "default_attributes": {
+    "apache2": {
+      "listen_ports": [
+        "80",
+        "443"
+      ]
+    }
+  },
+  "description": "The base role for systems that serve HTTP traffic",
+  "run_list": [
+    "recipe[apache2]",
+    "recipe[apache2::mod_ssl]",
+    "role[monitor]"
+  ],
+  "env_run_lists" : {
+    "production" : [],
+    "preprod" : [],
+    "dev": [
+      "role[base]",
+      "recipe[apache]",
+      "recipe[apache::copy_dev_configs]",
+    ],
+    "test": [
+      "role[base]",
+      "recipe[apache]"
+    ]
+  },
+  "override_attributes": {
+    "apache2": {
+      "max_children": "50"
+    }
+  }
+}
+</code></pre>
+
+<strong>Default attribute and Override attribute in JSON file of role</strong>
+<pre><code>
+{
+  "name": "web_server",
+  "description": "A role to configure our front-line web servers",
+  "json_class": "Chef::Role",
+  "default_attributes": {
+    "nginx": {
+      "log_location": "/var/log/nginx.log"
+    }
+  },
+  "override_attributes": {
+    "nginx": {
+      "gzip": "on"
+    }
+  },
+  "chef_type": "role",
+  "run_list": [
+    "recipe[apt]",
+    "recipe[nginx]"
+  ],
+  "env_run_lists": {
+    "production": [
+      "recipe[nginx::config_prod]"
+    ],
+    "testing": [
+      "recipe[nginx::config_test]"
+    ]
+  }
+}
+</code></pre>
+==========================================================================================
+Example of Chef attribute precedence over other attributes
+==========================================================================================
+<strong>When a default attribute is set like this:</strong>
+<pre><code>
+default['attribute'] = 'value'
+</code></pre>
+
+<strong>any value set by a role or an environment will replace it. To prevent this value from being replaced, use the force_default attribute precedence:</strong>
+<pre><code>
+force_default['attribute'] = 'I will crush you, role or environment attribute'
+OR
+default!['attribute'] = "The '!' means I win!"
+</code></pre>
+
+<strong>When an override attribute is set like this:</strong>
+<pre><code>
+override['attribute'] = 'value'
+</code></pre>
+
+<strong>any value set by a role or an environment will replace it. To prevent this value from being replaced, use the force_override attribute precedence:</strong>
+<pre><code>
+force_override['attribute'] = 'I will crush you, role or environment attribute'
+OR
+override!['attribute'] = "The '!' means I win!"
+</code></pre>
+
+==========================================================================================
+How to use Chef Attributes in Recipe?
+==========================================================================================
+<strong>EXAMPLE 1</strong>
+<pre><code>
+log "Hello #{node['cheftutorial']['name']}" do
+  level :info
+end
+</code></pre>
+
+<strong>EXAMPLE 2</strong>
+<pre><code>
+[ "/srv/www/#{node['createdir']['shared_dir']}", "/srv/www/#{node['createdir']['config_dir']}" ].each do |path|
+  directory path do
+    mode node['createdir']['mode']
+    owner node['createdir']['owner']
+    group node['createdir']['group']
+    recursive true
+    action :create
+  end
+end
+</code></pre>
+
+<strong>EXAMPLE 3</strong>
+<pre><code>
+node.default['webserver']['age']= '33'
+myname = node['webserver']['name']
+
+file "/opt/infosys.txt" do
+ content "Welcome to Infosys- From #{myname}"
+end
+
+
+file "/opt/infosys.txt" do
+ content "Welcome to Infosys- #{node['webserver']['age']}"
+end
+</code></pre>
+
+
+==========================================================================================
+How to use Chef Attributes in Templates?
+==========================================================================================
+
+<h2> My Name is <%=node['webserver']['name'] %>. You can reach me@ DevOps@rajeshkumar.xyz </h2>
+
+
+
+
+
+

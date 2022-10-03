@@ -1,0 +1,254 @@
+What is Chef?
+==========================================
+	Configuration Mgmt tool
+
+What is Config mgmt?
+==========================================
+	SERVER CONFIG MGMT
+
+What is there in the each server, for which we manange their config?
+==========================================
+	package
+	service
+	file
+	network
+	user
+	log
+	group
+	zip
+	tar
+	bash
+	batch
+
+WHY DO NEED CHEF?
+==========================================
+	PERL
+	PYTHON
+
+EASY TO LEARN
+EASY TO SHARE
+EASY TO EXTEND
+EASY TO DEBUG
+EASY TO TEST
+
+	BASH
+	BATCH - PS
+
+LINUX
+	UD
+	RHEL
+	FED
+	SOLARIS
+SOUTION - PUPPET --> CHEF --> ANSIBLE -> SALT 
+
+TO WHOM IT IS BENEITTING?
+=====================================
+IT ENGINEER
+DEVOPS|DEPLOY|BR|QA
+-----------------
+	SOFTX -- 100 SERVER
+		50 WIN
+		50 LINUX
+	
+		25 JBOSS
+		25 WL
+		25 WS
+		25 TOMCAT
+		
+		25 MYSQL
+		25 MS
+		25 ORACLE
+		25 POS
+		
+		100 CONFIG
+
+
+ROLES IN CHEF?
+==========================================
+Chef Programmer
+Chef Administrator
+
+How to become a chef programmer?
+==========================================
+JDK - ChefDK
+How to install chef df?
+> wget https://packages.chef.io/files/stable/chefdk/1.4.3/el/7/chefdk-1.4.3-1.el7.x86_64.rpm
+> rpm -ivh chefdk-1.4.3-1.el7.x86_64.rpm
+
+
+---------------------
+.JAVA	.rb
+
+---------------------
+How to compile my Chef single script?
+chef-apply filename.rb
+--------------------------
+
+FOOD --> CAFETERIA --> COOK --> CHEF
+
+CHEF --> RECIPE -->
+		INGREDIENTS -- KITCHEN
+		INSTURCIONS
+CHEF --> RECIPE -->
+		RESOURCES  --> SERVER
+		HOW
+
+		RESOURCES  	PROPPERTY	ACTION	
+		FILE				C | M |D 		
+		DIRECTOY			RESOURCES  
+		SERVICES			S|S|R|E|D
+		PACKAGES			I | R |U		
+		USER				C | D |M
+		GROUPS
+		
+===========================================================
+REPO - https://github.com/scmgalaxy/emc-chef
+
+Lets Write First Program?
+
+file "file1.txt" do
+	action :create
+end
+
+file "file2.txt" do
+	content "This is my first program of the day"
+end
+
+directory "src"
+
+file "src/file1.java"
+
+file "file1.txt" do
+	action :delete
+end 
+
+file "file1.txt" do
+	action :delete
+end
+
+file "readme.txt" do
+	mode 755
+end
+
+===================================
+ASSSIGNMENT  1
+Install a web server and start|enable and create your own index.html with
+
+Step 1. install httpd
+> package
+Step 2: enable the services httpd
+> service
+Step 3: start the service
+> service
+Step 4: create a file named "index.html" to  /var/www/html/
+> file
+
+package "httpd"
+
+service "httpd" do
+	action :enable
+end
+
+service "httpd" do
+	action :start
+end
+
+file "/var/www/html/index.html" do
+	content "<h1> Hello EmC </h1>"
+end
+
+
+===================================
+ASSSIGNMENT  2
+
+Use the "bash" resources using linux commands.
+		Create a directory
+		create a file inside within a directory
+
+Solution
+=====================
+bash 'Execute my script' do 
+  code <<-EOH
+	mkdir dir1
+      	touch dir1/filename.txt
+    
+  EOH
+end
+
+
+
+Sample
+---------
+bash 'Execute my script' do 
+  user 'root'
+  cwd  '.'
+  code <<-EOH
+    mv file2.txt hhahah.txt
+  EOH
+end
+
+bash 'Execute my script' do 
+  cwd  '.'
+  code <<-EOH
+    mv hhahah.txt file2.txt
+  EOH
+end
+
+bash 'Execute my script' do 
+  code <<-EOH
+    mv file2.txt ramu.txt
+  EOH
+end
+
+=======================================================
+Cookbook - Collection of Recipe
+		Attritubes
+		Lib
+		file
+		templates
+		dependencies
+		copyrigh
+		author	
+
+How to generate cookbooks?
+> chef generate cookbook <<name>>
+
+How to converse the cookbook using chef-client in localmode?
+> chef-client --local-mode --runlist 'recipe[web]'
+
+===========================================================
+Creating a template with cookbook.
+> cd coobooks
+> chef genetate template web index.html
+
+under default.rb
+---------------------
+template '/var/www/html/index.html' do
+  source 'index.html.erb'
+  owner 'root'
+  group 'root'
+  mode '0755'
+end
+
+
+
+How can you other recipe as part of cookbook?
+chef-client --local-mode --runlist 'recipe[web::server]'
+
+Example of Attributes
+https://github.com/scmgalaxy/chef-repo
+
+
+Reserved Questions
+----------------------------
+What is the use of default directory under templates
+How chef read the system statistics?
+How to export path to system using bash chef resources?
+
+
+
+
+
+
+
+

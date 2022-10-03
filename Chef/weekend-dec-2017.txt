@@ -1,0 +1,98 @@
+What is Chef?
+	Config mgmt tool
+	Writeen in Ruby
+
+What is Config mgmt?
+	SERVERS Config mgt
+
+What exactly you have in servers so we manage the config?
+	file
+	directory
+	package
+	service
+	user
+	group
+	anything else
+
+Using Chef we manage the config of the servers resources.
+
+Why Chef?
+	Easy to learn/debug/test/extend compare to langauage like ruby, java etc
+	Cross Platform
+	IDEOPOTENT
+		DESIRE STATE === ACUTAL ==>DESIRE STATE
+
+What is the Roles We have in Chef?
+	Chef Programmer
+	Chef Admin
+
+How to write program?
+	You need to become a Chef
+
+CHEF --> RECIPE			---> COOKBOOK(RECIPES) --> COOK --> KITCHEN --> FOOD
+		INGREDIENT + HOW
+		RESOURCES				  CHEF-CLIENT --> KITHEN(SERVER)
+RESOURCES		PROPERTY    		ACTIION
+file						C | D | M
+directory					C | D | M
+package						I | R | U |M
+service						S | S \ E | D
+https://docs.chef.io/resources.html
+
+How to write recipe?
+		collection of Resources, Properties and action
+
+How to store recipe?
+filename.rb
+
+How can you single recipe?
+chef appy filenae.rb
+
+IF YOU WANT T BECOME A JAVA PRO ---JDK
+		CHEF		- CHEFDK
+    1  clear
+    2  cd
+    3  yum install wget
+    4  wget https://packages.chef.io/files/stable/chefdk/2.4.17/el/7/chefdk-2.4.17-1.el7.x86_64.rpm
+    5  ls
+    6  rpm -ivf chefdk-2.4.17-1.el7.x86_64.rpm
+    7  chef
+    8  chef -v
+    9  history
+
+FIRST RECIPE  - Create a file name
+==========================================
+file 'file1..txt' do
+  action :create
+end
+
+directory "src"
+
+file 'file2..txt' do
+  action :create
+  content "This is my first file"
+end
+
+package 'httpd'
+
+service 'httpd' do
+  action :start
+end
+=================================
+How too create a cookbook ske?
+> chef generate cookbook web
+
+How to test cookbook>
+chef-cilent
+	in localmode
+
+chef-client --local-mode --runlist 'recipe[web]'
+
+
+
+
+
+
+
+
+	

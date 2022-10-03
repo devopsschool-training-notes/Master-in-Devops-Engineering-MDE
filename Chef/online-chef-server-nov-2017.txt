@@ -1,0 +1,139 @@
+
+Chef Server
+====================================================
+1000s Server
+
+INFOSYS
+================================
+Many Departments == Many Accounts == Many Clients = 50 Account == 100 Employees ==
+==================================================
+My network | my apps | my laptop | my policy | my accesss
+
+USING CHEF= 5
+
+==============================================
+Organization
+=============================================
+
+
+CompX(Project) ===> 1000s Server
+==============================================
+Environments
+=============================================
+Dev
+QA
+Staging
+Integ
+Production
+
+============================================
+Roles
+=============================================
+Dev		- 100 SERVERS
+			WEB SERVER	5
+			DB SERVER	2
+			APP SERVER	10
+			CAHCE SERVER	2
+			LOGIN S		2
+			LOAD BAL	2
+		
+Production	- 500 SERVER
+			WEB SERVER
+			DB SERVER
+			APP SERVER
+			CAHCE SERVER
+			LOGIN S
+			LOAD BAL
+
+
+HOW
+===================================
+COOKBOOKS
+WORKSTATION
+
+CHEF SERVER			DONE
+		COMMAND LINE		Open Source
+		WEB			Web		CHEF-MANAGE
+
+		USER	
+> chef-server-ctl user-create rajeshkumar Rajesh Kumar devops@rajeshkumar.xyz 'pass1234' --filename rajeshkumar.pem		
+		ORGANIZATION
+> chef-server-ctl org-create scmgalaxy 'scmgalaxy Coffee, Inc.' --association_user rajeshkumar --filename scmgalaxy.pem		
+
+NODES(CHEF-CLIENT)
+
+
+
+127.0.1.1 13.126.60.209 chef-server
+127.0.0.1 localhost
+13.126.60.209 13.126.60.209 chef-server
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+===================================================================
+
+
+ORGANIIZATION
+USERS
+GROUPS
+
+NODES
+
+Cookbooks
+Roles
+Env
+============================================
+
+Knife is a tool which helps a Chef Admin to connect to chef server.
+		knife --> knife.rb(address, org and permission)
+
+
+		knife ==> knife.rb (USER_HOME/.chef/nife.rb) && (CURR_DIR/.chef/nife.rb)
+
+How to configure knife.rb?
+
+Step X - Setup a knife.rb
+
+Step Y - Verify 
+> knife ssl check
+> knife ssl fetch
+> knife node list
+> knife cookbook list
+
+
+Step 1 - Create a Cookbook and Write  a recipe? - DONE
+
+Step 2 - Upload a cookbook to Chef Server - DONE
+
+Step 3 - Register(Bootstraping) your nodes in Chef Server - DONE
+knife bootstrap ADDRESS --ssh-user USER --sudo --identity-file IDENTITY_FILE --node-name node1
+> knife bootstrap 13.126.16.32 --ssh-user ec2-user --sudo --identity-file node.pem --node-name node1
+
+IP ADDRESS - 13.126.16.32
+USER  - ec2-user
+PASSWORD - pem 
+
+SPECIAL STEP ONE TIME - Assign a cookbook to a node
+
+Step 4 - Run it cookbook(s) on
+			single node | Multiple node
+			> knife ssh 'name:*' 'sudo chef-client' --ssh-user ec2-user --identity-file node.pem
+
+			muliple nodes using roles
+			multiple nodes using env
+
+WHERE DO YOU GET NEW MACHINE?
+		chef --> vmware --> bootrap --> run the cookbook
+		aws
+		azure
+		docker
+
+What you have in node?
+	chef-client is running with chef server speci
+		
+
+
+
+
+
+
+
+

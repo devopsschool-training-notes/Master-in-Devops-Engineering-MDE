@@ -1,0 +1,21 @@
+CHEF ATTRIBUTES
+
+================================
+Create a cookbook "webport" using knife where you
+	1. Install httpd
+	2. Replace httpd.conf with template
+	3. Have one Attributes in attributes/default.rb (Attributes Initialization)
+		default['apache']['port']          = '1223'
+		default['apache']['message']          = 'Hello World!'
+
+	4. Use the attributes in template httpd.conf.erb using default['apache']['port']
+		<%=node['apache’]['port'] %>
+	5. Use the attribute in recipes/default.rb using default['apache']['message']
+		#{node['apache']['message']}
+	 
+	6. Run the cookbook and experience the changes
+
+Example Program MORE -
+https://github.com/scmgalaxy/chef-repo
+Cookbook name - chef-attributes1
+Cookbook name - learn_chef_httpd

@@ -1,0 +1,70 @@
+Step 1 - Setting up a CHEF Server
+http://www.devopsschool.com/tutorial/chef/chef-server-install-configuration-in-centos7.html
+
+
+Step 2- Setup and confiure Workstation
+	1. Install chefdk for knife command
+	2. Configure knife.rb
+		CHEF SERVER
+		USER NAME
+		KEY
+QUICK START - 
+
+Step 3: Upload a cookbook
+> knife cookbook upload <<name>>>
+
+Step 4: Bootstrap a node
+
+Password - 
+> knife bootstrap ADDRESS --ssh-user USER --ssh-password 'PASSWORD' --sudo --use-sudo-password --node-name node1
+
+Key - 
+> knife bootstrap 13.126.93.88 --ssh-user ec2-user --sudo --identity-file node.pem --node-name node1
+
+Step 5: Assocte a cookbook to a node
+CLI
+> knife node edit node-name
+GUI
+> 
+Step 6: 
+> knife ssh 'name:node1' 'sudo chef-client' --ssh-user ec2-user --identity-file node.pem
+> knife ssh 'name:node1' 'sudo chef-client' --ssh-user USER --ssh-password 'PASSWORD'
+
+
+Implement a roles
+======================================
+Step 1 - Create a role
+&
+Step 2: Assign a role with Cookbooks
+  25  clear
+   26  knife role create database-team
+   27  export EDITOR=vi
+   28  knife role create database-team
+   29  knife role list
+
+
+Step 3: Bootstrap a node
+knife bootstrap 13.126.93.88 --ssh-user ec2-user --sudo --identity-file node.pem --node-name node1
+knife bootstrap 35.154.153.49 --ssh-user ec2-user --sudo --identity-file node.pem --node-name node2 
+
+Step 4: Assign a node to Role.
+
+
+Step 5: Call the Role....
+> knife ssh "role:database-team" 'sudo chef-client' --ssh-user ec2-user --identity-file node.pem
+
+
+
+
+
+
+Questions
+===================
+client.rb file setup using chef server
+coverging in nodes and monitor live logs
+
+chef-server-ctl user-create rajeshkumar Rajesh Kumar rajesh@scmgalaxy.com 'emc1234' --filename rajeshkumar.pem
+
+chef-server-ctl org-create emc 'emc 2, Inc.' --association_user rajeshkumar --filename emc-validator.pem
+
+How to configure client.rb automaticlly

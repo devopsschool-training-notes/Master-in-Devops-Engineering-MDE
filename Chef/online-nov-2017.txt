@@ -1,0 +1,211 @@
+What is Chef?
+Configuration mgmt tool.
+
+What is Config mgmt?
+	SErVERS CONFIG MGMT
+
+What is SERVERS?
+	OS + APPS
+
+WHAT IS THERE IN SERVERS WHICH YOU MANAGE CONFIGURATION OF THOSE ELEMENTS?
+	HARDWARE
+		CPU
+		RAM
+
+	SOFTWARE
+		package
+		file
+		directory
+		services
+		batch
+		bash	
+		yum
+		apt
+		nuget
+
+	PEOPLE
+		user
+		groups
+
+	PROCESS
+		ap policy
+		user pol
+
+Why Chef?????????
+=======================================
+JAVA | C++  | Perl | Python
+	
+	THIS IS APPP PROGRAMMING
+	CHEF IS FOR INFRA
+		DIFFICULT TO
+				LEARN
+				WRITE
+				TEST
+				DEBUG
+				EXTEND
+				SHARE
+
+
+
+BASH | BATCH
+			IS NOT CROSS PLATFORM
+			BASH - LINUX
+			BATCH - WIN
+
+
+SOLUTIONS
+===============================================
+CHEF, PUPPET, ANSIBLE, SALT
+
+MAJOR BENFITS OF CHEF
+=============================
+	IT CAN MANAGE THE STATE OF EACH ELEMENTS(REsources) in LARGE NUMBER OF SERVER in ONE TIME
+
+CAN BE USED
+		APP DEPLOYEMENT TO LARGE NUMBER OF SERVERS
+		IT DEPLOYMENT "
+
+=================================================================================
+ROLES IN CHEF?
+	CHEF PROGRAMMER - WRITE + TESTING
+
+	CHEF ADMIN - MANAGE THE LARGE NUMBER OF SERVERS + APPLY CODE GIVEN BY PRO ON THE SERVERS
+
+
+HOW CHEF WORKS???
+===========================================
+SERVER | CLIENT | WORKSTATION
+
+How to become a chef Programmer?
+======================================
+JAVA === > JDK
+
+CHEF ===> CHEFDK
+https://packages.chef.io/files/stable/chefdk/2.3.4/el/7/chefdk-2.3.4-1.el7.x86_64.rpm
+
+
+KITHEN ===> COOK == RECIPE ==> COOKBOOKS
+
+YOU(CHEF) ==> RECIPE(S) ==> COOKBOOKS
+		IGREDIENTS
+		HOWS   ===COOK() ===> KITCHEN ==> FOOD
+============================================================
+YOU(CHEF) ==> RECIPE(S) ==> COOKBOOKS
+		IGREDIENTS(RESOURCES)
+		HOWS   ===COOK(CHEF-CLIENT) ===> KITCHEN(SERVERS) ==> FOOD(OUTCOME)CHANGED THE CONFIG
+
+CHEF IS EXPERT IN 
+IGREDIENTS		 PROPERTIES 		HOW?		action
+-----------------------------------------------------------------
+RESOURCES		PROPERTIES 		HOW?		action
+file								create | de | ed
+directory							create | de | ed
+package								I | R | U
+services							S | S |R |E | D
+user
+group
+
+WHAT IS RESOURCES AND WHERE CAN I FIND IT??
+
+
+Chef Recipe must be saved in filename.rb | filename.java
+Chef Recipe must be tested using chef-apply
+
+
+Small Projects
+=====================================================
+Set up a Web Server
+=====================================
+1. install a web server(httpd)	- DONE
+2. copy the index.html in webser - DONE
+3. start a services
+
+package "httpd"
+
+file "/var/www/html/index.html" do
+        content "<h1> This is Hello </h1>"
+end
+
+service "httpd" do
+        action :start
+end
+
+
+execute a script? - BASH
+bash 'mycommand' do
+  environment 'PATH' => "/my/path/to/bin:#{ENV['PATH']}"
+end
+
+
+bash 'install_something' do
+  user 'root'
+  cwd '/tmp'
+  code <<-EOH
+  wget http://www.example.com/tarball.tar.gz
+  tar -zxf tarball.tar.gz
+  cd tarball
+  ./configure
+  make
+  make install
+  EOH
+end
+
+script 'install_something' do
+  interpreter 'bash'
+  user 'root'
+  cwd '/tmp'
+  code <<-EOH
+  wget http://www.example.com/tarball.tar.gz
+  tar -zxf tarball.tar.gz
+  cd tarball
+  ./configure
+  make
+  make install
+  EOH
+end
+=====================================================
+COOKBOOKS
+====================================================
+TItle
+Author
+Preface
+Version
+Reference
+Glosaary
+Chapter
+Content		=== RECEIPE
+Index
+
+===================================
+Skeleton of cookbooks
+==============
+> chef generate cookbook web
+
+
+
+> chef-client --local-mode --runlist 'recipe[web]'
+==
+> chef-client --local-mode --runlist 'recipe[web::default]'
+
+
+> chef-client --local-mode --runlist 'recipe[web::start]'
+
+
+include_recipe web::start
+
+
+
+
+include_recipe 'web::default'
+
+
+
+
+
+
+
+
+
+
+
+

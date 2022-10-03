@@ -1,0 +1,228 @@
+What is CHEF?
+=======================
+	Configuration management tool.
+
+What is Configuration Mangement?
+=====================================
+	SERVERS CONFIG MGMT
+
+What you have in the servers to manage their configuration?
+============================================================
+	file
+	directory
+	package
+	services
+	bash
+	batch
+	yum
+	apt
+	
+SIMPLE - Whatever you see in ther servers, that is your configuration items.
+
+THESE ARE CALLED "RESOURCES".
+===============================================
+WHY CHEF?
+	bash
+	batch
+	perl
+	python
+	ruby
+	java
+
+bash-batch
+	EASY TO LEARN
+	EASY TO SHARE
+	EASY TO EXTEND
+	EASY TO DEBUG
+	EASY TO TEST
+
+	NOT COMPATIBLE WITH ALL OS
+	NOT ONE VERSION OF PS WILL WORK ON ALL WINDOWS PLATFORM
+	NOT ONE VERSION OF SHELL WILL WORK ON ALL LINUX PLATFORM
+
+perl-python-ruby-java
+	DIFF TO LEARN
+	DIFF TO SHARE
+	DIFF TO EXTEND
+	DIFF TO DEBUG
+	DIFF TO TEST
+
+COMPARE TO CHEF
+	EASY TO LEARN
+	EASY TO SHARE
+	EASY TO EXTEND
+	EASY TO DEBUG
+	EASY TO TEST
+	&&&&&&
+	ONE SCRIPT WILL WORKS ON ALL PLATFORM
+
+	IT MANAGES THE STATE OF THE EACH RESOURCES
+		FILE		NOT RERUN
+		SERVICES	NOT RERUN
+		PACKAGE		NOT RERUN
+
+	IT MANAGES LARGER NUMBERS OF SERVERS & STATE OF THE RESOURCES
+		200 SERVERS DEP at ONE GO
+==============================================================
+WHAT ARE THE ROLES IN CHEF?
+	CHEF PROGRAMMERS
+	CHEF ADMIN
+==================================
+HOW TO BECOME A CHEF PROGRAMMERS???
+	JAVA DEV	-- JDK
+	CHEF DEV	-- CHEFDK
+==================================
+I AM FEELING HUNGRY
+========================
+SANDWICH(FOOD) --> RECIPE
+			--> INGRIENDENTS
+			--> HOW
+
+				---------> COOKBOOKS
+
+WHAT YOU CAN FIND IN COOKBOOKS?
+		TITLE 
+		AUTHOR NAME
+		INDEX
+
+		CHAPTERS		RECIPE
+
+		GLOSSARY
+		PREFACE
+		THANK
+===========================================
+COOK ==> RESOURCES(INGRIENDENTS) ==> RECIPES ==> COOKBOOKS
+	 (KITCHEN)
+
+TODAY YOU HAVE TO BECOME A CHEF?????
+
+CHEF PROGRAMMMER === CHEF 
+CHEF ADMIN ===== COOK
+KITCHEN == SERVERS
+INGRIENDENTS === RESOURECES
+			PROPERTIES		ACTIONS
+	SALT
+	SUGAR
+	TUMERIC
+	RICE
+
+	file					CREATE | DELETE | MODIFY					directory				CREATE | DELETE | MODIFY				
+	package					INS | R | M
+	services				S |S |R | E | D
+	bash					RUN THE COMMANDS
+	batch
+	yum
+	apt
+	
+==================================================
+CHEF == RECIPE ==(RESOURCES + HOW)
+
+==================================================
+How to install ChefDK?
+    1  clear
+    2  ls
+    3  cd
+    4  pwd
+    5  yum install wget
+    6  clear
+    7  wget https://packages.chef.io/files/stable/chefdk/2.2.1/el/7/chefdk-2.2.1-1.el7.x86_64.rpm
+    8  clear
+    9  ls
+   10  rpm -ivh chefdk-2.2.1-1.el7.x86_64.rpm
+   11  clear
+   12  ls
+   13  chef -v
+   14  history
+
+
+How to store your recipe?
+filename.java === filename.rb
+
+=============================================
+file "file1.txt" do
+        action :create
+        owner "ec2-user"
+        content "Hello World from scmGalaxy"
+end
+
+file "file2.txt" do
+        action :delete
+end
+
+directory "src"
+
+file "src/file1.java" do
+        content "This is your java program"
+end
+
+package "httpd"
+
+service "httpd" do
+        action :start
+end
+
+file "/var/www/html/index.html" do
+        content "Hell to scmGalaxy"
+end
+
+
+file '/tmp/rajesh.txt' do
+  mode '0755'
+  not_if do
+    File.exist?('/etc/passwd')
+  end
+end
+
+file '/tmp/rajesh1.txt' do
+  mode '0755'
+  only_if do File.exist?('/etc/passwd') end
+end
+=================================================
+
+
+How to write recipe?
+RECIPE ==(RESOURCES + HOW)
+
+How to run Recipe?
+> chef-apply filename.rb # for SIngle recipe
+
+How create cookboook?
+=======================================
+> chef generate cookbook webserver
+
+
+How to run Cookbook?
+> chet client == TOOLS === EACH SERVER == 
+> chef solo == DEVOPSS SCHOOL
+================================
+chef-client --local-mode --runlist 'recipe[webserver]'
+
+chef-client ==> "cookbooks" directory
+
+
+
+file
+include
+lib
+tempates
+attributes
+
+[[[[[CHEF ADMIN]]]]]]]]]]]]]]]]]]]]]]]]]
+	
+How to Setup a CHEF SERVRR?
+HOw to Setup a KNIFE 
+How to upload Cookbooks?
+How to Register Nodes on the servers?
+How to send instructtions to the chef server via Knife
+http://www.devopsschool.com/video/chef/chef-server-roles.html
+
+CHEF ROLES======================
+	
+
+
+	
+
+
+
+
+

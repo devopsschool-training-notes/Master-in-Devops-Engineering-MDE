@@ -1,0 +1,256 @@
+What is Chef?
+	Config mgmt tool.
+
+What is Config mgmt?
+	SERVERS CONFIG MGMT
+	MULTIPLE SERVER.....
+What is there in the server so u manage their config?
+	file
+	dir
+	package
+	service
+	apt
+	yum
+	host
+	net
+	user
+	group
+	bash
+
+Why Chef?
+	JAVA | C++ PY PERL
+	DIFFCULT TO LEARN|SHARE|EXTEND | TEST | DEBUG
+
+	BASH | BATCH
+	LINUX   WINDOWS
+
+	NOT HAVING ABILITY TO MANAGE LARGE NUM OF SERVERS>..
+	1 SER - 20 MINS
+	20 SER - 20 X 20 = 400 MINS
+
+
+WE need a tool which has 
+	Easy LEARN|SHARE|EXTEND | TEST | DEBUG
+	Cross Platform
+
+	1 SR - 20 MINS
+	1000 - 20 MINS
+	Ie. Ability to manage a large num of server..
+
+	IDEOMPOTENT
+	1ST TIME - 1 SERVER - 20 MINS
+	2nd TIME - 1 SERVER - 20 MINS
+CHEF 	2nd TIME - 1 SERVER - 2 - mins
+	
+	cOST SAVE
+	
+	SPEED
+	
+	INCONISTENCY SERVER MGMT
+
+=====================================
+OTHER TOOLS -  CHEF, PUPPET, ANSIBLE, SALT
+==============================================
+ROLE IN CHEF??
+
+CHEF PROGRAMMER -- A PERSON WHO IS GOING TO WRITE CHEF PROGRAM, TEST AND GIVE IT TO ADMIn
+CHEF ADMIN - MANAGES THE SERVS AND APPLY THE CHEF RPOGRAM.....
+
+How to become a chef programmers????
+---------------------------------------
+RAJESH -> COOK --> KITCHEN
+			RECIPE				RECIPE(S) COOKBOOKS(CHEF)
+				INGREDIENTS + HOW
+
+CHEF -> COOKBOOKS -> RECIPES => ING + HOW 				=> KITCHEN = FOOD
+				RESOURCE + ACTION+PROP	     		SERVER
+
+How to know list of all Resouseces??
+https://docs.chef.io/resource_reference.html#resources	
+Resources			action			property
+========================================================================
+file				C	
+directory
+package 
+service
+
+What is Recipe?
+	Collection of Resources, Their actions and Attributes
+	Stored .rb
+
+How to test single recipe?
+chef-apply filename.rb
+
+What is Cookbooks?
+	Colleciton of Recipe + ++++++++
+
+35.154.26.63
+JAVA PRGRAM
+=======================
+JDK -> JAVA -> CLASS --> JAR --> DEP 2 SERVER
+CHEFDK - RECIPE ------- Cookbooks ---> SERVER
+
+Create a file using Chef?
+Create a dir using chef?
+Create a file with content
+Install webserver
+Start webserver
+Stop webserver
+replace index.html
+
+
+file '/opt/file1.txt' do
+  action :create
+end
+
+file '/opt/file1.txt' 
+
+file '/opt/file2.txt' do
+ content "This is my first chef program"
+ end
+
+directory "/opt/src" do
+ action :create
+end
+
+file '/opt/file1.txt' do
+ action :delete
+end
+
+package "httpd" do
+ action :install
+end
+
+service "httpd" do 
+ action :start
+end
+
+
+=========================================
+JAVA --> JUNIT --> PACK --> AT(Sel) --> DEPLOY
+STATIC CODE ANA --> SONARQUBE
+
+CHEF --> RSPEC  -- COOKBOOK --> TEST KITCHEN (INSpec) - PRODUCTION
+Chef - Foodcritic
+
+
+How to write a cookbook?
+book name
+authorname
+profeace
+index
+glosss
+version...
+chaptor------recipe.....
+
+How to create a ske of cookbooks?
+$ chef generate cookbook webserver
+JAR -- Main Method...
+
+How to test cookbook in local???
+$ chef-client --local-mode --runlist 'recipe[webserver]'
+$ chef-client --local-mode --runlist 'recipe[webserver::file1],recipe[webserver::dir]'
+
+default.rb
+
+cookbooks/webserver
+
+include_recipe webserver::dir
+include_recipe webserver::file
+include_recipe webserver::insall
+include_recipe webserver::start
+
+/var/www/html/index.html
+
+
+template '/var/www/html/index.html' do
+  source 'index.html.erb'
+  owner 'root'
+  group 'root'
+  mode '0755'
+end
+
+YOUR TASK AS A PROGRAMMER IS DONE..
+CODE - 
+UT
+AT IT 
+
+
+==============================
+
+YOU NEED TO BECOME A ADMIN
+
+What is ORG
+	A Separte entity which has seprate cookbooks, severvs, etc.....
+What is Role 
+	 A list of servers named for specific fucntiona and....specific cookbooks are avaiable....
+
+What is env....
+
+
+How to setup Chef Server?
+13.232.86.107
+http://www.devopsschool.com/tutorial/chef/chef-server-install-configuration-in-centos7.html
+
+
+  
+127.0.1.1 13.232.86.107 chef-server
+127.0.0.1 localhost
+13.232.86.107 13.232.86.107 chef-server
+
+chef-server-ctl user-create rajeshkumar Rajesh Kumar devops@RajeshKumar.xyz 'password123' --filename rajeshkumar.pem
+
+chef-server-ctl org-create 4thcoffee 'scmgalaxy' --association_user rajeshkumar --filename scmgalaxy.pem
+
+How to setup a Workstation
+knife
+	ip add of chef server		>>>>>> knife.rb
+	org
+	key
+
+knife => knife.rb
+	$USER_HOME/.chef/knife.rb
+	$CURR/.chef/knife.rb
+
+How to upload Cookbook to Chef Server		DONE
+
+How to Setup a Node to chef Server
+13.127.67.5
+52.66.136.43
+
+BOOTSTARPING...
+knife bootstrap 13.127.67.5 --ssh-user ec2-user --ssh-password '{{password}}' --sudo --use-sudo-password --node-name node1 --run-list 'recipe[learn_chef_apache2]'
+
+knife bootstrap 13.127.67.5 --ssh-user ec2-user --sudo --identity-file node.pem --node-name node2
+knife bootstrap 52.66.136.43 --ssh-user ec2-user --sudo --identity-file node.pem --node-name node1
+
+	1. Install Chef-client
+	2. /etc/chef/client.rb
+				CHEF SERVER
+				CERTIFICATE
+	3. RUN
+
+
+Bootstrap a node: Use a file that contains a private key
+
+Run the Cookbooks?
+MAPPING BETWEEN NODE AND COOKBOOKS...
+
+
+knife ssh 'name:*' 'sudo chef-client' --ssh-user ec2-user -i node.pem
+knife ssh 'name:node1' 'sudo chef-client' --ssh-user ec2-user -i node.pem
+knife ssh 'name:node2' 'sudo chef-client' --ssh-user ec2-user -i node.pem
+
+Role
+
+1. Create a role...
+2. Specify the multiple cookbook in the role
+3. 
+
+knife ssh "role:web" "sudo chef-client" --ssh-user ec2-user -i node.pem
+
+
+
+
+
+

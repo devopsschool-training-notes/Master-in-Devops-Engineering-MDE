@@ -1,0 +1,120 @@
+
+What is Chef?
+is a Config mgmt tool.`
+
+What is Config mgmt?
+SERVERS Config mgmt
+
+What is there in SERVER to manage their config?
+file
+dir
+services
+package
+user
+group
+os
+ram
+cpu
+
+Why we need a Chef?
+1. PLATFORM INDEPENDENT - ALL THE PLATFORM SAME SCRIPT
+
+PERL
+PYTHON
+DIFF TO LEARN
+DIFF TO EXTEND
+DIFF TO SHARE
+DIFF TO DEBUG
+BASH
+BATCH
+NOT CROSS PLATFORM
+2. Managing the Large Number of Servers with
+Consistency
+Visibility
+Standard process
+
+Senario of Deployment
+SoftX --> 100 SERVERS
+50 SERVER - WIN
+50 SERVER - LINUX
+UB
+RHEL
+
+25 SERVER - WL
+25 SERVER - JBOSSS
+25 SERVER - WS
+25 SERVER - TOMCAT
+
+25 SERVER - mysql
+25 SERVER - mssmql
+25 SERVER - oracle
+25 SERVER - post
+
+100 DIFF
+
+=====================================
+2 MINS
+
+ROLES IN CHEF
+CHEF PROGRAMMER --> COOKBOOKS
+CHEF ADMIN - APPLY THE COOKBOOK In SERVER
+
+Hungry-->food-->cook-->recipe-->cookbook-->CHEF
+YOU ---> RECIPE ---> COOKBOOK --> COOK(chef-client) --> KItEhCHN(SERVER)
+
+How to become a Chef Programmer?
+> Install ChefDk
+
+> wget https://packages.chef.io/files/stable/chefdk/1.4.3/el/7/chefdk-1.4.3-1.el7.x86_64.rpm
+> rpm -ivh chefdk-1.4.3-1.el7.x86_64.rpm
+> chef -v
+
+How to write a recipe? (Ingredients(Resources) + How(property + Action))
+Resources Property Actions
+salt while/black/thick saltness |
+
+file
+dir
+services
+package
+user
+group
+
+Where to refel all resources and their action / property
+https://docs.chef.io/resources.html
+
+How to write a recipe?
+file name - filename.rb
+
+How to apply the recipe?
+> chef-apply
+
+How to check the syntax?
+> ruby -c filename.rb
+
+WEB SERVER
+=================================
+package "httpd" do
+  action :install
+end
+
+file "/var/www/html/index.html" do
+  content "<h2> hello guys </h2>"
+  mode 644
+end
+
+service "httpd" do
+  action :start
+end
+
+service "httpd" do
+  action :enable
+end
+
+How can you write a cookbook and test it?
+> yum install tree
+> chef generate cookbook web
+> mkdir cookbooks
+> mv web cookbooks/
+> mv webserver.rb web/recipes/default.rb
+> chef-client --local-mode --runlist 'recipe[web]'
