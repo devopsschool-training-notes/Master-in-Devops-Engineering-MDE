@@ -1,0 +1,25 @@
+Why Jacoco?
+
+Code -> build --> Package --> Repo --> Deploy -- QA
+
+SonarQube - Quality of the source code - Dev
+
+Test Coverage  | Code Coverage
+% of test cases | % of test
+
+Jacoco, CObertura, coverity, Emma, etc
+
+
+CObertura - Instrument the code  - Package - Deploy
+Jacoco --- Run time -
+
+Test Coverage  | Code Coverage
+% of test cases | % overall testing
+
+SoftwareX  - 100 Class - 50 Test cases(30 class)
+When i run - 50 test cases .....................
+What will be my max test coverage? 100% - 60%
+What will be my max code covergae? 10% 20%
+
+
+https://github.com/scmgalaxy/jacoco-maven.git

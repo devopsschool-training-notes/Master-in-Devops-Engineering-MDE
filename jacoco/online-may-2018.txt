@@ -1,0 +1,127 @@
+START OF THE PROJECT (Where is the Jacoco firtting on SDLC)
+============================
+PLAN -> CODE -> ANALYSIS -> BUILD -> UT -> PACK -> Dep2Repo -> Dep2QA -> AT -> CodeCoverge
+---------------------------------------------------------------------------------------------
+JIRA -> GIT -> SONARQUBE -> MAVEN -> JUNUT -> JAR -> NEXUS --> PUPPET -> SELENIUM --> Jaococo
+
+What is Jacoco?
+	Code Coverage tool
+
+What is Code Coverage?
+	is a process to know automatcially what is % of the Code has been tested.
+						======
+	LINE IS COVERED OR NOT?
+	METHOD IS COVERED OR NOT?
+	BLOCK IS COVERED OR NOT?
+	CLASS COVERED OR NOT?
+	-----------------------
+	PACKAGE is COVERED OR NOT
+
+file1.java(5method + 100 lines) ->  file1.class -> file1.jar -->  JVM
+	How many method? How many lines has been covered? ====%
+
+Benefit
+	A TEST TEAM -> Write a Test Code --> Covering the required % of the code or not????
+	DEV TEAM -- Juunit ----Covering the required % of the code or not????
+	RELEASE - OVERALL TESTING is done one all the code or not??
+	CLIENT - Testing team + Dev Team + release team
+
+
+CODE COVERAGE IS NOT FUNCTIONAL TEST COVERAGE
+=============================================
+
+What is other tools available?
+	JACOCO	 - JAVA 
+	Cobertura - JAVA
+	Emma - JAVA
+	NCOVER - DOTNET
+
+
+How Sonarqube integrate with CodeCoverage?
+	SonarQube automatically integration with
+			JACOCO
+			Cobertura
+
+
+How it works?
+	using Jacoco Agent....
+
+	JACOCO is reading your JVM and reading the Loaded file for the 
+		package/class/method and capture into .exec.
+
+Diff beween JACOCO and COBERUTRA
+=========================================
+COBERTURA NEEDS INSTRUMENTATION OFFLINE
+				=======
+JACOCO CAN INSTRUMENT DYNAMICALLY
+
+APP.JAR(CLASSES) --> BYTE INSTRUMENTATIONS --> JVM --> COBERTURA (.ser)
+JACOCO - I it can instrument dynamcitally the moment you say you want to cover only for APP.JAR
+
+
+What is the process of Code Coverage?
+	INSTRUCMENT a binary(not needed iN jacoco)
+		loAD IN jvm
+			RUN THE TEST CASES
+				GET A DATAFILE .EXEC(jACOCO) .SER cOBERTURA
+					cONVERT THAT DATA FILE INTO html REPORT......
+		
+
+What is Diff between Code Coverage & Test Coverage???
+-----------------------------------------------------
+app.JAR (100 classs) -- 100(tEST FIle)				CODE COVERAGE	TEST Coverage		
+app.jar		     -- 50 test case cover 50 class		50%		50%
+app.jar 	        30 test cases which wil 80 class	80%		30%
+
+CODE COVERAGE ---% of the Code has been covereed
+TEST COVERAGE ---% of the test cases has been run
+
+
+How to install it?
+	Manual ---> jacoco.jar --JVM(APP SERVER (JBOSS, TOMCAT, WL, WS)
+	Maven--> pom.xml , include a jacoco plugins...
+			mvn verify
+	Ant -- build.xmls
+
+
+
+How to configure it?
+https://github.com/scmgalaxy/jacoco-maven-unittestv2
+
+mvn verify
+	compile
+	unit test
+	package
+	integ test
+	verify
+
+Reports - D:\jacoco-maven-unittestv2\target\site\jacoco\index.html
+datafile - D:\jacoco-maven-unittestv2\target\jacoco.exec
+
+
+Prject Example
+Jacoco Example for Multi-Module projects using Gradle	
+https://github.com/scmgalaxy/jacoco-example
+
+JaCoCo for different JVM languages
+	Groovy
+	Java
+	Kotlin
+	Scala
+	xtend
+https://github.com/scmgalaxy/jacoco-maven-examples
+
+
+
+
+
+
+What is DOTNET coverage?
+NCOVER
+
+What are list of testing tools
+https://www.cigniti.com/blog/list-of-top-100-software-testing-tools/
+
+Reference
+https://www.jacoco.org/jacoco/trunk/doc/cli.html
+http://www.devopsschool.com/tutorial/jacoco/
