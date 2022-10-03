@@ -1,0 +1,37 @@
+What is Jira?
+
+	Issue Tracking tool
+	Bug Tracking tool
+	Project Mgmt
+	Task mgmt
+	feature mgmt
+	Planning
+	Agile
+	Scrum
+
+	Jira from Atlasstion
+	dev in Java
+
+why we need Jira?
+
+
+How to install Jira?
+
+	> cd /opt/
+	> yum install wget -y
+  	> ls
+	> wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+	> rpm -ivh jdk-8u131-linux-x64.rpm
+
+$ wget https://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-software-7.8.1-x64.bin
+$ chmod 755 atlassian-jira-software-7.8.1-x64.bin
+$ ./atlassian-jira-software-7.8.1-x64.bin
+JIRA GOT INSTALLED AT 
+/opt/atlassian/jira
+http://13.126.219.60:8080/
+
+
+
+
+
+

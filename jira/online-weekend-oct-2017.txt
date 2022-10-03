@@ -1,0 +1,33 @@
+What is Jira?
+	ISSUES/BUG TRACKING TOOL
+	TASK mgmt
+	INCIDENTS MGMT
+	PROJECT MGMT TOOL
+	AGILE TOOLS
+	SCRUM
+	KANBANN
+	FROM ATLASTION
+	DEV USING JAVA
+
+
+
+WHY JIRA?
+	We want to do software dev in defined processed manner with the tranparency and accountability.
+
+OTHER TOOLS
+	SERVICENOW, RALLY, TREEO(MS), 
+
+How to install JIRA?
+	JAVA
+		JDK
+		JRE
+
+	JIRA
+
+https://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-software-7.5.0.tar.gz
+	
+	
+	
+
+
+

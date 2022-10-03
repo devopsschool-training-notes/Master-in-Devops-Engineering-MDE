@@ -1,0 +1,86 @@
+What is Jira?
+	Issue Tracking
+	Task/Bug Tracking
+	Project Mgmt
+	
+	Agile Dev
+	
+	Service Desk
+	
+	In Java
+	From Atlassion
+	
+
+What are other tools we are having
+>  servicenow
+>  trello
+> zendesk
+http://www.scmgalaxy.com/tutorials/list-of-free-issue-tracking-bug-tracking-system/
+http://www.scmgalaxy.com/tutorials/top-10-bug-issue-tracking-tool/
+
+Why Jira?
+	monitoring the Status of Action being done during SDLC 
+
+How to install jira?
+	JRE JDK
+	http://www.scmgalaxy.com/tutorials/complete-guide-of-java-installation-in-linux/
+	wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+
+	> cd /opt/
+  	> ls
+	> wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/opub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+	> rpm -ivh jdk-8u131-linux-x64.rpm
+
+
+
+	Download zip  of Jira
+	https://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-software-7.8.1-x64.bin
+	https://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-software-7.8.1.tar.gz
+	Start it
+
+RHEL | CENTOS
+
+How to stop / Start
+
+/etc/init.d/jira stop
+/etc/init.d/jira start
+ps -eaf | grep jira
+
+
+http://34.253.187.1:8080
+rajesh
+rajesh123
+
+
+Project  - Cotocus
+
+Task - Cotocus.com is not working..
+
+INTEGRATION
+
+JIRA -> GIT -->
+JIRA -> JENKINS
+
+Task 1
+====================================
+Add a new Issues Type - 
+
+Task 2
+====================================
+Add a new Field 
+
+
+Task 3
+====================================
+Customize the workflow
+
+In Review - Post Review
+
+
+Jira Integ Github
+
+
+
+ACTIVE DIRECTORY  --- DONE
+
+PERMISSION

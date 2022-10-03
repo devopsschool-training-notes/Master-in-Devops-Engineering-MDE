@@ -1,0 +1,66 @@
+JIRA
+
+	From Atlassion - Bamboo, Fisheye,Bitbucket
+	Paid - Not Costly
+	Developed using JAVA
+	
+=======================
+	BUG TRACKING
+	Issues Tracking
+	Tasks Tracking
+	Projects Software Execution
+	Agile Dev - Kanbaan - Scrum
+	Service Desk
+
+	Tracking
+		WHO | WHAT | HOW THE STATUS | IMPACT
+	
+==============================
+How to Install it?
+	JRE 1.8+
+	JDK
+wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u151-b12/e758a0de34e24606bca991d704f6dcbf/jdk-8u151-linux-x64.tar.gz
+
+export JAVA_HOME=/opt/java
+export PATH=/opt/java/bin:$PATH
+
+https://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-software-7.5.1-x64.bin
+./atlassian-jira-software-7.5.1-x64.bin
+https://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-software-7.5.1.tar.gz
+
+IP address - 35.154.171.23
+============================================
+ADMIN ACTIVITY
+
+USER MGMT
+------------------
+
+Data exported to: 
+/var/atlassian/application-data/jira/export/backup1.zip
+
+/var/atlassian/application-data/jira/import/backup1.zip
+
+
+Backlogs --> Multiple Baclog(Sprints) -->
+
+IN PROGRE -- DONE --- COMPLETED
+
+TASKs  ---> 
+
+
+
+GIT -- JIRA
+
+
+Any Bugs is getting in GIT --> JIRA UPDATE
+
+
+Jenkins Can modify a Jira Ticket
+Eclipse Can modify a Jira Ticket
+
+GIT - JIRA
+
+
+URL 
+user
+pass

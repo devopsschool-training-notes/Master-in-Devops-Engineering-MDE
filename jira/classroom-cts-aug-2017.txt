@@ -1,0 +1,12 @@
+What is Jira?
+	Project mgmt tool
+	Incident mgmt tool
+	Bug Tracking Tools
+	Task tracking tool
+	Agile Tool
+	Scrum tool
+
+Why we need a JIRA?
+
+
+How to install jira?

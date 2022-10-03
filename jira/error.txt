@@ -1,0 +1,14 @@
+Error
+Cannot add user, all the user directories are read-only.
+
+An internal error occurred and we are unable to complete Jira setup
+
+java.nio.file.NoSuchFileException: /opt/jira/atlassian-jira/import/startupdatabase.xml
+
+Database --Usrr --Tomcat user
+---------------------------------
+New 
+
+========================
+ACCESS HAS TO LMS
+=======================

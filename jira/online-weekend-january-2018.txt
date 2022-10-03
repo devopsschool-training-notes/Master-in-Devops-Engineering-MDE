@@ -1,0 +1,28 @@
+What is JIRA?
+	Issues tracking tool
+	Bug tracking tool
+	Task mgmt
+	Agile Developement
+	Software project mgmt
+	Planning
+
+	Developed by Atlassion
+	Dev in Java
+Why we need it?
+
+How to install it?
+How to install it?
+How to install it?
+	JRE + JDK
+>  wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+> rpm -ivh jdk-8u131-linux-x64.rpm
+
+Download JIRA
+> wget https://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-software-7.5.1-x64.bin
+>./atlassian-jira-software-7.5.1-x64.bin
+
+> wget https://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-software-7.5.1.tar.gz
+
+> tar -zxvf atlassian-jira-software-7.5.1.tar.gz
+
+

@@ -1,0 +1,46 @@
+What is Jira?
+	Issues tracking
+	Bug Tracking
+	Planning
+	Project mgmt
+	Task mgmt
+	Agile Dev
+	Scrum
+	ServiceDesk
+
+	From Atlassion
+	Dev in Java
+	
+Other tool
+	Trello 
+	Servicenow
+	Remedy
+
+How to install it?
+13.127.233.189
+
+How to install jira?
+	JRE JDK
+	$ yum install wget -y
+	http://www.scmgalaxy.com/tutorials/complete-guide-of-java-installation-in-linux/
+	wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+
+	> cd /opt/
+  	> ls
+	> wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/opub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+	> rpm -ivh jdk-8u131-linux-x64.rpm
+
+
+
+	Download zip  of Jira
+	https://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-software-7.8.1-x64.bin
+	[PRB]https://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-software-7.8.1.tar.gz
+	Start it
+
+RHEL | CENTOS
+
+How to stop / Start
+
+/etc/init.d/jira stop
+/etc/init.d/jira start
+ps -eaf | grep jira
