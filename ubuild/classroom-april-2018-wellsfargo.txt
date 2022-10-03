@@ -1,0 +1,372 @@
+What is UBuild?
+	UBuild is web based tool for automating the build process across the projects
+	Build mgmt tools
+	Properiety tools
+	From IBM
+	Written in Java
+	6.1.3.1/612
+	Acting as CI tools as well.
+	
+	
+History of the UBUILD 
+ANTHILL --> ANTHILPRO -> UBUILD+UDEPLOY+URELEASE =
+ANTHILL --> URBANCODE -> IBM
+	
+What is Build Process?
+	Source Code to Binary
+		Create a dir structure
+		Install git
+		Checkout the code from git
+		Dependency Mgmt
+			3rd party lib
+			Copy the 3rd lib
+		Internal Dep
+			Compile dep module
+		Set the compiler
+		Compile / inpret
+		Binary----
+		============================
+		30 times in day
+		Automation ----> 
+		
+		PERL + PYTHON		
+		- EASY TO LEARN?? - NO
+		- EASY TO DEBUG? - NO
+		- EASY TO TEST? - NO
+		- EASY TO EXTEND? - NO
+		- EASY TO SHARE? - NO
+			
+		
+		BASH
+	       - NOT CROSS PLATFORM
+	
+	SOLUTION -
+		BUILD TOOLS - makefile, ant, maven, gradle, msbuild, NANT
+
+
+	NEXT PROBLEM
+		MULTIPLE BUILD TOOLS
+		AUTOMATE EVERYTHNG
+		SHARING ======== DASHBOARD - GUI
+		MONTORIING ======== GUI
+		NOTIFICATIION - EMAIL 
+
+	SOLUTION - JENKINS -> TEAMCITY - UBUILD -> BAMBOO - TFS BUILD
+	===============================================================
+
+What is CI? 
+	Continoues Integration 
+	
+Between WHAT?		TOOLS & PROCESS
+PLAN -> CODE -> ANA -> COMPILE -> PACK -> REPO   -> DEP2QA ----> AT		-->CC
+JIRA -> GIT  -> SonarQube ->MAVEN	-> JAR  -> ARTIFACT -> Udeploy --> SEL+JUNIT    - Jacoco
+-------------------------------------------------------
+Answer - UBUILD
+
+	DEP2QA
+	=========================================
+	100 SERVERS
+	
+	50 W + 50 L
+	25 MYSQL + 25 MSSQL + 25 ORACLE+ 25 POS
+	T + JBOSS + WS + WL
+	100 diff config
+	========================
+	10 mins (Ansible, Chef, Puppet, Udeploy)
+	
+	10 Sec (Docker)
+
+	
+	AUTO BUILD  + AUTO TEST + IMMEDIATE FEEDBACK
+
+	Integration
+	Conti
+	Montoring
+	
+
+
+DEVOPS - 
+http://www.devopsschool.com/video/devops/DevOps-Essentials.html
+=================================================================================
+WHAT IS UBUILD	- DONE
+WHY UBUILD	- DONE
+WHEN UBUILD 	- DONE
+
+HOW?
+=============================================
+Step 1 - Download and Install JDK
+http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+
+Step 2 - Setup JAVA_HOME
+
+Step 3 - Download the Trial Version of UBuild and extract it
+https://www.ibm.com/in-en/marketplace/urbancode-build
+
+Step 4 - How to install it?
+Go to the extracted location and type following commands
+> install-server.bat
+	
+[propertyfile] Updating property file: C:\tools\ubuild-server\conf\server\installed.properties
+[propertyfile] Updating property file: C:\tools\ubuild-server\conf\installed.version
+
+https://localhost:8443/
+admin
+admin
+
+
+MY SETUP
+==================
+13.127.211.22
+
+Public DNS	ec2-13-127-228-136.ap-south-1.compute.amazonaws.com
+User name	Administrator
+Password	
+QPXsJy?GR=gFuH(.UAo5fzJY.v-JROQF
+
+=============================
+
+Architecture of UBuild
+
+1 UBuild Sever
+2 UBuild Agent
+
+PRE of UBUILD SERVER
+====================================
+Ubuild Agent?
+
+https://13.127.186.79:8443/
+
+RULES OF UBUILD
+=======================================
+Where is your source?
+git
+
+What is your tech?
+java dotnet perl
+
+What is your builder?
+ant, maven, gradle, msbuild
+
+
+SOURCE CODE	TECH		BUILDER
+GIT		JAVA		ANT
+https://github.com/scmgalaxy/helloworld-java-ant
+
+GIT		JAVA		MAVEN
+https://github.com/scmgalaxy/helloworld-java-maven
+compile -> test -> package -> install -> deploy
+clean
+
+GIT		JAVA		GRADLE
+GIT		DOTNET 		MSBUILD
+
+How UBuild Works?
+====================================
+Core UBuild Server
+			Core Plugins
+			https://13.127.186.79:8443/tasks/admin/plugin/PluginTasks/viewPluginList
+			Which you can installed
+			https://developer.ibm.com/urbancode/plugins/
+
+TEMPLATE
+================================
+# Config a Agent
+# Create a Agent pool
+
+1. Install a git plugins
+2. Config ant repo
+3. Create a Template 
+		Create a Job template --> Steps (Actionable item)
+		Create a Source template
+		Create a Process template
+		Create a Project template
+
+raj-ant-hellw-job
+
+4. Create a Project
+
+https://13.127.186.79:8443/
+admin
+admin
+
+Requirement 1
+=========================================
+Setup a hello world projects based out on JAVA code and Maven Builder.
+
+
+Lab 1
+1. Delete every thing only you created.
+2. Setup a Project using 
+https://github.com/scmgalaxy/helloworld-java-maven
+
+goal - compile
+
+
+======================================================================
+========================================================================
+DAY 2
+=============================
+Demo 1 - Setting UBuild Server in Linux
+Demo 2 - Adding a Nodes a anther process
+Demo 3 - Maven Project Setup
+	Src - https://github.com/scmgalaxy/helloworld-java-maven
+	Build - Maven
+	Compiler - JDK
+	Goal - package
+	Step 1- Maven plugins
+	Step 2 - Repository
+	Step 3 - Template - Job -> Maven Step
+	Sepp 4 - Template - Sources
+	Step 5 - Template - Process
+	Step 6 - Template - Project
+	Step 7 - Project
+
+Demo 4 - Shell Project Setup
+Demo 5 - Junit Reports
+Demo 6 - SOnarqube
+Demo 7 - Artifactry
+Demo 8 - Jacoco
+Demo 9 - 
+-----------------------------
+SERVER - https://13.127.149.48:8443
+admin
+admin
+
+
+1 35.154.88.236
+2 13.127.244.119
+3 35.154.162.64
+4 13.126.67.192
+5 13.126.111.118
+6 13.127.77.218
+7 13.232.2.248
+8 35.154.248.254
+9 35.154.250.143
+10 13.127.171.209
+11 13.127.14.97
+12 13.127.236.90
+
+ec2-user
+
+1 35.154.25.42
+2 13.127.223.132
+3 13.127.67.129
+4 13.127.77.18
+5 13.126.55.199
+6 13.127.240.155
+7 35.154.236.175
+8 13.126.229.67
+9 13.127.112.196
+10 13.126.133.247
+11 13.126.103.86
+12 13.127.224.93
+
+
+Lab 3
+====================
+Create Directory called "src"
+Create a file called "file1.txt" under "src"
+Create a zip file of directory called "src"
+Copy a directory called "src" to "source"
+Move a directory called "source" to "source1"
+
+delete a file and directory called ""source1", "src", "file1.txt"
+
+
+Lab 4
+====================
+Create a file called "file1.prop" with following
+company-name=scmgalaxy
+trainer-name=rajesh
+
+Read properties from a file and 
+
+Display them as output properties for this step.
+
+How to upload artifact to Artifactory?
+===================================================
+http://13.232.2.248:8080/artifactory/
+admin
+password
+
+Method 1
+	1. Modify the pom.xml with repo of Artifactory? 
+	2. Modify setting.xml  with access info .../opt/apache-maven-3.5.3/conf
+	IMP - repository id of the pom.xml === server id rajesh
+	> mvn deploy
+
+Method 2 
+	Upload the artifact using steps
+
+
+============================================================
+DAY 3
+=============================================================
+FOR UBUILD SERVER
+==============================
+SETUP UBUILD SERVER - http://www.devopsschool.com/notes/ubuild/installing-ubuildserver-linux.txt
+SETUP UBUILD CLIENT - http://www.devopsschool.com/notes/ubuild/installing-ubuildagent.txt
+LAB - http://www.devopsschool.com/notes/ubuild/setup-maven-project.html
+1 13.127.233.1 - Ashok
+2 13.127.225.82 - Muniraj
+3 13.127.205.1 - Sandesh
+4 35.154.50.201 - Vishal
+5 13.127.170.92 - Arven
+6 13.127.243.154 - Sujit
+7 52.66.177.28 - Alisha
+8 13.232.1.203 - Neetu
+9 13.127.40.141 - Sanjog
+10 13.127.65.141 - Yuvraj
+11 13.127.53.43
+12 13.127.89.122
+==============================
+FOR UDPLOY SERVER
+==============================
+
+13.127.245.157
+
+CLOSURE PROCESS
+===================================
+WRAP Up
+==============================
+Rajesh Kumar
+
+Email - rajesh@scmgalaxy.com | DevOps@RajeshKumar.xyz
+Mobile - +91 8105843520
+
+CV - http://rajeshkumar.xyz/cv/
+
+Tutrials - 
+scmGlaxy.com
+DevOpsSchool.com
+-------------------------
+TEST TIME 
+===================
+https://www.surveymonkey.com/r/PF6SBP8
+=======================================
+
+IF you want course Materials?==============
+
+SUBJECT - UBUILD-UDEPLOY-WELLSFARGO
+Full Name - 
+Personal Email ID - 
+Office Email ID
+Mobile #
+Role - 
+
+SEND ME AN EMAIL TO - mailer@scmgalaxy.com
+
+
+
+
+
+
+
+
+
+
+
+
+		
+		
+		

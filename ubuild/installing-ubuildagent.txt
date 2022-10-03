@@ -1,0 +1,53 @@
+Download and extract the agent installer to the computer on which you want to install the agent:
+
+Method 1
+To download the installer from the server, click the Help  button at the top right of the page, and then click Tools. Then click IBM UrbanCode Build Agent and download and extract the file.
+
+Method 2
+To find the installer on the server with the command line, go to the following location and copy the file to the target system: installation_folder/opt/tomcat/webapps/ROOT/tools/agentinstaller/ibm-ucb-agent.zip
+After you download and expand the installation package, open the installer directory.
+From this directory, run install-agent.bat (Windows) or install-agent.sh (UNIX or Linux).
+
+> sudo -s
+> yum install wget -y
+> yum install unzip -y
+> cd /opt
+> wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.tar.gz
+> tar -zxvf jdk-8u131-linux-x64.tar.gz
+> export JAVA_HOME=/opt/jdk1.8.0_131
+> export PATH=$PATH:$JAVA_HOME/bin
+
+> wget --no-check-certificate https://13.127.149.48:8443/tools/agentinstaller/ibm-ucb-agent.zip
+> unzip ibm-ucb-agent.zip
+> cd ibm-ucb-agent-install
+> ./install-agent.sh
+
+
+=============================LOG=======================
+     [echo] Installing Agent
+     [echo] Enter the directory where agent should be installed. [Default: /opt/                                                          IBM/UCBuild/agent]
+
+     [echo] The specified directory does not exist. Do you want to create it? Y,                                                          n [Default: Y]
+
+     [echo]
+     [echo] Installing Agent to: /opt/IBM/UCBuild/agent
+     [echo] Please enter the home directory of the JRE/JDK used to run this agen                                                          t. [Default: /opt/jdk1.8.0_131]
+
+     [echo] JAVA_HOME: /opt/jdk1.8.0_131
+     [echo] Will the agent connect to a agent relay instead of directly to the s                                                          erver? y,N [Default: N]
+
+     [echo] Enter the hostname or address of the server the agent will connect t                                                          o. [Default: localhost]
+35.154.130.86
+     [echo] Enter the agent communication port for the server. [Default: 7919]
+
+     [echo] Does the server agent communication use mutual authentication with S                                                          SL? y,N [Default: N]
+
+     [echo] Enter the name for this Agent.
+linux1
+     [copy] Copying 2 files to /opt/IBM/UCBuild/agent/conf
+[propertyfile] Creating new property file: /opt/IBM/UCBuild/agent/conf/agent/ins                                                          talled.properties
+[propertyfile] Updating property file: /opt/IBM/UCBuild/agent/conf/agent/install                                                          ed.properties
+
+===========================================================================================================
+> cd /opt/IBM/UCBuild/agent/bin
+> ./agent start

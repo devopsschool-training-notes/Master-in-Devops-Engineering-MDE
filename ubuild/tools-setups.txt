@@ -1,0 +1,13 @@
+How to setup Maven
+=========================================
+> sudo -s
+> yum install wget -y
+> yum install unzip -y
+> cd /opt
+> wget http://redrockdigimark.com/apachemirror/maven/maven-3/3.5.3/binaries/apache-maven-3.5.3-bin.zip
+> unzip apache-maven-3.5.3-bin.zip
+> export PATH=$PATH:/opt/apache-maven-3.5.3/bin
+
+OR 
+
+SET in STEPS

@@ -1,0 +1,78 @@
+DAY 2
+=============================
+Demo 1 - Setting UBuild Server in Linux
+Demo 2 - Adding a Nodes a anther process
+Demo 3 - Maven Project Setup
+	Src - https://github.com/scmgalaxy/helloworld-java-maven
+	Build - Maven
+	Compiler - JDK
+	Goal - package
+	Step 1- Maven plugins
+	Step 2 - Repository
+	Step 3 - Template - Job -> Maven Step
+	Sepp 4 - Template - Sources
+	Step 5 - Template - Process
+	Step 6 - Template - Project
+	Step 7 - Project
+Demo 4 - Shell Project Setup
+Demo 5 - Junit Reports
+Demo 6 - SOnarqube
+Demo 7 - Artifactry
+Demo 8 - Jacoco
+Demo 9 - 
+-----------------------------
+SERVER - https://13.127.149.48:8443
+admin
+admin
+
+
+1 35.154.88.236
+2 13.127.244.119
+3 35.154.162.64
+4 13.126.67.192
+5 13.126.111.118
+6 13.127.77.218
+7 13.232.2.248
+8 35.154.248.254
+9 35.154.250.143
+10 13.127.171.209
+11 13.127.14.97
+12 13.127.236.90
+
+ec2-user
+
+1 35.154.25.42
+2 13.127.223.132
+3 13.127.67.129
+4 13.127.77.18
+5 13.126.55.199
+6 13.127.240.155
+7 35.154.236.175
+8 13.126.229.67
+9 13.127.112.196
+10 13.126.133.247
+11 13.126.103.86
+12 13.127.224.93
+
+
+Lab 3
+====================
+Create Directory called "src"
+Create a file called "file1.txt" under "src"
+Create a zip file of directory called "src"
+Copy a directory called "src" to "source"
+Move a directory called "source" to "source1"
+
+delete a file and directory called ""source1", "src", "file1.txt"
+
+
+Lab 4
+====================
+Create a file called "file1.prop" with following
+company-name=scmgalaxy
+trainer-name=rajesh
+
+Read properties from a file and 
+
+Display them as output properties for this step.
+
