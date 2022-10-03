@@ -1,0 +1,170 @@
+﻿What is Perforce?
+How Perforce works?
+What is the archiectture of the perforce
+
+Installing and Configuring Helix Core server to Ubuntu 16.04 -  p4d
+Installing and Configuring Helix Core Client in Widnows  - p4v
+Basic Operations using p4v
+	Adding a file/dir	dONE
+	Renaming		DONE
+	Deleting		DONE -->Delete(ADMIN) Oblitrate(WONT GET IT)
+	Modifying		DONE
+	branching	--- DONE
+	Merging	--- -- DONE
+	Revert		-- DONE
+	
+Understanding Helix Core server Authorization and Authtication
+
+	Authtication - How you should access the perforce server aka Helix Core server
+		1. Active Directory or LDAP 
+		2. Helix Server’s internal user database, db.user
+		3. Against an authentication server
+		
+	How can you login?
+		server security levels
+			PASSWORD OR TICKET OR BOTH
+			
+			TICKET - 12 HOURS
+			HOW TO GET A TICKET?
+			$ p4 login -p 
+			export P4PASSWD = XXXXXXXX
+			
+	0 - does not require passwords and does not enforce password strength
+	1 - Ensures that all users have passwords
+	2 - Ensures that all users have strong passwords
+	3 - Requires that all users have strong passwords, and requires the use of ticket-based
+	
+
+	
+	Authorization - WHo has what access?
+			 protections for users and user groups
+Step 1 - 	CREATE A GROUP
+Step 2 - 	CEATE A USER 
+Step 3 - 	MODIFY A PROTECT TABLE
+
+	
+How to backup Helix Core server?
+Perforce (Helix Core) Repository
+	VERSIONED FILES	 --------------> RSYNC
+	DATABASE (METADATA)	-----> Checkpointing
+
+db.* --> CHECKPOINT
+
+$ export P4PORT=ssl:1666
+$ export P4USER=super
+$ p4 login
+$ p4 admin stop
+$ p4d -r /opt/perforce/servers/master -jc
+
+checkpoint.1 - Created Backup of db.*
+checkpoint.1.md5 - verify the file checkpoint.1
+
+IN THIS CASE - ALL THE ENTRY FROM journal has been truncated....
+
+journal = DELTA BETWEEN THE LAST CHECKPOINT AND CURRENT DATE
+
+How to Restore Helix Core server?
+====================================
+== OLD ====p4d -r $P4ROOT -jr checkpoint_file
+== OLD ====p4d -r /opt/perforce/servers/master -jr checkpoint.1
+sudo -u perforce p4dctl stop master
+sudo -u perforce p4d -r /opt/perforce/servers/master -jr checkpoint.1
+sudo -u perforce p4dctl start master
+
+
+
+
+P4V - 13.233.84.58
+
+How to get back deleted files?
+https://www.perforce.com/perforce-packages
+
+root@ip-172-31-27-216:~# history
+    1  clear
+    2  ls
+    3  vi /etc/apt/sources.list.d/perforce.list
+		deb http://package.perforce.com/apt/ubuntu xenial release
+    4  wget -qO - https://package.perforce.com/perforce.pubkey | sudo apt-key add -
+    5  sudo apt-get update
+    6  sudo apt-get install helix-p4d
+    7  sudo /opt/perforce/sbin/configure-helix-p4d.sh
+    8  ps -eaf | grep p4d
+    9  histor
+   10  history
+
+   
+
+Started 'master' p4d service.
+Started 1 services.
+Establish trust relationship with SSL-enabled server...
+The fingerprint of the server of your P4PORT setting
+'ssl:1666' (127.0.0.1:1666) is not known.
+That fingerprint is E0:3A:D0:2E:1D:11:E0:05:E0:74:49:60:ED:9D:9D:FC:2A:5C:EE:01
+Added trust for P4PORT 'ssl:1666' (127.0.0.1:1666)
+Creating super-user account...
+User super not changed.
+Server ID: master
+Initializing protections table...
+Protections saved.
+Setting security level to 3 (high)...
+Counter security set.
+Setting password...
+Creating ticket for root user
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::
+::  P4D configuration has completed successfully.
+::
+::  Here is what has been done so far:
+::
+::  - Your p4d service settings have been written to
+::    the following p4dctl configuration file:
+::      /etc/perforce/p4dctl.conf.d/master.conf
+::  - The p4d service has been initialized with the P4ROOT:
+::      /opt/perforce/servers/master
+::  - The p4d service has been started with the P4PORT: ssl:1666
+::  - The p4d service has been set to Security Level 3.
+::  - The new Perforce super-user 'super' has been created and the
+::    password has been set to the one specified.
+::
+::  Here is what you can do now:
+::
+::  - You can manage it with the 'perforce' user, using the following:
+::
+::      sudo -u perforce p4dctl <cmd>
+::
+::  - You can connect to it by setting the P4PORT and P4USER
+::    environment variables and running 'p4 <cmd>'. For example, run:
+::
+::      export P4PORT=ssl:1666
+::      export P4USER=super
+::
+::      p4 login
+::
+::    For help, run:
+::
+::      p4 help
+::
+::  - To connect to this p4d service from another machine, include
+::    this machine's name or IP address in the P4PORT. For example:
+::
+::      export P4PORT=ssl:172.31.27.216:1666
+::
+::  - For help with creating Perforce Helix user accounts, populating
+::    the depot with files, and making other customizations for your
+::    site, see the Helix Versioning Engine Administrator Guide:
+::
+::    https://www.perforce.com/perforce/doc.current/manuals/p4sag/index.html
+::
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+root@ip-172-31-27-216:~# ps -eaf | grep p4d
+perforce  3194     1  0 08:47 ?        00:00:00 p4d [master/ssl:1666]
+root      3238  1850  0 08:47 pts/0    00:00:00 grep --color=auto p4d
+
+How to stop | started
+$ p4dctl start -t p4d master
+sudo -u perforce p4dctl start master
+sudo -u perforce p4dctl stop master

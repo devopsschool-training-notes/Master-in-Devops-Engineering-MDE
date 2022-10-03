@@ -1,0 +1,998 @@
+Username: Admin
+Password: admin
+
+IP Address:
+1. 14.142.27.210:6001	- 2 VM Linux + 1 Windows
+2. 14.142.27.210:6002
+3. 14.142.27.210:6003
+4. 14.142.27.210:6004
+5. 14.142.27.210:6005
+6. 14.142.27.210:6006
+7. 14.142.27.210:6007
+8. 14.142.27.210:6008
+9. 14.142.27.210:6009 
+10. 14.142.27.210:6010 =============
+11. 14.142.27.210:6011
+12. 14.142.27.210:6012
+13. 14.142.27.210:6013
+14. 14.142.27.210:6014
+15. 14.142.27.210:6015		RAJESH
+==============================================
+Product - ProdX
+Mgrx - MgrX
+--------------------------
+With DevOps Mindset
+	--- Immediate release
+	--- Improving a qUALITY
+	--- rEDUCTION oF cOST
+https://www.devopsschool.com/video/devops
+
+
+What is Perforce?
+	4 Years In Past - Product Owned by Company Called "Perforce"
+	Rename - Helix Company - Perforce
+	
+Perforce(Company)
+https://www.perforce.com/products
+	Focus - Helix Core
+
+What is Perforce?
+	Version Control tool.
+		Storing a code
+		Versioning
+			What is changes?
+			When
+			Why
+			Where?
+			Who
+		-----------------
+		PERIOD OF TIME
+	its a team collab tool.
+
+
+Where Perforce stands in SDLC cycle?
+----- DONE
+
+Architect - Plan ---- Jira, Trello, Confluence, Helix ALM
+Dev - 10 - 10 Module	
+
+	Integ of code ---
+	- Version Control tool.
+		--SVN, GIT, P4
+OPEN SOURCE - RCS -> CVS -> SVN -> Git
+PAID - Bitkeeper - ClearCase - Perforce - VSS  - TFS - Mercury
+-----------------------------------------------------------
+CVS -> SVN Bitkeeper - ClearCase - Perforce - VSS  - TFS - Mercury
+------------------------SERVER-CLIENT-------------------------------------------------
+Git
+-----------------------DISTRIBUTED MODEL---------------------------------
+
+Peer Code Review - Code Collab - Gerrit - Helix Swarm
+
+Static Code Review - SonarQube - HelixQAC
+
+Build mgmt - makefile -> ant-> maven -> gradle
+	nant --> msbuild
+
+UT - Junit - Nunit
+
+Pack - 
+
+Repo mgmt for package - Artifactory
+
+Deployments -
+		ProdX10.4 -->200 Boxes
+	--------------
+	Getting a 200 box - 1 mins ====== Cloud (AWS, GC + Openstake,openShift)
+
+	1 BOX - Deployment - 9 mins
+	200 Boxes Dep ====== 9 mins
+	---------------------------------
+	100 WIN
+	100 LINX
+
+	100 AP 50 NG 50 IIS
+	50 T 50 WL 50 WS 50 J
+	50 MYSQL 50 MS 50 PS 50 OR
+	----------------------------------
+		10 mins
+
+	Config mgmt tool 
+	Programming - 	Puppet, Chef, Ansible, Salt
+	GUI - Octopus Deplouy, uDeply 
+	---------------------------------------
+	1 SECOND
+	--------------------
+		Docker - Container
+
+	AT 
+
+	Output...
+
+	Code Coverage - 
+	--- Release -----
+		
+	RELEASE
+https://www.devopsschool.com/path/
+==============================================
+
+	
+
+How Perforce works!!!!
+
+SERVER - CLINET
+SVN === P4D
+--------
+Manage a repo
+--------
+		Code + Meta data
+	In Perforce
+		repository === DEPOT
+	
+DISTRIBUTED MODEL
+	- Git
+
+==============================================
+
+Other tools - -
+
+How to install and Configure?
+Server 
+	- P4D
+	    - Windows + Linux + Mac		
+	How to install p4D on Linux?
+	How to install p4d on Windows?
+
+Client
+	- p4win (GUI) - Dep
+	- p4v (GUI) - (Uses p4) == FOCUS
+		WIN
+		LINUX
+		MAC
+	- p4 (Command line Client)
+	- p4web
+	- p4exp
+	- Windows + Linux + Mac
+
+	How to install p4v on Linux?
+	How to install p4v on Windows?
+
+BUT
+What we will 
+	
+	p4d - Linux
+	p4v - Windows
+
+14.142.27.210:6015
+---------------------------
+Windows VMs - administrator/P@ssw0rd
+192.168.0.103
+Linux VMs - root/root
+--------------------------------------
+Pre Req ---
+Step 1 - create a new user 
+		which will have Super Access
+Step 2 - INFO
+		first and default repo is always DEPOT
+
+Step 3 - Create a worksapce
+		What is Workspace....
+		 - is a custom view of the depot(s) / branches/ projects in client machine.
+
+
+Design a Depot structure....
+	Depot
+		prodx
+			main
+			fea1
+			fea2
+		project-name2
+		project-name3
+
+	Depot
+		DelX
+			main === >https://wordpress.org/latest.zip
+			fea1
+			fea2
+			release2.0
+		DelY
+		DelZ
+	
+Basic OperationS
+===============================
+Step 1 - get a Source Code?
+	https://wordpress.org/latest.zip
+	unzip 
+	and 
+	copy into workspace
+
+Step 2 - Mark for add ( ~ add) == ONLY FOR NEW FILE..
+
+Step 3 - Submit (~ commit)
+
+Step 4 - See the commits / Revision....
+
+===============================
+What is Changelist?
+================================
+
+======================================
+How to edit a file?
+How to delete a file?
+How to sync old version of file?
+How to See history and revision?
+How to rename a file/dir?
+How to compare a changes?
+	file
+	directory
+	braanches
+===========================================
+Workspace
+        -----> MAP
+		----> DEPOTS | Dir | branches | Files
+	=================================================
+			VIEW
+
+
+Conflict situation
+================================
+-----------------------AUTO-----------------------
+DEPOT 			USER1 		USER2
+file1.txtV1		file1.txtV2	file1.txtV1 (MODIFIED)
+					file1.txtV2
+
+-----------------------MANUAL-----------------------
+DEPOT 			USER1 		USER2
+file1.txtV1		file1.txtV2	file1.txtV1 (MODIFIED)
+					file1.txtV2
+
+			LINE 30		LINE 30
+		
+			function(abs1, abs2)	function(abs1, abs2, abs3)
+------------------------------------------------------------------
+Merging conflict
+	branches........
+	
+	
+depot
+	product1
+		main
+		dev  ------>
+		qa
+		
+workspace 
+====================
+p4 worksapce mine
+p4 edit w
+//depot/product1/dev/... //WSNAME/depot/product1/dev/...
+//depot/product1/qa/... //WSNAME/depot/product1/qa/...
+
+repo1
+	product2
+		main
+		dev
+		qa
+	product3
+repo2	
+	product4
+		main
+		dev
+		qa
+	product5
+repo3
+	product6
+
+
+
+
+
+
+=================================
+Setting up a Perforce Server in Linux
+Setting up a Perforce client in Linux
+
+Branching
+	How to create a branch?
+	How to merge branch?	
+	Conflict Res
+		Manual
+	
+Shelving feature.....
+
+Stream s
+
+Jobs
+================================
+Commands line
+	Using p4
+
+
+=============================
+
+SETTING UP A p4D n p4 in LINUX
+
+192.168.0.141
+root
+root
+
+
+
+
+=======================PREQ==========================
+Verify the Public Key
+
+Download the public key at https://package.perforce.com/perforce.pubkey
+To obtain the fingerprint of the public key, run:
+$ wget https://package.perforce.com/perforce.pubkey
+$ gpg --with-fingerprint perforce.pubkey
+
+Verify that it matches this fingerprint:
+E581 31C0 AEA7 B082 C6DC 4C93 7123 CB76 0FF1 8869
+
+=======================INSTALLATION==========================
+
+Step 1 - Add Perforce's packaging key to your RPM keyring:
+sudo rpm --import https://package.perforce.com/perforce.pubkey
+
+Step 2 - Add Perforce's repository to your YUM configuration.
+Create a file called /etc/yum.repos.d/perforce.repo with the following content:
+
+[perforce]
+name=Perforce
+baseurl=http://package.perforce.com/yum/rhel/7/x86_64
+enabled=1
+gpgcheck=1
+
+where {version} is either 6 for RHEL 6 or 7 for RHEL 7
+
+Step 3 -Install the package by running 
+$ sudo yum install helix-p4d
+=======================CONFIG==========================
+cd /opt/perforce/sbin
+./configure-perforce-server.sh
+
+Perforce Service name [master]:
+Service master not found. Creating...
+Perforce Server root (P4ROOT) [/opt/perforce/servers/master]:
+Create directory? (y/n) [y]:
+Perforce Server unicode-mode (y/n) [n]:
+Perforce Server case-sensitive (y/n) [y]:
+Perforce Server address (P4PORT) [ssl:1666]:
+Perforce super-user login [super]: super
+Perforce super-user password:
+Re-enter password.
+Perforce super-user password:
+
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::
+::  P4D configuration has completed successfully.
+::
+::  Here is what has been done so far:
+::
+::  - Your p4d service settings have been written to
+::    the following p4dctl configuration file:
+::      /etc/perforce/p4dctl.conf.d/master.conf
+::  - The p4d service has been initialized with the P4ROOT:
+::      /opt/perforce/servers/master/root
+::  - The p4d service has been started with the P4PORT: ssl:1666
+::  - The p4d service has been set to Security Level 3.
+::  - The new Perforce super-user 'super' has been created and the
+::    password has been set to the one specified.
+::
+::  Here is what you can do now:
+::
+::  - You can manage it with the 'perforce' user, using the following:
+::
+::      sudo -u perforce p4dctl <cmd>
+::
+::  - You can connect to it by setting the P4PORT and P4USER
+::    environment variables and running 'p4 <cmd>'. For example, run:
+::
+::      export P4PORT=ssl:1666
+::      export P4USER=super
+::
+::      p4 login
+::
+::    For help, run:
+::
+::      p4 help
+::
+::  - To connect to this p4d service from another machine, include
+::    this machine's name or IP address in the P4PORT. For example:
+::
+::      export P4PORT=ssl:192.168.0.141:1666
+::
+::  - For help with creating Perforce Helix user accounts, populating
+::    the depot with files, and making other customizations for your
+::    site, see the Helix Versioning Engine Administrator Guide:
+::
+::    https://www.perforce.com/perforce/doc.current/manuals/p4sag/index.html
+::
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+   67  systemctl stop firewalld
+   68  systemctl disable firewalld
+
+
+
+
+=======================START//STOp==========================
+
+
+
+
+
+-----LINUX--------
+export P4PORT=ssl:1666
+export P4USER=super
+
+export P4PORT=ssl:192.168.0.141:1666
+export P4USER=super
+-----WINDOWS--------
+set P4PORT=ssl:192.168.0.141:1666
+set P4USER=super
+
+
+C:\Users\Admin>pf info
+'pf' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\Admin>p4 info
+The authenticity of '192.168.0.141:1666' can't be established,
+this may be your first attempt to connect to this P4PORT.
+The fingerprint for the key sent to your client is
+74:E4:90:4E:A5:6B:4F:95:6C:50:25:B3:36:70:7E:16:9D:BA:56:07
+To allow connection use the 'p4 trust' command.
+
+C:\Users\Admin>p4 trust
+The fingerprint of the server of your P4PORT setting
+'ssl:192.168.0.141:1666' (192.168.0.141:1666) is not known.
+That fingerprint is 74:E4:90:4E:A5:6B:4F:95:6C:50:25:B3:36:70:7E:16:9D:BA:56:07
+Are you sure you want to establish trust (yes/no)? yes
+Added trust for P4PORT 'ssl:192.168.0.141:1666' (192.168.0.141:1666)
+
+C:\Users\Admin>p4 info
+User name: super
+Client name: WINDOWS-8D303PR
+Client host: WINDOWS-8D303PR
+Client unknown.
+Current directory: c:\Users\Admin
+Peer address: 192.168.0.214:49166
+Client address: 192.168.0.214
+Server address: 192.168.0.141:1666
+Server root: /opt/perforce/servers/master/root
+Server date: 2019/04/16 09:57:57 +0530 IST
+Server uptime: 00:08:26
+Server version: P4D/LINUX26X86_64/2018.2/1779952 (2019/04/02)
+Server encryption: encrypted
+Server cert expires: Apr 15 04:19:31 2021 GMT
+ServerID: master
+Server services: commit-server
+Server license: none
+Case Handling: sensitive
+
+C:\Users\Admin>
+
+================================================================
+================================================================
+Branching & Merging Stra
+---------------------------------------------------------------
+https://docs.microsoft.com/en-us/azure/devops/repos/tfvc/branching-strategies-with-tfvc?view=azure-devops
+
+repo - 
+	- trunk	
+	- branches
+		- branch1
+		- branch2
+	- tags
+		- tag1
+		- tag2
+-------------------------------
+When to create branch?
+	main
+		Fea1
+		Fea1
+	rel1.0
+		bug
+			patch/hotfixes
+
+/depot/main/... /client-name/depot/fea1/.			
+	
+	
+	
+	label
+
+
+=================================
+Perforce usign Command line... - USERS
+---------------------------------------------
+p4
+	options
+	commands
+		options
+
+
+p4 OPTIONS
+
+    Options:
+        -b batchsize    specify a batchsize to use with -x (default 128)
+        -h -?           print this message
+        -s              prepend message type to each line of server output
+        -v level        debug modes
+        -V              print client version
+        -x file         read named files as xargs
+        -G              format input/output as marshalled Python objects
+        -z tag          format output as 'tagged' (like fstat)
+        -I              show progress indicators
+
+        -c client       set client name (default $P4CLIENT)
+        -C charset      set character set (default $P4CHARSET)
+        -d dir          set current directory for relative paths
+        -H host         set host name (default $P4HOST)
+        -L language     set message language (default $P4LANGUAGE)
+        -p port         set server port (default $P4PORT)
+        -P password     set user's password (default $P4PASSWD)
+        -q              suppress all info messages
+        -r retries      Retry command if network times out
+        -Q charset      set command character set (default $P4COMMANDCHARSET)
+        -u user         set user's username (default $P4USER)
+
+        --script        Run the named P4-Lua script
+
+p4 -p ssl:192.168.0.141:1666 -u super -P super123 -c client
+	user
+	password
+	ip:port
+	client
+
+P4PORT
+P4USER
+set P4CLIENT=WINDOWS-8D303PR
+P4PASSWORD
+
+p4 -p ssl:192.168.0.141:1666 -u super -P super123 login
+p4 -p ssl:192.168.0.141:1666 -u super -P super123 client 
+p4 -p ssl:192.168.0.141:1666 -u super -P super123 -c client sync
+
+----
+p4 -p ssl:192.168.0.141:1666 -u super -P super123 -c client edit //////
+EDITOR
+p4 -p ssl:192.168.0.141:1666 -u super -P super123 -c client submit
+
+p4 -p ssl:192.168.0.141:1666 -u super -P super123 logout
+======================================================================
+USERS & GROUPS & PERMISSION
+===================================
+
+PERMISSION ==> GROUP
+		Dev
+
+======================================
+3rd Day
+--------------------------------
+Perforce Server Anatomy
+Perforce Proxy
+Perforce Replication
+Perforce Backup
+Perforce Restore
+Perforce Server Configuration
+Perforce Upgrade
+
+=================================================
+P4 REPO
+	Files
+		/opt/perforce/servers/<master>/archives/
+	Metadata == DB
+		/opt/perforce/servers/master/root
+	journals
+		a file which has delta meta info from last created checkpoint.		
+	log
+		/opt/perforce/servers/master/logs
+Trigger
+================================================
+p4d 
+p4v
+p4merge
+p4diff
+p4admin
+p4
+
+P4Proxy
+==========================
+
+Download the p4p executable to the machine on which you want to run the proxy.
+$ wget https://cdist2.perforce.com/perforce/r18.2/bin.linux26x86_64/p4p
+$ chmod 755 p4p
+
+Select a directory on this machine (P4PCACHE) in which to cache file revisions.
+/opt/perforce/proxy/master/archives
+
+Select a port (P4PORT) on which p4p will listen for requests from Perforce applications
+1668
+
+Select the target Perforce server (P4TARGET) for which this proxy will cache.
+ssl:192.168.0.141:1666
+
+FINAL
+./p4p set -S "Perforce Proxy" P4POPTIONS=" -p 1668 -t ssl:192.168.0.141:1666" -r /opt/perforce/proxy/master/archives -d -L /opt/perforce/proxy/logs 
+
+
+
+p4 -p ssl:192.168.0.141:1666 info
+--------TRUST------------------------
+cd /perforce/bin
+wget https://cdist2.perforce.com/perforce/r18.2/bin.linux26x86_64/p4
+chmod 755 p4
+./p4 -p ssl:192.168.0.141:1666 info
+./p4 -p ssl:192.168.0.141:1666 trust
+
+./p4p -p tcp64:[::]:1999 -t ssl:192.168.0.141:1666 -r /opt/perforce/proxy/master/archives
+
+
+./p4p -p tcp64:[::]:1999 -t ssl:192.168.0.141:1666 -r /opt/perforce/proxy/master/archives -L /opt/perforce/proxy/logs -d 
+
+============================================
+p4 triggers
+---
+
+Triggers:
+        welcome change-submit //depot/... "/usr/bin/bash /opt/perforce/usr/triggers/welcome.sh
+ %changelist%"
+
+
+
+
+Triggers
+https://www.perforce.com/manuals/v15.1/cmdref/p4_triggers.html
+https://www.devopsschool.com/blog/helix-server-perforce-trigger-quick-start-guide/
+https://www.perforce.com/perforce/r12.1/manuals/cmdref/triggers.html
+
+=========================================
+How to take a backup?
+
+Step 1- Take a backup of filessytem
+Step 2- Take a checkpoint of db/meta
+
+--------Checking process-------------------
+Step 1-  Stop a perforce server
+$ p4dctl stop master
+
+Step 2 - Take a  checkpoint
+$ cd /opt/perforce/sbin/
+$ ./p4d -r /opt/perforce/servers/master/root -jc 
+
+[root@localhost sbin]# ./p4d -r /opt/perforce/servers/master/root -jc
+Checkpointing to ../journals/master.ckp.1...
+MD5 (../journals/master.ckp.1) = 438530F86115AFB3F4186EE013BE4CE9
+Rotating ../journals/journal to ../journals/master.jnl.0...
+[root@localhost sbin]#
+
+
+Step 3 - Start aa P4d server
+$ chown -R perforce:perforce /opt/perforce
+$ p4dctl start master
+
+Step 4 - Commit one  more time
+
+Step 5-  Stop a perforce server
+$ p4dctl stop master
+
+
+Step 6 - Take a  checkpoint
+$ ./p4d -r /opt/perforce/servers/master/root -jc 
+
+=========================================
+How to restore? in ANOTHER SERVER
+$ cd /opt/perforce/servers/master/root
+$ rm -rf db*
+$ cd /opt/perforce/servers/master/archives [SCP from OLD server to New Server]
+$ p4dctl stop master
+[ SCP CHeCKPPOINT and MD5 file from SOURCE To DEST SERVER\
+$ p4d -jv my_checkpoint_file
+$ p4d -r $P4ROOT -jr path/checkpoint_file path/journal_file
+$ chown -R perforce:perforce /opt/perforce
+$ p4dctl start master
+
+
+
+==========================================
+Perforce Shelving
+Git Crash Course
+Helix4Git
+Git Fusion
+Helix Swarm
+Perforce Broker
+#HelixTeamHub
+===================================
+Git Crash Course
+------------------------------------------------
+What is Git?
+	Source Code mgmt tool.
+	By Linus
+	Coz Bitkeeper...
+	Distributed mgmt tool
+
+Why Git?
+	WHO 
+	WHAT
+	WHEN
+	WHAT
+	WHERE
+
+
+Model
+	Server-client ---- *
+	Distributed - Git
+
+Diff
+
+Hw to install 
+	Windows - git-bash frm git-scm.com
+	Linux  - 
+		sudo yum install git
+		sudo apt-get install git
+	upgrade
+	https://www.devopsschool.com/tutorial/git/
+
+	MAC
+			dmg from git-scm.com
+
+Git basic workflow
+============================
+1. Create a repo
+git init
+
+2. [ONE TIME]
+git config user.name "Rajesh Kumar"
+git config user.email "rajesh@scmgalaxy.com"
+git config --list
+
+3. ADD a file.....
+	notepad
+	esc
+	vs
+	
+4. add a file to git [[[ Move a changes fromm Working dir to Staging]]]
+$ git add filename/dir
+
+5. commit a file [[[ From Staging to Repo]]]]]
+$ git commit -m"adding my first file"
+
+6. see the committed file....
+$ git log
+
+7. What was committed
+git show 4b79dfdfdecae3a5bf9a010658cbc7d79dd59959
+
+540  start .
+  541  clear
+  542  git status
+  543  git add file2.txt
+  544  git status
+  545  git commit -m"a"
+  546  git status
+  547  clear
+  548  ls
+  549  touch file3.txt file4.txt file5.txt file6.txt file7.txt
+  550  git status
+  551  git add file3.txt file4.txt
+  552  git status
+  553  clear
+  554  ls
+  555  vi fiel1.txt
+  556  git status
+  557  git add fiel1.txt
+  558  git status
+  559  git commit -m"addgin" fiel1.txt file3.txt
+  560  git status
+  561  ls
+  562  history
+
+==========================================
+
+HTTP =======
+SSH
+
+MFA
+7  git log
+  568  git push https://github.com/scmgalaxy/delx.git master
+  569  ls
+  570  git status
+  571  git log
+  572  cd
+  573  start .
+  574  git push git@github.com:scmgalaxy/delx.git master
+  575  ls
+  576  cd /d
+  577  cd delx/
+  578  git push git@github.com:scmgalaxy/delx.git master
+  579  git add .
+  580  git commit -m"adding all"
+  581  git push git@github.com:scmgalaxy/delx.git master
+  582  touch fsdf;git add .;git commit -m"adding"
+  583  git push git@github.com:scmgalaxy/delx.git master
+  584  touch fsdfdd;git add .;git commit -m"adding"
+  585  git push https://github.com/scmgalaxy/delx.git master
+  586  git push https://github.com/scmgalaxy/delx.git master
+  587  git push https://github.com/scmgalaxy/delx.git master
+  588  git push https://github.com/scmgalaxy/delx.git master
+  589  history
+
+===================================
+How to setup P4Broker
+===================================
+Download from
+https://package.perforce.com/yum/rhel/7/x86_64/
+
+$ wget https://cdist2.perforce.com/perforce/r18.2/bin.linux26x86_64/p4broker
+$ chmod 755 p4broker
+$ ./p4broker -V
+$ ./p4broker -C > p4broker.conf
+
+$ vi p4broker.conf
+target      = ssl:192.168.0.141:1666;
+listen      = 1667;
+directory   = /opt/perforce/p4broker;
+logfile     = broker.log;
+debug-level = server=1;
+admin-name  = "Perforce Admins";
+admin-phone = 999/911;
+admin-email = perforce-admins@example.com;
+
+$ export P4BROKEROPTIONS="-c /opt/perforce/p4broker/p4broker.conf"
+$ ./p4broker -d
+$ p4 -p ssl:192.168.0.141:1666 -u super trust
+$ p4 -p 192.168.0.141:1667 -u super info
+
+command: sync
+{
+    action     = reject;
+    user       = super;
+}
+
+command: edit
+{
+    action     = reject;
+    user       = super;
+    message    = "Sorry, p4 opened -a commands are killed because there are too many open files to display on this Perforce instance.";
+}
+
+command: delete
+{
+    action     = filter;
+    user       = super;
+    execute    = "/opt/test.sh";
+}
+===========================
+1st Half
+----------------
+Helix4Git - Conclusion
+https://www.perforce.com/manuals/helix-for-git/helix-for-git.pdf
+
+Helix Swarm 
+Helic Core --> Swarm
+Perforce Distributed
+	Replica
+	Edge Server
+	Commit Server
+Helic Core Upgrade
+
+2nnd Half
+-----------------
+Helix Core Security
+Helix Core Monitoing
+-----
+
+
+https://www.perforce.com/manuals/p4dist/Content/P4Dist/distributed.setup.html
+https://community.perforce.com/s/article/1260
+
+===============================
+Training Certificates? 
+http://devopscertification.co/
+	- s
+Suject - Perforce Administrator Engineer
+
+Full Name
+Email ID - ONLY GMAIL ID
+Phone
+Company - Deloitte
+City - Hyderabad
+Role 
+
+
+TO Contact@devOpsSchool.com
+===================================
+How to get course materials access.
+-------------------------------
+http://rajeshkumar.xyz/
+
+===========================================================================
+192.168.0.61
+
+Server 1 - 192.168.0.141:1666
+root
+root
+
+
+Server 2 - 192.168.0.142
+root
+root
+
+gconn-user
+super1234
+
+
+Please enter hostname for this GitConnector host [localhost]:
+
+192.168.0.141 gitconnector.company.com
+https://gitconnector.company.com/
+
+p4 -p ssl:192.168.0.141:1666 pubkey -u super -s scopeName -i < /root/.ssh/id_rsa.pub
+p4 -p ssl:192.168.0.141:1666 -u super grant-permission -p create-repo -d repo -u <username>
+
+p4 -p ssl:192.168.0.141:1666 -u super grant-permission -p create-repo -d repo -u super
+p4 -p ssl:192.168.0.141:1666 -u super grant-permission -p create-repo -d repo1 -u super
+
+git clone git@gitconnector.company.com:repo/repo1
+git clone https://super@gitconnector.company.com/repo/repo1
+
+p4 -p ssl:192.168.0.141:1666 -u super repo //repo/repo1
+p4 -p ssl:192.168.0.141:1666 -u super client git
+	//repo/repo1/... //git/repo/repo1/...
+
+p4 -p ssl:192.168.0.141:1666 -u super sync //repo/repo1/...
+gconn-user
+super1234
+
+git clone https://root@gitconnector.company.com/@info
+git clone https://gconn-user@gitconnector.company.com/repo/repo1
+git clone https://gconn-user@gitconnector.company.com/repo/repo1
+git clone https://gconn-user@gitconnector.company.com/@info
+git clone https://gconn-user@gitconnector.company.com/repo/repo1
+
+git clone git@gitconnector.company.com:@info
+
+p4 grant-permission -p read -d graphDepot1 -u bruno
+p4 grant-permission -p read -d graphDepot1 -u bruno
+p4 show-permission
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::
+::  GitConnector configuration has completed successfully.
+::
+::  Here is what had been done so far:
+::    - GitConnector's configuration file is in [/opt/perforce/git-connector/gconn.conf]
+::    - Helix user for GitConnector is [gconn-user]
+::    - [gconn-user] belongs to Helix group [gconn-group] which has
+::      an unlimited ticket timeout
+::    - This GitConnector was registered with Helix server as [gconn-localhost.localdomain]
+::    - GitConnector configured with Git depot(s):
+::      [repo]
+::      [repo1]
+::    - GitConnector is configured for HTTPS authentication
+::    - The hostname of this GitConnector is [gitconnector.company.com]
+::    - GitConnector is configured for SSH authentication with system
+::      user [git]
+::    - HOME directory of system user [git] is [/home/git]
+::
+::  Here is what went wrong:
+::    - GitConnector detected that your version of Git [1.8.3.1] is less than
+::      recommended minimum Git version [1.8.5]. If possible, please
+::      install a newer version of Git
+::
+::  Here is what still needs to be done:
+::    - Git users need to add SSH public keys using command:
+::       p4 -p ssl:192.168.0.141:1666 pubkey -i < /path/to/ssh/key.pub
+
+::    - Grant Git users permissions to create repos with command:
+::      p4 -p ssl:192.168.0.141:1666 -u super grant-permission -p create-repo -d repo -u <username>
+::      p4 -p ssl:192.168.0.141:1666 -u super grant-permission -p create-repo -d repo1 -u <username>
+::    - In case you need to manually log in [gconn-user], please use login
+::      script in [/opt/perforce/git-connector/bin/login-gconn-user.sh]
+::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+

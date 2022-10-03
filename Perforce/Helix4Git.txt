@@ -1,0 +1,348 @@
+One-time tasks
+======================================
+Install the Git Connector
+-----------------------------------
+sudo rpm --import http://package.perforce.com/perforce.pubkey
+
+vi /etc/yum.repos.d/Perforce.repo
+[perforce]
+name=Perforce for CentOS $releasever - $basearch
+baseurl=http://package.perforce.com/yum/rhel/6/x86_64/
+enabled=1
+gpgcheck=1
+gpgkey=http://package.perforce.com/perforce.pubkey
+
+or
+
+[perforce]
+name=Perforce for CentOS $releasever - $basearch
+baseurl=http://package.perforce.com/yum/rhel/7/x86_64/
+enabled=1
+gpgcheck=1
+gpgkey=http://package.perforce.com/perforce.pubkey
+
+sudo yum install helix-git-connector
+
+
+Configure the Git Connector
+-----------------------------------
+export P4USER=super
+
+$ sudo /opt/perforce/git-connector/bin/configure-git-connector.sh --help
+$ sudo /opt/perforce/git-connector/bin/configure-git-connector.sh
+
+	Helix Server P4PORT
+	Helix Server super-user
+	Helix Server super-user password:
+	New Graph Depot name
+	GitConnector user password: For gconn-user
+	Configure HTTPS?
+	Configure SSH?:
+	GitConnector SSH system user: git	
+	Home directory for SSH system user: /home/git.
+	SSH key update interval:
+	Server ID:
+
+	Provide information to the configuration script.
+
+
+Configure the Helix Server to work with the Git Connector. This includes depot, repo, and permissions configuration.
+-----------------------------------
+granting relevant permissions
+######################################
+Perform the following steps to grant the required permissions:
+
+Add the user gconn-user to the protections table with write permission. Note that if you encounter a reference to GConn P4 user, this is the gconn-user user.
+
+Run the following command to open the protections table in text form:
+$ p4 user -f gconn-user
+$ p4 protect
+Add the following line to the Protections field:
+
+
+$ write user gconn-user * //...
+Save the spec.
+
+For any depot of type graph that you create in addition to the ones already created during the installation, grant the gconn-user user admin permission:
+$ p4 grant-permission -u gconn-user -p admin -d graphDepotName
+$ p4 grant-permission -u gconn-user -p admin -d repo
+
+As a superuser, grant admin permission to another user so that this user can manage permissions as required:
+$ p4 grant-permission -u username -p admin -d graphDepotName
+$ p4 grant-permission -u super -p admin -d repo
+
+Grant users permission to create repos for specific graph depots:
+$ p4 grant-permission -p create-repo -d graphDepotName -u username
+$ p4 grant-permission -p create-repo -d repo -u super
+
+Grant users permission to push repos to a graph depot:
+$ p4 grant-permission -p write-all -u username -d graphDepotName
+$ p4 grant-permission -p write-all -u super -d repo
+
+TIP - Instead of granting permissions to single users, you can create groups, assign users to groups, and set permissions that are appropriate for that particular group.
+
+
+creating repos that belong to the graph depots you created during the installation
+######################################
+To create a new repo stored in an existing graph depot, run the following command:
+$ p4 repo //graphDepotName/repo1
+$ p4 repo //repo/repo1
+
+granting users permission to push repos to the Helix Server
+configuring a client mapping to sync repos
+syncing a repo, provided the repo has already been pushed to the Helix Server
+
+
+
+Set up Git users to work with the Git Connector
+######################################
+SSH:
+$ git command git@ConnectorHost:graphDepotName/repoName
+$ git clone git@192.168.0.141:repo/repo1
+
+HTTPS:	
+$ git command https://username@ConnectorHost/graphDepotName/repoName
+
+Helix Server users who have, at a minimum, the list access to a filename in the protections table can add their own public SSH keys to the Helix Server. For example:
+p4 pubkey -i -s scopeName < my_id_rsa.pub
+
+A Helix Server user with the access level of super or admin can add a key for another user by specifying the (-u) option. For example:
+p4 pubkey -i -s scopeName -u bruno < bruno_id_rsa.pub
+
+
+Verify the Git Connector configuration
+When using SSH:
+$ git clone git@192.168.0.141:@info
+
+When using HTTPS:
+$ git clone https://ConnectorHost/@info
+$ git clone https://192.168.0.141/@info
+
+One-way mirroring from Git servers
+https://www.perforce.com/manuals/helix-for-git/Content/Helix4Git/chapter.mirroring.html
+
+
+Configuring Git Connector to poll repos from Helix4Git
+https://www.perforce.com/manuals/helix-for-git/Content/Helix4Git/mirror-pollingrepos.html
+
+
+
+================================================================
+
+
+  Installing : helix-git-connector-2018.2-1724420.el7.x86_64                                            1/1
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::
+::  Thank you for choosing Perforce Helix
+::  The following has been installed by the 'helix-git-connector' package:
+::
+::  - The GitConnector 'gconn'
+::  - The Git Remote Helper 'git-remote-p4gc'
+::
+::  Helix GitConnector is now installed, but not yet configured.
+::  You must run the following to configure GitConnector (as root):
+::
+::     sudo /opt/perforce/git-connector/bin/configure-git-connector.sh
+::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  Verifying  : helix-git-connector-2018.2-1724420.el7.x86_64                                            1/1
+
+Installed:
+  helix-git-connector.x86_64 0:2018.2-1724420.el7
+
+Complete!
+[root@localhost p4broker]# clear
+[root@localhost p4broker]# sudo /opt/perforce/git-connector/bin/configure-git-connector.sh
+
+Current Git version is [1.8.3.1], but GitConnector recommends Git version [1.8.5] or higher.
+
+
+Summary of arguments passed:
+
+Helix server P4PORT                [(not specified)]
+Helix super-user                   [(not specified)]
+Helix super-user password          [(not specified)]
+New Git depot name                 [(not specified)]
+GitConnector user password         [(not specified)]
+Configure HTTPS?                   [false]
+Configure SSH?                     [false]
+GitConnector SSH system user       [git]
+Home directory for SSH system user [/home/git]
+SSH key update interval            [10]
+Server ID                          [gconn-localhost.localdomain]
+GitConnector hostname              [localhost]
+
+For a list of other options, type Ctrl-C to exit, and then run:
+$ sudo /opt/perforce/git-connector/bin/configure-git-connector.sh --help
+
+You have entered interactive configuration for GitConnector. This script will
+ask a series of questions, and use your answers to configure GitConnector for
+first-time use. Options passed in from the command line or automatically
+discovered in the environment are presented as defaults. You may press enter
+to accept them, or enter an alternative.
+
+
+There appears to be a local Helix server [master1] on P4PORT [1700].
+Would you like to use this configuration for GitConnector? [yes/no] [yes]:
+The super-user for the Helix server appears to be [super].
+Would you like to use this P4USER as super-user for GitConnector? [yes/no] [yes]:
+Enter the Helix super-user's password: ^C
+[root@localhost p4broker]# export P4USER=super
+[root@localhost p4broker]# sudo /opt/perforce/git-connector/bin/configure-git-connector.sh
+
+Current Git version is [1.8.3.1], but GitConnector recommends Git version [1.8.5] or higher.
+
+
+Summary of arguments passed:
+
+Helix server P4PORT                [(not specified)]
+Helix super-user                   [(not specified)]
+Helix super-user password          [(not specified)]
+New Git depot name                 [(not specified)]
+GitConnector user password         [(not specified)]
+Configure HTTPS?                   [false]
+Configure SSH?                     [false]
+GitConnector SSH system user       [git]
+Home directory for SSH system user [/home/git]
+SSH key update interval            [10]
+Server ID                          [gconn-localhost.localdomain]
+GitConnector hostname              [localhost]
+
+For a list of other options, type Ctrl-C to exit, and then run:
+$ sudo /opt/perforce/git-connector/bin/configure-git-connector.sh --help
+
+You have entered interactive configuration for GitConnector. This script will
+ask a series of questions, and use your answers to configure GitConnector for
+first-time use. Options passed in from the command line or automatically
+discovered in the environment are presented as defaults. You may press enter
+to accept them, or enter an alternative.
+
+
+There appears to be a local Helix server [master1] on P4PORT [1700].
+Would you like to use this configuration for GitConnector? [yes/no] [yes]:
+The super-user for the Helix server appears to be [super].
+Would you like to use this P4USER as super-user for GitConnector? [yes/no] [yes]:
+Enter the Helix super-user's password:
+check_ssd_support
+/etc/ssh/sshd_config exists. Can configure AuthorizedKeys for GCONN.
+Detected OpenSSH sshd version = 7.4
+check_perforce_server: SSHD_AUTHORIZEDKEYSCOMMAND = true
+check_ssd_support
+/etc/ssh/sshd_config exists. Can configure AuthorizedKeys for GCONN.
+Detected OpenSSH sshd version = 7.4
+check_perforce_server: SSHD_AUTHORIZEDKEYSCOMMAND = true
+The Helix GitConnector uses one or more depots of type 'graph', aka Git depot.
+A Git depot is a container for one or more Git repos, each of which can
+contain standard Git files.
+A typical Git depot name is 'repo' and a typical repo name is //repo/projectA.
+GitConnector detected existing Git depot(s):
+'repo'
+Would you like to create an additional Git depot? [yes/no] [no]:
+This installation creates Helix user needed by this new instance of GitConnector.
+Please provide a strong password to be set for [gconn-user]:
+Re-enter new password:
+
+Git and GitConnector support the SSH and HTTPS protocols for accessing remote
+Git servers. HTTPS support enables the use of web style remote URLs:
+
+  $ git clone https://www.myco.com/graphdepot/myrepo.git4
+  $ git clone https://www.myco.com/graphdepot/myrepo.git
+
+When GitConnector is configured with HTTPS support, users authenticate using
+their Helix user name and password, no pre-shared keys are required. This
+script installs Apache2 and related packages.
+Do you wish to configure GitConnector with HTTPS support? [yes/no] [yes]:
+
+GitConnector needs a distinct hostname that users can enter when issuing Git
+commmands when accessing GitConnector. Ideally, this is a fully-qualified domain
+name, e.g. 'gitconnector.company.com', but it can be just a hostname,
+e.g. 'gitconnector'.
+
+Whatever hostname you provide should be GitConnector-specific.
+
+Note that the hostname you specify typically requires configuration in your
+network's DNS service. If you are merely testing GitConnector, you can add a
+hostname->IP mapping entry to your computer's hosts configuration.
+
+Please enter hostname for this GitConnector host [localhost]:
+
+Git and GitConnector support the SSH and HTTPS protocols for accessing remote
+Git servers. SSH support enables the use of ssh style remote URLs:
+
+  $ git clone git@myco.com:graphdepot/myrepo.git
+  $ git clone git@localhost:repo/repo1.git
+
+When GitConnector is configured with SSH support, users authenticate using SSH
+keys that they generate on their client using the 'ssh-keygen' command.
+To add the SSH public key to the Helix server, use the 'p4 pubkey' command.
+
+This installer creates a new operating system user, named 'git' by default.
+
+To support the authentication of new graph depot users, a crontab job updates
+SSH keys from p4d. The default update interval is 10 minutes.
+Do you wish to configure GitConnector with SSH support? [yes/no] [yes]:
+Registering this GitConnector ["gconn-localhost.localdomain"] service with Helix server
+Server gconn-localhost.localdomain saved.
+Writing GitConnector configuration file
+Creating/updating GitConnector user [gconn-user] account
+User gconn-user saved.
+Creating/updating group [gconn-group] for [gconn-user]
+Group gconn-group created.
+Setting required permissions for [gconn-user] for depot [repo]
+It looks like Apache components are already present on this machine.
+GitConnector HTTPS automated configuration will significantly modify the Apache configuration, and will disable existing sites.
+Do you wish to continue? [yes]:
+Apache was installed successfully
+Redirecting to /bin/systemctl stop httpd.service
+Apache started successfully
+Create new system user 'git'? [yes/no] [yes]:
+Creating user [git]
+User [git] created!
+Updating user [git]
+Setting file ownership and permissions for [/home/git]
+Updating GCONN_CONFIG file with path to authorized_keys
+User [git] updated!
+Adding 'Match User git' / AuthorizedKeysCommand to /etc/ssh/sshd_config
+Redirecting to /bin/systemctl restart ssh.service
+Failed to restart ssh.service: Unit not found.
+
+
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::
+::  GitConnector configuration has completed successfully.
+::
+::  Here is what had been done so far:
+::    - GitConnector's configuration file is in [/opt/perforce/git-connector/gconn.conf]
+::    - Helix user for GitConnector is [gconn-user]
+::    - [gconn-user] belongs to Helix group [gconn-group] which has
+::      an unlimited ticket timeout
+::    - This GitConnector was registered with Helix server as [gconn-localhost.localdomain]
+::    - GitConnector configured with Git depot(s):
+::      [repo]
+::    - GitConnector is configured for HTTPS authentication
+::    - The hostname of this GitConnector is [localhost]
+::    - GitConnector is configured for SSH authentication with system
+::      user [git]
+::    - HOME directory of system user [git] is [/home/git]
+	$$$ useradd -m -d /home/git git
+::
+::  Here is what went wrong:
+::    - GitConnector detected that your version of Git [1.8.3.1] is less than
+::      recommended minimum Git version [1.8.5]. If possible, please
+::      install a newer version of Git
+::
+::  Here is what still needs to be done:
+::    - Git users need to add SSH public keys using command:
+::       p4 -p 1700 pubkey -i < /path/to/ssh/key.pub
+	 p4 -p ssl:192.168.0.141:1666 -u super pubkey -i < /root/.ssh/id_rsa.pub
+::    - Grant Git users permissions to create repos with command:
+::      p4 -p 1700 -u super grant-permission -p create-repo -d repo -u <username>
+	p4 -p ssl:192.168.0.141:1666 -u super grant-permission -p create-repo -d repo -u super
+::    - In case you need to manually log in [gconn-user], please use login
+::      script in [/opt/perforce/git-connector/bin/login-gconn-user.sh]
+::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+FAILURE
+edirecting to /bin/systemctl restart ssh.service
+Failed to restart ssh.service: Unit not found.

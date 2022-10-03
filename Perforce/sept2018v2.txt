@@ -1,0 +1,131 @@
+Perforce Aka Helix Server
+	Monitoring
+	https://www.devopsschool.com/blog/how-to-monitor-perforce-server-helix-core-server-p4d/
+
+	Trigger Capabilities Overview
+	https://www.devopsschool.com/blog/helix-server-perforce-trigger-quick-start-guide/
+	https://www.devopsschool.com/blog/helix-core-trigger-script-type-reference-guide/
+	https://www.devopsschool.com/blog/helix-core-trigger-script-variables-reference-guide/'
+	
+	cscheck change-submit //depot/... "deploy.sh %changelist% %changelist%"
+	name	type		location   script variable
+
+	test1 change-submit //depot/... "/opt/print-user.sh %user%"
+	0 - Success
+	Non Zero - No Success
+		 
+	P4Broker
+	https://www.devopsschool.com/blog/perforce-broker-aka-helix-broker-defined/
+	sudo apt-get install helix-broker
+
+$ sudo -u perforce sh -c "cp /etc/perforce/p4dctl.conf.d/p4broker.template /etc/perforce/p4dctl.conf.d/p4broker-master.conf"
+
+$ mkdir /opt/perforce/servers/p4broker-master
+
+$ /opt/perforce/sbin/p4broker -C > /opt/perforce/servers/p4broker-master/broker.conf
+
+$ /opt/perforce/sbin/p4broker -c /opt/perforce/servers/p4broker-master/broker.conf
+$ /opt/perforce/sbin/p4broker -c /etc/perforce/p4dctl.conf.d/p4broker-master.conf
+
+Commands List -
+https://www.perforce.com/perforce/doc.current/manuals/cmdref/#CmdRef/commands.html%3FTocPath%3DCommands%2520-%2520alphabetical%2520list%7C_____0
+
+
+command: commandpattern
+{
+# Conditions for the command to meet; (optional)
+flags = required flags;
+user = required user;
+workspace = required client workspace;
+prog = required Perforce client application;
+version = required version of client application;
+
+# What to do with matching commands (required)
+action = pass | reject | redirect | filter | respond ;
+# How to go about it
+destination = altserver; # Required for action = redirect
+execute = filter program; # Required for action = filter
+message = message; # Required for action = reject and
+# action = respond. Otherwise optional
+}
+
+command: .*
+{
+prog = P4V\/.*\/2018\.2\/.*;
+version = v77;
+ 
+action = reject;
+message = "The 2018.2 P4V is not allowed to connect to this server.";
+}
+
+	P4Web
+	
+	P4Proxy
+	https://www.devopsschool.com/blog/perforce-proxy-aka-helix-proxy-explained/
+	LOCAL READ ONLY OF THE SERVER
+
+	Any machine can be converted to PROXY...
+    3  vi /etc/apt/sources.list.d/perforce.list
+		deb http://package.perforce.com/apt/ubuntu xenial release
+    4  wget -qO - https://package.perforce.com/perforce.pubkey | sudo apt-key add -
+    5  sudo apt-get update
+    6  sudo apt-get install helix-proxy
+	
+	
+	
+	$ p4p -p tcp64:[::]:1999 -t central:1666 -r /var/proxyroot
+			P4PORT	P4TARGET	P4PCACHE
+	
+	
+
+
+
+	Replication
+	https://www.perforce.com/perforce/doc.current/manuals/p4dist/Content/P4Dist/chapter.replication.html
+	
+	Security
+	p4 protect
+
+	Tools
+	Introduction to Scripting with Perforce
+	PERL SCRITING -->p4perlApi-> p4d --> THINGS
+	PYTHON --
+	
+
+
+	Maintenance - 
+		BACKUP | RESTORE | UPDRADE
+
+	UPDRADE MEANS In Perforce - ONLY REPLACE p4d executables.
+		
+	- Take a Full backup
+	- STOP THE P4d SERVER
+	- REPLACE the p4d executables.
+	- START THE P4d SERVER
+
+	Shelving
+
+
+export P4PORT=ssl:172.31.26.139:1666
+
+How to set the p4 password?
+Error -Password must be set before access can be granted.
+
+Sol:
+
+$ p4 -u super login -p
+Enter password:
+B0F50D21B1EE239552AF66063B53DC15
+
+$ export P4PASSWD=B0F50D21B1EE239552AF66063B53DC15
+$ export P4USER=super
+
+
+root@ip-172-31-26-139:~# p4 diskspace
+P4ROOT (type ext2) : 27.9G free, 1.1G used, 29G total (3% full) - /opt/perforce/servers/master
+P4JOURNAL (type ext2) : 27.9G free, 1.1G used, 29G total (3% full) - /opt/perforce/servers/master/journal
+P4LOG (type ext2) : 27.9G free, 1.1G used, 29G total (3% full)	- /opt/perforce/servers/master/log
+TEMP (type ext2) : 27.9G free, 1.1G used, 29G total (3% full)
+
+
+

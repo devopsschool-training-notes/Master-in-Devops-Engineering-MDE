@@ -1,0 +1,136 @@
+What is Perforce?
+	is a Company Name which develop a soft for SDLC.
+	Helix
+Version - HelixCore	
+Code Cover
+Code Anal
+Planning
+Requirement
+
+
+What is HelixCore?
+	SERVER-CLIENTS BASED VERSION CONTROL SYSTEM
+	TCP Protocol
+	1666 - Default port
+	
+Helix Core (P4D) Server
+Free for up to 5 users. 
+
+Helix Core Clients (p4) - Command Line
+Helix Core Clients (p4v) - GUI Based
+Desktop access to versioned files.
+
+Helix Core Plugins
+Integrate with your existing tools.
+
+Helix Swarm
+Code review and collaboration.
+
+Helix4Git
+Optional add-on to scale Git.
+
+
+Helix Core (P4D) Server is divide into following components.
+		Repo - Which contains the version files
+		DB - AKA metadata which contains info about 
+				WHO - When -
+		-------------------------------------
+		P4D
+
+Client
+	p4 --> Workspace ---> Map to Depot
+	p4v --> Workspace ---> Map to Depot
+
+How to setup a perforce Seerver?
+	WIN
+	LIN - UBUNTU
+	MAC
+52.66.214.3
+
+https://www.perforce.com/perforce/doc.current/manuals/p4sag/#P4SAG/install.linux.packages.install.html%3FTocPath%3DInstalling%2520and%2520upgrading%2520the%2520server%7CLinux%2520package-based%2520installation%7C_____1
+
+
+
+Configuring p4d service 'master' with the information you specified...
+
+Started 'master' p4d service.
+Started 1 services.
+Establish trust relationship with SSL-enabled server...
+The fingerprint of the server of your P4PORT setting
+'ssl:1666' (127.0.0.1:1666) is not known.
+That fingerprint is B9:78:92:D8:72:5F:B7:4D:D3:54:D9:1C:01:8B:32:95:53:12:A5:01
+Added trust for P4PORT 'ssl:1666' (127.0.0.1:1666)
+Also adding trust to calling user 'ubuntu'.
+Creating super-user account...
+User super not changed.
+Server ID: master
+Initializing protections table...
+Protections saved.
+Setting security level to 3 (high)...
+Counter security set.
+Setting password...
+Creating ticket for root user
+Also creating ticket for calling user 'ubuntu'.
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::
+::  P4D configuration has completed successfully.
+::
+::  Here is what has been done so far:
+::
+::  - Your p4d service settings have been written to
+::    the following p4dctl configuration file:
+::      /etc/perforce/p4dctl.conf.d/master.conf
+
+::  - The p4d service has been initialized with the P4ROOT:
+::      /opt/perforce/servers/master
+::  - The p4d service has been started with the P4PORT: ssl:1666
+::  - The p4d service has been set to Security Level 3.
+::  - The new Perforce super-user 'super' has been created and the
+::    password has been set to the one specified.
+::
+::  Here is what you can do now:
+::
+::  - You can manage it with the 'perforce' user, using the following:
+::
+::      sudo -u perforce p4dctl <cmd>
+::
+::  - You can connect to it by setting the P4PORT and P4USER
+::    environment variables and running 'p4 <cmd>'. For example, run:
+::
+::      export P4PORT=ssl:1666
+::      export P4USER=super
+::
+::      p4 login
+::
+::    For help, run:
+::
+::      p4 help
+::
+::  - To connect to this p4d service from another machine, include
+::    this machine's name or IP address in the P4PORT. For example:
+::
+::      export P4PORT=ssl:172.31.28.219:1666
+::
+::  - For help with creating Perforce Helix user accounts, populating
+::    the depot with files, and making other customizations for your
+::    site, see the Helix Versioning Engine Administrator Guide:
+::
+::    https://www.perforce.com/perforce/doc.current/manuals/p4sag/index.html
+::
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
