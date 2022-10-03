@@ -1,0 +1,287 @@
+What is Maven?
+	Build mgmt tool - Wrong....
+	Project mgmt tool
+		SDLC cycle
+	Dependency mgmt tool
+	Free
+	Developed by Apache
+	For Java Project
+	Open Source
+
+Why Maven???
+
+SRC -> Analyze -> Build -> Unit -> Package > Archive --> Deploy 
+GIT     SONARQUBE - MAVEN - JUNUT - JAR 
+		-----------------------------------
+				Maven
+
+To Automate manual and rep tasks
+	of
+		Build Aut
+		QA
+		Dep Au
+		Doc
+		Repo
+		etc......
+
+Other tool
+	JAVA - Ant > Maven > Gradle(Groovy)
+	DOT -  NANT -> MSBUILD - 
+	makefile
+
+How to install Maven?
+	Pre - JDK or JRE / JAVA_HOME
+	Download a maven from 
+	https://maven.apache.org/download.cgi
+
+	Extract
+
+	and Add C:\Tools\maven\bin into PATH
+
+	M2_HOME = C:\Tools\maven
+	
+
+How to verify?
+$ mvn 
+$ mvn -v
+
+C:\Users\Rajesh>mvn
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 0.210 s
+[INFO] Finished at: 2018-07-15T08:26:10+05:30
+[INFO] Final Memory: 5M/123M
+[INFO] ------------------------------------------------------------------------
+[ERROR] No goals have been specified for this build. You must specify a valid lifecycle phase or a goal in the format <plugin-prefix>:<goal> or <plugin-group-id>:<plugin-artifact-id>[:<plugin-version>]:<goal>. Available lifecycle phases are: validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy, pre-clean, clean, post-clean, pre-site, site, post-site, site-deploy. -> [Help 1]
+[ERROR]
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR]
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/NoGoalSpecifiedException
+
+
+What is projects?			DONE
+What is goals?				DONE
+What is lifecycle?			DONE
+What is phase?				DONE
+What is <plugin-prefix>:<goal>		DONE
+Wha is <plugin-group-id>:<plugin-artifact-id>[:<plugin-version>]:<goal>
+What is groupId?			DONE
+What is artifactId?			DONE
+
+
+How Maven works!!!
+
+1. Create a dir structure - MAVEN - Automated......
+
+mvn archetype:generate
+
+-DgroupId=com.companyname.software
+-DartifactId=financialService
+-DarchetypeArtifactId=maven-archetype-quickstart
+-DinteractiveMode=false
+
+mvn = maven Command
+archetype = plugins
+generate = Goal
+
+
+Maven Architecture.
+-------------------------------
+	Tool 		-  CORE (Apache Core)
+	Feature - 	- 	Core Plugins --------
+	More 	        - 	More external Plugins (Anyone)
+
+archetype is one of the core plugins which can create a standard dir structure.
+archetype.jar -- main
+
+
+JAR file ---> MAIN METHOD
+
+What is groupId?
+What is artifactId?
+=================================
+ADOBE - 200
+	
+	photopshop
+	dremw
+	acro
+	flash
+	cold
+	common
+
+	com.software.adobe		groupId
+			photoshop	artifactId
+	com.software.adobe.dreamw
+
+	org.apache.org.			groupId
+			
+Ashesh --- 200 Product...
+		Proper Naming Conven...
+		One prod on another....
+
+			
+
+
+mvn archetype:generate -DgroupId=com.scmgalaxy.software -DartifactId=chat -DarchetypeArtifactId=maven-archetype-quickstart  -DinteractiveMode=false
+
+COMPILE
+TEST
+PACKAGE
+INSTALL
+DEP
+
+
+HUMEN LIFECYCLE
+-------------------------------------------------
+BORN -> KID -> TEEN -> YOUNG -> MID -> OLD  -> DIE
+-------------------------------------------------->
+
+SOFT DEV LIFECLE WITH MAVEN
+------------------------------
+DEFAULT - 24 PHASES
+SITE  - 4 PHASES
+CLEAN - 3 PHASES
+https://maven.apache.org/ref/3.5.0/maven-core/lifecycles.html
+
+DEFAULT			PHASES			GOAL(HOW TO REACH)
+			compile			compile		<goal>
+			test			test 		<plugin-prefix>:<goal>
+			package			package
+			install			install		LOCAL REPO
+			deploy			deploy		REMOTE REPO
+<goal>
+<plugin-prefix>:<goal>
+<plugin-group-id>:<plugin-artifact-id>[:<plugin-version>]:<goal>
+
+What is pom.xml?
+	Project Object Model
+
+Which contains
+		Project info
+		Gro
+		Ar
+		ver	
+		CCOpy
+		Dep
+		mode
+		e
+
+packaging
+		jar,ear,pom, ejb, war
+
+version		
+		RELEASE		2.3, 2.3.0
+		SNAPSHOT	2.3-SNAPSHOT, 2.3.0-SNAPSHOT
+
+
+Dependency mgmt using Maven
+-------------------------------------
+What is Dependency mgmt?
+		EXT
+		INT
+	
+SoftX
+	Fea1(Mail)
+		EXT LIB .1.2, 1.3,, 1.4
+	Fea2
+		Fea1
+	Fea3
+	
+
+REAL - 100s of Int & EXT
+
+Maven resolve the dep using
+			1. Local --> C:\Users\Rajesh\.m2\repository
+			2. Remote  -> https://repo.maven.apache.org/maven2/
+
+How do you store the articfats f your products?
+
+REPO----
+
+What is Private repo?
+	Where you store your artifacts....
+				Binary....
+
+Tools - Nexus, Artifactory, Archiva, Nuget
+
+What is Artifactory?
+	A repo mgmt tool
+		for artiacts
+	Java Based
+	Jfrog
+
+What kind of artifacts you can store....
+https://www.jfrog.com/confluence/display/RTF/Package+Management
+
+Why Artifactory?
+	Security....
+	Integrity...
+	Stanard way to store the artifact....
+	Backup
+	Cleanup
+
+How to install it?
+
+35.154.98.80:8081
+admin
+password
+
+
+
+How to upload Artifacts from Maven to Arifactory?
+	1. REPO							DONE
+	2. USER ID N ACCESS					DONE
+	3. ADD ALL THWSE 1/2 into pom.xml  & setting.xml in maven
+			ADD REPO INFO IN POM.XML
+			ADD ACCESS INTO IN setting.xml	
+			Matching ID in POM.XMl and Setting.xml
+How to downlad Artifacts from Arifactory in maven?
+			Modify setting.xml with mirror
+
+TYPES OF REPO IN ARTIFACTORY?
+	REMOTE	---- PROXY
+	LOCAL- LOCAL
+	VIRTUAL ==== (MULTIPLE LOCAL + MUL REMO)== GROUP
+
+LOCAL
+	MAVEN
+		RELEASE -- chat-release
+
+<distributionManagement>
+    <repository>
+        <id>central</id>
+        <name>ip-172-31-3-224.ap-south-1.compute.internal-releases</name>
+        <url>http://35.154.98.80:8081/artifactory/chat-release</url>
+    </repository>
+</distributionManagement>
+
+<distributionManagement>
+    <snapshotRepository>
+        <id>snapshots</id>
+        <name>ip-172-31-3-224.ap-south-1.compute.internal-snapshots</name>
+        <url>http://35.154.98.80:8081/artifactory/chat-snapshot</url>
+    </snapshotRepository>
+</distributionManagement>
+
+		SNAPSHOT -- chat-snapshot
+
+		REMOTE - http://repo.maven.apache.org/maven2/
+
+		Virtual
+
+
+deploy
+deploy123
+
+
+
+
+
+
+
+
+

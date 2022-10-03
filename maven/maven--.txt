@@ -1,0 +1,108 @@
+Apache Ant
+
+Apache Maven 
+
+Why we need Apache Maven?
+
+Limitation of Ant?
+
+Waterfall Model --> Agile 
+Development from scrach ---> External lib
+
+Init --> Compile --> TEst --> Package --> Install - > Deploy
+
+10 projects - 10. build.xml --  REPEAT
+
+Consistency of the program - 
+Silo Env - 
+
+Internal Dep  + External lib - 
+Process -
+
+Maven - 
+Automated
+Standard Define
+Share
+
+What is maven? - Maven is not only your build. it workflow mgmt tool?
+
+How can we install?
+JDK 1.7
+Jave_HOME
+
+M2_HOME
+M2_HOME/bin --> PATH
+
+
+
+======================
+mvn 
+
+pom.xml - XML 
+ 
+Project Object Model
+
+========================
+mvn <goal name>
+mvn -f filename.xml <goal name>
+
+====================================
+How to write maven script?
+
+Maven --- Core Software + List of Plugins ( In Built + external)
+
+
+mvn archetype:generate - DONE
+-D groupId=com.companyname.software
+-D artifactId=financialService
+-D archetypeArtifactId=maven-archetype-quickstart
+-D interactiveMode=false
+
+
+plugin(xyz.jar) -- 5 functional - goals
+
+
+com.SoftX.software
+com.google.software
+	calender
+	drive
+	gmail
+	photos
+
+
+
+
+mvn archetype:generate -DgroupId=com.companyname.software -DartifactId=financialService -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+What is Downloading?
+		1. CENTRAL - repo.apache.org --> LOCAL
+		2. CUSTOM - NEXUS, Artifactory or Archiva --LOCAL
+		3. LOCAL- 
+More about version
+		SNAPSHOT - 1.0-SNAPSHOT
+		RELEASE 1.0, 2.0 , 2.2
+
+mvn compile | test | package....
+
+Maven - Lifecycle
+Default
+Clean
+Site
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

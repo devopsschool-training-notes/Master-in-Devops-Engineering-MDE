@@ -1,0 +1,108 @@
+What is Maven?
+	Build Tool
+	But actually Project Managment tool.
+	--------------------------------
+	Has ability to manage whole project.
+	Free
+	From Apache
+	Developed using Java
+	For Java
+
+Why Maven?
+	To automate the repeatitive tasks of build automation.
+	IT AUTOMATE EVERYTHING
+
+Other tool
+	Ant, Maven, Gradle, NANT, MSBUILD
+
+How to install Maven?
+	JDK && JAVA_HOME
+	Maven && C:\Tools\maven\bin > PATH
+
+How to verify?
+
+C:\Users\Rajesh>mvn
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 0.280 s
+[INFO] Finished at: 2018-12-11T20:41:16+05:30
+[INFO] Final Memory: 5M/123M
+[INFO] ------------------------------------------------------------------------
+[ERROR] No goals have been specified for this build. You must specify a valid lifecycle phase or a goal in the format <plugin-prefix>:<goal> or <plugin-group-id>:<plugin-artifact-id>[:<plugin-version>]:<goal>. Available lifecycle phases are: validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy, pre-clean, clean, post-clean, pre-site, site, post-site, site-deploy. -> [Help 1]
+[ERROR]
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR]
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/NoGoalSpecifiedException
+
+Humen  LifeCycle 
+PHASES - BORN -> KID -> TEEN --> YOUNG --> MID -> OLD - DIE
+
+Project LifeCycle
+----------------------------
+Default - 24 PHASES
+Site - 4 PHASES 
+Clean -  3 PHASES
+https://maven.apache.org/ref/3.5.3/maven-core/lifecycles.html
+
+PHASES		GOAL
+
+compile		compile
+test		test
+package		package		
+verify		verify
+install		install
+deploy		deploy
+
+------------------------------------
+
+FIRST DAY OF THE PROJECT 
+------------------------------
+SKELTON 
+
+mvn archetype:generate
+-DgroupId=com.companyname.software
+-DartifactId=chat
+-DarchetypeArtifactId=maven-archetype-quickstart
+-DinteractiveMode=false
+
+
+mvn archetype:generate -DgroupId=com.companyname.software -DartifactId=chat -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+
+archetype == PLUGIN NAME
+generate == Goal Name
+artifactId = Component Name
+groupId == Company 
+
+
+Repository
+=================================
+For managing a dependeny management....
+
+Local Repo		-> C:\Users\Rajesh\.m2
+Centrol Repo		-> http://repo.maven.apache.org/
+Private Repo		-> Nexus|Artifactory
+
+junit -> Local Repo
+
+junit -> Local Repo -> Centrol Repo -> Local Repo
+
+junit -> Local Repo -> Private Repo (Centrol Repo) -> Local Repo
+
+Maven 
+========================
+RELEASE === 2.3 2.3.4 5.6.7
+SNAPSHOT === === 2.3-SNAPSHOT 2.3.4-SNAPSHOT 5.6.7-SNAPSHOT
+
+
+
+
+
+
+
+
+

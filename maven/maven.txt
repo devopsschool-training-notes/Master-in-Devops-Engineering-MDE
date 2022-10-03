@@ -1,0 +1,76 @@
+Maven INstallation
+======================================
+JAVA_HOME
+C:\Tools\maven\bin --> PATH
+
+How can we write a program in maven?
+======================================
+pom.xml
+
+How to execute?
+=======================================
+mvn <goalname>
+
+What is maven>
+========================================
+Maven a build tools + Enforces Best Practices for the Project Management
+Avoid Dulication of the efforts
+in Build Dep Mgtm
+
+How maven works?
+========================================
+List of pluginns-
+	1. Core Plugins - Compiler, Jar, War, Test etc
+	2. External Plugins 
+
+Compile - TEST - Deploy - Package
+
+
+mvn archetype:generate -DgroupId=com.companyname.software -DartifactId=financialService -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+
+what is group ID? - com.adobe.software
+What is artifact iD? - photoshop
+
+Maven Lifecycle
+==========================================
+Default
+clean
+site
+
+Version
+==============
+SNAPSHOT
+RELEASE
+
+Repos-
+Local Repo - in build	$USER_HOME/.m2
+Central Repo - in built repo2.apache.org
+Private - NExus, Artifactory, Archiva, Nuget
+
+FLOW - Check LOCAL --> CENTRAL OR PRIATE --> LOCAL
+
+
+Modules
+==============================
+SoftX 	pom.xml(Co-ordinates + Moduels
+	Module 1 (mod1)
+		pom.xml
+	Module 2 (mod2)
+		pom.xml
+	Module 3 (mod3)
+		pom.xml
+	Module 4 (mod4)
+		pom.xml
+
+<moduels>
+<module>mod1</module>
+<module>mod2</module>
+<module>mod3</module>
+<module>mod4</module>
+</moduels>
+
+
+
+
+

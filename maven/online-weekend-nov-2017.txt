@@ -1,0 +1,367 @@
+What is Maven?
+
+	Tool
+	Maven is Build tool === WRONG + RIGHT (HOW?) ==> MAVEN IS PM TOOL which has a feaure BM.
+	Dev using Java
+	It is for Java Project Build Automation
+	Open Source
+	From Apache
+
+
+Why we need build tool?
+
+PLAN --> DEV(CODING) --> CODE REVEW --> COMPILE --> PACKAGE --> ARCHIVE --> DEPLOYE --> QA --> Release
+======================================================================================================
+					----------------------  
+						   Maven 
+
+We can compile using
+			batch
+			bash
+			java
+			c++
+
+Why Maven?
+		Easy to learn
+		Designed for Build Automation
+		Easy to implment 
+		Easy to extend/change
+
+
+Why we need build automation tools like Maven?
+===========================================================
+ONE PROJECT BUILD AUTMATION
+========================================================
+In order to compile, package etc ---What you do?
+		Steps 1 - Create a directory Structi
+		Steps 2	- Copy the src code
+		Steps 3 - Copy the 3rd party lib
+		Steps 4 - Set the compiler
+		Steps 5 - Set the environment
+		Steps 6 - Permission, Config, etc
+		Steps 7 - Compile
+		Steps 8 - Unit Test
+		Steps 9 - Package
+		Steps 9 - Deploy the to Repos (Nexus, Artifactory)
+		Steps 10 - Acceptance
+=====================================================
+		30 times in a day....
+
+What is Solution --- MAVEN
+
+What are the other tools we have?
+ANT		--IN JAVA --- BUT FOR multiple platform
+MAVEN		---
+MSBUILD		- Microsoft, In build in VS
+NANT		- OS
+GRADLE 		- DSL build automation
+
+========================
+compile
+unit
+document
+reporting
+at
+deploy
+----------------------
+It is not a build tool....
+		Maven has a in Built capability to do all that...
+------------------PROJECT MGMT TOOL===============================
+
+How to install maven?
+	Dev in Java
+	JDK or JRE  (JAVA_HOME)
+
+	Download --> extract --> Set in the path
+
+	- C:\Tools\maven\bin ==> PATH (env)
+
+How to verify?
+> mvn -v
+> mvn -h
+> mvn
+No goals have been specified for this build. You must specify a valid lifecycle phase or a goal in the format <plugin-prefix>:<goal> or <plugin-group-id>:<plugin-artifact-id>[:<plugin-version>]:<goal>.
+
+What is Goal?			DONE
+What is lifecycle?		DNE
+What is phase?			DONE
+What is plugin?			DONE
+What is Group id?		DONE
+What is Artifact id?		DONE
+What is Version?		DONE
+What is Repository??
+
+How to write a program in Maven?
+	- There is no programming
+	- Maven Automates Everything
+	- Just you need understand "How Maven Works!"
+
+Where the maven programs/specifications is getting store?
+pom.xml [ PROJECT OBEJCT MODEL]
+		xml file
+		project file
+		has all spec about the project
+
+What is the config file of maven?
+settings.xml
+> mvn -X
+[DEBUG] Reading global settings from C:\Tools\maven\conf\settings.xml
+[DEBUG] Reading user settings from C:\Users\Rajesh\.m2\settings.xml
+[DEBUG] Reading global toolchains from C:\Tools\maven\conf\toolchains.xml  ====IGNORE
+[DEBUG] Reading user toolchains from C:\Users\Rajesh\.m2\toolchains.xml    ====IGNORE
+[DEBUG] Using local repository at C:\Users\Rajesh\.m2\repository
+[DEBUG] Using manager EnhancedLocalRepositoryManager with priority 10.0 for C:\Users\Rajesh\.m2\repository
+
+
+UNderstaind the Maven How it Works???
+
+MICROSOFT
+	common
+	word
+	powerpoint
+	excel
+	acesss
+	movie maker
+
+Microsfot CTO has got a prb..
+	- He wants the standardize naming conention to be used across org
+	- So everyone(dev+qa) should know everything about othrr projects without any KT but following the logic set the by comp
+	- Cross use of Functionaliy and Code
+
+	Package Structure would become like this...
+	com.microsft
+			common
+			word
+			powerpoint
+			excel
+
+	com.adobe.software		
+		photoshop
+		acrobat
+		flash
+
+	org.apache.software
+
+
+What is Group id?  == com.microsft == com.adobe.software == org.apache.software
+What is Artifact id? == word = photoshop = flash
+What is version/RELEASE?
+		1.2, 1.3, 5.6
+		RELEASE		---> STABLE PACKAGE/PRODUCT ==1.2, 1.3, 5.6
+		SNAPSHOT	---> NOT STABLE -> 1.2-SNAPSHOT, 1.3-SNAPSHOT, 5.6-SNAPSHOT
+		
+
+What is Goal?
+What is lifecycle?
+What is phase?
+=============================================================
+HUMEN LIFECYCLE???
+BORN --> KID --> TEEN --> YOUNG --> MID --> DIE
+
+Software PROJET
+----------------------------
+WHAT IS START POINT?
+WHAT IS END POINT?
+==========================================
+
+MAven LIFECYCLE???
+=====================================
+http://maven.apache.org/ref/3.3.3/maven-core/lifecycles.html
+
+default Lifecycle -- MOST	
+clean Lifecycle
+site Lifecycle
+
+
+PHASES
+====================
+<phase>validate</phase>
+  <phase>initialize</phase>
+  <phase>generate-sources</phase>
+  <phase>process-sources</phase>
+  <phase>generate-resources</phase>
+  <phase>process-resources</phase>
+  <phase>compile</phase>			IMPORTANT
+  <phase>process-classes</phase>
+  <phase>generate-test-sources</phase>
+  <phase>process-test-sources</phase>
+  <phase>generate-test-resources</phase>
+  <phase>process-test-resources</phase>
+  <phase>test-compile</phase>
+  <phase>process-test-classes</phase>
+  <phase>test</phase>				IMPORTANT
+  <phase>prepare-package</phase>
+  <phase>package</phase>			IMPORTANT
+  <phase>pre-integration-test</phase>
+  <phase>integration-test</phase>
+  <phase>post-integration-test</phase>
+  <phase>verify</phase>				IMPORTANT
+  <phase>install</phase>			IMPORTANT
+  <phase>deploy</phase>				IMPORTANT
+
+================================================================================
+LIFECYCLE		PHASES			HOW tO TRIGGER THAT PHASE(goal) 
+						- Method/Funcions defined in Maven Core Plugins....
+					
+default			compile			compile	
+			test			test
+			install			install
+			package			package
+			deploy			deploy	
+
+==============================================================
+How to call that goal???
+> mvn <<goalname>>
+
+What is Plugins
+===========================================
+Any Software
+		BASE(Fundation) --> FEA1
+				--> FEA2 DISABLE IT
+				--> FEA3
+
+ANDRID -------> BASE---> APP
+JENKINS ------> BASE ---> PLUGINS
+MAVEN --------> MAVEN ENGINE ---->
+				CORE PLUGINS (is a functionality of the Goals)- Default installed
+				EXTERNAL PLUGINS
+
+DEMO TIME
+==============================================================
+mvn archetype:generate
+-DgroupId=com.companyname.software
+-DartifactId=financialService
+-DarchetypeArtifactId=maven-archetype-quickstart
+-DinteractiveMode=false
+
+mvn pluginname:goalname
+mvn goalname
+
+mvn archetype:generate -DgroupId=com.companyname.software -DartifactId=financialService -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+mvn archetype:generate
+
+archetype = maven-archetype-plugin:3.0.1:generate
+
+
+How to compile it?
+> mvn compile
+> maven-compiler-plugin:3.1:compile
+
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ financialService ---
+Downloading: https://repo.maven.apache.org/maven2/junit/junit/3.8.1/junit-3.8.1.jar
+Downloaded: https://repo.maven.apache.org/maven2/junit/junit/3.8.1/junit-3.8.1.jar (0 B at 0.0 KB/sec)
+[WARNING] Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory D:\weekend\financialService\src\main\resources
+[INFO]
+
+What is repo.maven.apache.org??
+----------DEPENDENCY MGMT--------------------------------
+Automatically see which is the depdendency, they download auto..
+
+FROM WHERE? ---- Reposittory.
+
+What are kind of repo?
+============================================
+	LOCAL		C:\Users\Rajesh\.m2\repository	READ N WRITE
+	CENTRAL		repo.maven.apache.org		READ ONLY
+	PRIVATE		NEXUS, ARTIFACTORY, ARCHIVA	READ N WRITE	
+
+How repo workS??
+==================================================================
+Maven ===> LOCAL REPO == CENTRAL REPO ==> LOCAL REPO --> MAVEN
+
+MAVEN ===> LOCAL REPO ==> PVT REPO ---> PVT PACK     | -- LOCAL REPO
+				   ---> PUBLIC PROXY | -- LOCAL REPO
+
+Packaging in Maven?
+================================
+jar
+pom
+war
+ear
+
+
+NEXT TOPIC OF COMPEXITY OF MAVEN POM.xml
+==================================================================
+
+HOW TO CUSTOMIZE THE MAVEN
+==================================
+mvn compile
+================
+> maven-compiler-plugin:3.1:compile
+		default variable set
+
+In case of Customization
+		 you need to over ride defauilt variables....
+
+How to overide?
+	use this plugins "maven-compiler-plugin" with your parameteres in pom.xml
+	with element name called "build"
+
+==============================POM.xml
+what is module element?
+Artifact Name = word
+
+MICROSOFT
+	common
+	word
+	powerpoint
+	excel
+	acesss
+	movie maker
+------------Using one command, he should whole MS product BUT whenever you need to build one artifact, it souild be done as well.
+
+How can you do it?
+==========================================
+modules
+
+
+	ms
+		pom.xml (Code of this is below)
+			Remember ---- THis file will not have Artifact, group id n version...
+					package type - pom
+		common
+			pom.xml
+		word
+			pom.xml
+		power
+			pom.xml
+		excel
+			pom.xml	
+		accsss
+			pom.xml
+
+<modules>
+<module>common</module>
+<module>word</module>
+<module>power</module>
+<module>excel</module>
+<module>accsss</module>
+</modules>	
+
+what is plugins element?
+	extend the fun of maven
+	Only for external plugins
+
+
+what is dependencies elemtn?
+what is properties element?
+What is build eleemtn?
+
+copyright of the company
+Common Plugins
+Commomn variables
+
+
+parent element
+aid
+grip
+package -pom...
+
+
+
+
+
+
+

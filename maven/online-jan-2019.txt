@@ -1,0 +1,257 @@
+What is Maven?
+	Build mgmt tool.
+	Project mgmt tool..
+		documenting
+		coding
+		compiling
+		testing
+		package
+		deploy
+	From Apache
+	Free & Open Source
+	Developed in Java and For Java...
+	Procedural Lang...
+
+Why Maven?
+	It saves time
+	Dep mgmt 	
+	Most of the things are automatic
+	
+Other tools - 
+	https://www.devopsschool.com/path/
+======================IT AUTOMATE EVERYthING in PROJECT MGMT=====================
+
+How maven works!!!!!!!!!!
+
+Maven Architecture
+	Maven Core	- Basic functionality + Can understand plugins
+	Maven Plugins	- Each plugins has certains feature
+				 - Core Plugins by Maven
+				 - Exernal Plugins
+
+Human Life Cycle
+-----------------------------------------
+Born -> Kid -> Teen -> Young -> Mid -> Old -> Die
+------------------------------------------------->
+
+Software Project Life Cycle
+=========================================
+Maven has 3 lifecycle...
+
+Default - 22		How can we go back to phase?(plugin:Goal)
+Phases			plugin:Goal			
+compile			<<plugin-name>>:compile	
+test			<<plugin-name>>:test
+package			<<plugin-name>>:package
+install			<<plugin-name>>:install
+deploy			<<plugin-name>>:deploy
+
+Clean  - 3
+Site - 4
+========================================
+
+mvn archetype:generate
+mvn plugins-name:goal
+
+-D	groupId=com.companyname.software
+-D	artifactId=financialService
+-D	archetypeArtifactId=maven-archetype-quickstart
+-D	interactiveMode=false
+===========================================
+Adobe
+	photoshops
+	acrobabt
+	flash
+	dreamweaver
+	common
+com.adobe.software.photoshops
+com.adobe.software.acrobabt
+		.flash
+		.dreamweaver
+
+com.adobe.software = groupid
+	photoshops = artifactId
+	acrobabt = artifactId
+	flash = artifactId
+	dreamweaver = artifactId
+	common = artifactId
+
+
+mvn archetype:generate -DgroupId=com.devopsschool.software -DartifactId=chat -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+How to install?
+	JRE + JDK
+
+	Download & Extract
+	https://maven.apache.org/download.cgi
+	maven home/bin -->PATH
+	C:\Tools\maven\bin -> PATH
+
+
+C:\Users\Rajesh>mvn
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 0.227 s
+[INFO] Finished at: 2019-01-26T09:22:36+05:30
+[INFO] Final Memory: 5M/123M
+[INFO] ------------------------------------------------------------------------
+[ERROR] No goals have been specified for this build. You must specify a valid lifecycle phase or a goal in the format <plugin-prefix>:<goal> or <plugin-group-id>:<plugin-artifact-id>[:<plugin-version>]:<goal>. Available lifecycle phases are: validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy, pre-clean, clean, post-clean, pre-site, site, post-site, site-deploy. -> [Help 1]
+[ERROR]
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR]
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/NoGoalSpecifiedException
+
+Pakcage - jar, ear, war, pom
+version - 	SNAPSHOT	3.4-SNAPSHOT 2.2.2-SNAPSHOT 4.4.4-SNAPSHOT
+		RELEASE	3.4 2.2.2 4.4.4
+	
+
+How dependency mgmt works in Maven?
+	Project may be depedent on many 3rd party or orther projects of your comany...
+	using Repo....
+		Local 	.m2
+		Central - http://repo.maven.apache.org/maven2/
+		Private - Artifactory, nexus, Archiva...
+
+
+install --> .m2
+deploy --> Private - Artifactory, nexus, Archi
+=======================================================
+What is Nexus?
+	repository where you can keep a Artifact/Binary/packages
+	From SonaType
+	Release
+		Free - Community
+		Paid - Pro
+	Developed using Java
+
+Why Nexus?
+	to keep packages srcure
+	Avaiable
+	Durable
+	Access 
+	cleanup.....
+
+
+How to install?
+	JRE + JDk
+	Install Nexus.....
+
+   1  clear
+    2  sudo yum install wget
+    3  wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+    4  sudo rpm -ivh jdk-8u131-linux-x64.rpm
+    5  cd /opt/
+    6  ls
+    7  wget https://www.sonatype.com/oss-thank-you-tar.gz
+    8  wget http://download.sonatype.com/nexus/3/latest-unix.tar.gz
+    9  ls
+   10  tar -zxvf latest-unix.tar.gz
+   11  clear
+   12  ls
+   13  mv nexus-3.15.1-01 nexus
+   14  cd nexus/
+   15  ls
+   16  cd etc
+   17  ls
+   18  more nexus-default.properties
+   19  cd ..
+   20  s
+   21  ls
+   22  cd bin/
+   23  ls
+   24  ./nexus start
+   25  ./nexus status
+   26  history
+http://13.233.109.139:8081/
+admin
+admin123
+
+==========================================
+Create a roles called devopsschool and assign access at admin level....
+
+Create a user called deploy/deploy123
+
+create  a repo..
+	Nexus has 3 kind of repo
+		Hosted - READ - WRITE	
+			devopsschool-hosted-release
+			http://13.233.109.139:8081/repository/devopsschool-hosted-release/
+			devopsschool-hosted-snapshot
+			http://13.233.109.139:8081/repository/devopsschool-hosted-snapshot/
+		Proxy  - Cache Read Copy
+			http://13.233.109.139:8081/repository/ds-proxy/
+		group  - multiple Hosted and Hosted Proxy 
+
+	What are types of Packages you can store?
+	APT* 
+Composer
+Composer* 
+Conan
+Conan* 
+CPAN
+CPAN* 
+Docker
+Docker 
+ELPA
+ELPA* 
+Git LFS
+Git LFS 
+Helm
+Helm* 
+Maven
+Maven 
+npm
+npm 
+NuGet
+NuGet 
+P2
+P2* 
+PyPI
+PyPI 
+R
+R* 
+Raw
+Raw 
+RubyGems
+RubyGems 
+Yum
+Yum
+
+=============================================== 
+How to upload a Artifact in nexus using maven?
+https://www.devopsschool.com/blog/how-to-upload-the-artifacts-in-sonatype-nexus/
+
+s1 - Modify pom.xml with Repo
+S2  - Modify setting.xml with access
+s3 - mvn deploy
+https://github.com/scmgalaxy/helloworld-java-maven
+
+How to download from Nexus using Maven?
+----------------------------------
+Mail --> Chat 1.0
+
+Change the setting.xml mirror to nexus
+
+
+
+
+
+Nexus vs Git
+=================================
+Git is doing versioing of src code....
+Nexus is doing copy a artifacts/binary with numbered fashion....
+
+50MB --> 60 -->	100MB	- 5 mins
+=========================
+			10000 MB -- 50 mins
+
+100 MB X 100 = 10000 MB
+
+
+
+

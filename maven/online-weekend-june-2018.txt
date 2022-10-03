@@ -1,0 +1,213 @@
+54.165.176.118
+What is Maven?
+	 
+	Project Management Tool
+	------  ---------  -----
+		Build tool 
+	Open Source
+	Free
+	From Apache
+	Developed in Java
+	For Java
+
+What you do in a software project so Maven manages the project?
+	Config
+	Downloadng the src code
+	initialization
+	Compile
+	Pack
+	Unit Test
+	AT
+	Deployment
+	Document
+	Reports
+	Clean
+	Dependency mgmt
+-------------------
+	REPEAT
+
+History Of Maven?
+	Apache.org
+		1000s open source 
+			Dependency mgmt
+			Compile
+			TEST
+			Package
+			InstALL
+			cLEAN
+			rEPORT
+			dOCUMENT
+	-----------------------
+	maven --- auTOMATIC.....
+
+	no diff scripting
+	NO NEW SKILLSETS ARE REQUIRED
+
+Maven says - if you follow my process - I will automated everything..
+
+Others tools
+Makefile -> ant -> Maven -> Gradle
+makefile -> NANT --> Msbuild
+rake
+
+How to install Maven?
+----------------------------
+Pre -
+	JRE --> JDK
+	- Download a maven package from - https://maven.apache.org/download.cgi
+	- extract it c drive or opt
+	- set a path.
+		maven_home/bin ----> PATH
+		C:\Tools\maven\bin-- PATH
+How to verify?
+$ mvn 
+$ mvn -v
+
+How maven works?
+-----------------------------
+
+Maven Software
+		- Maven Core	= Just understand the plugins
+		- Plugins	= features of maven
+					- Core Plugings
+					- External Plugins.
+=================ALLL these will happen auto in maven===========
+Project Dir Structure
+Build Prep
+Compile
+Testing
+Packaging
+verioninng
+Cleanup
+
+How??
+	plugins
+
+mvn archetype:generate
+-DgroupId=com.scmgalaxy.software
+-DartifactId=financialService
+-DarchetypeArtifactId=maven-archetype-quickstart
+-DinteractiveMode=false
+
+mvn archetype:generate -DgroupId=com.scmgalaxy.software -DartifactId=financialService -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+mvn - tools
+archetype - plugin name
+generate - goal name
+groupId	= com.scmgalaxy.software
+artifactId = financialService
+------------------------------------------------------------
+
+What is Goal?
+What is Lifecycle
+What is Phase
+GOAL - <plugin-prefix>:<goal> =  <plugin-group-id>:<plugin-artifact-id>[:<plugin-version>]:<goal>
+
+What is groupId?
+What is artifactId?
+What is version?
+		RELEASE		2.0, 2.0.1, 2.0.4 -- MAJOR-MINOR-PATCH
+		SNAPSHOT	2.0-SNAPSHOT, 2.0.1-SNAPSHOT, 2.0.4-SNAPSHOT
+Package - jar, war, pom, ear
+=============================================================================
+LIFECYCLE
+	START							END
+------------------------------------------------------------------------
+HUMEN	===>> 	BORN -> KID -> TEEN -> YOUNG -> MID -> OLD -> DIE
+		================================================
+					PHASES
+
+SOFTWARE ==>	Code ->  ANal -> compile - test - package - deply - at - release
+
+Maven	==>	3 LifeCycle default
+		http://maven.apache.org/ref/3.5.0/maven-core/lifecycles.html
+		Default - 24 PHASES
+		Site	- 4 PHASES
+		Clean	- 3 PHASES
+
+					HOW TO REACH TO THAT PHASE???	FROM?
+LIFEYCLE	PHASES			GOAL				Plugins
+		compile			compile				??				
+		test			test				?
+		package			package				?
+		install			install	
+		deploy			deploy
+
+--------------------------------------------------------
+Company - Microsoft - 20 Products
+			Word
+			Powerpont
+			excel
+			accesss
+			frontpage
+			Common
+			
+
+		So much of inter dependency.....
+		Common Module
+			FONT 
+			STYLE
+		External
+================================
+Sotware is built around - using Interal lib + ext lib
+
+Package Structure...
+com.microsoft.software
+org.apcahce.software
+	=====================
+	GROUP ID
+
+Artifact ID	
+			Word
+			Powerpont
+			excel
+			accesss
+			frontpage
+			Common
+
+
+	
+Project Dir Structure
+mvn archetype:generate -DgroupId=com.scmgalaxy.software -DartifactId=financialService -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+Build Prep
+Compile
+Testing
+Packaging
+verioninng
+Cleanup
+
+What is pom.xml
+	Project object Model
+	Project file
+		Contains all infomation about your project
+
+============================================================
+Dependency mgmt.........
+What is Repo?
+	A Place where you get lib.(Binary)
+
+	Maven Supports 3 kinds of Repos?
+			Maven Local Repo - - C:\Users\Rajesh\.m2
+			Maven Central - https://repo.maven.apache.org/maven2/
+			Private - Archiva, Nexus, Artifctory
+
+$ mvn install ---- Copy the Artifact to .m2
+$ mvn deploy  - Copy the Artifact to PRIVATE
+
+
+
+MAVEN NOTES - http://www.devopsschool.com/notes/
+MAVEN SLIDE - http://www.devopsschool.com/tutorial/
+MAVEN VIDEO-  http://www.devopsschool.com/video/index.html
+
+
+
+
+
+
+
+
+
+	
+	

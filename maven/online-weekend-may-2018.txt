@@ -1,0 +1,392 @@
+http://www.devopsschool.com/video/devops/DevOps-Essentials.html
+
+SDLC LIFE CYCLE
+=============================================
+PLAN -> CODE -> ANALYSIS -> BUILD -> UT -> PACK -> DEP2REPO -> DEP2QA ->AT -> CC -> RELEASE
+-------------------------------------------------------------------------------------------
+JIRA -> GIT  -> SONARQUBE -> MAVEN -> JUNIT -> JAR -> NEXUS -> PUppet -> SEL -> JACOCO ->
+===========================================================================================
+					JENKINS
+
+
+BUILD -> UT -> PACK -> DEP2REPO
+===============================
+MAVEN -> JUNIT -> JAR -> NEXUS
+MSBUILD -> NUNIT -> EXE -> NEXUS
+
+
+PROBELM?
+	Code --> Binary
+		Create a Directory - src, build, lib, etc
+		Copy the src code
+		COpy Dependent lib
+			From External Source - Public(http://repo.maven.apache.org/maven2/
+			From Internal - Nexus, Artitactory
+		Set the compiler
+		Set the env
+		Set the conf
+		Dependent project - Build
+				----		
+				----
+		compile
+		unit test
+		package
+=========================================================
+		20 times
+		Automation - JAVA, C++, Perl, Python
+			Difficult to Learn/ Debug/Share/Extend
+		Simple tools - -Easy to Learn/ Debug / Share / Extend
+		DSL --
+		makefile -->ant -> maven -> gralde	
+		makefile -> nant -> msbuild
+
+		For automating the build infrastructure.....
+	
+What is Maven?
+=====================================
+Build automation tools - WRONG
+	Project mgmt tool (Automatically)
+		compile
+		test
+		package
+		at
+		deploy
+		install
+		dock
+		report
+Free & Opensource
+From Apache
+Developed in Java
+Mainly for java
+Can be used for other tech
+=====================================
+Other Tools
+		makefile -->ant -> maven -> gralde	
+		makefile -> nant -> msbuild
+
+Why ?
+	Build/deploy/QA automation...
+
+
+How to install it?
+	JRE & JDK
+	Download from here -http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+	JAVA_HOME
+	$JAVA_HOME/bin --> PATH
+
+	MAVEN Download - http://www-eu.apache.org/dist/maven/maven-3/
+	http://www-eu.apache.org/dist/maven/maven-3/3.5.3/binaries/
+
+
+	Extract to some commmon installation location
+
+	Set the path
+	C:\Tools\maven\bin --> PATH
+	export PATH=$PATH:/opt/maven/bin
+
+How to verify the maven?
+
+> mvn 
+
+D:\weekend>mvn -version
+Apache Maven 3.3.9 (bb52d8502b132ec0a5a3f4c09453c07478323dc5; 2015-11-10T22:11:47+05:30)
+Maven home: C:\Tools\maven
+Java version: 1.8.0_91, vendor: Oracle Corporation
+Java home: C:\Tools\Java\jre
+Default locale: en_US, platform encoding: Cp1252
+OS name: "windows 10", version: "10.0", arch: "amd64", family: "dos"
+
+D:\weekend>mvn -help
+
+usage: mvn [options] [<goal(s)>] [<phase(s)>]
+
+Options:
+ -am,--also-make                        If project list is specified, also
+                                        build projects required by the
+                                        list
+ -amd,--also-make-dependents            If project list is specified, also
+                                        build projects that depend on
+                                        projects on the list
+ -B,--batch-mode                        Run in non-interactive (batch)
+                                        mode
+ -b,--builder <arg>                     The id of the build strategy to
+                                        use.
+ -C,--strict-checksums                  Fail the build if checksums don't
+                                        match
+ -c,--lax-checksums                     Warn if checksums don't match
+ -cpu,--check-plugin-updates            Ineffective, only kept for
+                                        backward compatibility
+ -D,--define <arg>                      Define a system property
+ -e,--errors                            Produce execution error messages
+ -emp,--encrypt-master-password <arg>   Encrypt master security password
+ -ep,--encrypt-password <arg>           Encrypt server password
+ -f,--file <arg>                        Force the use of an alternate POM
+                                        file (or directory with pom.xml).
+ -fae,--fail-at-end                     Only fail the build afterwards;
+                                        allow all non-impacted builds to
+                                        continue
+ -ff,--fail-fast                        Stop at first failure in
+                                        reactorized builds
+ -fn,--fail-never                       NEVER fail the build, regardless
+                                        of project result
+ -gs,--global-settings <arg>            Alternate path for the global
+                                        settings file
+ -gt,--global-toolchains <arg>          Alternate path for the global
+                                        toolchains file
+ -h,--help                              Display help information
+ -l,--log-file <arg>                    Log file where all build output
+                                        will go.
+ -llr,--legacy-local-repository         Use Maven 2 Legacy Local
+                                        Repository behaviour, ie no use of
+                                        _remote.repositories. Can also be
+                                        activated by using
+                                        -Dmaven.legacyLocalRepo=true
+ -N,--non-recursive                     Do not recurse into sub-projects
+ -npr,--no-plugin-registry              Ineffective, only kept for
+                                        backward compatibility
+ -npu,--no-plugin-updates               Ineffective, only kept for
+                                        backward compatibility
+ -nsu,--no-snapshot-updates             Suppress SNAPSHOT updates
+ -o,--offline                           Work offline
+ -P,--activate-profiles <arg>           Comma-delimited list of profiles
+                                        to activate
+ -pl,--projects <arg>                   Comma-delimited list of specified
+                                        reactor projects to build instead
+                                        of all projects. A project can be
+                                        specified by [groupId]:artifactId
+                                        or by its relative path.
+ -q,--quiet                             Quiet output - only show errors
+ -rf,--resume-from <arg>                Resume reactor from specified
+                                        project
+ -s,--settings <arg>                    Alternate path for the user
+                                        settings file
+ -T,--threads <arg>                     Thread count, for instance 2.0C
+                                        where C is core multiplied
+ -t,--toolchains <arg>                  Alternate path for the user
+                                        toolchains file
+ -U,--update-snapshots                  Forces a check for missing
+                                        releases and updated snapshots on
+                                        remote repositories
+ -up,--update-plugins                   Ineffective, only kept for
+                                        backward compatibility
+ -V,--show-version                      Display version information
+                                        WITHOUT stopping build
+ -v,--version                           Display version information
+ -X,--debug                             Produce execution debug output
+
+How to write a script in Maven?
+---------------------------------------------------
+NO
+
+You need to understand how maven works?
+==========================================
+D:\weekend>mvn
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 0.132 s
+[INFO] Finished at: 2018-05-19T08:46:42+05:30
+[INFO] Final Memory: 5M/123M
+[INFO] ------------------------------------------------------------------------
+[ERROR] No goals have been specified for this build. You must specify a valid lifecycle phase or a goal in the format <plugin-prefix>:<goal> or <plugin-group-id>:<plugin-artifact-id>[:<plugin-version>]:<goal>. Available lifecycle phases are: validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy, pre-clean, clean, post-clean, pre-site, site, post-site, site-deploy. -> [Help 1]
+[ERROR]
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR]
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/NoGoalSpecifiedException
+
+What is Goals?
+What is lifecycle phase?
+What is plugin-prefix>:<goal>
+<plugin-group-id>:<plugin-artifact-id>[:<plugin-version>]:<goal>
+
+What is plugins? 
+	Is a way to extednt the functionality of the maven
+Maven is design based on the plugins concepts.
+	Maven Core 
+			Core Plugins		
+			External Plugins
+
+What is Life cycle?
+	What is a life cycle of the software project dev?
+		What is a life cycle of humen being?
+		
+Born --> Kid --> Teen --> Young -> Mid --> Old  --> Die
+	RAJ
+---------------------------------------------------------
+FIXED
+
+
+			PHASES
+
+Prepare -> compile -> ut -> pack -> install -> 
+-----------------------------------------------------
+			PHASES
+
+Maven 3 Life cycle..
+		If you want...You can create your own life cycle...
+http://maven.apache.org/ref/3.5.0/maven-core/lifecycles.html
+default	- 24 
+site	- 4
+clean	- 3
+
+PHASES			SECRET(GOAL)		FROM WHERE?(Plugins)
+-------------------------------------------------------------
+compile			compile			compiler..........:version
+test			test			surfire
+package			package			jar pluguns
+integration-test	integration-test
+verify			verify					
+install			install
+deploy			deploy			
+
+
+
+
+Project Name - scmgalaxy
+How to create project directory struc auto?
+
+mvn <plugin-prefix>:<goal>
+mvn <goal>	# Core plugins
+mvn <plugin-prefix>:<goal>	#PLugins
+mvn <plugin-prefix>:version:<goal>
+
+mvn archetype:generate
+
+group id
+artifact id
+version
+package
+
+You need to become a CTO - Product Architect
+ADOBE --- 200 
+		photoshop
+		accrobat
+		dreamwearver
+		common(font)
+How easily you can create a meaning naming conventions so each project can be bundled and referred easily
+com.adobe.photoshop
+com.adobe.common
+org.apache.maven
+
+com.adobe.softare = GROUP ID
+photoshop = Artifact ID
+
+Version
+	SNAPSHOT - 1.2-SNAPSHOT, 1.2.2-SNAPSHOT, 3.2-SNAPSHOT
+	RELEASE	- 1.2, 1.2.2, 3.2
+
+package - jar, ear, war, pom
+
+
+-DgroupId=com.companyname.software
+-DartifactId=financialService
+-DarchetypeArtifactId=maven-archetype-quickstart
+-DinteractiveMode=false
+
+mvn archetype:generate -DgroupId=com.companyname.software -DartifactId=financialService -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+MAVEN SAYS - IF YOU FOLLOW --  I WILL AUTOMATE ALL FOR U
+==========================================
+
+Pom.xml - Prject object model
+		Contains the info abt project
+
+
+PHASES			SECRET(GOAL)		FROM WHERE?(Plugins)
+-------------------------------------------------------------
+compile			compile			compiler..........:version	maven-compiler-plugin:3.1:compile
+test			test			surfire
+package			package			jar pluguns
+integration-test	integration-test
+verify			verify					
+install			install
+deploy			deploy	
+
+===========================================================		
+
+
+
+
+build
+	COMPILER PLUGINS
+
+<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-compiler-plugin</artifactId>
+    <configuration>
+        <source>1.8</source>
+        <target>1.8</target>
+        <compilerVersion>1.8</compilerVersion>      
+        <fork>true</fork>
+        <executable>D:\jdk1.8\bin\javac</executable>                
+    </configuration>
+</plugin>
+
+===========================================================
+Maven Support 3 Kind of LIB Repostory??
+
+What is Repo???
+	A place where you can packaged binary...
+
+LOCAL REPO	- C:\Users\Rajesh\.m2\repository		BY MACHINE
+CENTRAL REPO	- http://repo.maven.apache.org/maven2/		everyone + read onlY
+PRIVATE REPO - NEXUS, ARTIFACTORY, NUGET, CHOC, ARCHIA		everyone + rw
+
+mvn install  # Install to local repo
+mvn deploy  # deploy to Priate
+
+
+What is Nexus?
+	A Private repo for storing binary atifact
+	Secured
+	Accesssible
+
+How to instal
+	JAVA
+	NEXUS
+
+
+INSTRUCTIONS TO INSTALL?
+http://www.devopsschool.com/notes/nexus/online-april-2018.txt
+	
+
+In order to upload a package from Maven to Nexus?
+	1. ONE release Repo
+		http://13.232.41.118:8081/repository/weekend-release/
+	2. ONE SNAPSHOT	
+		http://13.232.41.118:8081/repository/weekend-snapshot/
+	3. creata user and assign a acesss
+		dep
+		dep123
+	3. Add repo location in pom.xml
+		DONE
+	4. A a permisson in setting.xml
+
+	ID in pom.xml & Setting.xml should match
+
+	$ mvn deploy
+
+
+EXMAPLE PROJECT - https://github.com/scmgalaxy/helloworld-java-maven
+
+How to download a Artiact from NEXUS?
+	setting.xml
+		mirrors
+
+
+
+
+VIDEO 
+MAVEN - http://www.devopsschool.com/video/apache-maven/index.html
+NEXUS - http://www.devopsschool.com/video/nexus/index.html
+
+MAVEN WITH GIT
+https://stackoverflow.com/questions/47401615/scm-url-of-local-git-repo
+
+
+
+
+

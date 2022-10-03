@@ -1,0 +1,149 @@
+What is Maven?
+=======================
+	Is a build tool -WRONG
+	Project Mgmt tool
+		Build
+		TEST
+		PACKAGE
+		DEP
+		Document
+		Release
+	Free
+	Open Source
+	From Apache
+	Dev in Java
+	For Java Projects
+
+
+Why Maven?
+=======================
+	Dependency mgmt features
+	Automate Everything
+
+
+Another tools -
+=======================
+	Makefile, Ant, NANT, mSBuild, Gradle
+
+How to install Maven?
+=======================
+	JRE or JDK
+	http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+
+	Download & Install
+	http://maven.apache.org/download.cgi
+
+	C:\Tools\maven\bin --> PATH
+
+How to verify?
+=======================
+> mvn
+> mvn -v
+
+[ERROR] No goals have been specified for this build. You must specify a valid lifecycle phase or a goal in the format <plugin-prefix>:<goal> or <plugin-group-id>:<plugin-artifact-id>[:<plugin-version>]:<goal>. Available lifecycle phases are: validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy, pre-clean, clean, post-clean, pre-site, site, post-site, site-deploy. -> [Help 1]
+
+What is goals?
+What is lifecycle phase?
+<plugin-prefix>:<goal>
+
+Maven Vs ANT|MSBUILD|NANT
+=======================
+Procedures Lang  Vs Decalarative Lang
+
+How Maven Works?
+=======================
+	Maven Core ---> PLugins
+				- Core Plugins 
+				- External Plugins
+
+What is Plugins?
+	Feature which you want to use it?
+
+How to call features?
+<plugin-prefix>:<goal> or 
+<plugin-group-id>:<plugin-artifact-id>[:<plugin-version>]:<goal>
+
+plugins-name:goal
+
+What is the life cycle of the humen being?
+born->kid->teen->young->mid->old->Die
+
+What is the project mgmt life cycle for SDLC?
+http://maven.apache.org/ref/3.5.2/maven-core/lifecycles.html
+
+Maven has 3 life cycle to manage the SDLC.	
+
+Default - 24 Phase		How to call that phase?		goalname
+	compile			Plugins:goalname		compile
+	test			Plugins:goalname		test
+	package			Plugins:goalname		package
+	verify			Plugins:goalname		verify	
+	install			Plugins:goalname		install
+	deploy			Plugins:goalname		deploy	
+
+Site   - 4 Phase
+
+Clean - 3 Phase
+--------------------------------
+How to create project directory stru?
+> mvn Plugins:goalname
+
+mvn archetype:generate
+-DgroupId=com.scmgalaxy.software
+-DartifactId=chat
+-DarchetypeArtifactId=maven-archetype-quickstart
+-DinteractiveMode=false
+
+Define value for property 'groupId':
+Define value for property 'artifactId':
+Define value for property 'version' 1.0-SNAPSHOT: :
+Define value for property 'package' : :
+
+
+What is groupId, artifactId, version & package?
+
+HIStoRY of Maven -->
+
+groupId - to represent the org
+		org.apache
+		com.adobe
+		com.ms
+artifactId
+		maven
+		httpd
+		phoshop
+version 
+		SNAPSHOT	1.0-SNAPSHOT
+		RELEASE		1.0
+
+package		Jar | WAR | EAR | POM 
+		
+	
+mvn archetype:generate -DgroupId=com.scmgalaxy.software -DartifactId=chat -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+What is pom.xml?
+	It contains the project details?
+	xml file
+
+
+Dependency mgmt?
+		EXTERNAL -- CENTRAL 
+		INTERNAL -- 
+		Manages the dep using following repo?
+		1. You mention the dep in the pom.xml
+
+		Maven --> Local Repo --> Central Repo --> Local Repo -> Maven
+
+
+		LOCAL - C:\Users\Rajesh\.m2\repository
+		PRIVTE REPO - NEXUS, ARTIFACTORY, ARCHIVA
+
+
+
+
+
+
+
+
+
+	

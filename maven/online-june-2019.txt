@@ -1,0 +1,134 @@
+What is Maven?
+	Built tool.
+	Project mgmt tool.
+	Free
+	Open Source
+	From Apache
+	Dev in Java
+	
+Why Maven
+	For automating a build complexity java project.
+	dependencny mgt
+	Stremline a build process with almost no programming lang
+	Integ	
+		git
+		nexus
+		artifactory
+
+How to install Maven?
+	1.  Install Java
+	2. Setup JAVA_HOME
+	3. Download Maven zip file and extract it into desire location
+	4. C:\Tools\maven\bin => Add into PATH
+
+How to verify?
+
+C:\Users\Rajesh>mvn
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 0.233 s
+[INFO] Finished at: 2019-06-27T21:13:59+05:30
+[INFO] Final Memory: 5M/123M
+[INFO] ------------------------------------------------------------------------
+[ERROR] No goals have been specified for this build. You must specify a valid lifecycle phase or a goal in the format <plugin-prefix>:<goal> or <plugin-group-id>:<plugin-artifact-id>[:<plugin-version>]:<goal>. Available lifecycle phases are: validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy, pre-clean, clean, post-clean, pre-site, site, post-site, site-deploy. -> [Help 1]
+[ERROR]
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR]
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/NoGoalSpecifiedException
+
+What is goals?
+What is lifecycle?
+What is phase 
+
+HUMEN CYCLE
+==================================
+BORN --> KID --> TEEN --> YOUNG --> MID --> OLD  -> DIE
+----------------------------------------------------------
+			PHASE
+
+SOFTWARE PROJECT
+=============================
+LIFECYCEL
+
+MAVEN HAS FOLLOWING LIFE CYCLE TO MANAGE A SOFTWARE PROJECT....
+	https://maven.apache.org/ref/3.6.0/maven-core/lifecycles.html
+
+default Lifecycle - 23 pHASES
+clean Lifecycle
+site Lifecycle
+
+PHASE		HOW TO GO TO PHASES? GOAL		PLUGINS
+-------------------------------
+compile		compile			
+test		test
+package		package
+install		install
+deploy		deploy
+
+
+What is PLUGINS?
+	Maven core
+		Core Plugins
+		Community..
+
+Project Dir strcuture	FROM Core Plugins
+Compilaion		FROM Core Plugins
+test			FROM Core Plugins
+Packaging		FROM Core Plugins
+Clean up		FROM Core Plugins
+
+
+mvn archetype:generate
+-DgroupId=com.companyname.software
+-DartifactId=financialService
+-DarchetypeArtifactId=maven-archetype-quickstart
+-DinteractiveMode=false
+
+What is groupId
+What is artifactId
+===========================
+ADOBE 
+	Photoshop	artifactId
+	acrobat		artifactId
+	dreamweaaver	artifactId
+
+SKELENTAN FOR PACKAGE and TO MANAGE INTERNAL DEPENDENCIES.....
+	
+com.adobe.software	groupId
+org.apache		groupId
+
+mvn archetype:generate -DgroupId=com.companyname.software -DartifactId=financialService -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+packaging
+	jar
+	war
+	ear
+	pom
+version	
+	RELEASE		- STABLE
+		1.0, 1.2.2, 5.6
+	SNAPSHOT	---- NOT STABLE
+		1.0-SNAPSHOT, 1.2.2-SNAPSHOT, 5.6-SNAPSHOT
+=============================
+
+How maven manage a project dependency?
+1. If a code uses external lib then
+	You must mentioned ext lib in pom.xml as a dependency
+
+2. Maven manage a dependency at 3 way using repository...
+	Local Repo		C:\Users\Rajesh\.m2\repository
+	Centrol Repo		http://repo.maven.apache.org/maven2/
+	Private repo		Nexus, Artifactory, Archiva
+
+
+
+
+
+
+
+
+1

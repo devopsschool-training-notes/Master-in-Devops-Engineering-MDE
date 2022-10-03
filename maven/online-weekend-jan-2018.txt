@@ -1,0 +1,114 @@
+What Maven?
+	Is a Build tool 
+	Buts its not only a build tool.
+	It has features
+			for Project development lifecycle mgmt
+	In Java
+	For Java
+	Open Source from Apache
+	Free
+	Procedural
+	Dependency mgmt
+
+Why we need Maven?
+	Automation in Build Process.
+	Also have to check the drawbacks in others tools like ANT
+	Ant was not having
+			Dependency mgmt in buit
+			Declartive lang which you need do everything from scratch
+			No process set, no standard
+			Takes time to write, debug, share
+			Not a capbility to manage the multiple projects lifecycle
+
+Other tools - 
+	ANT
+	Makefile
+	MSBUILD
+	GRADLE
+	NANT
+
+Advantange of the Maven?
+
+How to install Maven?
+	JDK
+	MAVEN
+	https://maven.apache.org/download.cgi
+
+	C:\Tools\maven\bin --> PATH
+
+How to verify?
+> mvn
+> mvn -v
+> 
+
+How maven works?
+	All the features of maven has been converted into Plugins
+		Core Plugins
+		External Plugins
+
+How can you use the plugins?
+mvn archetype:generate
+-DgroupId=com.companyname.software
+-DartifactId=financialService
+-DarchetypeArtifactId=maven-archetype-quickstart
+-DinteractiveMode=false
+
+mvn plugins:goalname
+mvn goalname
+
+groupId		com.google.software
+artifactId	gmail, search
+version			
+		SNAPSHOT - NOT STABLE --- 1.2-SNAPSHOT, 3.0-SNAPSHOT
+		RELEASE	- STABLE --- 1.2, 3.0, 1.1.1
+Packaging	jar,war,ear,pom
+
+
+
+	Google  - 200 Products
+	Standard naming convention for all produtcs 
+
+	com.google.software
+				gmail
+				search
+				alerts
+				calender
+				youtube
+
+mvn archetype:generate -DgroupId=com.scmgalaxy.software -DartifactId=chat -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+=============================================
+LIFE CYCLE OF MAVEN PROJECTS
+		PHASES of Life
+HUMEN BEINGS -- BORN --> KID --> TEEN --> YOUNG --> MID --> OLD --> DIE
+		PHASES OF LIFE CYCLE OF PROJECTS
+MAVEN PROJECT --> 
+		PHASES				plugins:goal
+---------------------------------------------------------------------------
+		LIFE CYCLE DEFAULT - 24
+		compile -->			compile				mvn compile	 
+		test --> 			test				mvn test
+		package				package				mvn package	
+		verify				verify				mvn verify
+		install				install				mvn install
+		deploy				deploy				mvn deploy
+
+			
+
+
+		LIFE CYCLE SITE - 4
+		LIFE CYCLE CLEAN - 3
+http://maven.apache.org/ref/3.5.2/maven-core/lifecycles.html
+
+=================================
+Maven has 3 kinds of repository for managing depedency of the projects...
+			Central repos
+			Local repo
+			Private repo
+
+Check the depdency in Local Repo 	-->  Central Repo  			--> Private Repo
+			USER_HOME/.m2	http://repo.maven.apache.org/maven2/	NEXUS, ARTIFACTORY
+
+
+
+

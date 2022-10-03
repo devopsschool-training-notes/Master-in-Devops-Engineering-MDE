@@ -1,0 +1,96 @@
+What is Maven?
+	Build tool - Wrong.
+	Projects mgmt tool
+		which has a one feature of build.
+	Dev in java & for JAVA
+	Procedural Lang
+	From Apache
+	In Build Dep mgmt feature
+ANT
+Makefile
+shell
+batch
+==========================
+Why Maven?
+	Build Automation
+
+Other tool - 
+Makefile -> Ant -> Maven -> Gradle
+Makefile -> NANT -> mSBUIlD
+https://www.devopsschool.com/path/
+
+Architecure of Maven
+============================
+Core Maven
+	Plugins
+		Core Plugins by Apache
+		External
+=================================
+Human Lifecycle
+Born -> Kid -> teen --> Young -> Mid --> Old -> Die
+--------------------------
+Software Dev Life Cycle by Maven
+3 Lifecycle
+http://maven.apache.org/ref/3.3.3/maven-core/lifecycles.html
+
+default Lifecycle - 23 PHASES
+Phases		GOAL
+------------------------------------------------
+compile		compile		From Plugins
+test		test		From Plugins
+package		package		From Plugins
+verify		verify		From Plugins
+install		install		From Plugins
+deploy		deploy		From Plugins
+
+clean Lifecycle - 3 PHASES
+site Lifecycle - 4 PHASES
+========================================
+IN MAVEN YOU DO NOT HAVE TO WRITE ANY SCRIPTING?????
+======================================================
+How to create a dir structure
+
+mvn archetype:generate -DgroupId=com.msoffice.software -DartifactId=msword -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+
+	
+What is Group ID? = msoffice
+What is Artifact ID?  = msword
+
+MSOffice
+	msword
+		file.java
+		com.msffice.msword
+		import com.msffice.common
+	mspp	
+		file.java
+		com.msffice.mspp
+	msoutlook
+		file.java
+	msaccess
+		file.java
+	msecept
+		file.java
+	msproject
+	common
+		file.java
+		com.msffice.common
+
+How to install maven?
+JDK
+SET JAVA_HOME
+C:\Tools\maven\bin --> PATH
+
+export PATH=$PATH:/opt/maven/bin
+
+
+Maven Package Type
+	jar
+	war
+	ear
+	pom
+Maven Version Type
+	RELEASE
+	SNAPSHOT
+
+

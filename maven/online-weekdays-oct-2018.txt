@@ -1,0 +1,130 @@
+What is Maven?
+	Project mgmt tool.
+		Build mgmt
+		Dependency mgmt
+	Open Source
+	Free
+	Developed using Java
+	For Java Project
+	From Apache
+
+Why Maven?
+	To automate 
+		Build Process
+		Packaging
+		Deployment
+		
+https://www.devopsschool.com/path/
+
+How to install Maven?
+	JRE OR JDK
+	MAVEN
+		- Download the package from https://maven.apache.org/download.cgi
+		- Extract it
+		- ADD maven directory/bin location to PATH
+			e.g C:\Tools\maven\bin --> PATH
+
+How to verify?
+$ mvn -v
+$ mvn -h
+
+
+IT AUTOMATES EVERYTHING.........
+
+How maven Works?
+-------------------------
+Maven features are based on plugins
+	Core	GIVEN by Maven
+	External	GIVEN by Community
+
+What is the life cycle of humen?
+PHASES === BORN --> KID --> TEEN  --> YOUNG --> mID -> Old -> Die
+
+Maven Project mgmt LifeCycle?
+	DEFAULT	- 24 PHASES
+	CLEAN  - 3 PHASES
+	SITE - 4 PHASE
+	Create your own....
+	http://maven.apache.org/ref/3.5.0/maven-core/lifecycles.html
+
+LIFECYCLE	PHASE		GOAL		FROM
+DEfault		compile		compile		CORE PLUGINS
+		test		test
+		package		package
+		verify		verify	
+		install		install
+		deploy		deploy
+===========================================================
+Maven Release versioning
+	RELEASE
+	4.5  3.3.3 2.3 1.9
+	SNAPSHOT
+	4.5-SNAPSHOT  3.3.3-SNAPSHOT 2.3-SNAPSHOT 1.9-SNAPSHOT
+
+Maven Packaging 
+	JAR
+	WAR
+	EAR
+	POM
+
+Project Dir Structure
+---------------------------------
+mvn archetype:generate
+-DgroupId=com.companyname.software
+-DartifactId=financialService
+-DarchetypeArtifactId=maven-archetype-quickstart
+-DinteractiveMode=false
+
+mvn archetype:generate
+mvn plugin-name:goal
+
+groupId
+artifactId
+
+ADOBE
+	photoshop
+	dreamweaver
+	acrobat
+	flash
+com.adobe.software  ==== GROUP ID
+	photoshop    === ARTIACT ID
+	dreamweaver	=== ARTIACT ID
+	acrobat		=== ARTIACT ID
+	flash		=== ARTIACT ID
+
+
+mvn archetype:generate -DgroupId=com.devopsschool.software -DartifactId=chat -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+
+Compile
+Testing
+Packaging
+Deployment
+
+
+Maven support 3 kinds of repository(Package)
+				Depedency mgmt
+	Local			C:\Users\Rajesh\.m2\  --USER_HOME/.m2 -- mvn install
+	Central			http://repo.maven.apache.org/maven2/
+	Private			NEXUS \ ARTIFACTORY	
+
+
+==========================================================
+pom.xml
+
+properties
+module
+plugins
+profile
+build
+parent
+
+
+
+
+
+
+
+
+
+

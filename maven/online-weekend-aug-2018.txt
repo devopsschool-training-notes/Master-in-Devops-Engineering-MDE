@@ -1,0 +1,131 @@
+What is Maven?
+	NOT a ONLY BUILD TOOL
+	Project mgmt tool for SDLC
+		Ini
+		Compile
+		Test
+		Package
+		report
+		Document
+		Deploy
+		Install
+	-------------------------
+	AUTOMATED
+	Free
+	Open Source
+	Based on Java and For Java
+	From Apache
+
+How Maven works!!!
+
+How to install Maven?
+	JDK
+	MAVEN
+	
+	$ wget http://redrockdigimark.com/apachemirror/maven/maven-3/3.5.4/binaries/apache-maven-3.5.4-bin.zip
+	$ unzip apache-maven-3.5.4-bin.zip
+	$ export PATH=$PATH:/home/ec2-user/maven/bin
+
+
+[ec2-user@ip-172-31-20-168 prj]$ mvn
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 0.080 s
+[INFO] Finished at: 2018-08-18T04:01:34Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] No goals have been specified for this build. You must specify a valid lifecycle phase or a goal in the format <plugin-prefix>:<goal> or <plugin-group-id>:<plugin-artifact-id>[:<plugin-version>]:<goal>. Available lifecycle phases are: validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy, pre-clean, clean, post-clean, pre-site, site, post-site, site-deploy. -> [Help 1]
+[ERROR]
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR]
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/NoGoalSpecifiedException
+[ec2-user@ip-172-31-20-168 prj]$
+
+
+What is projects?
+What is goals?
+lifecycle phase
+<plugin-prefix>:<goal>
+------------------------------------------------------
+LIFECYCLE PHASE OF HUMEN
+----------------------------
+BORN --> KID --> TEEN --> YOUNG -> MID --> OLD -> DIE
+
+LIFECYCLE PHASE SOFTWARE DEV
+--------------------------------------------------
+Compile --> TEST -> PACKAGE --> INSTALL -> DEPLOY
+
+LIfe of Maven for Software Dev
+	-- Default	- 24 phase
+	-- Site		- 4 
+	-- Clean	- 3 
+
+PHASES 		HOW CAN YOU GO TO SPECIFIC PHASE?(GOAL) -- From Plugins
+compile		compile		<plugin-prefix>:<goal>
+test		test		<plugin-prefix>:<goal>
+package		package		<plugin-prefix>:<goal>
+verify		verify		<plugin-prefix>:<goal>	
+install		install		<plugin-prefix>:<goal>
+
+PLUGINS
+=====================
+
+Maven Core --
+		Core Plugins
+			Compiler --> Function(compile)
+			jar
+			war
+		External Plugins 
+
+How to create a project skeleton?
+mvn archetype:generate
+-DgroupId=com.companyname.software
+-DartifactId=financialService
+-DarchetypeArtifactId=maven-archetype-quickstart
+-DinteractiveMode=false
+
+archetype:generate		<plugin-prefix>:<goal>
+
+groupId
+artifactId
+--------------------------
+CTO - COMPX - 10	==NAMING CON
+		Fea1	
+		Fea2
+		Comm1
+		Comm2
+
+GROUPID - com.compx.software
+Artifact -
+		fea1
+		fea2
+		comm1
+		comm2
+
+mvn archetype:generate -DgroupId=com.compx.software -DartifactId=fea1 -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+Maven is Dependency mgmt tool also....
+You set the proj dep  pom.xml and automatically maven will download from repo??
+if core plugins is dependent on somthing...it will download from repo
+
+Repo in maven?
+	Local repo		~/.m2					READ | WRITE	
+	Central repo		http://repo.maven.apache.org/maven2/	READ ONLY
+	Private repo		Nexus | Artifactory | Archiva		READ | WRITE
+
+These repo will have a package which needs to be there in project eexec
+
+
+
+DevOpsSupport@Googlegroups.com
+
+
+
+
+
+
+
+

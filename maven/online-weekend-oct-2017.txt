@@ -1,0 +1,204 @@
+====================
+Apache Maven
+=====================
+What is the problem we are solving today?
+	Source Code into Binary
+
+Scnario 1 - Challenges
+	Creating a directory strcuture
+	Copy the src code
+	Copy the 3rd party
+	Set the env
+	Set the config required
+	Set the compiler
+	Copy model
+	Compilation
+	UT
+	TESTING
+	PACKAGING
+	UPLOAD TO REPO
+	===================
+	20 times in a day
+
+Automation === Build Mgmt tools == ANT, MSBUILD, NANT, MAKEFILE
+======================================================================
+		DECALARETIVE SCRIPTING TOOL
+	
+Scnario 2 - Challenges
+	Dependency mgmt - Tool should be intelligent enough to handle the dep
+			External Dep
+			Internal Dep
+	Setting up a Directory
+	Project Management ( with respect to build|packaging|test|depl)
+		10 projects using ANT - 1- diff kinds of script
+	Process Oriented driven
+	Automate all the tasks AUTOMATICLLY
+	====================================
+	PROCEDURAL - MAVEN
+
+What is Maven?
+	Maven is a Project mgmt tool which has capa to build
+	FREE
+	OPEN SOURCE
+	FOR JAVA
+	DEV USING JAVA
+
+How to Install?
+
+	JRE
+	JDK _ JAVA_HOME
+http://www.scmgalaxy.com/tutorials/complete-guide-of-java-installation-in-linux
+Make sure JAVA 1.8
+
+	Maven - ZIP file
+		Download from 
+		https://maven.apache.org/download.cgi	
+		unzip it n keep it in common location 
+
+		C:\Tools\maven\bin ---> PATH
+
+How to verify maven?
+> java -version
+> mvn -version
+
+
+Maven is software is build based on concept of Plugins
+		BASE	- FEATURES
+		Maven Engine ---> PLUGINS
+					CORE PLUGINS - IN BUILT
+					EXTERNAL PLUGINS - DECALRED
+
+compiler plugins - It read the src code from dir and compile it n keep it in some loc
+
+mvn compile [ IN BUILT ]
+mvn goal-name
+
+mvn plugins-name:compile [ EXTERNAL]
+mvn plugins-name:goal-name
+
+Project Directory Structure
+==============================================
+> mvn plugins-name:goal-name
+
+mvn archetype:generate
+
+-DgroupId=com.companyname.weekend
+-DartifactId=login
+-DarchetypeArtifactId=maven-archetype-quickstart
+-DinteractiveMode=false
+
+mvn archetype:generate -DgroupId=com.companyname.weekend -DartifactId=login -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+WHAT IS PHASES?
+	HUMEN LIFE CYCLE = birth -- baby --teen --young - mid - old - die
+	MAVEN PROJECT LIFECYCLE
+		DEFAULT - 24 PHASES
+		CLEAN - 3 PHASES
+		SITE - 4 PHASES
+
+LIFECYLE		PHASES			GOAL	EMPOWERE-WITH-PLUGINS		
+DEFAULT			compile			compile	maven-compiler-plugin:3.1:compile
+			test			test	maven-surefire-plugin:2.12.4:test
+			package			package	maven-jar-plugin:2.4:jar
+			install			install
+		
+
+
+WHAT IS GOAL?
+
+WHAT IS GROUP ID?
+	ADOBE	
+		COMMON - company name
+			copy
+			logo - url - web -
+
+	ADOBE 
+			photoshop
+			acrobat
+			flash
+			dreamweaver
+PACKAGING STRUCTURE -
+	com.sofware.adobe.photoshop
+	com.sofware.adobe.acrobat
+	com.sofware.adobe.flash
+	org.com.fea1.
+
+	GROUP ID  = com.sofware.adobe
+	ARTIFACT ID = 	 photoshop
+			
+
+
+WHAT IS ARTIFACT ID
+
+WHAT IS VERSION
+	FOR ARTIFACT ID
+	
+	RELEASE - STABLE	e.g 1.0, 1.0.1
+	SNAPSHOT - NOT STABLE	e.g 1.0-SNAPSHOT, 1.0.1-SNAPSHOT
+
+packaging - jar, war, ear, pom
+
+WHAT IS REPO?
+		CENTRAL		- READ ONLY
+		LOCAL		- LOCAL CACHE
+		PRIVATE - NEXUS, ARTIFACTORY, NUGET, ARCHIHA
+
+
+
+WHAT IS DEPN
+
+POPULAR GOALS
+==========================
+mvn compile
+mvn package
+mvn test
+
+
+
+WHAT IS MODULES
+		ADOBE
+		     pom.xml
+		<modules>
+			<module>photoshop</module>
+			<module>acrobat</module>
+			<module>dreamweaver</module>
+		</modules>
+
+
+
+
+
+			photoshop
+				pom.xml
+			acrobat
+				pom.xml
+			dreamweaver
+				pom.xml
+
+
+
+WHAT IS PARENT
+
+WHAT IS PROPERTY
+
+WHAT IS BUILD
+
+WHAT IS DEP
+
+WHAT IS PLUGINS
+
+================================
+maven co-ordinates---GID, ARID, V
+			pom.xml
+			dep
+			prop
+			mod	
+			plugins
+			repo
+		
+
+
+
+
+
+	

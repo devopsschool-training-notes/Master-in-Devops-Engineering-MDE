@@ -1,0 +1,122 @@
+What is Maven?
+-----------------------
+	Build Tool +++
+	Project  management
+	Project Life cycle mgmt
+	Free
+	Open Source
+	Developed for JAVA
+	From Apache
+	Dev in JAVA
+======================
+
+Why Maven?
+	In Built Software Life Cycle mgmt capability
+	In built Dependency mgmt
+	Easy to use
+	Easy to learn
+	To Auto build/release procedures of Software dev
+
+Other tools
+	Ant, msbuild, Nnant, gradle
+
+How to install it?
+	JRE+JDK
+		JAVA_HOME
+	Maven
+	https://maven.apache.org/download.cgi
+	Download
+	Extract
+	and MAVEN_HOME/bin INTO PATH
+	C:\Tools\maven\bin - PATH
+
+How to verify?
+	cmd --> mvn
+		mvn -v
+
+C:\Users\Rajesh>mvn
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 6.091 s
+[INFO] Finished at: 2019-04-28T09:14:32+05:30
+[INFO] Final Memory: 5M/123M
+[INFO] ------------------------------------------------------------------------
+[ERROR] No goals have been specified for this build. You must specify a valid lifecycle phase or a goal in the format <plugin-prefix>:<goal> or <plugin-group-id>:<plugin-artifact-id>[:<plugin-version>]:<goal>. Available lifecycle phases are: validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy, pre-clean, clean, post-clean, pre-site, site, post-site, site-deploy. -> [Help 1]
+[ERROR]
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR]
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/NoGoalSpecifiedException
+
+	
+	
+How maven works!!!
+What is Goal?
+	 goal
+	 <plugin-prefix>:<goal>
+	<plugin-group-id>:<plugin-artifact-id>[:<plugin-version>]:<goal>
+valid lifecycle phase
+	lifecycle
+	phase
+projects
+======================================
+Humen Life Cycle?
+Born -> Kid -> Teen -> Young > Mid -> Old -> Die
+----------------------------------------------------
+
+Sofware LifeCycle....
+	Default	- 23
+Phases		GOAL		JAR	COMES FROM PLUGINS
+-----------------------------------------------------
+compile		compile		JAR	PLUGINS
+test		test		JAR	PLUGINS
+package		package		JAR	PLUGINS
+install		install		JAR	PLUGINS
+deploy		deploy		JAR	PLUGINS	
+==================================================
+
+What is Plugins
+	Core Maven
+	Plugins	- A feaure
+		Core Plugins	 by Maven	JAr file
+		External Plugins by Community	JAr file
+
+
+
+	Site -- 4 
+	Clean - 4
+http://maven.apache.org/ref/3.5.0/maven-core/lifecycles.html	
+
+mvn archetype:generate
+-DgroupId=com.devopsschool.software
+-DartifactId=chat
+-DarchetypeArtifactId=maven-archetype-quickstart
+-DinteractiveMode=false
+
+groupId
+artifactId
+		ms office -- product	= groupId
+			word		artifactId
+			excel		artifactId
+			powers		artifactId
+			common		artifactId
+version
+	RELEASE		1.0 3.0 1.0.1 1.0.2
+	SNAPSHOT	1.0-SNAPSHOT 3.0-SNAPSHOT 1.0.1-SNAPSHOT 1.0.2-SNAPSHOT
+
+mvn archetype:generate -DgroupId=com.devopsschool.software -DartifactId=chat -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+
+Source Code --> Binary -- Packages
+--------------------------------------
+		20 times
+			Each Flow
+				20 Steps.....
+		
+
+
+
+

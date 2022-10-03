@@ -1,0 +1,151 @@
+What is Maven?
+	Build mgmt tool - WRONG
+	Project mgmt tool
+		Build mgmt tool
+		Package mgmt
+		Deploy mgmt
+		Dependency mgmt
+	Free
+	Open Source
+	Dev by Apache
+	Dev in Java
+	for JAVA
+
+Why Maven?
+	Apache - 1000s JAVA Project
+
+		Build mgmt tool
+			Create a dir	==NAME
+			Copy a Src code ==URL
+			Copy a dep	==URL
+			Set a Compiler	
+			Compile
+		Package mgmt
+		Deploy mgmt
+		Dependency mgmt
+		Repository
+		Documentation
+
+I M NOT GOING TO TEACH YOU ANY SCRPTING....
+
+How maven works?
+	Maven Architecture
+		Maven Core
+			Plugins
+				Core Plugins 
+				External 
+==============================================
+How to install Maven?
+	Install JDK
+	JAVE_HOME
+	JAVA_HOME/bin ===> PATH
+
+	Downlonad Maven
+	https://maven.apache.org/download.cgi
+	Extract it
+	Set a C:\Tools\maven\bin ==> PATH
+
+How to verify?
+$ mvn
+
+C:\Users\Rajesh>mvn
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 0.232 s
+[INFO] Finished at: 2019-03-03T10:59:15+05:30
+[INFO] Final Memory: 5M/123M
+[INFO] ------------------------------------------------------------------------
+[ERROR] No goals have been specified for this build. You must specify a valid lifecycle phase or a goal in the format <plugin-prefix>:<goal> or <plugin-group-id>:<plugin-artifact-id>[:<plugin-version>]:<goal>. Available lifecycle phases are: validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy, pre-clean, clean, post-clean, pre-site, site, post-site, site-deploy. -> [Help 1]
+[ERROR]
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR]
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/NoGoalSpecifiedException
+
+
+No goals have been specified for this build. You must specify a valid lifecycle phase or a goal in the format <plugin-prefix>:<goal> or <plugin-group-id>:<plugin-artifact-id>[:<plugin-version>]:<goal>.
+
+What is lifecycle ?
+	Phases?
+What is Goal?
+	<plugin-prefix>:<goal> or <plugin-group-id>:<plugin-artifact-id>[:<plugin-version>]:<goal>
+--------------------------------------
+
+LIFECYCLE of Humen?
+BORN -> KID -> TEEN -> YOUNG -> MID -> OLD -> DIE
+
+LIFECYCLE of Sftware Project?
+Setup env-> Cpy-> Compile -> test -> pacjage-deploy
+3 LIFECYCLE 
+http://maven.apache.org/ref/3.3.3/maven-core/lifecycles.html
+DEFAULT - 23 PHA
+CLEAN  3 PH
+SITE - 4 PH
+
+PHASE			HOW TO GO THAT PH?(GOAL)	
+compile			compile		===> <plugin-prefix>:<goal>	
+test			test		===> <plugin-prefix>:<goal>
+package			package		===> <plugin-prefix>:<goal>
+install			install		===> <plugin-prefix>:<goal>
+deploy			deploy		===> <plugin-prefix>:<goal>
+-----------------------------------
+I want to package a software...SDLC
+	Copy
+	Compile
+	Test
+	Package
+==========================================================================
+mvn archetype:generate -DgroupId=com.companyname.devopsschool -DartifactId=chat -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+What is Group iD? === Microsoft
+	Microsoft
+		word
+		access
+		powerpoint
+		excel
+		frontpage
+		common (Font)
+
+What is Artifact ID?  == word
+
+org.apache.spark.tools
+	GID - org.apache.spark
+	AID - tools
+
+=================================
+What is pom.xml
+	pom.xml is called 
+		Project Objecy Model
+	Which containns
+		Co-ordinates
+		Plugins
+		Dependencies
+		Properties
+		Etc
+
+	packaging - JAR, WAR, EAR, POM
+	version - 
+		RELEASE - 3.4.5, 3.0
+		SNAPSHOT - 3.4.5-SNAPSHOT, 3.0-SNAPSHOT
+============================================================
+How maven manages a Dependencies?
+	using repository of Artifacts
+
+Local		~/.m2
+Central		http://repo.maven.apache.org/maven2/
+Private		NEXUS, ARTIFACTORY
+
+How to modularize?
+
+How to set property
+
+
+How to call property?
+=============================
+
+https://www.devopsschool.com/path/
+
+

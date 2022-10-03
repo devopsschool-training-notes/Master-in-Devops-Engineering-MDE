@@ -1,0 +1,156 @@
+How to donwnload JDK in centos?
+http://www.scmgalaxy.com/tutorials/complete-guide-of-java-installation-in-linux/
+
+How to download Maven?
+https://maven.apache.org/download.cgi
+
+What is Maven?
+	BUILD MGMT TOOl - WRONG
+	
+	Project Life Cycle Mgmt Tools
+	Which has a capability to
+			Build Mgmt
+
+	Free
+	Open Source
+	Developed usign Java
+	For Java
+	From Apache
+
+Why Maven?
+	Current Development Trends
+	---Your Write Less code---You use external lib are more....
+
+	Dependecy mgtm system
+	Can manage entire software devlopment cycle....
+
+How to Install Maven?
+	JDK OR JRE
+	JAVA_HOME
+	PATH --> MAVEN_HOME/bin
+
+How to verify maven?
+> mvn
+> mvn -v
+
+
+How maven works?
+	Maven is build around plugins
+
+	Maven Core
+		Understand Plugins
+			Core Plugins
+			External Plugins
+
+How can you use these Plugins?
+mvn pluginsame:goal-name
+
+What is the humen lifecycle??
+BORN --> KID --> TEEN -> YOUNG -> MID - OLD - DIE
+
+WHAT IS THE LIFE CYCLE OF SOFTWARE DEV.
+Maven has 3 lifecycle
+http://maven.apache.org/ref/3.5.2/maven-core/lifecycles.html
+DEFAULT	- 24 Phases
+
+PHASES			Plugins:goal			
+===============================================================
+compile				compile
+test				test
+package				package
+verify				verify			
+install				install
+deploy				deploy
+
+
+	
+CLEAN	- 3 Phases
+SITE	- 4 Phases
+==================================
+mvn clean install
+================================
+
+mvn archetype:generate
+
+
+-DgroupId=com.companyname.software
+-DartifactId=financialService
+-DarchetypeArtifactId=maven-archetype-quickstart
+-DinteractiveMode=false
+
+What is group ID
+	ADOBE
+		dreameaevr
+		photoshop
+		acrobat
+		font
+		color
+
+	Packaging Structure for Understand and Managaing dep
+	com.adobe.software === GROUP ID
+
+		dreameaevr  === ARTIFACT ID
+		photoshop
+		acrobat
+		font
+		color
+		
+	com.adobe.software.dreameaevr
+	
+
+What is Artifact ID?
+
+Packaging - JAR, EAR, WAR, POM
+
+What are the kind version you have in Maven?
+	SNAPSHOT  -- 1.0-SNAPHOT
+	RELEASE   -- 1.0
+
+
+mvn archetype:generate -DgroupId=com.companyname.softwar -DartifactId=financialService -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+
+What is POM.XMl
+	project object model
+	contains the info about the projects
+
+Maven Has 3 kinds of repo
+		LOCAL
+		CENTRAL
+		PRIVATE
+
+How to login?
+afclab0wx.cloudloka.com
+	
+> sudo -s
+
+I am going to install JDK8 for CENTOS
+How to download?
+
+> yum install wget -y
+
+> wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+
+> rpm -ivh jdk-8u131-linux-x64.rpm
+
+> java -version
+
+How to install Maven?
+> yum install unzip -y
+> wget http://www-us.apache.org/dist/maven/maven-3/3.5.3/binaries/apache-maven-3.5.3-bin.zip
+> unzip apache-maven-3.5.3-bin.zip
+> mv apache-maven-3.5.3 maven
+
+export PATH=$PATH:/opt/maven/bin
+
+
+===========================================================================
+
+
+
+
+
+
+
+	
+	

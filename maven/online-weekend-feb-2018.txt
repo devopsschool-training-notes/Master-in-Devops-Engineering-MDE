@@ -1,0 +1,164 @@
+Maven
+================================
+What is Maven?
+	Build tool --> WRONG
+	Project mgmt tool(Build)
+	Free
+	Open Source
+	Develoed in Java
+	For Java Based Project
+	To manage large number of projects in Apache
+
+What is meaning of Project mgmt?
+	Config
+	Compication
+	Test
+	Pack
+	Dep
+	Document
+	Repo
+
+Other tools for build mgmt
+Ant, MSBuild, Makefile, NANT, Gradle
+
+ANT --> MAVEN
+
+
+
+What it takes to build one time?
+		       =========
+	Create a directory
+	Copy the src
+	Set the env
+	Set config
+	Set the compiler
+	Build
+	test
+	package
+	Deploy
+	-----------
+	100 times in day
+
+Why Maven?
+	Automate everthing what we do in project mgmt	
+
+	Procedures Vs Declarative
+Maven	Procedures - Follow Procedures --> Tool will do everything
+Ant	Declarative -> Learn tool + Tchnqs + Your experience -> USE a tool
+
+	Main Features
+	--> In BuilT dependency mgmt
+		INTER
+			
+	--> In BuilT Repo
+	--> Process driven
+	
+=================================
+How to install Maven?
+	JDK OR JRE
+	Download zip file, unzip
+	https://maven.apache.org/download.cgi
+	&
+	C:\Tools\maven\bin --> PATH
+	
+	export PATH=$PATH:/opt/maven/bin
+
+How to verify?
+> mvn
+> mvn -v
+> mvn -h
+
+How maven works?
+	Core	 ---> But understand the Maven Plugins
+	Plugins  ---> Feature you want
+			Core Plugins -- Basic Plugins
+			External ---> 
+	
+
+How to create a dir struc in Auto way?
+
+mvn archetype:generate
+-DgroupId=com.scmgalaxy.software
+-DartifactId=chat
+-DarchetypeArtifactId=maven-archetype-quickstart
+-DinteractiveMode=false
+
+mvn archetype:generate
+mvn pluginsname:goal
+mvn jar-file:class
+mvn maven-archetype-plugin:3.0.1:generate
+
+what is groupId?		com.adobe.software
+What is artifactId?		photoshop
+	
+	Adobe
+		photoshop
+		dreamweaver
+		acrobat
+		common (Fonts, Color)
+	Package Structure Naming Conve--
+	com.adobe.software.photoshop
+	org.apche.maven
+	org.apache.ant
+	net.comp.prod...
+
+mvn archetype:generate -DgroupId=com.scmgalaxy.software -DartifactId=chat -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+What is pom.xml
+	project object model
+	xml file
+	understood by maven
+	
+	Prject config
+
+packaging - jar, ear, war, pom
+version - 
+	RELEASE		1.2 1.2.2 3.0
+	SNAPSHOT	1.2-SNAPSHOT 1.2.2-SNAPSHOT 3.0-SNAPSHOT
+=====================================================================
+9.30 PM......BREAK
+	
+What is the Humen Life Cycle?
+BORN --> KID --> TEEN --> YOUNG --> MID --> OLD --> DIE
+
+Maven Prject LifeCyle - 3 (CREATE)
+http://maven.apache.org/ref/3.5.0/maven-core/lifecycles.html
+		DEFAULT --- 24 PHASES
+
+		CLEAN	--- 3 PHASES
+		SITE	--- 4 PHASES
+
+PHASES		PLUGINS 		HOW(GOAL)
+=============================================
+compile		Plugins-Name:goal	compile
+test		Plugins-Name:goal	test
+package		Plugins-Name:goal	package
+verify		Plugins-Name:goal	verify
+install		Plugins-Name:goal	install
+deploy		Plugins-Name:goal	deploy
+
+mvn compile
+mvn test
+mvn package
+mvn verify
+mvn install  - This wil copy the jar into Local repo
+mvn deploy --- This will copy the jar to the PRIVATE REPO
+		
+=====================================================
+REPOS
+==========================
+Why ? - to store the artifact
+What kind of Artifact - Your product + Dep Lib
+---------------------------------------------------
+Maven Support 3 Kind of Repo
+		1. Local Repo	- C:\Users\Rajesh\.m2\repository
+		2. Central Repo - http://repo.maven.apache.org/maven2/
+		3. Private Repo 
+
+NEXUS, ARTIFACTORY, NUGET, CHOC, 
+PS, AS - PUB
+
+
+
+
+	

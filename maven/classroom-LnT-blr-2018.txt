@@ -1,0 +1,177 @@
+Product - LNTX
+
+What is Maven?
+	Project Mgmt tool	
+
+		Build Tool
+		Dependecy mgmt
+		Repository
+		
+	Free Tools
+	Open Source
+	Developed in java
+	For Jave Based Projects.
+	From Apache
+	Procedural Lang
+	Speci - pom.xml --- XML FILE
+
+Other tools - makefile, ant, nant, msbuild [GRADLE]
+
+Why do we need it?
+	AUTOMATION ---
+
+	Depdendency mgmt
+	In Build Repo mgmt
+	Stanard Process
+	Stanard Directory Structure
+	Minimize the effort of setting up infra.
+
+How to install maven?
+	JRE >> JDK
+	JAVA_HOME
+	JAVA_HOME/bin -- PATH
+
+	- Download the Maven from 
+	https://maven.apache.org/download.cgi
+
+	- Extract it to your desire
+	- MAVEN_HOME/bin ==> PATH
+	C:\Tools\maven\bin ---> PATH
+
+How to verify??
+> mvn
+> mvn -v
+
+How to start using Maven?
+No PROGRAMMING ----
+
+Which is Maven command to start with?
+> mvn
+
+FIRST DAY OF LNTX
+	Create a project- Create a Project Directory Strcuture
+
+---------------------------------------------------------------
+How maven is developed -
+			CORE - only it can understand plugins
+				Core Plugins - Which is developed by Maven
+				External Plugins
+
+How to use maven plugins? How to use the plugins features for my requirement.
+> mvn plugins-name:goal
+
+> mvn archetype:generate
+-D	groupId=com.companyname.software
+-D	artifactId=financialService
+-D	archetypeArtifactId=maven-archetype-quickstart
+-D	interactiveMode=false
+
+What is Group ID
+What is Artiface ID
+-------------------Group ID--------------------------com.lnt.software
+ADOBE - 200 PRODUCTS
+	com.adobe.software
+	org.apchae.maven
+	org.apache.ant
+
+-------------------Artiface ID-------------------------- payx
+	photoshop
+	dreamweaver
+	acrobat
+	font
+
+Version 
+	SNAPSHOT - NOT STABLE	1.0-SNAPSHOT, 2.0-SNAPSHOT, 1.0.1-SNAPSHOT
+	RELEASE -	1.0, 2.0, 1.0.1
+	
+
+Packaging - jar(D), ear, ear, pom
+
+mvn archetype:generate
+-DgroupId=com.lnt.software
+-DartifactId=payx
+-DarchetypeArtifactId=maven-archetype-quickstart
+-DinteractiveMode=false
+
+mvn archetype:generate -DgroupId=com.lnt.software -DartifactId=payx -DarchetypeArtifactId=maven-archetype-quickstart -Dversion=1.1 -DinteractiveMode=false
+=====================================================================================
+> mvn -X
+[DEBUG] Reading global settings from C:\Tools\maven\conf\settings.xml
+[DEBUG] Reading user settings from C:\Users\Rajesh\.m2\settings.xml
+[DEBUG] Reading global toolchains from C:\Tools\maven\conf\toolchains.xml
+[DEBUG] Reading user toolchains from C:\Users\Rajesh\.m2\toolchains.xml
+
+Config in maven?
+	GLOBAL - C:\Tools\maven\conf\settings.xml
+	USER - C:\Users\Rajesh\.m2\settings.xml (MOST PRIOR)
+
+-----------------------------------------------------------------
+MAVEN LIFECYCL for Software Development
+---------------------------------------------------
+HUMEN LIFE CYCLE
+BORN -> KID --> TEEN --> YOUNG --> MID --> OLD --> DIE
+-------------------------------------------------------
+			PHASED
+
+
+
+Software Project Life Cycle defined by the INUSTRY EXPERT n Adopted by Maven
+	
+default Lifecycle		24 phases 
+clean Lifecycle			3 phases 
+site Lifecycle			4 phases 
+
+
+default Lifecycle
+============================================
+Phases			plugin:goal	goal
+-------------------------------------------
+compile			compile
+test 			test
+package			package
+verify			verify
+install			install
+deploy			deploy
+
+In maven Repository
+
+What is Repo?
+ a place where you can get a artifact..
+
+
+
+=========================================
+Local Repo	C:\Users\Rajesh\.m2\repository	--- CACHE OF CENTRAL & PRIVATE		READ & WRITE
+Central		http://repo.maven.apache.org/maven2/				PUBLIC - READ ONLY
+Private Repo	NEXUS | ARTIFACTORY | ARCHIAVA | NUGEt				READ & WRITE
+
+
+======================================================================
+Modules
+------------------------------------------------------------
+LNT
+	pom.xml				- TYPE pom
+	<modules>
+		<module>softx1</module>
+		<module>softx2</module>
+		<module>softx3</module>
+	</modules>
+
+
+	softx1
+		pom.xml
+	softx2
+		pom.xml
+	softx3
+		pom.xml
+
+mvn archetype:generate -DgroupId=com.lnt.software -DartifactId=payx -DarchetypeArtifactId=maven-archetype-quickstart -Dversion=1.1 -DinteractiveMode=false
+mvn archetype:generate -DgroupId=com.lnt.software -DartifactId=credit -DarchetypeArtifactId=maven-archetype-quickstart -Dversion=1.1 -DinteractiveMode=false
+
+
+
+
+
+	
+		
+	

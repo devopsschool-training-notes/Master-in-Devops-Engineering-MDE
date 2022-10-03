@@ -1,0 +1,86 @@
+What is Maven?
+Project mgmt tool
+Free
+Open Source
+For Java
+in Java
+In Build Dep mgmt
+
+Software Developement mgmt
+Documentation
+Compile
+Test
+Packaging
+InstALL
+dEPLOY
+rEPORTING
+cODE cOVERAGE
+dEPENDENCY MGMT
+
+How can you install?
+Java Install
+JAVA_HOME
+C:\Tools\maven\bin --> PATH
+
+How to verify?
+> mvn
+> mvn -v
+
+Project Name - Softx
+Project dire - DONE
+Build Prep
+Dep
+Compile
+Testing
+packaging
+cleanup
+
+How maven Works?
+
+Maven has 2 kinds of plugins?
+Core Software
+Core Plugins - Developed by Apache
+External Plugins - Developed by Community
+
+mvn archetype:generate
+-DgroupId=com.companyname.software
+-DartifactId=financialService
+-DarchetypeArtifactId=maven-archetype-quickstart
+-DinteractiveMode=false
+
+mvn archetype:generate -DgroupId=com.softx.software -DartifactId=weekend -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+Lifecycle of your software project
+===================================
+Maven has defiend 3 LifeCycle for the software Development....
+1. Default - 24 PHASES
+
+PHASES------
+compile plugin:compile maven-compiler-plugin:3.1:compile
+test plugin:test
+package plugin:package
+install plugin:install
+
+2. Site - 4 PHASES
+3. Clean - 3 PHASES
+
+Maven has 4 kind of packaging
+JAR
+WAR
+EAR
+pom
+
+Maven has 2 kind of version
+RELEASE 1.0, 1.0.1, 2.1
+SNAPSHOT NOT STABLE CODE 1.0-SNAPSHOT
+
+Dependencies mgmt can be done from repo auto -- How?
+Maven has 3 Kind of Repo
+Central - http://repo.maven.apache.org/maven2/ R O
+local - C:\Users\Rajesh\.m2 R W
+Private | Hosted - NEXUS, ARTIFACTORY, NUGET, ARCHIVA R W
+
+Lifecycle of humen? (Start to End)
+===============================
+Birth --> Teen --> Young --> Mid --> Old --> Die
+PHASE PHASE PHASE PHASE

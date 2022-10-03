@@ -1,0 +1,202 @@
+What is Maven?
+	Build tools +++++++
+	Free
+	Open Source
+	In Java
+	For Java
+	But can support other technology
+
+Why Maven?
+Source Code mgmt done ----GIT
+Source Code into Binary --->HOW
+	
+	Create a dir structure
+	Copy the source file
+	Copy the 3rd party depen
+	set the compiler
+	set the builder
+	set the config required
+	dependency match
+			external 
+			internal
+	compile
+	unitest
+	package
+	upload to repo
+====================================================
+	20 times in day
+
+
+Automate=======
+	C++
+	JAVA
+	PERL
+	PYTHON
+		DIFF TO LEARN-TEST-DEBUG-SHARE-EXTEND
+	BULD MGMT TOOL
+			ANT-MAVEN-GRADLE-MSBUILD-NANT-GMAKE
+		EASY TO LEARN-TEST-DEBUG-SHARE-EXTEND
+
+
+WHY MAVEN - IT AUTOMATES EVERYTHING IF YOU FOLLOW THEIR RULES
+
+
+HOW TO INSTALL MAVEN?
+	JDK + JAVA_HOME + JAVA_HOME/bin ==> PATH
+	Download + Extract + MAVEN_HOME/bin ==> PATH
+
+
+How to verify?
+>mvn
+
+====================================================
+pom.xml
+	Maven Stores all the project info in pom.xml
+
+How to execute
+> mvn <goalname>
+
+What about maven in diff file name?
+> mvn -f filename
+
+Maven has 2 kinds of plugins == All the features got converted into plugins
+	Maven Engine
+		CORE		- GIVEN BY MAVEN
+		EXTERNAL	- Developed by community/company
+
+CORE PLUGINS
+		Create a dir
+		compile
+		test
+		package 
+		publish
+=============================================
+PROJECT BUILD STRUCTURE --- WHICH PLUGINS
+
+mvn archetype:generate					====mvn plugins-name:goalname
+-DgroupId=com.companyname.software			==== groupid
+-DartifactId=financialService				====artifactid
+-DarchetypeArtifactId=maven-archetype-quickstart
+-DinteractiveMode=false
+
+What is group id
+What is artifact id
+
+MICROSOFT - 300 PRODUTCS
+=======================
+	MSOFICE
+		ms word
+		com.microsoft.msoffice.word
+		ms pp	
+		com.microsoft.msoffice.word
+		ms excel	
+		com.microsoft.msoffice.word
+	WINOWS
+	PROJETC
+	XBOSS
+
+com.microsoft.msoffice.word
+
+GRoUP ID - com.microsoft.msoffice.
+ARtIFiCAT  -- word
+
+PACKAGING STRUCTURE COMMON ACrOSS THE ORGANIZATION
+
+=============================
+ADOBE
+	photoshop
+	acrobat
+	flash
+com.companyname.adobe.photoshop
+com.companyname.adobe.acrobat
+	
+====================
+mvn archetype:generate -DgroupId=com.companyname.software -DartifactId=financialService -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+LIFECYCLE
+==================================
+HUMEN == BIRTH - KID - TEEN - YOUNG --MIDLE - OLD - DIE
+
+PROJECT === CREARE A DIr + COMPILE + TEST + PACK + RELEASE
+
+MAVEN HAS 3 Life cycle
+
+lifecycle	phases		Core plugins-name	goal
+==================================================================
+Default
+
+		compile		xx			compile		
+		test		XXX			test
+		package		XX			package
+		verify		XX			verify
+		install		X			install
+
+
+Clean
+Site
+
+Version
+==============================
+RELEASE		1.0 2.0 1.0.1 2.0.1
+SNAPSHOT	1.0-SNAPSHOT 2.0-SNAPSHOT 1.0.1-SNAPSHOT 2.0.1-SNAPSHOT
+
+
+REPOSTORY 
+====================
+FOR AUTOMATIC DEPEN-
+	LOCAL REPO		C:\Users\Rajesh\.m2
+	CENTRAL			http://repo.maven.apache.org/
+	PRIVATE			NEXUS, ARTIFCATORY, NUGET
+
+
+
+================================================================================
+
+PARENT===================================
+ADOBE
+	Company Name
+	Copyright info
+	common across all the projects
+	common depedency across all the projects
+
+200 PROJECTS
+	
+	Common Projects
+	artifacat id
+	groups
+		pom.xml
+
+200 PROJECTS WILLL BE USING "Common Projects" As a sample projects
+	
+Modules
+=================================================
+Adobe 
+	pom.xml =========WHICH CONTAIN MODULES
+	<modules>
+	<module>phoshop</module>
+	<module>acrobaat</module>
+	<module>flash</module>
+	</modules>
+
+	phoshop
+		pom.xml
+	acrobaat
+		pom.xml
+	flash
+		pom.xml
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
