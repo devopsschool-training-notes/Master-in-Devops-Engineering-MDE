@@ -1,0 +1,100 @@
+GIT ADVANCE
+=========================================================
+Git Config			DONE
+Git Branching and Merging	DONE
+Git Conflict Resolution		DONE
+Git push pull fetch clone	DONE
+Git basics commands		DONE
+	delete		
+	> git rm filename
+	> git commit -m"sdsad"
+	move
+	> git mv filename
+	> git commit -m"sdsad"
+	rename	
+	> git mv filename
+	> git commit -m"sdsad"
+Git Undoing
+	How to get rid of the files from Working Directory
+	> git clean -f -d
+	How to move file from staging area to working directory
+	> git reset filename
+	How to revert the changes in the commited repos?
+	> git revert CHECKSUM
+	
+Git Tag
+	> git tag --list
+	> git tag release1.0
+Git Stashing
+Git cherry Picking		DONE
+Git Ignore			DONE
+Git GUI tool		https://www.sourcetreeapp.com/
+
+
+Git Branching and Merging
+=======================================
+Local Branch		- READ & WRITE
+Remote Branch		- READ
+
+How to list out all the branches?
+> git branch -a
+
+How to list out only remote?
+> git branch -r
+
+How to create a branch?
+> git branch <branchname>
+
+How to checkout specific branch?
+> git checkout <branchname>
+
+Git Merge
+========================
+Fast Forward Merge
+Three way merge
+Cherry Picking
+
+
+57f02a2 adding fea11
+d1f3e98 adding fea1
+94a40c2 adding sateesh
+1f782a5 adding a directory
+36f3b70 adding selective
+89beca8 adding all
+8e2f41f adding file 2
+0b2d8cd Adding my first file to the repo
+
+94a40c2 adding sateesh
+1f782a5 adding a directory
+36f3b70 adding selective
+89beca8 adding all
+8e2f41f adding file 2
+0b2d8cd Adding my first file to the repo
+
+=============================
+git clone
+-----------------
+git init
+git remote add origin
+git pull
+
+Git push
+-----------------------
+Push all of Local object to the remote repos.
+
+git pull === GIT FECTH + GIT MERGE
+
+git fetch
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,181 @@
+What is Git?
+	Version Control tool
+	Source Code mgmt tool
+	----------------------
+	Free
+	Open Source
+	Dev by - Linus Tovarld
+	Comp with all OS
+HOME WORK - 
+	GIT IS INTELLIGENT FILE SYSTEMS?
+
+Why do we need this?
+	WHO
+	WHAT
+	WHY
+	WHERE
+	-------------
+	OVER A PERIOD OF TIME
+
+TOOLS- 
+RCS --> CVS -> SVN -> GIT
+Bitkeeper -> Mercury -> Perforce - VSS -> TFS -> Clearcase
+
+GIT VS ALL
+======================
+GIT IS DISTRIBUTED
+	WHERE AS ALL - SERVER-CLIENT
+=============================================
+
+How to install git?
+	WINOWS & MAC - https://git-scm.com/
+			-- GIT BASH (Basic linux command in Windows)
+	LINUX
+		RHEL  - sudo yum install git
+		UB  - sudo apt-get install git
+
+=======================================
+Git basic work flow
+=========================================
+step 1 - create a repo
+$ git init
+
+step 2 - create a file/code
+
+step 3 - add a file to git [ WOrkING DIR TO STAGING AREA]
+$ git add filename
+ONE TIME
+----------------
+git config user.name "Rajesh Kumar"
+git config user.email "devops@rajeshkumar.xyz"
+git config --list
+----------------
+step 4 - commit a file to git [ STAGING AREA TO REPO ]
+$ git commit -m"message why you are committing"
+
+step 5 - see the history of commit
+$ git log
+
+Step 6 - what is the content of commit
+$ git show commit-id
+
+  501  cd /d
+  502  pwd
+  503  start .
+  504  mkdir sunday
+  505  mkdir sunday1
+  506  cd sunday1/
+  507  cls
+  508  cls
+  509  clear
+  510  pwd
+  511  start .
+  512  mkdir repo1
+  513  cd repo1/
+  514  git init
+  515  start .
+  516  touch file1.txt
+  517  start.
+  518  start .
+  519  clear
+  520  git add file1.txt
+  521  git config user.name "Rajesh Kumar"
+  522  git config user.name "devops@rajeshkumar.xyz"
+  523  git config user.name "Rajesh Kumar"
+  524  git config user.email "devops@rajeshkumar.xyz"
+  525  clear
+  526  git config --list
+  527  git commit -m"message why you are committing"
+  528  git log
+  529  git show aa152aa8c97f063a8e4d8c6af5cedcf130981f12
+  530  history
+
+================================================================	
+
+  530  history
+  531  start .
+  532  clear
+  533  mkdir src
+  534  git status
+  535  git add file2.txt
+  536  git status
+  537  touch file3.txt file4.txt file5.txt
+  538  git status
+  539  git add file3.txt
+  540  git status
+  541  git add file4.txt
+  542  git status
+  543  git commit -m" add only one" file2.txt
+  544  git status'
+git status
+  545  git status'
+git status
+  546  git status
+  547  git commit -m" add only one"
+  548  git status
+  549  ls
+  550  git status
+  551  touch src/src1.txt
+  552  git status
+  553  git add .
+  554  git status
+  555  git commit -m"add"
+  556  git status
+  557  history
+
+
+ 558  clear
+  559  ls
+  560  git mv file1.txt file11.txt
+  561  git status
+  562  ls
+  563  git commit -m"renmae"
+  564  git status
+  565  ls
+  566  git rm file2.txt
+  567  git status
+  568  ls
+  569  git commit -m"delete"
+  570  ls
+  571  git status
+  572  git log
+  573  git log --oneline
+  574  ls
+  575  git checkout e089f2e
+  576  ls
+  577  git checkout master
+  578  ls
+  579  history
+=====================================================
+
+
+Remote repo == Central Repo
+	----- Managing multiple git repo
+	------ Usrs/ Group
+	---- GUI
+	----- issues
+	--- wiki
+==============================================
+	PAY For it
+		Github	- CLOUD - HOSTED
+		Gitlab 	- CLOUD - HOSTED
+		Gerrit	- CLOUD - HOSTED ===== Open Source
+		Bitbuket	- CLOUD - HOSTED
+
+
+=====================================================
+
+
+================================================
+
+
+
+
+
+
+
+
+
+
+
+

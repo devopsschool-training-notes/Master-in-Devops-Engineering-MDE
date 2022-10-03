@@ -1,0 +1,186 @@
+GIT
+=========================================================
+What is Git
+	Version control tool
+	Free
+	Open Source
+	Developed by Linux
+	Compat with All OS
+	2005.....
+	Truly Distributed mgmt system
+	For Source Code only
+	=============================
+Other tools - 
+	RCS --> CVS --> SVN --> GIT
+	P4
+	CC
+	VSS
+	TFS
+	
+Why Git?
+	What 
+	When
+	Who
+	Where
+
+How git Install it?
+	RHEL - Centos
+	> sudo yum install git
+	UB
+	> apt-get install gi
+
+	WINDOWS
+	exe -->
+	git bash --> Most of the linux Commands also
+
+> git
+> git --version
+
+
+BASIC WORKFLOW
+===================================================
+
+1. Create a repo
+> git init
+
+2. How to send a file from working dir to Staging area???
+> git add filename
+
+ONE TIME
+====================================
+git config user.name "Rajesh Kumar"
+git config user.email "rajesh@scmgalaxy.com"
+
+3. How to send a file from stging area to Repo?
+> git commit -m"This is first commit"
+
+4. How to see commits?
+> git log
+
+5. How to see the file name of the commit
+> git show commit-id
+
+1	35.154.12.38
+2	13.127.218.159
+3	13.127.218.67
+4	13.127.210.131
+5	13.127.209.52
+6	13.127.198.191
+7	13.127.194.249
+8	13.127.151.82
+9	13.127.134.239
+10	13.127.120.190
+11	13.127.90.216
+12	13.126.254.161
+13	13.126.210.78
+14	13.126.195.153
+15	13.126.168.97
+16	13.126.57.188
+17	13.126.32.165
+
+
+USER ID - ec2-user
+
+
+How to check the status of repo?
+> git status
+
+How to add multile files?
+> git add .
+
+
+How to commit dir?
+- Same a file
+
+How to commit selective fle
+> git commit -m"messgae" filename
+
+How to rename file
+> git mv filename1 filename2
+ git commit -m"rename"
+
+What is HEAD??? - DONE
+Switching between the commits? - DONE
+
+How to delete a file
+> git rm filename
+> git commit -m"deleting"
+
+How to move a file?
+git mv file2.txt src/
+git commit -m"moving"
+
+How a update a file?
+# Demo
+
+Working with Remote Repo
+===========================================
+NokiaX
+M1
+	RAJ   --> git init   ---> GITLAB
+
+git remote add origin git@github.com:scmgalaxy/nokiatest.git
+git push -u origin master
+
+
+
+RAM	git clone gitlab-url
+M1
+
+RAVI
+M2	git init + m2
+	
+	git pull it
+
+Branching Stratgey
+==================================
+Types of Branches
+	
+Local  ----- RW
+Tempo  ---- RW
+Remote  - RO
+
+Refer Discussion
+
+How to list all branch?
+> git branch -a
+
+how to see local branch?
+> git branch
+
+How to see remote branch?
+> git branch -r
+
+
+How to create?
+> git branch branchname
+> git checkout branchname
+
+
+How to merge branches?
+	fast forwarding
+	recursive merge
+	cherry picking
+
+
+
+How to undoing?
+	How to get rid of file from working
+	> git clean -f -d
+	How to move a file from staging to workng dir
+	> git reset filename
+	How to revert the changes in Repo?
+	> git revert commit-id
+
+diff between 2 commits?	 - DONE
+rebase
+reflogs	
+Soft reset Vs head reset
+subtree
+
+Working with Remote Repo
+
+
+
+
+

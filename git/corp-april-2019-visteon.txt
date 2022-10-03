@@ -1,0 +1,773 @@
+https://www.devopsschool.com/notes/git/2019
+What is Git?
+	Version control system
+		of
+			Source Code
+				WHO
+				WHAT
+				WHERE
+				WHEN
+				WHY
+	DISTRIBUTED
+	Open Source
+	Dev by LinuS Torvald
+		Bitkeeper
+	C,C++
+	Platform independent
+	Free for all
+	Git  is fav by Dev
+	Not network connection is needed for Work
+		
+
+	
+Why git?
+	DISTRIBUTED
+	Open Source
+	3rd Party Support
+	Performance....of ops...
+	RTC
+
+SERVER - CLIENT
+---------------------
+RCS -> CVS -> SVN
+VSS, CLEARCASE, Perforce, TFS,RTC
+
+
+DISTRIBUTED
+---------------------
+
+
+How to install git?
+	Windows -> git-scm.com ---> exe
+					-- git bash (Linux command can run in windows)
+					-- Good colors...
+	Linux
+		UB - sudo apt-get install git
+		RHEL/CeNtos - sudo yum install git
+	Mac
+		git-scm.com ---> dmg
+=========================================
+Git workflow....
+[ONE TIME]
+Step 1 - How to create a repo?
+$ git init
+
+Step 2 - Create a file which you want to version?
+- DONE
+
+Step 3 - Add a file(s) to Git[Workspace to Staging area]
+$ git add file1.txt
+
+[ONE TIME]
+$ git config user.name "Rajesh Kumar"
+$ git config user.email "rajesh@scmgalaxy.com"
+
+Step 4 - Commit a file(s) to git[Staging area to repo]
+$ git commit -m"adding a first file"
+
+Step 5 - How to see the commits?
+$ git log
+commit b9ee065db820a3c1cbbb4553be3865599487f908
+Author: Rajesh Kumar <rajesh@scmgalaxy.com>
+Date:   Mon Apr 22 12:23:04 2019 +0530
+
+    selection
+
+b9ee065db820a3c1cbbb4553be3865599487f908 == Commit ID == CHECK SUM
+	Represents a Object
+	Universally Unique - 40 HASH
+	Created by SHA algo
+	
+		
+
+Step 6 - What was committed?
+$ git show COMMIT_ID
+
+ 507  git status
+  508  git status
+  509  git add file2.txt
+  510  clear
+  511  git status
+  512  git add file3.txt
+  513  git status
+  514  clear
+  515  git status
+  516  git commit -m"adding" file2.txt
+  517  git status
+
+===============================
+Question 
+How to add all file?
+How to cmmit selective file?
+How to rename
+How to modify?
+How to move a file
+How to add dir?
+
+Where is staging area?
+/d/visteon/.git/index
+
+Where a commit is being stored in .git
+/d/visteon/.git/objects
+
+How to remove a file?
+  525  git add .
+  526  git status
+  527  git commit -m"selection" file3.txt file4.txt
+  528  git status
+  529  cler
+  530  clear
+  531  git commit -m"selection"
+  532  clear
+  533  git status
+  534  ls
+  535  git mv file2.txt file22.txt
+  536  git status
+  537  git commit -m"renaming"
+  538  clea
+  539  clear
+  540  git status
+  541  ls
+  542  vi file1.txt
+  543  git status
+  544  git add  file1.txt
+  545  clear
+  546  git status
+  547  git commit -m"addng"
+  548  ls
+  549  clear
+  550  mkdir src
+  551  git status
+  552  ls
+  553  git mv file22.txt src/
+  554  git status
+  555  git commit -m"mvng "
+  556  clear
+  557  git status
+  558  cd .git
+  559  ls
+  560  cd ..
+  561  git log
+  562  clear
+  563  clear
+  564  cd .git/
+  565  ls
+  566  cd objects
+  567  ls
+  568  pwd
+  569  cd ..
+  570  clear
+  571  ls
+  572  ls
+  573  cd ..
+  574  ls
+  575  git rm file6.txt
+  576  ls
+  577  git status
+  578  git commit -m"file deleted"
+  579  git status
+  580  ls
+  581  history
+
+================================================
+How to collabrate?
+	
+
+
+
+How ssh workS!!!!
+$ ssh-keygen -t
+
+Machine 1
+.ssh 
+	id_rsa
+	id_rsa.pub
+
+Machine 2
+.ssh 
+	id_rsa
+	id_rsa.pub
+	authorized_keys (cONTENT FRM id_rsa.pub OF MACHINE 1)
+
+Machine 1 --> Machine 2
+
+$ ssh -i key user@mahine2
+$ ssh user@mahine2
+
+		CLOUD		PREMISED	
+Github 		Github.com	Github Enterprise
+Atlassion	Bitbucket.org	Bitbucket
+Gitlab		gitlab		gitlab
+AWS
+mS
+Google
+Gerrit
+
+
+Rajesh (Existing Repo) ==PUSH => Bitbucket.org
+	
+	USER 1 -----Bitbucket.org == CLONE ---> LOCAL
+
+	USER 2 -----EXistingn rep === PULL ----local
+
+
+https://bitbucket.org
+
+
+ 485  git config user.name "Rajesh Kumar"
+  486  git config user.email "rajesh@scmgalaxy.com"
+  487  cd /d
+  488  cd workspace/
+  489  ls
+  490  cd DevOpsSchool.com
+  491  owd
+  492  pwd
+  493  ls
+  494  cd notes
+  495  clear
+  496  pwd
+  497  git add .
+  498  git commit -m"adding"
+  499  git push origin master
+  500  history
+  501  cd /d/visteon/
+  502  ls
+  503  cd ..
+  504  ls
+  505  cd user1/
+  506  ls
+  507  cd repo1/
+  508  clear
+  509  ls
+  510  s
+  511  ls
+  512  ls -la
+  513  touch user1.txt;git add .;git commit -m"ading user1"
+  514  git config user.email "Rajesh Kumar"
+  515  git config user.name "Rajesh Kumar"
+  516  git config user.email "rajesh@scmgalaxy.com"
+  517  touch user1.txt;git add .;git commit -m"ading user1"
+  518  git push origin master
+  519  clear
+  520  history
+==================================================
+
+Undoing......
+How to get rid of files frm working dir?
+How to move a file from staging to working dir?
+How to rollbackk / revert of commited changes?
+
+ 612  touch file7.txt
+  613  ls
+  614  git status
+  615  git clean -f -d
+  616  git status
+  617  touch file7.txt
+  618  git add .
+  619  git status
+  620  git reset file7.txt
+  621  git status
+  622  git clean -d -f
+  623  git status
+  624  git log
+  625  git log --oneline
+  626  touch good.txt;git add .;git commit -m"Good commit"
+  627  git log --oneline
+  628  touch bad.txt;git add .;git commit -m"Bad commit"
+  629  git log --oneline
+  630  git revert 74d8b77
+  631  git log --oneline
+  632  git diff 4833fd5 74d8b77
+  633  git diff 4833fd5 7900ffa
+  634  ls
+  635  history
+=============================================================
+Git Branching and Merging
+--------------------------------------------------
+Types of branches
+	Local Branch     - READ + WRITE
+		Master
+	- Creating
+	- deleting
+
+  504  clear
+  505  git branch -a
+  506  git branch
+  507  git branch -r
+  508  cd ..
+  509  mkdir bare
+  510  cd bare/
+  511  clea
+  512  rclear
+  513  clear
+  514  git init --bare
+  515  ls
+  516  cd ../visteon/
+  517  git branch -a
+  518  clear
+  519  ls
+  520  git branch -a
+  521  git branch fea1
+  522  git branch -a
+  523  git diff fea1
+  524  git checkout fea1
+  525  ls
+  526  clear
+  527  touch fea1.txt;git add .;git commit -m"adding fea1"
+  528  ls
+  529  git checkout master
+  530  ls
+  531  clear
+  532  git checkout fea1
+  533  touch fea2.txt;git add .;git commit -m"adding fea2"
+  534  touch fea3.txt;git add .;git commit -m"adding fea3"
+  535  touch fea4.txt;git add .
+  536  git status
+  537  git checkout master
+  538  git status
+  539  git checkout fea1
+  540  git status
+  541  git reset fea4.txt
+  542  git status
+  543  git clean -d -f
+  544  ls
+  545  clear
+  546  ls
+  547  git branch fea11
+  548  git checkout fea11
+  549  touch fea11-1.txt;git add .;git commit -m"adding fea11-1"
+  550  touch fea11-2.txt;git add .;git commit -m"adding fea11-2"
+  551  clear
+  552  gitk
+  553  git checkout master
+  554  gitk
+  555  git checkout fea1
+  556  gitk
+  557  git branch -a
+  558  git branch -d fea11
+  559  git branch -D fea11
+  560  history
+
+	
+	Remote Branch     - READ ONLY
+
+	Tempo branch		- READ + WRITE ---> Local
+
+  504  clear
+  505  git clone https://scmgalaxy@bitbucket.org/cotocus/repo1.git
+  506  ls
+  507  cd repo1/
+  508  ls
+  509  clear
+  510  touch ramu.txt;git add .;git commit -m"adding ramu"
+  511  git config user.email "rajesh@scmgalaxy.com"
+  512  git config user.name "rajesh kumar"
+  513  clear
+  514  touch ramu.txt;git add .;git commit -m"adding ramu"
+  515  git push origin master
+  516  history
+
+
+
+ 564  git log --oneline
+  565  git checkout 864b4e3
+  566  ls
+  567  clear
+  568  git branch
+  569  git checkout master
+  570  git branch
+  571  git checkout 864b4e3
+  572  git checkout -b user
+  573  git checkout master
+  574  git branch
+  575  clear
+  576  git config --list
+  577  clear
+  578  git pull origin master
+  579  ls
+  580  git fetch origin master
+  581  ls
+  582  git branch -a
+  583  git checkout remotes/origin/master
+  584  ls
+  585  git checkout master
+  586  ls
+  587  clear
+  588  git branch -a
+  589  git merge remotes/origin/master
+  590  ls
+  591  history
+
+
+
+How to merge?
+	FAST FORWARD MERGE
+	THREE WAY MERGE == Recusive Merge
+	Cherry-Picking
+	
+ 518  git log --oneline
+  519  git show HEAD
+  520  git checkout 63b5a48
+  521  clear
+  522  git show HEAD
+  523  git log --oneline
+  524  git show HEAD
+  525  git show HEAD~1
+  526  git show HEAD~2
+  527  clear
+  528  git checkout master
+  529  git log --oneline
+  530  git branch
+  531  git branch fea1
+  532  git branch
+  533  git log --oneline
+  534  git checkout fea1
+  535  clear
+  536  git log --oneline
+  537  touch fea1.txt;git add .;git commit -m"addng fea1"
+  538  touch fea2.txt;git add .;git commit -m"addng fea2"
+  539  git log --oneline
+  540  git checkout master
+  541  git log --oneline
+  542  git show HEAD
+  543  git checkout fea1
+  544  git show HEAD
+  545  git checkout master
+  546  clear
+  547  git merge fea1
+  548  git show HEAD
+  549  git log --oneline
+  550  clear
+  551  git log --oneline
+  552  touch master1.txt;git add .;git commit -m"addng master1"
+  553  touch master2.txt;git add .;git commit -m"addng master2"
+  554  git checkout fea1
+  555  touch fea3.txt;git add .;git commit -m"addng fea3"
+  556  touch fea4.txt;git add .;git commit -m"addng fea4"
+  557  git checkout master
+  558  touch master3.txt;git add .;git commit -m"addng master3"
+  559  git checkout fea1
+  560  touch fea5.txt;git add .;git commit -m"addng fea5"
+  561  clear
+  562  git checkout master
+  563  git log --oneline
+  564  git merge fea1
+  565  git log --oneline
+  566  history
+
+Cherry Picking
+ 571  git checkout fea1
+  572  clear
+  573  touch cherry1.txt;git add .;git commit -m"addng cherry1"
+  574  touch cherry2.txt;git add .;git commit -m"addng cherry2"
+  575  touch cherry3.txt;git add .;git commit -m"addng cherry3"
+  576  touch cherry4.txt;git add .;git commit -m"addng cherry4"
+  577  ls
+  578  git log --oneline
+  579  git checkout master
+  580  git cherry-pick 899d1a3
+  581  ls
+  582  cleaar
+  583  clear
+  584  git log --oneline
+  585  git checkout fea1
+  586  clear
+  587  ls
+  588  touch cherry5.txt;git add .;git commit -m"addng cherry5"
+  589  vi cherry5.txt
+  590  git add .;git commit -m"addng cherry6"
+  591  vi cherry5.txt
+  592  git add .;git commit -m"addng cherry7"
+  593  clear
+  594  git log --oneline
+  595  git checkout master
+  596  git cherry-pick cbacd5e
+  597  ls
+  598  git status
+  599  ls
+  600  vi cherry5.txt
+  601  git add .
+  602  git cherry-pick --continue
+  603  git log --oneline
+  604  git show 649f1f4
+  605  history
+
+
+
+
+
+Conflict Resolution
+
+========================
+pull Vs Push Vs fetch Vs Clone
+
+
+
+Git Config
+
+git config --system user.name " "
+git config --system list
+git config --global user.name " "
+git config --global list
+git config user.name " "
+git config --list
+git config alias.gb "log --oneline --graph --decorate master fea1 `git merge-base master fea1`^!"
+https://git-scm.com/docs/git-config
+
+
+.gitignore
+Stashing
+
+  599  mkdir build
+  600  mkdir bin
+  601  mkdir classes
+  602  touhc build/1
+  603  touch build/1
+  604  touch build/2
+  605  touch build/3
+  606  touch bin/111222
+  607  touch classes/rere
+  608  clear
+  609  git status
+  610  vi .gitignore
+  611  git status
+  612  mkdir classes/dir1
+  613  mkdir classes/dir2
+  614  touhc classes/dir1/dir1111
+  615  touch classes/dir1/dir1111
+  616  touch classes/dir2/dirdddd
+  617  touch classes/dir2/dirddd
+  618  git status
+  619  cd classes/
+  620  tree
+  621  ls
+  622  cd dir2
+  623  ls
+  624  pwd
+  625  vi ../..
+  626  cd ../..
+  627  s
+  628  vi .gitignore
+  629  vi .gitignore
+  630  git status
+  631  git add .
+  632  vi .gitignore
+  633  git add .
+  634  git status
+  635  vi .gitignore
+  636  git add .
+  637  git status
+  638  git reset --hard
+  639  git add .
+  640  git status
+  641  ls
+  642  git status
+  643  mkdir classes/dir2/dirdddd
+  644  mkdir classes/
+  645  mkdir classes/dir2/
+  646  touch classes/dir2/dirdddd
+  647  git status
+  648  git add .
+  649  git status
+  650  ls
+  651  ls -la
+  652  vi .gitignore
+  653  git status
+  654  git reset --hard
+  655  mkdir classes
+  656  touch classes/dir2
+  657  git status
+  658  vi .gitignore
+  659  git status
+  660  git add .
+  661  git commit -m"a"
+  662  clear
+  663  ls
+  664  git status
+  665  ls
+  666  vi file1.txt
+  667  vi file3.txt
+  668  clear
+  669  git status
+  670  git log --oneline
+  671  clear
+  672  git status
+  673  git add .
+  674  git status
+  675  clear
+  676  git stash list
+  677  git stash
+  678  git status
+  679  git stash list
+  680  ls
+  681  vi file5.txt
+  682  git status
+  683  git stash
+  684  git stash list
+  685  git status
+  686  git log
+  687  git log --oneline
+  688  git checkout e5b6db7
+  689  git checkout -b f
+  690  git status
+  691  git stash list
+  692  git stash apply stash@{0}
+  693  git status
+  694  history
+
+
+Advance Reset
+  701  touch soft.txt;git add .;git commit -m"ading for soft"
+  702  clear
+  703  git statys
+  704  git status
+  705  ls
+  706  git log --onelie
+  707  git log --oneline
+  708  git reset --soft HEAD
+  709  git log --oneline
+  710  git status
+  711  git reset --soft e296ae0
+  712  git log --oneline
+  713  git status
+  714  git reset --hard
+  715  git log --oneline
+  716  git relog
+  717  git reflog
+  718  clear
+  719  git status
+  720  touch mixed.txt;git add .;git commit -m"ading for mixed"
+  721  git log --oneline
+  722  git reset --mixed e296ae0
+  723  git log --oneline
+  724  git status
+  725  git status
+  726  git reset --hard
+  727  cleat
+  728  clear
+  729  git status
+  730  git reset --hard
+  731  git status
+  732  git clean -f -d
+  733  clear
+  734  git log --oneline
+  735  touch hard.txt;git add .;git commit -m"ading for hard"
+  736  git log --oneline
+  737  git reset --hard e296ae0
+  738  git log --oneline
+  739  git status
+  740  ls
+  741  git reflog
+  742  history
+
+
+
+Rebase
+
+ 747  git checkout fea1
+  748  clear
+  749  touch rebase1.txt;git add .;git commit -m"ading rebase 1"
+  750  touch rebase2.txt;git add .;git commit -m"ading rebase 2"
+  751  git checkout master
+  752  touch rebase2.txt;git add .;git commit -m"ading rebase master 1"
+  753  touch rebase4444.txt;git add .;git commit -m"ading rebase master 2"
+  754  clear
+  755  git rebase fea1
+  756  git merge fea1
+  757  git checkout fea1
+  758  git rebase master
+  759  clear
+  760  git checkout master
+  761  git merge fea1
+  762  clea
+  763  git config --list
+  764  clear
+  765  git status
+  766  git tag
+  767  git tag list
+  768  git tag --list
+  769  git tag list -d
+  770  git tag --list
+  771  git tag release1.0
+  772  git tag --list
+  773  git push origin release1.0
+  774* git log -onelin
+  775  git log --oneline
+  776  git push origin fea
+  777  git push origin fea1
+  778  git tag fea1
+  779  clear
+  780  ls
+  781  cd /git-
+  782  cd .git
+  783  ls
+  784  cd refs/
+  785  LS
+  786  more tags/
+  787  cat tags/
+  788  cd tags/
+  789  ls
+  790  git branch
+  791  git tag --list
+  792  clear
+  793  cd ..
+  794  ls
+  795  cd ..
+  796  ls
+  797  cd ..
+  798  s
+  799  clear
+  800  ls
+  801  git status
+  802  git log --oneline
+  803  touch git-branch.txt;git add .;git commit -m"adding git-branch"
+  804  git branch git-branch
+  805  git push origin git-branch
+  806  touch git-branch-tag.txt;git add .;git commit -m"adding git-branch-tag"
+  807  git tag git-branch
+  808  git push origin git-branch
+  809  git push origin tag/git-branch
+  810  cd .git
+  811  ls
+  812  cd refs/
+  813  ls
+  814  cd tags/
+  815  ls
+  816  pwd
+  817  cd ../..
+  818  cd ..
+  819  git push origin refs/tags/git-branch
+  820  git push origin :release1.0
+  821  history
+
+
+==============================
+https://www.devopsschool.com/lms/
+
+Subject - Git & Gerrit Advance Course
+
+Body----------------
+
+Full Name
+Gmail ID
+Role
+Mobile#
+City 
+Company Name 
+
+To Contact@DevOpsSchool.com
+
+
+
+
+
+
+
+
+
+
+
+	
+	-
+	
+	

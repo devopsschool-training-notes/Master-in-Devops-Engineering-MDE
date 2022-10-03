@@ -1,0 +1,32 @@
+What is Jenkins?
+	CI Tools - Continous Integration Tool
+	Free
+	Developed using Java
+	But meant for any projects
+	Open Source
+	Dumb Tools - But Extremply Powerful with Plugins(1000)
+
+What is CI?
+Auto Build + Auto test + Immediate Feedback
+
+AutoCode Analsys -> Auto Compilation -> Auto UT -> Auto Pack -> Auto Dep2Repo -> Auto Dep2Qa --> Auto AT --> A TestCoervage -> RELEAE
+
+
+How to install?
+Pre jdk1.8
+> sudo yum install java-1.8.0-openjdk-devel
+
+http://35.154.200.123:8080/
+https://github.com/scmgalaxy/helloworld-java-maven
+
+Auto Compilation -
+Where is your source code? --- GITHUB
+https://github.com/scmgalaxy/helloworld-java-maven
+
+What is your compiler/Intrepeter? JAVA - JDK
+What is your builder? - Maven
+
+Compile - compile
+
+
+

@@ -1,0 +1,729 @@
+JIRA -
+GIT - 
+
+13.126.197.190
+
+What is Jira?
+	Bug Tracking
+	Task
+	Feature
+	Project mgmt
+	Agile
+	Scrum
+
+	From Atlassion
+	JAVA
+
+
+SERVICESNOW
+BMC
+
+Goal - Whenevr someone cmmits to Git...Jira ticket should be uploaded with cmmit-id
+=======================================================
+what is git?
+	Source code mgmt system
+	versioning tools
+	OF Source Code	
+		WHO 
+		What
+		WHEN
+		WHERE
+
+	FREE
+	OPEN SOURCE
+	Compat with All OS
+	Devloped by Linux
+
+Other tools --- SERVER-CLIENT MODEL
+CVS --> SVN
+P4 - CC 
+
+WHY GIT?
+=======================
+DISTRIBUTED MGMT SYSTEM
+
+
+How to install it?
+	WINDOWS
+		git-scm.com
+				Git bash + git command
+	LINUX
+		apt-get install git
+		yum install git
+	MAC	
+		git-scm.com
+====================================================
+BASIC WORKFLOW
+
+1. How to create a repo?
+$ git init
+
+GIT REPO - .git/
+WORKSPACE - /d/git
+
+
+2. How to add a file? [[[ FROM WORKING DIR TO STAGING AREA ]]]
+$ git add filename
+
+ONE TIME ---
+$ git config user.name "Rajesh Kumar"
+$ git config user.email "devops@Rajeshkumar.xyz"
+$ git config --list
+
+3. How to commit file? [[[ FROM STAGING TO REPO ]]]
+$ git commit -m"Adding file"
+
+4. Rajesh@DESKTOP-ST1GLH0 MINGW64 /d/git (master)
+$ git log
+commit 936c2a53643a8954f2fd63247f678a82ff2ed845
+Author: Rajesh Kumar <devops@Rajeshkumar.xyz>
+Date:   Sat Oct 20 09:40:34 2018 +0530
+
+    Adding file
+
+5. $ git show 936c2a53643a8954f2fd63247f678a82ff2ed845
+commit 936c2a53643a8954f2fd63247f678a82ff2ed845
+Author: Rajesh Kumar <devops@Rajeshkumar.xyz>
+Date:   Sat Oct 20 09:40:34 2018 +0530
+
+    Adding file
+
+diff --git a/file1.txt b/file1.txt
+new file mode 100644
+index 0000000..e69de29
+
+
+How to see the staging area?
+$ git status
+
+How to modify?
+How to add multiple files? 
+How to add dir?
+How to commit only selected file?
+how to rename
+How to move 
+How to delete?
+How to go back before delete?
+
+  115  ls
+  116  git log --oneline
+  117  git revert d1cb6b2
+  118  git log --oneline
+  119  ls
+  120  git diff 1477791 09e3342
+  121  git diff 1477791 d1cb6b2
+  122  history
+  123  clear
+  124  ls
+  125  vi file3.txt
+  126  git status
+  127  git add .
+  128  git status
+  129  git commit -m"addng"
+  130  git status
+  131  cler
+  132  ls
+  133  vi file3.txt
+  134  git diff file3.txt
+  135  clear
+  136  ls
+  137  cd ..
+  138  ls
+  139  mkdir repo2
+  140  cd repo2/
+  141  git init --bare
+  142  ls
+  143  clear
+  144  ls
+  145  cd ..
+  146  ls
+  147  cd repo1
+  148  clear
+  149  git branch
+  150  pwd
+  151  ls
+  152  clear
+  153  git branch
+  154  git branch -r
+  155  git branch -a
+  156  pwd
+  157  ls
+  158  git branch -a
+  159  git remote add origin https://scmgalaxy@bitbucket.org/scmgalaxy/yoodle.git
+  160  git pull origin master
+  161  git branch -a
+  162  cd ..
+  163  ls
+  164  cd sam/
+  165  clear
+  166  ls
+  167  git pull origin master
+  168  touch fecth.txt;git add .;git commit -m"ading fetch"
+  169  git push origin master
+  170  ls
+  171  cd /d
+  172  cd yoodle/
+  173  ls
+  174  cd repo1
+  175  clear
+  176  ls
+  177  git branch -a
+  178  ls
+  179  git fetch origin master
+  180  ls
+  181  git checkout remotes/origin/master
+  182  ls
+  183  git checkout master
+  184  ls
+  185  git merge remotes/origin/master
+  186  ls
+  187  history
+  188  cd /d
+  189  ls
+  190  cd yoodle/
+  191  clear
+  192  mkdir branch
+  193  cd branch/
+  194  git init
+  195  touch file1.txt file2.txt file3.txt file4.txt file5.txt
+  196  git status
+  197  git add .
+  198  git status
+  199  clear
+  200  more .git/config
+  201  cat .git/config
+  202  git user.config "Rajesh Kumar"
+  203  git config user.config "Rajesh Kumar"
+  204  git config user.email "DevOps@RajeshKumar.xyz"
+  205  cat .git/config
+  206  clear
+  207  ls
+  208  git add .
+  209  git status
+  210  git commit -m"file1" file1.txt
+  211  git status
+  212  clear
+  213  ls
+  214  git commit -m"file2" file2.txt
+  215  git commit -m"file3" file3.txt
+  216  git commit -m"file3" file4.txt
+  217  git commit -m"file5" file5.txt
+  218  clear
+  219  ls
+  220  git log --oneline
+  221  git status
+  222  clear
+  223  git branch fea1
+  224  git branch
+  225  git checkout fea1
+  226  git branch
+  227  ls
+  228  touch fea1.txt
+  229  git add .
+  230  git commit -m"adding fea1.txt"
+  231  clear
+  232  git checkout master
+  233  ls
+  234  git checkout fea1
+  235  ls
+  236  touch fea2.txt
+  237  git commit -m"adding fea2.txt"
+  238  git add .
+  239  git commit -m"adding fea2.txt"
+  240  clear
+  241  clear
+  242  ls
+  243  git branch fea-ext
+  244  git branch
+  245  git diff master
+  246  git merge master
+  247  git checkout master
+  248  git merge fea1
+  249  history
+  250  clear
+  251  ls
+  252  ls
+  253  touch master1.txt;git add .;git commit -m"master1"
+  254  touch master2.txt;git add .;git commit -m"master2"
+  255  touch master3.txt;git add .;git commit -m"master3"
+  256  git checkout fea1
+  257  touch fea3.txt;git add .;git commit -m"fea3"
+  258  touch fea4.txt;git add .;git commit -m"fea4"
+  259  touch fea5.txt;git add .;git commit -m"fea5"
+  260  clear
+  261  ls
+  262  git diff master
+  263  git checkout master
+  264  clear
+  265  git merge fea1
+  266  history
+  267  clear
+  268  git checkout fea1
+  269  touch fea6.txt;git add .;git commit -m"fea6"
+  270  touch fea7.txt;git add .;git commit -m"fea7"
+  271  touch fea8.txt;git add .;git commit -m"fea8"
+  272  touch fea9.txt;git add .;git commit -m"fea9"
+  273  touch fea10.txt;git add .;git commit -m"fea10"
+  274  clear
+  275  git log --oneline
+  276  git checkout master
+  277  git cherry-pick de8e2c7
+  278  ls
+  279  history
+  280  clear
+  281  ls
+  282  vi fea1.txt
+  283  git add .;git commit -m"adding code"
+  284  git checkout fea1
+  285  vi fea1.txt
+  286  git add .;git commit -m"adding code"
+  287  cler
+  288  clear
+  289  git checkout master
+  290  git merge fea1
+  291  git status
+  292  git status
+  293  git add .
+  294  git commit -m"ff
+  295  "
+  296  git status
+  297  git merge fea1
+  298  cd /d
+  299  cd RajeshAll/
+  300  ls
+  301  cd workspace/
+  302  ls
+  303  cd /d
+  304  cd RajeshAll/
+  305  ls
+  306  clear
+  307  ls
+  308  cd workspace/
+  309  ls
+  310  cd DevOpsSchool.com
+  311  l
+  312  ls
+  313  cd tutorial/
+  314  git status
+  315  git add .
+  316  git pull origin master
+  317  git pull origin master
+  318  git add .
+  319  git commit -m"adding"
+  320  git push origin master
+  321  clear
+  322  ls
+  323  cd /d
+  324  cear
+  325  clear
+  326  cd /d
+  327  cd /d/RajeshAll/
+  328  cd workspace/
+  329  ls
+  330  cd DevOpsSchool.com
+  331  clear
+  332  ls
+  333  git tutorial/
+  334  cd tutorial/
+  335  git pull origin master
+  336  git add .
+  337  git add .
+  338  git commit -m"adding"
+  339  git push origin master
+  340  clear
+  341  git status
+  342  git status
+  343  git add .
+  344  git commit -m"adding"
+  345  git push origin master
+  346  cd ..
+  347  ls
+  348  cd video/
+  349  ls
+  350  start .
+  351  git status
+  352  git add .
+  353  git commit -m"adding"
+  354  git push origin master
+  355  git pull origin master
+  356  git push origin master
+  357  cd /d
+  358  cd /d/RajeshAll/workspace/
+  359  ls
+  360  cd DevOpsSchool.com
+  361  clear
+  362  ls
+  363  cd tutorial
+  364  ls
+  365  cd kubernetes/
+  366  git status
+  367  git add .
+  368  git pull origin master
+  369  git push origun master
+  370  git push origin master
+  371  git commit -m"adding"
+  372  git push origin master
+  373  cd ..
+  374  s
+  375  git status
+  376  git add .
+  377  git pull origin master
+  378  git push origin master
+  379  git commit -m"adding"
+  380  git push origin master
+  381  git status
+  382  git add .
+  383  git commit -m"adding"
+  384  git push origin master
+  385  git pull origin master
+  386  clear
+  387  start .
+  388  git status
+  389  git add .
+  390  git commit -m"adding"
+  391  git push origin master
+  392  cd ..
+  393  ls
+  394  cd ..
+  395  ls
+  396  cd devopsschool
+  397  ls
+  398  mkdir docker-compose
+  399  cd docker-compose/
+  400  ls
+  401  start .
+  402  git init
+  403  git config user.name contact@DevOpsSchool.com
+  404  git config user.name DevOpsSchool.com
+  405  git config user.email DevOpsSchool.com
+  406  clear
+  407  ls
+  408  git add .
+  409  clear
+  410  git commit -m"adding"
+  411  clear
+  412  clear
+  413  ls
+  414  cd ..
+  415  ls
+  416  cd ..
+  417  ls
+  418   cd DevOpsSchool.com
+  419  clear
+  420  ls
+  421  cd notes
+  422  git add .
+  423  git add .
+  424  git commit -m"add"
+  425  git push origin master
+  426  clear
+  427  ls
+  428  cd docker/
+  429  ls
+  430  cd example-docker-compose/
+  431  ls
+  432  zip -r docker-compose-prog-5.zip docker-compose-prog-5
+  433  minikube ssh
+  434  minikube status
+  435  cd /d/RajeshAll/
+  436  ls
+  437  cd workspace/
+  438  ls
+  439  cd DevOpsSchool.com
+  440  clear
+  441  ls
+  442  cd notes
+  443  ls
+  444  git status
+  445  clear
+  446  ls
+  447  git add .
+  448  cler
+  449  cear
+  450  clear
+  451  git commit -m"adding"
+  452  cler
+  453  lear
+  454  clear
+  455  git push origin master
+  456  cd ..
+  457  ls
+  458  cd tutorial/
+  459  ls
+  460  clear
+  461  git status
+  462  git add .
+  463  git commit -m"adding"
+  464  clear
+  465  git push origin master
+  466  git status
+  467  git pull origin master
+  468  cler
+  469  ls
+  470  clear
+  471  ls
+  472  git push origin master
+  473  cd /d
+  474  cd RajeshAll/
+  475  clear
+  476  ls
+  477  cd workspace
+  478  ls
+  479  clear
+  480  ls
+  481  cd DevOpsSchool.com
+  482  clear
+  483  ls
+  484  cd tutorial/
+  485  ls
+  486  git pull origin master
+  487  cd ..
+  488  clear
+  489  ls
+  490  cd devopsschool.com/
+  491  git pull origin master
+  492  clear
+  493  ls
+  494  start .
+  495  git pull origin master
+  496  git status
+  497  git add .
+  498  git commit -m"addding"
+  499  git push origin master
+  500  pwd
+  501  cd /d
+  502  pwd
+  503  mkdir git
+  504  ls
+  505  cd git/
+  506  clear
+  507  ls
+  508  git init
+  509  pwd
+  510  pwd
+  511  touch file1.txt
+  512  start .
+  513  git add file1.txt
+  514  cleaar
+  515  ls
+  516  clear
+  517  cd .git/
+  518  ls
+  519  cd objects/
+  520  ls
+  521  cd e6/
+  522  ls
+  523  git log
+  524  cd ..
+  525  ls
+  526  clearcd ..
+  527  ccler
+  528  clear
+  529  cd ..
+  530  cd ..
+  531  ls
+  532  git config user.name "Rajesh Kumar"
+  533  git config user.name "devops@Rajeshkumar.xyz"
+  534  git config user.email "devops@Rajeshkumar.xyz"
+  535  git config --list
+  536  git config user.name "Rajesh Kumar"
+  537  git config user.email "devops@Rajeshkumar.xyz"
+  538  clear
+  539  git commit -m"Adding file"
+  540  git log
+  541  Installation of JIRA Software 7.5.1 is complete
+  542  Your installation of JIRA Software 7.5.1 is now ready and can be accessed
+  543  via your browser.
+  544  JIRA Software 7.5.1 can be accessed at http://localhost:8080
+  545  Finishing installation ...
+  546  [root@ip-172-31-30-199 ec2-user]#
+  547  clear
+  548  git show 936c2a53643a8954f2fd63247f678a82ff2ed845
+  549  clear
+  550  git status
+  551  git add file2.txt
+  552  git status
+  553  git commit -m"ading file2"
+  554  git status
+  555  ;s
+  556  ls
+  557  clear
+  558  clear
+  559  ls
+  560  vi file1.txt
+  561  git status
+  562  git add file1.txt
+  563  git status
+  564  git commit -m"modifying file1.xt"
+  565  git status
+  566  ls
+  567  touch file3.txt file4.txt file5.txt
+  568  ls
+  569  git status
+  570  git add .
+  571  git status
+  572  git commit -m"adding all"
+  573  git status
+  574  mkdir src
+  575  git status
+  576  touch src/src1.txt
+  577  git status
+  578  git add src/
+  579  git status
+  580  git commit -m"adding dir"
+  581  git status
+  582  touch file6.txt file7.txt file8.txt
+  583  git statu
+  584  git status
+  585  git add .
+  586  git status
+  587  git commit -m"ading file6 only" file6.txt
+  588  git status
+  589  ls
+  590  git mv file1.txt file11.txt
+  591  git status
+  592  git commit -m"ading n renaming"
+  593  git status
+  594  ls
+  595  ls
+  596  git mv file2.txt src/
+  597  git status
+  598  git commit -m"moving"
+  599  clear
+  600  ls
+  601  git rm file6.txt
+  602  git status
+  603  git commit -m"file6 delete"
+  604  git status
+  605  ls
+  606  git log
+  607  git log --oneline
+  608  git checkout HEAD~1
+  609  ls
+  610  git checkout master
+  611  ls
+  612  clea
+  613  clear
+  614  history
+
+
+
+SSH --- rajesh@X.X.X.X:/d/git
+
+
+Rajesh
+	PUSh --> MASER REPO
+
+git init			DONE
+git add README.md		DONE
+git commit -m "first commit"	DONE
+git remote add origin https://github.com/devopschool/weekend.git
+git push -u origin master
+
+
+
+
+MURUGAN --> EXISING REPO --> PULL 
+Paresh ---> NO existing repoo - Clone
+============================================
+GIT REPO HOSTING SOLUTION....
+
+GIThub.com
+Bitbucket
+gerrit
+Gitlab
+
+  614  history
+  615  clear
+  616  l
+  617  ls
+  618  git remote add origin https://github.com/devopschool/weekend.git
+  619  git push -u origin master
+  620  git push -u origin master
+  621  git push -u origin master
+  622  git remote add origin https://github.com/scmgalaxy/weekend1.git
+  623  git remote set-url origin git remote add origin https://github.com/scmgalaxy/weekend1.git
+  624  git remote set-url origin https://github.com/scmgalaxy/weekend1.git
+  625  git push -u origin master
+  626  clear
+  627  ls
+  628  cd ..
+  629  mkdir muru
+  630  cd muru/
+  631  clear
+  632  git init
+  633  git pull https://github.com/scmgalaxy/weekend1.git
+  634  git log
+  635  clear
+  636  cd ..
+  637  ls
+  638  mkdir paren
+  639  cd paren/
+  640  git clone
+  641  git clone https://github.com/scmgalaxy/weekend1.git
+  642  ls
+  643  cd weekend1/
+  644  ls
+  645  git log
+  646  history
+
+
+BRANCHING
+=========================================
+LOCAL BRANCH
+REMOTE BRANCH 
+TEMP
+
+
+496  git status
+  497  git add .
+  498  git commit -m"addding"
+  499  git push origin master
+  500  cd /d/paren/
+  501  ls
+  502  cd satish/
+  503  git fetch origin master
+  504  ls
+  505  git branch
+  506  git branch -a
+  507  git checkout remotes/origin/master
+  508  ls
+  509  git checkout master
+  510  ls
+  511  git merge remotes/origin/master
+  512  ls
+  513  cler
+  514  git branch
+  515  git branch fea1
+  516  git branch
+  517  git checkout fea1
+  518  git branch
+  519  touch fea1.txt;git add .;git commit -m"adding fea1"
+  520  ls
+  521  git checkout master
+  522  ls
+  523  git merge fea1
+  524  ls
+  525  hisory
+  526  history
+
+==========================================
+IS ANY GUI TOOL - SOURCETREE
+
+VS - ECLIPSE 
+
+Code Review ---
+	Gerrit
+
+SHA --> 
+
+GIT --
+
+gitlab?
+
+git stashu
+	
+
+
+
+

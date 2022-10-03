@@ -1,0 +1,151 @@
+GIT
+==============================
+Jira --> GIT --> SonarQube -> Maven ----->
+	
+	Source Code mgmt tool
+	versioning tool
+	Free
+	Open Source
+	Compt all the OS
+	Distributed 
+Why git?
+	What 
+	Why
+	Where
+	When
+	who
+		Modified the source code
+
+Others
+	CVS --> SVN --> GIT
+	VSS --> ClearCase --> p4 -> TFS
+
+===============================================
+What is diff bet GIT vs ALL
+
+ALL  -> SERVER - CLIENT
+GIT -> DISTRIBUTED
+
+SERVER - CLIENT NEED CONNECTION
+	ADD
+	DEl
+	MODI
+	VEIW
+	DIFF
+	LOG
+	HISTORY
+=====================================================
+How to install git?
+		WINDOWS
+			exe
+			https://git-scm.com/
+			git-bash - You can run linux command in windows
+		LINUX
+			apt-get install git
+			yum install git
+		MAC
+			https://git-scm.com/
+
+GUI - 
+	SourceTree from Atlasssion
+	
+  501  pwd
+  502  git
+  503  clear
+  504  ls
+  505  pwd
+  506  cd /d
+  507  mkdir weekend
+  508  cd weekend/
+  509  pwd
+  510  start .
+  511  history
+
+
+-----------------------
+How to create a repo?
+> git init
+How to add new file?(How to send file from working dir to staging area)
+> git add filename
+
+ONE TIME
+----------------
+Name - git config user.name "Rajesh Kumar"
+Email - git config user.email "rajesh@scmgalaxy.com"
+git config --list
+
+How to commit a file(How to send file from staging area to repo)
+> git commit -m"adding my first file"
+
+How to see log(History)?
+> git log
+
+How to see the files in each commit?
+git show ae207e7f8e8feb230d05214f5c45d706f968d2fa
+
+
+WORKING - THE PLACE WHERE .GIT
+STAGING - git status
+REPo - .git
+
+How to add/commit multiple file
+> git add .
+How to commit a dir?
+# Same as files
+
+How to rename a file
+> git mv file1 file2
+> git commit -m"rename"
+
+How to move a file
+	same as rename
+
+How to delete a file
+> git rm filename
+> git commit -m"deleet"
+
+
+git checkout 6edbf3eaf738766286749ef39d9e67dee6842055
+
+=================================================
+Sharing a repo?
+RAJESH IS FIRST GUY IN D PRO	- WORKING ON SELF REPO
+		
+		SYED		- Created SELF repo
+	
+		SUMANTH		-  git clone url
+
+
+URL ----> SSH + HTTPS
+
+	GUi
+	ISSUES
+	WIKI
+	ETC
+	--------------------
+	GITHUB		FREE FOR OS		PAID FOR COMM
+	GITLAB
+	BITBUCKET
+	GERRIT
+	
+	
+
+GIT PUSH
+GIT CLONE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

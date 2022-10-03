@@ -1,0 +1,110 @@
+What is Git?
+Source Code mgmt system
+
+Why Do need SCM, VCS, SR.
+WHO
+WHAT
+WHY
+WHEN
+==================
+VERSIONING
+
+How to use it?
+-----------------------
+How to install git?
+WINDOWS - gitbash(command line)+sourcetree(atl)
+LINUX - RHEL > sudo yum install git
+LINUX - UBUNTU > sudo apt-get install git
+
+> git setup windows command line
+> git git bash command line
+
+How to verify?
+> git
+
+How to know the git version?
+> git --version
+
+How to start working?
+RULE 1- You need to have a repository?
+> cd /c #Go to C Drive
+> mkdir git-repo #Create a dir name
+> cd git-repo #Get inside a git-repo
+> mkdir git1 #create a git1 direct
+> cd git1
+> git init
+
+RULE 2- Add a file.
+>git add filename
+
+RULE 3- Who are you before the commit?
+Name
+> git config user.name "Rajesh Kumar"
+Email -
+> git config user.email "DevOps@RajeshKumar.xyz"
+
+Where is my name and email address?
+> git config --list
+
+RULE 4- How to commit?
+> git commit -m"This is my first commit"
+
+Rule 5 - How to see number of commits?
+> git log
+
+How to check the status of my workspace?
+> git status
+
+QUESTION TIME
+=================================
+How to check the files which is committed as part of each commit?
+> git show <checksum>
+
+How to add all files?
+> git add .
+
+How to modify a files and commit?
+Done
+
+How to add a directory?
+Done - Similar to files.
+
+How to modify/commit and new files commits?
+Done
+
+How to rename the files/directory?
+> git mv filename
+
+How to move a files/directory?
+> git mv dirname
+
+How to delete a files/directory?
+> git rm filename
+
+How to work with Remote or masterr repo -GITHB
+=================================================
+Get a username / password on github.com
+Create a new repo
+Sen1 - Master is Empty Repo
+----------------
+git init
+git commit
+git push
+
+Sen2 - Master is not empty and Local is not empty
+
+Sen3 - Master is not empty and local is nothing
+> git clone url
+
+How to work with SSh with remote repo without password?
+> ssh-keygen
+
+> Register a account on github.com
+> Whatever you have commited - Push it using HTTPS
+> Act like a diff guy/gal and clone using ssh and push using ssh
+
+How to clear the cache of github credentails in all platform
+
+SOME LINUX COMMANDS
+=======================
+pwd - Current directory

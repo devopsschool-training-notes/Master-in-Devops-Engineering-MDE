@@ -1,0 +1,404 @@
+What is Git?
+	Version Control System	
+	Deve by Linus in 2005
+	Free
+	Open source
+	DISTRRIBUTED MGMT SYSTEM
+	For Source Code
+Why Git?
+	Who
+	What
+	When
+	Why
+	Where
+		Over a period of time on my Source Code.
+
+Other tool?
+RCS -> CVS -> SVN -> GIT
+Harvest -> P4 -> CC -> Mercury -> Bitkeeper, VCS, TFS
+
+What is DISTRRIBUTED MGMT SYSTEM?? & Arch of git?
+
+SERVER-CLIENT = 
+DISTRRIBUTED
+=============================================
+How to install Git?
+	WIN git-scm.com
+		git-bash
+	MAC git-scm.com
+	RHEL - sudo yum install git
+	UB - sudo apt-get install git
+===========================================
+Workflow in Git?
+
+Step 1 - How to create a repo?
+$ git init
+
+Step 2 - Sending a file from workspace to staging
+$ git add .
+
+ONE TME
+Rajesh@DESKTOP-ST1GLH0 MINGW64 /d/delmon/repo1 (master)
+$ git config user.name "Rajesh Kumar"
+
+Rajesh@DESKTOP-ST1GLH0 MINGW64 /d/delmon/repo1 (master)
+$ git config user.email "devops@rajeshkumar.xyz"
+$ git config -list
+
+Step 3 - Sending a file from staging to repo.
+$ git commit -m"First commit for demo"
+
+Step 4 - See the commits?
+$ git log
+
+Step 5 - What is there inside a commit?
+$ git show commit-id
+=============================
+How to add a single file?
+How to commit single file
+How to modify a file?
+How to rename a file?
+How to move a file?
+How to delete a file?
+How to back back in the history?
+
+ 520  ls
+  521  ls -la
+  522  git status
+  523  touch file3.txt
+  524  git status
+  525  touch file4.txt
+  526  git status
+  527  git add file3.txt
+  528  git status
+  529  git commit -m"ading file3"
+  530  git status
+  531  ;s
+  532  ls
+  533  ls
+  534  cd .git/
+  535  ls
+  536  pwd
+  537  cd ..
+  538  ls
+  539  clear
+  540  ls
+  541  git status
+  542  touch file5.txt file6.txt file7.txt file8.txt
+  543  git status
+  544  git add file4.txt
+  545  git status
+  546  git add .
+  547  git status
+  548  git commit -m"adding file4" file4.txt
+  549  git status
+  550  git commit -m"adding file4"
+  551  git status
+  552  ls
+  553  ls
+  554  vi file1.txt
+  555  git status
+  556  git add file1.txt
+  557  git status
+  558  git commit -m"change in file1"
+  559  git status
+  560  clear
+  561  ls
+  562  git mv file3.txt file33.txt
+  563  git status
+  564  ls
+  565  git commit -m"renming file3 to file33"
+  566  ls
+  567  git status
+  568  ls
+  569  mkdir src
+  570  git status
+  571  touch src/src1.txt
+  572  git status
+  573  ls
+  574  git mv file1.txt src/
+  575  git status
+  576  git add src/src1.txt
+  577  git status
+  578  git commit -m"moving"
+  579  git status
+  580  clear
+  581  git log
+  582  clear
+  583  git log --oneline
+  584  touch todel.txt;git add .;git commit -m"adding todelfile"
+  585  git log --oneline
+  586  ls
+  587  git rm todel.txt
+  588  git status
+  589  git commit -m"delete todel"
+  590  ls
+  591  git log --oneline
+  592  clear
+  593  git log --oneline
+  594  git show HEAD
+  595  git show HEAD~1
+  596  git checkout HEAD~1
+  597  ls
+  598  git show HEAD
+  599  git checkout master
+  600  ls
+  601  git log --oneline
+  602  history
+
+How to work as a team using git?
+========================================
+Rajesh TO Gitgub
+
+	Github to Neeta Existing Repo
+	Github to Sharavan (No Rep)
+
+605  ls -la
+  606  pwd
+  607  clear
+  608  ls
+  609  git push https://github.com/scmgalaxy/delfeb.git master
+  610  cd ..
+  611  mkdir neeta
+  612  cd neeta/
+  613  clear
+  614  git init
+  615  git pull https://github.com/scmgalaxy/delfeb.git master
+  616  ls
+  617  git log --online
+  618  git log --oneline
+  619  cd ..
+  620  ls
+  621  git clone https://github.com/scmgalaxy/delfeb.git
+  622  ls
+  623  cd delfeb/
+  624  ls
+  625  git log --oneline
+  626  cd ../repo1/
+  627  ls
+  628  touch rajesh.txt;git add .;git commit -m"ading rajesh"
+  629  git remote add origin https://github.com/scmgalaxy/delfeb.git
+  630  git config --list
+  631  git remote add origin1 https://github.com/scmgalaxy/delfeb.git
+  632  git config --list
+  633  clear
+  634  ls
+  635  git push origin master
+  636  start
+  637  history
+
+ 490  ls
+  491  cd /d
+  492  cd RajeshAll/
+  493  ls
+  494  git status
+  495  git add .
+  496  git commit -m"adding 10 feb 2019"
+  497  git push origin master
+  498  git push origin master
+  499  git add .
+  500  git commit -m"adding 10 feb 2019"
+  501  cd /d
+  502  cd delmon/
+  503  ls
+  504  cd neeta/
+  505  ls
+  506  git remote add origin git@github.com:scmgalaxy/delfeb.git
+  507  ls
+  508  git pull origin master
+  509  ls
+  510  history
+
+===========================
+Branching & Merging
+--------------------------------
+Local Branch
+Remote Branch
+Temp Brach
+ 502  ls
+  503  cd delmon/
+  504  ls
+  505  mkdir repo2
+  506  cd repo
+  507  cd repo2
+  508  clear
+  509  start .
+  510  git init --bare
+  511  ls
+  512  ls
+  513  cd ..
+  514  ls
+  515  cd repo1
+  516  clear
+  517  git branch -a
+  518  git branch -r
+  519  git branch
+  520  git branch -a
+  521  git checkout remotes/origin/master
+  522  git branch -a
+  523  git checkout master
+  524  git branch -a
+  525  clear
+  526  git branch -a
+  527  ls
+  528  touch devopsschool.com;git add .;git commit -m"ading dvc"
+  529  ls
+  530  git branch -a
+  531  git checkout remotes/origin/master
+  532  ls
+  533  git checkout master
+  534  git push origin master
+  535  git checkout remotes/origin/master
+  536  ls
+  537  cd ..
+  538  ls
+  539  cd neeta/
+  540  ls
+  541  git branch -a
+  542  git fetch origin master
+  543  ls
+  544  git branch -a
+  545  git checkout remotes/origin/master
+  546  ls
+  547  git checkout master
+  548  ls
+  549  git branch -a
+  550  git merge remotes/origin/master
+  551  ls
+  552  history
+=====================================
+Types of git Merges
+--------------------------
+Fast Forward
+Recursive Merge
+Cherry-Pick
+553  clear
+  554  ls
+  555  git branch fea1
+  556  git branch
+  557  git checkout fea1
+  558  git branch
+  559  ls
+  560  touch fea1.txt;git add .;git commit -m"fea1"
+  561  touch fea1.txt;git add .;git commit -m"fea1"
+  562  git config user.name "Neeta"
+  563  git config user.email "devops@neeta.com"
+  564  touch fea1.txt;git add .;git commit -m"fea1"
+  565  touch fea2.txt;git add .;git commit -m"fea2"
+  566  touch fea3.txt;git add .;git commit -m"fea3"
+  567  git log --oneline
+  568  git checkout master
+  569  git log --oneline
+  570  git merge fea1
+  571  touch master1.txt;git add .;git commit -m"master1"
+  572  touch master2.txt;git add .;git commit -m"master2"
+  573  touch master3.txt;git add .;git commit -m"master3"
+  574  git checkout fea1
+  575  touch recurse1.txt;git add .;git commit -m"recurse1"
+  576  touch recurse2.txt;git add .;git commit -m"recurse2"
+  577  touch recurse3.txt;git add .;git commit -m"recurse3"
+  578  git checkout master
+  579  ls
+  580  git merge fea1
+  581  git log --oneline
+  582  git checkout fea1
+  583  ls
+  584  touch cherry1.txt;git add .;git commit -m"cherry1"
+  585  touch cherry2.txt;git add .;git commit -m"cherry2"
+  586  touch cherry3.txt;git add .;git commit -m"cherry3"
+  587  touch cherry4.txt;git add .;git commit -m"cherry4"
+  588  ls
+  589  git log --oneline
+  590  git checkout master
+  591  git cherry-pick f0ada78
+  592  ls
+  593  git log --oneline
+  594  clear
+  595  s
+  596  git checkout fea1
+  597  ls
+  598  vi file2.txt
+  599  git add .
+  600  git commit -m"adding file2"
+  601  vi file2.txt
+  602  git add .
+  603  git commit -m"line2"
+  604  vi file2.txt
+  605  git add .
+  606  git commit -m"line3"
+  607  git log --oneline
+  608  git checkout master
+  609  more file2.txt
+  610  vi file2.txt
+  611  git cherry-pick 185ed15
+  612  git statis
+  613  git status
+  614  vi file2.txt
+  615  git add .
+  616  git commit -m"reoslve conflict"
+  617  git log --oneline
+  618  histry
+  619  history
+
+Stash
+=
+
+
+Branching & Merging Strategy
+https://docs.microsoft.com/en-us/azure/devops/repos/tfvc/branching-strategies-with-tfvc?view=azure-devops
+
+git config
+git config --system user.name "Rajesh Kumar"
+git config --global user.name "Rajesh Kumar"
+
+How to do undoing?
+file - get rid of file from working dir
+file - get moving a file from staing to working dir
+How can you rollback in git repo?
+
+  628  git status
+  629  touch clean.txt
+  630  git status
+  631  git clean -f -d
+  632  git status
+  633  touch reset.txt
+  634  git status
+  635  git add reset.txt
+  636  git status
+  637  git reset reset.txt
+  638  git status
+  639  git log --oneline
+  640  touch good.txt;git add .;git commit -m"adding"
+  641  git log --oneline
+  642  git amend -m"good commit"
+  643  clear
+  644  git commit --amend "good commit"
+  645  git commit --amend "good commit" good.txt
+  646  ls
+  647  git commit --amend -m "New commit message"
+  648  git commit --amend -m "Good Commit"
+  649  git log --oneline
+  650  touch bad.txt;git add .;git commit -m"bad commit"
+  651  git log --oneline
+  652  git revert 49db918
+  653  git log --oneline
+  654  git diff 791e25d
+  655  git diff 791e25d 26aaa4f
+  656  git diff 791e25d 49db918
+  657  history
+
+
+
+
+
+https://hack.chat/?devopsschool
+
+
+
+
+
+
+
+
+
+	

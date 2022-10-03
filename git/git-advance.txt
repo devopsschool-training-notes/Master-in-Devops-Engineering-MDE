@@ -1,0 +1,54 @@
+GIT Advance
+SonarQube Installation & Config
+====================================
+
+GIT with Jira ->
+Hooks in Git & Github
+---------------------------------
+GIt - Local
+
+Hooks will allow to do the changes what you ask if RETURN TRUE
+Hooks will NOT allow to do the changes what you ask if RETURN FALSE
+
+Github----
+
+
+Git branching & Merging
+====================================
+Defualt Branch - master
+
+Kind of branches
+	Local
+	Remote
+
+How to see the branches?
+> git branch -a
+
+How to create a branches?
+> git branch fea1
+> git checkout fea1
+
+Git Merging
+===================================
+Fast Forward Merge
+3 Way merge - Recursive merge
+Cherry Picking
+
+
+Git Conflict Resolution
+==============================
+
+
+Git undoing
+===============================
+How to get rid of the files from Working dir?
+git clean -f -d
+
+How to move a fle frm stagng area to working dir?
+git reset filename
+
+How to revet the change in git?
+git revert commit-id
+
+Git Pull VS PUsh Vs fetch
+Git Ignore

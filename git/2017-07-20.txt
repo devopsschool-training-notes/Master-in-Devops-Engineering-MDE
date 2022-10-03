@@ -1,0 +1,54 @@
+What is Git?
+	WHAT WHY WHERE WHEN WHO
+	VERSION CONTROL SYSTEM
+	FREE
+	OPEN SOURCE
+	DISTRIBUTED---------
+	
+
+SERVER CLIENT VS DISTRIBUTED
+
+How to Install?
+==========================
+	WINDOWS	 - -EXE -----> https://git-scm.com/ ----
+	LINUX
+		REHHAT-CENTOS	> yum install git
+		UB 		> apt-get install git
+
+============================
+Git Basic Workflow
+---------------------------------------
+Step 1 - How to create a repo?
+> git init
+
+Step 2 - How to add files into the the GIT
+> git add filename
+
+Step 3 - How to set user name and email?
+> git config user.name "Rajesh Kumar"
+> git config user.email "rajesh@scmgalaxy.com"
+> git config --list
+
+Step 4 - How do i commit in the git?
+> git commit -m"this is first commit"
+
+Step 5 - How to see the number of commits?
+> git log
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		

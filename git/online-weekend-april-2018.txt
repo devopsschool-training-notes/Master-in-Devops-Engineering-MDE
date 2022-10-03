@@ -1,0 +1,187 @@
+What is Git?
+	VERSION CONTROL TOOL
+	SOURCE CODE MANAGEMENT TOOL
+	A Place where we store the source code for versioning
+	Free
+	Open Source
+	Compt with All OS
+	Very popular
+	=================
+	Distributed Model
+	================
+
+Why Git?
+	WHat changes has been made 
+	When it was made
+	Who has made it
+	Where it is?
+		IN CODE
+	OVER THE PERIOD OF TIME
+
+
+Who can use the git?
+	ANY ONE WHO WANTS TO HAVE VERSION OF THE TOOL
+	ANY FILE WHICH IS TEXT BASED
+	JPEG | PDF | EXE | WORD | SPREAD
+
+
+What are others tools?
+	SERVER-CLIENTS
+	CVS -> SVN -> GIT	
+	P4- CC- TFS - VSS
+
+How Git works?
+	DISTRIBUTED
+
+How to Install git?
+	WINDOWS
+		exe -> https://git-scm.com/ -> GIT BASH
+				[For basic Liuux Command in Windows]
+		nuget
+		choclate	
+		ps
+	RHEL	
+		sudo yum install git
+	UB
+		sudo apt-get yum install git
+
+git
+git bash
+eclipse plugins
+jetbeans
+sourcetree
+tortoisegit
+
+How to verify?
+> git
+> git version
+
+How to get startted?
+	file
+	repos
+
+How to create a repo?
+> git init
+	.git is your repos
+		contains
+			files
+			db==meta
+
+How to add a file?
+> git add filename	
+
+USER NAME & EMail
+> git config user.name "Rajesh Kumar"
+> git config user.email "rajesh@scmgalaxy.com"
+> git config --list
+
+
+How to commit?
+> git commit -m"This is my first commit"
+$ git commit -m"This is my first commit"
+[master (root-commit) f8727df] This is my first commit
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 file1.txt
+
+What is master - branch name
+What is f8727df - 
+every commit you do, it create a objects, which contains the changes and objects can be identified using the HASH thats called check-sum. &&& Check sum is f8727df.
+
+Check sum is created by SHA1 algo.
+
+What is 1 file changed, 0 insertions(+), 0 deletions(-
+
+1 file changed
+0 line got added
+0 line got delete
+
+How to see the list of commits?/
+> git log
+
+
+What was the files for each commits?
+> git show commit-id
+
+
+AREA IN GIT
+--------------------------
+WORKING DIR - The directory where .git contains
+			> git add
+STAGING AREA - > git status
+			> git commit
+REPO - .git
+
+How to add multiple filels?
+> git add .
+
+How to commit selective fiels?
+> git commit -m"selective" file3.txt file4.txt
+
+How to add dir
+# Same way as file but empty
+
+How to modify file
+#
+
+How to rename a file
+> git mv filename1 filename2
+> git commit -m"renaming"
+
+How to delete a file
+> git rm filename1
+> git commit -m"deletng"
+
+WHAT IS HEAD - Head is a tip a current Branch
+
+How to move a file
+# Same as rename
+
+How to copy a file
+
+
+
+How to collabe?
+	Bitbucket
+	Github Enter
+	Github.com
+	Gitlab
+	Gerrit
+
+
+TFS	PLAN
+	SOURCE
+			SourceContrl (VSS) -- SERVER - CLINET
+			GIT (		      DISTRIBUTED
+	BUILD		==JENKINS
+	RELEASE
+	
+
+
+RAJESH -----------> PUSH TO GITHUB
+
+	KIRAN  --- CLONE IT FROM GITHUB
+
+
+Branching 
+Merging
+Undoing
+Gitignoe
+PUSH
+PULL
+CLONE
+FETCH
+http://www.devopsschool.com/video/git/git-advance-v2.html
+
+
+
+	undoing 
+
+
+
+
+
+
+
+
+
+

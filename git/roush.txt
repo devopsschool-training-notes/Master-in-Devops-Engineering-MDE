@@ -1,0 +1,60 @@
+Creating-git-Blobs-Trees-and-Commits
+
+Creating Git Blobs, Trees and Commits
+
+git clone http://13.126.142.202:9000/prj1 && (cd prj1 && curl -kLo `git rev-parse --git-dir`/hooks/commit-msg http://13.126.142.202:9000/tools/hooks/commit-msg; chmod +x `git rev-parse --git-dir`/hooks/commit-msg)
+
+ssh-keygen -t rsa -C "rajesh@scmgalaxy.com" 
+
+git push origin HEAD:refs/for/master
+
+sudo su -c 'ssh github.com echo' gerrit2
+
+git clone http://admin@13.126.142.202:9000/a/prj1
+
+[remote "github"]
+url = git@github.com:scmgalaxy/gerrit-rep-test.git
+
+[remote "host-one"]
+    url = git@github.com:scmgalaxy/gerrit-rep-test.git
+
+
+https://github.com/scmgalaxy/gerrit-rep-test.git
+
+[label "Verified"]
+    function = MaxWithBlock
+    value = -2 This shall not be merged
+    value = -1 fail
+    value =  0 No score
+    value = +1 Verified
+    defaultValue = 0
+
+
+
+[remote "aricg-compliance"]
+  url = git@github.com:scmgalaxy/${prj1}.git
+
+
+/var/lib/gerrit/.ssh/config
+Host github.com
+    User root
+    IdentityFile /root/.ssh/id_rsa
+    StrictHostKeyChecking no
+    UserKnownHostsFile /dev/null
+
+
+git@github.com:scmgalaxy/${prj1}.git
+
+
+
+
+
+
+
+
+
+
+
+
+
+

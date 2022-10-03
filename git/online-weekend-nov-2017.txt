@@ -1,0 +1,224 @@
+What is Git?
+	Source Code Repo
+	Source Code Mgmt
+	Distributed 
+	Free
+	OS
+	Compt all the OS
+	FAST
+
+What is the meaning of repo?	
+	files
+	meta info == database (Who, when, where)
+
+
+
+Why Git?
+	Versioning
+		What
+		Why
+		Who
+		Where
+		when
+			Over the period
+
+Other -----
+	CVS --> SVN  --> GIT (Open Source)
+	Perforce == Clearcase == Mercury = TFS(VSS)
+BASED on SERVER - CLIENT
+
+What is Distributed?
+Refer the images under notes...
+
+
+If server n client connection with CVS, SVN, CC, p4. etc....
+	You will not be able to 
+		add
+		view
+		delete
+		compare
+		push
+		submit
+
+Diff Between Git Vs Other Tools(CVS, SVN, CC, p4. etc....)
+----------------------------------------------------------------------------
+Git is distributed
+Where as CVS, SVN, CC, p4. etc is based on Server client
+
+============================================================
+How to install it?
+		RHEL-CENTOS
+		> sudo yum install git
+
+		UB
+		> sudo apt-get install git
+
+		Windows - exe
+		Download - https://git-scm.com/		
+
+		Mac - dmg
+		Download - https://git-scm.com/
+
+============================================
+COMMANDS & BEHAVIOUR ARE SAME IN ALL OS
+===========================================
+
+DEMO IN WINDOWS
+=========================
+Through exe===== git bash
+			Why?
+			help u to run basic linux commamnds in windows
+			color views
+
+Throuhg exe ====== command
+
+
+
+============================================
+Basic Work flow in Local
+===========================================
+Step 1- How to create a repo?
+>git init
+
+Step 2 - How to add a file in repo? ==== How to add file in staging area?
+> git add filename
+	
+ONE TIME
+=========================================
+user name  ===> git config user.name "Rajesh Kumar"
+user email ===> git config user.email "rajesh@scmgalaxy.com"
+> git config --list
+
+
+Step 3 - How to commit? ==== How to send file from Staging area to repo??
+$ git commit -m"adding my first file"
+[master (root-commit) 7677455] adding my first file
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 file1.java
+
+master - branch name
+What is 0 insertions(+), 0 deletions(-)????
+
+3 area in git
+==========================
+	Working -------> The location, Where you have .git
+	Staging	---------> temp area which you can see in explorer....(git status)
+			Why?
+				Review before sent to repo.
+	Repo ---------> .git
+
+
+How do i see which files are there in staging area?
+> git status
+
+How do i see number of ccommits?
+> git log
+
+commit 82e01d695d8e927ab751a9699d25a48b9668d                        18e
+Author: Rajesh Kumar <rajesh@scmgalaxy.com>
+Date:   Sat Nov 25 08:52:32 2017 +0530
+
+    adding 2nd file
+
+
+What is 82e01d695d8e927ab751a9699d25a48b9668d?
+--- We call it checksum....git call it hash...its 40 character.....This is unq id to identify the commit
+
+What happens when you commit?
+===============================================
+Take the only content and create a object using SHA1...this object is uniq and get unq id n we call it checksum.
+============================================================
+
+How to add a directory?
+> same as file..emptry directory is meaning less
+
+How to commit only selective?
+> git commit -m"message" filename
+
+How to add multiple files?
+> git add .
+> git add *
+
+How to modify existing file?
+----------------------------------------
+master - branch name
+What is 0 insertions(+), 0 deletions(-)????
+-----------------------------------------------
+
+How to rename ?
+>git mv file1 file2
+
+How to move?
+>git mv file1 file2
+
+How to delete?
+> git rm filenmae
+
+How to go back to olders commits?
+> git checkout COMMITID
+
+How to compare?
+> git diff
+> git diff filename
+
+How to describe commit?
+> git show commit id
+
+=================================================
+WORKING WITH REMOTES
+================================================
+Scnario - 1  RAJESH IS THE FIrST DEV OF ThE PROJECT
+		Working in Single Local Repo.
+
+		PUSGING TO - git push https://github.com/rajeshkumarin/weekend-nov.git master
+
+Scnario - 2 - Working with 2 or multiple people
+		WAY 1 - SRINI - EXITING REPO BUT HE WANTS TO COLL WITH REMOTE REPO
+		> git init
+	
+		> git remote add origin url
+		> git remote add origin https://github.com/scmgalaxy/weekend.git
+		> git push / pull origin master
+		> git pull
+		> git push
+			
+			
+			
+		WAY 2 - KUMAR IS NOT HAVING ANY REP BUT HE WANTS TO COLL WITH REMOTE REPO
+		> git clone url
+
+
+		SSH
+		HTTPS
+
+
+VANI IS UPSET
+======================================
+		SHE WANTS WIKI
+		SHE WANtS RICH USER MGMT
+		SHE WANT BUG TRACKING
+		SHE WANTS NICE UI
+
+
+THATS IS MANY COMPANIES ARE COMING UP N SAY>>
+	github
+	gitlab
+	gerrit
+	bitbucket
+
+These are nothng bit git repo hosting solution..
+
+
+
+
+How to ignore files/dire?
+
+
+
+
+
+
+
+
+		
+

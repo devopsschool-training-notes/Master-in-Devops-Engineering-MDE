@@ -1,0 +1,54 @@
+> git hash-object "Apple Pie"
+> echo "Apple Pie" | git hash-object --stdin
+> echo "Apple Pie -" | git hash-object --stdin
+> echo "Apple Pie" | git hash-object --stdin -w
+> git init
+> git cat-file SHA1 -t
+> git cat-file SHA1 -p
+
+> git cat-file 991897e13e47ed0adb91a0082c31c82fe0cbe5 -t
+git update-ref refs/heads/master 23991897e13e47ed0adb91a0082c31c82fe0cbe5
+
+FLOW
+=======================
+Creating Blob - 
+> git hash-object -w myfile.txt
+
+Creating Trees -
+/tmp/tree.txt 
+100644 blob 95632654e80f87909b22a058863a91b640df47cc    file1
+> cat tree.txt | git mktree
+OR
+echo -e "100644 blob 95632654e80f87909b22a058863a91b640df47cc\ttest.txt" | git mktree
+
+> echo "Initial commit" | git commit-tree c79124e21d165e27e449ecf5c8bbd28d155457c6
+
+> git update-ref refs/heads/master f4271f24c95101a98cf79eb559e8775bc1da5ed2
+
+export GIT_AUTHOR_NAME="Rajesh Kumar"
+export GIT_AUTHOR_EMAIL="rajesh@scmgalaxy.com"
+export GIT_AUTHOR_DATE="Wed Feb 16 14:00 2037 +0100"
+export GIT_COMMITTER_NAME="A Name"
+export GIT_COMMITTER_EMAIL="rajesh@scmgalaxy.com"
+export GIT_COMMITTER_DATE="Wed Feb 16 14:00 2037 +0100"
+
+(master) $ echo -en "
+100644 blob e69de29bb2d1d6434b8b29ae775ad8c2e48c5391\tanotherEmpty\n?
+100644 blob e69de29bb2d1d6434b8b29ae775ad8c2e48c5391\tempty\n?
+100644 blob e69de29bb2d1d6434b8b29ae775ad8c2e48c5391\tvoid\n" | git mktree
+d2d6bbd1c25c154fcbb045d66e8a6f9b83587a68
+
+100644 blob 23991897e13e47ed0adb91a0082c31c82fe0cbe5	test.txt
+100644 blob b488eab5c572cc4273f6f442ac30f8d70e8306f1	test.txt
+cat tree.txt | git mktree
+
+> git init
+> git add
+> git commit
+> git cat-file -p SHA1
+> git count objects
+
+
+> git tag -a mytag -m"I love cheescake"
+> git tag
+> git cat-file -p mytag

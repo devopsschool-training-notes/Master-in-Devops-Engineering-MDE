@@ -1,0 +1,201 @@
+Demo - 52.201.224.220
+===================================
+What is Git?
+	Source Code mgmt tool
+	Versioning tool
+	source repository
+	---------------
+	Intelligent file system - How git works??
+
+	Free
+	Open Source
+	Developed by Linus Torvald - April 2005
+	Compat with all OS
+	=========DISTRIBUTED========
+
+Why do we need it?
+	You want to know
+			WHO
+			WHEN
+			WHAT
+			WHERE
+			WHY
+			-------HISTORY-----------
+
+Where & Who git can be used?
+	Any person who wants to version their text based
+
+What are the other tools we have it?
+RCS -> CVS -> SVN --> GIT
+PERFORCE, CLEARCASE, VSS, TFS
+
+Diff Between ALL TOOLS VS Git
+----------------------------------
+Server-Client based VS DISTRIBUTED
+
+
+How git was born?
+bitkeeper -- Partially Distributed
+Linus Torvald -> KERNAL OF LINUX IN bitkeeper
+2015 - bitkeeper - 
+
+
+SERVER  - CLIENT MODE
+	----ADD | EDIT | DELETE | VIEW | RENAME | COMPARE|  BRANCING
+
+================================================================
+How to install git?
+
+COMMAND LINE
+	WINDOWS -> https://git-scm.com/ --> EXE (gitcmd + gitbash + gitgui)
+	LINUX
+	UB - $ sudo apt-get install git -y
+	RHEL - $ sudo yum install git -y
+
+GUI 
+	Source Tree  by Atlassion
+	Tortoise Git
+
+---------------RHEL-------------------
+$ git
+$ sudo yum install git
+$ git --version
+==================================================
+BASIC WORK FLOW
+
+How to create a repo?
+$ git init
+
+$ git init
+Initialized empty Git repository in D:/satgit/git1/.git/
+.git is your repo....
+
+How to create a file?
+$vi vim nano notepad textpad vs esclipse
+
+how to add a file in git? [[How to send a file from Working dir to Staging Area]
+$ git add file1.txt
+
+ONE TIME BEFORE FIRST COMMIT
+-----------------------
+$ git config user.name "Rajesh Kumar"
+$ git config user.email "rajesh@scmgalaxy.com"
+$ git config --list
+
+how to commit? [[ Sending a file from Staging area to repo]]]
+$ git commit -m"adding my frst file"
+
+How to see the commits?
+$ git log
+
+$ git log
+commit 7e4bcc244711c80d7baeddd0d38bef4a19913d20
+Author: Rajesh Kumar <rajesh@scmgalaxy.com>
+Date:   Sat Jun 9 09:00:37 2018 +0530
+
+    adding my frst file
+
+WHAT IS 7e4bcc244711c80d7baeddd0d38bef4a19913d20 (CHECKSUM)
+WE CALL IT COMMIT ID WHICH REPRESENTS THE CHANGEES YOU DID IN THE FILE.
+THE CHANGES WILL BE IN OBJECTS CREARED BY ALGO SHA1....
+
+
+How to see the changes in commits?
+$ git show commit-id
+
+
+IMPORTANT
+=======================
+WORKING DIR - A place where you have .git
+STAGING AREA  - Maintained by the git.....--  A temp review place
+		$ git status
+REPO - .git
+=========================================================
+How to modify a file		DONE
+How to add multiple files?	DONE
+how to add all files		DONE
+how to commit few files of staging area	DONE
+how to commit all		DONE
+how to add a dir		DONE	
+how to rename a file		DONE
+how to move a file		DONE
+How to delete a file?		DONE
+how to switch to oldr version	DONE
+
+===========================================
+
+
+GITHUB	SERVER
+HTTPS	https://github.com/scmgalaxy/satweekend.git	
+SSH	git@github.com:scmgalaxy/satweekend.git
+
+RAJESH  ----> atweekend
+------------> PUSH
+		 git push https://github.com/scmgalaxy/satweekend.git  master
+
+ALIAS
+git remote add origin https://github.com/scmgalaxy/satweekend.git
+git pull origin master
+
+GITLAB	SERVER
+BITBUCKET SERVER
+GERRIT SERVER
+ASSEMBA SERVER
+
+GIT CLONE
+GIT PUSH
+GIT PULL
+
+=================================================
+GIT BRANCHING
+	LOCAL BRANCH		- RW
+	REMOTE BRANCH		- RO
+
+How to create a branch?
+
+===========================================================
+Undoig
+-----------------------
+Get rid of fiels from working
+From staging to working
+revert in repo
+
+tag
+Stash
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+

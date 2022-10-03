@@ -1,0 +1,290 @@
+git show head
+
+git show head~2
+
+git show head --pretty='parent %Cred%p%Creset commit %Cred%h%Creset%C(yellow)%d%Creset%n%n%w(72,2,2)%s%n%n%w(72,0,0)%C(cyan)%an%Creset %Cgreen%ar%Creset'
+
+git config --global alias.so "show --pretty='parent %Cred%p%Creset commit %Cred%h%Creset%C(yellow)%d%Creset%n%n%w(72,2,2)%s%n%n%w(72,0,0)%C(cyan)%an%Creset %Cgreen%ar%Creset'"
+
+git show head --no-patch
+
+git show head --stat
+
+git cat-file -p head
+
+git diff head~2..head
+
+git diff head..head~2
+
+git diff head~3:somefile.txt..head:somefile.txt
+
+git log --pretty=oneline
+
+git log --pretty='%h | %d %s (%cr) [%an]'
+
+git log --pretty='%Cred%h%Creset |%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %C(cyan)[%an]%Creset'
+
+git log --pretty='%Cred%h%Creset |%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %C(cyan)[%an]%Creset' --graph
+
+git config --global --add core.pager "less -RFX"
+
+git diff --word-diff
+
+git diff --unified=10
+
+git config --global alias.dp "diff --word-diff --unified=10"
+
+git diff --patience
+
+git diff --histogram
+
+git config --global diff.algorithm histogram
+
+git config alias.st status
+
+cat .git/config | grep -A 1 "\[alias\]"
+
+git config --global alias.st status
+
+cat ~/.gitconfig | grep -A 1 "\[alias\]"
+
+git config --global alias.st "status --short --branch"
+
+git config --global alias.cma "commit --all --message"
+
+git config --global alias.qm "!git checkout $1; git merge @{-1}"
+
+git diff --staged
+
+git diff --cached
+
+git config --global alias.unstage "reset HEAD"
+
+git add -p
+
+git add -i
+
+git rebase -i HEAD~4
+
+git stash save --keep-index --include-untracked "WIP"
+
+git stash list
+
+git stash apply
+
+git stash pop
+
+git diff --check
+
+git config --global core.whitespace "blank-at-eol,blank-at-eof,tab-in-indent"
+
+git rebase HEAD~2 --whitespace=fix
+
+git log --author="Name"
+
+git log --committer="Name"
+
+git log --author="Name" --since="1 week" --until="2 days ago"
+
+git blame calculator.c
+
+git blame master..feature calculator.c
+
+git blame calculator.c -L14,16
+
+git blame calculator.c -L:subtract
+
+git shortlog -s -n | head -10
+
+git branch --merged
+
+git branch --merged feature
+
+git branch --no-merged
+
+git show-branch --topic master feature experiment
+
+git show-branch --topic feature master experiment
+
+git log --cherry-mark --left-right --no-merges master...experiment
+
+git log --cherry-pick --left-right --no-merges master...experiment
+
+git log --cherry-pick --left-right --no-merges master...experiment
+
+git log --cherry-mark --right-only --no-merges master...experiment
+
+git log --cherry master...experiment
+
+git log --cherry experiment...master
+
+git log --merges feature..master
+
+git log --merges --ancestry-path feature..master
+
+git log --merges master..feature
+
+git log --follow calculator.c
+
+git log --follow --patch calculator.c
+
+git log -Scalculator
+
+git log -S".*is.*" --pickaxe-regex
+
+git log -Gcalculator
+
+git log -G".*is.*"
+
+git log -L:subtract:calculator.c
+
+git log feature..master
+
+git log master..feature
+
+git log feature...master
+
+git log --ancestry-path feature..master
+
+git show-branch master feature experiment
+
+git branch experiment <commit-ref>
+
+git branch -d experiment
+
+git branch -D experiment
+
+git cherry-pick feature
+
+git merge-base master feature
+
+git cherry-pick $(git merge-base master feature)..feature
+
+git config alias.append "!git cherry-pick $(git merge-base HEAD $1)..$1"
+
+git append feature~1
+
+git log --merge --name-only
+
+git merge-base HEAD MERGE_HEAD
+
+git checkout --conflict=diff3 <file-path>
+
+git config --global merge.conflictstyle diff3
+
+git checkout --ours <file-path>
+
+git checkout --theirs <file-path>
+
+git merge feature
+
+git rebase master feature
+
+git merge feature --ff-only
+
+git merge feature --no-ff
+
+git config --global rerere.enabled true
+
+git rerere diff
+
+git rerere status
+
+
+git bisect start
+
+git bisect bad <commit-ref>
+
+git bisect good <commit-ref>
+
+git bisect reset
+
+git bisect start <bad-commit-ref> <good-commit-ref>
+
+git bisect run <cmd>
+
+git bisect reset
+
+git commit --amend
+
+git commit --amend -C <commit-ref>
+
+git reset --hard <commit-ref>
+
+git reset --soft <commit-ref>
+
+git reset --mixed <commit-ref>
+
+git commit --amend -m "fixup! <commit-msg>"
+
+git rebase -i --root --autosquash
+
+git config --global rebase.autoSquash <true|false>
+
+git fsck --unreachable
+
+git fsck --unreachable | wc -l
+
+git fsck --unreachable --no-reflogs | wc -l
+
+git config --global gc.reflogExpire <number-of-days>
+
+git config --global gc.reflogExpireUnreachable <number-of-days>
+
+git log --grep=<commit-msg> --walk-reflogs
+
+git checkout HEAD^
+
+git cherry-pick HEAD@{index} master
+
+git branch -f master HEAD
+
+git checkout master
+
+git reflog master
+
+git reflog
+
+git show HEAD@{2}
+
+git show master@{1}
+
+git reset --hard master@{1}
+
+git config --global alias.undo '!f() { git reset --hard $(git rev-parse --abbrev-ref HEAD)@{${1-1}}; }; f'
+
+git undo 2
+
+git undo
+=========================================
+# Copy this file or single lines to ~/.gitconfig
+
+[alias]
+  co = checkout
+  # Log display from screencast, with train tracks.
+  l = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset'
+  # Alternate log display from Scott Chacon
+  lol = log --pretty=oneline --abbrev-commit --graph --decorate
+  # Other useful aliases:
+  unstage = reset HEAD
+  staged = diff --cached
+  unstaged = diff
+  current-branch = !git symbolic-ref -q HEAD | sed -e 's|^refs/heads/||'
+  # Usage: git track origin/feature-123-login-form
+  track = checkout -t
+[apply]
+  whitespace = warn
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+  ui = true
+[help]
+  autocorrect = 1
+[status]
+  submodule = 1
+[push]
+  # Only push branches that have been set up to track a remote branch.
+  default = current
+
+

@@ -1,0 +1,247 @@
+GIT ESSENTIAL - 5 
+GIT ADVANCE - 0
+Gerrit  - 0
+
+LINUX -- 5
+=========================================
+Git Essentails - 2  Hours
+Git Advance - 3  Hours
+Gerrit essential - 5 Hours
+Gerrit advance - 5 Hours
+
+==============================================
+What is git?
+	source code mgmt tool.
+
+	history of the changes
+	version
+		What 
+		When
+		Who
+		Where
+
+	DISTRIBUTED
+	Free
+	Open Source
+
+	CONTROL
+
+=========================
+Why ???
+
+=============================
+
+How to Install git?
+	windows - exe (git-scm.com) ---> git bash
+	Linux RHEL -> sudo yum install git
+	LINUX UB --> sudo apt-get install git
+
+
+Basic work flow with Git?
+How to create repo?
+> git init
+
+How to add a file to staging area?
+> git add filename
+
+ONE TIME
+> git config user.name "Rajesh Kumar"
+> git config user.email "rajesh@scmagalaxy.com"
+> git config --list
+
+How to commit? move a changes from staging to repo?
+> git commit -m"adding first file"
+
+How to see the working dir files and staging files?
+> git status
+
+How to see the number of commits in repo?
+> git log
+
+How to see the files which i modofied in each commits?
+> git show commit-id
+
+How to rename a file?
+> git mv filename
+> git commit 
+
+How to delete a file?
+> git rm
+
+How to move a file?
+> git mv
+
+How a cmmit  dir?
+Same as files
+
+GIT COLLOBRATION
+=========================
+GITLAB --GITHUB --GERRIT --BITBUCKET
+
+Our Answer is? Gerrit
+===============
+How to setup a Gerrit?
+
+IP Adreess:
+===================
+52.66.185.245
+
+Download Gerrt?
+> wget https://gerrit-releases.storage.googleapis.com/gerrit-2.14.3.war
+> yum install wget
+
+Pre Req- 
+	JAVA (http://www.scmgalaxy.com/tutorials/complete-guide-of-java-installation-in-linux)
+	> yum install java-1.8.0-openjdk-devel
+	> SSH - TDB
+
+
+How to Install?
+> java -jar gerrit*.war init -d review_site
+localhost:8080
+
+
+===================PUSH Vs PULL Vs Fetch =====================SOFTX
+Sena 1- RAJESH the first person of the project
+> git init
+
+> git push http://admin@52.66.185.245:8080/a/hclxAll master
+> git remote add origin http://admin@52.66.185.245:8080/a/hclxAll
+> git push origin master
+
+
+
+Sena 2- Priya has join this project
+	WAY 1 -- PRIYA WILL RAJ FOR THE PAST WORK
+		>  git clone
+		>  git clone http://admin@52.66.185.245:8080/a/hclxAll
+	WAY 2 -- PRIYA HAS STARTTED WORKING FOR HER TASK
+			---- PUSH LATER POINT
+		> git pull
+		> git push
+
+
+
+HTTP 
+git clone http://admin@52.66.185.245:8080/a/hclxAll
+git clone http://admin@ip-172-31-0-65.ap-south-1.compute.internal:8080/a/hclxAll
+
+
+
+
+SSH
+git clone ssh://admin@35.154.97.219:29418/hclxAll
+
+
+
+
+GIT BRANCHING & Merging
+==============================
+Type of branches
+	Local	- RW
+		PERM
+		TEMP
+	Remote  - RO
+> git branch -a
+> git branchs
+> git branch -r
+
+How to create a branch?
+> git branch branchname
+
+How to checkout branch?
+> git checkout branchname
+
+
+Merging
+==========================
+	FAST FORWARD
+	2 WAY MERGE === RECURUVIVE
+	Cherry Picking
+
+> git cherry-pick commit-id
+	
+
+
+
+
+git UNDOING
+================
+How to get rid of the files from working dir?
+> git clean -f -d
+
+How to move a file from staging to working dir?
+> git reset filename
+
+How to revet on repo?
+> git revert commit-id
+
+
+git ignore
+================
+DONE
+
+
+git stash
+================
+
+
+git squash
+================
+
+
+http://35.154.28.64:8080
+admin
+admin123/secret
+
+git push vs pull vs fetch vs clone vs  merge - DEMO
+git push vs pull vs fetch vs clone vs  merge - LAB
+
+git clone http://admin@35.154.28.64:8080/a/hcl1
+
+git clone ssh://admin@35.154.28.64:29418/hcl1
+
+> systemctl stop firewalld
+> systemctl disable firewalld
+
+
+SSH LOGIN TO GERRIT
+=========================
+DONE
+
+GERRIT BASIC WORKFLOW
+==================================================
+FIRST CLONE THE REPO			DONE
+SECOND INSTALL A CHANGE HOOKS		DONE
+> curl -Lo .git/hooks/commit-msg http://13.126.112.7:8080/tools/hooks/commit-msg
+
+COMMIT 					DONE
+VERIFY					DONE
+# Check chnage id is present or not in commits
+PUSH					DONE
+> git push origin HEAD:refs/for/master
+REVIEW PROCESS STARTTED
+		CODE REVIEW		DONE
+		VERIFICATIOn		DONE
+
+
+Gerrit Plugins
+==================
+
+GitBlit
+wget https://github.com/tomaswolf/gerrit-gitblit-plugin/releases/download/v2.14.171.0/gitblit-plugin-2.14.171.0.jar
+
+
+Roles in Projects
+https://gerrit-review.googlesource.com/Documentation/access-control.html#category_submit
+
+
+Gerrit Magic Reference
+https://gerrit-review.googlesource.com/Documentation/access-control.html#references
+
+
+
+
+
+
+

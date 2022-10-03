@@ -1,0 +1,47 @@
+Git bisect
+===================
+> git bisect start 
+> git bisect bad 
+> git bisect good f8a4
+
+> git bisect good 
+> git bisect bad 
+
+> git bisect reset 
+
+git filter branch
+=========================
+> git filter-branch --index-filter 'git rm --cached --ignore-unmatch README.md' <1st_cmmit>...HEAD
+
+> git filter-branch --index-filter 'git rm --cached --ignore-unmatch README.md' HEAD
+
+> git filter-branch --index-filter 'git rm --cached --ignore-unmatch README.md' HEAD
+
+> git push
+
+> git push --force
+
+Implication for other usrs
+-------------------------------
+git clone old-repo
+git fetch
+git merge origin/master
+git log --graph --abbrev-commit --decorate --oneline --all
+
+Git Blame
+==============================
+git blame file
+git blame -e file
+git blame ed0a..566a -- file
+
+git cat-file
+================================
+git hist --max-count=1
+git cat-file -t <hash>
+git cat-file -p <hash>
+git cat-file -p <treehash>
+git cat-file -p <libhash>
+git cat-file -p <hellohash>
+
+
+

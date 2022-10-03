@@ -1,0 +1,327 @@
+BIG PICTURE
+=============================
+GOAL - SAVING THE SOFT DEV COST
+	IMPROVING THE QUALITY OF THE SOFt
+	REDUCING THE RELEASE CYCLE
+
+=========================
+DEVOPS
+
+Manish - MGR - CASTX
+================================
+ARCHITECT -- 10 MODULES
+DEV - 10 - 
+	SOURCE CODE REPO ----- SVN
+				WHAT 
+				WHERE
+				WHEN
+				WHO
+	CODE REVIEW - PMD, CHEKSTSYLE, PMD, SONARQUB
+				
+
+	UT --JUNIT - NUNIT-
+
+	SOURCE CODE TO BINARY ---> ANT, MAVEN GRADLE, MSBUILD
+				CREATE A DIR
+				SET THE COMPILER
+				SET THE ENV
+				DEPDENCIES -
+					EXTERNAL
+					INTERNAL - 
+		=========================================
+				20 times in a day
+
+		PACKAGING 
+			SYSTEM
+			APPLICATION
+
+		REPO FOR PACKAGE ---ARTIFACTORY, NEXUS, ARCHIVA, NUGET
+
+		DEPLOYEMET - 100 VM
+				50 WINDOWS
+				50 LINUX
+			
+				25 IIS
+				25 JBOSS
+				25 Wl
+				25 WS
+				
+				25 MYSQL
+				25 MS
+		
+		===================================
+		5 mins(AWS, VMWARE, DOCKER) --> CHEF, PUPPET, ANSIB
+
+QA
+IT
+BR
+DB
+OPS
+============================================
+600 PACK == 100 MB = 60000 - 60GB
+
+60GB + 60GB +60GB +60GB=== 7.2TB (SVN DB)
+50MB-----------------------> 75MB
+===================================
+What is Git?
+	Versioning Tool
+	FREE
+	OPEN SOURCE
+	COMPT with ALL THE PLATFORM
+	DISTRIBUTED MGMT SYSTEM==============
+
+How to install to git?	
+	WINDOWS - git-scm.com -- EXE
+	LINUX	 - 
+		RHEL - yum install git
+		UB - apt-get install git
+
+==================================================
+How to verify?
+>git -v
+
+How to create repo?
+> git init
+
+How to add a file working dire to staging area?
+> git add filename
+
+=ONE TIME
+> git config user.name "Rajesh Kumar"
+> git config user.email "rajesh@scmgalaxy.com"
+
+How to send a file frm staging area to repo?
+> git commit -m"adding first file"
+
+How to see the commits?
+> git log
+
+How to see the the content modified in checksum?
+> git show commit-id
+
+How to check the list of commits you did for each file?
+> git reflog filename
+
+How to add multiple files?
+> git add .
+
+How to add directory?
+Same way as you did with file
+
+How commits only selected files from staging area?
+> git commit -m"adiing only file" filename
+
+How to delete a file?
+> git rm filename
+> git commit -m"dele a file"
+
+How to checkout older rev of the repo?
+> git checkout commit-id
+
+How to rename a file?
+> git mv filename
+> git commit -m"renaming?
+
+How to move a file from one location to another location?
+> git mv filename1 src/filename1
+> git commit -m"renaming?
+
+How to know the options for "git log"?
+> git help log
+]] git log using grep
+]] git log using since
+]] git log using -n
+]] git log using oneline
+
+How to see diff between two commits?
+> git diff commited-id
+]] modify the file and try
+> git diff
+
+UNDOING IN GIT
+============================================
+How to get rid of the files from Working dir?
+> git clean -d -f
+How to send files from staging to working dir?
+> git reset filename
+
+How to revert the commits in repo?
+> git revert commit-id
+
+Simple Workflow working with Remote Repo?
+=======================================================
+Acting as a personal 1 
+1. Create a local repo
+2. Do whatever you want in local repo
+3. Create a remote repo on gitlab
+http://ec2-13-126-184-20.ap-south-1.compute.amazonaws.com/root/rajesh1.git
+
+4. Push local repo to remote repo
+> git push http://ec2-13-126-184-20.ap-south-1.compute.amazonaws.com/root/rajesh1.git master
+
+Acting as a personal 2
+1. CLone the remote repo
+> git clone http://ec2-13-126-184-20.ap-south-1.compute.amazonaws.com/root/rajesh1.git
+
+2. Do whatevr cmmits you want to do
+3. Push to the remote repo
+> git push http://ec2-13-126-184-20.ap-south-1.compute.amazonaws.com/root/rajesh1.git master
+
+Acting as a personal 1 
+1. Pull from remote
+> git pull http://ec2-13-126-184-20.ap-south-1.compute.amazonaws.com/root/rajesh1.git master
+
+
+
+CLONE==
+git init
+git remote add origin url
+git pull origin master
+
+
+GIT BRANCHING & MERGING
+================================
+2 Kind of Branches
+- LOCAL BRANCH		READ WRITE
+- REMOTE BRANCH		READ
+
+How many existing branches you have?
+> git branch
+
+All branch?
+> git branch -a
+
+Only remote?
+> git branch -r
+
+Only Local?
+> git branch
+
+How to create a branch?
+> git branch branchname
+
+How to switch to the branch?
+> git checkout branchname
+
+2 in 1
+> git checkout -b branchname
+===================================
+
+Merging
+
+1. Fast Forward merge
+> git merge branchname
+
+2. 2 way merge - recursive
+
+3. cherry pick
+
+
+====================
+Conflict Resolution
+
+=============================
+Git Tagging
+How to see the list of tag?
+>git tag --list
+
+> git tag tag-name
+
+> git tag -d tag-name
+
+Git Stashing
+=======================
+
+
+Git PULL  VS PUSH VS FETCH VS CLONE
+
+Bare repo
+
+Local Branch 
+	
+
+
+
+WORKING IN REMOTE MASTER REPO
+
+
+GIT IGNORE
+
+
+GIT RESET
+
+
+GIT REBASE
+
+GIT RERERE
+
+
+
+
+
+
+
+
+
+
+Questions
+=========================
+
+2. How to know the status of workspace?
+3. How Git works?
+4. How git works in Remote?
+5. Can i change the email address?
+6. Conditional Commits
+7. Pre of git commit
+8. Roll back
+9. revrt
+10. How stash work
+11. How to check the list of commits you did for each file?
+12. Git undoing
+
+
+===========================
+git init
+git checkout
+git commit
+git add
+git clone
+git rm
+git push
+git pull
+git fetch
+git status
+git log
+git stash
+git reflog
+git diff
+git reset
+git clean
+git revert
+git branch
+git tag
+git merge
+git config
+git rm
+git mv
+git cherry-pick
+git help
+
+gitk
+gitignore
+
+TASK - 
+1. Clone a repo
+2. create a dir with your name
+3. Add/Commit 
+4. Delet/commit
+5. branching and merge
+6. Push 2 branch
+7. pull
+8. merge
+
+
+
+
+
+

@@ -1,0 +1,48 @@
+SSH - 29418
+USER  - admin
+HOST - 13.126.240.58 
+ssh
+
+
+ssh -p 29418 admin@13.126.240.58 
+ssh -p 29418 admin@13.126.240.58 gerrit ls-projects
+ssh -p 29418 admin@13.126.240.58 gerrit ls-groups
+ssh -p 29418 admin@13.126.240.58 gerrit ls-members Administrators
+ssh -p 29418 admin@13.126.240.58 gerrit ls-members "'Non-Interactive Users'"
+ssh -p 29418 admin@13.126.240.58 gerrit plugin ls
+ssh -p 29418 admin@13.126.240.58 gerrit plugin reload
+ssh -p 29418 admin@13.126.240.58 gerrit plugin enable download-commands
+ssh -p 29418 admin@13.126.240.58 gerrit plugin ls
+ssh -p 29418 admin@13.126.240.58 gerrit version
+
+
+Find the 2 most recent open changes in the prj1 project:
+$ ssh -p 29418 admin@13.126.240.58 gerrit query --format=JSON status:open project:hcl1 limit:2
+
+Create a new batch/role access user account called watcher in the 'Non-Interactive Users' group.
+$ cat ~/.ssh/id_rsa.pub | ssh -p 29418 admin@13.126.142.202 gerrit create-account --group "'Non-Interactive Users'" --ssh-key - watcher
+$ cat ~/.ssh/id_rsa.pub | ssh -p 29418 admin@13.126.142.202 gerrit create-account --full-name "'raj11'" --group "'Non-Interactive Users'" --email "'rajesh@ddd.com'" --ssh-key - rajesh1
+
+Create a new account group called gerritdev with two initial members watcher2 and watcher4. The group should be owned by itself:
+$ ssh -p 29418 admin@13.126.142.202 gerrit create-group --member watcher2 --member watcher4 gerritdev
+
+Create a new project called tools/gerrit:
+ssh -p 29418 admin@13.126.240.58 gerrit create-project tools/gerrit.git
+
+Reference
+https://gerrit-documentation.storage.googleapis.com/Documentation/2.11/cmd-index.html
+
+
+ERROR
+[root@ip-172-31-13-40 ~]# ssh -p 29418 admin@13.126.240.58 gerrit plugin reload
+fatal: remote plugin administration is disabled
+
+
+SOLUION
+
+Open YOUR_GERRIT_DIR/etc/gerrit.config file and add the following entry:
+
+[plugins]
+    allowRemoteAdmin = true
+Save changes and restart your Gerrit instance. You will be able to reload / install plugins from remote host.
+

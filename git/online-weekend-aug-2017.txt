@@ -1,0 +1,192 @@
+WHAT IS GIT?
+	Source Code mgmt tool.
+	VERSIONING TOOL
+	FREE
+	OPEN SOURCE
+	DISTRIBUTED=======
+
+Why we need a Source Code mgmt tool?
+		WHAT
+		WHEN
+		WHY
+		WHO
+on the source code which you modifed.
+
+What is your source code?	
+	DEV
+	QA
+	DEVOPS
+	IT
+
+WHAT IS NOT YOur SOUrCE CODE?
+	images
+	dll
+	pdf
+	word
+	movie
+
+
+How to install it?
+	WINDOWS -- EXE (git-scm.com) --> git bash --> Basic Linux Commands in Windows
+	UB - > sudo apt-get install git
+	RH - > sudo yum install git
+
+
+OTHER TOOLS
+-------------------------
+TFS
+SVN
+CVS
+P4
+
+MODEL
+==================
+SERVER - CLIENT
+	TFS
+	SVN
+	CVS
+	P4
+DISTRIBUTED 
+	GIT
+
+
+GIT BASIC WORKFLOW - How can i do versioning of source code using git?
+================================================
+Step 1- How to create a repo?
+> git init
+
+Step 2- How to add files? ===> How to send a file from working dir to staging area.
+> git add file1.txt
+
+Step 2- ONE TIME PROCESSS ONLY
+> git config user.name "Rajesh Kumar"
+> git config user.email "rajesh@scmGalaxy.com"
+> git config --list
+- Which file this info got add.
+> cat .git/config
+
+Step 3- How Commit a file? ==> How to send a file from Staging area to Repo.
+> git commit -m"addng my first file"
+
+Step 4- How do we see the log
+> git log
+
+Step 5- What was commited?
+> git show CHECKSUM
+
+HOW TO SEE THE STAGING AREA?
+>git status
+
+
+How to commit multiples files?
+> git add .
+> git commit -m"Adding a multiples files"
+
+How to commit only selective file from Staging area?
+git commit -m"Adding a multiples files" filename
+
+How to commit directory?
+> git add dirname
+> git commit -m"addngn a dir"
+
+How to delete a file?
+> git rm filename
+> git commit -m"deleting a files?
+
+How to get back to the older commits?
+> git checkout OLD-CHECKSUM
+
+How to rename a file?
+> git mv filename1 filename2
+> git commit -m"deleting a files?
+
+
+How to Modify a file?
+How to see the numbers of commits happend on the files?
+
+
+WORKING WITH REMOTE REPO
+===========================================
+
+GIT REPO HOSTING PROVIDER
+===================================
+GITHUB
+GITLAB
+GERRIT			- FREEEE BUT NO CLOUD
+BIBUCKET
+		IS YOUR REMOTE REPO + CENRTRAL REPO
+		WHERE
+		YOU CAN KEEP REPO FOR TEAM COLLOBRATION	
+
+
+NEVER CALL GIT SERVER===
+YOU CAN CALL GITHUB SERVER
+========================================
+GITHUB 
+	CLOUD - https://github.com/
+	ENTERPRISE - ENTERPRISE GITHUB
+
+BIBUCKET - CLOUD - BIBUCKET.ORG
+		ENTERPRISE - STASH
+--------------------------------------
+	MERGED
+
+DEMO TIME FOR WORKING WITH REPO
+==========================================
+PUSH 
+PULL 
+
+PROJX-----
+RAJESH ---> LOCAL REPO
+	
+	PRANIT == NEED REPO
+
+RAJESH ===> PUSH ==> REMOTE REPO
+git push https://github.com/scmgalaxy/PROJX.git master
+git push git@github.com:scmgalaxy/PROJX.git master
+
+PRANEET <== PULL <== REMOTE REPO
+
+Where is your remote repo?
+GITHUB
+
+HOW PRANEET WILL GET IT RAJESH REPO?
+----------------------------------------------------
+WAY 1- EXISTING LOCAL REPO
+> git init
+NEXT
+> git pull git@github.com:scmgalaxy/PROJX.git master
+
+Remote referece/aliases
+> git remote add origin git@github.com:scmgalaxy/PROJX.git
+where origin can be anything
+>>>>>>>>>>>>>>
+git init
+git remote add 
+git pull
+
+
+
+WAY 2- NO EXISING REPO
+> git clone git@github.com:scmgalaxy/PROJX.git
+
+
+GIt BRANCHING
+GIT UNCOMING
+
+
+
+
+
+WHAT IS FORK?
+UNDOING SENARIO
+GIT HUB
+
+
+
+
+
+
+
+
+

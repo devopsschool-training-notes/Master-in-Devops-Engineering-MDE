@@ -1,0 +1,259 @@
+What is Git?
+	Version Control System
+	Source Code Mgmt system as well
+	
+	Developed by Linux Tovarld
+	Go
+	Free
+	Open Source
+	Distributed Source Code Mgmt tool
+	---------------------------------
+
+
+Why Git?
+	Developers/QA/Anyone Modify the Source Code..
+		WHEN
+		WHO
+		WHAT
+		WHERE
+
+Other tools - 
+	RCS -> CVS -> SVN -> GIT
+	Mercury - Perforce - TFS - ClearCase
+	ALL THE TOOLS ARE BASED ON SERVER-CLIENT MODLE
+		EXCEPT GIT === Distributed Model
+
+SERVER-CLIENT VS Distributed Model
+====================================
+
+
+How can you install git?
+	WINDOWS  - https://git-scm.com/
+			git-cmd - WINDOWS + GIT COMMAND
+			git-bash - Linux Comamnds + Git Commands
+	RHEL 
+		sudo yum install git
+	UB		
+		sudo apt-get install git
+
+$ git --version
+
+How can we startted with git?
+Step 1 - Create a Repo
+
+Step 2 - Add & Commit 
+
+Step 3 - Share with other Repo
+
+
+  502  cd /d
+  503  ls
+  504  pwd
+  505  mkdir git
+  506  cd git/
+  507  clear
+  508  pwd
+  509  mkdir repo1
+  510  cd repo1/
+  511  ls
+  512  start .
+  513  git init
+  514  pwd
+  515  touch file1.txt
+  516  ls
+  517  start .
+  518  s
+  519  ls
+  520  wd
+  521  pwd
+  522  clear
+  523  ls
+  524  git add file1.txt
+  525  git status
+  526  git config user.name "Rajesh Kumar"
+  527  git config user.email "rajesh@scmgalaxy.com"
+  528  git commit -m"adding first file"
+  529  git status
+  530  git log
+  531  git show f598ce95547431d317535807787b7b584f0cf834
+  532  history
+
+
+How to add multiple files in git repo?
+How to rename ?
+How to delete?
+How to go back in history?
+How to move?
+ 533  clear
+  534  git status
+  535  clear
+  536  clear
+  537  clear
+  538  git statis
+  539  git status
+  540  git add .
+  541  git status
+  542  git commit -m"file2 and 3"
+  543  git status
+  544  start .
+  545  clear
+  546  ls
+  547  touch file4.txt file5.txt file6.txt file7.txt
+  548  ls
+  549  git status
+  550  git add .
+  551  git status
+  552  git commit -m"file4" file4.txt
+  553  git status
+  554  git status
+  555  git commit -m"remainning"
+  556  git status
+  557  ls
+  558  git mv file1.txt
+  559  git mv file1.txt file11.txt
+  560  git mv file1.txt
+  561  git status
+  562  git commit -m"renmaing"
+  563  git status
+  564  ls
+  565  ls -a
+  566  git log
+  567  git log --oneline
+  568  ls
+  569  git rm file2.txt
+  570  git status
+  571  git commit -m"deleting file2.txt"
+  572  git status
+  573  ls
+  574  git log --oneline
+  575  ls
+  576  git checkout dd58d81
+  577  ls
+  578  git checkout 8df0857
+  579  ls
+  580  git checkout HEAD
+  581  git checkout master
+  582  ls
+  583  history
+
+
+
+
+Undoing in git....
+	How to remove a file from working dir?
+	Staging to working dir?
+	Git repo to staging dir?
+	 582  ls
+  583  history
+  584  clear
+  585  git status
+  586  ls
+  587  touch file8.txt
+  588  git status
+  589  git clean -f -d
+  590  git status
+  591  touch file8.txt
+  592  git status
+  593  git add file8.txt
+  594  git status
+  595  git reset file8.txt
+  596  git status
+  597  git clean -f -d
+  598  git status
+  599  git status
+  600  clear
+  601  touch good.txt;git add .;git commit -m"adding good"
+  602  git log --oneline
+  603  touch wrong.txt;git add .;git commit -m"adding wrong"
+  604  ls
+  605  git log --oneline
+  606  git revert 11580d9
+  607  git log --oneline
+  608  ls
+  609  git diff 41f68ea 9e4ad84
+  610  git diff 41f68ea 11580d9
+  611  history
+
+Branching & Merging
+	LOCAL BRANCH - READ - WRITE
+			DEFAULT - MASTER
+
+  615  git branch -a
+  616  git branch fea1
+  617  git branch -a
+  618  git checkout fea1
+  619  git branch -a
+  620  touch fea1.txt;git add .;git commit -m"adding fea1"
+  621  touch fea2.txt;git add .;git commit -m"adding fea2"
+  622  git log --oneline
+  623  git checkout master
+  624  git log --oneline
+  625  git merge fea1
+  626  git log --oneline
+  627  ls
+  628  history
+
+
+	REMOTE BRANCH - READ ONLY
+		FOR PUSH & PULL
+	TEMP BRANCH
+
+Remote Repo
+	===
+	Remote Repo hosting Solutio with 
+	GUI
+	ACCESS MGMT
+	ISUES 
+	WIKI
+	INTEG WITH OHTER TOOLS>...
+
+	GITHUB.com 	REGISTRY WHICH CAN HOST MULTIPLE REMOTE RREPO
+	GITLAB.com	REGISTRY WHICH CAN HOST MULTIPLE REMOTE RREPO
+	BITBUCKET	REGISTRY WHICH CAN HOST MULTIPLE REMOTE RREPO
+	AWS
+
+	CLONE - ENTIRE REPO (DB + FILES) get Copied to host machine
+	PULL _ PUSH
+
+ 504  git clone https://github.com/scmgalaxy/tuesday22.git
+  505  ls
+  506  cd tuesday22
+  507  clear
+  508  ls
+  509  touch ashok.txt;git add .;git commit -m"ading ashok"
+  510  git config user.name "Ashok K"
+  511  git config user.email "rajesh@scmgalaxy.com"
+  512  touch ashok.txt;git add .;git commit -m"ading ashok"
+  513  git log --oneline
+  514  clear
+  515  git push origin master
+  516  history
+  517  pwd
+  518  history
+
+
+ 629  ls
+  630  ls
+  631  clear
+  632  git branch -a
+  633  git branch -r
+  634  git push https://github.com/scmgalaxy/tuesday22.git master
+  635  git branch -a
+  636  git branch -r
+  637  git branch -r
+  638  ls
+  639  git remote add origin https://github.com/scmgalaxy/tuesday22.git
+  640  git pull origin master
+  641  ls
+  642  git branch -a
+  643  history
+
+
+CLONE - COPY A REMOTE REPO TO LOCAL MACHINE
+PULL-PUSH - SHARING THE COMMIT BETWEEN THE 2 REPO.....
+
+
+
+
+
+

@@ -1,0 +1,210 @@
+Discussion
+Demo
+Lab
+===================
+Every 15 mins
+===================
+What is Git?
+	Version Control Tool
+	Free
+	Open Source
+	Dev n Released 2004 by Linus
+	Distributed mgmt system
+
+Why Git?
+	WHEN
+	WHO
+	WHERE
+	WHAT
+
+How Git has become a reality?
+
+What are other tools?
+CC, p4, SVN
+
+How to install?
+	WIN - exe === git bash
+	https://git-scm.com/
+
+	LINUX
+	RHEL - 
+	> sudo yum install git -y
+	UB
+	> sudo apt-get install git -y
+	http://www.devopsschool.com/tutorial/git/git-upgrade-process.html
+
+Basic Work Flow
+===================================
+
+How to create a repo?
+> git init
+
+Add a file into working dir?
+	vi
+	eclip
+	note
+	cat
+	vim
+	notepad+
+	je
+
+How to add a file from wrokign dir to staging area?
+> git add filename
+
+ONE TIME 
+git config user.name "Rajesh Kumar"
+git config user.email "rajesh@scmgalaxy"
+git config --list
+
+How to send chnages from staging to repo?
+> git commit -m"this is my first commit"
+
+
+How to see the commits?
+> git log
+
+How to see files chnage/commited in each commit?
+> git show commit-id
+
+How to see the status of my working dir/staging?
+> git status
+
+1 13.126.46.210
+2 52.66.18.196
+3 13.127.218.107
+4 13.127.118.53
+5 13.127.177.190
+6 13.126.194.28
+7 52.66.101.251
+8 13.126.213.126
+9 13.126.93.26
+10 13.127.202.249
+11 52.66.23.185
+12 13.127.220.60
+13 13.127.146.65
+14 13.126.136.207
+
+http://www.devopsschool.com/notes/git/
+
+
+user name - ec2-user
+
+Question
+=============================================
+How to add dir?
+Same way as fie
+
+how to rename a file?
+> git mv file1 file11
+> git commit -m"renaming"
+
+How to see log oneline?
+> git log --oneline
+
+how to delete a file?
+> git rm filename
+> git commit -m"dlete a file"
+
+How to checkout older revision?
+> git checkout commit-id
+
+how to mve a file?
+> git mv file1 file11
+> git commit -m"renaming"
+
+how to modify a file?
+DONE
+
+how to commits selective files?
+DONE
+
+Working with remote repo?
+=======================================
+Rajesh
+	git init
+		Remote Repo====GITLAB
+		Push the changes to Gitlab
+> git push git@github.com:scmgalaxy/nokia2.git master
+> git remote add origin git@github.com:scmgalaxy/nokia2.git
+> touch rajesh.txt;git add .;git commit -m"adding"
+> git push origin master
+
+Aamir
+	Clone from Gitlab
+	
+	git init
+	git remote add
+	git pull
+		===git clone
+	> git clone git@github.com:scmgalaxy/nokia2.git aamir
+
+Nimisha
+	git init
+		old commits + new commis from gitlba
+	git pull
+	git push
+
+How to generate pub/pri key
+>ssh-keygen
+================================================
+Branching & Merging
+===================================
+Types of Branches?
+	Local	> git branch
+	Remote  > git branch -r
+	Temp> git status (detahched......)
+
+
+How to create  branch?
+> git branch fea1
+
+how to checkout branch?
+> git checkout fea1
+
+How to merge branch 2 branhes?
+> git merge fea1
+
+
+How to resolve the real conflict ?
+THIS IS RAJESH1
+
+
+How many kind of merge we have in git?
+1. fast forward
+2. recusrve
+3. cherry
+4. 
+
+
+
+
+
+
+x
+> 
+
+HEAD.....				DONE
+How do push to origin/master?		DONE
+How to branch in Git?
+How to switch between branches if we have untracked file?	DONE
+How to solve the conflict?		DONE
+
+How to merge?				DONE
+
+
+How to see diff between 2 cmmmit?s	DONE	
+How to delete a file without maintaining history - 
+Cherry pick				DONE
+Reflog
+file history across the repo?		DONE
+git clone				DONE
+delete a branch				DOne
+
+===========================================================
+
+
+
+
+
+
+

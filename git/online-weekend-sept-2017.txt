@@ -1,0 +1,153 @@
+GIT
+==================================
+What is GIT?
+	VERSION CONTROL TOOL
+	SOURCE CODE REPO
+	FREE
+	OPEN SOURCE
+	DISTRIBUTED ===== UNIQUE
+	
+WHY GIT?
+	
+	ANYONE, WHO WRITE A CODE-- THEY WANT TO MAINTAIN THE HISTORY
+
+	WHEN
+	WHO
+	WHY
+	WHAT
+===============================
+
+WHAT ARE OTHER TOOLS - SVN, CVS,p4, ClearCase, VSS, TFS === CLIENT N SERVER
+			GIT == DISTRIBUTED MODEL
+
+HOW TO INSTALL GIT?
+	WINDOWS - exe ==== GIT BASH
+	LINUX - UB  > sudo apt-get install git
+	LINUX - RHEL/CENTOS > sudo yum install git
+
+
+How to get start working with Git?
+Step 1 - Create a repo
+> git init
+
+BECOME A DEV
+Step 2 - Add a files in git [ WRONG STATEMENT]
+> git add filename
+
+ONE TIME -
+> git config user.name "Rajesh Kumar"
+> git config user.email "rajesh@scmgalaxy.com"
+> git config --list
+
+Step 3 - Commit a file
+> git commit -m"adding my first file"
+
+Step 4 - How to see logs of the commmit?
+> git log	
+
+commit e2a6137b10da6443f6ea9211634f247c1b0f54b7		=== CHECKSUM == 40 CHAR
+Author: Rajesh Kumar <rajesh@scmgalaxy.com>
+Date:   Sat Sep 30 08:41:56 2017 +0530
+
+    adding my first file
+
+How to check the status in git?
+> git status
+
+
+How to modify exiting file?
+using editor
+> git add .
+> git commit -m"modifying file"
+> git commit -m"modifying file" filename filename
+
+How to add multiple files?
+> git add .
+
+How to add directory?
+SAME AS FILE
+
+============================================
+WORKING WITH REMOTE REPO
+RAJESH ----> LOCAL REPO
+		
+	TUSHAR ----> RAJESH
+
+RAJESH (LOCAL REPO) ---> REMOTE REPO
+Major Provide of the  remte repo applications are -
+	GITHUB
+	BITBUCKET
+	GITLBA
+	GERRI
+
+TUSHAR ---> EXITING REPO
+	GIT INIT
+	git remote add
+	GIT PULL 
+	
+
+SURESH ---> 
+	GIT CLONE
+
+
+
+GUI TOOLS
+====================
+TORTOISE GIT
+SOURCE TREE
+
+How to rename a file?
+> git mv filename filenextnme
+> git commit -m"dfds"
+How to move a file?
+> git mc filename dir/filename
+> git commit -m"dfds"
+how to delete a file?
+> git rm filename
+> git commit -m"dfds"
+
+How to get older revision too work with?
+> git checkout checksumid/branch	
+
+NICE LOG
+===============
+git log --oneline
+
+UNDOING THE FOW
+===========================
+1. How to get rid of the files form working dir
+> git clean -f -d
+2. How to send a file back from staging area to working dir
+> git reset filename
+3. How to revert old revsion
+> git revert checksumid
+
+
+BRANCHING
+========================
+How many kidn of branch
+	LOCAL BRANCH		RW
+	REMOTE BRANCH		W
+
+How to list out brnching
+> git branch -a		ALL
+> git branch -r		REMOTE
+> git branch		LOCAL BRANCH
+
+How to create a braanch?
+> git branch new-branchname
+> git checkout new-branchname
+
+How to merge a branhc?
+> git merge branchamae
+
+
+
+
+
+
+
+
+
+
+	

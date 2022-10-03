@@ -1,0 +1,314 @@
+Priya - MGR -- CTSX
+
+Architect  - 2
+Dev - 10
+QA  - 5
+IT - 1
+DB -1
+BR - 1
+
+
+Requiremnt Gathering - Analysis - FD - PLANNING - task mgmt - PM - JIRA
+Source Code Mgmt - --- SVN - GIT
+Static Code anan
+UT ----JUNIT - NUNIT - RSPEC
+BUILD MGMT  - MAVEN, ANT, MSBUILD
+Packaging - 
+Repo mgmt system - Nexus, Artifactory
+Deployment - - -
+			100 SERVERS
+			50 W
+			50 L
+			
+			25 MYSQL			
+			25 MS
+			25 OR
+			25 POS
+		
+			25 WL
+			25 IIS
+			25 TOM
+			25 JBOSS
+		
+			100
+			=================
+			5 mins
+			CHEF - PUPPET- ANSBLE
+
+AT
+CODE COVERAGE
+RELEASEE
+============================================================
+What is Git?
+	Version contol tool
+	Free
+	Open Source
+	Compat with ALL OS
+
+For what?
+	Source Code only.
+
+	WHEN
+	WHAT
+	WHY
+	WHO
+============================
+How to install git?
+	WIN ---exe	(git-scm.com) ---> git bash
+	UB > sudo apt-get install git
+	RHEL> sudo yum install git 
+
+
+LINUX COMMANDSs
+-------------------------
+  501  cd /d
+  502  mkdir cts
+  503  cd cts/
+  504  ls
+  505  mkdir repo1
+  506  cd repo1/
+
+
+
+Basic Workflow of Git?
+===============================
+Step 1: Create a Repo
+> git init
+
+Step 2: generate a files using Editor
+
+Step 3: Ading a file from working dir to staging area.
+> git add filename
+
+ONE TIME====
+> git config user.name "Rajesh Kumar"
+> git config user.email "rajesh@scmgalaxy.com"
+> git config --list
+
+Step 4: Moving a changes from Staging area to repo.
+> git commit -m"This is first commit"
+
+Step 5: Review the commits
+> git log
+
+
+Question Time - 
+==========================================
+How to commit a file selectivly?
+> git commit -m"adding selc" file3.txt
+How to commit a multiple files?
+> git add .
+How to commits a dir?
+> SAME WAY AS FILE
+How to modify a file?
+> git add
+> git commit
+How to delete a file?
+> git rm filename
+> git commit -m"deleting a file"
+
+How to rename a file?
+HOw to move a file?
+> git mv fileame
+> git commit -m"renaming or mving"
+
+How to describe the change of the Checksum?
+> git show commit-id	
+
+How to checkout old revision?
+> git checkout commit-id
+
+For any particulat files, How many cmmits you did?
+> git reflog filename
+
+
+BITBUCKET SETUP
+=======================================
+ec2-13-126-189-36.ap-south-1.compute.amazonaws.com:7990
+
+
+=============================
+WORKING WITH REMOTE REPO
+=============================
+1st Day  - Priya
+>git init ----------------------> REMOTE REPO(HTTP|SSH)
+
+	PUSH TO http://admin@ec2-13-126-189-36.ap-south-1.compute.amazonaws.com:7990/scm/ctsfin/ctspriya.git
+
+After a monthss...
+Prinashu
+	WAY 1 - EXITING REPO
+		> git init
+		> git remote add origin http://admin@ec2-13-126-189-36.ap-south-1.compute.amazonaws.com:7990/scm/ctsfin/ctspriya.git
+		> git pull http://admin@ec2-13-126-189-36.ap-south-1.compute.amazonaws.com:7990/scm/ctsfin/ctspriya.git master
+	WAY 2 -
+		> git clone http://admin@ec2-13-126-189-36.ap-south-1.compute.amazonaws.com:7990/scm/ctsfin/ctspriya.git
+ 
+	
+git clone =
+	git init
+	git remote add
+	git pull
+
+https://goo.gl/deeJSV
+======================================
+BRANCHING AND MERGING AND CONFLICT RESO
+------------------
+Type of Branch
+===========
+	Local 
+	Remote
+
+How to list out all the branches?
+> git branch -a
+
+How to list out local only branches?
+> git branch
+
+How to create a branch?
+> git branch branchname
+
+MERGING
+-----------------------
+FAST FORWARD
+3WAY MERGE
+Cherry_Picking
+
+
+REVISION TIME
+=======================================
+> git init
+> Working Dir | Staging Area | Repo
+> git init --bare
+> git add
+> git commt
+> git status
+> git remote add name url ==> 
+> git config --list
+> git pull remote-ref branchname
+> git log --oneline
+> git checkout
+> git clone
+	git init
+	git remote add
+	git pull
+> git mv filenname
+> git reflog
+> git push
+> git branch branchname
+> git fetch
+> git branch
+> git rm filename
+> git merge branchname
+> git show checksum
+
+
+http://13.126.131.15:7990
+
+GIT GUI
+
+MERGE
+	3 WAY MERGE
+	Cherry picking
+
+UNDOING
+How to delete the files from Working dir?
+> git clean -f -d
+
+How to move back a files from Staging area to Working dir?
+> git reset filename
+
+How to revert back in git repo?
+> git revert checksum
+
+
+CONFLICT RES
+Modify the files
+> git add
+> git commit
+
+GIT CONFIG
+GIT IGNORE
+GIT TAG
+GIT STASH
+
+
+LAB TIME -- FIGHT TIME
+=======================================
+1. Create a directroy with your first name and commits
+2. Will Add 5 files inside a your own directory
+3. Will remove 1 file
+4. Will name 1 file
+5. Will create branch in local repo(named with last name)
+		add 2 additional file
+		add 1 dir/along with one file
+6. Push to remote
+7. Add 3 files named with file1.txt file2.txt file3.txt under "common" dir
+	Add content into file1.txt file2.txt file3.txt
+	and keep push and pull 3 times
+
+SERVER
+http://13.126.131.15:7990
+http://ec2-13-126-131-15.ap-south-1.compute.amazonaws.com:7990
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

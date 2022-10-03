@@ -1,0 +1,508 @@
+https://www.devopsschool.com/notes/git/2019/classroom-harman-2019.txt
+
+What is Git?
+	version control system
+		file versioning - WRONG [[ LATER ]]
+	Source Code mgmt
+	Distributed 	
+	----------------------
+	Free 
+	Open Source
+	Dev by Linus
+		BITKEEPER
+
+Why git?
+	WHO
+	WHEN
+	WHY
+	WHERE
+		PERIOD OF TIME
+	WHAT
+
+Git is made for?
+	Anyone who wasnt to do versioning of file.
+		NOT For
+			image,worddoc,pdf,movie,music
+			100 MB --> 110 --> 120MB == 200 MB
+			100 MB + 100 MB==200 MB
+				300 MB
+				400 B
+				500 MB == TB
+Other tool 
+--------SERVER-CLIENT-----------
+RCS -> CVS --> SVN
+VSS --> TFS -> P4 -> CC
+
+SERVER-CLIENT VS Distributed 
+-----------------------------------------
+SERVER-CLIENT = ONE Server (Repo (File + DB))
+
+DISTRIBUTED = EACH (Repo (File + DB))
+
+========================
+How to insall git?
+	WINDOWS - EXE - git-scm.com
+		git cmd
+		git bash
+	UB  -> sudo apt-get install git
+	RHEL -> suod yum install git
+
+How can we learn git?
+	cmd
+	GUI
+		sourcetree from atlassion
+		tortoise git
+
+Git workflow
+
+Step 1 -  get your own repo
+$ git init
+
+Step 2 -  Add a files into workspace
+
+
+Step 3 -  Add a file to Git [[ Add a file form working dir to staging area]]]
+$ git add filename
+
+###ONE TIME
+$ git config user.name "Rajesh Kumar"
+$ git config user.email "DevOps@RajeshKumar.xyz"
+		
+Step 4 -  Commit a file	[[ Commit a file from staging to repo ]]
+$ git commit -m"Adding a file1 for demo"
+
+Step 5 -  View a commit
+$ git log	
+$ git log
+commit 43bc0ab6fda4254dbf85962b31acba6399e3aa78
+Author: Rajesh Kumar <DevOps@RajeshKumar.xyz>
+Date:   Mon Mar 11 11:04:08 2019 +0530
+
+    Adding a file1 for demo
+
+43bc0ab6fda4254dbf85962b31acba6399e3aa78 = commit id == CHECK SUM by SHA
+	Unique id which represent a DIR Structure(OBJECT)....
+				Inside a dir strc, you have code from (WORKSPACE)
+
+How can i see a file which i modified or in Staging area?
+$ git status
+
+How to get what got commited in git?
+$ git show commit-id
+=========================================================
+How to add all files to stging?
+How to commit selective file from staging to repo?
+How to rname a file?
+How to delete a file?
+how to go into history of commits?
+How to move a file?
+How to edit a file?
+
+ 542  git log
+  543  git show 43bc0ab6fda4254dbf85962b31acba6399e3aa78
+  544  clear
+  545  git status
+  546  touch file3.txt file4.txt file5.
+  547  git status
+  548  mv file5. file5.txt
+  549  clear
+  550  git status
+  551  git add .
+  552  git status
+  553  git commit -m"adding file2 n 3 only" file2.txt file3.txt
+  554  git status
+  555  ls
+  556  git mv file3.txt file33.txt
+  557  git status
+  558  ls
+  559  git commit -m"rename"
+  560  ls
+  561  git status
+  562  git log
+  563  clea
+  564  ls
+  565  git status
+  566  ls
+  567  ls
+  568  git rm file5.txt
+  569  ls
+  570  git status
+  571  git commit -m"deleting"
+  572  git status
+  573  ls
+  574  git log
+  575  git checkout 4de95ab1b869687934dbffccebfdd3a2b81d5b0e
+  576  ls
+  577  ls
+  578  pwd
+  579  git checkout master
+  580  git status
+  581  ls
+  582  touch file6.txt
+  583  git status
+  584  git checkout 4de95ab1b869687934dbffccebfdd3a2b81d5b0e
+  585  git status
+  586  git add file6.txt
+  587  git status
+  588  git checkout master
+  589  ls
+  590  git status
+  591  ls
+  592  ls
+  593  mkdir src
+  594  ls
+  595  git status
+  596  git add src/
+  597  git status
+  598  ls
+  599  git mv file4.txt src/
+  600  git status
+  601  git status
+  602  git reset --hard
+  603  git status
+  604  ls
+  605  mkdir src
+  606  ls
+  607  git status
+  608  git mv file4.txt src/
+  609  git status
+  610  git commit -m"mving a file to src"
+  611  git status
+  612  git status
+  613  ls
+  614  touch file6.txt
+  615  git status
+  616  git add .
+  617  git status
+  618  ls
+  619  git mv file1.txt src/
+  620  git status
+  621  git mv file6.txt src/
+  622  git status
+  623  git version
+  624  git commit -m"adding"
+  625  git version
+  626  git status
+  627  clear
+  628  ls
+  629  vi file2.txt
+  630  git status
+  631  git add .
+  632  git commit -m"adding"
+  633  git status
+  634  history
+
+========================================================
+https://hack.chat/?harman
+
+HEAD VS BRANCH
+=====================
+HEAD IS tip of Current branch
+	---
+BRANCH - Denotes the last commit of the line.
+
+
+
+
+Working as a team
+https://github.com/devopsinstitute/git-workshop
+	rajesh[dir]
+	common
+		common.txt
+
+How to work with SSH.
+Step 1- Verify a key inside a USER_HOME/.ssh
+	IF NO - Step 2- $ ssh-keygen
+
+
+========================================
+Git config
+	.git/config		REPO
+		git config --list == EVERYTHING
+		git config user.name "Rajesh Repo"
+	~/.gitconfig		GLOBAL == USER
+		$ git config --global --list
+		$ git config --global user.name "Rajesh GLOABL"
+	GIT_INSTALLATIOn/gitconfig SYSTEM
+		$ git config --system --list
+		$ git config --system user.name "Rajesh SYSTEM"
+		
+Alias
+---------------------
+git log --pretty=format:"%h %s" --graph
+git ll
+
+ll
+
+Branching in GIT
+--------------------------------
+TYPES OF BRANCHES IN GIT?
+	LOCAL - RW
+	REMOTE  - RO
+	TEMP - RW
+
+
+PULL = Fetch + Merge
+
+branching and Merging
+===================================
+Fast forward
+3 Way Merge == Rrecurisive
+Cherry Picking
+
+614  git repo2/
+  615  cd repo2/
+  616  git init
+  617  clear
+  618  ls
+  619  git branch
+  620  touch file1.txt;git add .;git commit -m"file1"
+  621  git config user.name "Rajesh Kumar"
+  622  git config user.email "rajesh@scmgalay.com"
+  623  clear
+  624  ls
+  625  git branch
+  626  git log
+  627  touch file1.txt;git add .;git commit -m"file1"
+  628  git branch
+  629  git branch -a
+  630  clear
+  631  ls
+  632  cd ..
+  633  ls
+  634  mkdir repo3
+  635  cd repo3/
+  636  git init --bare
+  637  ls
+  638  cd ..
+  639  ls
+  640  cd repo2
+  641  ls
+  642  clear
+  643  ls
+  644  git status
+  645  git log
+  646  git remote add origin git@github.com:scmgalaxy/merging.git
+  647  git push origin master
+  648  clar
+  649  git branch -a
+  650  git branch -r
+  651  git branch
+  652  clea
+  653  clear
+  654  clear
+  655  ls
+  656  git branch -a
+  657  git checkout remotes/origin/master
+  658  ls
+  659  git checkout master
+  660  clear
+  661  git fetch origin master
+  662  ls
+  663  git checkout remotes/origin/master
+  664  ls
+  665  git checkout master
+  666  clear
+  667  ls
+  668  git merge remotes/origin/master
+  669  ls
+  670  clear
+  671  clear
+  672  ls
+  673  git branch fea1
+  674  git branch -
+  675  git branch -a
+  676  git checkout fea1
+  677  git branch -a
+  678  git checkout remotes/origin/master
+  679  git checkout -b from-temp
+  680  git branch -a
+  681  clear
+  682  ls
+  683  git brach -a
+  684  git branch -a
+  685  git checkout fea1
+  686  clear
+  687  ls
+  688  touch fea1.txt;git add .;git commit -m"adding fea1"
+  689  touch fea2.txt;git add .;git commit -m"adding fea2"
+  690  clear
+  691  git log
+  692  git checkout master
+  693  git log
+  694  clear
+  695  git checkout fea1
+  696  git log --oneline
+  697  git checkout master
+  698  git log --oneline
+  699  gitk
+  700  git checkout fea1
+  701  gitk
+  702  git checkout master
+  703  clear
+  704  git branch -
+  705  git branch -a
+  706  git diff fea1
+  707  git merge fea1
+  708  clear
+  709  ls
+  710  git log --oneline
+  711  touch master1.txt;git add .;git commit -m"adding master1"
+  712  touch master2.txt;git add .;git commit -m"adding master2"
+  713  touch master3.txt;git add .;git commit -m"adding master3"
+  714  git checkout fea1
+  715  clear
+  716  touch fea4.txt;git add .;git commit -m"adding fea4"
+  717  touch fea5.txt;git add .;git commit -m"adding fea5"
+  718  git checkout master
+  719  touch master4.txt;git add .;git commit -m"adding master4"
+  720  git checkout fea1
+  721  touch fea6.txt;git add .;git commit -m"adding fea6"
+  722  clear
+  723  git checkout master
+  724  git diff fea1
+  725  git merge fea1
+  726  git log
+  727  git log --oneline
+  728  git merge fea1
+  729  clear
+  730  git checkout fea1
+  731  git log --oneliine
+  732  git log --oneline
+  733  touch fea7.txt;git add .;git commit -m"adding fea7"
+  734  touch fea8.txt;git add .;git commit -m"adding fea8"
+  735  touch fea9.txt;git add .;git commit -m"adding fea9"
+  736  touch fea10.txt;git add .;git commit -m"adding fea10"
+  737  clear
+  738  git log --oneline
+  739  ls
+  740  git checkout master
+  741  git cherry-pick 50fbdec
+  742  ls
+  743  git log --oneline
+  744  ls
+  745  history
+
+=========================================
+How to do undo?
+	How to get rid of files frm wrking dir?
+	How to move a changes from staging to working
+	Hw to revert on repo?
+
+ 525  touch clean.txt
+  526  git status
+  527  git clean -d -f
+  528  git status
+  529  ls
+  530  vi file2.txt t
+  531  vi file2.txt
+  532  git status
+  533  git clean -d -f
+  534  git status
+  535  git reset --hard
+  536  git status
+  537  touch reset.txt
+  538  git status
+  539  git add .
+  540  git status
+  541  git reset reset.txt
+  542  git status
+  543  clear
+  544  git status
+  545  git clean -d -f
+  546  clear
+  547  git status
+  548  git log --oneline
+  549  touch good.txt
+  550  git status
+  551  git add .
+  552  git status
+  553  git commit -m"adding good"
+  554  git log --oneline
+  555  touch bad.txt;git add .;git commit -m"adding bad commit"
+  556  git log --oneline
+  557  ls
+  558  clear
+  559  git log --oneline
+  560  git revert b080a63
+  561  git log --oneline
+  562  git diff ec737e3 b080a63
+  563  git diff ec737e3 09092dc
+  564  history
+
+How to see diff between?
+
+Working with branches?
+	Resolving a conflit
+
+	
+git history of file by line
+  578  git diff master fea1 -- fea1.txt
+  579  git blame fea1.txt
+  580  clear
+  581  git blame fea1.txt
+  582  vi fea1.txt
+  583  git add .
+  584  git commit -m"ading a lines"
+  585  git blame fea1.txt
+  586  history
+
+- reset in details
+- what is rebase
+==========================
+
+
+
+- gitignore
+
+- stash
+====================================
+git stash 
+git merge
+git init
+git blame
+git clean
+git add .| git commit -m
+git remote add url origin
+git checkout
+git log
+git status
+git config
+git reset
+git push
+git move
+git clone
+git diff
+git branch
+
+
+git show
+
+
+working with Remote repo?
+	Github.com	DONE
+	gitlab.com
+	bitbucket.com
+	Gerrit.com
+
+
+
+
+
+
+amending
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	

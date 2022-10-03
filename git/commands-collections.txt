@@ -1,0 +1,24 @@
+Git list of file changes in commit
+============================================================
+git diff-tree --no-commit-id --name-only -r 91d42855
+
+
+How to list only the file names that changed between two commits?
+============================================================
+git diff --name-only 91d42855 22c4e0f0
+
+
+How do I rename both a Git local and remote branch name?
+============================================================
+# Rename the local branch to the new name
+git branch -m <old_name> <new_name>
+
+# Delete the old branch on remote - where <remote> is, for example, origin
+git push <remote> --delete old_name
+
+# Push the new branch to remote
+git push <remote> new_name
+
+# Reset the upstream branch for the new_name local branch
+git push <remote> -u new-name
+

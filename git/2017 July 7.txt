@@ -1,0 +1,103 @@
+What is git?
+	Source Code Mgmt tool
+	Version mgmt tool
+	Source Code Respossitory
+
+	Free
+	Open Source
+	Developed by Linus
+	-----------------------------------
+	Distributed Mgmt System
+	-----------------------------------
+
+Why we need Version mgmt tool?
+	What
+	When		
+	Where		
+	Who
+
+How to install it?
+	WINDOWS - git-scm.com - exe (git bash --  Basic Linux Commands in Windows)
+	LINUX - CENTOS - RHEL
+	> sudo yum install git
+
+	UBUNTU
+	> sudo apt-get instal git
+
+BASIC WORK FLOW
+----------------------------------
+Step 1 - Create A Repo
+> git init
+
+Note - .git is your repository
+e.g - D:\saturday\git1 is your workspace == WORKING DIRECTORY
+
+Step 2 - Add Few files using Editor
+
+Step 3 - Add these to Git [ Sending a file from working directry to staging area ]
+> git add filename
+
+Step 4 - Add your name and email address (FIRST TIME ONLY)
+> git config user.name "Rajesh Kumar"
+> git config user.email "rajesh@scmGalaxy.com"
+
+Step 5 - Commit to the git. [ Send a file from staging area to repo ]
+> git commit -m"Adding my first file"
+
+Questions?
+How to see the commits?
+> git log
+
+commit 0b2d8cdfe112efec797e693890c783c130500462		=== CHECKSUM == OBJECTS == CREATED BY SHA1 == 40 CHAR
+Author: Rajesh Kumar <rajesh@scmGalaxy.com>
+Date:   Sat Jul 8 08:56:57 2017 +0530
+
+    Adding my first file to the repo
+
+How git store the changes?
+http://www.devopsschool.com/slides/git/index.html
+
+How to see your name and email id in git config?
+> git config --list
+
+How can you see the files in staging?
+> git status
+
+How to add multiples files and commit?
+> git add .
+
+How to commit selective file from staging area?
+> git commit -m"adding" filename
+
+How to commit directory?
+> same as file add n commit
+
+
+Few commercials Org which has come up with solution for hosting the git repo in the cloud / behind firewall
+	1. Github.com			CLOUD + PRIVATE HOSTING
+	2. Github enterprise		CLOUD + PRIVATE HOSTING
+	3. Git Lab			CLOUD + PRIVATE ATE HOSTING
+	4. Bitbucket 			CLOUD + PRIVATE HOSTING
+	5. GERRIT
+
+How can you work in the distributed model? == BASIC WORK FLOW
+How to work with remote repo or github.com
+Step 1: Register a account on github.com
+
+Step 2: Create a repo on github.cm
+
+Step 3: Push all the local commits to remotegithub.cm
+> git push url <branchname?
+
+Step4: If someone else want to get same repo?
+> git clone url
+
+Step 5-if you want to get someones's changes from remote repo?
+> git pull url/origin master
+
+How to add alias?
+git remote add origin master
+
+
+		
+	

@@ -1,0 +1,320 @@
+http://www.devopsschool.com/tutorial/git
+http://www.devopsschool.com/notes/git
+http://www.devopsschool.com/slides/git
+http://www.devopsschool.com/quiz
+http://www.devopsschool.com/video/
+
+
+
+What is Git?
+	Source Code mgmt system
+	Version Control System
+	-------------------
+	Intelligent File systems Powered bu SHA
+	https://www.devopsschool.com/slides/git/how-git-works/index.html
+
+	FREE
+	OS
+	Deveoped by Linus Tovarld
+	
+How come we got git?
+	2004 - BITKEEPER
+	APRIL 2005 - GIT
+	--------------------
+
+What are other tools
+	CVS -> SVN -> GIT
+	Harvest -> CC -> P4 -> Mercury
+
+How to install git?
+	WIND - 	Get a EXE from git-scm.com
+	LIN 
+		UB - $ sudo apt-get update
+			$ sudo apt-get install git
+
+		RHEL - $ sudo yum update
+			$ sudo yum install git
+	Mac - 
+		Download DMG from using git-scm.com
+
+Why Git?
+	DISTIBUTED MGMT SYSTEM
+
+GIT WORKFLOW
+===============================
+FILES.....
+
+
+Step 1- How to create a repo?
+$ git init
+
+Step 2 - Using IDE
+
+Step 3  - Add a file 
+$ git add flename
+
+ONE TIME - 
+$ git config user.name "Rajesh Kumar"
+$ git config user.email "devops@RajeshKumar.xyz"
+$ git config --list
+
+Step 4 - Commit a file 
+$ git commit -m"adding files"
+
+Step 5 -
+$ git log
+
+
+FLOW -
+Working Directory - /d/yoodle/repo1
+Staging Area - $ git status
+Rpo - .git
+=====================================================
+How to add all files?	DONE
+  573  touch file4.txt file5.txt  file6.txt
+  574  ls
+  575  git status
+  576  git add .
+  577  git status
+  578  git commit -m"one" file4.txt
+  579  git status
+  580  git commit -m"all"
+  581  history
+
+
+How to rename a file?
+ 584  git mv file1.txt file11.txt
+  585  git status
+  586  git commit -m"renmae"
+  587  git status
+
+How to move a file?
+How to commit a dir?
+ 593  mkdir src
+  594  ls
+  595  git status
+  596  ls
+  597  git status
+  598  git mv file2.txt src/
+  599  ls
+  600  clear
+  601  git status
+  602  git commit -m"move + dire"
+
+
+how to Delete a file?
+Checkout
+  637  git log --oneline
+  638  git rm file4.txt
+  639  git status
+  640  git commit -m"deleted"
+  641  git status
+  642  ls
+  643  git log --oneline
+  644  clear
+  645  ls
+  646  git log --oneline
+  647  git checkout d80900c
+  648  ls
+  649  git checkout master
+  650  ls
+  651  history
+
+How to commits file by file?	DONE
+
+What is there in Checksum?
+CHECKSUM IS CREATED BY SHA in GIT. IT CREATE a OBJECT OF THE CHANGES IN THE FILE. IT is 40 CHAR HEXA
+  655  git log --oneline
+  656  git show 6e05b61
+  657  history
+
+==============================
+
+Pro - YoodleX
+
+	Rajesh - LR
+		Sam ---> 1 - LR ---->
+
+Remote Git -----
+=======================
+Github.com	CLOUD	HOSTED	- P + F
+Bitbucket	CLOUD	HOSTED	P + F
+Gitlab		CLOUD	HOSTED	P + F
+Gerrit		NA	HOSTED	FRE
+====================
+
+RAJESH --->PUSH ---> REMOTE REPO
+$ git push url master
+$ git push https://scmgalaxy@bitbucket.org/scmgalaxy/yoodle.git master
+
+		-----> SAM WILL PULL (EXISTING REPO)
+$ git pull https://scmgalaxy@bitbucket.org/scmgalaxy/yoodle.git master --allow-unrelated-histories
+	
+		-----> Mayo is not existing repo....
+				CLONE IT.....
+		$ git clone https://scmgalaxy@bitbucket.org/scmgalaxy/yoodle.git
+
+How to create alias?
+git remote add origin https://scmgalaxy@bitbucket.org/scmgalaxy/yoodle.git
+=================================================================
+UNDOING
+	How can i get rid of the files in Working Dir?
+	$ git clean -f -d
+
+	How can i send a file from Staging to Working dir?
+	git reset file7.txt
+
+	How can we revert at repo?
+	  724  git log --oneline
+  725  git revert d1cb6b2
+  726  git log --oneline
+  727  ls
+  728  git diff 1477791 09e3342
+  729  git diff 1477791 d1cb6b2
+  730  history
+
+How to edit - DONE
+----------------------------------------------
+GIT BRANCHING - FREE
+
+SVN/p4---- 100 MB --> 100 MB -- 100 MB
+-------------------------------
+GIt - 100 MB - 4KB
+
+===============================
+GIT BRANCHING
+	3 KINDS OF BRANCHES
+		1. LOCAL BRANCH - RW
+		2. REMOTE BRANCH - RO
+		3. TEMP BRANCH
+
+PULL === FETCH  + MERGE
+
+499  git commit -m"adding"
+  500  git push origin master
+  501  cd /d
+  502  cd yoodle/
+  503  ls
+  504  cd repo1
+  505  clear
+  506  ls
+  507  git branch -a
+  508  ls
+  509  git fetch origin master
+  510  ls
+  511  git checkout remotes/origin/master
+  512  ls
+  513  git checkout master
+  514  ls
+  515  git merge remotes/origin/master
+
+Why Branch?
+
+Mergings Scnarios
+	- Fast Forward Merge
+ 549  touch fea2.txt
+  550  git commit -m"adding fea2.txt"
+  551  git add .
+  552  git commit -m"adding fea2.txt"
+  553  clear
+  554  clear
+  555  ls
+  556  git branch fea-ext
+  557  git branch
+  558  git diff master
+  559  git merge master
+  560  git checkout master
+  561  git merge fea1
+  562  history
+
+
+	- Two Way - Recursive
+ 566  touch master1.txt;git add .;git commit -m"master1"
+  567  touch master2.txt;git add .;git commit -m"master2"
+  568  touch master3.txt;git add .;git commit -m"master3"
+  569  git checkout fea1
+  570  touch fea3.txt;git add .;git commit -m"fea3"
+  571  touch fea4.txt;git add .;git commit -m"fea4"
+  572  touch fea5.txt;git add .;git commit -m"fea5"
+  573  clear
+  574  ls
+  575  git diff master
+  576  git checkout master
+  577  clear
+  578  git merge fea1
+  579  history
+
+
+	- Cherry Picking---
+  575  git diff master
+  576  git checkout master
+  577  clear
+  578  git merge fea1
+  579  history
+  580  clear
+  581  git checkout fea1
+  582  touch fea6.txt;git add .;git commit -m"fea6"
+  583  touch fea7.txt;git add .;git commit -m"fea7"
+  584  touch fea8.txt;git add .;git commit -m"fea8"
+  585  touch fea9.txt;git add .;git commit -m"fea9"
+  586  touch fea10.txt;git add .;git commit -m"fea10"
+  587  clear
+  588  git log --oneline
+  589  git checkout master
+  590  git cherry-pick de8e2c7
+  591  ls
+
+
+
+Conflict Resolution
+
+MAS			FEA1
+file1.java		file1.java
+
+cal(age,avg,xyz)	cal(age,avg)	
+
+THIS IS DEVOPSSCHOOL 1
+
+THIS IS DEVOPSSCHOOL 2
+
+===========================
+
+How to reslve the conflictts
+How to create a brnch?
+Hw to switch branch
+Compare a branches?
+How to merge 2 file?
+How to amend a commit
+GIT UI
+-------------------
+SourceTree
+
+How to see diff between local and remote
+
+
+
+How to get latest from remote? - DONE
+How to see diff files? - DONE
+How to see the files in each commit? - DONE
+
+
+
+How to push from local to central - DONE
+
+$ git show commit -- path
+$ git log --oneline --follow --name-status include/svl/itemset.hxx
+
+TO check the deleted files in git repo
+$ git log --diff-filter=D --summary
+$ git log --all --pretty=format: --name-only --diff-filter=D | sort -u
+$ git ls-files --deleted
+
+IP - 13.233.125.100
+User - ec2-user
+Pass - Test123
+=======================
+
+
+
+
+ 

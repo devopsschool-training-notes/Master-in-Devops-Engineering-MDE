@@ -1,0 +1,48 @@
+What do we need source mgmt tool?
+
+What is git?
+
+How to install it?
+Ubantu - > sudo apt-get install git
+RHEL/CENTOS - > sudo yum install git
+Windows - exe  - https://git-scm.com/ (git bash)
+
+How to verify?
+git -v
+
+How to use it?
+Basic Workflow
+===================================
+1. Create a repo > git init
+---- LINUX > touch file.txt
+2. Add a file > git add filename
+3. Commit a file > git commit -m"This is my first"
+4. See the commits > git log
+5. Know the workspace status > git status
+
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
+
+
+Working with Remote Repo?
+One more repo - Master Repo === Remote remote
+----------------------------------------------
+GITHUB GITLAB BITBUCKET GERRIT --- GIT REPO HOSTING PROVIDER
+
+CLOUD | PRIVATE NETWORK
+
+REMOTE REPO
+======================
+git remote add <name> <url>
+git push origin master
+
+git clone url
+
+
+git pull
+
+
+SSH | HTTPS
+
+
+

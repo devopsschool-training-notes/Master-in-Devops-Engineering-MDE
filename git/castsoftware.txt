@@ -1,0 +1,241 @@
+What is git?
+	
+Open Source
+Free
+Comp all OS
+
+It will give you the answer of
+		Who
+		Where
+		When
+		What
+
+VERSION CONTROL SYSTEM --- FOR THE SOURCE CODE.
+
+DISTRIBUTED MGMT SYSTEM?????
+
+
+----------------------------------------------------------
+How to install git?
+	Windows - exe
+	- download from git-scm.com (.exe)
+	- install it
+	[Spec - 
+
+	RHEL - > sudo yum install git
+	UB - > sudo apt-get install git
+	MAX - download dmg ---> install
+
+BASIC WORKFLOW
+=======================================================
+svn co ----> FROM THE SERVER ======= [[[[[DATABASE(HISTORY)+FILES]]]]REPO ===========LOCAL REPO
+make a changes --> workspace
+commit -- TO THE SERVER
+
+
+Step 1 - Create a Repo
+	> git init
+Step 2 - Add a file from Working dir to staging area.
+	> git add filename
+ONE TIME ==== WHO ARE YOU
+	> git config user.name "Rajesh Kumar"
+	> git config user.email "rajesh@scmgalaxy.com"
+	> git config --list
+Step 3 - Commiting a changes from Staging area to the repo.
+	> git commit -m"Adding my first file"
+
+Step 4 - How to see the number of commits?	
+	> git log
+
+Step 5 - How to knw the status of workong dir?
+	> git status
+
+Questions
+==========================================================
+How to see the files which you commits for each objects?
+> git log --oneline
+> git show <<commits>
+> git reflog filename
+
+What happens what you commits?
+
+Internal of .git anatomy
+
+git stash
+HEAD concept
+
+=========================================
+Setting up a gitlab server
+http://www.devopsschool.com/tutorial/git/gitlab-server-install-configuration-in-centos7.html
+
+Basic Workflow working with Remote Repo
+==============================
+1. Create a repo in Gitlab
+2. Push the local existing repo
+> git push url master
+3. Clone the remote repo in new place
+> git clone url
+
+===========================
+> git push url master
+
+Use of origin?
+url ---which can not remm
+alias - origin 
+
+> git push alias master
+
+> git remote add origin http://ec2-35-154-169-141.ap-south-1.compute.amazonaws.com/root/git1.git
+> git push origin master
+
+Qs - What is the full description of the clone?
+1. git init
+2. git remote add
+3. git pull 
+
+===============================================
+REVIEW THE COMMANDS>
+
+git init
+git add
+git remote add
+git log
+git status
+git push
+git pull
+git clone
+git reflog
+git show
+git commit
+git config
+git rm
+git mv
+git reset
+git checkout
+git clean
+git revert
+git diff
+git fetch
+git merge
+git cherry-pick
+git branch -d
+git remote add
+git init --bare
+
+
+========================================
+git config
+
+
+
+Question 
+===========================================
+How to see the diff between 2 commits?
+> git diff commits
+
+How to rename / move a file?
+> git mv filename
+> git commit
+How to delete a file?
+>git rm filename
+> git commit
+
+How do checkout older commits?
+> git checkout older-commits
+
+What is HEAD?
+> git log HEAD
+> git show HEAD~
+> git show HEAD~
+
+
+How do you undo?
+How to get rid of the files from Working dir?
+> git clean -f -d
+How to send a file from Staging to working
+> git reset filanem
+How to revert in the repo?
+> git revert commits
+
+How do we blame?
+
+How do stash it?
+
+How do code review?
+	Review Board
+	SonarQube
+	gerrit
+	Code Collabrator
+
+How do you lock the branches?
+Git best practices
+
+==========================================
+Branching And Merging
+
+Git has 2 kind of branches.
+1. Local Branch		- READ + WRITE
+2. Remote Branch	- READ ONLY[I am not talking]
+
+How to see all the branches?
+> git branch -a
+How to see remote only?
+> git branch -r
+How to see local only?
+> git branch
+
+How to create a new branch?
+> git branch <branchname>
+
+How to switch a diff branch?
+> git checkout -b branchname
+
+
+Merging in the git?
+1. fast forward merge
+2. 3 way merge
+3. Cherry-pick
+
+====================
+Why do need a branch?
+https://msdn.microsoft.com/en-us/library/bb668955.aspx
+How to delete a branch?
+
+Git Tag
+
+Git Ignore
+
+GIT stash
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

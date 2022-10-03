@@ -1,0 +1,337 @@
+What is Git?
+	Version Control Tool.
+	Source Code mgmt
+	Dev by Linus
+	Free
+	Open Source
+	For - Anyone who wants to version a source code.
+	DISTRIBUTED
+	-----------
+Why Git?
+	What 
+	WHO
+	WHEN
+	WHERE
+	WHY?
+		on the source code?
+			period of time.
+Other tools - 
+	CVS -> SVN -> GIT
+	P4 - TFS - CC - Mercury
+
+How to install it?
+	UB - sudo apt-get install git
+	RHEL/centos - sudo yum install git
+	Windows - https://git-scm.com/
+			git cmd - Windows Commands
+			git bash - Linux Commands
+
+----------------------------
+Distributed vs Server/Client?
+
+
+=======================================
+
+Architecture or Workflow of Git?
+
+Step 1 - Create a repo
+$ git init
+
+Step 2 - Adding a files using IDE
+	
+Step 3 - Addd a file to Git [From working to Staging Area]
+$ git add filename
+
+##ONE TIME - git config user.name "Rajesh Kumar"
+##ONE TIME - git config user.email "DevOps@Rajeshkumar.xyz"
+##ONE TIME - git config --list
+
+Step 4 - Commit a file [From Staging to Repo Area]
+$ git commit -m"Adding my first file"
+
+Step 5 - View a commit
+$ git log
+
+Step 6 - View a changes in Commit
+$ git show commit-id
+
+# Commit-id - is a link to OBJECT. OBJECT IS NOTHING BUT FILE SYSTEM.
+		OBJECT IS CREATED BY SHA ALGO.....
+https://www.devopsschool.com/slides/git/how-git-works/index.html
+
+OGO
+644
+777 - 	r w x 
+	4 2 1 = 7
+
+How to Check the git staging area?
+------------------------------------
+$ git status
+
+
+ 504  mkdir sunday
+  505  cd sunday/
+  506  s
+  507  ls
+  508  pwd
+  509  cls
+  510  clear
+  511  start .
+  512  git init
+  513  touch file1.txt file2.txt
+  514  start .
+  515  git add filename
+  516  git add file1.txt
+  517  git config user.name "Rajesh Kumar"
+  518  git config user.name "DevOps@Rajeshkumar.xyz"
+  519  git config --list
+  520  git config user.email "DevOps@Rajeshkumar.xyz"
+  521  git config --list
+  522  git config user.name "Rajesh Kumar"
+  523  git config --list
+  524  git commit -m"Adding my first file"
+  525  git log
+  526  git show 10f151d9935f690861dae5808080c0403d6edccf
+  527  clear
+  528  git status
+  529  git add .
+  530  git status
+  531  git commit -m"addng a file2 n file3"
+  532  git status
+  533  start .
+  534  clear
+  535  git status
+  536  touch file4.txt file5.txt file6.txt
+  537  git status
+  538  git add file4.txt
+  539  git status
+  540  ls
+  541  vi file1.txt
+  542  git status
+  543  cd .git
+  544  ls
+  545  cd objects/
+  546  ;s
+  547  ls
+  548  cd 10
+  549  ls
+  550  more f151d9935f690861dae5808080c0403d6edccf
+  551  cat f151d9935f690861dae5808080c0403d6edccf
+  552  cd ..
+  553  ls
+  554  cd a6
+  555  ls
+  556  pwd
+  557  ls
+  558  cd ..
+  559  ls
+  560  cd ..
+  561  s
+  562  ls
+  563  cd ..
+  564  ls
+  565  pwd
+  566  clear
+  567  ls
+  568  git status
+  569  git add file1.txt
+  570  git status
+  571  git commit -m"adding" file4.txt
+  572  git status
+  573  git commit -m"adding"
+  574  git status
+  575  history
+
+
+===========================================================
+Rajesh ---> Local repo --> Working
+		Chandu --> Ask for my code
+			Local Repo
+			Will do pull
+
+		Pavan --> Ask for my code
+
+PULL & PUSH === SYNCING OF 2 DIFF REPO.
+CLONE ==> craete repo + pull it
+
+How to share a code(.git repo) with others?
+		SSH - ssh rajesh@rajesh-ip:/d/sunday
+		
+		
+		HTTP
+
+=========================
+Github
+Bitbucket
+Gerrit
+AWS
+Azure
+
+  577  git status
+  578  ls
+  579  vi file2.txt
+  580  git status
+  581  vi file3.txt
+  582  git status
+  583  git add file2.txt
+  584  git status
+  585  git commit -m"add"
+  586  git status
+  587  pwd
+  588  ls
+  589  git push https://github.com/scmgalaxy/sunday33.git master
+  590  git log
+  591  cd ..
+  592  mkdir pavan
+  593  cd pavan/
+  594  git clone https://github.com/scmgalaxy/sunday33.git
+  595  ls
+  596  cd sunday33/
+  597  git log
+  598  ls
+  599  touch pavan.txt
+  600  git add pavan.txt
+  601  git commit -m"adding pavan"
+  602  git config user.name "Rajesh Kumar"
+  603  git config user.email "DevOps@Rajeshkumar.xyz"
+  604  git commit -m"adding pavan"
+  605  git push origin master
+  606  git push origin master
+  607  cd ..
+  608  cd ..
+  609  ls
+  610  cd sunday/
+  611  ls
+  612  git pull origin master
+  613  git remote add origin https://github.com/scmgalaxy/sunday33.git
+  614  git pull origin master
+  615  ls
+  616  history
+
+
+=============================================
+Branching
+-------------------------
+Types of Branch
+	Local  	RW
+	Temp  	RW
+	Remote	RO
+
+PULL === FETCH  + MERGE
+
+
+Why we need a branches?
+https://docs.microsoft.com/en-us/azure/devops/repos/tfvc/branching-strategies-with-tfvc?view=azure-devops
+
+
+	- master
+		- fea1
+		- bug1
+		
+BUG Fixing
+Feature
+
+
+	 617  clear
+  618  git branch -a
+  619  git branch fea1
+  620  git branch -a
+  621  git checkout fea1
+  622  ls
+  623  touch fea1.txt;git add .;git commit -m"ading fea1"
+  624  ls
+  625  ls
+  626  git checkout master
+  627  git branch -a
+  628  git merge fea1
+  629  ls
+  630  git push origin master
+  631  git branch -a
+  632  git checkout remotes/origin/master
+  633  git branch -a
+  634  ls
+  635  git checkout master
+  636  git branch -a
+  637  history
+
+ 493  cd DevOpsSchool.com
+  494  l
+  495  ls
+  496  cd video
+  497  clear
+  498  ls
+  499  git pull origin master
+  500  start .
+  501  cd /d/pavan/
+  502  ls
+  503  cd sunday33/
+  504  ls
+  505  ls
+  506  git branch -a
+  507  git checkout remotes/origin/master
+  508  ls
+  509  git checkout master
+  510  git fetch origin master
+  511  ls
+  512  git checkout remotes/origin/master
+  513  ls
+  514  git checkout master
+  515  git merge remotes/origin/master
+  516  ls
+  517  hsitry
+  518  history
+
+
+
+Undoing the changes
+===========================================================
+How to get rid of files in Working dir?
+$ git clean -f -d
+
+How to send a file from Staging to working dir
+$ git reset filename
+
+How to rollback in repo?
+
+ 521  touch fff.txt
+  522  git status
+  523  git clean -f fff.txt
+  524  git status
+  525  touch fff.txt
+  526  git status
+  527  git add fff.txt
+  528  git status
+  529  git reset fff.txt
+  530  git status
+  531  clear
+  532  git log --oneline
+  533  touch good.txt;git add .;git commit -m"goood commit"
+  534  git log --oneline
+  535  touch bad.txt;git add .;git commit -m"bad commit"
+  536  git log --oneline
+  537  git revert 9b3053e
+  538  git log --oneline
+  539  git diff 985b2f8 d4ea60c
+  540  git diff 985b2f8 9b3053e
+  541  history
+=====================================================
+GUI - souretree
+		from Atlassion
+
+=======================================================
+Delete - reset with hard
+	rebase
+		Rebase your branch.... 
+-----------------------------------------------------
+amend........
+==================================================
+==================================================
+
+
+
+
+
+
+
+
+	

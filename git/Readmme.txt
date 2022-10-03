@@ -1,0 +1,75 @@
+http://13.126.142.202:9000
+
+http://www.scmgalaxy.com/courses/agenda/source-code-management-tools/advanced-git.html
+
+
+
+DAY 1
+================================
+Underding Git Internal
+Git Internal Commands
+	git reset
+	git rebase
+	git blame
+	git reflog
+	git append
+	git bisect
+	
+
+	ONE COMPLETE FLOW - 
+	git hash-object	
+	- Compute object ID and optionally creates a blob from a file
+	git mk-tree
+	- Build a tree-object from ls-tree formatted text
+	git read-tree
+	-  Reads tree information into the index
+	git write-tree
+	- Create a tree object from the current index
+	git ls-tree
+	- List the contents of a tree object
+	git commit-tree
+	- Create a new commit object
+	git update-ref
+	-  Update the object name stored in a ref safely
+	git cat-file
+	- Provide content or type and size information for repository objects
+
+
+	git count-objects
+	git filter branch
+	git hash-object
+	git rev-list
+
+
+Gerrit Replication with Github
+
+
+DAY 2
+================================
+Gerrit Setup with MySql - DONE
+Gerrit FULL Backup 
+Gerrit Gerrit FULL Backup 
+
+Gerrit Intgration with Jenkins 
+Gerrit Commands
+To 10 Useful Gerrit Plugins
+Gerrit Plugins Complete Guide - Install - Upgrade
+Gerrit REST API for Automtion
+Gerrit Permission Deep Dive
+Gerrit Troubleshooting procedures
+Gerrit Integration with Jira
+
+USER TOPICS
+=========================
+
+
+
+Plumbing
+http://erbetowski.pl/blog/git-porcelain-and-plumbing/#/blog
+
+http://ciforios.github.io/2015/01/27/Gerrit/
+http://ciforios.github.io/2015/01/26/Talking%20to%20Jenkins/
+http://ciforios.github.io/2015/01/25/Jenkins/
+
+
+

@@ -1,0 +1,210 @@
+What is Git?
+	Version Control System
+	Source code Mgmt tool
+		For 
+			FILES
+
+	This Tool will give you answer of 
+		WHO 
+		WHERE
+		WHEN
+		WHY
+			in files over the period of time.
+	FREE
+	OPEN SOURCE
+	Written by Linux Tovald
+	DISTRIBUTED MGMT SYSTEM
+	
+Why Git?
+
+How to install git?
+RHEL 
+	$ sudo yum install git
+UB 	
+	$ sudp apt-get install git
+WINDOWS	https://git-scm.com/
+		git cmd
+		git bash - Run basic linux command in Windows + Git
+		gitk
+MAC	https://git-scm.com/
+$ git --version
+
+Other Tools
+RCS -> CVS -> SVN -> GIT = OPEN SOURCE & FREE
+Mercury + Peroforce + Clearcase + VSS + TFSS = PAID
+
+DISTRIBUTED MODEL VS SERVER-CLIENT
+=========================================
+
+SERVER-CLIENT 
+	1 SERVER (REPO --> FILES + DB)
+	MULTIPLE CLIENT
+
+RCS -> CVS -> SVN = OPEN SOURCE & FREE
+Mercury + Peroforce + Clearcase + VSS + TFSS = PAID
+
+DISTRIBUTED MODEL =
+	EACH ONE OF WIL hAVE THEIR OWN REPO.
+=======================================================
+
+GIT BASIC LIFE CYCLE
+
+Step 1- Create A empty repo (.git)
+$ git init
+
+Step 2 - CREATE SOME FILES USING EDITOR
+touch file1.txt file2.txt file3.txt
+
+STEP 3 - Add files from Working directory to Staging Area
+$ git add file1.txt
+
+--------------ONE TIME----------------------
+### $ git config user.name "Rajesh Kumar"
+### $ git config user.email "rajesh@scmgalaxy.com"
+### $ git config --list
+
+STEP 4 - Sending a files from Staging area to Repo.
+git commit -m"Adding first file"
+
+ARCHITCTURE OF GIT
+-------------------------
+3 AREA
+	---- GIT REPOSITORY  - .git
+	---- GIT STAGING	- temp area managed by git for changes between WORKSPACE  & REPO
+	---- GIT WORKSPACE   - A DIRECTORY WHERE YOU HAVE .GIT
+
+
+How can i see number of commits?
+$ git log
+commit f9c0544fb53a3d998c3c9bfbe4db9ece72d1a3d0
+Author: Rajesh Kumar <rajesh@scmgalaxy.com>
+Date:   Tue Dec 4 21:26:49 2018 +0530
+
+    Adding first file
+
+f9c0544fb53a3d998c3c9bfbe4db9ece72d1a3d0 == CHECKSUM created by SHA....
+
+$ git show f9c0544fb53a3d998c3c9bfbe4db9ece72d1a3d0
+commit f9c0544fb53a3d998c3c9bfbe4db9ece72d1a3d0
+Author: Rajesh Kumar <rajesh@scmgalaxy.com>
+Date:   Tue Dec 4 21:26:49 2018 +0530
+
+    Adding first file
+
+diff --git a/file1.txt b/file1.txt
+new file mode 100644
+index 0000000..e69de29
+
+How can i see which file is in working/staging area?
+$ git status
+
+How can i add multiple files?
+$ git add .
+How can i commit only selected files?
+$ git commit -m"only file4" file4.txt
+
+How can i rename a files?
+How can i move a file?
+How can i delete a file?
+How can i chceck the file before delete?
+
+  504  git mv file1.txt file11.txt
+  505  git status
+  506  git commit -m"renmae"
+  507  ls
+  508  clear
+  509  ls
+  510  mkdir src
+  511  ls
+  512  git status
+  513  git mv file2.txt src/
+  514  git status
+  515  git commit -m"moving a file"
+  516  clear
+  517  git log
+  518  clear
+  519  git log --oneline
+  520  ls
+  521  git rm file4.txt
+  522  git status
+  523  git commit -m"deleting file4"
+  524  clea
+  525  clear
+  526  ls
+  527  git log --oneline
+  528  ls
+  529  git log --oneline
+  530  git checkout 0b16d67
+  531  ls
+  532  git checkout master
+  533  ls
+  534  history
+===================================================
+GIT REPO HOSTING PLATFORM
+	Github.com
+	gitlab
+	bitbucket
+	gerrit
+	aws
+	azure
+	gc
+
+ 548  git clone https://github.com/scmgalaxy/tuesday.git
+  549  ls
+  550  clear
+  551  cd tuesday/
+  552  git log --oneline
+  553  ls
+  554  touch pooja.txt
+  555  git add .
+  556  git commit -m"ading pojja"
+  557  git push origin master
+  558  git push origin master
+
+
+ 503  git remote add origin https://github.com/scmgalaxy/tuesday.git
+  504  git pull origin master
+
+
+BRANCGING & MERGING
+============================================
+LOCAL BRANCH
+REMOTE BRANCH
+TEMPO BRANCH
+
+PULL  == FETCH  + MERGE
+========================================
+
+ 574  clear
+  575  git branch
+  576  git branch -a
+  577  git branch fea1
+  578  git branch
+  579  git checkout fea1
+  580  git branch
+  581  ls
+  582  tocuh fea1.txt;git add .;git commit -m"addin fea1"
+  583  touch fea1.txt;git add .;git commit -m"addin fea1"
+  584  ls
+  585  touch fea2.txt;git add .;git commit -m"addin fea2"
+  586  ls
+  587  git checkout master
+  588  ls
+  589  git merge  fea1
+  590  ls
+  591  history
+======================================================================
+
+GUI 
+	TORTOUSE GIT
+	SOURCETREE from ATLASSION
+
+
+
+
+
+
+
+
+
+

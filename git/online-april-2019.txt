@@ -1,0 +1,275 @@
+What is Git?
+	Version Control system
+	Source code mgmt system
+	Free
+	Open Source
+	Dev by LinuS tovarld (Fther of Linux)
+	Distributed
+	-------------
+
+Why Git?
+	Why
+	What 
+	When
+	Who
+	Where
+		Code changes over the peroid of time......
+
+Other tools
+RCS -> CVS -> SVN -> Git
+VSS -> P4 + CC + TFS + Mercury
+
+Distributed Vs Server-client
+---------------------------------
+
+How to install git?
+	Linux - RHEL / CENTOS - sudo yum install git
+	Linux - Ubuntu	- sudo apt-get install git
+	windows - git-scm.com  -> exe -> install
+		   git bash (Linux command in Windows)	
+	Mac - git-scm.com -> dmg -> install
+
+Git workflow
+----------------------
+Step 1  - Create a repo
+$ git init
+
+Step 2  - Adding a file using editor
+
+Step 3 -  Add a file to git [Working to Staging Area]
+$ git add file1.txt
+
+=================ONE TIME ==================
+git config user.name "Rajesh Kumar"
+git config user.email "rajesh@scmgalaxy.com"
+git config --list
+cat .git/config
+============================================
+Step 4 - Commit  [Staging Area to repo]
+$ git commit -m"addng my first commit file1"
+
+Step 5 - seeing a commit
+$ git log
+
+$ git log
+commit c830d3405fef338bd4e8e412ec898bdce3e3621d (HEAD -> master)
+Author: Rajesh Kumar <rajesh@scmgalaxy.com>
+Date:   Sat Apr 27 09:09:56 2019 +0530
+
+    addng my first commit file1
+
+c830d3405fef338bd4e8e412ec898bdce3e3621d ==> Commit id (By SHA1) --> Denotes to OBJECTS
+			Commit
+			blob
+			tree
+			tag
+
+
+Step 6 - What was committed?
+git show c830d3405fef338bd4e8e412ec898bdce3e3621d
+===========================
+Git status
+	is a command to tell you that what files is there in working dir & staging area 
+				Which is NOOOOT moved to repo....
+==========================================================================
+how to add all files
+How too commit selection file?
+How to rename
+how to delete
+how to add dir?
+how to modify a file
+
+========================================================================
+
+
+ 510  git init
+  511  start .
+  512  cd saturday/
+  513  clear
+  514  ls
+  515  mkdir repo1
+  516  cd repo1/
+  517  start .
+  518  git init
+  519  start .
+  520  touch file3.txt
+  521  touch file4.txt
+  522  ls
+  523  git add file1.txt
+  524  git config user.name "Rajesh Kumar"
+  525  git config user.email "rajesh@scmgalaxy.com"
+  526  git config --list
+  527  cat ./git/config
+  528  cat .git/config
+  529  git commit -m"addng my first commit file1"
+  530  $ git log
+  531  git log
+  532  git show c830d3405fef338bd4e8e412ec898bdce3e3621d
+  533  git status
+  534  start .
+  535  clear
+  536  git status
+  537  git add .
+  538  git status
+  539  git commit -m "file2...3..." file2.txt file3.txt
+  540  git status
+  541  git commit -m "all"
+  542  git status
+  543  ls
+  544  git mv file1.txt
+  545  git mv file1.txt file11.txt
+  546  git status
+  547  ks
+  548  ls
+  549  git commit -m "rename"
+  550  ls
+  551  git status
+  552  git log
+  553  clear
+  554  ls
+  555  git rm file4.txt
+  556  ls
+  557  git status
+  558  git commit -m "delete"
+  559  git status
+  560  git log
+  561  git log --oneline
+  562  ls
+  563  git checkout 2e25537
+  564  ls
+  565  git checkout master
+  566  clear
+  567  ls
+  568  ls
+  569  mkdir src
+  570  git status
+  571  touch src/test1.txt
+  572  git status
+  573  git add .
+  574  git status
+  575  git commit -m"adding dir"
+  576  git log --oneline
+  577  ls
+  578  vi file11.txt
+  579  git status
+  580  git add file11.txt
+  581  git status
+  582  git commit -m"edit"
+  583  git log --oneline
+  584  git diff 6e831a3 1489393
+  585  ls
+  586  vi file2.txt
+  587  git status
+  588  git diff file2.txt
+  589  clear
+  590  ls
+  591  git push
+  592  git push https://github.com/scmgalaxy/common-demo.git master
+  593  cd ..
+  594  ls
+  595  git clone https://github.com/scmgalaxy/common-demo.git
+  596  ls
+  597  cd common-demo/
+  598  ls
+  599  touch sayed.txt
+  600  git add .
+  601  git commit -m"addng"
+  602  git config user.name "Sayed"
+  603  git config user.email "sayed@sayed.com"
+  604  git commit -m"addng"
+  605  git push url origin master
+  606  git push origin master
+  607  cd ..
+  608  ls
+  609  cd repo1/
+  610  ls
+  611  git remote add origin
+  612  git remote add origin https://github.com/scmgalaxy/common-demo.git
+  613  git pull origin master
+  614  ls
+  615  history
+
+============================================
+
+Branching & Merging
+-----------------------------
+-local	- RW
+-remote - RO
+- temp - RW- nO USE OF IT
+
+
+  616*
+  617  git branch -a
+  618  ls
+  619  git branch fea1
+  620  git branch -a
+  621  git checkout fea1
+  622  clear
+  623  ls
+  624  touch fea1.txt;git add .;git commit -m"adding fea1"
+  625  git status
+  626  git branch -a
+  627  git checkout master
+  628  ls
+  629  git merge fea1
+  630  ls
+  631  history
+
+
+Conflict
+ 632  ls
+  633  vi fea1.txt
+  634  git add .
+  635  git commit -m"adding "
+  636  git checkout fea1
+  637  vi fea1.txt
+  638  git add .
+  639  git commit -m"adding "
+  640  git checkout master
+  641  git merge fea1
+  642  ls
+  643  git status
+  644  vi fea1.txt
+  645  git add .
+  646  git commit -m"resolved"
+  647  git merge fea1
+  648  history
+
+
+Tag
+
+
+git hooks ---.git
+---------------------
+git command ==> RUN ==> ACTION ==> OUTPUT
+git command ==> RUN ==> SCRIPT EXEC 
+				0 ==> ACTION ==> OUTPUT
+				1 ==> NO ACTIOON
+
+  657  ls
+  658  cd .git/
+  659  ls
+  660  cd hooks/
+  661  ls
+  662  cp commit-msg.sample commit-msg
+  663  vi commit-msg
+  664  cd ../..
+  665  touch hook.txt;git add .;git commit -m"dd"
+  666  vi .git/hooks/commit-msg
+  667  touch hook.txt;git add .;git commit -m"dd"
+  668  history
+
+
+
+git webhooks ---- github/bit
+GUI - SourceTree by Atlassion
+
+
+
+
+
+
+
+
+
+

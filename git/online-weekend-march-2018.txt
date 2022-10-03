@@ -1,0 +1,296 @@
+What is Git?
+	Versioning -- storing History of the file(src)
+	Source Code mgmt tool
+	Open Source
+	Compatible all OS
+	Free
+	Meant for the source code only -
+	NOT - WORDDOC, PDF, IMAGE, MOVIES, EXE, DLLS,
+	=============
+	DISTRIBUTED
+	=============
+	
+
+Why Git?
+	When
+	Who
+	What
+	Where
+
+Other tools - 
+RCS --> CVS --> SVN -> GIT [OS]
+
+p4, cc, vss, tfs
+
+How to install git?
+	WINDOWS -https://git-scm.com/ - EXE
+		git bash == Where you can the linux commands in Windows
+	MAC - https://git-scm.com/    - DMG
+	LINUX -RHEL - CENTOS
+	> sudo yum install git -y
+
+	LINUX -RHEL - UB
+	> sudo apt-get install git -y
+	
+GIT COMMANDS n BEHAVIOUR ARE SAME>
+
+
+How to verify?
+> git
+> git version
+
+How to start working on it?
+	1. FILE
+
+You need to know how git works?
+
+Basic Work Flow
+==============================
+1. How to create a repo?
+> git init
+
+2. How to Add a file in git? === How to add a file from working dir to staging area?
+> git add filename
+
+ONETIME
+======================
+git config user.name "Rajesh kumar"
+git config user.email "rajesh@scmgalaxy.com"
+git config --list
+
+3. How to commit a file git? ==== How to sent a file from staging area to repo?
+> git commit -m"adding first fille"
+
+4. How to see the commits?
+> git log
+
+$ git log
+commit 4aa02f07cd92637dd73a79d5ee794d131b62eb5d
+Author: Rajesh Kumar <rajesh@scmgalaxy.com>
+Date:   Sat Mar 31 09:41:04 2018 +0530
+
+    adding first fille
+
+============
+4aa02f07cd92637dd73a79d5ee794d131b62eb5d 
+	CHECKSUM, A Object ID creted by SHA1 Algorithm to identify the commits.
+
+$ git show 4aa02f07cd92637dd73a79d5ee794d131b62eb5d
+commit 4aa02f07cd92637dd73a79d5ee794d131b62eb5d
+Author: Rajesh Kumar <rajesh@scmgalaxy.com>
+Date:   Sat Mar 31 09:41:04 2018 +0530
+
+    adding first fille
+
+diff --git a/file1.txt b/file1.txt
+new file mode 100644
+index 0000000..e69de29
+
+===============GIT WORKFLOW============
+WORKING DIR	=  a directory where you .git
+STAGING AREA	=	 A temporary review place of your work....
+REPOSITORY 	=	.git
+
+Where is Staging area?
+> git  status
+
+==========================================================
+How to add multiples file?
+> git add .
+> git commit -m"add all"
+
+Hw to commit only selective form staginga area?
+> git commit -m"selective" filename
+
+How to change a file 
+
+How to add dir?
+Same as file name?
+
+How to move a file
+> git mv filename dir/filename
+> git commit -m"move a fille"
+
+How to delete a file
+> git rm file7.txt
+> git commit -m"dele"
+
+How to rename a file
+> git mv filename1 filename2s
+> git commit -m"rename afile"
+
+How to go back to the old hisotory of the file
+> git checkout commit-id
+===================================
+
+git log --oneline
+=================================
+How to collab?
+
+
+EVERY REPO CAN COLLAB TO EVREY REPO=== USING SSH | HTTPS
+
+Sena1
+Create a repo n startted workig.
+
+NO HTTPS TO MY LAPTOP - I DONT WANT TO RUn my laptop 24/7
+No SSH
+
+GUI -- NO
+ISSUES -- NO
+CODE REVIEW - NO
+ACCESSS CONTRO - NO
+WIKI - No
+	GITHUB		---- HOSTED inSIDE PREM |  CLOUD
+	GITLAB		---- HOSTED inSIDE PREM |  CLOUD
+	BITBUCKET	---- HOSTED inSIDE PREM |  CLOUD
+	ASSEM
+	AMAZON
+	MIC
+	GERRIT
+
+====================================
+RAJESH  - LOCAL REPO
+
+LAKSHI --
+	RAJESH HAS TO CREATE ONE REMOTE REPo
+	> github.cm
+
+	PUSH A LOCAL TO REMOTE
+	> git push https://github.com/scmgalaxy/weekendmarch.git master
+
+	LAK HAS TO CLONE IT ====
+	> git clone url
+
+	> git pull origin master
+	
+Sumanth --- 
+	EXISTING REPO...
+	git remote add origin https://github.com/scmgalaxy/weekendmarch.git
+	git pull origin master
+
+
+ALIA===
+git remote add origin https://github.com/scmgalaxy/weekendmarch.git
+git remote add xyz https://github.com/scmgalaxy/weekendmarch.git
+
+==========================================================================
+
+BRANCHING N MERGING
+===================================
+Types of branch
+	Local Branch		- RW
+	Temporary		- R BUT COVERT INTO BRANCH - RW
+	Remote Branch		- R
+
+  517  git branch
+  518  git branch -a
+  519  git branch -r
+
+PULL = FETCH + MERGE
+git fetch origin master
+git branch -a
+git checkout remotes/origin/master
+git checkout master
+git merge remotes/origin/master
+
+BRANCHING
+==============================
+  541  git branch fea1
+  542  git branch -a
+  543  git checkout fea1
+  544  git branch -a
+  545  touch fea1.txt;git add .;git commit -m"adding in fea1"
+  546  git log --oneline
+  547  git diff master
+  548  clear
+  549  git checkout master
+  550  git log --online
+  551  git log --oneline
+  552  git checkout fea1
+  553  git log --oneline
+  554  clear
+  555  ls
+  556  git checkout master
+  557  git merge fea
+  558  git merge fea1
+  559  ls
+  560  history
+
+
+MASTER - THIS IS RAJESH CODE WITH METHOD1
+FEA1 - THIS IS RAJESH CODE WITH METHOD2
+
+UNDOING
+===================================
+How to clean a file from working
+
+How to send a file from staging to working
+
+How can u do the rever?
+
+  580  touch clean.txt
+  581  touch clean.txt
+  582  git status
+  583  git clean -f -d
+  584  git status
+  585  clear
+  586  touch reset.txt
+  587  git status
+  588  git add reset.txt
+  589  git status
+  590  git reset reset.txt
+  591  git status
+  592  clear
+  593  s
+  594  clear
+  595  touch revert.txt;git add .;git commit -m"adding revert"
+  596  git log --oneline
+  597  git revert ff5bf64
+  598  clear
+  599  git log --oneline
+  600  git diff e18bcbc 5b0d319
+  601  git diff e18bcbc ff5bf64
+  602  history
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

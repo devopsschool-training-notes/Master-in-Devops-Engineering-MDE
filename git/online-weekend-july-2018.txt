@@ -1,0 +1,464 @@
+What is Git?
+	Version Mgmt tool
+	Source Code mgmt tool
+	Free
+	Open Source
+	You can install all Platform
+	Distributed Model
+	----------
+
+Why git?
+	WHAT 
+	WHERE
+	WHEN
+	WHY
+	WHO 
+		HAS changed the code over the period of time.
+
+What are the other tools
+	RCS -> CVS -> SVN -> GIT
+	Clearcase / Perforce / Mercury / VSS / TFS
+	===== Based on Server - Client
+
+How to install it?
+	WINDOwS  - EXE  - https://git-scm.com/
+			git bash ==== Basic Linux commands + Bash
+			git cmd
+	LINUX - Commands
+		RHEL - sudo yum install git	
+		UB - sudo apt-get install git
+
+QA
+http://www.scmgalaxy.com/tutorials/git-interview-questions-and-answer/
+
+Distributed Vs Server-Client
+---------------------------------------
+Server - Client Model
+
+Server 
+	Filesystem + DB (Meta)
+======================================================
+
+How to verify?
+$ git
+$ git -version
+
+How to create a repo?
+$ git init
+
+Addd a file?
+vi / cat / notepad / textpad / ec / je / vs
+
+How to add file from working dir to Staging area.
+$ git add file1.txt
+
+ONE TIME -
+=======================
+$ git config user.name "Rajesh Kumar"
+$ git config user.email "rajesh@scmgalaxy.com"
+$ git config --list
+
+Know lil about git config
+==== SYSTEM $ git config --system --list	GIT_HOME/etc === C:\Tools\Git\etc
+==== USER   $ git config --global --list	USER_HOME/.gitconfig	
+==== REPO   $ git config --list			repo_home/.git/config	
+
+How to send a file from Staging area to repo?
+$ git commit -m"Adding my first commit"
+
+NOTE ====== EVERYTIME WE WORK UNDER BRANCH. WHEREAS MASTER IS THE DEFAULT BRANCH
+
+How to see the commits?
+$ git log
+$ git log
+commit 297aaba134f67c8797822780844d2097c276c63e
+Author: Rajesh Kumar <rajesh@scmgalaxy.com>
+Date:   Sat Jul 14 08:52:15 2018 +0530
+
+    Adding my first commit
+
+297aaba134f67c8797822780844d2097c276c63e --> Checksum -> a file which you commit
+# GIT COMMIT CREATE A CHECKSUM
+# CHECKSUM WILL LEAD YOU TO A OBJECT
+# OBJECT HAS A FILECONTENT
+# OBJECT IS CREATD USING SHA1 ALGO
+
+
+GIT WORKFLOW
+	WORKING DIR		A Place where you have .git = /d/git14
+	STAGING			$ git status
+	REPO - 			.git
+
+
+1. How to commit mulitple file?
+2. How to commit selected files?
+3. How to commit dir?
+4. How to rename
+5. how to delete?
+6. Hoow to traverse older commits
+
+  548  git add .
+  549  git status
+  550  clear
+  551  ls
+  553  git commit -m"add all" file3.txt
+  554  git status
+  555  git reset head file4.txt
+  556  git status
+  557  start .
+  558  git status
+  559  git diff file1.txt
+  560  history
+
+  563  mkdir src
+  564  git status
+  565  touch src/src1.txt
+  566  git status
+  567  git add .
+  568  git status
+  569  git commit -m"adding dir file n modi"
+  570  git status
+  571  clear
+  572  ls
+  573  git mv file1.txt file11.txt
+  574  clear
+  575  git status
+  576  ls
+  577  git commit -m"rename"
+  578  git status
+  579  ls
+  580  clear
+  581  ls
+  582  git rm file11.txt
+  583  git status
+  584  ls
+  585  git commit -m"delete"
+
+
+
+Rajesh@DESKTOP-ST1GLH0 MINGW64 /d/git14 (master)
+$ git log --oneline
+8f63b2c delete				HEAD
+ad2aea8 rename				HEAD~1
+dbe2278 adding dir file n modi		HEAD~2
+be42b68 add all
+45c6bb7 adding file2
+297aaba Adding my first commit
+
+
+  587  clear
+  588  git log
+  589  git log --oneline
+  590  history
+  591  ls
+  592  git log --oneline
+  593  git checkout ad2aea8
+  594  ls
+  595  git checkout master
+  596  ls
+  597  history
+
+
+RAJESH
+	-- LOCAL REPO
+	-$ git push https://github.com/scmgalaxy/git14.git master 
+
+HOW TO SHARE
+	SSH	rajesh@10.0.0.5:/d/git14
+	HTTP	http://10.0.0.5 			->/d/git14
+
+ARCHANA 
+
+TEJAS
+
+	GITHUB	SERVR		PAID	CLOUD 	HOSTED
+	BITBUCKET SERVR		PAID	CLOUD 	HOSTED
+	GERRIT SERVR		FRE	HOSTED
+	ASEEM SER VR		PAID	CLOUD
+	AMAZON SERVR		PAID	CLOUD
+	GITLAB SERVR		PAID	CLOUD 	HOSTED	
+------------------------------------------------
+	GIT REMOTE REPO HOSTING SOLUTION
+HTTP - https://github.com/scmgalaxy/git14.git
+SSH - git@github.com:scmgalaxy/git14.git
+
+------------------------------------------
+GIT BRANCHINA AND MEGRING
+CONFLIT REPO
+GIT UNDOING
+GIT IGNORE
+GIT STASH
+=============================================
+GIT BRANCHING
+	LOCAL BRANCH
+	REMOTE BRANCH
+	TEMP BRANCH
+
+PULL == FECTH + MERGE
+
+MERGING TYPE
+---------------------------
+	FAST FORWARD MERGE
+	3 Way merge - Recursive Merge
+	Cherry Picking
+
+CONFLICT RESO
+-------------------------
+OBJECTS (GIT INTERNAL)
+MAS			FEA1
+fea1.txt		fea1.txt
+
+
+1 THIS IS RAJESH KUMAR	THIS IS RAJESH KUMAR SINGH
+2			THIS IS RAJESH KUMAR SINGH
+
+THIS IS RAJESH KUMAR
+THIS IS RAJESH KUMAR SINGH
+
+vi file
+git add 
+git commit
+
+  616  git branch
+  617  clear
+  618  git branch
+  619  git branch -r
+  620  git branch -a
+  621  clear
+  622  ls
+  623  ls
+  624  ls
+  625  git fetch origin master
+  626  ls
+  627  git branch -a
+  628  git checkout remotes/origin/master
+  629  ls
+  630  git checkout master
+  631  clear
+  632  ls
+  633  git merge remotes/origin/master
+  634  ls
+  635  ls
+  636  pws
+  637  pwd
+  638  clear
+  639  ls
+  640  clear
+  641  git branch fea1
+  642  git branch
+  643  ls
+  644  git checkout fea1
+  645  ls
+  646  git branch
+  647  touch fea1.txt;git add .;git commit -m"adding fea1"
+  648  clear
+  649  ls
+  650  git checkout master
+  651  ls
+  652  git checkout fea1
+  653  touch fea2.txt;git add .;git commit -m"adding fea2"
+  654  clear
+  655  ls
+  656  git merge master
+  657  git checkout master
+  658  git merge fea1
+  659  ls
+  660  clear
+  661  ls
+  662  git diff fea1
+  663  touch masetr1.txt;git add .;git commit -m"adding master1"
+  664  touch masetr2.txt;git add .;git commit -m"adding master2"
+  665  touch masetr3.txt;git add .;git commit -m"adding master3"
+  666  git checkout fea1
+  667  clear
+  668  ls
+  669  touch fea3.txt;git add .;git commit -m"adding fea3"
+  670  touch fea4.txt;git add .;git commit -m"adding fea4"
+  671  clear
+  672  git diff master
+  673  clear
+  674  git checkout master
+  675  git merge fea1
+  676  git log --oneline
+  677  clear
+  678  ls
+  679  git checkout fea1
+  680  ls
+  681  touch fea5.txt;git add .;git commit -m"adding fea5"
+  682  touch fea6.txt;git add .;git commit -m"adding fea6"
+  683  touch fea7.txt;git add .;git commit -m"adding fea7"
+  684  touch fea8.txt;git add .;git commit -m"adding fea8"
+  685  s
+  686  clear
+  687  git log --oneline
+  688  git checkout master
+  689  git cherry-pick 4306869
+  690  ls
+  691  ls
+  692  clear
+  693  ls
+  694  vi fea1.txt
+  695  git add .
+  696  git commit -m"adin fea1"
+  697  git checkout fea1
+  698  clear
+  699  vi fea1.txt
+  700  git add .
+  701  git commit -m"adding fea1 in feaa"
+  702  clear
+  703  ls
+  704  git checkout master
+  705  git status
+  706  git merge fea1
+  707  git status
+  708  vi fea1.txt
+  709  git add .
+  710  git commit -m"conf reol"
+  711  git status
+  712  git merge fea1
+  713  ls
+  714  history
+
+
+
+GIT UNDOING
+----------------------------------
+How to take a file from working dir?
+How to send a file from Staging to Wroking
+How to revert in repo
+
+  716  ls
+  717  git status
+  718  touch clean.txt
+  719  git status
+  720  git clean -d -f
+  721  git status
+  722  ls
+  723  touch reset.txt
+  724  git status
+  725  git add reset.txt
+  726  git status
+  727  git reset reset.txt
+  728  git status
+  729  git clean -d -f
+  730  ls
+  731  touch good.txt;git add .;git commit -m"good"
+  732  git log --oneline
+  733  touch bad.txt;git add .;git commit -m"bad
+  734  touch bad.txt;git add .;git commit -m"bad"
+  735  git log --oneline
+  736  git revert 9c62ecb
+  737  git log --oneline
+  738  ls
+  739  git diff abd40a4 9c62ecb
+  740  git diff abd40a4 ad18113
+  741  history
+
+QA
+=====================================
+700 SCNARIO....
+
+RESET - 
+	WORKING DIR
+	STAGING ARE
+	REPO
+
+	SOFT
+	MIXED	=== Default....
+	HARD
+
+
+
+GUI 
+	gitk
+	sourcetree	
+
+TAGGING
+
+  744  mkdir build
+  745  touch build/sdfsd
+  746  touch build/sdfdasds
+  747  touch build/sdfdasdsdasad
+  748  touch build/sdfdasdsdasaddsads
+  749  touch build/sdfdasdsdasaddzds
+  750  touch build/sdfdasdsdasaddzdsfdsfds
+  751  git status
+  752  vi .gitignore
+  753  git status
+  754  vi .gitignore
+  755  git status
+  756  clear
+  757  ls
+  758  git status
+  759  ls
+  760  vi fea6.txt
+  761  vi fea7.txt
+  762  git status
+  763  git add fea6.txt
+  764  git status
+  765  git stash
+  766  git status
+  767  git stash --list
+  768  git stash list
+  769  ls
+  770  vi file5.txt
+  771  git add .;git commit -m"adding
+"
+  772  git stash list
+  773  git stash apply stash@{0}
+  774  git status
+  775  git merge fea1
+  776  git diff fea1
+  777  clear
+  778  ls
+  779  git diff fea1
+  780  git checkout fea1
+  781  git diff master
+  782  clear
+  783  git diff master
+  784  clear
+  785  gitk
+  786  clar
+  787  clear
+  788  git status
+  789  clear
+  790  git reset --hard
+  791  git status
+  792  git tag release1.0
+  793  git tag list
+  794  git tag --list
+  795  git push origin release1.0
+  796  clear
+  797  git push origin release1.0
+  798  git push origin release1.0
+  799  git push origin fea1
+  800  clear
+  801  git push origin fea1
+  802  git push origin fea1
+  803  history
+
+
+
+http://www.devopsschool.com/tutorial/git/
+http://www.devopsschool.com/slides/
+http://www.devopsschool.com/notes/git/
+http://www.devopsschool.com/video/index.html
+	
+QA - DevOps Support.....
+------------------------
+24 hours.......
+
+
+Ashih
+Arpit
+---------------
+DEVOPS - 30 HOURS --- NO NEVER
+
+http://www.scmgalaxy.com/path/
+
+DevOps Concept--- LECTRE - JAGRAN
+
+
+
+
+
