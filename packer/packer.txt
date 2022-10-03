@@ -1,0 +1,517 @@
+What is a Packer
+	-- is a hashcorp tool.
+	-- Help you to build -> provision -> package --> Share images 		
+			FOR various platform at a time.
+		- AWS
+		- AZURE
+		- GC
+		- VMware
+		- Vmbox
+		- Vagrant
+		- Docker
+		- Many more.....
+	-- Packer template file is writtin in JSON.
+		Has primarly 3 section
+			Builders
+			Provisiors
+			Post Processors
+	Site - https://www.packer.io
+	Version - 1.43
+hashicorp 
+	Vagrant
+	Terraform
+	Package
+	Vault
+
+How to install Packer in linux?
+https://www.packer.io/downloads.html
+
+
+Step 1 - Download a package
+Step 2 - Extract It
+Step 3 - Set Packer path in PATH
+Step 4 - Validate it.
+
+------ANY USER--------------------
+yum install unzip
+yum install wget -y
+wget https://releases.hashicorp.com/packer/1.4.3/packer_1.4.3_linux_amd64.zip
+unzip packer_1.4.3_linux_amd64.zip
+mv packer /usr/bin
+chmod 755 /usr/bin/packer
+========================================
+NOTES#
+
+in RHEL /CENTOS - There is one tool called "Packer"
+[root@ip-172-31-20-7 ec2-user]# which packer
+/sbin/packer
+
+[root@ip-172-31-20-7 ec2-user]# mv /sbin/packer /sbin/packer-
+
+[root@ip-172-31-20-7 ec2-user]# packer
+Usage: packer [--version] [--help] <command> [<args>]
+
+Available commands are:
+    build       build image(s) from template
+    console     creates a console for testing variable interpolation
+    fix         fixes templates from old versions of packer
+    inspect     see components of a template
+    validate    check that a template is valid
+    version     Prints the Packer version
+
+
+[ec2-user@ip-172-31-20-7 ~]$ packer version
+Packer v1.4.3
+[ec2-user@ip-172-31-20-7 ~]$
+
+Packer Builders
+https://www.packer.io/docs/builders/index.html
+
+template.packer
+=====================================
+{
+	"builders": [
+		{
+			"type": "amazon-ebs",
+			"access_key": "",
+                        "secret_key": "",
+			"region": "ap-south-1",
+			"source_ami": "ami-5b673c34",
+			"instance_type": "t2.micro",
+			"ssh_username": "ec2-user",
+			"ami_name": "MiddleTier-{{isotime | clean_ami_name}}",
+			"ami_description": "Amazing AMI Designed by Fantastic Architect",
+			"tags": {
+				"role": "MiddleTier"
+			},
+			"run_tags": {
+				"role": "buildSystem"
+			}
+		}
+	]
+}
+=================================================
+
+
+
+$ packer build template.packer
+
+
+
+[ec2-user@ip-172-31-20-7 packer]$ packer build template.packer
+amazon-ebs output will be in this color.
+
+==> amazon-ebs: Prevalidating AMI Name: MiddleTier-2019-08-22T09-54-10Z
+    amazon-ebs: Found Image ID: ami-5b673c34
+==> amazon-ebs: Creating temporary keypair: packer_5d5e6642-9268-c782-ee0b-58afa                       ba826a2
+==> amazon-ebs: Creating temporary security group for this instance: packer_5d5e                       6643-e3fe-f478-6e69-6277488816ba
+==> amazon-ebs: Authorizing access to port 22 from [0.0.0.0/0] in the temporary                        security groups...
+==> amazon-ebs: Launching a source AWS instance...
+==> amazon-ebs: Adding tags to source instance
+    amazon-ebs: Adding tag: "role": "buildSystem"
+    amazon-ebs: Adding tag: "Name": "Packer Builder"
+    amazon-ebs: Instance ID: i-0784fcb13f0cf46af
+==> amazon-ebs: Waiting for instance (i-0784fcb13f0cf46af) to become ready...
+==> amazon-ebs: Using ssh communicator to connect: 13.232.142.22
+==> amazon-ebs: Waiting for SSH to become available...
+==> amazon-ebs: Connected to SSH!
+==> amazon-ebs: Stopping the source instance...
+    amazon-ebs: Stopping instance
+==> amazon-ebs: Waiting for the instance to stop...
+==> amazon-ebs: Creating AMI MiddleTier-2019-08-22T09-54-10Z from instance i-0784fcb13f0cf46af
+    amazon-ebs: AMI: ami-061f1a5a5ee23fb2b
+==> amazon-ebs: Waiting for AMI to become ready...
+==> amazon-ebs: Modifying attributes on AMI (ami-061f1a5a5ee23fb2b)...
+    amazon-ebs: Modifying: description
+==> amazon-ebs: Modifying attributes on snapshot (snap-0057bdb280b414bb8)...
+==> amazon-ebs: Adding tags to AMI (ami-061f1a5a5ee23fb2b)...
+==> amazon-ebs: Tagging snapshot: snap-0057bdb280b414bb8
+==> amazon-ebs: Creating AMI tags
+    amazon-ebs: Adding tag: "role": "MiddleTier"
+==> amazon-ebs: Creating snapshot tags
+==> amazon-ebs: Terminating the source AWS instance...
+==> amazon-ebs: Cleaning up any extra volumes...
+==> amazon-ebs: No volumes to clean up, skipping
+==> amazon-ebs: Deleting temporary security group...
+==> amazon-ebs: Deleting temporary keypair...
+Build 'amazon-ebs' finished.
+
+==> Builds finished. The artifacts of successful builds are:
+--> amazon-ebs: AMIs were created:
+ap-south-1: ami-061f1a5a5ee23fb2b
+
+==========================================================
+Build --> Prvisioning 
+
+what is Provisioning ?
+--------------------
+	A changes which has to be done with AMIs or Created Images is called Provisioning .
+
+How many Provisionors we have in Packer?
+-------------------------------------------
+https://www.packer.io/docs/templates/provisioners.html
+https://www.packer.io/docs/provisioners/index.html
+
+Ansible Local
+Ansible (Remote)
+Breakpoint
+Chef Client
+Chef Solo
+Converge
+File
+InSpec
+PowerShell
+Puppet Masterless
+Puppet Server
+Salt Masterless
+Shell
+Shell (Local)
+Windows Shell
+Windows Restart
+Custom
+
+Type: shell
+
+The shell Packer provisioner provisions machines built by Packer using shell scripts. Shell provisioning is the easiest way to get software installed and configured on a machine.
+
+================template-pro-shell.packer==========================
+{
+	"builders": [
+		{
+			"type": "amazon-ebs",
+			"access_key": "",
+            		"secret_key": "",
+			"region": "ap-south-1",
+			"source_ami": "ami-5b673c34",
+			"instance_type": "t2.micro",
+			"ssh_username": "ec2-user",
+			"ami_name": "MiddleTier-{{isotime | clean_ami_name}}",
+			"ami_description": "Amazing AMI Designed by Fantastic Architect",
+			"tags": {
+				"role": "MiddleTier"
+			},
+			"run_tags": {
+				"role": "buildSystem"
+			}
+		}
+	],
+"provisioners": [
+		{
+			"type": "shell",
+			"script": "ansible.sh"
+		}
+	]
+}
+
+#########ansible.sh################
+
+#!/bin/bash -e
+sudo yum install httpd -y
+sudo systemctl start httpd
+sudo systemctl enable httpd
+
+===========================
+packer build template-pro-shell.packer
+
+
+How to declare variables in Packer?
+---------------------------------------
+Why?
+	to Avoid a repeat of Value and clean code.
+
+How to declare variable in Packer?
+	"variables": {
+		"ami_id": "ami-9abea4fb",
+		"supervisor_version": "3.0b2-1",
+		"auth_header": "{{env `AUTH_HEADER`}}"
+	},
+
+How to decalare value of packer variables from a HOST machine ENV of Packer?
+"auth_header": "{{env `AUTH_HEADER`}}"
+===============================================================
+
+
+
+{
+	"variables": {
+		"ami_id": "ami-5b673c34",
+		"auth_header": "{{env `MYNAME`}}"
+	},
+	"builders": [
+		{
+			"type": "amazon-ebs",
+			"access_key": "AKIAZDCVQDIXSNFHWWHB",
+            "secret_key": "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",
+			"region": "ap-south-1",
+			"source_ami": "{{user `ami_id`}}",
+			"instance_type": "t2.micro",
+			"ssh_username": "ec2-user",
+			"ami_name": "MiddleTier-{{isotime | clean_ami_name}}",
+			"ami_description": "Amazing AMI Designed by Fantastic Architect",
+			"tags": {
+				"role": "MiddleTier"
+			},
+			"run_tags": {
+				"role": "buildSystem"
+			}
+		}
+	],
+"provisioners": [
+		{
+			"type": "shell",
+			"script": "ansible.sh",
+			"environment_vars": [
+				"AUTH_HEADER={{user `auth_header`}}"
+			]
+		},
+		{
+			"type": "shell",
+			"inline": [
+				"echo '**** Insalling Ansible'",
+				"sudo yum install wget -y",
+				"sudowget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm",
+				"sudoyum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm",
+				"sudo rpm -i epel-release-latest-7.noarch.rpm",
+				"sudo yum install ansible -y"
+			]
+		},
+		{
+			"type": "ansible-local",
+			"playbook_file": "./playbook.yml"
+		},
+		{
+			"type": "file",
+			"source": "ToUpload/",
+			"destination": "/tmp"
+		}				
+	]
+}
+
+
+=====================playbook.yml=====================
+- hosts: all
+  sudo: yes
+  tasks:
+    - name: Installing nginx
+      apt: name=nginx update_cache=yes
+    - name: Starting nginx on boot
+      service: name=nginx enabled=yes state=started
+==========================================================
+Builders ==> Provisiors ==> POST Processing(Optional)
+------------------
+
+Images --> Do a changes in Images --> LOCK
+				=============
+				Compress --> Tar -> Repostory
+				------------------------------
+					POST Processing 
+
+
+Alicloud Import
+Amazon Import
+Artifice
+Compress
+Checksum
+DigitalOcean Import
+Docker Import
+Docker Push
+Docker Save
+Docker Tag
+Exoscale Import
+Google Compute Export
+Google Compute Import
+Manifest
+Shell (Local)
+Vagrant
+Vagrant Cloud
+vSphere
+vSphere Template
+
+{
+    "builders": [
+      {
+        "type":         "null",
+        "communicator": "none"
+      }
+    ],
+    "provisioners": [
+      {
+          "type": "shell-local",
+          "environment_vars": ["PROVISIONERTEST=ProvisionerTest1"],
+          "execute_command": ["bash", "-c", "{{.Vars}} {{.Script}}"],
+          "use_linux_pathing": true,
+          "scripts": ["C:/Users/me/scripts/example_bash.sh"]
+      },
+      {
+          "type": "shell-local",
+          "environment_vars": ["PROVISIONERTEST=ProvisionerTest2"],
+          "execute_command": ["bash", "-c", "{{.Vars}} {{.Script}}"],
+          "use_linux_pathing": true,
+          "script": "C:/Users/me/scripts/example_bash.sh"
+      }
+  ]
+}
+
+================================================================
+		REAL EXAMPLE OF PR
+
+{
+	"variables": {
+		"ami_id": "{{env `AMI_ID`}}",
+		"supervisor_version": "{{env `SUPERVISOR_VERSION`}}",
+		"auth_header": "{{env `AUTH_HEADER`}}"
+	},
+	"builders": [
+		{
+			"type": "amazon-ebs",
+			"region": "us-west-2",
+			"source_ami": "{{user `ami_id`}}",
+			"instance_type": "t2.micro",
+			"ssh_username": "ubuntu",
+			"ami_name": "MiddleTier-{{isotime | clean_ami_name}}",
+			"ami_description": "Amazing AMI Designed by Fantastic Architect",
+			"tags": {
+				"role": "MiddleTier"
+			},
+			"run_tags": {
+				"role": "buildSystem"
+			}
+		},
+		{
+			"type": "virtualbox-iso",
+			"boot_command": [
+        			"<esc><wait>",
+				"<esc><wait>",
+         			"<enter><wait>",
+         			"/install/vmlinuz<wait>",
+         			" auto<wait>",
+         			" console-setup/ask_detect=false<wait>",
+         			" console-setup/layoutcode=us<wait>",
+         			" console-setup/modelcode=pc105<wait>",
+         			" debian-installer=en_US<wait>",
+         			" fb=false<wait>",
+         			" initrd=/install/initrd.gz<wait>",
+         			" kbd-chooser/method=us<wait>",
+         			" keyboard-configuration/layout=USA<wait>",
+         			" keyboard-configuration/variant=USA<wait>",
+         			" locale=en_US<wait>",
+         			" netcfg/get_hostname=vm<wait>",
+         			" netcfg/get_domain=globomantics.com<wait>",
+         			" noapic<wait>",
+         			" preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg<wait>",
+         			" -- <wait>",
+         			"<enter><wait>"
+      			],
+			"boot_wait": "10s",
+      			"iso_url": "http://releases.ubuntu.com/14.04/ubuntu-14.04.4-server-amd64.iso",
+      			"iso_checksum_type": "md5",
+      			"iso_checksum": "2ac1f3e0de626e54d05065d6f549fa3a",
+			"guest_os_type": "Ubuntu_64",
+			"http_directory": "http",
+      			"ssh_username": "packer",
+		      	"ssh_password": "packer",
+			"ssh_wait_timeout": "10000s",
+			"shutdown_command": "sudo -S shutdown -P now",
+			"vm_name": "MiddleTier",
+			"vboxmanage": [
+        			[
+          				"modifyvm",
+          				"{{.Name}}",
+          				"--memory",
+          				"512"
+        			],
+        			[
+          				"modifyvm",
+          				"{{.Name}}",
+          				"--cpus",
+          				"2"
+        			]
+      			],
+			"headless": "false"
+		}
+	],
+	"provisioners": [
+		{
+			"type": "shell",
+			"scripts": [
+					"Scripts/virtualbox.sh",
+					"Scripts/vagrant.sh"
+			],
+			"execute_command": "{{.Vars}} sudo -S -E bash '{{.Path}}'",
+			"only": ["virtualbox-iso"]
+		},
+		{
+			"type": "shell",
+			"script": "ansible.sh"
+		},
+		{
+			"type": "ansible-local",
+			"playbook_file": "./playbook.yml"
+		},
+		{
+			"type": "file",
+			"source": "ToUpload/",
+			"destination": "/tmp"
+		},
+		{
+			"type": "shell",
+			"script": "Scripts/nginx.sh",
+			"environment_vars": [
+				"AUTH_HEADER={{user `auth_header`}}"
+			]
+		},
+		{
+			"type": "shell",
+			"inline": [
+				"echo '**** Configuring application'",
+				"sudo apt-get install -y supervisor={{user `supervisor_version`}}",
+				"sudo cp /tmp/app-supervisor.conf /etc/supervisor/conf.d",
+				"sudo cp /tmp/app /usr/local/bin/app",
+				"sudo supervisorctl reread",
+				"sudo supervisorctl update"
+			]
+		}
+	],
+	"post-processors": [
+		{
+			"type": "compress",
+			"output": "MiddleTier.tar.gz",
+			"only": ["virtualbox-iso"]
+		},
+		[
+		{
+			"type": "vagrant",
+			"output": "{{.Provider}}-MiddleTier.box",
+			"only": ["virtualbox-iso"]
+		},
+		{
+			"type": "atlas",
+			"artifact": "packercourse/middletier",
+			"artifact_type": "vagrant.box",
+			"metadata": {
+				"provider": "virtualbox"
+			},
+			"only": ["virtualbox-iso"]
+		}
+		]
+	]
+}
+
+
+Feedback
+https://tcheck.co/ntstC7
+==============================================
+gmAIL id
+===============================
+rohini.chopra.39@gmail.com
+
+
+Please fill a feedback form @ https://tcheck.co/ntstC7
+
+
+
+
+
+
+
+
