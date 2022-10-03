@@ -1,0 +1,21 @@
+1 52.66.134.8
+2 13.127.200.24
+3 13.232.8.14
+4 52.66.181.93
+5 13.126.102.52
+6 13.127.255.230
+7 13.127.227.224	RAJESH
+8 13.127.152.220
+9 35.154.183.106
+10 13.232.9.184
+11 52.66.13.215
+
+===========================
+How to Install UDelpy Server
+http://www.devopsschool.com/notes/udeploy/installing-udeployserver-linux.txt
+
+How to Install UDepoloy agent?
+http://www.devopsschool.com/notes/udeploy/installing-udeployagent.txt
+
+
+LAB on Udep - http://www.devopsschool.com/tutorial/udeploy/lab-exercise-1.html

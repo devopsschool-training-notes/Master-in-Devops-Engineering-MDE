@@ -1,0 +1,530 @@
+Introductions
+Why we are here?
+	- What is a problem you are solving in next 3 days?
+Pre Test?
+Start....
+======================================================
+Prod- ProdX
+Mgr - Mgrx
+==========================================
+	ProdX
+		DEVOPS
+	------------------------------
+	- Immediate release
+	- Quality Release
+	- Cost Reduction
+	More - https://www.youtube.com/watch?v=-VaVmb_UOC8
+
+============================================
+Architect - Jira, confluence
+Dev - 10 
+	Code Collab - Git
+	Code Analsys
+		Static  - SonarQube
+		Peer - Github, Gerrit, Code Coll
+	Build - Maven, Gradle, Ant, makefile, msbuild
+	UT - Junit, NUNIT
+	Packaging -
+		APP - zip, jar, war, dll, tar
+		SYS - exe, rpm, dmg,
+	Archiving - Artifactory
+	------------------Dep2 Environment------------------------------------
+	Dep2QA
+	Dep2Stage
+	Dep2Int
+	Dep2PreProd
+	Dep2Pro
+	
+	Numbebr of servers - 200
+	PLAT - 50 W 50 RH 50 UB 50 DEB
+	DB - 50 ORA 50 MY 50 PS 50 MS
+	APP - 50 T 50 JB 50 WL 50 WS
+	WEB - 100 AP 100 NG
+	100 DIFF
+	-----------------------------------
+	1 Dep - 9 mins
+	200 Dep - 9 mins
+	------------------------------------
+	Parrell Deployment
+	-------------------------------------
+	CODING - Ansible - Chef - Puppet
+	GUI - UDeploy - Octopus Deploy
+
+	How do we get 200 servers?
+	- 1 mins
+	How ? AWS -VPSH - GC - AZ
+	========================================
+	1 SECOND
+	------------------
+	Container - DOCKER
+
+	AT ---- 
+
+	Code Corvage - JACOCO - COBERTURA
+	
+=====================================================================================
+PLAN->Code->UT->PACK->ARCH->Dep->AT->CC
+JIRA->GIT->JUNIT->JAR->ART->UDelpy->SEL->JAOC
+============================================================
+			JENKINS
+			BAMBOO
+			TEAMCITY
+			UBUILD
+					DASHBOARD
+					SCHEDULING
+					NOTIFICATION
+					PIPELINE
+					Integ with All other tools
+	
+https://devopsschool.com/path	
+===========================================================
+Pre Test?
+	https://devopsschool.com/lms
+
+https://docs.google.com/forms/d/e/1FAIpQLSerUuf5hRlecRliPoWJrtsVSNS0I83VFi1h5Tu1R2FDCs_ifA/viewform
+===============================================================================
+What is UDeploy?
+	GUI BASED Deployment tool
+	From IBM
+		Urbancode
+			UBuild
+			UDeploy
+			URelease
+			AnthillPro
+	Dev in JAVA
+	Needed JRE 1.8
+	ANY PLATFORM
+	Curr - 7.X
+	We will Use 6.X
+	Paid 
+		But we have 60 days trial period
+
+Q- AnthillPro Vs Udeploy
+
+Anthill --> AnthillPro
+			UBuild
+			UDeploy
+			URelease
+=========================================================
+UDeploy Architecture
+
+SERVER - CLIENT
+GUI 	  Agent
+
+==================================
+How to setup a uDeploy SERVER?
+
+How to setup a uDeploy Agent?
+
+Demo --> Lab - 25
+15 mins --> 20 mins
+AWS	--> vms
+----------------------------
+13.233.166.174
+
+
+
+JAVA INSTALLATION
+----------------
+$ sudo -s
+$ yum install wget -y
+$ wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+$ rpm -ivh jdk-8u131-linux-x64.rpm
+$ java -version
+
+export JAVA_HOME=/usr/java/jdk1.8.0_131
+	
+
+FOR YOU and YOUR VMS.
+-----------------------
+CHANGE YOUR HARDWARE ADDRESS.
+Stopped VM --> Setting -> Netowork - Bridge
+Stopped VM --> Setting -> Netowork - Advance -> Refresh Mac Address
+
+UDEPLOY SERVER  INSTALLATION
+$ hostnamectl set-hostname rajesh-udeploy-server
+$ hostnamectl
+$ cd /opt
+$ yum install unzip -y
+$ wget https://s3.ap-south-1.amazonaws.com/scmgalaxy/IBM_URBANCODE_DEPLOY_6.2.7_MP_ML_.zip
+$ unzip IBM_URBANCODE_DEPLOY_6.2.7_MP_ML_.zip
+$ cd ibm-ucd-install
+
+
+./install-server.sh
+===============================
+systemctl stop firewalld
+systemctl disable firewalld
+============================================
+UDepServer is REady?
+	Will Deploy <<<<<WHAT>>>>> -------> TO <<<<WHERE>>>>> 
+			ARTIFACT		  target server
+			-- File Server
+			-- git
+			-- SVN
+			-- ART 
+
+How UDepServer would communicate with target server?
+	-- Agent
+	--- Dev in JAVA
+	--- JRE
+	--- Install Agent
+13.127.136.226
+
+------Install JAVA-----------------
+$ sudo -s
+$ yum install wget -y
+$ wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+$ rpm -ivh jdk-8u131-linux-x64.rpm
+$ java -version
+export JAVA_HOME=/usr/java/jdk1.8.0_131
+------Install Agent-----------------
+$ cd /opt
+$ wget --no-check-certificate https://13.233.166.174:8443/tools/ibm-ucd-agent.zip
+$ yum install unzip -y
+$ unzip ibm-ucd-agent.zip
+$ cd ibm-ucd-agent-install
+$ ./install-agent.sh
+
+How to start agent?
+/opt/
+cd ibm-ucd
+cd agent
+cd bin/
+./agent start
+
+systemctl stop firewalld
+systemctl disable firewalld
+========================
+192.168.1.64 Agent
+192.168.1.36 Server
+======================================
+How to setup a file server?
+
+Server
+Agent 
+
+Agent 
+
+===================================================================================
+Basic Terminolgy
+--------------------------------------------------------------------------------
+	----------------PHASE 1------------------------------------------------
+Artifact - We call it --- COMPONENT
+Where is COMPONENT ? 	-- File Server
+			-- git
+			-- SVN
+			-- ART 
+What you want to do with Component??
+			-- COMPONENT PROCESS
+				-- Download Artifact
+			-- versioing
+
+--------------------------------------------------------------------------------
+	----------------PHASE 2------------------------------------------------
+
+Working with APPLICATION
+-----------------------------
+1. Create a APP
+2. Add a Component into APp.
+3. What you want to do with APP?????
+			- APPLICATIOn PROCESS
+
+--------------------------------------------------------------------------------
+	----------------PHASE 3------------------------------------------------
+Where you want to Deply?
+	Resources 
+		-- resources Tree
+			- Add Agennts
+				-- Add Cmonet
+=======================================================
+
+ENVIRONMENT
+===================
+	DEV 
+		APP X  + RESOURCES Y
+==================================================================
+What is Component?
+What is Component Process?
+What is Component version?
+
+Component
+	version
+	Process
+
+What is Application?
+What is Application Proccess?
+
+	Application
+		Component
+		Proccess
+
+What is Resources?
+What is Resource Tree?
+
+	Resource Tree
+		Agent
+			Component
+
+What is Environment?
+---------------------
+	Application + Resource Tree
+
+S 13.235.27.35
+A 52.66.235.118
+===================================================
+Step 1- Install Web Server
+$ sudo yum install httpd -y
+
+Step 2 - Download Webserver file into webserver.
+/var/www/html
+
+Step 3 - Start Web server
+$ sudo systemctl restart httpd
+
+
+DevOpsSchool Github
+====================
+https://github.com/devops-school
+https://github.com/scmgalaxy/
+
+Component - https://github.com/devops-school/uDeploy-apache-sample-app
+
+
+UDELP - 8080 / 8443 / 7918
+http - 80
+
+================================================
+Excericise 1 - 
+===================
+
+Variables
+==================
+
+Agent in Depth
+======================
+uDeploy-Fileutil-sample-app
+
+
+
+
+
+uDeploy Essentials Labs and Excercise - Part 1
+
+- Understand System uDeploy server requirements considerations.
+- Install the uDeploy server.
+- Starting and stopping the server.
+- Check server properties in the installed.properties file control details about the server, such as what ports it uses.
+- Access a uDeploy server.
+
+uDeploy Essentials Labs and Excercise - Part 2
+
+- Understand System uDeploy Agent requirements considerations.
+- Install the uDeploy Agent.
+- Starting and stopping the Agent/
+- Check Agent properties in the installed.properties file control details about the server, such as what ports it uses.
+- Verify if uDeploy Agent is added into uDeploy server or not
+
+uDeploy Essentials Labs and Excercise - Part 3
+
+
+
+
+uDeploy Essentials Labs and Excercise - Part 4
+
+- Install HTTPD
+- Start HTTPD
+- Create a file named called "index.html" under /var/www/html/. Content of the file should having be "Welcome to DevOpsSchool.com".
+- Create a directory under /var/www/html/ named with "newletter"
+- Download https://github.com/devops-school/uDeploy-Fileutil-sample-app into /var/www/html/
+- Unzip package.zip into newletter
+- Delete package.zip
+
+Validate -
+http://ip-add/newletter
+
+
+Unzip
+Run shell script
+================================================================
+App Process
+	Install
+	Apply Config
+	
+	Rollback
+	Un-install
+	
+
+===========================================================
+Component 			Application
+
+		Process				Process
+==============================================================
+install comp1			install  --> Install Comp1
+uninstall comp1			uninstall --> UNInstall Comp1
+				rollback ---> From SNAPSHOT
+
+==========================================================================
+
+What is Uninstall and Uninstall Component in uDeploy?
+
+Component process types - Uninstall and Application process types "Uninstall Componeet" would not Uninstall a files which was uninstalled in last deployment. rather Uninstall steps has to be written manually in the Component process types - "Uninstall" and Steps associated to it.
+
+This type of component process removes the component version from
+	- The target resource. 
+	- The environment inventory and Compliancy
+
+It does not modify the configuration inventory.
+
+How to Create?
+When you add a component with this component process to an application process, you specify the Uninstall Type field. 
+
+How to use?
+To use this type of process in an application process, add the Uninstall Component step, and select the Uninstall component process.
+
+What it impacts?
+The uninstall can either target every version already on the resource or the specified versions. So if you want to create an application process called "uninstall" and leave a resource empty, you would choose the second option. If you want to uninstall whatever is there before installing the new thing, you pick the first option.
+
+All about "Uninstall Component" steps under Application Process
+
+Use this step to uninstall the selected component.
+
+It is up to you to select an appropriate component process to run. In most cases, select a component process of the Uninstall type. If you select a different type of component process, you might get results that you do not expect. The server runs whatever component process you select, even if that process does not uninstall the component. For example, if you select a component process of the Deployment type, the Uninstall Component step runs that component process as usual. Then, the component process deploys the component and adds the component to the inventory.
+
+Under Application Process -> Uninstall Component
+
+- Uninstall Type: All Existing - The All Existing option removes all the versions of this component that are in the inventory.
+
+- Uninstall Type:All Selected For Process - The All Selected For Process option removes only the versions that you specify when you start the application process.
+
+============================================================================
+============================================================================
+Component					Application
+	Install					install
+	Un-install				Un-install
+						Rollback
+========================
+Using Artifactory
+
+Variable
+==========================
+
+What is Artifactory?
+	For Artifact
+	Dev in JAVA
+	Jfrog
+
+http://52.66.112.139:8081/
+admin
+password
+
+Art repo
+http://52.66.112.139:8081/artifactory/all
+
+Version 1.4
+
+Tomcat
+sudo yum install tomcat -y
+sudo systemctl start tomcat
+
+Web - /usr/share/tomcat/webapps/
+		yoodle.jar
+
+
+===================================================
+Properties
+=================================
+https://www.devopsschool.com/blog/udeploy-properties-component-properties-along-with-their-contexts/
+Component
+	Component Properties
+	Environment Property Definitions
+	Resource Property Definitions
+	Version Property Definitions
+================================================
+================================================
+Authentication - Who can log in?
+	Interal Database == Internal Security
+					USER1
+					USER2
+	LDAP
+	AD
+
+Authorization - What can you do?
+		Group
+		- Collection of Users for something....
+
+uDeploy Essentials Labs and Excercise – Part 5
+=========================================================
+- Creating a Role "admin", "dev", and "qa" 
+
+- Assign appropriate access to each role.
+
+- Create a team called TeamX, Teamy, Teamz.
+Each team would get all roles automatically assigned.
+
+- Create a user called user1, user2, user3.
+
+- Create a group called TeamX-Dev and Teamz-QA and add appropriare users into a group.
+
+- Go to a team and asssign users or Group as per their role into TEAM.
+
+- Each component and Application must belong one of the team created.
+
+- Each Component Proceess and Application must be having "Required Role" as per the team role specifications.
+
+
+ 815123a9-a76a-45a1-9c26-6a9411dd3ef5
+
+==================================
+Working with uDeploy client using udclient and work with uDeploy command line
+https://www.devopsschool.com/blog/working-with-udeploy-client-using-udclient-and-work-with-udeploy-command-line/
+===================================
+
+$ cd /opt/
+$ mkdir cli
+$ cd cli/
+$ wget --no-check-certificate https://52.66.112.139:8443/tools/udclient.zip
+$ unzip udclient.zip
+$ cd udclient
+
+./udclient -weburl https://52.66.112.139:8443 -authtoken d0d6a5a9-7bf6-4162-824d-944e5c3b5778
+
+
+$ ./udclient -weburl https://52.66.112.139:8443 -authtoken 815123a9-a76a-45a1-9c26-6a9411dd3ef5
+
+$ ./udclient -weburl https://52.66.112.139:8443 -authtoken 815123a9-a76a-45a1-9c26-6a9411dd3ef5 createGroup -group group5 -authorizationRealm "Internal Security"
+
+$ ./udclient -weburl https://52.66.112.139:8443 -authtoken 815123a9-a76a-45a1-9c26-6a9411dd3ef5 createUser user.json
+ 
+vi newUser.json
+--------------------------
+{
+  "name": "rajesh",
+  "password": "password",
+  "actualName": "Jane Smith",
+  "email": "devops@rajeshkumar.xyz",
+  "authenticationRealm": "Internal Security"
+}
+
+POST
+https://docs.google.com/forms/d/e/1FAIpQLSfAk6bCZ2OdNh3acqJizR4g1K8zo3f_rYnlM4L0tqlXiKaRMw/viewform
+
+==================
+192.168.1.49
+===========================================================
+http://rajeshkumar.xyz/
+===================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+

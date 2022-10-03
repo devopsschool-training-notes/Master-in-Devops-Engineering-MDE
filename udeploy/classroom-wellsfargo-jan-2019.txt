@@ -1,0 +1,749 @@
+https://www.devopsschool.com/notes/udeploy/2019/
+
+What is Udeploy?
+	Deployment tool.
+	From IBM
+		FROM Urbancode
+	Has other tools - UBuild - URelease
+	Developed in Java
+	Latest Version - 7.X
+	Database - Derby(Default)
+			mySql | MariaDB
+			Db2
+			Oracle
+			MSSQL
+			
+	
+
+========================================================
+Demo Product - WellX
+Mgr  - MgrX
+=======================
+Architect - 
+	Planning - Jira, Servicenow, Trello,   - 2
+Dev - 20 - 
+	Code Collab - Github
+	Code Review - SonarQube, Fortify, 
+	Build mgmt - Maven
+	UT - Junit
+BR
+	Package - 
+		APP - Jar, War, ear, zip,, tar
+		SYStem -  exe, rpm, deb, dmg, msi
+	Dep 2 Repo - Artifactory, nexus	
+
+QA	Dep 2 QA Env......
+	Dep 2 Integ	---- 
+	Dep 2 QA
+	Dep 2 Staging
+	
+IT
+	Private Cloud - Vmware
+	Public - AWS
+NET	
+BR
+Ops
+	Dep 2 Prod Env
+		Servers
+		APP
+		Deploy....
+--------------------------------------------------------------------------------------
+				JENKINS | teamCity | Bamboo | UBuild
+================================================================================================
+
+Deployment == Configuration Management
+============================================
+Step 1 - What Package you want to deploy?	
+			What is format of Package?
+			What is Version?
+			Where to Get it?
+			How to get it? (ACCESS & Permission)
+			 
+Step 2  Where to deploy?
+		- Is it bare machine?
+			- hyperviror script
+		- What is OS?
+
+		
+Step 3 - Creating a Env suitable for deployment
+			- What is Env
+			- Run Time Env
+				JRE | DOTNET | PERL | PYTHON | PHP
+		- What is enrionment variable
+		- What is th pre-requisite tools.
+			TOMAT|JOBOSS|APCHE | NGNIZ | MYSQL | ORACLE
+Step 4
+	What is the end Objective
+		How to config app?
+		How to install it
+		How to start a app?
+		How to stop a app?
+==============================================
+Why Deployment tool == Configuration Management
+
+1 Server Deployment of one script --> 30 mins
+100 Deployment ------------------ 30 X 100  mins = 3000
+================================
+We need a tool which can do parrel dep?
+	Udeploy
+	Octopus Deploy
+	Chef
+	Puppet	
+	Ansible
+	Salt
+
+
+Diff Between Udeploy/Octopus Deploy VS Chef/Puppet/Ansible/Salt	
+-----------------------------------------------------------
+1 Pack - 200 BOXES 
+	1 Pack Deo - 9 MINS - 
+	200 BOX Dep - 10 mins
+-------------------------------------
+		Windows - 50
+		LINUX RHEL - 50
+		LINUX UB - 50
+		MAC - 50 
+	
+		TOMA - 50
+		JOBOSS - 50
+		WS - 50
+		WL - 50
+
+		MYSQL - 50 
+		MSQL - 50
+		POS - 50
+		ORACLE - 50
+---------------------------------------------
+2 Method to do the parrell deployment
+	--------------------------------
+Config mgmt tool - Chef/Puppet/Ansible/Salt	
+
+1st Deployment
+	---Talk to Hypervisor|Cloud -- 1 MINS
+	---Deployment - -------------- 9 mins
+2nd Deployement 
+	---Talk to Hypervisor|Cloud -- 1 MINS
+	---Deployment - -------------- 2 mins
+
+Advantage - Speed of Deployment
+Drawbacks - Bad GUI, Lots of Scripting
+
+
+Deployment tool - Udeploy/Octopus Deploy
+1st Deployment
+	---Talk to Hypervisor|Cloud -- 1 MINS
+	---Deployment - -------------- 9 mins
+2nd Deployement 
+	---Talk to Hypervisor|Cloud -- 1 MINS
+	---Deployment - -------------- 9 mins
+
+Advantage - RICH ENTERPRISE GUI
+Drawbacks - LESS Speed of Deployment Compare of Config mgmt tool.
+=====================================================================
+
+Architecture of Udeploy
+====================================
+Udeploy Server 
+	Web Based |
+	Java Based
+	Linux | Windows
+	
+Udeploy Agent
+	Linux | Windows
+
+Udeploy Agent Relay
+	Linux | Windows
+
+How Server and Agent Talk to Each Other....
+	JMS
+	HTTP | HTTPS
+=======================================================
+How to setup a UDeploy Server?
+=======================================================
+RHEL 7.5 - 13.232.92.124
+ec2-user
+
+	Install JDK 8
+
+# # # # # # # # #  OR # # # # # # # # # # # # # 
+# # # # # # # # #  Download and Install JDK 8.0 using RPM file # # # # # # # # # # # # #
+$ yum install wget -y
+$ wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" https://download.oracle.com/otn-pub/java/jdk/8u201-b09/42970487e3af4f5aa5bca3f542482c60/jdk-8u201-linux-x64.rpm
+$ rpm -ivh jdk-8u201-linux-x64.rpm
+$ java -version
+
+OPTION2
+cd /opt
+$ wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" https://download.oracle.com/otn-pub/java/jdk/8u201-b09/42970487e3af4f5aa5bca3f542482c60/jdk-8u201-linux-x64.tar.gz
+$ tar -zxvf jdk-8u201-linux-x64.tar.gz
+$ /opt/jdk1.8.0_201
+$ export JAVA_HOME=/opt/jdk1.8.0_201
+$ export PATH=$PATH:$JAVA_HOME/bin
+
+Download Udeploy 6.7
+=================================
+$ hostnamectl set-hostname rajesh
+$ hostnamectl
+$ cd /opt
+$ yum install unzip
+$ wget https://s3.ap-south-1.amazonaws.com/scmgalaxy/IBM_URBANCODE_DEPLOY_6.2.7_MP_ML_.zip
+$ unzip IBM_URBANCODE_DEPLOY_6.2.7_MP_ML_.zip
+$ cd ibm-ucd-install
+
+UDeploy Supported Database
+==============================
+Derby
+
+==============================================
+INSTALLTION LOG
+
+[root@ip-172-31-20-166 ibm-ucd-install]# ./install-server.sh
+Enter the directory of the server to upgrade(leave blank for installing to a cle         an directory).
+
+Enter the home directory for the JRE/JDK that the new server or already installed server uses. Default []:
+
+Could not find java home and one not specified.
+Enter the directory of the server to upgrade(leave blank for installing to a clean directory).
+
+Enter the home directory for the JRE/JDK that the new server or already installed server uses. Default []:
+/opt/jdk1.8.0_201
+Buildfile: install.with.groovy.xml
+    [mkdir] Created dir: /opt/ibm-ucd-install/compiled
+
+version-check:
+
+compile:
+  [groovyc] Compiling 4 source files to /opt/ibm-ucd-install/compiled
+     [copy] Copying 20 files to /opt/ibm-ucd-install/compiled
+
+install:
+    [unzip] Expanding: /opt/ibm-ucd-install/conf.zip into /tmp/install-3464287275285521310.tmp
+     [echo] Found sub-installer UCDeployInstaller.groovy
+LICENSE INFORMATION
+The Programs listed below are licensed under the following License Information
+ terms and conditions in addition to the Program license terms previously
+ agreed to by Client and IBM. If Client does not have previously agreed to
+
+
+     [echo] Do you accept the license? [y,n]
+y
+     [echo]
+     [echo] Installing IBM UrbanCode Deploy version 6.2.7.0.951830
+     [echo] Enter the directory where the IBM UrbanCode Deploy should be installed. [Default: /opt/ibm-ucd/server]
+
+     [echo] The specified directory does not exist. Do you want to create it? Y,n [Default: Y]
+
+     [echo]
+     [echo] Installing IBM UrbanCode Deploy to: /opt/ibm-ucd/server
+     [echo] JVM Version detected: 1.8.0_201
+     [echo] JAVA_HOME: /opt/jdk1.8.0_201
+     [echo] Will this server be used as a node in a high availability cluster? y,N [Default: N]
+
+     [echo] Where should the server store application data such as logs, plugins, and keystores? [Default: /opt/ibm-ucd/server/appdata]
+
+     [echo] The specified directory for application data (/opt/ibm-ucd/server/appdata) doesn't exist. Do you want to create it? Y,n [Default Y]
+
+     [echo] What host name will users access the Web UI at? [Default: ip-172-31-20-166.ap-south-1.compute.internal]
+
+     [echo] Do you want the Web UI to always use secure connections using SSL? Y,n [Default: Y]
+
+     [echo] Enter the port on which the Web UI should listen for secure HTTPS requests. [Default: 8443]
+
+     [echo] Enter the port on which the Web UI should redirect unsecured HTTP requests from. [Default: 8080]
+
+     [echo] Enter the initial password for the admin user.
+
+     [echo] Please type password again.
+
+     [echo] Enter the port to use for agent communication. [Default: 7918]
+
+     [echo] Do you want the Server and Agent communication to require mutual authentication? This requires a manual key exchange between the server and each agent. See the documentation for more details. y,N [Default: N]
+
+     [echo] Enter the port and hostname of a Rational License Key Server containing product licenses for IBM UrbanCode Deploy, in the form of port@hostname. (e.g. 27000@licenses.example.com) Alternatively, you may leave this blank to begin a 60-day evaluation period. [Default: none]
+
+     [echo] When installing a server as a part of an existing cluster or when using a pre-populated database, it is not necessary to create the database schema. This step must be performed when installing a standalone server to a fresh database or when installing the first server in a cluster.
+     [echo] Create database schema? (For high availability servers, this should only be done for the first server in the cluster) Y,n [Default: Y]
+
+     [echo] The following database types are supported: derby, mysql, oracle, sqlserver, db2, db2zos.
+     [echo] Enter the database type to use. [Default: derby]
+
+     [echo] Enter the database username. [Default: ibm_ucd]
+
+     [echo] Enter the database password. [Default: password]
+
+     [copy] Copying 2 files to /opt/ibm-ucd-install/bin/server
+    [mkdir] Created dir: /opt/ibm-ucd/server/bin
+    [mkdir] Created dir: /opt/ibm-ucd/server/conf/server
+    [mkdir] Created dir: /opt/ibm-ucd/server/endorsed
+    [mkdir] Created dir: /opt/ibm-ucd/server/lib
+    [mkdir] Created dir: /opt/ibm-ucd/server/licenses
+    [mkdir] Created dir: /opt/ibm-ucd/server/native
+    [mkdir] Created dir: /opt/ibm-ucd/server/extensions
+    [mkdir] Created dir: /opt/ibm-ucd/server/var/log
+    [mkdir] Created dir: /opt/ibm-ucd/server/var/temp
+    [mkdir] Created dir: /opt/ibm-ucd/server/appdata/patches
+    [mkdir] Created dir: /opt/ibm-ucd/server/appdata/var
+    [mkdir] Created dir: /opt/ibm-ucd/server/appdata/conf/server
+     [copy] Copying 1 file to /opt/ibm-ucd/server/conf
+     [sync] Copying 202 files to /opt/ibm-ucd/server/lib
+     [sync] Copying 9045 files to /opt/ibm-ucd/server/opt/tomcat
+     [copy] Copying 1 file to /opt/ibm-ucd/server/bin
+     [copy] Copying 1 file to /opt/ibm-ucd/server/opt/tomcat/conf
+    [mkdir] Created dir: /opt/ibm-ucd/server/bin/init
+     [copy] Copying 2 files to /opt/ibm-ucd/server/bin
+     [copy] Copying 1 file to /opt/ibm-ucd/server/bin
+     [copy] Copying 1 file to /opt/ibm-ucd/server/bin
+    [unzip] Expanding: /opt/ibm-ucd-install/udconf.zip into /tmp/install-615967102854046595.tmp
+     [copy] Copying 9 files to /opt/ibm-ucd/server/conf
+     [copy] Copied 1 empty directory to 1 empty directory under /opt/ibm-ucd/server/conf
+     [copy] Copying 12 files to /opt/ibm-ucd/server/appdata/conf
+     [copy] Copying 254 files to /opt/ibm-ucd/server/database
+     [copy] Copying 1 file to /opt/ibm-ucd/server/database
+     [copy] Copying 12 files to /opt/ibm-ucd/server
+     [copy] Copying 28 files to /opt/ibm-ucd/server/appdata
+     [copy] Copying 4 files to /opt/ibm-ucd/server/bin
+[propertyfile] Updating property file: /opt/ibm-ucd/server/conf/server/installed.properties
+     [copy] Copying 1 file to /opt/ibm-ucd/server/appdata/conf/server
+     [echo] OS: linux
+     [echo] Architecture: x64
+   [delete] Deleting directory /tmp/install-615967102854046595.tmp
+     [echo] Creating new AES encryption key.
+[propertyfile] Updating property file: /opt/ibm-ucd/server/conf/server/installed.properties
+     [echo] Starting embedded database ...
+     [echo]     waiting for db to start - 60 seconds remaining
+     [echo] Database Started
+     [echo] Creating Versioned Configuration Database Schema ...
+      [sql] Executing resource: /opt/ibm-ucd-install/database/vc/derby/vc-schema.ddl
+      [sql] 10 of 10 SQL statements executed successfully
+     [echo] Creating Versioned Configuration Foreign Keys ...
+      [sql] Executing resource: /opt/ibm-ucd-install/database/vc/vc-foreign-keys.ddl
+      [sql] 16 of 16 SQL statements executed successfully
+     [echo] Seeding Versioned Configuration Database ...
+      [sql] Executing resource: /opt/ibm-ucd-install/database/vc/vc-seed-data.sql
+      [sql] 2 of 2 SQL statements executed successfully
+     [echo] Creating Property Database Schema ...
+      [sql] Executing resource: /opt/ibm-ucd-install/database/property-sheets/derby/property-schema.ddl
+      [sql] 10 of 10 SQL statements executed successfully
+     [echo] Creating Property Database Foreign Keys ...
+      [sql] Executing resource: /opt/ibm-ucd-install/database/property-sheets/ps-foreign-keys.ddl
+      [sql] 22 of 22 SQL statements executed successfully
+     [echo] Seeding Property Database ...
+      [sql] Executing resource: /opt/ibm-ucd-install/database/property-sheets/ps-seed-data.sql
+      [sql] 1 of 1 SQL statements executed successfully
+     [echo] Creating Inventory Database Schema ...
+      [sql] Executing resource: /opt/ibm-ucd-install/database/inventory/derby/inv-schema.ddl
+      [sql] 5 of 5 SQL statements executed successfully
+     [echo] Creating Inventory Foreign Keys ...
+      [sql] Executing resource: /opt/ibm-ucd-install/database/inventory/inv-foreign-keys.ddl
+      [sql] 17 of 17 SQL statements executed successfully
+     [echo] Seeding Inventory Database ...
+      [sql] Executing resource: /opt/ibm-ucd-install/database/inventory/inv-seed-data.sql
+      [sql] 1 of 1 SQL statements executed successfully
+     [echo] Creating Workflow Engine Database Schema ...
+      [sql] Executing resource: /opt/ibm-ucd-install/database/workflow/derby/wf-schema.ddl
+      [sql] 6 of 6 SQL statements executed successfully
+     [echo] Creating Workflow Engine Foreign Keys ...
+      [sql] Executing resource: /opt/ibm-ucd-install/database/workflow/wf-foreign-keys.ddl
+      [sql] 7 of 7 SQL statements executed successfully
+     [echo] Seeding Workflow Engine Database ...
+      [sql] Executing resource: /opt/ibm-ucd-install/database/workflow/wf-seed-data.sql
+      [sql] 1 of 1 SQL statements executed successfully
+     [echo] Creating Agent Topology Database Schema ...
+      [sql] Executing resource: /opt/ibm-ucd-install/database/agent-topology/derby/top-schema.ddl
+      [sql] 6 of 6 SQL statements executed successfully
+     [echo] Creating Agent Topology Foreign Keys ...
+      [sql] Executing resource: /opt/ibm-ucd-install/database/agent-topology/top-foreign-keys.ddl
+      [sql] 8 of 8 SQL statements executed successfully
+     [echo] Seeding Agent Topology Database ...
+      [sql] Executing resource: /opt/ibm-ucd-install/database/agent-topology/top-seed-data.sql
+      [sql] 2 of 2 SQL statements executed successfully
+     [echo] Creating HA Lock Database Schema ...
+      [sql] Executing resource: /opt/ibm-ucd-install/database/halock/derby/hlk-schema.ddl
+      [sql] 2 of 2 SQL statements executed successfully
+     [echo] Creating HA Lock Foreign Keys ...
+      [sql] Executing resource: /opt/ibm-ucd-install/database/halock/hlk-foreign-keys.ddl
+      [sql] 0 of 0 SQL statements executed successfully
+     [echo] Seeding HA Lock Database ...
+      [sql] Executing resource: /opt/ibm-ucd-install/database/halock/hlk-seed-data.sql
+      [sql] 2 of 2 SQL statements executed successfully
+     [echo] Creating IBM UrbanCode Deploy Database Schema ...
+      [sql] Executing resource: /opt/ibm-ucd-install/database/deploy/derby/ud-schema.ddl
+      [sql] 117 of 117 SQL statements executed successfully
+     [echo] Running IBM UrbanCode Deploy Database Schema extensions...
+      [sql] Executing resource: /opt/ibm-ucd-install/database/deploy/derby/schema-extensions.ddl
+      [sql] 1 of 1 SQL statements executed successfully
+     [echo] Creating IBM UrbanCode Deploy Foreign Keys ...
+      [sql] Executing resource: /opt/ibm-ucd-install/database/deploy/ud-foreign-keys.ddl
+      [sql] 322 of 322 SQL statements executed successfully
+     [echo] Seeding IBM UrbanCode Deploy Database ...
+      [sql] Executing resource: /opt/ibm-ucd-install/database/deploy/ud-seed-data.sql
+      [sql] 312 of 312 SQL statements executed successfully
+     [echo] Updating External URLS ...
+      [sql] Executing commands
+      [sql] 2 of 2 SQL statements executed successfully
+     [echo] Updating License Server URL ...
+      [sql] Executing commands
+      [sql] 1 of 1 SQL statements executed successfully
+     [echo] Setting up admin login credentials ...
+      [sql] Executing commands
+      [sql] 1 of 1 SQL statements executed successfully
+      [sql] Executing commands
+      [sql] 1 of 1 SQL statements executed successfully
+      [sql] Executing commands
+      [sql] 1 of 1 SQL statements executed successfully
+      [sql] Executing commands
+      [sql] 1 of 1 SQL statements executed successfully
+      [sql] Executing commands
+      [sql] 1 of 1 SQL statements executed successfully
+     [echo] Stopping embedded database ...
+     [java] Mon Feb 04 04:30:56 UTC 2019 : Apache Derby Network Server - 10.8.3.1 - (1476465) shutdown
+[propertyfile] Updating property file: /opt/ibm-ucd/server/conf/server/installed.properties
+[propertyfile] Updating property file: /opt/ibm-ucd/server/conf/server/secured-installed.properties
+[propertyfile] Updating property file: /opt/ibm-ucd/server/conf/server/installed.properties
+     [copy] Copying 1 file to /opt/ibm-ucd/server
+[propertyfile] Updating property file: /opt/ibm-ucd/server/conf/server/installed.properties
+[propertyfile] Creating new property file: /opt/ibm-ucd/server/conf/installed.version
+     [echo] After starting the server, you may access the web UI by pointing your web-browser at
+     [echo] https://ip-172-31-20-166.ap-south-1.compute.internal:8443 to complete the Installation.
+     [echo] Installer Complete. (press return to exit installer)
+
+   [delete] Deleting directory /tmp/install-3464287275285521310.tmp
+     [copy] Copying 1 file to /opt/ibm-ucd/server/var/install-log
+=======================================
+$ cd /opt/ibm-ucd/server/bin
+$ ./server start
+
+https://13.232.92.124:8443 
+admin/admin123
+
+
+=====================Agent
+13.233.156.199
+
+  1  cd/ op
+    2  cd /opt/
+    3  ls
+    4  yum install wget -y
+    5  wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" https://download.oracle.com/otn-pub/java/jdk/8u201-b09/42970487e3af4f5aa5bca3f542482c60/jdk-8u201-linux-x64.tar.gz
+    6  tar -zxvf jdk-8u201-linux-x64.tar.gz
+    7  /opt/jdk1.8.0_201
+    8  ls
+    9  cd jdk1.8.0_201
+   10  ls
+   11  pwd
+   12  export JAVA_HOME=/opt/jdk1.8.0_201
+   13  export PATH=$PATH:$JAVA_HOME/bin
+   14  clear
+   15  ls
+   16  cd ..
+   17  ls
+   18  clearr
+   19  history
+
+
+wget --no-check-certificate https://13.232.92.124:8443/tools/ibm-ucd-agent.zip
+
+  26  yum install unzip -y
+   27  ls
+   28  unzip ibm-ucd-agent.zip
+   29  clear
+   30  ls
+   31  cd ibm-ucd-agent-install
+   32  ls
+   33  ./install-agent.sh
+
+[root@ip-172-31-6-10 ibm-ucd-agent-install]# ./install-agent.sh
+Buildfile: /opt/ibm-ucd-agent-install/install.with.groovy.xml
+
+check-classpath-includes:
+
+define-groovy-classpath-include:
+
+define-groovy-classpath-no-include:
+
+taskdef-groovy:
+
+default-props-exists:
+
+loadproperties-default:
+
+loadproperties:
+
+install-agent:
+     [echo] Enter the directory where agent should be installed. [Default: /opt/ibm-ucd/agent]
+
+     [echo] The specified directory does not exist. Do you want to create it? Y,n [Default: Y]
+
+     [echo] Please enter the home directory of the JRE/JDK used to run this agent. [Default: /opt/jdk1.8.0_201]
+
+     [echo] JAVA_HOME: /opt/jdk1.8.0_201
+     [echo] Will the agent connect to an agent relay instead of directly to the server? y,N [Default: N]
+
+     [echo] Enter the hostname or address of the server the agent will connect to. [Default: localhost]
+13.232.92.124
+     [echo] Enter the agent communication port for the server. [Default: 7918]
+
+     [echo] Do you want to configure another failover server connection? y,N [Default: N]
+
+     [echo] Enable mutual (two-way) authentication with SSL for server/agent JMS communication? This setting must match that of the server. y,N [Default: N]
+
+     [echo] End-to-end encryption enhances the security of UrbanCode messages sent between
+     [echo] the agent and the server, and requires an initial HTTPS connection to set up
+     [echo] keys. (WARNING: If your server has been configured to require end-to-end
+     [echo] encryption exclusively, you must not disable this agent feature and must supply
+     [echo] the full web URL below or your agent will not come online.)
+     [echo]
+     [echo] Disable end-to-end encryption for server/agent JMS communication? y,N [Default: N]
+
+     [echo] Enable the agent to verify the server HTTPS certificate? If enabled, you must import the server certificate to the JRE keystore on the agent. y,N [Default: N]
+
+     [echo] Enter the full web URL for the central IBM UrbanCode Deploy server to validate
+     [echo] the connection. (WARNING: If your server has been configured to require
+     [echo] end-to-end encryption exclusively, you must supply the URL here or your agent
+     [echo] will not come online.)
+     [echo] Leave empty to skip.
+https://13.232.92.124:8443
+     [echo] Sending a request to the central IBM UrbanCode Deploy server...
+log4j:WARN No appenders could be found for logger (org.apache.http.impl.conn.PoolingClientConnectionManager).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+     [echo] Server URL is valid.
+     [echo] Enter the name for this agent. [Default: ip-172-31-6-10.ap-south-1.compute.internal]
+
+     [echo] The agent can be added to one or more teams when it first connects to the server. Changing this setting after initial connection to the server will not have any effect. You can also add a specific type associated with a team by using the format <team>:<type>
+     [echo] Enter teams (and types) to add this agent to, separated by commas. [Default: None]
+
+    [unzip] Expanding: /opt/ibm-ucd-agent-install/binary.zip into /opt/ibm-ucd/agent
+    [unzip] Expanding: /opt/ibm-ucd-agent-install/config.zip into /opt/ibm-ucd/agent
+[propertyfile] Creating new property file: /opt/ibm-ucd/agent/conf/agent/installed.properties
+     [echo] chmodding
+     [echo] /opt/ibm-ucd/agent
+[root@ip-172-31-6-10 ibm-ucd-agent-install]#
+
+
+
+=====================================================================
+=====================================================================
+ONLY WHEN YOU DO CREATE A VMS using Copy | Paste
+Step 1 - Stop All VMS and Refresh Hardware Address
+
+Step 2 - Start your UCD server.
+
+Step3 - Change a IP address here - /#system/settings
+External Agent URL*
+External User URL*
+https://X.X.X.X:8443
+
+Step 4 - Delete all the UCD agent in Agent machine...& Install it once again.
+=================================================================
+
+Afte agent is online....
+
+What is Resources?
+
+Step 1- #resources/resources
+	- Crrete a Resource Group
+	- Add a agent
+Step 2- /#system/settings
+		Agent for Version Imports
+
+Step 3- Create a Artifacts
+
+Step 4 - What is Component? == Artifact
+		Create a COmponets
+		version a Component
+Step 5 - Create a Component Process
+${p:resource/work.dir}/${p:component.name}
+
+Step 6 - 
+	Create a App
+	Add a Component
+	Create a env
+	Add a App process
+
+Step 7 - RUN APP
+
+=====================================================
+ASSIGNMENT ONE
+=====================================================
+Step 1 - Add Agent
+Step 2 - Create a Resource Group and Add a Agent into it
+Step 3 - Create a Component using "File System(Version)" & Version a Component
+Step 4 - Create a Component Process with following Steps
+	1. Clean a Work Dir
+	2. Create dir called "src"
+	3. Download a Artifact into directory called "src"
+	4. Run some Linux command using "Shell"
+	5. Create a Zip "src.zip" using "src"	
+	6. Create dir called "build"
+	7. Move a file "src.zip" into dir "build"
+	8. Delete src.zip
+	9. Unzip "src.zip" inside dir "build"
+Step 5	Create a Application
+Step 6	Add Environment to Application
+Step 7	Add Resource Group to Environment
+Step 8	Add Component to Resource Group
+Step 9	Create a Application process
+Step 10 Run a Application
+
+=====================================================
+ASSIGNMENT TWO
+=====================================================
+Install git - One of the 2 system
+	$ yum install git
+Install git - Both the system
+
+=====================================================
+ASSIGNMENT THREE
+=====================================================
+Download a Git repo - https://github.com/scmgalaxy/helloworld-java-maven to workdir
+
+Copy a content of Git repo into /tmp/xyz 
+
+Crate a Component process for
+	- Craete a Application
+	- Create a Application Process
+
+{
+  "application": "JPetStore",
+  "description": "Requesting deployment",
+  "applicationProcess": "Deploy JPetStore",
+  "environment": "Tutorial environment 1",
+  "onlyChanged": "false",
+  "properties": {
+    "Prop1": "value1"
+  },
+ 
+}
+
+=====================================================
+ASSIGNMENT FOUR
+=====================================================
+Download a APP WAR FILE from
+http://mirrors.jenkins.io/war-stable/latest/jenkins.war
+
+Howo to Run Application?
+java -jar jenkins.war
+
+How to verify?
+X.X.X.X:8080
+============================================
+Properties | Template
+
+Component
+
+
+comppro = DevOpsSchool Comp Prop	${p:comppro}
+envprop = DevOpsSchool Env Prop		${p:environment/envprop}
+resprop = DevOpsSchool Res Prop		${p:resource/resprop}
+
+https://www.devopsschool.com/blog/udeploy-properties-component-properties-along-with-their-contexts/
+
+=========================================================
+Creating a Sample Project
+	
+	Download Artifact 
+
+	Componenet - Pre
+	1. Download a Apache | Command Line Installation - Componenet
+	
+	Componenet - Install Product
+	2. Stop Apache - 
+	2. Copy a Product -
+	3. Start a Apache
+
+
+Product 
+	DEV === GIT Branch
+	QA=== GIT Branch
+	Master=== Prodcutun
+	
+Name - uDeploy-apache-sample-app
+
+Product - https://github.com/devops-school/uDeploy-apache-sample-app
+Comp3- dev branch ==> Download Artifact
+Comp2- qa branch ==> Download Artifact
+Comp3- master branch ==> Download Artifact
+
+Common
+
+	
+		
+https://52.66.199.13:8443
+admin
+admin123
+
+================
+How to Schedule a Application Deployment?
+How to set a for email notification?
+Inventory and Compliance in Envioronment
+Rollback 
+Important of Tags
+System Settings
+Plugins
+Team & Access 
+=======================
+Team & Access
+========================
+
+
+=======================
+Plugins
+========================
+TEAM
+
+
+
+================NOTIFIATION & EMAIING==============
+================Scheduling==============
+================Application Process Steps==============
+
+=====================================================================================
+How to backup?
+
+==========================================
+
+How to get course Materials?
+	Tutorials
+	Slides
+	Notes
+	Quiz
+
+https://www.devopsschool.com/lms	
+	1. login using gmail id.
+	2. We will approve your access
+
+How to get Training Certification?
+	http://devopscertification.co
+
+Subject - UDeploy Certified Engineer
+
+BODY
+
+Full Name - 
+Role 
+Mobile
+Email ID
+Company  - WellsFargo
+Email - Mantosh@DevOpsSchool.com 
+-------------------------------
+How to reach me?
+http://rajeshkumar.xyz/
+
+Feedback?
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

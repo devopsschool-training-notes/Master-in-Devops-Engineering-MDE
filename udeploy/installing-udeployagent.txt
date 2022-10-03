@@ -1,0 +1,76 @@
+Download and extract the agent installer to the computer on which you want to install the agent:
+
+Method 1
+To download the installer, log in to the server and click the Help icon  at the upper right of any page on the server, and click Tools. Then, click IBM UrbanCode Deploy Agent, and download and extract the file.
+
+Method 2
+To find the installer on the server with the command line, go to the following location, and copy the file to the target computer: installation_folder/opt/tomcat/webapps/ROOT/tools/ibm-ucd-agent.zip
+
+After you download and expand the installation package, open the installer directory.
+From this directory, run install-agent.bat (Windows) or install-agent.sh (UNIX or Linux).
+
+> sudo -s
+> yum install wget -y
+> yum install unzip -y
+> cd /opt
+> wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.tar.gz
+> tar -zxvf jdk-8u131-linux-x64.tar.gz
+> export JAVA_HOME=/opt/jdk1.8.0_131
+> export PATH=$PATH:$JAVA_HOME/bin
+
+> wget --no-check-certificate https://13.126.75.95:8443/tools/ibm-ucd-agent.zip
+> unzip ibm-ucd-agent.zip
+> cd ibm-ucd-agent-install
+> ./install-agent.sh
+
+
+=============================LOG=======================
+    install-agent:
+     [echo] Enter the directory where agent should be installed. [Default: /opt/                                                                              ibm-ucd/agent]
+
+     [echo] The specified directory does not exist. Do you want to create it? Y,                                                                              n [Default: Y]
+
+     [echo] Please enter the home directory of the JRE/JDK used to run this agen                                                                              t. [Default: /opt/jdk1.8.0_131]
+
+     [echo] JAVA_HOME: /opt/jdk1.8.0_131
+     [echo] Will the agent connect to an agent relay instead of directly to the                                                                               server? y,N [Default: N]
+
+     [echo] Enter the hostname or address of the server the agent will connect t                                                                              o. [Default: localhost]
+13.127.121.208
+     [echo] Enter the agent communication port for the server. [Default: 7918]
+
+     [echo] Do you want to configure another failover server connection? y,N [De                                                                              fault: N]
+
+     [echo] Enable mutual (two-way) authentication with SSL for server/agent JMS                                                                               communication? This setting must match that of the server. y,N [Default: N]
+
+     [echo] End-to-end encryption enhances the security of UrbanCode messages se                                                                              nt between
+     [echo] the agent and the server, and requires an initial HTTPS connection t                                                                              o set up
+     [echo] keys. (WARNING: If your server has been configured to require end-to                                                                              -end
+     [echo] encryption exclusively, you must not disable this agent feature and                                                                               must supply
+     [echo] the full web URL below or your agent will not come online.)
+     [echo]
+     [echo] Disable end-to-end encryption for server/agent JMS communication? y,                                                                              N [Default: N]
+
+     [echo] Enable the agent to verify the server HTTPS certificate? If enabled,                                                                               you must import the server certificate to the JRE keystore on the agent. y,N [D                                                                              efault: N]
+
+     [echo] Enter the full web URL for the central IBM UrbanCode Deploy server t                                                                              o validate
+     [echo] the connection. (WARNING: If your server has been configured to requ                                                                              ire
+     [echo] end-to-end encryption exclusively, you must supply the URL here or y                                                                              our agent
+     [echo] will not come online.)
+     [echo] Leave empty to skip.
+
+     [echo] Enter the name for this agent. [Default: ip-172-31-27-193.ap-south-1                                                                              .compute.internal]
+
+     [echo] The agent can be added to one or more teams when it first connects t                                                                              o the server. Changing this setting after initial connection to the server will                                                                               not have any effect. You can also add a specific type associated with a team by                                                                               using the format <team>:<type>
+     [echo] Enter teams (and types) to add this agent to, separated by commas. [                                                                              Default: None]
+
+    [unzip] Expanding: /opt/ibm-ucd-agent-install/binary.zip into /opt/ibm-ucd/a                                                                              gent
+    [unzip] Expanding: /opt/ibm-ucd-agent-install/config.zip into /opt/ibm-ucd/a                                                                              gent
+[propertyfile] Creating new property file: /opt/ibm-ucd/agent/conf/agent/install                                                                              ed.properties
+     [echo] chmodding
+     [echo] /opt/ibm-ucd/agent
+
+
+===========================================================================================================
+> cd /opt/ibm-ucd/agent/bin
+> ./agent start

@@ -1,0 +1,71 @@
+================================================================================
+plugin: IBM UrbanCode Deploy Versioned File Storage, id: com.urbancode.plugin.VFS, version: 29
+plugin command: '/opt/ibm-ucd/agent/opt/groovy-1.8.8/bin/groovy' '-cp' '/opt/ibm-ucd/agent/var/plugins/com.urbancode.plugin.VFS_29_8b6a3739d17b4f257f1d2b83ff82745f1d4cacd984f31c751918714a297177aa/classes:/opt/ibm-ucd/agent/var/plugins/com.urbancode.plugin.VFS_29_8b6a3739d17b4f257f1d2b83ff82745f1d4cacd984f31c751918714a297177aa/lib/codestation-aggregate.jar:/opt/ibm-ucd/agent/var/plugins/com.urbancode.plugin.VFS_29_8b6a3739d17b4f257f1d2b83ff82745f1d4cacd984f31c751918714a297177aa/lib/commons-codec.jar:/opt/ibm-ucd/agent/var/plugins/com.urbancode.plugin.VFS_29_8b6a3739d17b4f257f1d2b83ff82745f1d4cacd984f31c751918714a297177aa/lib/CommonsFileUtils.jar:/opt/ibm-ucd/agent/var/plugins/com.urbancode.plugin.VFS_29_8b6a3739d17b4f257f1d2b83ff82745f1d4cacd984f31c751918714a297177aa/lib/commons-lang3.jar:/opt/ibm-ucd/agent/var/plugins/com.urbancode.plugin.VFS_29_8b6a3739d17b4f257f1d2b83ff82745f1d4cacd984f31c751918714a297177aa/lib/commons-logging.jar:/opt/ibm-ucd/agent/var/plugins/com.urbancode.plugin.VFS_29_8b6a3739d17b4f257f1d2b83ff82745f1d4cacd984f31c751918714a297177aa/lib/CommonsUtil.jar:/opt/ibm-ucd/agent/var/plugins/com.urbancode.plugin.VFS_29_8b6a3739d17b4f257f1d2b83ff82745f1d4cacd984f31c751918714a297177aa/lib/httpclient-cache.jar:/opt/ibm-ucd/agent/var/plugins/com.urbancode.plugin.VFS_29_8b6a3739d17b4f257f1d2b83ff82745f1d4cacd984f31c751918714a297177aa/lib/httpclient.jar:/opt/ibm-ucd/agent/var/plugins/com.urbancode.plugin.VFS_29_8b6a3739d17b4f257f1d2b83ff82745f1d4cacd984f31c751918714a297177aa/lib/HttpComponents-Util.jar:/opt/ibm-ucd/agent/var/plugins/com.urbancode.plugin.VFS_29_8b6a3739d17b4f257f1d2b83ff82745f1d4cacd984f31c751918714a297177aa/lib/httpcore.jar:/opt/ibm-ucd/agent/var/plugins/com.urbancode.plugin.VFS_29_8b6a3739d17b4f257f1d2b83ff82745f1d4cacd984f31c751918714a297177aa/lib/httpmime.jar:/opt/ibm-ucd/agent/var/plugins/com.urbancode.plugin.VFS_29_8b6a3739d17b4f257f1d2b83ff82745f1d4cacd984f31c751918714a297177aa/lib/jettison-1.1.jar:/opt/ibm-ucd/agent/var/plugins/com.urbancode.plugin.VFS_29_8b6a3739d17b4f257f1d2b83ff82745f1d4cacd984f31c751918714a297177aa/lib/log4j.jar:/opt/ibm-ucd/agent/var/plugins/com.urbancode.plugin.VFS_29_8b6a3739d17b4f257f1d2b83ff82745f1d4cacd984f31c751918714a297177aa/lib/replicated-codestation.jar:/opt/ibm-ucd/agent/var/plugins/com.urbancode.plugin.VFS_29_8b6a3739d17b4f257f1d2b83ff82745f1d4cacd984f31c751918714a297177aa/lib/securedata.jar' '/opt/ibm-ucd/agent/var/plugins/com.urbancode.plugin.VFS_29_8b6a3739d17b4f257f1d2b83ff82745f1d4cacd984f31c751918714a297177aa/downloadByLabel.groovy' '/opt/ibm-ucd/agent/var/temp/logs900662797743302240/input.props' '/opt/ibm-ucd/agent/var/temp/logs900662797743302240/output.props'
+working directory: /opt/ibm-ucd/agent/var/work/test1
+properties:
+  PLUGIN_INPUT_PROPS=/opt/ibm-ucd/agent/var/temp/logs900662797743302240/input.props
+  PLUGIN_OUTPUT_PROPS=/opt/ibm-ucd/agent/var/temp/logs900662797743302240/output.props
+  artifactSetBaseDir=
+  charset=
+  compId=168ba54e-8db0-666b-7657-feb0a2a09cce
+  directoryOffset=.
+  fileExcludePatterns=
+  fileIncludePatterns=**/*
+  fullVerification=true
+  label=
+  resId=168ba56f-ce12-cd23-a3f7-48afa416268d
+  serverUrl=https://52.66.199.13:8443
+  setFileExecuteBits=false
+  syncMode=true
+  verifyFileIntegrity=false
+  versionId=647a620b-f73a-47fe-bfc6-00ad3bbb3e87
+environment:
+  AGENT_HOME=/opt/ibm-ucd/agent
+  AH_AUTH_TOKEN=****
+  AH_WEB_URL=https://52.66.199.13:8443
+  AUTH_TOKEN=****
+  DS_AUTH_TOKEN=****
+  DS_SYSTEM_ENCODING=UTF-8
+  JAVA_OPTS=-Dfile.encoding=UTF-8 -Dconsole.encoding=UTF-8
+  PLUGIN_HOME=/opt/ibm-ucd/agent/var/plugins/com.urbancode.plugin.VFS_29_8b6a3739d17b4f257f1d2b83ff82745f1d4cacd984f31c751918714a297177aa
+  UCD_USE_ENCRYPTED_PROPERTIES=true
+  UD_DIALOGUE_ID=3f714221-8bc9-425d-9779-25973795a936
+  WE_ACTIVITY_ID=168ba573-83e2-7205-ac8f-8c2035746953
+================================================================================
+Artifact source: https://52.66.199.13:8443
+Working directory: /opt/ibm-ucd/agent/var/work/test1
+Including **/*
+Excluding 
+Offset .
+Artifact base directory 
+Set file bits are false
+ 
+Downloading metadata for artifact set 647a620b-f73a-47fe-bfc6-00ad3bbb3e87.
+Download complete.
+Skipping cleanup of target directory: no previous version found for delta cleanup and full cleanup not enabled
+Scanning for out-of-date files.
+Out-of-date: Path missing: ddd
+Scan for 1 files complete in 0 seconds.
+Caught: com.ibm.uclab.csrepl.exceptions.ServerFailedException: Server failed: 647a620b-f73a-47fe-bfc6-00ad3bbb3e87
+POST URL: https://52.66.199.13:8443/codestation/v1/artifacts/647a620b-f73a-47fe-bfc6-00ad3bbb3e87
+com.ibm.uclab.csrepl.exceptions.ServerFailedException: Server failed: 647a620b-f73a-47fe-bfc6-00ad3bbb3e87
+POST URL: https://52.66.199.13:8443/codestation/v1/artifacts/647a620b-f73a-47fe-bfc6-00ad3bbb3e87
+	at com.ibm.uclab.csrepl.client.Errors.serverFailed(Errors.java:69)
+	at com.ibm.uclab.csrepl.client.Errors.defaultErrorSwitch(Errors.java:62)
+	at com.ibm.uclab.csrepl.client.CodestationClient.openArtifactSet(CodestationClient.java:208)
+	at com.ibm.uclab.csrepl.client.ops.Download.downloadFiles(Download.java:68)
+	at com.ibm.uclab.csrepl.client.ops.DownloadSync.run(DownloadSync.java:66)
+	at com.ibm.uclab.csrepl.client.ops.DownloadSync$run.call(Unknown Source)
+	at downloadByLabel.run(downloadByLabel.groovy:253)
+
+
+=======================================================================
+=======================================================================
+=======================================================================
+
+
+2019-03-04 16:50:39,548 IST ERROR ActiveMQ Session Task-1 com.urbancode.air.devilfish.jms.JmsBridgeUtil - Discarding unencrypted message: message encryption is required for agent uz8b4J6Tx4qKw9Lupawi: ucd-agent-uz8b4J6Tx4qKw9Lupawi-ca652d2bdee1a3cb
+2019-03-04 16:50:39,562 IST ERROR ActiveMQ Session Task-1 com.urbancode.air.devilfish.jms.JmsBridgeUtil - Discarding unencrypted message: message encryption is required for agent uz8b4J6Tx4qKw9Lupawi: ucd-agent-uz8b4J6Tx4qKw9Lupawi-ca652d2bdee1a3cb
+2019-03-04 16:50:44,582 IST ERROR ActiveMQ Session Task-1 com.urbancode.air.devilfish.jms.JmsBridgeUtil - Discarding unencrypted message: message encryption is required for agent uz8b4J6Tx4qKw9Lupawi: ucd-agent-uz8b4J6Tx4qKw9Lupawi-ca652d2bdee1a3cb
+2019-03-04 16:50:49,577 IST ERROR ActiveMQ Session Task-1 com.urbancode.air.devilfish.jms.JmsBridgeUtil - Discarding unencrypted message: message encryption is required for agent uz8b4J6Tx4qKw9Lupawi: ucd-agent-uz8b4J6Tx4qKw9Lupawi-ca652d2bdee1a3cb
+2019-03-04 16:50:54,583 IST ERROR ActiveMQ Session Task-1 com.urbancode.air.devilfish.jms.JmsBridgeUtil - Discarding unencrypted message: message encryption is required for agent uz8b4J6Tx4qKw9Lupawi: ucd-agent-uz8b4J6Tx4qKw9Lupawi-ca652d2bdee1a3cb

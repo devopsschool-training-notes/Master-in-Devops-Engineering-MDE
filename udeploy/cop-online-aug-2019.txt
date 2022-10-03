@@ -1,0 +1,367 @@
+- Rajesh Kumar
+========================
+http://rajeshkumar.xyz/
+------------------------------------------
+Start time - 10:00 AM IST - 6:00 PM IST
+Lunch Break - 1 PM IST - 2 PM IST
+1 Tea Break -  11.30 AM IST  for 15 mins
+1 Tea Break -  4.00 PM IST  for 15 mins
+==============================================
+Demo Infra - AWS Personal
+Lab infra - Participants Personal
+
+=====================================
+Today;s Topic - Udeploy
+=====================================
+What is UDeploy?	
+	A App Deployment mgmt tool
+	From IBM
+		UbranCode
+	Family memeber
+		UBuild - For Build mgmt
+		UDeply - For Deploment
+		uRelease - For Release
+	Developed in JAVA
+		Platform ind
+		JVM
+			JRE
+			JDK
+	Curr - 7.X
+	Last - 6.X
+
+	Paid 
+		but available for 60 days trial
+
+	
+
+	
+		
+	
+
+Where it stands out in SDLC cycle?
+Prod - ProdX
+Mgr - Mgrx
+-------------------------------
+Certain Guidlines to Develop ProdX are...
+	-- Each Commit should be eligible for the production.=== IMM release
+	-- Developed 20 feature in a month with a same team comparing earlier were developing 10 fea. == Cost Reduction and Reduction in Wastage in DEVOPS
+	-- Improve Quality so 
+		- Software is never be down
+		- Imm patching.
+----------------------------------------------
+HIRE A TEAM
+	PLAN - Architect -> JIRA, CONFLUENCE,
+	Coding - Dev  -->
+			Code Coll  -> Git using github
+			Editor - Eclipse
+			Code Analysis
+				Peer --> CC, Gerrt, Gitlab,
+				Static -> SonarQube, 
+			
+
+	Build Integration - Maven
+		Compile using Dependecies and Builder and Compiler
+
+	Unit Testing - Junit
+
+	Package
+		SYSTEM - RPM, Exe, MSI, DMG, DEB
+		APP- jar, war, ear, zipm unzip, 
+
+	Archiving(Package repo mgmt tool)
+		Nexus, Artifactory, Nuget
+
+	Dep2Int
+	1 Pack ---> 200 BOXES.
+	------------------------------
+	1 Dep ------> 9 mins
+	200 Dep ------> 9 + 1 mins.
+	-----------------------------------
+			Parrell Dep Funct....
+
+	You like Coding - Puppet, Ansble, Chef, Salt
+	You like GUI --> uDeploy, Octopus Depoy
+	------------------------------------------------
+	How do you get 200 Servers?
+		CLOUD -> COntainer
+	
+	200 SERVERS
+		------------------------
+		100 W --- 100 L - 
+		100 APACHE -- 100 Nginx
+		50 Tom - 50 WS -- 50 WL - 50 J
+		50 MYSQL 50 mS 50 PS 50 ORA
+		100 DIFF
+		-------------------------
+
+
+
+	Dep2QA
+
+	Dep2STAGING
+
+
+	AT
+		Which has all forms of TESTING.
+
+	Code Coverage 
+	=======================================================
+	RELEASE
+	=======================================================
+				JENKINS
+					CI TOOLS
+				Team Coll
+				Feedback
+				Scheduling
+				Integration
+	
+Architecture of UDeploy	
+======================================
+UDeploy	Server		-->   Package from   ------> Agent
+	Componenet		GIT		ENV --> ROLES --> Agent(VM)
+	Application		SVN
+	Dep Server		FS
+	EVN			CS
+				NEXUS
+				ART
+
+	JAVA					
+	RDBMS
+		Derby
+		The following database types are supported: 
+		derby, mysql, oracle, sqlserver, db2, db2zos.
+	http - 8080				7918
+	https - 8443s
+	
+
+How to setup UDeploy Servers?
+================================================
+52.66.198.175
+ec2-user
+
+UDeploy
+	TRIAL FOR 60 DAYS
+	6.x
+
+Pre  - 
+		JAVA and JAVA_HOME
+=============================================
+$ sudo -s
+$ yum install wget -y
+$ wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+$ rpm -ivh jdk-8u131-linux-x64.rpm
+$ java -version
+
+export JAVA_HOME=/usr/java/jdk1.8.0_131
+
+How to install udeploy-server
+=============================================
+$ hostnamectl set-hostname rajesh-udeploy-server
+$ hostnamectl
+$ cd /opt
+$ yum install unzip -y
+$ wget https://s3.ap-south-1.amazonaws.com/scmgalaxy/IBM_URBANCODE_DEPLOY_6.2.7_MP_ML_.zip
+$ unzip IBM_URBANCODE_DEPLOY_6.2.7_MP_ML_.zip
+$ cd ibm-ucd-install
+./install-server.sh
+
+https://52.66.198.175:8443/
+admin
+admin123
+
+How to install udeploy-agent
+=======================================
+13.233.165.239
+ec2-user
+
+		JAVA and JAVA_HOME
+=============================================
+$ sudo -s
+$ yum install wget -y
+$ wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+$ rpm -ivh jdk-8u131-linux-x64.rpm
+$ java -version
+
+export JAVA_HOME=/usr/java/jdk1.8.0_131
+
+$ cd /opt
+$ yum install unzip -y
+$ yum install wget -y
+$ wget https://52.66.198.175:8443/tools/ibm-ucd-agent.zip --no-check-certificate
+$ unzip ibm-ucd-agent.zip
+$ cd ibm-ucd-agent-install
+$ ./install-agent.sh
+====================================
+Step 1 - 
+There is no agent or tag configured to import new component versions, so no new versions will be imported. Please set this on the Settings > System Settings page.
+
+#system/settings
+Agent for Version Imports
+
+------------------------------------
+[root@ip-172-31-28-53 ibm-ucd-agent-install]# ./install-agent.sh
+Buildfile: /opt/ibm-ucd-agent-install/install.with.groovy.xml
+
+check-classpath-includes:
+
+define-groovy-classpath-include:
+
+define-groovy-classpath-no-include:
+
+taskdef-groovy:
+
+default-props-exists:
+
+loadproperties-default:
+
+loadproperties:
+
+install-agent:
+     [echo] Enter the directory where agent should be installed. [Default: /opt/ibm-ucd/agent]
+
+     [echo] The specified directory does not exist. Do you want to create it? Y,n [Default: Y]
+
+     [echo] Please enter the home directory of the JRE/JDK used to run this agent. [Default: /usr/java/jdk1.8.0_131]
+
+     [echo] JAVA_HOME: /usr/java/jdk1.8.0_131
+     [echo] Will the agent connect to an agent relay instead of directly to the server? y,N [Default: N]
+
+     [echo] Enter the hostname or address of the server the agent will connect to. [Default: localhost]
+
+     [echo] Enter the agent communication port for the server. [Default: 7918]
+
+     [echo] Do you want to configure another failover server connection? y,N [Default: N]
+
+     [echo] Enable mutual (two-way) authentication with SSL for server/agent JMS communication? This setting must match that of the server. y,N [Default: N]
+
+     [echo] End-to-end encryption enhances the security of UrbanCode messages sent between
+     [echo] the agent and the server, and requires an initial HTTPS connection to set up
+     [echo] keys. (WARNING: If your server has been configured to require end-to-end
+     [echo] encryption exclusively, you must not disable this agent feature and must supply
+     [echo] the full web URL below or your agent will not come online.)
+     [echo]
+     [echo] Disable end-to-end encryption for server/agent JMS communication? y,N [Default: N]
+
+     [echo] Enable the agent to verify the server HTTPS certificate? If enabled, you must import the server certificate to the JRE keystore on the agent. y,N [Default: N]
+
+     [echo] Enter the full web URL for the central IBM UrbanCode Deploy server to validate
+     [echo] the connection. (WARNING: If your server has been configured to require
+     [echo] end-to-end encryption exclusively, you must supply the URL here or your agent
+     [echo] will not come online.)
+     [echo] Leave empty to skip.
+https://52.66.198.175:8443/
+     [echo] Sending a request to the central IBM UrbanCode Deploy server...
+log4j:WARN No appenders could be found for logger (org.apache.http.impl.conn.PoolingClientConnectionManager).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+     [echo] Server URL is valid.
+     [echo] Enter the name for this agent. [Default: ip-172-31-28-53.ap-south-1.compute.internal]
+agent2
+     [echo] The agent can be added to one or more teams when it first connects to the server. Changing this setting after initial connection to the server will not have any effect. You can also add a specific type associated with a team by using the format <team>:<type>
+     [echo] Enter teams (and types) to add this agent to, separated by commas. [Default: None]
+
+    [unzip] Expanding: /opt/ibm-ucd-agent-install/binary.zip into /opt/ibm-ucd/agent
+    [unzip] Expanding: /opt/ibm-ucd-agent-install/config.zip into /opt/ibm-ucd/agent
+[propertyfile] Creating new property file: /opt/ibm-ucd/agent/conf/agent/installed.properties
+     [echo] chmodding
+     [echo] /opt/ibm-ucd/agent
+[root@ip-172-31-28-53 ibm-ucd-agent-install]# cd /opt/ibm-ucd/agent
+[root@ip-172-31-28-53 agent]# ls
+bin  conf  lib  monitor  opt  properties  var
+[root@ip-172-31-28-53 agent]# cd bin
+[root@ip-172-31-28-53 bin]# ls
+agent  classpath.conf  configure-agent  init  worker-args.conf
+[root@ip-172-31-28-53 bin]# ./agent start
+[root@ip-172-31-28-53 bin]#
+
+=============================================================================
+
+Step 1- create a component.
+	--------What is Component-----------
+		-- Is a Package	
+			----- Source Configuration Type
+							--- File System
+							--- Git
+		-- Can be versioned.
+		-- what Steps to do with Package USING Component processes
+				- install httpd server
+					sudo yum install httpd -y
+				- start httpd server
+					sudo systemctl start httpd
+				- Download a index.html /var/lib/www/html
+
+
+Step 2- Create a Resources
+	---------------What is Resources-----------------
+		Where you want to deploy?
+		--- Resources Tree
+			---  Add a Agent
+				---- Add a component
+			---  Add a Agent
+				---- Add a component
+
+		
+Step 3- Create an Application
+	---------What is Application---------
+		Create an Application(Prodx)
+			Add a Comp1
+			Add a Comp2
+			Add a Comp3
+		What you want to do wth Comp1/Comp2/Comp2
+			AKA Application PROCESS
+			--- Application PROCESS 1- 
+					With Install Component
+			--- Application PROCESS 2- 
+					With Install Component
+			--- Application PROCESS 2-
+					With Install Component
+ 
+		--- Group of Component to be deployed
+				to 
+					Resources Tree	
+	---------------ENV--------------------------
+	create a ENV (DEV)
+		WHICH MACHINE????
+		--- Add a Resources Tree
+
+			
+
+Step 4- RUN A APPLICATION DEP
+
+
+========================================
+========================================
+UDeploy server Config
+/opt/ibm-ucd/server/conf/server/installed.properties
+
+
+UDeploy Agent Config
+/opt/ibm-ucd/agent/conf/agent/installed.properties
+
+
+Authentication
+	How SHOULD BE ABLE TO AUTHENICATE
+
+Authorization
+	What access you should be having
+
+USER
+GROUP 
+TEAM
+
+========================================
+Jenkins
+	JOB
+	Build Process
+		API of UDEPLOY using Token....
+
+
+https://www.ibm.com/support/knowledgecenter/SS4GSP_6.2.6/com.ibm.udeploy.reference.doc/topics/rest_api_ref_examples.html
+
+curl -k -u nsmith:passwd
+  https://server.example.com:8443/cli/component/create
+  -X PUT -d @newComponent.json
+
+
+http://devopsschool.com/tutorial/udeploy
+http://devopsschool.com/slides/udeploy

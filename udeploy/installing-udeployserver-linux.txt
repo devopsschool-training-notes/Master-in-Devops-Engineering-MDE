@@ -1,0 +1,88 @@
+Installating UDeploy Server in Linux RHEL 7
+
+> sudo -s
+> yum install wget -y
+> yum install unzip -y
+> cd /opt
+> wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.tar.gz
+> tar -zxvf jdk-8u131-linux-x64.tar.gz
+> export JAVA_HOME=/opt/jdk1.8.0_131
+> export PATH=$PATH:$JAVA_HOME/bin
+> wget https://s3.ap-south-1.amazonaws.com/scmgalaxy/IBM_URBANCODE_DEPLOY_6.2.7_MP_ML_.zip
+> unzip IBM_URBANCODE_DEPLOY_6.2.7_MP_ML_.zip
+> cd ibm-ucd-install
+> ./install-server.sh
+
+
+============================PROMPT & ANSWER==========================
+[root@ip-172-31-20-232 ibm-ucd-install]# ./install-server.sh
+Enter the directory of the server to upgrade(leave blank for installing to a cle                        an directory).
+
+Enter the home directory for the JRE/JDK that the new server or already installed server uses. Default [/opt/jdk1.8.0_131]:
+
+Buildfile: install.with.groovy.xml
+    [mkdir] Created dir: /opt/ibm-ucd-install/compiled
+     [echo] Do you accept the license? [y,n]
+y
+     [echo]
+     [echo] Installing IBM UrbanCode Deploy version 6.2.7.0.951830
+     [echo] Enter the directory where the IBM UrbanCode Deploy should be installed. [Default: /opt/ibm-ucd/server]
+
+     [echo] The specified directory does not exist. Do you want to create it? Y,n [Default: Y]
+
+     [echo]
+     [echo] Installing IBM UrbanCode Deploy to: /opt/ibm-ucd/server
+     [echo] JVM Version detected: 1.8.0_131
+     [echo] JAVA_HOME: /opt/jdk1.8.0_131
+     [echo] Will this server be used as a node in a high availability cluster? y,N [Default: N]
+
+     [echo] Where should the server store application data such as logs, plugins, and keystores? [Default: /opt/ibm-ucd/server/appdata]
+
+     [echo] The specified directory for application data (/opt/ibm-ucd/server/appdata) doesn't exist. Do you want to create it? Y,n [Default Y]
+
+     [echo] What host name will users access the Web UI at? [Default: ip-172-31-20-232.ap-south-1.compute.internal]
+
+     [echo] Do you want the Web UI to always use secure connections using SSL? Y,n [Default: Y]
+
+     [echo] Enter the port on which the Web UI should listen for secure HTTPS requests. [Default: 8443]
+
+     [echo] Enter the port on which the Web UI should redirect unsecured HTTP requests from. [Default: 8080]
+
+     [echo] Enter the initial password for the admin user.
+
+     [echo] Please type password again.
+
+     [echo] Enter the port to use for agent communication. [Default: 7918]
+
+     [echo] Do you want the Server and Agent communication to require mutual authentication? This requires a manual key exchange between the server and each agent. See the documentation for more details. y,N [Default: N]
+
+     [echo] Enter the port and hostname of a Rational License Key Server containing product licenses for IBM UrbanCode Deploy, in the form of port@hostname. (e.g. 27000@licenses.example.com) Alternatively, you may leave this blank to begin a 60-day evaluation period. [Default: none]
+
+     [echo] When installing a server as a part of an existing cluster or when using a pre-populated database, it is not necessary to create the database schema. This step must be performed when installing a standalone server to a fresh database or when installing the first server in a cluster.
+     [echo] Create database schema? (For high availability servers, this should only be done for the first server in the cluster) Y,n [Default: Y]
+
+     [echo] The following database types are supported: derby, mysql, oracle, sqlserver, db2, db2zos.
+     [echo] Enter the database type to use. [Default: derby]
+
+     [echo] Enter the database username. [Default: ibm_ucd]
+
+     [echo] Enter the database password. [Default: password]
+
+     [echo] https://ip-172-31-20-232.ap-south-1.compute.internal:8443 to complete the Installation.
+     [echo] Installer Complete. (press return to exit installer)
+
+   [delete] Deleting directory /tmp/install-2119011274734750297.tmp
+     [copy] Copying 1 file to /opt/ibm-ucd/server/var/install-log
+
+
+===================================================================================
+===================================================================================
+
+cd /opt/ibm-ucd/server/bin
+./server start
+https://13.127.121.208:8443/
+admin
+admin
+
+
+
