@@ -1,0 +1,82 @@
+How to display Jenkins Build Status on Grafana using prometheus?
+
+
+###Step - 1: Install Grafana server
+
+###Step - 2: Install Jenkins Server
+
+###Step - 3: Install prometheus Server?
+Jenkins Prometheus Plugin expose an endpoint (default /prometheus) with metrics where a Prometheus Server can scrape.
+- https://www.devopsschool.com/blog/install-and-configure-prometheus-server-and-node-exporter-in-rhel/
+
+###Step - 4: Install jenkins plugins "Prometheus metrics"
+
+###Step - 5: Restart jenkins
+
+###Step - 6: Review Prometheus config at http://192.168.1.9:8080/configure but do not change
+
+###Step - 7: Validate all the jenkins metrics at http://192.168.1.9:8080/prometheus
+
+###Step - 8: Configure Prometheus for scrapping http://192.168.1.9:8080/prometheus
+- Edit prometheus.yaml
+- add follwing stanza 
+
+###Step - 8: Validate prometheus.yml file
+$ ./promtool check config prometheus.yml
+
+###Step - 9: Restart prometheus services
+
+###Step - 10: Validate prometheus jenkins target at http://192.168.1.2:9090/targets?search=
+
+###Step - 11: Wait for 1 mins.
+
+###Step - 12: Vaidate all jenkins metrics at http://192.168.1.2:9090/graph using search
+
+
+
+
+scrape_configs:
+  # The job name is added as a label `job=<job_name>` to any timeseries scraped from thi
+s config.
+  - job_name: "prometheus"
+
+    # metrics_path defaults to '/metrics'
+    # scheme defaults to 'http'.
+
+    static_configs:
+      - targets: ["localhost:9090"]
+  - job_name: jenkins
+    metrics_path: '/prometheus'
+    static_configs:
+    - targets: ['192.168.1.9:8080']
+
+
+Step - 9: 
+
+
+How to install grafana in Centos 7?
+https://www.devopsschool.com/blog/install-and-configure-grafana-in-rhel-7/
+
+$ cd /opt
+$ wget https://dl.grafana.com/enterprise/release/grafana-enterprise-9.2.0-beta1.linux-amd64.tar.gz
+$ tar -zxvf grafana-enterprise-9.2.0-beta1.linux-amd64.tar.gz
+$ cd grafana-8.1.5
+$ cd bin
+$ nohup ./grafana-server &
+$ ps -eaf | grep gra
+
+Install and Configure Grafana in Ubuntu and Debian
+https://www.devopsschool.com/blog/install-and-configure-grafana-in-ubuntu-and-debian/
+
+=========================================
+1. Install Grafana		DONE
+2. Integrate with Jenkins
+3. See a JENKINS BUILD STATUS at Grafana
+
+
+http://192.168.1.9:8080/
+rajesh123
+
+http://192.168.1.2:3000/
+admin
+rajesh123
