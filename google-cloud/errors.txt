@@ -1,0 +1,11 @@
+bimla@cloudshell:~/freeebooks.xyz (devopsschool)$ gsutil rsync -r . gs://www.freeebooks.xyz
+Building synchronization state...
+Caught non-retryable exception while listing file://.: CommandException: Invalid Unicode path encountered ('./other-ebooks/the-project-
+gutenberg-ebook/The Project Gutenberg eBook of Encyclop\xe6dia
+Britannica, Volume XVII Slice VI - Map to Mars._files/img646a.jpg').
+gsutil cannot proceed with such files present. Please remove or rename
+this file and try again. NOTE: the path printed above replaces the
+problematic characters with a hex-encoded printable representation.
+For more details (including how to convert to a gsutil-compatible
+encoding) see `gsutil help encoding`.
+CommandException: Caught non-retryable exception - aborting rsync

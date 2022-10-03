@@ -1,0 +1,1164 @@
+﻿==========================================================
+Lab 1 - Creating and associating a new persistent disk
+==========================================================
+
+
+https://cloud.google.com/compute/docs/disks/add-persistent-disk
+
+- Go to the spikey-internal-site
+- Click Edit
+- Add Item under disks
+- Show that the drop down can allow you to attach an already created disk
+- Create a new disk: spikey-internal-site-disk-1
+- Persistent disks will always be in the same zone as the instance
+- 20GB
+- Create the disk, save changes to the VM instance
+- sudo lsblk
+- sudo mkfs.ext4 -m 0 -F -E lazy_itable_init=0,lazy_journal_init=0,discard /dev/sdb
+
+- sudo mkdir -p /mnt/disks/disk-2
+
+- sudo mount -o discard,defaults /dev/sdb /mnt/disks/disk-2
+
+Write access ti all devices
+- sudo chmod a+w /mnt/disks/disk-2
+
+- ls -l /mnt/disks/disk-2
+
+Optionally, you can add the persistent disk to the /etc/fstab file so that the device automatically mounts again when the instance restarts.
+
+
+- sudo cp /etc/fstab /etc/fstab.backup
+
+- sudo blkid /dev/sdb
+
+- Copy over the UUID display
+e.g.
+
+/dev/sdb: UUID="93299ab7-2fb7-4f38-85a8-46c8ac4b9a7e" TYPE="ext4"
+
+- sudo chmod a+w /etc/fstab
+
+- nano /etc/fstab
+- cat /etc/fstab
+
+
+- Show that you can go to the Disks option, create a disk and then attach that disk to an existing instance (don't actually do this, show the list of disks and the create disk link on top)
+- Show that both disks associated with the spikey-internal-site are on the same zone
+
+==========================================================
+Lab 2 - Creating and associating a local SSD with an instance
+==========================================================
+
+https://cloud.google.com/compute/docs/disks/local-ssd
+
+- Can only be done at instance creation time because they are located on the physical machine where the VM is located
+
+- VM Instances page -> Create an instance
+- Name: spikey-internal-fastsite
+- Go to Expand Management, disk, networking, SSH keys
+- Add disk
+- Choose local SSD
+- Debian 9 images work better with the SCSI interface
+
+- Need to format and mount the device before you can use it
+- SSH into the newly created VM
+- lsblk
+- sudo mkfs.ext4 -F /dev/sdb
+- sudo mkdir -p /mnt/disks/ssd-disk-1
+- sudo mount /dev/sdb /mnt/disks/ssd-disk-1
+- sudo chmod a+w /mnt/disks/ssd-disk-1
+
+Optionally, you can add the local SSD to the /etc/fstab file so that the device automatically mounts again when the instance restarts. 
+
+==========================================================
+Lab 3 - Creating, listing buckets, getting bucket information using the web UI
+==========================================================
+
+- Go to storage
+- Name: spikey-internal-analytics
+- Multiregional because analytics data is shared with teams around the world and you want backups across regions
+- Change the multi-region location (will use multiple regions in that location)
+- In the case of the US and the EU they correspond to jurisdiction
+- In the case of Asia it is not a jurisdiction
+
+
+- Create another bucket
+- Name: spikey-internal-hr
+- Regional bucket: us-central1
+- Hit create
+- Click through the spikey-internal-hr bucket
+- Click on the overview tab and show the details there
+
+
+- Go to bucket details and show both buckets listed
+- Show that you have info on both buckets right there
+
+- Create another bucket
+- Give it a common name such as "example" and then "simple-bucket"
+- Try "google"
+
+- Change the name to spikey-hr-backup
+- Switch between nearline and coldline and see how the cost changes
+- Show the location option
+- Choose nearline and create
+
+- List all buckets again by clicking on the top Bucket details link
+
+==========================================================
+Lab 4 - Creating, listing  and managing buckets using gsutil
+==========================================================
+
+- Start in the bucket details page
+- Startup Cloud Shell
+
+- gsutil mb gs://spikey-personnel-data/ 
+- Show that this is now there in the buckets page, hit refresh
+- By default it creates a multi-regional data in the US
+
+- gsutil mb -p spikey-internal-123 -c regional -l us-east1 gs://spikey-temp-data/
+- Refresh and show that this is present as well
+
+- gsutil ls
+
+- View details about a bucket, location and storage class 
+- gsutil ls -L -b gs://spikey-temp-data/
+
+==========================================================
+Lab 5 - Uploading, listing and downloading objects
+==========================================================
+
+- Go to storage
+- spikey-personnel-data
+- Create folder with name "photos"
+- Click through to photos
+- Upload photos (all 4)
+- click and show that the right photos have been uploaded
+- Go to spikey-personnel-data once again
+- Create folder documents
+
+- Activate Cloud Shell
+- mkdir storage
+- cd storage
+- nano employee_names.txt
+- Oba, Moje, Nemo
+- ls -l
+- cat employee_names.txt
+
+- gsutil cp employee_names.txt gs://spikey-personnel-data/documents/
+
+- Click through and look to see whether the file has been uploaded
+
+- Listing objects in a bucket
+- gsutil ls gs://spikey-personnel-data/photos
+- gsutil ls gs://spikey-personnel-data/**
+
+
+- Downloading objects from a bucket
+- Navigate to a photo on the web console
+- Right-click and "Save Link As"
+- Photo gets downloaded
+- Open up the photo
+
+- From the command line
+- gsutil cp gs://spikey-personnel-data/photos/* .
+
+==========================================================
+Lab 6 - Using the transfer service to copy/move data from one bucket to another
+==========================================================
+
+- Create a new bucket spikey-employee-data
+- Open up the transfers page from the left link
+- Source bucket spikey-personnel-data
+- Expand the filters and show what options are available
+- Destination bucket spikey-employee-data
+- Show options
+- Choose "delete source objects after the transfer completes"
+- Wait for the transfer to complete (can navigate away from here)
+
+- Explore spikey-employee-data and show the objects have been moved
+- Explore spikey-personnel-data and show that all files have been deleted
+- Delete spikey-personnel-data
+
+
+==========================================================
+Lab 7 - Renaming, copying and moving objects
+==========================================================
+- Go to spikey-employee-data
+- Go to photos
+- Click on 3 dots of Moje and rename to Moje_dog.jpg
+- Click on 3 dots of Oba and change to Oba_dog.jpg
+- Open up gsutil reference, copy it
+- Paste it on Cloud Shell
+- Renaming a file is the same as moving a file
+
+- Click on 3 dots of Oba_dog.jpg
+- Choose copy
+- Choose spikey-hr-backup bucket
+- Create a folder called photos within it, click on the check mark
+- Hit select for the copy
+- This cannot be done from the web UI, as the spikey-hr-backup is a nearline bucket, a different storage class
+- Copy the gsutil command over
+- gsutil cp -p gs://spikey-employee-data/photos/Oba_dog.jpg gs://"spikey-hr-backup/photos/Copy of Oba_dog.jpg"
+
+- Go to spikey-hr-backup
+- See that the copy of the photos is in there
+
+==========================================================
+Lab 8 - Changing the storage class of a bucket and the storage class of an object
+==========================================================
+
+- Click through spikey-personnel-data
+- Click on Edit Bucket
+- Show that the regional option is not available
+- If you choose Nearline you are forced to use the US region
+- That was where we'd created the bucket
+
+- Click through the regional bucket spikey-temp-data
+- Create a photos directory here
+- Upload Nemo.jpg to the photos directory
+- The multi-regional option is not available here
+- In Cloud Shell
+- gsutil defstorageclass set multi_regional gs://spikey-temp-data/
+- This should be an error
+
+-  gsutil defstorageclass set nearline gs://spikey-temp-data/
+- This should work
+- Go to the bucket details and see the overview, it should be a nearline bucket
+- Objects which were already uploaded into this e.g. Nemo.jpg will continue to belong to the regional storage class
+- Go to photos and show this is the case
+- gsutil rewrite -s nearline gs://spikey-temp-data/photos/Nemo.jpg
+- Refresh the page and show that Nemo.jpg now has the nearline class
+
+===========================================================
+===========================================================
+===========================================================
+What is Docker
+What is Container
+What is Kubernetes
+What is GKE
+=============================================================
+What is Docker?
+	Container mgmt tool.
+
+What is Container?
+
+=======================
+How to install Docker Engine?
+https://www.devopsschool.com/tutorial/docker/install-config/docker-install-commuityedition-centos-rhel.html
+
+Docker Components...	
+	Docker Engine
+		ME --> Docker Client --> Docker Deamon  --> KERNAL(Namespace)
+	Docker Images
+		Common file system mounted to each Container.
+	Docker Registry/Repo
+		hub.docker.com / httpd
+				scmgalaxy/nginx-devopsschoolv1
+		
+	Docker Container
+		The moment you run Docker Image
+						=== Container (USERSPACE)
+						Power with
+								NETWORK
+								MOUNT
+								PMAP
+							
+   18  docker pull httpd
+   19  docker pull scmgalaxy/nginx-devopsschoolv1
+   20  clear
+   21  docker images
+   22  docker run httpd
+   23  docker ps
+   24  docker ps -a
+   25  docker run -d httpd
+   26  clear
+   27  docker ps
+   28  docker ps -a
+   29  docker exec 7da78073b73 ip a
+   30  docker exec 7da78073b731 ifconfig
+   31  docker inspect1 | grep -i ip
+   32  clear
+   33  docker run -d httpd
+   34  docker ps
+   35  docker inspect 0ae37da2b946 | grep -i ip
+   36  clear
+   37  docker network  ls
+   38  docker inspect c89b036f4067 
+   39  clear
+   40  ls
+   41  docker stats
+   42  docker inspect 0ae37da2b946 | grep -i ip
+   43  curl http://172.17.0.3
+   44  curl http://172.17.0.2
+   45  clear
+   46  history
+
+
+   47  clear
+   48  docker ps
+   49  docker exec    18  docker pull httpd
+   50     19  docker pull scmgalaxy/nginx-devopsschoolv1
+   51     20  clear
+   52     21  docker images
+   53     22  docker run httpd
+   54     23  docker ps
+   55     24  docker ps -a
+   56     25  docker run -d httpd
+   57     26  clear
+   58     27  docker ps
+   59     28  docker ps -a
+   60     29  docker exec 7da78073b73 ip a
+   61     30  docker exec 7da78073b731 ifconfig
+   62     31  docker inspect1 | grep -i ip
+   63     32  clear
+   64     33  docker run -d httpd
+   65     34  docker ps
+   66     35  docker inspect 0ae37da2b946 | grep -i ip
+   67     36  clear
+   68     37  docker network  ls
+   69     38  docker inspect c89b036f4067 
+   70     39  clear
+   71     40  ls
+   72     41  docker stats
+   73     42  docker inspect 0ae37da2b946 | grep -i ip
+   74     43  curl http://172.17.0.3
+   75     44  curl http://172.17.0.2
+   76     45  clear
+   77  clear
+   78  docker ps
+   79  docker exec 0ae37da2b946 
+   80  docker exec 0ae37da2b946 df -kh
+   81  docker exec 7da78073b731 df -kh
+   82  clear
+   83  docker exec 0ae37da2b946 touch /tmp/rajesh1
+   84  docker exec 7da78073b731 touch /tmp/rajesh2
+   85  docker exec 7da78073b731 ls /opt
+   86  docker exec 7da78073b731 ls /tmp
+   87  docker exec 0ae37da2b946 ls /tmp
+   88  docker exec 0ae37da2b946 ps -eaf
+   89  docker exec -i  0ae37da2b946 /bin/bash
+   90  docker exec -it  0ae37da2b946 /bin/bash
+   91  docker ps
+   92  clear
+   93  docker images
+   94  docker run -d scmgalaxy/nginx-devopsschoolv1
+   95  docker ps
+   96  docker run -d scmgalaxy/nginx-devopsschoolv1
+   97  docker ps -a
+   98  dcker ps
+   99  docker s
+  100  docker ps
+  101  clear
+  102  docker ps
+  103  docker stop 0ae37da2b946 
+  104  docker stop 7da78073b731 
+  105  docker ps
+  106  docker ps -a
+  107  clar
+  108  clear
+  109  docker ps -a
+  110  docker rm 0ae37da2b946 
+  111  docker rm 7da78073b731 
+  112  docker rm 307989c4d2f4 
+  113  docker ps
+  114  docker exec 26273031ce06        |ps -ef
+  115  clear
+  116  docker exec 26273031ce06 ps -eaf
+  117  docker pull jenkins
+  118  clear
+  119  docker run -d jenkins
+  120  docker run -d jenkins
+  121  clear
+  122  docker ps
+  123  docker exec 2d2c933a326e        ps -eaf
+  124  ps -eaf
+  125  clear
+  126  docker ps
+  127  docker exec 2d2c933a326e        ps -eaf
+  128  docker exec d96f42898ead        ps -eaaf
+  129  history
+
+==================================================================
+==================================================================
+==================================================================
+
+
+Master  - 1
+34.73.67.200 
+
+	Workstation  - 1(Kubectl -> config(API)
+	-----------SYSTEM POD-----------------------------------------
+	API Server == POD (Container) = IP ADD
+	KV Store (Etcd) == POD (Container) = IP ADD
+	Controller == POD (Container) = IP ADD
+	Schedular ==  POD (Container) = IP ADD
+
+HARD WAY - https://github.com/kelseyhightower/kubernetes-the-hard-way
+Manual Way - Kubeadm | KOps
+
+========================================
+
+
+Docker
+Kubelet
+Kubeadm
+Kubectl
+CNI
+
+Docker Engine
+https://www.devopsschool.com/tutorial/docker/install-config/docker-install-commuityedition-centos-rhel.html
+
+Installing kubeadm, kubelet and kubectl
+---------------------------------------------
+cat <<EOF > /etc/yum.repos.d/kubernetes.repo
+[kubernetes]
+name=Kubernetes
+baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
+enabled=1
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+exclude=kube*
+EOF
+
+# Set SELinux in permissive mode (effectively disabling it)
+setenforce 0
+sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
+
+yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
+-------------------------------
+systemctl enable --now kubelet
+
+--------------------------------------------
+kubeadm init [[[[[ONLY FOR MASTER]]]]]
+
+[[[[[[ PLZ COPY FOLLOWING PART AT THE END OF THIS COMMAND]]]]]]]]
+
+Your Kubernetes control-plane has initialized successfully!
+
+To start using your cluster, you need to run the following as a regular user:
+  
+  mkdir -p $HOME/.kube
+  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+You should now deploy a pod network to the cluster.
+Run "kubectl apply -f [podnetwork].yaml" with one of the options listed at:
+  https://kubernetes.io/docs/concepts/cluster-administration/addons/
+
+Then you can join any number of worker nodes by running the following on each as root:
+kubeadm join 10.142.0.4:6443 --token 1jl00v.2duh38f96sogm0s1 \
+    --discovery-token-ca-cert-hash sha256:a8fcc5dee5d6518d28cab042d22982238a34483b4ec8f7b94763756050ab9844 
+
+
+========================================
+Worker - 2
+35.196.225.39 
+35.231.68.158
+	Kubelet(TOOL)
+	Kube proxy (APp)
+	Docker
+		Docker Clinet
+		Docker Deamon
+
+
+
+-------------------------------------------
+pod
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hello-pod
+spec:
+  containers:
+  - name: hello-ctr
+    image: nginx
+    ports:
+    - containerPort: 80
+
+
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: hello-rc
+spec:
+  replicas: 5
+  selector:
+    app: hello-world
+  template:
+    metadata:
+      labels:
+        app: hello-world
+    spec:
+      containers:
+      - name: hello-ctr
+        image: nginx
+        ports:
+        - containerPort: 80
+
+
+   26  kubectl get noddes
+   27  kubectl get nodes
+   28  kubectl getrc
+   29  kubectl get rc
+   30  kubectl get deploy
+   31  clear
+   32  kubectl get pod
+   33  kubectl get nodes
+   34  kubectl get pods
+   35  kubeclt get ns
+   36  kubectl get ns
+   37  kubectl create ns deloitte
+   38  kubectl get ns
+   39  kubectl get nodes
+   40  kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
+   41  clar
+   42  clear
+   43  kubectl get nodes
+   44  kubectl get pod --all-namespace
+   45  kubectl get pod --all-namespaces
+   46  clear
+   47  cd
+   48  vi pod.yaml
+   49  kubectl create -f pod.yaml 
+   50  kubeclt get pods
+   51  kubectl get pods
+   52  kubectl get pods -o wide
+   53  clear
+   54  kubectl get pods -o wide
+   55  kubectl get pods --all-namespaces
+   56  kubectl get ns
+   57  kubectl create -f pod.yaml -n deloitte 
+   58  kubectl get pods --all-namespaces
+   59  kubectl describe pod hello-pod
+   60  curl 10.32.0.2
+   61  clear
+   62  kubectl get pod 
+   63  vi rc.yaml
+   64  kubeclt create -f rc.yaml 
+   65  kubectl create -f rc.yaml 
+   66  kubectl get pod
+   67  kubectl get rc
+   68  kubectl edit rc hello-rc
+   69  clear
+   70  kubectl get pod
+   71  clear
+   72  kubectl get pod
+   73  kubeclt delete pod hello-rc-8ktc7
+   74  kubectl delete pod hello-rc-8ktc7
+   75  kubectl get pod
+   76  kubectl edit rc hello-rc
+   77  clear
+   78  kubectl get pod
+   79  clear
+   80  kubectl get pod
+   81  history
+================================
+
+dep.yaml
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: hello-deploy
+spec:
+  replicas: 4
+  minReadySeconds: 10
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  template:
+    metadata:
+      labels:
+        app: hello-world
+    spec:
+      containers:
+      - name: hello-pod
+        image: scmgalaxy/devopsschool
+        ports:
+        - containerPort: 80
+
+
+
+kubectl run nginx --image=nginx --replicas=4
+kubectl expose deploy nginx --port=80 --type=LoadBalancer
+
+
+===============================================================
+Module 1
+===============================================================
+Demo 1
+Introduction to VPCs : default network with subnets, routes, and firewall rules.
+
+Navigate to Navigation menu> VPC network > VPC networks.
+
+View the routes
+
+In the left pane, click on Routes.
+Notice that there is a route for each subnet and one for the Default internet gateway (0.0.0.0./0).
+
+View the firewall rules
+
+In the left pane, click on Firewall rules.
+
+Delete the default network
+
+In the left pane, click on Firewall rules.
+
+Select all firewall rules and click DELETE.
+
+In the left pane, click on VPC networks.
+
+Click on the default network.
+
+Click Delete VPC network at the top of the dialog, 
+then click Delete to confirm the deletion of the default network.
+
+Wait for the network to be deleted before moving on.
+
+In the left pane, click on Routes.
+
+There are no routes.
+
+Try to create a VM instance
+
+Navigate to Navigation menu > Compute Engine > VM instances, 
+and then click Create to create a VM instance.
+
+Leave all the values at their default and click Create.
+
+Notice the error.
+
+Under the Firewall section, Click Management, disks, networking, SSH keys, 
+and then click Networking.
+
+
+Notice the No local network available error under Network interface.
+
+Click Cancel.
+
+Demo 2
+Creating a new auto mode VPC network
+
+Create an auto mode VPC network with Firewall rules
+
+Navigate to Navigation menu > VPC network > VPC networks, 
+and then click Create VPC network.
+
+Set the Name to spikey-globalvpc.
+
+For Subnet creation mode, click Automatic.
+
+For Firewall rules, check all available rules.
+
+Click Create
+
+
+Create a VM instance in us-central1
+
+Navigate to Navigation menu > Compute Engine > VM instances, and then click Create.
+
+Set the following values, leaving all others at their defaults:
+
+Property	Value 
+Name	spikey-server-us
+Region	us-central1
+Zone	 us-central1-c
+Machine type	micro (1 shared vCPU)
+
+Click Create, then wait for the instance to be created.
+
+
+
+Create a VM instance in europe-west1
+
+Click Create instance.
+
+Set the following values, leaving all others at their defaults:
+
+Property	Value
+Name	spikey-server-eu
+Region	europe-west1
+Zone	europe-west1-c
+Machine type	micro (1 shared vCPU)
+
+Click Create, then wait for the instance to be created.
+
+
+Verify connectivity for the VM instances
+In the Console, navigate to Navigation menu> Compute Engine > VM instances.
+For  spikey-server-us, click SSH to launch a terminal and connect. 
+To test connectivity to spikey-server-eu's internal IP, run the following command using spikey-server-eu's internal IP:
+ping -c 3 <Enter spikey-server-eu's internal IP here>
+Repeat the same test, this time using spikey-server-eu's name:
+ping -c 3 spikey-server-eu
+
+
+
+To test connectivity to spikey-server-eu's external IP, run the following command using spikey-server-eu's external IP:
+ping -c 3 <Enter spikey-server-eu's external IP here>
+
+Repeat for spikey-server-us
+
+
+Demo 3
+Creating a new VPC network with custom subnets
+
+Create the spikey-management-nw network using the GCP Console.
+Navigate to Navigation menu () > VPC network > VPC networks.
+Notice the default and spikey-globalvpc networks with their subnets.
+Click Create VPC Network.
+Set the Name to spikey-management-nw.
+For Subnet creation mode, click Custom.
+Set the following values, leave all other values at their defaults:
+Property
+Value (type value or select option as specified)
+Name
+spikey-management-subnet-us
+Region
+us-central1
+IP address range
+10.130.0.0/20
+Click Done.
+Click command line.
+Click Close.
+Click Create.
+Create the spikey-dev-nw network
+
+Run the following command, to create the spikey-dev-nw network:
+gcloud compute networks create spikey-dev-nw --subnet-mode=custom
+
+
+Run the following command, to create the spikey-dev-subnet-us subnet:
+gcloud compute networks subnets create spikey-dev-subnet-us \
+--network=spikey-dev-nw \
+--region=us-central1 \
+--range=172.16.0.0/24
+
+
+Run the following command, to create the spikey-dev-subnet-eu subnet:
+gcloud compute networks subnets create spikey-dev-subnet-eu \
+ --network=spikey-dev-nw \
+--region=europe-west1 \
+--range=172.20.0.0/20
+
+
+Run the following command, to list the available VPC networks:
+gcloud compute networks list
+
+
+
+Run the following command, to list the available VPC subnets (sorted by VPC network):
+gcloud compute networks subnets list --sort-by=NETWORK
+
+
+In the Console, navigate to Navigation menu () > VPC network > VPC networks.
+You see that the same networks and subnets are listed in the Console.
+=============================================================== 
+Module 2
+===============================================================
+Demo 1
+Using firewall rules
+Create the firewall rules for spikey-management-nw
+In the Console, navigate to Navigation menu () > VPC network > Firewall rules.
+Click + Create Firewall Rule.
+Set the following values, leave all other values at their defaults:
+Property
+Value (type value or select option as specified)
+Name
+spikey-management-nw-allow-icmp-ssh-rdp
+Network
+spikey-management-nw
+Targets
+All instances in the network
+Source filter
+IP Ranges
+Source IP ranges
+0.0.0.0/0
+Protocols and ports
+Specified protocols and ports, icmp; 
+
+Click command line.
+Click Close.
+Click Create.
+Repeat for tcp:22; spikey-management-nw-allow-ssh and tcp:3389 spikey-management-nw-allow-rdp
+In Cloud Shell, run the following command to create the spikey-dev-nw-allow-icmp-ssh-rdp firewall rule:
+gcloud compute firewall-rules create spikey-dev-nw-allow-icmp-ssh-rdp  \
+--direction=INGRESS \
+--priority=1000 \
+--network=spikey-dev-nw \
+--action=ALLOW \
+--rules=icmp,tcp:22,tcp:3389 \
+--source-ranges=0.0.0.0/0
+
+
+Run the following command, to list all the firewall rules (sorted by VPC network):
+gcloud compute firewall-rules list --sort-by=NETWORK
+In the Console, navigate to Navigation menu () > VPC network > Firewall rules.
+
+Demo 2 
+Testing VM connectivity
+Create two VM instances:
+Create the  spikey-management-nw-vm-us instance using the GCP Console.
+In the Console, navigate to Navigation menu () > Compute Engine > VM instances.
+Click Create instance.
+Set the following values, leave all other values at their defaults:
+Property
+Value (type value or select option as specified)
+Name
+ spikey-management-nw-vm-us
+Region
+us-central1
+Zone
+us-central1-c
+Machine type
+1 vCPU
+Click Management, disks, networking, SSH keys.
+Click Networking.
+For Network interfaces, click the pencil icon to edit.
+Set the following values, leave all other values at their defaults:
+Property
+Value (type value or select option as specified)
+Network
+ spikey-management-nw
+Subnetwork
+ spikey-management-subnet-us
+Click Done.
+Click command line.
+Click Close.
+Click Create.
+Create the  instance using the Cloud Shell command line.
+gcloud compute instances create  spikey-dev-nw-vm-us \
+--zone=us-central1-c \
+--machine-type=n1-standard-1 \
+--subnet=spikey-dev-subnet-us 
+
+
+
+Run the following command, to list all the VM instances (sorted by zone):
+gcloud compute instances list --sort-by=ZONE
+
+
+In the Console, navigate to Navigation menu () > Compute Engine > VM instances.
+Click on Columns, then select Network.
+Ping the external IP addresses
+ 
+In the Console, navigate to Navigation menu () > Compute Engine > VM instances.
+For  spikey-server-us, click SSH to launch a terminal and connect.
+To test connectivity
+ping -c 3 <Enter  spikey-server-eu's external IP here>
+ping -c 3 <Enter  spikey-server-us's external IP here>
+ 
+To test connectivity to  spikey-dev-nw-vm-us's
+ping -c 3 <Enter  spikey-dev-nw-vm-us's external IP here>
+Ping the internal IP addresses
+In the Console, navigate to Navigation menu () > Compute Engine > VM instances.
+Return to the SSH terminal for  spikey-server-us.
+To test connectivity to  spikey-server-eu's internal IP, 
+ping -c 3 <Enter  spikey-server-eu's internal IP here>
+To test connectivity to  spikey-management-nw-vm-us's internal IP, 
+ping -c 3 <Enter  spikey-management-nw-vm-us's internal IP here>
+
+
+To test connectivity to  spikey-dev-nw-vm-us's internal IP
+ping -c 3 <Enter  spikey-dev-nw-vm-us's internal IP here>
+
+
+
+Demo 3
+Deleting firewall  rules
+Remove the allow-internal firewall rules
+
+
+In the Console, navigate to Navigation menu> VPC network > Firewall rules.
+
+Check the icmp rule for automode nw and then click Delete. Click Delete to confirm the deletion.
+
+Wait for the firewall rule to be deleted.
+
+ssh to the us-vm SSH terminal.
+
+To test connectivity to eu-vm's internal IP, run the following command using eu-vm's internal IP:
+
+ping -c 3 <Enter eu-vm's internal IP here>
+
+Close the SSH terminal:
+
+exit
+
+In the Console, navigate to Navigation menu > VPC network > Firewall rules.
+
+Check the allow-ssh rule for automode and then click Delete. Click Delete to confirm the deletion.
+
+Wait for the firewall rule to be deleted.
+
+In the Console, navigate to Navigation menu > Compute Engine > VM instances.
+
+For us-vm, click SSH to launch a terminal and connect.
+
+
+Demo 4
+Adding network tags
+Go to the VM instances page. 
+Select an instance. spikey-dev-nw-vm-us
+  	On the VM instance details page, click Edit.
+In the Network tags section, specify one or more tags, separated by commas. - web-server
+Click Save.
+
+Create the tagged firewall rule
+
+In the Console, navigate to Navigation menu > VPC network > Firewall rules.
+Click Create Firewall Rule.
+
+Set the following values, leave all other values at their defaults and click Create:
+
+Property	Value (type value or select option as specified)
+Name	spikey-dev-allow-http-web-server
+Network	global
+Targets	Specified target tags
+Target tags	web-server
+Source filter	IP Ranges
+Source IP ranges	0.0.0.0/0
+Protocols and ports	Specified protocols and ports, and then check tcp, type: 80; 
+
+Click Create.
+Install nginx and customize the welcome page
+Install nginx on both VM instances and modify the welcome page to distinguish the servers.
+Still in the VM instances dialog, for blue, click SSH to launch a terminal and connect.
+Run the following command to install nginx:
+sudo apt-get install nginx-light -y
+Open the welcome page in the nano editor:
+sudo nano /var/www/html/index.nginx-debian.html
+
+
+Replace the <h1>Welcome to nginx!</h1> line with <h1>Welcome to the spikey sales server!</h1>.
+Press CTRL+o, ENTER, CTRL+x.
+Verify the change:
+cat /var/www/html/index.nginx-debian.html
+Close the SSH terminal 
+Test Connectivity
+Ssh to management-vm-us
+ping spikey-server-us external ip
+Ssh to spikey-server-eu
+Ping spikey-server-us
+Go to the VM instances page.
+Select an instance. spikey-server-us
+On the VM instance details page, click Edit.
+In the Network tags section, remove tags by clicking remove (X).
+Click Save.
+Ssh to management-vm-us
+ping spikey-server-us external ip
+Ssh to spikey-server-eu
+Ping spikey-server-us
+
+
+
+
+
+Demo 5
+Switch a VPC network from auto to custom and Add a subnet
+Go to the VPC networks page in the Google Cloud Platform Console.  spikey-globalvpc
+In the Mode column, click Auto to open the menu.
+Select Custom from the menu.
+Click OK to confirm.
+
+Add a subnet
+Go to the VPC networks page in the Google Cloud Platform Console. 
+Select the name of the network to bring up the details page.
+Click Add subnet.
+Specify the Name and Region of the new subnet. spikey-subnet-new
+Specify the IP address range of the subnet. 10.128.131.0/24
+Click Add.
+
+Demo 6
+Expand a subnet
+
+Go to the VPC networks page in the Google Cloud Platform Console. 
+Click on the network that contains the subnet you want to expand.
+Click on the subnet you want to expand.
+Click Edit.
+Enter the new range in the IP address range field. 10.128.128.0/20.
+Click Save.
+Deleting a subnet
+You can only delete manually created subnets. Automatically created subnets cannot be deleted individually; you must delete the entire VPC network.
+Go to the VPC networks page in the Google Cloud Platform Console. 
+Click on the name of the VPC network that contains the subnet.spikey-subnet-new
+Click on the name of the subnet.
+Click Delete subnet.
+Click Delete to confirm.
+Delete VMs in auto-network
+Delete VPC
+===============================================================
+Module 3
+===============================================================
+Demo 1
+Shared VPC
+   In Project 1, spikey-networks
+	Create VPC spikey-shared-vpc with 2 subnet us-east-subnet,us-west-subnet
+	Naviagte to shared vpc -throws error no permission.
+Navigate to iam, Switch to organization, give Compute Engine Shared VPC Admin role to owner account
+Naviagte to shared vpc 
+Set up shared vpc
+Choose only 1 subnet and choose project 2 
+	Add firewall rule for tcp 22 and icmp
+	Add vm- spikey-us-hq-vm
+	
+Switch to project 2, spikeysales-africa
+Create vm in shared vpc spikey-africa-hq-vm
+Ssh and ping each other
+==================================
+
+Day 3
+
+----------------------
+RDS
+
+Step 1- Create a DB
+-----------------------------------
+
+Wordpress - 
+Db - 
+35.244.1.249
+
+wordpress
+root
+skf0w3rJeBsN7l3t
+
+
+
+Step 2- Install LAMPP
+-----------------------------------
+> yum install wget -y 
+$ cd /opt
+> wget https://www.apachefriends.org/xampp-files/5.6.32/xampp-linux-x64-5.6.32-0-installer.run
+> chmod 755 xampp-linux-x64-5.6.32-0-installer.run
+> ./xampp-linux-x64-5.6.32-0-installer.run
+
+> sudo /opt/lampp/lampp start
+http://X.X.X.X/dashboard/
+
+Step 2- Install Wordpress
+-----------------------------------
+cd /opt
+wget https://wordpress.org/latest.zip
+yum install unzip -y
+unzip latest.zip
+cp -rf wordpress /opt/lampp/htdocs/
+chown -R daemon:daemon /opt/lampp/htdocs/wordpress
+https://X.X.X.X/wordpress
+
+How to connect mysql?
+$ mysql -h localhost -u root -P
+
+
+Filestore == NFS
+======================================
+How to enable?
+API & Services ==> Cloud FileStore API
+us-west2-a
+
+sudo apt-get -y update
+sudo apt-get -y install nfs-common
+sudo mkdir /mnt/test
+sudo mount 10.186.13.234:/vol234 /mnt/test
+sudo chmod go+rw /mnt/test
+df -kh
+
+============================
+Google Cloud Deployment Manager
+https://cloud.google.com/deployment-manager/docs/quickstart
+
+Resources
+	resource-type
+		properties
+	resource-type
+		properties
+	resource-type
+		properties
+
+gcloud deployment-manager deployments create quickstart-deployment --config file.yaml
+
+https://www.devopsschool.com/path/
+============================
+Source Code Management
+	Cloud Source Repositories
+https://cloud.google.com/source-repositories/docs/quickstart
+Source Code mgmt....
+	- Git
+	
+AWS - Code Commit(Git Repo) ===> Cloud Source Repositories
+
+git clone https://source.developers.google.com/p/devopsschool/r/test
+cd test
+touch google.txt
+git add .
+git config user.name "Rajesh Kumar"
+git config user.email "bimla@scmgalaxy.com"
+
+git commit -m"adding my first file"
+git push origin master
+
+===========================================
+Build Management
+	- Cloud Build
+	Cloud Build is a service that executes your builds on Google Cloud Platform infrastructure. 	Cloud Build can import source code from Google Cloud Storage, Cloud Source Repositories, 	GitHub, or Bitbucket, execute a build to your specifications, and produce artifacts such as 		Docker containers or Java archives.
+	https://cloud.google.com/cloud-build/docs/quickstart-docker
+
+========================
+Cloud DNS
+======================================
+APP ENGINE
+=========================================
+=========================================
+Step1 - Create a APp
+gcloud app create --region=us-central
+
+Step 2 - Download Code and Unzp it.
+wget https://www.devopsschool.com/notes/gce/1-spikey-greetings.zip
+
+Step 3 - Create a deploy
+gcloud app deploy --version spikey-greetingsv1
+Change main.py
+gcloud app deploy --version spikey-greetingsv2
+
+Step 4 - generate a Trafiic
+sudo apt-get install siege
+
+
+siege -c 250 https://devopsschool.appspot.com/
+
+==========================================================
+How to get course Material?
+How to Get training certificates?
+How to get quiz for certification?
+	https://www.devopsschool.com/lms/
+--------------------------------------------
+
+Subject - Google Cloud Certified Engineer
+
+Body
+Full Name
+Email ID - 
+Phone#
+Role
+City - Hyderabad
+Company - Deloitte
+
+Contact@DevOpsSchool.com
+========================================
+How to reach out to me?
+http://rajeshkumar.xyz/
+	
+
+https://www.google.com/maps/place/DevOpsSchool.com/@12.964943,77.5973839,17z/data=!3m1!4b1!4m5!3m4!1s0x3bae15d656aeaaab:0xe5ca07dae2353764!8m2!3d12.9649378!4d77.5995726
+
+
+
+
+
+
+
