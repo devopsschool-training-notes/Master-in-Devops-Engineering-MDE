@@ -1,0 +1,6 @@
+FAQ
+
+How to edit gerrit project.config?
+
+https://stackoverflow.com/questions/22229536/edit-project-config-in-a-gerrit-project
+https://blog.bruin.sg/2013/04/how-to-edit-the-project-config-for-all-projects-in-gerrit/

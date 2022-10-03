@@ -1,0 +1,393 @@
+https://www.devopsschool.com/video/devops/
+https://www.devopsschool.com/path/
+https://www.devopsschool.com/top10tools/
+===============================================
+Google Cloud  - $300 for 1 year
+
+35.200.143.69
+
+Installation & Configuration
+-------------------------------
+Pre
+JAVA 1.8
+---------------------------------------------
+cd /opt
+
+wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.tar.gz
+
+tar -zxvf jdk-8u131-linux-x64.tar.gz
+
+export JAVA_HOME=/opt/jdk1.8.0_131
+
+export PATH=$PATH:/opt/jdk1.8.0_131/bin
+
+Git should be latest... Upgrade
+https://www.devopsschool.com/tutorial/git/git-upgrade-process.html
+
+Download Gerrit
+====================================
+https://www.devopsschool.com/tutorial/gerrit/gerrit-install-and-configuration.html
+
+wget https://gerrit-releases.storage.googleapis.com/gerrit-2.16.7.war
+
+
+$ java -jar gerrit*.war init -d review_site
+$ java -jar gerrit*.war init --batch --dev -d ~/gerrit_testsite
+
+root@instance-5:/opt# java -jar gerrit*.war init -d review_site
+Using secure store: com.google.gerrit.server.securestore.DefaultSecureStore
+[2019-04-24 06:27:55,689] [main] INFO  com.google.gerrit.server.config.GerritServerConfigProvider : No /opt/review_site/etc/gerrit.config; assuming defaults
+
+*** Gerrit Code Review 2.16.7
+***
+
+Create '/opt/review_site'      [Y/n]?
+
+*** Git Repositories
+***
+
+Location of Git repositories   [git]:
+
+*** SQL Database
+***
+
+Database server type           [h2]: ?
+       Supported options are:
+         db2
+         derby
+         h2
+         hana
+         jdbc
+         mariadb
+         maxdb
+         mysql
+         oracle
+         postgresql
+Database server type           [h2]:
+
+*** NoteDb Database
+***
+
+Use NoteDb for change metadata?
+  See documentation:
+  https://gerrit-review.googlesource.com/Documentation/note-db.html
+Enable                         [Y/n]?
+
+*** Index
+***
+
+Type                           [lucene/?]: ?
+       Supported options are:
+         lucene
+         elasticsearch
+Type                           [lucene/?]:
+
+*** User Authentication
+***
+
+Authentication method          [openid/?]: ?
+       Supported options are:
+         openid
+         openid_sso
+         http
+         http_ldap
+         client_ssl_cert_ldap
+         ldap
+         ldap_bind
+         custom_extension
+         development_become_any_account
+         oauth
+Authentication method          [openid/?]: development_become_any_account
+Enable signed push support     [y/N]?
+
+*** Review Labels
+***
+
+Install Verified label         [y/N]?
+
+*** Email Delivery
+***
+
+SMTP server hostname           [localhost]:
+SMTP server port               [(default)]:
+SMTP encryption                [none/?]:
+SMTP username                  :
+
+*** Container Process
+***
+
+Run as                         [root]:
+Java runtime                   [/opt/jdk1.8.0_131/jre]:
+Copy gerrit-2.16.7.war to review_site/bin/gerrit.war [Y/n]?
+Copying gerrit-2.16.7.war to review_site/bin/gerrit.war
+
+*** SSH Daemon
+***
+
+Listen on address              [*]:
+Listen on port                 [29418]:
+Generating SSH host key ... rsa... ed25519... ecdsa 256... ecdsa 384... ecdsa 521... done
+
+*** HTTP Daemon
+***
+
+Behind reverse proxy           [y/N]?
+Use SSL (https://)             [y/N]?
+Listen on address              [*]:
+Listen on port                 [8080]:
+Canonical URL                  [http://instance-5.c.devopsschool.internal:8080/]:
+
+*** Cache
+***
+
+
+*** Plugins
+***
+
+Installing plugins.
+Install plugin codemirror-editor version v2.16.7 [y/N]? y
+Installed codemirror-editor v2.16.7
+Install plugin commit-message-length-validator version v2.16.7 [y/N]? y
+Installed commit-message-length-validator v2.16.7
+Install plugin download-commands version v2.16.7 [y/N]? y
+Installed download-commands v2.16.7
+Install plugin hooks version v2.16.7 [y/N]? y
+Installed hooks v2.16.7
+Install plugin replication version v2.16.7 [y/N]? y
+Installed replication v2.16.7
+Install plugin reviewnotes version v2.16.7 [y/N]? y
+Installed reviewnotes v2.16.7
+Install plugin singleusergroup version v2.16.7 [y/N]? y
+Installed singleusergroup v2.16.7
+Initializing plugins.
+
+
+*** Gerrit Administrator
+***
+
+Create administrator user      [Y/n]?
+username                       [admin]:
+name                           [Administrator]:
+HTTP password                  [secret]: admin123
+public SSH key file            []:
+email                          [admin@example.com]: devops@rajeshkumar.xyz
+Initialized /opt/review_site
+Init complete, reindexing projects with: reindex --site-path review_site --threaReindexing projects:    100% (2/2)
+Reindexed 2 documents in projects index in 0.2s (9.3/s)
+Executing /opt/review_site/bin/gerrit.sh start
+Starting Gerrit Code Review:
+=========================================================
+What is Git Hook?
+----------
+
+1 Create a repo 
+
+2. git clone "http://admin@192.168.1.40:8080/a/rajesh" && (cd "rajesh" && mkdir -p .git/hooks && curl -Lo `git rev-parse --git-dir`/hooks/commit-msg http://admin@192.168.1.40:8080/tools/hooks/commit-msg; chmod +x `git rev-parse --git-dir`/hooks/commit-msg)
+
+=====================
+
+3  - Add and Commit
+
+4.  git push origin HEAD:refs/for/master
+
+5 Review 
+
+6 Submit
+================================================================
+What is Jenkins?
+	CI tools
+	Free
+	Open Source
+	Powerd with 100s of plugins
+	dev in Java
+
+What is CI?
+	Auto Build + Auto Test + Imm Feedback
+
+
+Plan->Code->Analyse->Build->UT->Package->Dep2Repo->Dep2QA->AT->CC->RELEASE
+---------------------------------------------------------------------------
+JIRA->Git->Gerrit->Coverity->VectorCast->exe->Nexus->Ansibe->Sel->Ncover-Releae
+-------------------------------JENKINS----------------------------------------
+					RICH GUI
+					Scheule
+					Notifiation
+					Sharing
+
+How to install?
+	JDK
+	JENKINS
+	https://www.devopsschool.com/tutorial/jenkins/jenkins-installation-and-configuration.html
+
+JEKINS  - 35.200.170.213 
+==================================================
+Pre 	
+	--- Setting up jenkins 
+	--- Setting up Gerrit
+
+Set
+http://instance-5.c.devopsschool.internal:8080
+jenkins
+
+Step 1 - 
+	- Create a group called "validators"
+	- Create a user called "jenkins"
+	- Add user "jenkins into group called "validators"
+
+Step 2 - Install Gerrit Plugins "Gerrit Trigger" in Jenkins
+
+Step 3 - Setup ssh public key from for "jenkins" users in jenkins server to jenkins at gerrit.
+
+http://35.200.170.213:8080/
+rajesh
+rajesh123
+
+Step 4 - Configure Gerrit Plugins in Jenkins
+	- Location - http://35.200.170.213:8080/gerrit-trigger/
+		- http://35.200.143.69/
+Step 5 - Give appropriate access to group called "validators"
+
+Admin > Projects > ... > Access > Edit
+Reference: refs/*
+Read: ALLOW for Non-Interactive Users
+Reference: refs/heads/*
+Label Code-Review: -1, +1 for Non-Interactive Users
+
+Step 6 - Add Verified label.
+http://instance-5.c.devopsschool.internal:8080/admin/repos/All-Projects,commands
+Edit repo config
+Add following
+  [label "Verified"]
+      function = MaxWithBlock
+      value = -1 Fails
+      value = 0 No score
+      value = +1 Verified
+      copyAllScoresIfNoCodeChange = true
+review
+Submit
+
+Step 7 - Give appropriate access to group called "validators"
+Reference: refs/heads/*
+Label Verified: -1, +1 for Non-Interactive Users OR Validators
+
+Global Capabilities
+Stream Events: ALLOW for Event Streaming Users
+
+
+Step 8 - Create a repo in gerrit and add a code as admin....
+
+git clone "http://admin@instance-5.c.devopsschool.internal:8080/a/pro1"
+secret
+
+Step 9 - Addd jenkins job with repo from gerrit...
+
+Step 10 - To avoid ssh issues in jenkins server....
+
+sudo su -s /bin/bash jenkins
+git clone ssh://jenkins@instance-5.c.devopsschool.internal:29418/pro1
+ssh -p 29418 jenkins@instance-5.c.devopsschool.internal gerrit stream-events
+
+ssh -p 29418 jenkins@instance-5.c.devopsschool.internal gerrit
+ssh -p 29418 localhost gerrit plugin install
+
+Step 11 - To avoid ssh issues in jenkins server....
+
+
+
+ssh -p 29418 admin@instance-5.c.devopsschool.internal gerrit
+
+
+
+Step 2 - 
+	- Adding required permission to group called "validators" 
+==================================================
+Crash on Jenkins
+
+Secret formula of Jenkins to setup a job...
+------------------------------------
+1. What is technology? - JAVA	DONE
+
+2. Where is your source code
+https://github.com/scmgalaxy/helloworld-java-maven
+
+3. What is your builder
+maven
+
+4. How often you want this build to happen?
+everyhour
+
+5. Where do you want notification?
+devops@RajeshKumar.xyz
+
+======================================
+End to End flow of using Git -> Gerrit -> Jenkins
+================================================
+ 629  git status
+  630  git add .
+  631  git commit -m"adding"
+  632  clear
+  633  git log
+  634  q
+  635  clear
+  636  git push origin HEAD:refs/for/master
+  637  ls
+  638  vi 1.txt
+  639  git add .
+  640  git commit --amend
+==================================
+Gerrit
+http://instance-5.c.devopsschool.internal:8080
+admin
+secret
+
+35.200.170.242 
+Rajesh
+Key ----id_rsa-ppk.ppk
+
+==================================
+Jenkins
+http://35.200.170.213:8080/
+rajesh
+rajesh123
+
+35.200.170.213 
+Rajesh
+Key ----id_rsa-ppk.ppk
+
+
+C:\Windows\System32\drivers\etc
+	hosts
+		35.200.170.242 instance-5.c.devopsschool.internal
+
+git patch
+===============
+$ git log
+$ git format-patch a_big_feature_branch -o patches
+$ git format-patch a_big_feature_branch
+$ git format-patch a_big_feature_branch -1 1ecb5853f53ef0a75a633ffef6c67efdea3560c4 -o patches
+$ git am patches/0001-a-nice-change-that-i-d-like-to-include-on-production.patch
+$ git log
+
+git format-patch master -5 -o patches
+
+--------------------------
+git fo	rmat-patch master -5 -o patches
+git am patches/*
+=====================================
+COMMON - Create one account on Gerrit with your name and add to Admin GROUP AND THEN START WOROKING.....
+
+Step1 - Clone a comman repo 
+Step2 - Add a directory called "myname"
+Step3 - Add a file(s) inside myname/XXXXX
+Step4 - git add
+Step5 - Git commit
+Step6 - git push for refe
+Step7 - Ask your mate to review....
+------------------------------
+	five PUSH....
+
+
+
+
+
+

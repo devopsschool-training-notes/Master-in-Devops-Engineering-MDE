@@ -1,0 +1,30 @@
+git patch
+===============
+$ git log
+$ git format-patch a_big_feature_branch -o patches
+$ git format-patch a_big_feature_branch
+$ git format-patch a_big_feature_branch -1 1ecb5853f53ef0a75a633ffef6c67efdea3560c4 -o patches
+$ git am patches/0001-a-nice-change-that-i-d-like-to-include-on-production.patch
+$ git log
+
+git format-patch master -5 -o patches
+
+--------------------------
+git fo	rmat-patch master -5 -o patches
+git am patches/*
+=====================================
+COMMON - Create one account on Gerrit with your name and add to Admin GROUP AND THEN START WOROKING.....
+
+Step1 - Clone a comman repo 
+Step2 - Add a directory called "myname"
+Step3 - Add a file(s) inside myname/XXXXX
+Step4 - git add
+Step5 - Git commit
+Step6 - git push for refe
+Step7 - Ask your mate to review....
+------------------------------
+	five PUSH....
+
+
+
+

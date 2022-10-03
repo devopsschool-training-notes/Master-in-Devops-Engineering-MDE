@@ -1,0 +1,61 @@
+============================ERROR 1============================
+
+Senario - Empty Repostory
+
+$ git push origin HEAD:/refs/for/master
+fatal: remote part of refspec is not a valid name in HEAD:/refs/for/master
+
+============================ERROR 2============================
+gerrit submit button is not enabled for admin
+
+the submit button should appear as soon as a reviewer has voted +2 on the label "Code Review" and, if the "Verified" label is installed, +1 on "Verified". Then the change status should become "Ready to Submit" and the submit button should be displayed [1]. In addition you need the "Submit" access right [2].
+https://blog.bruin.sg/2013/04/how-to-edit-the-project-config-for-all-projects-in-gerrit/
+https://stackoverflow.com/questions/18872651/unable-to-clone-all-projects-repo-after-gerrit-install/18884632#18884632
+https://stackoverflow.com/questions/20019195/cant-find-label-verified-permission-in-gerrit-2-7
+https://git.eclipse.org/r/Documentation/config-labels.html#label_Verified
+
+============================ERROR 3============================
+fatal: remote part of refspec is not a valid name in HEAD:/refs/for/master
+
+SOL
+git push origin HEAD:refs/for/master
+git push ssh://sshusername@hostname:29418/projectname HEAD:refs/for/branch
+
+============================ERROR 4============================
+fatal: remote part of refspec is not a valid name in HEAD:/refs/for/master
+block submit if not verified by Jenkins
+
+============================ERROR 5============================
+SSH/HTTP/Anonymous HTTP Clone URL not visible in Gerrit
+
+SOL
+This issue has to do with not installing the download-commands plugin for Gerrit. During initialization Gerrit prompts the user to install plugins. If the user says no (or if the installation is performed in --batch mode), the plugins will not be installed.
+
+
+============================ERROR 6============================
+
+When i installed gerrit with "http" auth type. I got following error.....
+
+SSH/HTTP/Anonymous HTTP Clone URL not visible in Gerrit
+The HTTP server did not provide the username in the admin header when it forwarded the request to Gerrit Code Review.
+============================ERROR 7============================
+
+git clone "https://admin@localhost:8080/a/durai" && (cd "durai" && mkdir -p .git/hooks && curl -k -Lo `git rev-parse --git-dir`/hooks/commit-msg https://admin@localhost:8080/tools/hooks/commit-msg; chmod +x `git rev-parse --git-dir`/hooks/commit-msg)
+
+Solution - git is not uptodate.
+
+
+============================ERROR 7============================
+Caused by: hudson.plugins.git.GitException: Command "git fetch --tags --progress ssh://jenkins@instance-5.c.devopsschool.internal:29418/pro1 $GERRIT_REFSPEC" returned status code 128:
+stdout: 
+stderr: fatal: Couldn't find remote ref $GERRIT_REFSPEC
+
+	at org.jenkinsci.plugins.gitclient.CliGitAPIImpl.launchCommandIn(CliGitAPIImpl.java:2042)
+	at org.jenkinsci.plugins.gitclient.CliGitAPIImpl.launchCommandWithCredentials(CliGitAPIImpl.java:1761)
+	at org.jenkinsci.plugins.gitclient.CliGitAPIImpl.access$400(CliGitAPIImpl.java:72)
+	at org.jenkinsci.plugins.gitclient.CliGitAPIImpl$1.execute(CliGitAPIImpl.java:442)
+	at hudson.plugins.git.GitSCM.fetchFrom(GitSCM.java:892)
+	... 11 more
+ERROR: Error fetching remote repo 'origin'
+Finished: FAILURE
+

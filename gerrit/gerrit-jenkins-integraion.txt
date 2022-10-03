@@ -1,0 +1,10 @@
+https://stackoverflow.com/questions/19060650/jenkins-gerrit-trigger-not-fetching-my-change-while-building
+https://stackoverflow.com/questions/32457141/jenkins-doesnt-verify-review-change-on-gerrit
+
+
+Merge 3 articles into 1 in the same fashion as 1 2 3
+
+1. http://ciforios.github.io/2015/01/27/Gerrit/
+2. http://ciforios.github.io/2015/01/26/Talking%20to%20Jenkins/
+3 http://ciforios.github.io/2015/01/25/Jenkins/
+http://blogs.collab.net/git/scm/gerrit-productivity-hacks-configure-jenkins-to-stop-hammering-your-gerrit-server#.WdCFHGiCzIV

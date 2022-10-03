@@ -1,0 +1,696 @@
+Git Crash Course
+----------------------
+What is Git?
+	Distributed version control system === WRONG
+		== Intelligent filesystems which has version capabiity for versining file system. NOT FILES
+	managing a repo	= WRNG....
+	For Source code mgmt
+	it gives you a answer of 
+			WHO
+			WHAT
+			WHY
+			WHEN
+			Where
+
+	Free
+	Open Source
+	dev by Linus Tovarld
+=========================================
+Why Git?
+		it gives you a answer of 
+			WHO
+			WHAT
+			WHY
+			WHEN
+			Where
+		=========================
+		Distributed
+		========================
+other ==
+========SERVER - CLINET =======================
+RCS ==> CVS => SVN
+P4 = CC = TFS = VSS
+
+SERVER-CLIENT  VS Distributed
+===================================================
+
+How to install git?
+=======================
+	RHEL
+		sudo yum install git
+	UB	
+		sudo apt-get install git
+	WIN
+		exe from git-scm.com
+			git cmd- depre
+			git bash ====================BASIC LINUS CMD you can run wind.... + Color
+			gitk
+			git merge
+
+
+
+Git workflow
+========================================
+
+Step 1 - Create a repo
+$ git init
+
+Step 2 - Create a files which you want to do version
+DONE
+
+Step 3 - Add a file |||  Sending a file from WORKIGN DIR to Staging AREA
+$ git add filenme
+
+
+----------------------------------
+git config user.name "Rajesh Kumar"
+git config user.email "Rajesh@scmgalaxy.com"
+git config --list
+-------------------------------------
+Step 4 - Commit a file ||||| From Staging to REPO 
+$ git commit -m"This is first file"
+
+Step 5 - View  a commit
+$ git log
+
+Step 6 - View a file in commit
+git show commit-id
+
+
+===============================================
+Working as a team and code integration.....
+=================================================
+HCLX
+	DEVOPS
+		Immediate Release
+		Cost Reduction
+		Quality 
+	
+	RAJESH -- GIT	
+	Ila-----------------GIT	
+	Lakshmi
+	Shivam
+
+GIT ALOL
+
+===========================================
+Step 1 - git installl and upgrade.
+----------------------
+$ sudo yum install git
+Git should be latest... Upgrade
+
+Git Upgrade
+https://www.devopsschool.com/tutorial/git/git-upgrade-process.html
+
+Step 2  - Java
+----------------------
+$ cd /opt
+$ wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.tar.gz
+$ tar -zxvf jdk-8u131-linux-x64.tar.gz
+
+$ export JAVA_HOME=/opt/jdk1.8.0_131
+
+$ export PATH=$PATH:/opt/jdk1.8.0_131/bin
+	
+Step 3 - Gerrit Downlad
+----------------------
+https://www.devopsschool.com/tutorial/gerrit/gerrit-install-and-configuration.html
+
+wget https://gerrit-releases.storage.googleapis.com/gerrit-2.16.7.war
+
+Step 4 - Gerrit Install and Config..
+----------------------
+java -jar gerrit*.war init -d review_site
+
+[root@ip-172-31-26-162 opt]# wget https://gerrit-releases.storage.googleapis.com/gerrit-2.16.7.war
+--2019-05-25 08:52:00--  https://gerrit-releases.storage.googleapis.com/gerrit-2.16.7.war
+Resolving gerrit-releases.storage.googleapis.com (gerrit-releases.storage.googleapis.com)... 216.58.199.176, 2404:6800:4009:807::2010
+Connecting to gerrit-releases.storage.googleapis.com (gerrit-releases.storage.googleapis.com)|216.58.199.176|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 74262923 (71M) [application/octet-stream]
+Saving to: ‘gerrit-2.16.7.war’
+
+100%[======================================>] 74,262,923  25.5MB/s   in 2.8s
+
+2019-05-25 08:52:04 (25.5 MB/s) - ‘gerrit-2.16.7.war’ saved [74262923/74262923]
+
+[root@ip-172-31-26-162 opt]# ls
+gerrit-2.16.7.war  git-2.9.5  git-2.9.5.tar.gz  jdk1.8.0_131
+[root@ip-172-31-26-162 opt]# clear
+[root@ip-172-31-26-162 opt]# pwd
+/opt
+[root@ip-172-31-26-162 opt]# java -jar gerrit*.war init -d review_site
+Using secure store: com.google.gerrit.server.securestore.DefaultSecureStore
+[2019-05-25 08:53:38,997] [main] INFO  com.google.gerrit.server.config.GerritServerConfigProvider : No /opt/review_site/etc/gerrit.config; assuming defaults
+
+*** Gerrit Code Review 2.16.7
+***
+
+Create '/opt/review_site'      [Y/n]? y
+
+*** Git Repositories
+***
+
+Location of Git repositories   [git]:
+
+*** SQL Database
+***
+
+Database server type           [h2]: ?
+       Supported options are:
+         db2
+         derby
+         h2
+         hana
+         jdbc
+         mariadb
+         maxdb
+         mysql
+         oracle
+         postgresql
+Database server type           [h2]:
+
+*** NoteDb Database
+***
+
+Use NoteDb for change metadata?
+  See documentation:
+  https://gerrit-review.googlesource.com/Documentation/note-db.html
+Enable                         [Y/n]?
+
+*** Index
+***
+
+Type                           [lucene/?]: ?
+       Supported options are:
+         lucene
+         elasticsearch
+Type                           [lucene/?]:
+
+*** User Authentication
+***
+
+Authentication method          [openid/?]: ?
+       Supported options are:
+         openid
+         openid_sso
+         http
+         http_ldap
+         client_ssl_cert_ldap
+         ldap
+         ldap_bind
+         custom_extension
+         development_become_any_account
+         oauth
+Authentication method          [openid/?]: development_become_any_account
+Enable signed push support     [y/N]?
+
+*** Review Labels
+***
+
+Install Verified label         [y/N]?
+
+*** Email Delivery
+***
+
+SMTP server hostname           [localhost]:
+SMTP server port               [(default)]:
+SMTP encryption                [none/?]:
+SMTP username                  :
+
+*** Container Process
+***
+
+Run as                         [root]:
+Java runtime                   [/opt/jdk1.8.0_131/jre]:
+Copy gerrit-2.16.7.war to review_site/bin/gerrit.war [Y/n]?
+Copying gerrit-2.16.7.war to review_site/bin/gerrit.war
+
+*** SSH Daemon
+***
+
+Listen on address              [*]:
+Listen on port                 [29418]:
+Generating SSH host key ... rsa... ed25519... ecdsa 256... ecdsa 384... ecdsa 521... done
+
+*** HTTP Daemon
+***
+
+Behind reverse proxy           [y/N]?
+Use SSL (https://)             [y/N]?
+Listen on address              [*]:
+Listen on port                 [8080]:
+Canonical URL                  [http://ip-172-31-26-162.ap-south-1.compute.internal:8080/]:
+
+*** Cache
+***
+
+
+*** Plugins
+***
+
+Installing plugins.
+Install plugin codemirror-editor version v2.16.7 [y/N]? y
+Installed codemirror-editor v2.16.7
+Install plugin commit-message-length-validator version v2.16.7 [y/N]? y
+Installed commit-message-length-validator v2.16.7
+Install plugin download-commands version v2.16.7 [y/N]? y
+Installed download-commands v2.16.7
+Install plugin hooks version v2.16.7 [y/N]? y
+Installed hooks v2.16.7
+Install plugin replication version v2.16.7 [y/N]? y
+Installed replication v2.16.7
+Install plugin reviewnotes version v2.16.7 [y/N]? y
+Installed reviewnotes v2.16.7
+Install plugin singleusergroup version v2.16.7 [y/N]? y
+Installed singleusergroup v2.16.7
+Initializing plugins.
+
+
+*** Gerrit Administrator
+***
+
+Create administrator user      [Y/n]? admin
+Create administrator user      [Y/n]? y
+username                       [admin]:
+name                           [Administrator]:
+HTTP password                  [secret]:
+public SSH key file            []:
+email                          [admin@example.com]:
+Initialized /opt/review_site
+Init complete, reindexing projects with: reindex --site-path review_site --threaReindexing projects:    100% (2/2)
+Reindexed 2 documents in projects index in 0.1s (16.0/s)
+Executing /opt/review_site/bin/gerrit.sh start
+Starting Gerrit Code Review: OK
+Waiting for server on ip-172-31-26-162.ap-south-1.compute.internal:8080 ... OK
+Opening http://ip-172-31-26-162.ap-south-1.compute.internal:8080/#/admin/projects/ ...FAILED
+Open Gerrit with a JavaScript capable browser:
+  http://ip-172-31-26-162.ap-south-1.compute.internal:8080/#/admin/projects/
+
+
+http://13.233.233.117:8080/q/status:open
+admin
+secret
+
+============================
+
+Flow 1 - rajesh will create a repo.
+
+git push http://13.233.233.117:8080/first master
+
+Flow 2 - As a other guy
+git clone http://13.233.233.117:8080/first 
+
+git clone "http://ip-172-31-26-162.ap-south-1.compute.internal:8080/first"
+
+565  git push http://ip-172-31-26-162.ap-south-1.compute.internal:8080/first master
+  566  clear
+  567  git push http://13.233.233.117:8080/first master
+  568  clear
+  569  git log
+  570  cd ..
+  571  ls
+  572  mkdir repo2
+  573  clear
+  574  ls
+  575  cd repo2
+  576  start .
+  577  git clone http://13.233.233.117:8080/first
+  578  ls
+  579  cd first/
+  580  clear
+  581  git status
+  582  git log
+  583  ls
+  584  touch file4.txt;git add .;git commit -m"adding by another user"
+  585  git config user.name "Rajesh Kumar"
+  586  git config user.email "Rajesh@scmgalaxy.com"
+  587  touch file4.txt;git add .;git commit -m"adding by another user"
+  588  git push origin master
+  589  cd ..
+  590  ls
+  591  cd ..
+  592  ls
+  593  cd repo1
+  594  l
+  595  s
+  596  ls
+  597  git pull origin master
+  598  git remote add origin http://13.233.233.117:8080/first
+  599  git pull origin master
+  600  ls
+  601  history
+
+What is Hook?
+================================
+
+
+
+
+
+git clone "http://13.233.233.117:8080/first" && (cd "first" && mkdir -p .git/hooks && curl -Lo `git rev-parse --git-dir`/hooks/commit-msg http://13.233.233.117:8080/tools/hooks/commit-msg; chmod +x `git rev-parse --git-dir`/hooks/commit-msg)
+
+
+
+Git branching and Merging
+Git Workflow
+
+
+  601  history
+  602  clear
+  603  ls
+  604  ls
+  605  cd .git/
+  606  ls
+  607  cd hooks
+  608  ls
+  609  start .
+  610  ls
+  611  vi commit-msg
+  612  cd ../..
+  613  ls
+  614  touch file5.txt;git add .;git commit -m"dd"
+  615  vi .git/hooks/commit-msg
+  616  vi .git/hooks/commit-msg
+  617  touch file6.txt;git add .;git commit -m"dd"
+  618  cd ..
+  619  git clone "http://ip-172-31-26-162.ap-south-1.compute.internal:8080/first" && (cd "first" && mkdir -p .git/hooks && curl -Lo `git rev-parse --git-dir`/hooks/commit-msg http://ip-172-31-26-162.ap-south-1.compute.internal:8080/tools/hooks/commit-msg; chmod +x `git rev-parse --git-dir`/hooks/commit-msg)
+  620  clear
+  621  git clone "http://13.233.233.117:8080/first" && (cd "first" && mkdir -p .git/hooks && curl -Lo `git rev-parse --git-dir`/hooks/commit-msg http://ip-172-31-26-162.ap-south-1.compute.internal:8080/tools/hooks/commit-msg; chmod +x `git rev-parse --git-dir`/hooks/commit-msg)
+  622  ex in 0.1s (16.0/s)
+  623  clear
+  624  ls
+  625  git clone "http://13.233.233.117:8080/first" && (cd "first" && mkdir -p .git/hooks && curl -Lo `git rev-parse --git-dir`/hooks/commit-msg http://13.233.233.117:8080/tools/hooks/commit-msg; chmod +x `git rev-parse --git-dir`/hooks/commit-msg)
+  626  rm -rf first/
+  627  git clone "http://13.233.233.117:8080/first" && (cd "first" && mkdir -p .git/hooks && curl -Lo `git rev-parse --git-dir`/hooks/commit-msg http://13.233.233.117:8080/tools/hooks/commit-msg; chmod +x `git rev-parse --git-dir`/hooks/commit-msg)
+  628  start .
+  629  clear
+  630  ls
+  631  cd first/
+  632  ls
+  633  touch file5.txt;git add .;git commit -m"file5"
+  634  git config user.name "Rajesh Kumar"
+  635  git config user.email "Rajesh@scmgalaxy.com"
+  636  touch file5.txt;git add .;git commit -m"file5"
+  637  git log
+  638  git push origin HEAD:refs/for/master
+  639  history
+
+===================================
+branching and Merging strategy
+============================================
+Branching Type
+=======================
+	Local Branch		- R W
+	Remote Branch		- R O
+	Temp Branch		- R W 
+
+
+Types of Merges
+	FAST FORWARD MERGE
+	RECUSIVE MERGe
+	CHERY PICKING
+
+
+
+ 512  git branch -a
+  513  git branch
+  514  git branch  -r
+  515  clear
+  516  git branch
+  517  git branch -a
+  518  git checkout remotes/origin/master
+  519  git branch -a
+  520  clear
+  521  git checkout master
+  522  git branch -a
+  523  git branch fea1
+  524  git branch -a
+  525  git checkut fea1
+  526  clear
+  527  git checkout fea1
+  528  git branch -a
+  529  ls
+  530  touch fea1.txt;git add .;git commit -m"adding fea1"
+  531  touch fea2.txt;git add .;git commit -m"adding fea2"
+  532  clear
+  533  git log --oneline
+  534  git checkout master
+  535  git log --oneline
+  536  clear
+  537  git merge fea1
+  538  git log --oneline
+  539  touch master1.txt;git add .;git commit -m"adding master1"
+  540  touch master2.txt;git add .;git commit -m"adding master2"
+  541  clear
+  542  git checkout fea1
+  543  touch fea3.txt;git add .;git commit -m"adding fea3"
+  544  touch fea4.txt;git add .;git commit -m"adding fea4"
+  545  git checkout master
+  546  touch master3.txt;git add .;git commit -m"adding master3"
+  547  clear
+  548  git checkout fea1
+  549  touch fea5.txt;git add .;git commit -m"adding fea5"
+  550  git log --oneline
+  551  git checkout master
+  552  clear
+  553  git log --oneline
+  554* git merge
+  555  git log --oneline
+  556  clear
+  557  git checkout fea1
+  558  touch cherr1.txt;git add .;git commit -m"adding cherry1"
+  559  touch cherr2.txt;git add .;git commit -m"adding cherry2"
+  560  touch cherr3.txt;git add .;git commit -m"adding cherry3"
+  561  touch cherr4.txt;git add .;git commit -m"adding cherry4"
+  562  git log --oneline
+  563  clear
+  564  git log --oneline
+  565  git checkout master
+  566  git cherry-pick 115489e
+  567  ls
+  568  clear
+  569  ls
+  570  histry
+  571  history
+
+
+git patch
+
+
+
+fetch | vs pull  vs Push
+============================
+
+
+
+
+====================================
+
+
+1 Day -- Gerrit User Training
+=================================
+
+2 Day -- Gerrit admin Training
+==================================
+----STOP  ------
+/opt/review_site/bin/gerrit.sh stop
+
+
+Gerrit Setup with MySql
+=====================================
+https://www.devopsschool.com/tutorial/mysql/how-to-install-mysql-on-centos-7.html
+
+yum install wget
+wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
+sudo rpm -ivh mysql-community-release-el7-5.noarch.rpm
+yum update
+sudo yum install mysql-server
+sudo systemctl start mysqld
+
+# Setting up root password
+sudo mysql_secure_installation
+
+------DB CREATTION----------------
+$ mysql -u root -p
+$ show databases;
+$ create database gerrit;
+$exit
+------DB Corrector dowload----------------
+cd /opt/review_site/lib/
+wget https://repo1.maven.org/maven2/mysql/mysql-connector-java/5.1.43/mysql-connector-java-5.1.43.jar
+
+------Modify gerrit.config----------------
+vi /opt/review_site/etc/gerrit.config
+
+[database]
+        type = mysql
+        hostname = localhost
+        database = test2
+        username = root
+
+----STOP and START ------
+/opt/review_site/bin/gerrit.sh stop
+java -jar gerrit*.war init -d review_site
+/opt/review_site/bin/gerrit.sh start
+
+
+===============================================
+How to enable VALIDATION with gerrit......
+
+Step 1 - Install gerrit 	DNE
+
+Step 2 - Install jenkins	DONE
+
+Step 3 - Enable Validation label in Jenkins....
+
+Step 4 - Install Gerrit Plugins in Jenkins...
+
+Step 5 - Configure Gerrit Plugins
+
+SSH KEY CPY FRM JENKINS SERVER TO jekins users 
+[root@ip-172-31-27-155 .ssh]# mkdir /var/lib/jenkins/.ssh/
+[root@ip-172-31-27-155 .ssh]# cp id_rsa /var/lib/jenkins/.ssh/
+[root@ip-172-31-27-155 .ssh]# chown -R jenkins:jenkins /var/lib/jenkins/.ssh/
+[root@ip-172-31-27-155 .ssh]# chmod 600 /var/lib/jenkins/.ssh/id_rsa
+[root@ip-172-31-27-155 .ssh]# ls -lrt /var/lib/jenkins/.ssh/id_rsa
+-rw-------. 1 jenkins jenkins 1679 May 26 09:32 /var/lib/jenkins/.ssh/id_rsa
+[root@ip-172-31-27-155 .ssh]#
+
+
+
+
+
+git clone "http://13.233.32.56:8080/test" && (cd "test" && mkdir -p .git/hooks && curl -Lo `git rev-parse --git-dir`/hooks/commit-msg http://13.233.32.56:8080/tools/hooks/commit-msg; chmod +x `git rev-parse --git-dir`/hooks/commit-msg)
+
+
+git clone "http://13.233.32.56:8080/test2" && (cd "test2" && mkdir -p .git/hooks && curl -Lo `git rev-parse --git-dir`/hooks/commit-msg http://13.233.32.56:8080/tools/hooks/commit-msg; chmod +x `git rev-parse --git-dir`/hooks/commit-msg)
+
+
+==============================================
+
+
+git clone "http://13.233.32.56:8080/chat" && (cd "chat" && mkdir -p .git/hooks && curl -Lo `git rev-parse --git-dir`/hooks/commit-msg http://13.233.32.56:8080/tools/hooks/commit-msg; chmod +x `git rev-parse --git-dir`/hooks/commit-msg)
+
+git clone "ssh://y@ip-172-31-28-87.ap-south-1.compute.internal:29418/chat"
+
+===============================================================
+Step 1 - 
+
+	- Create a user called "jenkins"
+	- Add user "jenkins into group called "NON_INT"
+
+Step 2 - Install Gerrit Plugins "Gerrit Trigger" in Jenkins
+
+Step 3 - Setup ssh public key from for "jenkins" users in jenkins server to jenkins at gerrit.
+
+http://35.200.170.213:8080/
+rajesh
+rajesh123
+
+Step 4 - Configure Gerrit Plugins in Jenkins
+	- Location - http://35.200.170.213:8080/gerrit-trigger/
+		- http://35.200.143.69/
+Step 5 - Give appropriate access to group called "validators"
+
+Admin > Projects > ... > Access > Edit
+Reference: refs/*
+Read: ALLOW for Non-Interactive Users
+Reference: refs/heads/*
+Label Code-Review: -1, +1 for Non-Interactive Users
+
+Step 6 - Add Verified label.
+http://instance-5.c.devopsschool.internal:8080/admin/repos/All-Projects,commands
+Edit repo config
+Add following
+  [label "Verified"]
+      function = MaxWithBlock
+      value = -1 Fails
+      value = 0 No score
+      value = +1 Verified
+      copyAllScoresIfNoCodeChange = true
+review
+Submit
+
+Step 7 - Give appropriate access to group called "validators"
+Reference: refs/heads/*
+Label Verified: -1, +1 for Non-Interactive Users OR Validators
+
+Global Capabilities
+Stream Events: ALLOW for Event Streaming Users
+
+
+Step 8 - Create a repo in gerrit and add a code as admin....
+
+git clone "http://admin@instance-5.c.devopsschool.internal:8080/a/pro1"
+secret
+
+Step 9 - Addd jenkins job with repo from gerrit...
+
+Step 10 - To avoid ssh issues in jenkins server....
+
+sudo su -s /bin/bash jenkins
+git clone ssh://jenkins@instance-5.c.devopsschool.internal:29418/pro1
+ssh -p 29418 jenkins@instance-5.c.devopsschool.internal gerrit stream-events
+
+ssh -p 29418 jenkins@instance-5.c.devopsschool.internal gerrit
+ssh -p 29418 localhost gerrit plugin install
+
+Step 11 - To avoid ssh issues in jenkins server....
+
+
+
+ssh -p 29418 admin@instance-5.c.devopsschool.internal gerrit
+
+
+
+
+git clone "ssh://y@13.233.32.56:29418/chat1"
+
+
+
+
+git clone "ssh://y@13.233.32.56:29418/chat1" && scp -p -P 29418 y@13.233.32.56:hooks/commit-msg "chat1/.git/hooks/"
+
+
+
+git clone "ssh://jenkins@ip-172-31-28-87.ap-south-1.compute.internal:29418/chat1"
+
+ssh -p 29418 jenkins@ip-172-31-28-87.ap-south-1.compute.internal gerrit stream-events
+
+============================
+
+===============================
+
+How to install Plusgin in Gerrit?
+
+
+=======================================================
+http://devopscertification.co/
+
+Full Name 
+Gmail ID 
+Phone#
+Role
+City - Banagalore
+Comp - HCL
+
+contact@DevOpsSchool.com
+===============================
+Hw to reach out to me?
+http://rajeshkumar.xyz/
+
+
+https://www.google.co.in/maps/place/DevOpsSchool.com/@12.9649378,77.5973839,17z/data=!3m1!4b1!4m5!3m4!1s0x3bae15d656aeaaab:0xe5ca07dae2353764!8m2!3d12.9649378!4d77.5995726
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,69 @@
+How to install gerrit?
+	JDK | JRE
+	
+$ yum install wget -y
+$ wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+$ rpm -ivh jdk-8u131-linux-x64.rpm
+$ java -version
+==========================
+git clone "http://13.232.140.158:8080/rajesh" && (cd "rajesh" && mkdir -p .git/hooks && curl -Lo `git rev-parse --git-dir`/hooks/commit-msg http://13.232.140.158:8080/tools/hooks/commit-msg; chmod +x `git rev-parse --git-dir`/hooks/commit-msg)
+
+Step 1 - Go to http://13.232.140.158:8080 and Create a account with your name
+Step 2 - Add your user name to group called  "dev"
+Step 3 - Create a repo with your name only.
+Step 4 - Clone that repo with hooks
+Step 5 - Commit
+Step 6 - git push origin HEAD:refs/for/master
+
+User name - Guest03
+Pass - Mar@123
+
+raja
+JRd/FX+7LMyxNpT/GBiN2KyIbrHxMrotwGHyG0WgLA
+==========================================================
+
+About me?
+http://rajeshkumar.xyz/
+
+Certified by - DevOpsCertification.co
+
+Subject - Git Certified Engineer
+
+Full Name - 
+Gmail ID  - 
+Office email
+Phone# -
+Role - 
+City - Bangalore
+
+TO - Contact@DevOpsSchool.com
+
+
+DevOpsSchool.com/lms
+	Slides
+	Tutoails
+	Sample Program
+	QUiz
+	-------------
+	GIt & Gerrit
+
+=====================================
+https://www.devopsschool.com/
+=====================================
+Feedback
+	Compulsory - 
+	Optional - 
+	https://www.google.com/maps/place/DevOpsSchool.com/@12.964943,77.5973839,17z/data=!3m1!4b1!4m5!3m4!1s0x3bae15d656aeaaab:0xe5ca07dae2353764!8m2!3d12.9649378!4d77.5995726
+
+
+
+
+
+
+
+
+
+
+
+
+
