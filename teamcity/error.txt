@@ -1,0 +1,9 @@
+C:\Tools\TeamCity\agent2\bin>install.bat
+Agent installation is executing on 'DESKTOP-ST1GLH0'...
+Current directory: 'C:\Tools\TeamCity\agent2\bin'
+System Type:               x64-based PC
+Looking for installed JRE...
+The system cannot find the path specified.
+Installed JRE found.
+'""' is not recognized as an internal or external command,
+operable program or batch file.

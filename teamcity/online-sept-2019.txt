@@ -1,0 +1,336 @@
+What is Teamcity?
+	CI tool.
+	Dev by Jetbrains
+	Dev in JAVA (Platform Ind)
+		Windows 
+		Linux
+		Mac
+	
+	
+	
+What is CI?
+- Continous Integ
+	
+- Auto Build + Auto Testing + Imm Feedback
+
+- Code Analysis -> Build -> UT -> Packaging -> Archive -> Dep2Qa -> AT -> CC -> Release
+---------------------------------------------------------------------------------------
+				Automated
+- SonarQube --> Maven --> Junit -> Jar -> Nexus -> Ansible ->  Selenium - Jacoco -> 
+										Passed - RELEASE
+										Failed - Repeat
+=======================================================================================
+				Continous Integrated with what???
+							TEAMCITY
+								Integration with tools
+								https://www.devopsschool.com/path/
+								
+								Immediate Feedback
+								- Emails
+								- Chat
+								- Dashboarding
+
+								Team Collabration tool
+
+								Scheduling
+
+Architecure of Teamcity
+===========================================
+Server 
+	Web
+	- Dashboard Powered by Tomcat
+	Database
+	- RDBMS
+		- H2
+		- MYSQL
+		- PS
+		- MSQl
+		- ORACLE
+	Data dir
+	- Config file/logs/build dir/
+Build Agent
+	Agent
+	Data dir
+
+How to install it?
+	JDK
+	TEAMCITY
+		SERVER
+		AGENT
+	
+
+13.233.227.124
+ec2-user
+
+$ yum install wget -y
+$ cd /opt/
+$ wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+$ rpm -ivh jdk-8u131-linux-x64.rpm
+$ java -version
+
+$ wget https://download.jetbrains.com/teamcity/TeamCity-2019.1.3.tar.gz?_ga=2.11697524.1547181368.1567866154-608604198.1567866154
+
+    7  ls
+    8  wget https://download.jetbrains.com/teamcity/TeamCity-2019.1.3.tar.gz?_ga=2.11697524.1547181368.1567866154-608604198.1567866154
+    9  slc
+   10  clear
+   11  ls
+   12  mv TeamCity-2019.1.3.tar.gz\?_ga\=2.11697524.1547181368.1567866154-608604198.1567866154  TeamCity-2019.1.3.tar.gz
+   13  ls
+   14  tar -zxvf TeamCity-2019.1.3.tar.gz
+   15  clear
+   16  ls
+   17  history
+[root@ip-172-31-18-199 TeamCity]# ls -1
+bin			- Start / Stop for Teamcity
+BUILD_66439
+buildAgent		- First Build Agent which comes along with server
+conf			- Teamcity Config file
+devPackage		- teamcity functions jar - featute of teamcity
+lib			- teamcity functions jar
+licenses		
+service.properties
+TeamCity-readme.txt
+temp
+Tomcat-running.txt
+webapps			- teamcity webapp
+
+[root@ip-172-31-18-199 TeamCity]# cd bin/
+
+
+[root@ip-172-31-18-199 bin]# ./runAll.sh
+Run as ./runAll.sh (start|stop[ force])
+[root@ip-172-31-18-199 bin]# ./runAll.sh start
+Spawning TeamCity restarter in separate process
+TeamCity restarter running with PID 10255
+Starting TeamCity build agent...
+Java executable is found: '/usr/java/default/jre/bin/java'
+Starting TeamCity Build Agent Launcher...
+Agent home directory is /opt/TeamCity/buildAgent
+Agent Launcher Java runtime version is 1.8
+Lock file: /opt/TeamCity/buildAgent/logs/buildAgent.properties.lock
+Using no lock
+Done [10999], see log at /opt/TeamCity/buildAgent/logs/teamcity-agent.log
+[root@ip-172-31-18-199 bin]#
+==========================================================
+http://13.233.227.124:8111
+admin
+admin123
+
+
+Step 1  - Configure teamcity
+			Email Setup - SMTP
+			- Administration -> Email Notifierv
+			Authentication and Auths
+			- Group
+				- Admin
+				- Dev
+				- QA
+			Chat
+			- Administration ->Jabber Notifier
+
+Step 2 - Know a Secret Formula to create a Project in Teamcity?
+	- What is your tech?
+		JAVA - DOT - CPP - PERl - PY - Go
+		--------BUILD AGENT Shuld be compt----------
+	- Where is Source code?
+		GIT - SVN - p4 - CC
+		Access
+	- What is your BUILDER/RUnner?
+		Maven
+		Msbuild
+		Ant
+		Gradel
+	- How often you want this build to be triggers?
+		Daily
+		Hourly
+		oN Commit
+	- Whom you want this feedback to delivered?
+		Group of people
+		User - Email - Chat
+
+	JAVA 
+	MAVEN
+	https://github.com/scmgalaxy/helloworld-java-maven
+		mvn compile
+		mvn package
+		mvn test	
+	Daily
+	Email
+
+	DOTNET
+	MSBUILD
+	https://github.com/scmgalaxy/msbuild-helloworld
+	Hourly
+	Email
+	Chat	
+
+Step 3
+	Projects
+		Project1 
+			General Setting
+				Build Configurations
+				- Type of VCS:
+				- Build Steps
+					- Step 1
+					- Step 2
+					- Step 3
+				- Triggers
+				Build Configuration Templates
+				Subprojects
+			VCS Roots
+			Report Tabs
+			Parameters
+			Connections
+			Shared Resources
+			Meta-Runners
+			Maven Settings
+			Issue Trackers
+			Cloud Profiles
+			Clean-up Rules
+			Versioned Settings
+			Artifacts Storage
+			SSH Keys
+			NuGet Feed
+			Suggestions
+		Project2
+		Project3
+
+Step 4
+==================================================
+Nuget 
+	Creating Package  nuget.spec
+	Installing 	
+	Removing 
+	Upgrading
+
+
+buildcofig1 ---> buildcofig2
+buildcofig1 ---> buildcofig2-artifactt
+==================================================================
+Teamcity Agents
+Teamcity Parameters
+=================================================================
+What is Teamcity agent?
+	fOR SHARING A RESOURCES.
+				cpu + RAM + STORAGE + bUILD INFRA
+Why Do we need it?
+==========================	
+Teamcity Server
+	Default Agent
+
+24 Builds in Day X 1 Hour = 24 Hours
+			    Aka 1 day
+=====================================
+			8 hours
+Idea 1 USING PHY/vm ser 	aDD 1 MORE build AGENT
+				aDD 2 MORE build AGENT
+----------------------------------------
+		3 aGENTS - 8 HOURS
+
+Idea 2 USING cloud ON DEMAND USING vMS
+
+Idea 3 USING cONTAINER
+
+=====================================
+hOW AGEnT AND sERVER COMMUNCIATE WITH EACH OTHERS?
+-----------------------------------------------------
+server 			aGENT
+----------------------------------------
+wINDOWS/lINUX		wINDOWS/lINUX
+dEV IN java		dEV IN java
+Port - 8111		Port - 9090
+
+
+SERVER ------> AGENT ----> SERVER AKA BI DIRECTIONAL (LEgacy Mode)
+AGENT ---> Server AKA UNIDIRECtiONAL (Current Mode)
+	------------HTTP/HTTPS protocol 
+
+
+wHAT IS THE PRE REQ OF aGENT?F
+=============================================
+JAVA 8
+JAVA_HOME
+http - accessible
+https  - acces + certi
+permission to start services N shutdown
+
+hOW TO ADD aGENT?
+===================================
+Manual Way 
+	Linux & Windows
+	- Download a Agent installer
+	- Install it using install.bat|install.sh
+	- Start it using bin directroy
+	agent.sh|bat start
+	--------------------
+	- Download a Agent zip file
+	- Configure it buildAgent.properties
+			serverUrl
+			name
+			workDir
+			tempDir
+			systemDir	
+	- Start it using bin directroy		
+	agent.sh|bat start
+Push Way 
+	LINUX using SSH--- IP ADDRESS - USERID/PASS OR key
+	WINDOWS usign psexec.exe  IP ADDRESS - USERID/PASS 
+
+	from the Unix-based TeamCity server, build agents can be installed to Unix hosts only (via 	SSH)
+
+	from the Windows-based TeamCity server, build agents can be installed to Unix (via SSH) or 	Windows (via psexec) hosts
+
+==========================================================
+	Dependencies 
+	DOTNET
+		NUNIT
+		Transformation
+	DOTNET CORE
+		XUNIT
+		Transformation
+	CODE Coverage - NCOVER
+	Parameters
+======================================
+Sat - 7 AM IST
+Sun - 7 PM IST
+		
+===========================================================
+NANT
+https://github.com/devopsschool-sample-projects/teamcity-nant-helloworld
+C:\Tools\nant
+env.NAntHome
+
+msbuild
+
+Batch
+https://github.com/devopsschool-sample-projects/teamcity-batch-helloworld
+
+.sln
+https://github.com/devopsschool-sample-projects/teamcity-dotnet-service
+
+vbproje
+https://github.com/devopsschool-sample-projects/nunit-vb-samples
+
+nuni
+https://github.com/devopsschool-sample-projects/teamcity-nunit-samples
+
+nunit - csharp
+https://github.com/devopsschool-sample-projects/nunit-csharp-samples
+
+C:\Windows\Microsoft.NET\Framework64\v4.0.30319
+
+
+
+
+
+
+
+
+
+
+
+
+
+								
+					

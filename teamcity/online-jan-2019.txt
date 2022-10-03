@@ -1,0 +1,197 @@
+What is TeamCity?
+	CI tool
+	From jetbrains
+	Developed using JAVA
+	Teamcity can be installed on any latforms
+	Paid.....
+
+What is CI
+	Continous Integration tools.
+	Auto Build -> Auto Testing --> Immediate Feedback.
+	--------------------------------------------------
+			LOOP
+	
+	Plan->code->Analysis->Build->UT->Pack->Dep2Repo->Dep2QA->CC->RELEASE
+	==================================================================			
+				Imm feedback
+
+	jira->git->Sonarqube->Maven->Junit->Jar->Artifactory->Ansible->jacoco->
+										Pass - Release
+										Fail - Repeat
+	========================================================================================
+					feedback....
+	You need a tool which can help you 
+			- To integrate All
+			- GUI which can be access and shared with team
+			- Notification == Feedback
+				- Email
+				- chat
+				- Reports
+				- Pipeline
+				- A place where team can collobrate....
+	===============================================================================
+	Jenkins	from Jenkins
+	Teamcity from Jetbrains
+	Bamboo from Atlassion
+
+	Travis-ci
+	uBuild-uDeploy from IBM
+	gitlab ....
+
+TeamCity Architecture?
+	Teamcity Webserver (Configure your projects)
+			Database - mysql, mssql,oracle,pos
+			Webserver - Tomcat, jboss,wl
+		Action---> Build Agent....
+
+	
+	
+
+How can we install it?
+Pre
+	JRE
+	JDK
+wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+	> rpm -ivh jdk-8u131-linux-x64.rpm
+
+Download and Install using 
+Manual
+	WIndows
+	Linux
+https://www.jetbrains.com/teamcity/download/#section=section-get
+wget https://download.jetbrains.com/teamcity/TeamCity-2018.2.2-installer.zip
+	Mac
+	
+Docker 
+docker run -it --name teamcity-server-instance  \
+-v <path to data directory>:/data/teamcity_server/datadir \
+-v <path to logs directory>:/opt/teamcity/logs  \
+-p <port on host>:8111 \
+jetbrains/teamcity-server
+
+Aws	
+https://console.aws.amazon.com/cloudformation/home#/stacks/new?stackName=test&templateURL=https://s3.amazonaws.com/teamcity.jetbrains.com/teamcity-server.yaml
+	
+Teamcity Config
+=======================
+Teamcity - /opt/TeamCity
+
+bin			=> All executables
+BUILD_61245
+buildAgent		=> BuildAgent executables
+conf			=> TeamCity Server Config
+devPackage
+lib
+licenses
+service.properties
+TeamCity-readme.txt
+temp
+Tomcat-running.txt
+webapps
+
+
+[root@ip-172-31-28-179 bin]# ./runAll.sh status
+Run as ./runAll.sh (start|stop[ force])
+[root@ip-172-31-28-179 bin]# ./runAll.sh start
+Spawning TeamCity restarter in separate process
+TeamCity restarter running with PID 18188
+Starting TeamCity build agent...
+Java executable is found: '/usr/java/default/jre/bin/java'
+Starting TeamCity Build Agent Launcher...
+Agent home directory is /opt/TeamCity/buildAgent
+Agent Launcher Java runtime version is 1.8
+Lock file: /opt/TeamCity/buildAgent/logs/buildAgent.properties.lock
+Using no lock
+Done [18929], see log at /opt/TeamCity/buildAgent/logs/teamcity-agent.log
+
+
+
+Setup a Datadir - 
+TeamCity server stores server configuration settings, project definitions, build results and caches on disk in a Data Directory
+
+mysql
+		hostname
+		dbame
+		user
+		password
+
+Backup and Restore ->
+		Take a Backup a Db ---->
+		take a Backup of datadir --> rsync
+Restore 
+		Setup a Dummy team city...
+			DB
+			DATADIR
+======================================================================
+http://13.126.250.69:8111/
+rajesh
+rajesh123
+
+Heiracrchy of Projects in Teamcity....
+Projects
+	Project1		MAY BE CRAETED FROM TEMPLATE PROJECT
+		SubProject1	MAY BE CRAETED FROM TEMPLATE PROJECT
+		SubProject2	MAY BE CRAETED FROM TEMPLATE PROJECT
+		SubProject3	MAY BE CRAETED FROM TEMPLATE PROJECT
+		SubProject4	MAY BE CRAETED FROM TEMPLATE PROJECT	
+	Project2		MAY BE CRAETED FROM TEMPLATE PROJECT
+		General Settings
+		VCS Roots
+		Report Tabs
+		Parameters
+		Connections
+		Shared Resources
+		SSH Keys
+		Meta-Runners
+		Maven Settings
+		Issue Trackers
+		Cloud Profiles
+		Clean-up Rules
+		Versioned Settings
+		Artifacts Storage
+		NuGet Feed
+		Suggestions		
+	Project3		MAY BE CRAETED FROM TEMPLATE PROJECT
+		BUILD Configurations
+			BUildConfig1
+				Build Step1
+				Build Step2
+			BUildConfig2
+			BUildConfig3
+				
+===================================================
+Secret formuala of setting teamcity project
+
+What is Technology?
+JAVA	DOTNET	ASPNET	RUBY	PYTHON	PERL	GO	C 	C++
+-------------------------------------------------------------------
+			NEED TO BE INSTALED In BUILD AGENT(S)
+
+Where is source code?
+Git	SVN 	CVS P4
+-------------------------------------------
+	Location & Access
+
+What is Builder?
+------------------------------------------------
+Maven ant gradle msbuild nant rake bash shell batch pery pythng makefile
+
+SAMPLE - https://github.com/devops-school
+
+
+
+Pom
+JAVA
+GIT
+MAVEN
+
+
+
+
+
+
+https://www.devopsschool.com/tutorial/artifactory/upload-artifacts-using-maven-in-artiactory.html
+
+
+
+https://www.devopsschool.com/path/

@@ -1,0 +1,31 @@
+Agents
+
+
+Prerequisites for Teamcity Agent
+- JAVA and JAVA_HOME
+- Permission to Start/Stop service in Windows and linux
+- The user must be able to run the shutdown command
+
+
+How Teamcity Server and Agent agent communicates with each other?
+
+Protocol
+Teamcity Server and Agent agent communicates with each other with HTTPS/HTTP. Teamcity agent by det
+
+Ports
+9090 is the default for incoming connections from the server for Teamcity Agent.
+
+buildAgent.properties
+- be able to open outbound HTTP connections to the server URL configured via the serverUrl property in the buildAgent.properties file
+
+How Teamcity Agent and Teamcity Server Data Transfers with each other?
+
+- Unidirectional Agent-to-Server Communication
+A TeamCity agent connects to the TeamCity server via the URL configured as the serverUrl agent property. This is called unidirectional agent-to-server connection. Agents use unidirectional agent-to-server connection via the polling protocol: the agent establishes an HTTP(S) connection to the TeamCity Server, and polls the server periodically for server commands. 
+
+-Bidirectional Agent-to-Server Communication
+If specifically configured, TeamCity agent can use legacy bidirectional communication which also requires establishing a connection from the server to the agents. The bidirectional communication is a legacy connection between the agent and the server and it needs to be specifically enabled
+
+To view whether the agent-server communication is unidirectional or bidirectional for a particular agent, navigate to Agents | <Agent Name> | Agent Summary tab, the Details section, Communication Protocol.
+
+How to Install a Teamcity build agent?	
