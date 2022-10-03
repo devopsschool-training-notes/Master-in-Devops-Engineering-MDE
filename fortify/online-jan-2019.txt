@@ -1,0 +1,45 @@
+What is Fortify?
+	To Analyse a 
+		Security issues of Running App
+		Code Review of Source Code
+				of CODE && RUNNING APP
+		IN
+		Dev 	 	- QA			- PROD
+		Code Review	Security Review		Security Review
+
+	Developed by HPE
+		Sold to microfocus
+	
+Other tools - 
+		SonarQube
+		Coverity
+		APPSCAN FROM IBM
+
+How to install it?
+	Fortify Desktop version - Audit Workbench
+	Fortify Command Line
+	Fortify Web Version
+	Fortify plugins to integ with IDE
+	Fortify Agents in PROD/QA runtime
+	Fortify DAASHBOARD
+
+	Pre - JRE 8
+	WINDOWS - LINUX - MAC
+
+What is your roles and res
+	1. Setup a Fortify central server
+	2. Install a Fortify  Plugins in IDE
+		- DEV WILL DO THE STATIC SCANNING ---> PUSH the results to Fortify 
+	3. CICD- 
+		Setup a scan using command line and PUSH the results to Fortify 
+	4. Reports generation 
+	5. Fortify Backup and Restre
+
+Where can you implment?
+	DEV - STATIC
+	QA  - DYNAMIC
+	PROD - NETWORK
+
+
+
+		
