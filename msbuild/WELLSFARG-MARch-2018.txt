@@ -1,0 +1,58 @@
+What is MSBUILD?
+	A build tool
+	From Microsoft
+	In Built with VS, TFS
+	Recommdended for DOTNET
+	Part of the DOTNET
+	xml
+
+WHY MSBUILD?
+	To automate the build automation
+
+How to install?
+	C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe
+
+	PATH  -> C:\Windows\Microsoft.NET\Framework64\v4.0.30319\
+
+How to verify?
+> msbuild
+> msbuild -v
+
+Where you psucode?
+	create a dir		MakeDir Task
+	clean a dir		Delete Task
+	copy the source code	Copy Task
+	compile			Csc Task
+	package			Exec Task
+
+Where or How to create Specify a project or solution file?
+.sln			VS
+.msproj			VVS
+.csprog
+filename.msbuild	YOU
+
+How to write msbuild script?
+	
+PROJECT		- 1
+PROPERYGROUP	- MUL
+ITEMGROUP	- FILES
+TASKS		- MUL
+https://msdn.microsoft.com/en-us/library/7z253716.aspx
+
+TARGET
+
+
+===========
+How to execute msbuild?
+
+> msbuild filename.msbuild
+
+> msbuild filename.msbuild /t compile
+
+
+SAMPLE PROJECT NAME - https://github.com/scmgalaxy/artifactory-msbuild-example
+
+
+
+
+

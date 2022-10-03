@@ -1,0 +1,49 @@
+MsBuild - 
+A build tool automation. 
+DOT NET
+VS STUDIO
+XML based
+
+Why do we need a build tool?
+
+How do we install msbuild?
+
+How do we verify?
+
+How do you store the msbuild file?
+filename.msbuild
+
+How do we run program?
+msbuild <filanem.msbuild>
+msbuild /target:targettname
+
+
+How do we write a program?
+
+XML Stanard?
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+
+MSBuild is Divided into  -
+PROJECT			1
+TASKS			MUL
+PROPERTIES		MUL
+TARGET			MUL
+
+What is Tasks?
+Copy the file | dir
+compile
+cleaning
+
+
+How do we compile?
+msbuild filename.msbuild
+
+
+Tar1
+
+tar2 dep tar1
+
+
+

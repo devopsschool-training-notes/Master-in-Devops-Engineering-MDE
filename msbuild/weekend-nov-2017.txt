@@ -1,0 +1,138 @@
+What is Msbuild?
+	- Build tool
+	- A Declarative Build tool
+	- From Microsft
+	- In built with VS
+	- Come with each windows OS FREE.
+	- NO linux support
+	- Build engine of VS
+	- xml based
+
+Why We need build tool?
+	Build automation or build management
+
+Src --> Binary --> Package --> Archive --> Deploy
+
+	==================
+	- Creating a dir
+	- copy src file
+	- copy 3 rd party
+	- setting the env, config
+	- setting the prop
+	- compile
+	- ut
+	- package
+	- test
+
+What are other tool?
+Ant--> Maven--> Gradle [JAVA]
+NANT --> MsBuild 
+
+Why MSBuild?
+	- Build Auto in Windows Project
+
+What is Declarative?
+- You declare your programming logic/structure yourself in your style by following lanaguage guidelines.
+- ant, msbuild, gradle
+
+What is Procedural?
+- Everything is define in process way you just need to call it
+- maven
+
+How to install it? (Windows)
+Location - C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe
+C:\Windows\Microsoft.NET\Framework64\v4.0.30319\ ==> PATH
+
+How to verify?
+> msbuild
+
+What is a project or solution file????
+	- xml based file
+	- you declare everything here about the build automation
+
+
+How to write a project or solution file?
+	- PROJECT 	- TOP LEVEL ELEMENT			- 	1		
+	- TASK		- ACTION OR STEPS TO BE PERFOMED	-       DEPENDS ON UR REQUIREMENT
+	- TARGET	- Group of Tasks
+	- PROPERTY GROUP - A group of property 			- $
+	- ITEMGROUP	 - item, artifacts etc			- @
+
+Where can you find a List of tasks supporeted?
+https://msdn.microsoft.com/en-us/library/7z253716.aspx
+
+How to store the msbuild? - NO HARD WAY
+	filename.sln (VS)
+	filename.msbuild
+	
+
+How to execute?
+	VS
+	command line
+
+		> msbuild filename.msbuild
+
+How to write a msbuild?
+
+==============PROGRAM 1 ===============================
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+ 
+<Message Text=“This is Hello World!" />
+
+</Project>
+
+
+WHAT IS ORDER OF TARGET?
+======================================
+- IF there is default target and no initial tagets then first target execute....
+
+
+=================FINAL =======================================
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+<PropertyGroup>
+        <Source>src</Source>
+		<Build>build</Build>
+		
+</PropertyGroup>
+
+<ItemGroup>
+		<Base Include="D:\weekend\financialService\*.cs" />
+		<Compile Include="$(Source)\**\*.*" />
+</ItemGroup>
+
+
+
+<Target Name="setenv">
+	<Message Text="This is Hello World 1!" />
+	<Message Text="This is Hello World 2 !" />
+	<Message Text="This is Hello World 3!" />
+	<Message Text="This is Hello World 4!" />
+	<MakeDir Directories="$(Source)"/>  
+	<MakeDir Directories="$(Build)"/>
+
+	
+</Target>
+
+<Target Name="compile">
+		<Copy  
+            SourceFiles="@(Base)"  
+            DestinationFolder="$(Source)"  
+        />
+	<Csc Sources="@(Compile)"/>  
+</Target>
+
+
+
+</Project>
+
+
+
+
+
+
+
+
+

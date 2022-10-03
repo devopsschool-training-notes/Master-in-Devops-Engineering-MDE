@@ -1,0 +1,95 @@
+MSBUILD ESSENTIAL
+=====================================
+What is MSBUILD?
+	IS BUILD TOOL
+
+What is the function of the build tool?
+
+
+	Source code into Binary
+		Creating a approprite dir strc
+		copy the ssrc
+		setting up the compiler
+		setting up the config req
+	Unit Test cases	
+		Copy the test
+		run the test cases
+		report test
+	Binary into Package
+	Packages dep to the Repo (NEXUS, Artifactory)
+==================================
+	15 times in day
+
+Why we build tools
+	--- ant, maven, msbuild, gradle
+	ESSY To IMPLEMENT
+	EASY to CODE
+	EASY TO SHARE
+	EASY TO DEBUG
+	EAST TO EXTEND
+
+Why msbuild?
+	DOT NET
+	VMSTUDIO
+		IN BUILT
+
+How to install msbuild?
+	IN BUILT WITH WINDOWS
+
+	SET THE ENV -- PATH
+
+C:\Windows\Microsoft.NET\Framework64\v4.0.30319 ---> PATH
+
+
+How to verify?
+> msbuild
+
+
+------AUTOMATE THE BUILD PROCESS----
+
+REQUIREMENT -----> PSUCODE==STEP BY STEP
+
+Create a directory
+Copy the src code
+Compile the src code
+
+=========================
+How to write a msbuild script?
+	- xml
+	- 5 Major elements
+		PROJECT		- 1 
+			TASKS		- UNLIMITED ---TASKS REF IN MS SITE 
+			TARGET		- Group of Task
+			PROPERTY GROUP  - Group of Property
+			ITEM GROUP 	- Group of item
+
+How to compile
+	default.msbuild
+	> msbuild default.msbuild
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

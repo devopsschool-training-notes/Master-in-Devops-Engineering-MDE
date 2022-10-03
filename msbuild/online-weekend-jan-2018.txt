@@ -1,0 +1,61 @@
+What is MsBuild?
+	Build tool
+	Dev in DOTNET
+	For DOT NOT
+	on Windows
+	Built in VS  
+	Can run as a command line
+	Declarative lang 
+	xml based
+
+Why do we need msbuild?
+	Automation of build procedures
+	
+SRC ---> BINARY
+	
+	Creating A Dir
+	Copy a src file
+	Copy a dep file
+	Set the compiler
+	Set the Config
+	Set the proper
+	XX
+	Y
+	X
+-------------------
+        30 TIMES IN DAY
+
+Automation ----> Makefile, NANT, ANT, MSbuild
+
+How to Intall mSBUILD?
+C:\Windows\Microsoft.NET\Framework64\v4.0.30319-->PATH
+
+How to verify?
+msbuild
+msbuild -v
+
+How to store msbuild script?
+filename..msbuild
+filename.vsproject
+filename.sln
+fileame
+
+How to run msbuild file?
+> msbuild filename
+
+How to write msbuild project file | automate a build process using msbuild??
+		1. Requirement
+		2. Steps - psudocode
+		3. Automate
+
+EASY
+=========================
+PROJECT		- one msbuild file ---ONE
+	TASK			   ---MULTIPLE
+	https://msdn.microsoft.com/en-us/library/7z253716.aspx
+	TARGET			--- Groups of tasks together		
+	PROPERTYGROUP		- To define propery
+	ITEMGROUP		- define files n resources
+
+
+
