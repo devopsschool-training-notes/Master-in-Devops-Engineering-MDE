@@ -1,0 +1,499 @@
+What is Octopus Deploy?
+	Deployment tool
+	From Octopus
+	Dev in ASP.net
+	Deployment in ASP.NET
+		MS
+		JAVA
+		NODE
+		CLoud
+			AWS
+			Azure
+		Kubernetes
+		Docker
+	
+Arch
+
+Server - Client
+
+Octopus Deployment Server --- tenants  (A Place, target to deploy)
+Windows				WINDIWS | LIUNX
+
+Where Octopus Stands in SDLC cycle?
+-------------------------------------------
+Prod - ProdX
+Mgr - Mgrx
+
+
+Architect   - 2
+Dev - 10 
+QA - 5
+IT - 1
+Network - 1
+Leads - 2
+
+
+Plan - 	Code	SCA	 	Build	UT	PACKAGE	Repos				
+-----		
+JAVA	Git	SonarQube	Maven	JUNIT	JAR,WAR	Artifactory
+Trello	SVN			MSUILD	NUNIT	NUGET, EXE Nuget
+VSTS	
+
+Deploy 	2	ENV......
+		DEV
+		Stage
+		Int
+		Preprod
+		Prod
+========================================
+		Stage - 200 Boxes
+		1 Dep - 9 mins
+		200 mins - 9 mins
+		-----------------
+		1 mins(Getting a 200 boxes) + 9 mins dep....
+
+		How to get 200 boxes in 1 mins?
+			Cloud
+				Pvt Cloud - OpenStake, VSphere
+				Pub Cloud - AWS, Azure, GC
+		How to do Parrell Deployment?
+
+		Complexities?
+			100 W 100 L
+			100 IIS 100 AP
+			50 IIS 50 TOMCAT 50 JBOSS 50 WL
+			50 MYSQL 50 MSQL 50 OR 50 PS
+			100 DIFF
+
+		Solution
+			Programming - Puppet, Ansible, Chef
+			GUI  - Octopus Deploy, Urban Deploy
+
+
+		AT 
+		Code coverage
+		----RELEASE
+https://www.devopsschool.com/path/
+
+How to install Octopus Deploy?
+
+
+Server - Agent(tenants)
+=================================
+AWS(WINDOWS)	 AWS(WINDOWS)
+13.233.208.59	13.233.166.26
+
+
+
+
+		
+Public DNS	ec2-13-233-208-59.ap-south-1.compute.amazonaws.com
+User name	Administrator
+Password	5!*3)Xu=HI)u?&CytaD-?BbolAgz-Yh6 	
+
+Public DNS	ec2-13-233-166-26.ap-south-1.compute.amazonaws.com
+User name	Administrator		
+	K@r5YgW@HehNARcuT6yS%x(XBNCcln..
+
+Workflow in Octopus
+===================================
+Step 1- Tell Octopus where to deploy your software
+	Create your first environment			DONE
+	Create your first deployment target		DONE
+
+Step 2 - Package and upload your software
+	Upload your package or Add an external feed	DONE
+
+Step 3 - Define your deployment process
+	Create your first project			DONE
+	Define its deployment process			DONE
+Step 4 - Deploy your release
+	Create a release				DONE
+	Deploy a release
+
+=======================================
+Install MSI
+1. Copy a MSI file to target directory.
+2. Cmd - run PS MSI - Silent
+
+MSI - 
+	Interactive
+	Silent
+DevOps@RajeshKumar.xyz
+
+===================================================
+How can we restrict user to edit steps.
+
+Authentication and Authorization?
+
+How can you authenticate Octopus Deploy?
+==============================================
+Setting > 	Active Directory
+		Authentication 
+		Azure AD
+		Google Apps
+		Guest Login
+		Okta
+		Username / Password	DEFAULT
+
+Who is authorized to do what?
+==================================
+Users
+
+User Roles -> PERMIS
+
+Teams
+
+Spaces -  Spaces allow teams to isolate their tenants, projects, infrastructure and library assets
+		       -----  
+   
+Roles 1 - TuesdayAll
+Roles 1 - TuesdayLimited
+
+User 1  - superall	SuperAll%12
+User 1  - limited	SuperAll%12
+
+
+
+
+
+Space 
+	Team 	- tenants, projects, infrastructure and library assets
+
+Can all the steps run in parallel - YES HOW?
+How we will achieve incase two step  we need in parallel?
+=========================================================
+https://www.devopsschool.com/blog/octopus-deploy-run-multiple-processes-steps-on-a-tentacle-simultaneously-and-parallel/
+
+
+How octopus will predict the application is already installed?
+------
+
+What is Calamari?
+
+
+How to notify an error and skip if known error.
+https://www.devopsschool.com/blog/octopus-deploy-how-to-handle-deployment-errors-and-script-failure-response/
+
+
+
+https://www.devopsschool.com/blog/octopus-deploy-send-a-notification-when-deployments-fail/
+
+How to make octopus know there is an error of PS script run?
+https://www.devopsschool.com/blog/octopus-deploy-how-to-handle-deployment-errors-and-script-failure-response/
+
+
+We have application where we deploy and next version comes. The application will be msi installation but all the config files needs to be checked and compared . How this will be achieved?
+
+
+Notes - https://www.devopsschool.com/notes/octopus/
+=============================================================
+How to Set a variable for All Tentants?
+===============================================================
+Template Requirement
+============================
+1. There a package
+2. Package has one Config file
+
+
+====================================
+Octa.exe
+Nuget.spec 
+	------
+	create
+
+===================
+Octopus Variable
+How to create a Nuget Package?
+How to create config template and parametrized?
+How to take a backup and restore of Octospus Deploy?
+
+
+
+
+
+Qs
+----
+Run Once on a Worker
+Run on a worker on behalf on each deployment target| Puppet, Ansible...| Workstaion
+Run on each deployment target
+
+What is Worker?
+What is deployment target?
+	Environment --> Roles -->
+			Webserver
+				deployment target 1
+				deployment target 2
+			DBserver
+				deployment target 1
+				deployment target 2
+
+
+
+===================
+Variables
+================
+environment
+role
+target
+steps
+
+==========================
+Package
+	--- file 
+		 --#{variable}
+================================
+
+package.nupkg
+  ------ app.config
+		#{variable}
+
+
+===============================
+Q1 - There is MSI file and you have a file inside it and without variable dec, we want to replace some text with somthing from variable
+
+File format - .config
+<appSettings>
+    <add key="remotePort" value="8086" />
+
+key --> from remoteport to XXX
+------------------------------
+MSI got installed to certain location and same location, you wants to cpy some other files.
+
+
+How to run only selected Steps in Deployment Target.
+
+
+How can i customized a package id
+
+
+https://www.devopsschool.com/courses/octopusdeploy/octopus-deploy-advance-training.html
+===========================================================================================
+Octopus in your delivery process	- DONE
+Install the Octopus server		- DONE
+Create environments			- DONE
+Add machines to your environments	- DONE
+Package your applications for deployment ------PENDING
+Create a project			- DONE
+Define your deployment process		- DONE
+Create a release and deploy it		- DONE
+
+Installing Octopus			- DONE
+Installing Tentacles			- DONE
+Environments				- DONE
+Projects				- DONE
+Project Groups				- DONE				- 
+Lifecycles				- DONE
+
+Machine Roles				- PENDING
+Channels				- PENDING
+Tenants					- DONE
+Package repositories			- DONE- 
+Supported Packages			- DONE
+NuGet packages				- DONE
+
+Azure Cloud Service Target		- PENDING
+Azure Web Apps				- PENDING
+Cloud Regions				- PENDING
+Offline Package Drop			- DONE 
+SSH Targets				- DONE
+
+Deploying packages			- DONE
+Configuration files			- PENDING
+Custom Installation Directory		- DONE
+
+IIS Websites and Application Pools
+Windows Services
+Custom scripts
+Delta compression for package transfers
+Email notifications
+Step Templates
+SQL Server databases
+Guided failures
+Manual intervention and approvals
+Scheduled Deployments
+Automatic Release Creation
+Run steps in parallel			
+Artifacts
+
+Variables				- DONE
+
+Deploying to Azure
+Substitute Variables in Files		
+
+
+teamcity
+
+Octo.exe Command Line
+Octopus.Client
+Octopus REST API
+
+Calamari				DONE
+Canary deployments			DONE
+Blue-green deployments
+Multi-tenant deployment pattern
+Isolated Octopus Deploy servers
+Branching
+Rolling deployments
+Auditing
+Backup and restore
+Managing multiple instances
+Managing users and teams
+Octopus database
+Retention Policies
+Script Console
+Script Modules
+
+Upgrading
+
+Data migration
+
+Reporting
+Server configuration and File storage
+
+High Availability
+
+Get the raw output from a task
+
+Debug problems with Octopus variables
+
+Manually fail a running or cancelling task
+
+Move the Octopus Home folder and the Tentacle Home and Application folders
+
+Troubleshoot Listening Tentacles
+	service is runnign or not
+	config is correction
+	thumprint
+	ip add | port
+	permission
+	
+
+Expose the Octopus web portal over HTTPS
+
+How to create an API key
+
+Export and import Tentacle certificates without a profile
+
+			Run Tentacle under a specific user for use in PowerShell
+			Report on deployments using Excel
+			Specifying a custom container to use for AD Authentication
+Capture a crash dump
+Run multiple processes on a Tentacle Simultaneously
+Stage package uploads
+Enable web request logging
+Configure Environment-specific configuration transforms while keeping sensitive values in Octopus
+Push a NuGet package that already exists
+How to use custom certificates with Octopus Server and Tentacle
+Reference files within a package
+How to run steps on the Octopus Server
+Sensitive Properties API Changes in Release 3.3
+Deploy to a Specific Subset of Targets
+Migrate Azure Targets into Azure Steps
+
+
+Package mgmt in Octopus
+=================================
+Accepts NuGet, zip, tar, tar gzip, tar bzip2, jar, war, ear and rar packages
+---------------------------------------------------------------------------
+Linux RHEL - YUM 
+Linux UB - Apt
+WINDOWS - Nuget and Coclate
+------------------------------
+Download --> Install -> Remove
+		Download - Install
+
+What is Nuget?
+is a client which gets install in Windows... for --Install - remove - upgrade
+FROM
+
+
+Package Repository.....---> Hello lots of package.
+--Install - remove - upgrade
+
+How to create a nuget packages for Octopus?
+	Nuget Package Explorer 	- nuget.spec - NOT VS NEEDED
+
+	octo.exe		- nuget.spec - YOU NEED VS
+	- Install VS
+	- Select a project  - where you want to install octo.exe
+		https://octopus.com/docs/octopus-rest-api/octo.exe-command-line
+		https://octopus.com/docs/packaging-applications/octopack
+
+	msbuild MySolution.sln /t:Build /p:RunOctoPack=true
+	-- build + nuget
+
+
+How to install Nuget Package Explorar?
+
+
+
+
+msi|exe --> Windows Installer....
+		rajesh
+---------------------------------------------
+Step 1  - msi -> install ->
+Step 2 - powersehll deployed to same location
+
+
+
+transform config in Deploy package
+
+=================================
+=================================
+
+5th June
+----
+	- How can we restrict user to edit steps
+	- Can all the steps run in parallel. How we will achieve incase two step  we need in parallel and one we need pause.
+	- How octopus will predict the application is already installed?
+		----OCTOPUS would RUN Calimari
+					- return - true - SUccess
+				-	- retun - falls- faile
+			MSI  
+				Upgra	
+				remoe
+				repair
+
+	- How to notify an error and skip if known error.
+	- How to make octopus know there is an error of PS script run?
+	- We have application where we deploy and next version comes. The application will be msi installation but all the config files needs to be checked and compared . How this will be achieved?
+6th June
+-------
+	- NuGet package -->
+	- How to integrate teamcity with 
+	- Can we run each process individually on user input? Like disable monitoring we triggered so based on completion we will decide next phase should start or abort Manually?
+	- How to get installation path using octopus variable
+	- How to pull package ID or build ID from Package
+
+
+13 June question:
+-----
+	-  How to give user input before a step start.
+	- How to manage build IDs?
+	- How the next package will be added to deploy package .Should we update packageid to "Deploy package" step every time?
+	- Certifications
+	- Link for nuget installers
+=================================
+=================================
+
+
+
+Teamcity - CI - Jenkins
+======================================
+
+BUild -> Package 
+	How to upload a Package which was developed by teamcity to LIB in OCtopus Deploy?
+	
+	how to create a release with lates lib of  LIB in OCtopus Deploy?
+	how to trigger deploy
+	https://wiki.jenkins.io/display/JENKINS/OctopusDeploy+Plugin
+	https://plugins.jetbrains.com/plugin/9038-octopus-deploy-integration
+
+	Jenkins - Plugins
+	Teamcity 
+		Plugins
+		CMD
+
+
+
