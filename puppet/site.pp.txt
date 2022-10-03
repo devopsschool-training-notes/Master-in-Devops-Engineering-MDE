@@ -1,0 +1,40 @@
+node 'www1.example.com', 'www2.example.com', 'www3.example.com' { 
+    include common 
+    include apache, squid
+} 
+
+node ‘puppetslave.com’{        
+include sudo
+}
+
+node /^server[1-4]\.test\.com$/ {
+    include motd
+    include ssh
+    include ntp
+}
+===================================
+
+class default_modules {
+    include module 1
+    include module 2
+    include module 3
+    include module 4
+}
+
+node default{
+    include default_modules
+}
+
+node 'www.example1.com'{
+    include default_modules
+
+    include module 5
+    include module 6
+}
+
+node 'www.example2.com'{
+    include default_modules
+
+    include module 7
+    include module 8
+}

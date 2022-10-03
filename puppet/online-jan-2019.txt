@@ -1,0 +1,139 @@
+What is Puppet?
+	Puppet is config mgmt tool.
+	Ruby
+	From Puppet Lab
+	Release
+		Puppet Server - Free - Community - Commands
+		Puppet Enterprise - Paid - GUI
+What is Config mmgt?
+
+Why Puppet?
+
+Other - Ansible - Puppet - Chef - Salt
+
+Role in Puppet
+	Dev - Write Modules
+	Admin - Who manage the Puppet Enterprise & Apply Module
+
+Architecture of Puppet
+	SERVER
+	AGENT
+		Communicate throug TCP...PORT..Certificates
+
+
+How to write a puppet Module? == How to become a Puppet Dev
+
+	1. Install Puppet Agent
+====================================================
+How to install Puppet Client?
+Install the puppet-agent package:
+$ sudo rpm -ivh https://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm
+$ yum update
+$ sudo yum -y install puppet-agent
+	2. Write a Puppet Manifest File === Puppet Program
+====================================================
+- EACH Puppet Program may have multiple "RESOURCE DECLARATION"
+- EACH "RESOURCE DECLARATION" has 
+		TYPE
+		https://puppet.com/docs/puppet/5.3/type.html
+			TITLE --- WHAT "TYPE" NAME YOU WANT?
+			ATTRIBUTES
+
+package { 'httpd':
+  ensure => installed
+}
+
+service { 'httpd':
+  ensure     => running 
+}
+
+file { '/var/www/html/index.html':
+  ensure => present 
+}
+
+
+	3. Test PP in Local
+====================================================
+$ puppet parser validate web.pp
+$ puppet apply web.pp
+
+	4. Keep pp ++++ in Modules
+====================================================
+$ puppet module generate devopsschool-web
+$  mv web.pp web/manifests/
+
+CLASS & SUBCLSS - TO COMBINE MULTILE "RESOURCE DECLARATION" in one BLOCK.	
+class web {
+include web::server
+}
+
+class web::server
+{
+package { 'httpd':
+  ensure => installed
+}
+
+service { 'httpd':
+  ensure     => running
+}
+
+file { '/var/www/html/index.html':
+  ensure => present
+}
+}
+
+
+	5. Test Module in Local
+====================================================
+ 59  puppet module list
+   60  mv web/ /etc/puppetlabs/code/environments/production/modules
+
+
+$ puppet apply -e "include web"
+
+Admin
+	1. Setup a Puppet Enterprise
+=====================================================================
+Step 1  - Setup a Puppet FQDN
+
+$ hostnamectl set-hostname puppet.example.vm
+$ hostnamectl
+
+Step 2  - Change the /etc/hosts with FQDN
+$ ifconfig
+$ sudo vi /etc/hosts
+
+127.0.0.1  puppet.example.vm puppet localhost
+13.234.38.104 puppet.example.vm #public ip
+172.31.20.207 puppet.example.vm #private ip
+
+Step 3  - Install NTP & Start ntpd
+$ sudo yum -y install ntp
+$ sudo systemctl start ntpd
+$ sudo systemctl enable ntpd
+
+
+Step 4 - Download and run Puppet Enterprise...
+
+$ yum install wget -y
+
+OLDVERSION
+$ wget https://s3.amazonaws.com/pe-builds/released/2017.2.3/puppet-enterprise-2017.2.3-el-7-x86_64.tar.gz
+$ tar -zxvf puppet-enterprise-2017.2.3-el-7-x86_64.tar.gz
+$ cd puppet-enterprise-2017.2.3-el-7-x86_64
+$ ./puppet-enterprise-installer
+
+NEW VERSION
+$ yum install wget -y
+$ wget --content-disposition 'https://pm.puppet.com/cgi-bin/download.cgi?dist=el&rel=7&arch=x86_64&ver=latest'
+$ tar -zxvf puppet-enterprise-2019.0.1-el-7-x86_64.tar.gz
+$ cd puppet-enterprise-2019.0.1-el-7-x86_64
+
+
+
+
+
+	2. Setup A Node
+	3. Apply Modules in Remote Node Agent
+
+13.233.162.246

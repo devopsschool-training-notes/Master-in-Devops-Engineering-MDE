@@ -1,0 +1,89 @@
+What is Puppet?
+	Config mgtm tool.
+
+Why Puppet?
+	
+Roles in Puppet
+1. Programmer
+2. Administrator
+
+Programmer
+=========================================
+Where to store the puppet program?
+.pp = puppet programs
+We call .pp is manifest file.
+
+How to run the single manifest file?
+> puppet apply filename.pp
+
+How to install puppet Agent?
+sudo rpm -Uvh https://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm
+sudo rpm -Uvh https://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm
+yum install puppet-agent
+
+What is there in pp?
+Resources	ACTIIONS=ensure 	PROPERTY=Attributes
+
+file		present,absent,file
+package
+service
+notify	
+
+Popular Puppet Commands
+===================================
+puppet agent --version
+puppet config print
+puppet config print confdir
+puppet config print certname
+puppet config print { confdir rundir ssldir runinterval }
+
+WorkFlow-
+1. Write A Program in pp
+2. Validate
+> sudo puppet parser validate helloworld.pp
+
+3. Puppet Apply
+> puppet apply filename.pp
+
+Quick Puppet resources usages through commands
+================================================
+puppet resource service
+puppet resource file
+puppet resource package
+puppet describe --list
+
+
+package { 'httpd':
+  ensure => installed,
+}
+
+service { 'httpd':
+  ensure => 'running'
+}
+
+file { '/var/www/html/index.html':
+  ensure   => 'file',
+  content  => "This is my first puppet program"
+}
+
+
+
+https://52.66.160.49:3000
+
+https://puppet.example.vm/
+
+
+sed 52.66.160.49 puppet.example.vm 
+
+curl -k https://puppet.example.vm:8140/packages/current/install.bash | sudo bash
+
+module name - root-web
+class - web
+
+include root-web
+
+
+
+
+
+

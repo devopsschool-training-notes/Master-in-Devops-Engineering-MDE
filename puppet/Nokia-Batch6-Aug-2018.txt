@@ -1,0 +1,234 @@
+What is Puppet?
+	Config mgmt tool.
+	Dev using Ruby
+	Puppet has 2 version
+		Puppet Server   - Command Line - FREE + OS
+		Puppet Enterprise - GUI - Paid
+	Puppet
+
+What is config mgmt tool?
+	SERVERS config mgmt.
+
+What is there in SERVERS?
+	file
+	directory	
+	package
+	service
+	users
+	group
+	yum 
+	apt
+	bash
+	hardware
+	network
+	env
+
+	using puppet, you manage the config of above resources.
+
+What is the config of these resources?
+https://puppet.com/docs/puppet/5.3/type.html
+
+What is the resources?
+https://puppet.com/docs/puppet/5.3/type.html#file
+
+Why do we need it?
+	JAVA | C++ | PERL | PYTHON
+		DIFF TO LEARN | SHARE | EXTENT | TEST | DEBUG
+	SHELL | BATCH 
+	----	
+		CROSS PLATFORM
+
+-----------------------------
+	IDEOMPOTENT....
+
+	1 Dep - 10 MINS
+	1000 DEp - 10 mins
+
+	1 Dep - 10 mins
+	1000 Dep - 2 mins
+----------------------------------
+
+	ABILITY TO MANAGE THE LARGE NUMBER OF SERVERS
+	ENV
+==============================
+How to implement Puppet for my Projects?
+
+Role in Puppet?
+	Puppet Programmer -> Write Puppet Program
+	Puppet Admin -> Apply puppet programs + manage infra
+--------------------
+	4 Hours Programmer
+	3 hours Admin
+-------------------------
+
+How to become a puppet Programmers?
+-------------------------------------------------
+
+JAVA
+C++
+
+Step 1- DK - Puppet agent
+$ sudo rpm -Uvh https://yum.puppet.com/puppet5/puppet5-release-el-7.noarch.rpm
+$ yum install puppet-agent
+
+PUPPET INSTALLER -> /opt/puppetlabs
+PUPPET CONFIG  -> /etc/puppetlabs/puppet
+$  puppet help
+
+lets play with Puppet commands.....
+
+$ puppet help
+$ puppet config print
+$ puppet config print confdir
+$ puppet config print certname
+$ puppet resource service httpd
+$ puppet resource service puppet
+$ puppet parser validate puppet-service.pp
+$ puppet apply puppet-service.pp
+
+
+Step 2 - LEARN THE SYNTAX === Resource Declaration
+	TYPE		https://puppet.com/docs/puppet/5.3/type.html
+	TITLE		
+	ATTRIBUTES
+	PROVIDER
+
+TYPE "TITLE {
+	ATTRIBUTES
+		ENSURE(ACTION)
+	PROVIDER	
+}
+
+How to store puppet Program? == MANIFEST file
+filenaame.pp
+
+	
+
+Step 3 - Hello world (create a file /opt named with file1.txt]
+
+file { '/opt/file1.txt':
+  ensure => present,
+  content => "This is my first program" 
+}
+
+	
+
+Step 4 - How to compile?
+	-> Vaidate
+	->. Apply
+
+
+What is a Puppet Program....
+--- Collection of resource declaration.
+
+file { '/opt/file1.txt':
+  ensure => present,
+  content => "This is my first program" 
+}
+
+
+file { '/opt/file2.txt':
+  ensure => present,
+  content => "This is my first program" 
+}
+
+
+file { '/opt/file3.txt':
+  ensure => present,
+  content => "This is my first program" 
+}
+
+
+$ puppet parser validate pro1.pp
+$ puppet apply pro1.pp
+
+=============================================
+Write a puppet program to set up a webserver.
+	- install httpd
+	- start the httpd
+	- enable httpd
+	- create index.html /var/www/html/index.html
+
+
+package { 'httpd':
+  ensure => present
+}
+
+
+service { 'httpd':
+  enable  => true,
+  ensure     => running 
+}
+
+file { '/var/www/html/index.html':
+  ensure => present,
+  content => "<h1> Welcome to Nokia DevOps Training" 
+}
+
+
+2 13.233.21.190
+3 13.126.87.250
+4 13.233.7.59
+5 13.126.222.15
+6 35.154.138.106
+7 13.126.255.211
+8 13.233.15.112
+9 35.154.167.169
+10 13.127.106.212
+11 13.127.117.238
+12 13.126.99.106
+13 13.232.127.150
+14 13.232.254.29
+15 52.66.181.31
+16 13.233.10.129
+17 35.154.88.165
+18 13.126.166.101
+19 13.127.203.40
+
+http://devopsschool.com/notes/puppet/2018/Nokia-Batch6-Aug-2018.txt
+final.ppk - http://devopsschool.com/notes/puppet/2018/
+user name - ec2-user
+
+EXCERCISE - 1
+http://www.scmgalaxy.com/tutorials/puppet-program-lab-excercise-part-1/
+http://www.scmgalaxy.com/tutorials/puppet-program-lab-excercise-part-2/
+
+---------------------------
+What is Module?
+	Module is a way you publish your puppet programs along with
+			supported
+			lib
+			templae
+			unit
+			accept test
+			example
+===============================
+	Core Modules - puppetlab
+	Community Modules
+	Private Module
+
+How to use modules from Puppet forge?
+$ puppet module list
+$ puppet module install puppetlabs-stdlib
+
+How can you create your own mOudle?
+
+PUPPET ENTERPRISE _ 
+13.232.254.56 
+
+13.232.254.56 puppet.example.vm
+
+Step 1 - NTP 
+Step 2 - etc/host
+Step 3 - Downloading puppet enter
+Step 4 
+
+
+Node - 1 - 13.232.129.214
+Node - 2 - 13.127.84.99
+
+
+
+
+
+

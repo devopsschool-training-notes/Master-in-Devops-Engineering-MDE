@@ -1,0 +1,191 @@
+What is Puppet?
+	Config Mgmt tool.
+
+What is Config mgmt tool?
+	SERVER CONFIG MGMT
+
+What is there in the server, we manage config of those item?
+	file
+	directory
+	service
+	package
+	bash
+	batch
+	yum
+	apt
+
+Why Puppet?
+	JAVA
+	C++	
+	Perl
+	python
+
+	Puppet is 
+		easy to learn
+		easy to extend 
+		easy to debug
+		easy to test
+		easy to share
+
+	Bash
+	Ps
+		Is not cross platform
+===================================
+--Puppet can manage the large number of servers in easy way
+--Puppet is idempotent
+		Manage the state of the resourses.
+		Current State of the resources == Desired state of
+
+Roles in Puppet?
+--Puppet Programmer - Write a program in Puppet
+--Puppet Adminis  - Manage/monitor a infra in puppet
+
+Where puppet can be used?
+	1. IT team -- where they want to manage large infra
+			install
+			un
+			modify
+
+	2. DevOps	---- We use puppet depoloy app 
+				staging
+				dev
+				integ
+				pre
+				prod
+
+How can you install puppet? == What are the software you need to install to become a puppet programmer?
+--puppet agent
+
+Add a Puppet repo to our system
+> rpm -Uvh http://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm
+
+#install puppet Agent
+> yum install puppet-agent
+
+Few Important Dir After the puppet install?
+=================================================
+Binary --/opt/puppetlabs
+Conf ----/etc/puppetlabs/puppet
+Programs(PP)- /etc/puppetlabs/code
+
+Where can you store the puppet program?
+-- filename.pp
+	where pp stands for puppet program
+
+How to validate the structure of the program?
+> puppet parser validate puppet-service.pp
+
+How can you execute single puppet program? 
+-- puppet apply filename.pp
+
+How to write puppet program???
+	- You write list of resources which you want to manage.
+
+	Resources		Action(ensure)	Property(Attributes)
+==========================================================
+	file			C|D|M		
+	directory		C|D|M
+	service			S|S|R|E|D
+	package			I|U|M
+	bash			Command
+	batch			cmmand
+	yum			I|R|L
+	apt			C|D|M
+	
+Where to find list of resources supported by Puppet?
+--https://puppet.com/docs/puppet/5.3/type.html
+
+Puppet Command line Parameters
+===============================================
+> puppet resource service puppet
+> puppet parser validate puppet-service.pp
+> puppet apply puppet-service.pp
+> puppet resource service puppet
+Remaining Commands ----- "commands-collections.txt"
+
+How to write each resources?
+TYPE - TITLE - ATTRIBUTES - PROVIDER
+file - filename	- 
+
+Where to store the program?
+/etc/puppetlabs/code/environments/production/manifests
+
+1. Create file using puppet?
+
+2. Create a file with content using puppet
+
+3. Remove a file
+
+4. Create a dir
+
+5. Instal httpd server
+
+6. start httpd server
+
+7. create index.html for httpd
+
+file { '/opt/file1.txt':
+	ensure => present
+ }
+ 
+file { '/opt/file2.txt':
+	ensure => present
+	content => "This is my first program"
+ }
+
+ file { '/opt/file1.txt':
+	ensure => absent 
+ }
+ 
+  file { '/opt/pup':
+	ensure => directory 
+ }
+ 
+ 
+ 
+ package { 'htttpd':
+	ensure => present 
+ }
+
+ 
+ service { 'httpd':
+  ensure     => running 
+}
+
+
+ file { '/var/www/html/index.html':
+	ensure => present,
+	content => "This is my first website",
+ }
+
+======================================================
+HOW TO MANAGE MULITPLE PROGRAM  IN PUPPET?
+--module
+
+How to see the list of module?
+> puppet module list
+How to create a module?
+> puppet module generate scmgalaxy/webserver
+
+Where to check the commands for modules?
+module and classes.txt
+
+How to test the modules?
+> puppet apply -e 'include webserver'
+
+
+site.pp === Master -- Each env has one site.pp
+		content
+			default for the env
+			all the modules
+			node specification
+
+	site.pp
+	module-name:webserver (init.pp)
+	module-name webserver::x.pp (init.pp)
+
+
+
+
+
+

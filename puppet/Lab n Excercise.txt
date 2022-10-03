@@ -1,0 +1,33 @@
+Create a module to setup a webserver(httpd) only in RHEL and use the HEREDOC to craete a html code of index.html inside a directory called "/var/www/html/index.html"
+&&
+Install git in the same
+
+<html>
+<head>
+<title>
+This is my first module in Nokia
+</title>
+</head>
+<body>
+<h1> Welcome to scmgalaxy.com </h1>
+</body>
+</html>
+
+puppet module generate scmgalaxy/test
+
+puppet apply -e 'include nokiaweb'
+
+How to Decalare sub Class?
+--------------------------------
+class test::file1 {
+
+}
+
+How to decalte main class?
+---------------------------------
+class webserver {
+
+include 'webserver:pro1'
+include 'webserver:pro2'
+
+}

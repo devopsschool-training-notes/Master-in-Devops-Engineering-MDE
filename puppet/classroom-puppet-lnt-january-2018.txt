@@ -1,0 +1,212 @@
+What is Puppet?
+=====================================================
+	Config mgmt tool
+	written in Ruby
+	From Puppet
+	
+
+What is config mgmt?
+=====================================================
+	Config mgmt of the SERVERS
+
+What is there in the SERVERSs to manage config of the servers?
+=====================================================
+SOFTWARE
+	file
+	directory
+	package
+	services
+	user
+	group
+	batch
+	bash
+	yum
+	apt
+	port
+	package
+	certificates
+	services
+	permissions
+	
+HARDWARE
+	hardware
+	
+WHY Puppet?
+=====================================================
+JAVA + DOTNET + PERL + PYTHON
+	DIFF TO LEARN
+	DIFF TO LEARN
+	DIFF TO TEST
+	DIFF TO WRITE
+	DIFF TO EXTEND
+	DIFF TO DEBUG
+SHELL	- NO WINDOWS
+BATCH  - NO LINUX
+
+
+Can you manage the large number(1000s) of servers using?
+
+MOST IMPORTANT - IDEMPOTENT
+
+OTHER TOOLS  - 
+Ansible, chef, Salt
+
+
+Role in Puppets?
+	Puppet Programmer
+	Puppet Admin
+
+How to become a programmer?
+==================================
+JAVA		JDK
+PUPPET		PUPPET AGENT
+
+.JAVA		.pp
+
+javac filename 	> puppet apply filename
+
+How to write a program?
+
+Resources
+https://puppet.com/docs/puppet/5.3/type.html
+
+
+Resources		Attributes		action(ensure)
+========================================================================
+file						C | D | M						
+directory					C | D
+package						I | R | M |
+services					S | S | R | E | D
+user						A | D | M 
+group
+
+Which pattern to following write a resource decalation in Puppet Program?
+
+type title {
+	attributes  value
+}
+
+
+service { 'httpd':
+  ensure     => # Whether a service should be running.  Valid...
+}
+
+
+DEMO
+How to install Puppet agent?
+Add a Puppet repo to our system
+> rpm -Uvh http://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm
+
+#install puppet Agent
+> yum install puppet-agent
+
+puppet.conf - /etc/puppetlabs/puppet
+bin - /opt/puppetlabs
+
+How to create a file using puppet
+How to directory using puppet?
+How to install package "httpd" using puppet?
+How to start a services "httpd" using puppet"
+
+[root@ip-172-31-1-148 pp]# more file.pp
+file { '/opt/file1.txt':
+  ensure => present,
+  content => "This is my first program",
+  owner => "ec2-user"
+}
+
+file { '/opt/src':
+  ensure => directory,
+  owner => "ec2-user"
+}
+
+package { 'httpd':
+  ensure               => present
+}
+
+service { 'httpd':
+  ensure     => running
+}
+[root@ip-172-31-1-148 pp]# more file.pp
+file { '/opt/file1.txt':
+  ensure => present,
+  content => "This is my first program",
+  owner => "ec2-user"
+}
+
+file { '/opt/src':
+  ensure => directory,
+  owner => "ec2-user"
+}
+
+package { 'httpd':
+  ensure               => present
+}
+
+service { 'httpd':
+  ensure     => running
+}
+
+
+SETTING UP THE SERVER
+======================================================
+Step 1 - Install NTP via yum with this command:
+
+$ sudo yum -y install ntp
+$ sudo systemctl start ntpd
+$ sudo systemctl enable ntpd
+
+Step 2 - Change the hostname and hosts file
+
+# Set the puppet master hostname
+$ hostnamectl set-hostname puppet.example.vm
+$ hostnamectl
+$ ifconfig
+$ sudo vi /etc/hosts
+
+127.0.0.1  puppet.example.vm puppet localhost
+35.154.84.20 puppet.example.vm #public ip
+172.31.9.222 puppet.example.vm #private ip
+
+Step 3 - Download the enterprise and install it
+[COMMAND START]
+$ yum install wget
+$ cd /opt
+$ wget https://s3.amazonaws.com/pe-builds/released/2017.2.3/puppet-enterprise-2017.2.3-el-7-x86_64.tar.gz
+$ tar -zxvf puppet-enterprise-2017.2.3-el-7-x86_64.tar.gz
+$ cd puppet-enterprise-2017.2.3-el-7-x86_64
+$ ./puppet-enterprise-installer
+
+
+How to make host enrty in Windows - 
+C:\Windows\System32\drivers\etc
+
+How to enable node to talk to master?
+=======================================================
+1. Change your hostfile
+35.154.84.20 puppet.example.vm
+
+2. install puppet agent
+
+
+3. Modify the puppet.conf
+[main]
+server = puppet.example.vm
+certname = ip-172-31-22-208.ap-south-1.compute.internal
+
+4. 
+> puppet agent -t
+
+ssh puppet.example.vm
+
+
+
+
+
+
+
+
+
+
+
+

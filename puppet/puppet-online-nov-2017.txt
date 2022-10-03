@@ -1,0 +1,130 @@
+What is Puppet?
+
+What is Conf mmgt?
+
+Why Puppet?
+
+Roles - 
+Puppet Programmmer
+Puppet Administrator
+
+
+How Puppet Works?
+============================
+DONE
+
+How to come become a Puppet Programmer?
+===============================================
+Which tool you should installed before startting writing puppet program?
+== puppet agent
+
+What is the name of the puppet programs?
+== Single unit -- manifest file (reciepe)
+== Group of manifest ++++ --- module (coobook)
+
+What is file ext?
+.pp ==> puppet program
+
+How to converse single manifest?
+=> puppet-apply filename.pp
+
+What is resources???
+	file
+		type		
+		title
+		att
+		provide=optional
+
+	directory
+	service
+	package
+
+
+Puppet modules
+=============================
+scmgalaxy-web/Gemfile
+scmgalaxy-web/Rakefile
+
+scmgalaxy-web/manifests				A Place where all of your manifest program will be saved
+scmgalaxy-web/manifests/init.pp			default.rb - a program which loads by default
+
+scmgalaxy-web/spec
+scmgalaxy-web/spec/classes
+scmgalaxy-web/spec/classes/init_spec.rb
+scmgalaxy-web/spec/spec_helper.rb
+
+scmgalaxy-web/tests
+scmgalaxy-web/tests/init.pp
+
+scmgalaxy-web/README.md
+
+scmgalaxy-web/metadata.json
+
+
+
+
+
+Setup a web server?
+====================================
+	package
+		type tile att
+	
+	file
+
+	service	
+
+
+package { 'httpd':
+  ensure => installed,
+}
+
+file { '/var/www/html/index.html':
+  ensure   => 'file',
+  content  => "This is my first puppet program"
+}
+
+service { 'httpd':
+  ensure => 'running'
+}
+
+
+file { '/opt/index.html':
+  ensure   => 'file',
+  content  => "This is my first puppet program"
+}
+
+Resource name 		property		action
+===============================================================
+resource name		attributes		ensure
+
+
+
+
+
+How to come become a Puppet Administrator
+===============================================
+
+
+
+Node setup
+==========================
+ntp
+modify hostfile
+
+curl -k https://puppet.example.vm:8140/packages/current/install.bash | sudo bash
+	install puppet agent
+	config puppet agent with master
+	send the fact too puppet master
+	request for manage to the puppet master
+
+
+
+
+
+
+
+
+
+
+
+

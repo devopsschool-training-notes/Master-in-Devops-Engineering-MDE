@@ -1,0 +1,23 @@
+Install Puppet Agent
+The Puppet agent software must be installed on any server that the Puppet master will manage. In most cases, this will include every server in your infrastructure. As mentioned in the introduction, the Puppet agent can run on all major Linux distributions, some UNIX platforms, and Windows. Because the installation varies on each OS slightly, we will only cover the installation on CentOS 7 servers. 
+
+Perform these steps on all of your agent servers.
+
+Enable the official Puppet Labs collection repository with this command:
+
+sudo rpm -ivh https://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm
+
+Install the puppet-agent package:
+$ sudo rpm -ivh https://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm
+$ yum update
+$ sudo yum -y install puppet-agent
+$ sudo /opt/puppetlabs/bin/puppet resource service puppet ensure=running enable=true
+
+Now that the Puppet agent is installed, start it with this command:
+
+$ sudo /opt/puppetlabs/bin/puppet resource service puppet ensure=running enable=true
+
+
+
+GOOD HINTS
+https://www.linode.com/docs/applications/configuration-management/install-and-configure-puppet#configure-puppet-agent

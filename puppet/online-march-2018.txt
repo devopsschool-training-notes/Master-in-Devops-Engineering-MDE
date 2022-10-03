@@ -1,0 +1,323 @@
+Puppet
+====================================
+What is Puppet?
+	Config mgmt
+
+What is Config mgmt?
+	OF THE SERVERS
+
+What we have in the servers of which we manage their config?
+	ANYTHING ---> Manage CONFIG
+
+	file
+	directory
+	package
+	service	
+	user
+	group
+	host
+	network
+	apt
+	yum
+	bash
+	batch
+
+Why Puppet?
+
+REASON 1
+-------------
+	JAVA
+	C++
+	RUBY
+	PERL
+	PY
+	DIFF to LEARN, SHARE, TEST, DEBUG, EXTEND
+
+	BASH
+	BATCH|PS
+	ARE NOT CROSS PLATFORM
+
+	WE NEED A TOOL WHICH CAN 
+		EASY TO LEARN, SHARE, TEST, DEBUG, EXTEND
+		CROSS PLATFORM
+
+REASON 2
+-------------
+	ABILITY TO MANAGE LARGE NUMBER OF SERVERS
+
+REASON 3
+-------------
+	IDEOPOTENT
+
+	SCRIPT USING TRADIIONAL LANG --> Run 10 time -> 10 times
+	
+	SCRIPT USING pUPPET - Run 10 time - 1 time
+	DESIRE STATE		- ACTUAL STATE in SERVER
+
+COST EFFECTIVE
+CONFIG MGT ACROSS THE SERVERS
+
+=======================================================
+
+What are role in Puppet?
+
+Puppet Programmer -- Those we write/test/debug/release puppet program
+Puppet Admin	 -- who manage ther servers and apply puppet program
+================================================
+
+How to become a puppet Programmer?
+
+1. Install Developer tools 	----> puppet agent
+2. Write a Program  		----> filename.pp (pp mean puppet program) - manifest		
+3. test | Debug | run your program --> 
+
+
+> puppet parser validate filename.pp	#Program issues
+> puppet apply filename.pp		# run it
+
+How to write puppet program?
+=============================================
+Puppet program is a collection of resource decalaration
+				  ======================
+
+What is resurces?
+https://puppet.com/docs/puppet/5.3/type.html
+	file
+	directory
+	package
+	service	
+	user
+	group
+	host
+	network
+	apt
+	yum
+	bash
+	batch
+
+What is resource decalaration?
+Type-title-attributes-provider
+
+
+Resourses	what??		actions(ensure)		Attributes
+-----------------------------------------------------------------------
+(type)		title		ensure			attributes	
+
+file		file1.txt	present	
+service		httpd		running 
+
+=====================================	
+
+Installing Puppet Agent 
+----------------------------
+https://puppet.com/docs/pe/2017.3/installing/installing_agents.html
+
+Install the puppet-agent package:
+$ yum update
+$ sudo rpm -ivh https://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm
+$ sudo yum -y install puppet-agent
+
+================================
+Popular puppet commands
+> puppet help 
+
+  agent             The puppet agent daemon
+  apply             Apply Puppet manifests locally
+  ca                Local Puppet Certificate Authority management. (Deprecated)
+  catalog           Compile, save, view, and convert catalogs.
+  cert              Manage certificates and requests
+  certificate       Provide access to the CA for certificate management.
+  certificate_request  Manage certificate requests. (Deprecated)
+  certificate_revocation_list  Manage the list of revoked certificates. (Deprecated)
+  config            Interact with Puppet's settings.
+  describe          Display help about resource types
+  device            Manage remote network devices
+  doc               Generate Puppet references
+  epp               Interact directly with the EPP template parser/renderer.
+  facts             Retrieve and store facts.
+  file              Retrieve and store files in a filebucket (Deprecated)
+  filebucket        Store and retrieve files in a filebucket
+  generate          Generates Puppet code from Ruby definitions.
+  help              Display Puppet help.
+  inspect           Send an inspection report
+  key               Create, save, and remove certificate keys. (Deprecated)
+  lookup            Data in modules lookup function
+  man               Display Puppet manual pages.
+  master            The puppet master daemon
+  module            Creates, installs and searches for modules on the Puppet Forge.
+  node              View and manage node definitions.
+  parser            Interact directly with the parser.
+  plugin            Interact with the Puppet plugin system.
+  report            Create, display, and submit reports.
+  resource          The resource abstraction layer shell
+  resource_type     View classes, defined resource types, and nodes from all manifests.
+  status            View puppet server status. (Deprecated)
+
+===============================================
+VERIFY THE PUPPET AGENT
+================================
+puppet agent --version
+
+KNOW THE PUPPET AGENT CONFIG
+================================
+puppet config print
+puppet config print confdir
+puppet config print certname
+puppet config print {confdir rundir ssldir runinterval }
+
+Example of Puppet Apply - Make sure puppet agent is not running
+================================
+puppet resource service puppet
+puppet parser validate puppet-service.pp
+puppet apply puppet-service.pp
+
+Puppet Style Guide
+================================
+https://docs.puppet.com/puppet/4.9/style_guide.html
+puppet module list
+puppet module install theurbanpenguin/puppet_vim
+puppet module list
+
+Code - puppet-vim.pp
+include puppet_vim 
+
+sudo puppet parser validate puppet-vim.pp
+sudo puppet apply puppet-vim.pp
+
+
+===========================
+puppet describe --list #List all resources
+puppet describe file #List documentation for the file resources
+sudo puppet module install puppetlabs/stdlib #Installing the stanadard lib givess us the access to functions such as pw_hash
+
+
+IMPORTANT
+/etc/puppetlabs/puppet - PUPPET AGENT CONFIG (puppet.config)
+/opt/puppetlabs - PUPPET AGENT INSTALLER
+
+==================================
+Requirement 1
+
+create a file using puppet?
+
+file { '/opt/file1.txt':
+	ensure                  => present
+}
+
+
+
+create a file with content using puppet
+file { '/opt/file2.txt':
+	ensure                  => present,
+	content			=> "This is my line of the code"
+}
+
+create a directory using puppet
+
+file { '/opt/src':
+	ensure                  => directory
+}
+
+
+install a package called "httpd"
+package { 'httpd':
+  ensure               => installed
+}
+
+ 
+start a service using puppet
+
+service { 'httpd':
+  ensure     => running,
+  enable     => true
+	
+}
+
+
+create a dummy index.html using puppet
+file { '/var/www/html/index.html':
+	ensure                  => present,
+	content			=> "<h1>Welcme to scmGalaxy</h1>"
+}
+	
+Create a cron job using puppet
+cron { 'logrotate':
+  command => '/root/puppet1/script.sh',
+  user    => 'root',
+  hour    => 2,
+  minute  => 0,
+}
+
+
+env variab;e in bash pro using puppet
+/root/.bash_profile
+=====================
+files - template
+notes\puppet\puppet-program-files-template\3\ntp-03-start\ntp\files
+
+.bash_profile-temple
+
+
+How to find & replece text in file.....
+= TEMPLATE . erb == EXTENDED RUBY
+notes\puppet\puppet-program-files-template\4\ntp-04-start\ntp\manifests
+
+=======================================================
+RESOURCES=========
+
+IF YOU DO NOT HAVE RESOURCE FOR YOUR TASK
+	1. Look for puppet forge
+	2. Write your own resources --> RUBY
+
+What is puppet forge?
+	A website where you are going to look for modules?
+	5479
+
+What is Module?
+	Packaged puppet program for release
+
+How to install module?
+puppet module install puppetlabs-stdlib --version 4.24.0
+
+How to use it?
+mod 'puppetlabs-stdlib', '4.24.0'
+
+
+How to create your own module?
+========================================
+puppet module generate scmgalaxy/webserver
+puppet module generate webserver
+
+IF YOU CALL MODULE?
+First program which will be executed is ---init.pp
+
+How to include other pp program inside the init.pp
+
+COND ----EACH pp program in Module need to be put into classes.
+
+
+INIT.pp
+class webserver {
+}
+
+OTHER pp
+class webserver::pro1 {
+}
+
+class webserver::pro2 {
+}
+
+
+
+How to test your own Module?
+===============================
+
+puppet apply -e 'include webserver'
+
+
+
+
+
+	
+
+	

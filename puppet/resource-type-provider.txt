@@ -1,0 +1,22 @@
+> sudo puppet describe --list
+> sudo puppet describe --list | grep myfile
+> sudo mkdir -p motd/lib/puppet/{type,provider}
+> tree motd
+> sudo vim /motd/lib/puppet/type/myfile.rb
+
+Puppet::Type.newtype(:myfile) do
+	desc "My File Type"
+-----------
+
+
+
+> sudo mkdir -p motd/lib/puppet/provider/myfile
+> vim motd/lib/puppet/provider/myfile/posix.rb
+
+
+-------------
+------------------
+------------------------
+
+Files n Template
+================================

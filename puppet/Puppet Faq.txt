@@ -1,0 +1,22 @@
+H3: How Facts Are Gathered?
+Puppet gathers facts about each of its nodes with a tool called facter. Facter, by default, gathers information that is useful for system configuration (e.g. OS names, hostnames, IP addresses, SSH keys, and more). It is possible to add custom facts that aren't part of the default fact set.
+
+The facts gathered can be useful in many situations. For example, you can create an web server configuration template and automatically fill in the appropriate IP addresses for a particular virtual host. Or you can determine that your server's distribution is "CentOS", so you should run the apache2 service instead of httpd. These are basic examples, but they should give you an idea of how facts can be used.
+
+To see a list of facts that are automatically being gathered on your agent node, run the following command:
+$ /opt/puppetlabs/bin/facter
+
+
+H3: Main Manifest File
+Puppet uses a domain-specific language to describe system configurations, and these descriptions are saved to files called "manifests", which have a .pp file extension. The default main manifest file is located on your Puppet master server at /etc/puppetlabs/code/environments/production/manifests/site.pp. Let's create a placeholder file for now:
+
+$ sudo touch /etc/puppetlabs/code/environments/production/manifests/site.pp
+Note that the main manifest is empty right now, so Puppet won't perform any configuration on the agent nodes.
+
+H3: How The Main Manifest Is Executed
+The Puppet agent periodically checks in with the Puppet Server (typically every 30 minutes). When it checks in, it will send facts about itself to the master, and pull a current catalog--a compiled list of resources and their desired states that are relevant to the agent, determined by the main manifest. The agent node will then attempt to make the appropriate changes to achieve its desired state. This cycle will continue as long as the Puppet master is running and communicating with the agent nodes.
+
+Immediate Execution on a Particular Agent Node
+It is also possible to initiate the check for a particular agent node manually, by running the following command (on the agent node in question):
+
+$ /opt/puppetlabs/bin/puppet agent --test

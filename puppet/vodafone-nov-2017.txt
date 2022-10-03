@@ -1,0 +1,221 @@
+DevOps -
+http://www.devopsschool.com/video/devops/DevOps-Essentials.html
+http://www.devopsschool.com/video/devops/Complete-CICD-Implementation-from-Scratch.html
+http://www.devopsschool.com/video/devops/cicd-pipeline-using-jenkins.html
+
+What is Puppet?
+	Config mgmt tool.
+	written in Ruby
+	based on ruby
+	extend the fun using ruby
+
+
+What is Config mgmt?
+	SERVERS CONFIG MGMT
+
+What is there in servers for which we manage their config?
+	package
+	file
+	user
+	service
+	directory
+	yum
+	apt
+	bash
+	batch
+	group
+
+	SOFTWARE
+	HARDWARE --Puppet --> Hyper --> 
+	PEOPLE	
+	PROCESS
+
+What is big deal with Puppet?
+	JAVA
+	C++
+	Py
+	Perl
+
+	Bash
+	PS
+	
+	PUPPET IS
+		EASY TO LEARN
+		EASY TO IMPLEMENT
+		EASY TO DEBUG
+		EASY TO TEST
+		EASY TO EXTEND
+
+	BASH  -- WINDOWS--NO
+	PS ------- LINUX
+=====================================
+ITS NOT CROSS PLATFORM---
+PUPPET IS
+
+================================
+MOST IMPORTANT FEATURES 
+==============================
+IDEMPOTENT
+	MANAGE THE STATE OF THE RESOURCES
+=======================================
+Managing the large servers
+	
+
+
+
+
+
+Other Tools ----> Chef, Ansible, Salt
+============================================
+
+
+Roles in Puppet
+=====================================
+Developers
+	They write a program.
+Admin
+	Admin
+
+
+=====================
+How to install Puppet? (puppet client)?
+
+
+Program file - filename.java ----> filename.pp
+pp- puppet program ===  Manifest file
+
+How to compile?
+Javac ----- puppet apply filename
+
+======================================
+How to write puppet program? Manifest?
+	In the manifest you write the resources....
+
+Wat is Reso?
+	Resourse name		Action(ensure)			Properties| Att
+=================================================================================		
+	file			C | D  | M
+	directory		C | D  | M	
+	package			I | R | U
+	services		S | S| R | E | D
+
+	user
+	service
+	directory
+	yum
+	apt
+	bash
+	batch
+	group
+
+List of Puppet Resources
+https://puppet.com/docs/puppet/5.3/type.html
+==================================================================================
+
+TYPE - TITLE - ATTRIBUTES  - PROVIDERS
+==================================================================================
+
+How to Install Puppet Agents?
+==============================================
+Add a Puppet repo to our system
+> rpm -Uvh http://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm
+
+#install puppet Agent
+> yum install puppet-agent
+
+Code
+=========================
+1. Create a file under /opt directory
+
+
+file { '/opt/voda1.txt':
+  ensure => 'present'
+}
+
+
+
+2. Create a file under /opt directory with content
+
+file { '/opt/voda2.txt':
+  ensure => 'present',
+  content => "This is my 2nd program",
+}
+
+
+3. Create a file under /opt directory with content and with specific permission
+
+file { '/opt/dir1':
+  ensure => 'directory',
+}
+
+file { '/opt/dir1':
+  ensure => 'directory',
+}
+
+file { '/opt/dir1/fff.txt':
+  ensure => 'present',
+  content => "This is my 2nd program",
+}
+
+1. Create a directory
+2. Create a file under /opt/directory
+
+Small Project 
+=======================
+Setup a Webservers n deploy your index.html
+===============================================
+1. Install httpd
+
+package { 'httpd':
+  ensure => present,
+}
+
+service { 'httpd':
+ ensure => 'running',
+}
+
+file { '/var/www/html/index.html':
+  ensure => 'present',
+  content => "<h1>Hello Vodafone from scmGalaxy</h1>",
+}
+
+2. create a index.html under /var/www/html with your content
+3. start the services
+4. stop the firewalld
+
+Welcome to your page
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+	

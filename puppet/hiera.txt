@@ -1,0 +1,94 @@
+> puppet apply -d -e 'include ntp'
+> puppet apply -d -e 'include ntp' | grep hiera
+>  
+
+Data Source
+	Node Specific
+	Common
+
+
+Config
+
+===============
+Heira Config - hiera.yaml
+
+Backend - Lookup functions - yaml/json
+	hiera()
+	hiera_array()
+	hiera_hash()
+
+Data Sources - 
+		
+
+Hiera Tools
+
+Debugging Hira
+========================
+Creating a Simple module
+Confirmign hiera.yaml file
+editing the data sources
+
+> puppet config print confir
+> cat hiera.yaml
+
+
+Config a Data Source
+------------------------
+puppet config print envrionemntath environment
+vim common.yaml under heiradata
+
+
+> puppet config set hiera_config <new path>
+> puppet config print hiera_config
+> 
+
+========================
+Hiera Configuration File
+The hiera configuration file resides in “/etc/puppetlabs/code” directory. It is yaml file named “hiera.yml”
+
+:backends – Hiera supports yaml, json and puppet class backends.
+:datadir – The location where you place your hieradata.
+:hierarchy This represents the folder and file hirearchy inside the “:datadir” i.e, hieradata folder. You can use interpolation to dynamically pass the file name.
+
+
+You can keep all the deafult values under common.yaml file in hieradata fodler. For example,
+/etc/puppetlabs/code/environments/%{::environment}/hieradata/common.yaml
+
+If you have any node specific data, you can have the hierarchy as follows.
+/etc/puppetlabs/code/environments/%{::environment}/hieradata/nodes/mynode.example.com
+
+A sample YAML based configuration file is shown below.
+
+---
+ldap_servers:
+  - 10.132.17.196
+  - 10.132.17.195
+
+users:
+  joe:
+    home: '/home/joe'
+  jenkins:
+    password: 'mysecret'
+
+Accessing Hiera Data Using CLI
+===================
+
+To access the value , just use the hiera command with the key as shown below.
+hiera ldaps_ervers
+
+If you have used interpolation in the “:datadir” configuration, You should add the parameters as shown below.
+hiera ldap_servers ::environment=production
+
+
+A high hirearchy lookup, for example, a data source from hieradata/node/mynode.example.com.yaml will look like the following.
+hiera ldap_server node=test
+
+Accessing Hiera Data From Modules
+$ldapservers = hiera("ldap_servers")
+$ldapservers = hiera_array("ldap_servers")
+
+
+
+REFER
+https://devopscube.com/puppet-hiera-tutorial-beginners/
+ 

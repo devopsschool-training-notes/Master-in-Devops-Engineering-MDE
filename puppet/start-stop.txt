@@ -1,0 +1,21 @@
+service puppet status
+puppet agent --enable	
+puppet resource service puppet ensure=running enable=true
+puppet resource service puppet ensure=stopped enable=true
+
+https://puppet.com/docs/puppet/5.3/services_agent_unix.html
+
+
+puppet resource service puppetserver ensure=running
+puppet resource service puppetserver ensure=running
+
+puppet --version
+
+service pe-puppetserver restart
+nestat -nap | grep 8140
+
+
+
+puppet agent -t --server=puppet.renju.com
+13.126.251.253 puppet.renju.com
+13.126.241.147:8140

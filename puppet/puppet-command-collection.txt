@@ -1,0 +1,108 @@
+[root@ip-172-31-19-192 nokiax]# puppet help
+
+Usage: puppet <subcommand> [options] <action> [options]
+
+Available subcommands:
+help              Display Puppet help.
+man               Display Puppet manual pages.
+config            Interact with Puppet's settings.
+facts             Retrieve and store facts.
+resource          The resource abstraction layer shell
+describe          Display help about resource types
+parser            Interact directly with the parser.
+apply             Apply Puppet manifests locally
+module            Creates, installs and searches for modules on the Puppet Forge.
+
+puppet help
+=========================================
+puppet help man
+puppet help config
+puppet help facts
+puppet help resource
+puppet help describe
+puppet help parser
+puppet help apply
+puppet help module
+
+puppet man
+=========================================
+puppet man config
+puppet man facts
+puppet man resource
+puppet man describe
+puppet man parser
+puppet man apply
+puppet man module
+
+puppet config
+=========================================
+puppet config print
+puppet config print confdir
+puppet config print certname
+
+puppet resource
+=========================================
+puppet resource service puppet
+puppet resource package httpd
+
+puppet parser
+=========================================
+puppet parser validate puppet-service.pp
+
+puppet apply
+=========================================
+puppet apply puppet-service.pp
+
+puppet describe
+=========================================
+puppet describe --list #List all resources
+puppet describe file #List documentation for the file resources
+
+puppet man
+=========================================
+puppet man agent             
+puppet man apply
+
+puppet facts
+=========================================
+puppet facts
+
+puppet module
+=========================================
+puppet module list
+puppet module install theurbanpenguin/puppet_vim
+puppet module list
+
+
+             
+  agent             The puppet agent daemon
+  ca                Local Puppet Certificate Authority management. (Deprecated)
+  catalog           Compile, save, view, and convert catalogs.
+  cert              Manage certificates and requests
+  certificate       Provide access to the CA for certificate management.
+  certificate_request  Manage certificate requests. (Deprecated)
+  certificate_revocation_list  Manage the list of revoked certificates. (Deprecated)
+  device            Manage remote network devices
+  doc               Generate Puppet references
+  epp               Interact directly with the EPP template parser/renderer.
+  file              Retrieve and store files in a filebucket (Deprecated)
+  filebucket        Store and retrieve files in a filebucket
+  generate          Generates Puppet code from Ruby definitions.
+  inspect           Send an inspection report
+  key               Create, save, and remove certificate keys. (Deprecated)
+  lookup            Data in modules lookup function
+  master            The puppet master daemon
+
+  node              View and manage node definitions.
+  plugin            Interact with the Puppet plugin system.
+  report            Create, display, and submit reports.
+  resource_type     View classes, defined resource types, and nodes from all manifests.
+  status            View puppet server status. (Deprecated)
+
+See 'puppet help <subcommand> <action>' for help on a specific subcommand action.
+See 'puppet help <subcommand>' for help on a specific subcommand.
+
+
+
+
+

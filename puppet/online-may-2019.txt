@@ -1,0 +1,174 @@
+What is Puppet?
+	Config mgmt tool.
+	From Puppet Inc
+	Dev in Ruby
+	Version
+		Puppet Server - Free / OS
+		Puppet Enterprise - Paid
+
+What is Config mgmt tool.
+	SERVER(S) Config mgmt.
+
+What is there in the servers?
+	file
+	directory
+	user
+	group
+	shell
+	bash
+	service
+	package	
+
+Why puppet?
+	Easy to learn/share/extend/debug/test
+		Compare to JAVA, C++, Python
+	Cross Platform
+	Ability to manage Large number of SERVERS.
+
+Other tools
+	Puppet -> Ansible - Chef - Salt
+	https://www.devopsschool.com/compare/
+	
+Roles in Puppet?
+	Programming - Those who write a Puppet Module
+	Admin - Those who manage SERVERS and APPLY Puppet Module
+
+Hw to become a programmers?
+JAVA -> .JAVA -> .CLASS -> .jAR --> WAR --> Dep2SEevers by Ops..
+Puppet -> .pp -> Module --> Dep2Servers by Ops/Admin
+
+How to write .pp == Puppet Program.....
+--------------------------------------------
+Each puppet program..you have MULTIPLE Resource DECLARATIONS.....
+Each Resource DECLARATIONS has following....
+	TYPE TITLE
+		ATTRIBUTES
+		PROVIDER
+
+What is TYPE | TITLE | ATTRIBUTES | PROVIDER	
+
+https://puppet.com/docs/puppet/5.3/type.html
+
+TYPE 	| TITLE | 	ATTRIBUTES | 	PROVIDER	
+file	xyz.txt
+package	httpd
+service	httpd
+
+
+	.pp================
+
+	TYPE TITLE
+		ATTRIBUTES
+		PROVIDER
+	TYPE TITLE
+		ATTRIBUTES
+		PROVIDER
+	TYPE TITLE
+		ATTRIBUTES
+		PROVIDER
+	TYPE TITLE
+		ATTRIBUTES
+		PROVIDER
+
+package { 'httpd':
+  ensure => installed
+}
+
+service { 'httpd':
+  ensure     => running
+}
+
+file { '/var/www/html/index.html':
+  ensure => present,
+  content => "<h1> Welcome to DevOpsSchool.com</h1>"
+}
+
+===================================
+How to install Puppet Client?4
+Install the puppet-agent package:
+$ sudo rpm -ivh https://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm
+$ yum update
+$ sudo yum -y install puppet-agent
+
+puppet apply first.pp
+
+----------------------------
+How to create a module?
+==============================
+
+puppet module generate devopsschool-web
+
+
+puppet apply -e "include web"
+
+[root@ip-172-31-26-28 puppet]# puppet module list
+/etc/puppetlabs/code/environments/production/modules (no modules installed)
+/etc/puppetlabs/code/modules (no modules installed)
+/opt/puppetlabs/puppet/modules (no modules installed)
+[root@ip-172-31-26-28 puppet]#
+========================================
+
+How to beome a Puppet Admin?
+Step 1- Setup Puppet Enterprise
+
+Step 2 - Add a SERVErS to puppet Enterprise
+
+Step 3 - Copy a modules in the Puppet Enterprise
+
+Step 4  - Modify site.pp of your ENV
+
+Step 5 - RUN
+		FROM Puppet Enterprie
+		FROM Servers 
+
+
+=====================Puppet Enterrise Setup=================
+# Install NTP via yum with this command:
+$ sudo yum -y install ntp
+$ sudo systemctl start ntpd
+$ sudo systemctl enable ntpd
+$ sudo ntpd -p
+
+
+# Set the puppet master hostname
+$ hostnamectl set-hostname puppet.example.vm
+$ hostnamectl
+$ ifconfig
+$ sudo vi /etc/hosts
+As this is our primary hostname
+
+127.0.0.1  puppet.example.vm puppet localhost
+52.66.210.137 puppet.example.vm #public ip
+172.31.31.151 puppet.example.vm #private ip
+
+$ yum install wget -y
+$ wget https://s3.amazonaws.com/pe-builds/released/2017.2.3/puppet-enterprise-2017.2.3-el-7-x86_64.tar.gz
+$ tar -zxvf puppet-enterprise-2017.2.3-el-7-x86_64.tar.gz
+$ cd puppet-enterprise-2017.2.3-el-7-x86_64
+$ ./puppet-enterprise-installer
+===========================================
+How to set up agent??
+	installing Puppet agent
+	Configure puppet agent
+		/etc/puppetlabs/puppet/puppet.conf
+				# ip address of Server
+
+=====================Puppet Client Setup=================
+$ sudo vi /etc/hosts
+As this is our primary hostname
+52.66.210.137 puppet.example.vm #public ip
+172.31.31.151 puppet.example.vm #private ip
+
+# Install NTP via yum with this command:
+$ sudo yum -y install ntp
+$ sudo systemctl start ntpd
+$ sudo systemctl enable ntpd
+$ sudo ntpd -p
+
+curl -k https://puppet.example.vm:8140/packages/current/install.bash | sudo bash
+
+
+https://forge.puppet.com
+
+
+	

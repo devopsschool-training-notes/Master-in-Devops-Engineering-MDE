@@ -1,0 +1,52 @@
+PUPPET AGENT INSTALL
+================================
+> yum update
+> rpm -Uvh http://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm
+> yum install puppet-agent
+> export PATH=$PATH:/opt/puppetlabs/bin
+
+Puppet Directory
+================================
+/opt/puppetlabs/bin
+/opt/puppetlabs/puppet/bin
+
+VERIFY THE PUPPET AGENT
+================================
+puppet agent --version
+
+KNOW THE PUPPET AGENT CONFIG
+================================
+puppet config print
+puppet config print confdir
+puppet config print certname
+puppet config print {confdir rundir ssldir runinterval }
+
+Example of Puppet Apply - Make sure puppet agent is not running
+================================
+puppet resource service puppet
+puppet parser validate puppet-service.pp
+puppet apply puppet-service.pp
+
+Puppet Style Guide
+================================
+https://docs.puppet.com/puppet/4.9/style_guide.html
+puppet module list
+puppet module install theurbanpenguin/puppet_vim
+puppet module list
+
+Code - puppet-vim.pp
+include puppet_vim 
+
+sudo puppet parser validate puppet-vim.pp
+sudo puppet apply puppet-vim.pp
+
+
+===========================
+puppet describe --list #List all resources
+puppet describe file #List documentation for the file resources
+sudo puppet module install puppetlabs/stdlib #Installing the stanadard lib givess us the access to functions such as pw_hash
+
+
+
+
+

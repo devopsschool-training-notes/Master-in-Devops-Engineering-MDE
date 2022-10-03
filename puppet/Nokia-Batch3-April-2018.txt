@@ -1,0 +1,364 @@
+What is Puppet?
+	Config mgmt tool
+
+What is Config mgmt?
+	SERVERS Config mgmt
+
+What is there in the SERVERS so you manage their config?
+	file
+	directory
+	users
+	group
+	apt
+	yum
+	ps
+	Packages
+	OS
+	services
+	IPAddress
+	port
+
+	SOFTWARE
+	HARDWARE - HYPERVISOR
+	PEOPLE - user groups
+	PROCESS -
+
+
+
+Why Puppet?
+	PERL | PYTHON | JAVA | C++
+	2 WEEKS | 1 MONTH
+		DIFF TO LEARN
+		DIFF TO SHARE
+		DIFF TO DEBUG
+		DIFF TO TEST
+		DIFF TO EXTEND
+
+	BASH | BATCH 
+		WINDOWS		
+		LINUX
+			
+		NOT CROSS PLATFORM
+
+	ABILITY TO MANAGE LARGE NUMBER OF SERVERS and Deployment into that
+	(Deployment)
+	QA -> PackX --- 200 Boxes
+	
+		150 LINUX
+			50 U
+			50 R
+			50 SU
+		50 WIN
+			25 WIn 10 
+			25 WIN 16
+
+		MYSQL
+		MSSQL
+		ORACLE
+		POS
+
+		TOMCAT
+		JBOSS
+		WL
+		WS
+
+		100 DIFF
+	------------------------------------------
+	2 mins
+
+	IDEOMPOTENT
+	
+====================================
+What are other tools we have?
+	Ansible - > Chef - Salt
+
+What are role we have in Puppet?
+	Puppet programmer
+	Puppet Adminis
+
+Where can i use puppet?
+	1. Dev to QA Deployment
+	2. PRE PROD  to PROD
+	3. IT management
+	
+
+How to become Puppet Programmer?
+How to become a Puppet Admin?
+=====================================
+
+C 		GCC - .C  - COMPILE - DLL & .exe  - RELEASE
+java		JDK  - .JAVA  - CLASS - JAR - TEST - RELEASE
+Puppet		puppet agent -> .pp -> module -> TEST -> RELEASE
+
+What is Puppet Agent?
+	- it is tools to converse of pp and module.
+
+How to install it?
+	$ yum update
+	$ sudo rpm -ivh https://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm
+	$ sudo yum -y install puppet-agent
+	> puppet
+
+What is .pp?
+	Puppet program which contains list of the resources. declaration
+					  	  ==========
+	EACH Resource decalaration in PP program is defined with following
+			TYPE
+			TITLE
+			ATTRIBUTES
+			PROVIDERS (OPTIONAL)
+What is Resources?		PROPERTY(Attributes)	 ACTION(ENSURE)		WHAT ????
+	(TYPE)									(TITLE)
+	file			??		 	C | D | M
+	directory				 	C | D | M
+	user					 	A | D | M
+	group						A | D | M
+	service						S S R E D
+	packages					I U R M
+https://puppet.com/docs/puppet/5.3/type.html
+
+
+ALGORITHM?
+===========================================
+1. Write a puppet Program to create a file?
+2. Write a puppet program to create a file with some content
+3. Write a puppet program to create a file with some content but permission should exec + onwer should be ec2-user
+
+Write a puppet Program to create directory?
+
+Write a puppet Program to insall web server "httpd"
+
+Write a puppet Program to start web server "httpd"
+
+Write a puppet Program to enable web server "httpd"
+
+13.126.56.6
+
+
+Familiar with Puppet agent installation & config?
+Installation Dir - /opt/puppetlabs
+Config - /etc/puppetlabs
+
+How to verify?
+> puppet
+
+How to get a puppet command help?
+> puppet help
+
+How to validate the puppet program?
+> puppet parser validate file1.pp
+
+How to execute a puppet program?
+> puppet apply file1.pp
+> puppet apply --debug file1.pp
+> puppet apply --verbose file1.pp
+=================================================
+1. Write a puppet Program to create a file?
+file1.pp (collection of resouse dec)
+
+file { '/opt/file1.txt':
+	ensure => present
+}
+
+2. Write a puppet program to create a file with some content
+
+file { '/opt/file2.txt':
+	ensure => present,
+	content => "This is my first program"
+}
+
+3. Write a puppet program to create a file with some content but permission should exec + onwer should be ec2-user
+
+file { '/opt/file3.txt':
+	ensure => present,
+	content => "This is my first program",
+	mode => "755",
+	owner => "ec2-user"
+}
+
+Write a puppet Program to create directory?
+file { '/opt/src':
+	ensure => directory
+}
+
+Write a puppet Program to insall web server "httpd"
+package { 'httpd':
+	ensure => present
+}
+
+Write a puppet Program to start web server "httpd"
+service { 'httpd':
+	ensure => "running"
+}
+
+
+file { '/var/www/html/index.html':
+        ensure => present,
+        content => "<h1> Welcome to scmgalaxy puppet classA</h1>",
+}
+
+
+LAB - 20 MINS - 
+Write a pp using you install "git" and httpd and repalce index.html and create a user called "nokia-build". Start and Enable httpd.	
+
+1 13.127.251.88
+2 13.127.245.250
+3 52.66.97.254
+4 13.127.229.49
+
+5 13.232.46.141
+6 13.127.27.26
+7 13.232.37.183
+8 13.127.222.240
+9 35.154.196.218
+10 13.232.3.126
+11 13.127.113.45
+
+1. Diff between title & name
+		namevar
+
+file { '/opt/src/file11.txt':
+	ensure => present,
+	path => 
+}
+
+file { 'crating_file':
+	ensure => present,
+	path => "/opt/src/file11.txt"
+}
+
+
+service { 'httpd':
+	ensure => "running"
+	[[if ===file is dne...]]]
+}
+
+2. roles -
+3. Adding new resouces
+
+4. undoing
+
+5. Conditional
+6.  
+
+What is Module?
+How to run .pp?
+How to run module?
+===================================================
+
+What is envrionment?
+===============================
+Dev, Prod, QA, PRep, Staging, Intg
+
+Default = Production
+
+Common Module - Will go to system location
+Env Specific mod will go into env dir
+
+[root@ip-172-31-16-83 puppetlabs]# puppet module list
+/etc/puppetlabs/code/environments/production/modules (no modules installed) - SPEC TO ENV
+/etc/puppetlabs/code/modules (no modules installed)	--- ALL ENV
+/opt/puppetlabs/puppet/modules (no modules installed)	 --- SYSTEM
+[root@ip-172-31-16-83 puppetlabs]#
+
+
+What is puppet.conf?
+============================
+is the files which is being used by puppet-agent.
+
+
+puppet module install puppetlabs-stdlib --version 4.25.1
+
+======================================
+How to create my own module?
+> puppet module generate scmgalaxy/webserver
+
+What is init.pp?
+
+What is Class?
+
+What is Subclass?
+
+how to include sub class in the main class?
+
+How to feed manifest? - DONE
+
+How to test module?
+puppet apply --modulepath=/home/ec2-user/pp/modules -e "include webserver" -- INIT.PP
+
+puppet apply --modulepath=/home/ec2-user/pp/modules -e "include webserver::httpd"
+
+Lab - 10 mins
+Create a module and test it.....
+=================================================
+2 Kind of Puppet Release
+	Puppet Server - Command - OSS
+	Puppet Enterprise -GUI - 10 
+==========================================
+How to setup Puppet Master?
+1. hostname _FQDN
+$ hostnamectl set-hostname puppet.example.vm
+$ hostnamectl
+$ ifconfig
+$ sudo vi /etc/hosts
+As this is our primary hostname
+
+127.0.0.1  puppet.example.vm puppet localhost
+13.232.24.226 puppet.example.vm #public ip
+172.31.22.148 puppet.example.vm #private ip
+
+
+2. ntp
+$ sudo yum -y install ntp
+$ sudo systemctl start ntpd
+$ sudo systemctl enable ntpd
+$ sudo ntpd -p
+
+3. Download & Install
+$ yum install wget -y
+$ wget https://s3.amazonaws.com/pe-builds/released/2017.2.3/puppet-enterprise-2017.2.3-el-7-x86_64.tar.gz
+$ tar -zxvf puppet-enterprise-2017.2.3-el-7-x86_64.tar.gz
+$ cd puppet-enterprise-2017.2.3-el-7-x86_64
+$ ./puppet-enterprise-installer
+
+4. Configure
+
+https://puppet.example.vm:3000
+admin/admin123
+
+How to setup a Puppt nde?
+Install ntp 
+
+1. Install puppet agent?
+2. Modify puppet.conf
+3. Run the puppet agent
+===========
+curl -k https://puppet.example.vm:8140/packages/current/install.bash | sudo bash
+
+Sample Module Code - https://github.com/scmgalaxy/puppet-modules-examples
+
+IP Address of Puppet master - 13.232.24.226 / ec2-user
+
+1 13.127.35.175
+2 35.154.179.135
+3 13.126.247.141
+4 13.232.38.8
+5 13.127.90.81
+6 13.127.12.103
+7 13.232.11.208
+8 13.232.5.181
+9 13.127.48.97
+10 13.232.47.96
+11 13.126.252.48
+
+
+
+
+
+
+
+	
+	
+	
+	
+	

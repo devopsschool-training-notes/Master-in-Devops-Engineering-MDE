@@ -1,0 +1,150 @@
+NOTES
+[COMMAND] - This means Command code should be used
+H3:  This means its h3 title
+
+
+
+Title - Install and Configure Puppet Enterprise in RHEL/CENTOS 7
+
+To follow this tutorial, you must have root or superuser access to all of the servers that you want to use Puppet with. You will also be required to create a new CentOS 7 server to act as the Puppet master server. 
+
+Before we get started with installing Puppet, ensure that you have the following prerequisites:
+
+H3: Supported operating systems
+
+COPY THE SECTION FROM - https://docs.puppet.com/pe/2016.2/install_system_requirements.html#supported-operating-systems
+
+
+H3: Choosing a PE architecture
+There are two installation types for Puppet Enterprise:
+
+Monolithic installation: the Puppet master, the PE console, and PuppetDB (with PostgreSQL) are all installed on one node. Because all components are on one node, this installation type is easier to install, upgrade, and troubleshoot. You can expand this installation type by adding compile masters to it. A monolithic installation is appropriate for managing up to 2000 nodes.
+
+Split installation: the Puppet master, the PE console, and PuppetDB (with PostgreSQL) are each installed on separate nodes. You should only use this installation type if you have a limit on the number of cores per server you can have, or if you are running 8,000+ nodes.
+
+H3: Hardware recommendations
+COPY FROM https://docs.puppet.com/pe/2016.2/install_system_requirements.html#monolithic-installation
+
+H3: Timekeeping
+We recommend using NTP or an equivalent service to ensure that time is in sync between your Puppet master and any Puppet agent nodes. If time drifts out of sync in your PE infrastructure, you may encounter issues such as nodes disappearing from live manangement in the console. A service like NTP will ensure accurate timekeeping.
+
+Because it acts as a certificate authority for agent nodes, the Puppet master server must maintain accurate system time to avoid potential problems when it issues agent certificates--certificates can appear to be expired if there are time discrepancies. We will use Network Time Protocol (NTP) for this purpose.
+
+To manually install this module with puppet module tool:
+
+[COMMAND START] 
+
+
+$ puppet module install puppetlabs-ntp --version 6.2.0
+OR
+# Install NTP via yum with this command:
+$ sudo yum -y install ntp
+$ sudo systemctl start ntpd
+$ sudo systemctl enable ntpd
+$ sudo ntpd -p
+
+# Do a one-time time synchronization using the ntpdate command:
+$ sudo ntpdate pool.ntp.org
+
+
+H3: Name resolution
+1. Decide on a preferred name or set of names agent nodes can use to contact the Puppet master server.
+2. Ensure that the Puppet master server can be reached via domain name lookup by all of the future Puppet agent nodes at the site.
+
+Private Network DNS: Forward and reverse DNS must be configured, and each server must have a unique hostname. If you do not have DNS configured, you must use your hosts file for name resolution. We will assume that you will use your private network for communication within your infrastructure.
+
+
+H3: Firewall configuration
+Firewall Open Ports: The Puppet master must be reachable on port 8140. If your firewall is too restrictive, check out this FirewallD Tutorial for instructions on how to allow incoming requests on port 8140.
+COPY FROM https://docs.puppet.com/pe/2016.2/install_system_requirements.html#for-monolithic-installs
+
+H3: Puppet Master Installation and Configuration
+The installation process will proceed in three stages:
+
+1. You choose an installation method.
+2. You install the main components of PE—the Puppet master, PuppetDB (and database support), and the PE console.
+3. You install the Puppet agent on all the nodes you wish to manage with PE. Refer to the agent installation instructions.
+
+Example Infrastructure 
+We will use the following infrastructure to demonstrate how to set up Puppet:
+
+Hostname	Role		Private FQDN
+puppet		Puppet master	puppet.nyc3.example.com
+
+
+B: Choosing an installation method
+Web-based monolithic installation: The base install type for a standard monolithic installation or a monolithic plus compile masters installation.
+
+Text-mode installation: Use the example pe.conf file provided in the PE installation tarball or create your own to install PE. With text-mode, you can create a split or monolithic installation.
+
+H3: Set the puppet master hostname 
+[COMMAND START]
+# Set the puppet master hostname
+$ hostnamectl set-hostname puppet.example.vm
+$ hostnamectl
+$ ifconfig
+$ sudo vi /etc/hosts
+As this is our primary hostname
+
+127.0.0.1  puppet.example.vm puppet localhost
+13.232.254.56 puppet.example.vm #public ip
+172.31.31.96 puppet.example.vm #private ip
+
+
+$ ping puppet.example.vm
+
+
+#and, you /etc/hosts file should look like somthing like this...
+192.168.43.144 puppet-master
+$ sudo vi /etc/hosts
+
+[COMMAND END]
+
+
+H3: Download Puppet Master
+Type of Download
+Compressed Tar
+
+[COMMAND START]
+$ yum install wget -y
+$ wget https://s3.amazonaws.com/pe-builds/released/2017.2.3/puppet-enterprise-2017.2.3-el-7-x86_64.tar.gz
+$ tar -zxvf puppet-enterprise-2017.2.3-el-7-x86_64.tar.gz
+$ cd puppet-enterprise-2017.2.3-el-7-x86_64
+$ ./puppet-enterprise-installer
+#
+RACK_ENV=production /opt/puppetlabs/puppet/share/installer/vendor/bundler/bin/thin start --debug -p 3000 -a 0.0.0.0 --ssl --ssl-disable-verify &> /dev/null
+
+[COMMAND END]
+
+
+RPM
+
+[COMMAND START]
+# Enable the official Puppet Labs collection repository with this command:
+$ sudo rpm -ivh https://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm
+
+# Install the puppetserver package:
+$ sudo yum -y install puppetserver
+
+# Now we're ready to start Puppet Server with this command:
+$ sudo systemctl start puppetserver
+
+# Next, enable Puppet Server so that it starts when your master server boots:
+$ sudo systemctl enable puppetserver
+[COMMAND END]
+
+[B] Access 
+https://13.126.199.145:3000/
+
+Display Video File at the end	
+https://www.youtube.com/watch?v=Drl35Bpc6OE
+
+
+Reference
+https://romikoderbynew.com/2017/08/08/installing-puppet-enterprise-on-centos-7-in-aws-ec2-with-custom-public-hostname/
+https://www.digitalocean.com/community/tutorials/how-to-install-puppet-4-in-a-master-agent-setup-on-centos-7
+
+Notes
+On AWS - always Elastic IPS
+
+

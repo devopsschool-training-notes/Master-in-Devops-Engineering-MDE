@@ -1,0 +1,176 @@
+What is Puppet?
+	Config mgmt tool
+
+What is Config mgmt tool
+	Config mgmt of SERVERS
+
+What we have in SERVERS so we manage the config?
+	file
+	directory
+	package
+	service
+	apt
+	yum
+	bash
+	ps
+	user
+	group
+
+Why Puppet?	
+	1. Puppet program can run on ALL Platform where == Cross Pllatform
+		Bash - Linux
+		Batch - Windows
+	2. Ability to manage large servers and run programs parrell
+	3. Easy to learn/ Share/extend/debug /test compare to perl/py
+	4. Ideompotent -
+		DESIRE == ACTUAL
+		NO Rerun
+
+What are the other tools we have?
+	Chef
+	Ansible
+	Salt
+
+Roles in Puppet?
+	programmer - Who write/test/debug the program program
+	Admin - who manage the large infra and execute the puppet program
+
+How to become a programmer?
+
+1. Install Puppet Agent
+
+Install the puppet-agent package:
+$ yum update
+$ sudo rpm -ivh https://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm
+$ sudo yum -y install puppet-agent
+> puppet
+
+2. Puppet Program === Manifest file	
+	Each Program has collections of Resource Decalation
+
+	Resource Decalation
+		TYPE
+		TITLE
+		ATTRIBUTES
+		PROVIDER(OPTINONAL)
+	Resource Decalation
+		TYPE
+		TITLE
+		ATTRIBUTES
+		PROVIDER(OPTINONAL)
+	Resource Decalation
+		TYPE
+		TITLE
+		ATTRIBUTES
+		PROVIDER(OPTINONAL)
+
+3 How to test it?
+> puppet apply first.pp
+
+What is a Resource? === component of the servers 
+https://puppet.com/docs/puppet/5.3/type.html
+
+Assignment - 
+Create a file			= file
+Create a file with content	= file
+Create a dir			= file
+Install a package "httpd"	= package
+Create a index.html into /var/www/html/index.html = file
+Start the service "httpd"	= service
+
+file { '/opt/file1.txt':
+  ensure => present,
+  mode => "755"
+}
+
+file { '/opt/file2.txt':
+  ensure => present,
+  mode => "755",
+  content => "Ths is my first file"
+}
+
+file { '/opt/src':
+  ensure => directory,
+  mode => "755"
+}
+
+package { 'httpd':
+  ensure => present,
+}
+
+service { 'httpd':
+  ensure     => running 
+}
+
+file { '/var/www/html/index.html':
+  ensure => present,
+  content => "<h1> Hello to scmGalaxy classses</h1>"
+}
+
+> puppet app
+
+WRITE - DEBUG - OUTPUT -------
+
+13.127.210.213
+========================================================================
+JAVA --> CLASS --> JAR === DEPLY
+
+How to package it?
+	===== Module
+
+How to create a module?
+	puppet module generate webserver
+
+webserver/Gemfile
+webserver/Rakefile
+webserver/examples
+webserver/examples/init.pp
+webserver/manifests
+webserver/manifests/init.pp	===== FIRST PP
+webserver/spec
+webserver/spec/classes
+webserver/spec/classes/init_spec.rb
+webserver/spec/spec_helper.rb
+webserver/README.md
+webserver/metadata.json
+
+===============================================
+Move the ready to module to mv webserver /etc/puppetlabs/code/environments/production/modules
+
+& run
+puppet apply -e 'include webserver'
+===================================================
+Setup a puppet Master - From Notes
+
+Setup a node
+	1. Insall puppet agent
+	2. Config puppet.conf under /etc/puppetlabs/puppet with master
+	3. Start the puppet agent 
+or
+curl -k https://puppet.example.vm:8140/packages/current/install.bash | sudo bash
+
+
+13.232.11.197 puppet.example.vm
+ 
+======================
+Environement = production
+
+
+service { 'puppet':
+  ensure     => running 
+}
+
+/etc/puppetlabs/code/environments/production/manifests
+env - site.pp
+	Module --- init.pp
+	Module --- init.pp
+	Module --- init.pp
+	Module --- init.pp
+
+
+
+
+
+
+
+	

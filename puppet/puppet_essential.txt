@@ -1,0 +1,100 @@
+What is Puppet?
+Puppt is a configuration managment.
+
+What is Config mgmt for puppet
+SERVERS CONFIG MGMT
+
+What is there in Server what can be managed?
+file
+directory
+package
+services
+Memory
+CPU
+HDD
+NETWORK
+OS
+USERS
+GROUPS
+batch
+bash
+
+MANUALLY - YES
+
+--------------------------------------
+WHY CONFIG MGMT TOOL.
+
+MGRX -- WELLX --
+200 SERVER
+100 SERVER LINUX
+50 UB
+50 RHEL
+50 SERVER WINDOWS
+25 WIN 2010
+25 WIN 2016
+50 SERVER MAC
+
+100 TOMCAT IN DIFF PLATFORM
+50 WB
+30 WS
+20 IIS
+
+50 ORACLE
+50 MSSQL
+50 MYSQL
+50 POSTGR
+
+20 DIFF CONFIG
+50 SENARIO TO SET
+=======================================
+20 MINS
+ANSWER - AUTOMATION
+=========================
+BATCH FILE
+SHELL SCRIPT
+PERL
+POWER SHELL
+PYTHON
+
+PERL + PYTHON
+NOT EASY TO LEARN
+NOT EASY TO DEBUG
+NOT EASY TO EXTEND
+NOT EAST TO SHARE
+
+BATCH+SHELL+POWER-- CROSS PLATFORM
+==========================================
+WHAT WE NEED?
+
+IT PROMBEM -
+WELLFARGO - 4000 EMPLOYEE. + 4000 SERVER -- 4000 INSTANCE AV --SERVER
+-----------------------------
+
+20 IT
+2 ENG WITH SPECIAL SKILL - ALL IT FROM ONE PLACE
+
+========================
+SOLUTION - -- PUPPET + CHEF + ASNSIBLE + SALT + SCCM
+=====================================================
+JOB RESPONSIBILTIES
+=================================
+PUPPET PROGRAMMER
+PUPPET ADMINISTRATOR
+
+How to become a programmer?
+------------------------------------
+file
+directory
+package
+services
+==========================
+
+> yum update
+
+Add a Puppet repo to our system
+> rpm -Uvh http://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm
+
+#install puppet Agent
+> yum install puppet-agent
+
+> reboot

@@ -1,0 +1,294 @@
+What is Puppet?
+	is Config Mgmt tool
+	Written in RUby
+
+What is config mgmt?
+	SERVERS Config mgmt
+
+What is there in the servers which config can be mangaed?
+	file
+	services
+	package
+	bash
+	batch
+	user
+
+Why Puppet?
+	JAVA
+	PERL
+	PYTHON
+	bash
+	batch
+
+	easy to use, learn, debug, test, extend, implement
+	cross platform
+	ideopotent
+
+		desire state		actual
+		   config-file		SERVERS
+	J|P|B	    program	---->    DO NOT CHECK THE ACTUAL
+	Puppet	    pp		---->   CHeCK THE ACTUAL STATE n do modication only
+					desire is not met
+	Can manage large numbers of server parrel
+
+
+What are the other tools we have?
+CHef, Ansible, Salt
+
+What is the role in Puppet
+	Programmer	- TODAY
+	Admin		- TOMO
+
+
+How to setup development env?
+- puppet agent
+
+Add a Puppet repo to our system
+> rpm -Uvh http://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm
+
+#install puppet Agent
+> yum install puppet-agent
+
+Location in puppet
+> /etc/puppetlabs/ - Config/Program
+> /opt/puppetlabs/ - Installer
+
+How to verify puppet agent install or not?
+> puppet
+
+Where to store the program?
+	CHEF			PUPPET
+	.rb			.pp		puppet program
+	recipe			manifest	
+	cookbooks		module
+	resources		resoures
+	properties		properties
+
+How to compile single .pp program?
+	Chef Apply ----> Puppet Apply
+
+How to write a PP program?
+	pp is nothing but collecion of resources + their properties + ensure
+	
+	Where is resources?
+	file	
+	services
+	package
+	bash
+	batch
+	user
+	https://puppet.com/docs/puppet/5.3/type.html
+
+	Where is the properties of each resources?
+		- refer each resources page
+
+	Where is ensure? == action in Chef
+
+EACH RESOURSE DECLATARATION YOU NEED TO UNDERSTAND
+======================================================
+file { 'resource title':
+   ensure => present 
+}
+
+file  ==> TYPE
+'resource title' => TITLE
+ensure => PROPERTY
+present => VALUE
+
+
+Code
+=========================
+1. Create a file under /opt directory
+
+
+file { '/opt/voda1.txt':
+  ensure => 'present'
+}
+
+
+
+2. Create a file under /opt directory with content
+
+file { '/opt/voda2.txt':
+  ensure => 'present',
+  content => "This is my 2nd program",
+}
+
+
+3. Create a file under /opt directory with content and with specific permission
+
+file { '/opt/dir1':
+  ensure => 'directory',
+}
+
+file { '/opt/dir1':
+  ensure => 'directory',
+}
+
+file { '/opt/dir1/fff.txt':
+  ensure => 'present',
+  content => "This is my 2nd program",
+}
+
+1. Create a directory
+2. Create a file under /opt/directory
+
+Small Project 
+=======================
+Setup a Webservers n deploy your index.html
+===============================================
+1. Install httpd
+
+package { 'httpd':
+  ensure => present,
+}
+
+service { 'httpd':
+ ensure => 'running',
+}
+
+file { '/var/www/html/index.html':
+  ensure => 'present',
+  content => "<h1>Hello Vodafone from scmGalaxy</h1>",
+}
+
+2. create a index.html under /var/www/html with your content
+3. start the services
+4. stop the firewalld
+
+Welcome to your page
+
+======================================================
+JAVA ----> more java ---> jar
+chef ----> more recipe --> cookbook
+puppet ---> more manifest --> module
+
+What is module?
+	collection of manifest, supperted files, suppored prope, templates...
+	in fixed directory structure
+
+Kind of Modules?
+	SYSTEM MODULE		--- APPLY ALL THE PLACES -- PUPPETLABS
+	COMMUNITY MODULE	--- APPLY DEPENDS ON THE NEED --forge.puppet.com
+	YOUR MODULE	
+
+
+[root@ip-172-31-21-189 modules]# puppet module list
+/etc/puppetlabs/code/environments/production/modules -- PROD ONLY
+/etc/puppetlabs/code/modules (no modules installed)   -- ALL ENV
+/opt/puppetlabs/puppet/modules (no modules installed)	- ALL PLACES
+
+
+How to create a module?
+=======================================
+> cd /etc/puppetlabs/code/environments/productions/modules
+> sudo puppet module generate scmgalaxy/test
+> sudo puppet module generate scmgalaxy/test --skip-interview
+> sudo puppet module list
+
+How to use module?
+> sudo puppet apply -e 'include motd'
+> sudo puppet apply -e 'include test::web'
+> sudo puppet apply -e 'include test'
+where motd is your module name......
+
+> sudo puppet module list
+
+CLASS SPEC
+
+class stdlib {
+  include ::stdlib::stages
+  include ::stdlib::web
+}
+
+class stdlib::stages
+
+class test::web
+================================================================================
+================================================================================
+
+Puppet Master
+		OSS
+		Enterprise - 9 nodes--
+
+How to Setup Puppet Master
+================================
+
+1. Change the host name
+
+$ sudo vi /etc/hosts
+As this is our primary hostname
+
+127.0.0.1  puppet.example.vm puppet localhost
+35.154.185.72 puppet.example.vm #public ip
+172.31.31.66 puppet.example.vm #private ip
+
+# puppet.example.vm - Should be full FQDN name
+
+# Set the puppet master hostname
+$ hostnamectl set-hostname puppet.example.vm
+$ hostnamectl
+
+
+
+2. install ntp in puppet master n nodes too
+$ sudo yum -y install ntp
+$ sudo systemctl start ntpd
+$ sudo systemctl enable ntpd
+$ sudo ntpd -p
+
+3. Download puppet enterprise
+https://puppet.com/download-puppet-enterprise/thank-you
+
+[COMMAND START]
+$ yum install wget
+$ wget https://s3.amazonaws.com/pe-builds/released/2017.2.3/puppet-enterprise-2017.2.3-el-7-x86_64.tar.gz
+$ tar -zxvf puppet-enterprise-2017.2.3-el-7-x86_64.tar.gz
+$ cd puppet-enterprise-2017.2.3-el-7-x86_64
+$ ./puppet-enterprise-installer
+
+https://pm.puppetlabs.com/cgi-bin/download.cgi?dist=el&rel=6&arch=x86_64&ver=latest
+https://pm.puppetlabs.com/cgi-bin/download.cgi?dist=el&rel=6&arch=x86_64&ver=latest
+
+https://puppet.example.vm:3000
+https://35.154.185.72:3000
+
+# C:\Windows\System32\drivers\etc\hosts Modify this file
+
+https://puppet.example.vm
+
+How to Setup Puppet Nodes
+================================
+Add a Puppet repo to our system
+> rpm -Uvh http://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm
+#install puppet Agent
+> yum install puppet-agent
+
+
+WHICH LOADS Default
+===================================
+Module 			-----> init.pp
+Env 			-----> site.pp
+
+
+Node 2 - 52.66.5.90
+Node 1 - 13.126.162.140
+-----------------------
+	1 Install Puppet Agent
+	2 Config puppet Agent
+			/etc/puppetlabs/puppet/puppet.conf
+		
+AUTO - 
+	curl -k https://puppet.example.vm:8140/packages/current/install.bash | sudo bash
+
+MODE - 
+Puppet agent will request to the master
+> puppet agent -t
+
+Auto enablement of the run.....
+	puppet.conf
+
+runinterval = 5
+
+==============================
+APP + CONF + DB

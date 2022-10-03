@@ -1,0 +1,111 @@
+Puppet Modules Commnads
+========================================
+> sudo puppet module list
+> sudo puppet module install puppetlabs/ntp
+> suod puppet module list
+> sudo puppet module uninstall puppetlabs/ntp
+> sudo puppet module install puppetlabs/ntp -i /etc/puppetlabs/code/modules
+
+Location of modules and environements
+============================================
+/etc/puppetlabs/code/environements
+/etc/puppetlabs/code/modules
+
+> sudo puppet config print
+> sudo puppet config print environment
+> sudo puppet config print envrionementpath
+> cd $(sudo puppet config print envrionementpath)
+> ls
+> ls -l production
+
+
+Create another environment
+=================================================
+sudo mkdir -p /etc/puppetlabs/code/environments/dev/{modules,manifests}
+sudo puppet module install puppetlabs/ntp --environment dev
+sudo puppet module list --environment dev
+
+> sudo puppet config print environment
+> cat /etc/puppetlabs/puppet/puppet.conf
+> sudo puppet config set environment dev
+> cat /etc/puppetlabs/puppet/puppet.conf
+> sudo puppet config print environment
+> sudo puppet module list
+
+==================================================
+Revert back to production environment
+================================================
+
+
+MODULES
+========================================================
+cd /etc/puppetlabs/code/environments/productions/modules
+sudo mkdir -p motd/{manifests,files,examples}
+sudo vim motd/manifests/init.pp
+
+class motd {
+file { '/etc/motd':
+  ensure => 'file',`
+  content => file('motd/message'),
+  }
+}
+
+cd /etc/puppetlabs/code/environments/productions/modules
+sudo vim motd/files/message
+
+Welcome to scmgalaxy class
+dsdsad\dsadasd\d\s
+
+
+How to use module?
+> sudo puppet apply -e 'include motd'
+> puppet apply -e 'include ./modules/motd'
+
+> sudo puppet module list
+===========================================
+
+> cd /etc/puppetlabs/code/environments/productions/modules
+> sudo puppet module generate scmgalaxy/test
+> sudo puppet module generate scmgalaxy/test --skip-interview
+> sudo puppet module list
+
+class test::file1 {
+
+}
+
+==============================================================
+Classess
+================================================================
+
+==============================================================
+Sub Classess
+================================================================
+
+
+
+
+class webserver {
+
+include 'webserver:pro1'
+include 'webserver:pro2'
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

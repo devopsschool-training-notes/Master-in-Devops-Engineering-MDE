@@ -1,0 +1,130 @@
+PUPPET
+---------------------
+What is Puppet?
+	- Config mgmt tool.
+
+What is config mgmt?
+	SERVERS CONFIG MGMT
+
+What is there SERVERS so we can manager their config using puppet?
+	HARDWARE -- vmware-aws
+		RAM
+		CPU
+		HDD
+		
+	NETWORK
+		firewall
+		security
+		
+	Software		action		properties
+		package		I | R |M
+		services	S S R E D
+		file		C D M
+		directory	C D M
+	
+	People
+		users
+		groups
+=================================================================
+Why we need a Puppet?
+	PYTHON-PERL
+		DIFF TO LEARN
+		DIFF TO SHARE
+		DIFF TO DEBUG
+		DIFF TO EXTEND
+		DIFF TO TEST
+
+	BASH-BATCH
+		BATCH - NOT IN LINUX
+		BASH - NOT IN WINDOW
+			RHEL
+			UB
+			
+----------------------------------------
+YOU NEED TO FIND A TOOL
+		EASY TO LEARN
+		EASY TO EXTENT TEST DEBUG 
+		PLATFORM INDEPENENT
+------------------------------------------
+SOLUTION - PUPPET, CHEF, ANSIBLE, SALT
+
+WHy 2---
+Managing Larger Number of Servers config and their state.
+===============================================
+
+
+USAGE OF PUPPET?
+		IT INFRASTURE MGMT	
+		Software Dev
+Roles in Puppet?
+		Puppet Programmer
+		Puppet Admin
+
+===========================================
+
+Resources --  Action --- 	Property - 	Provider
+package				
+file
+directory
+services	
+
+
+Puppet Agent Installation
+> wget http://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm
+> rpm -ivh puppetlabs-release-pc1-el-7.noarch.rpm
+> yum install puppet-agent
+
+Restart the session
+
+
+Few Basics commands for the puppet
+=================================
+puppet agent --version
+puppet config print
+puppet config print confdir
+puppet config print certname 
+puppet config print { confdir rundir ssldir runinterval }
+
+FIRST PROGRAM
+=======================
+Filaname - first.pp
+
+notify { 'Hello World':}
+
+How to validate?
+> puppet parser validate first.pp
+> puppet apply first.pp
+
+
+Second Program - tata.pp
+==============================
+file { '/root/puppet/tata.txt':
+        ensure => 'file',
+        content => 'Welcome to Puppet Class',
+    }
+Third Program - package.pp
+================================
+package {'httpd':
+        ensure => 'installed',
+}
+
+service.pp
+=============================
+service { 'httpd':
+        ensure =>'running',
+}
+
+
+file.pp
+=============
+file { '/var/www/html/index.html':
+        ensure => 'file',
+        content => 'Welcome to Puppet Class',
+    }
+
+
+
+
+
+
+		

@@ -1,0 +1,20 @@
+mc-ping --timeout 1
+facter | grep ec2
+mc-ping --timeout 1 <<az variable>>
+mc-package --with-fact ec2_placement_availability_zone=<<zxc>>
+mc-service --with-fact ec2_placement_availability_zone=<<zxc>> status httpd
+
+mc-service httpd status
+
+mc-service --with-fact ec2_placement_availability_zone=<<zxc>> status restart
+
+mc-nrpe --with-fact ec2_placement_availability_zone=<<zxc>> check_load
+
+mc-package --with-fact ec2_placement_availability_zone=<<zxc>> install httpd
+
+mc-service --with-fact ec2_placement_availability_zone=<<zxc>> status restart
+
+mc-find-hosts
+mc-find-hosts --with-id /neph/
+mc-facts
+mc-facts coutry

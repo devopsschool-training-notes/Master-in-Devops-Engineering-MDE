@@ -1,0 +1,335 @@
+Deployment Automation
+=====================================
+Why?
+	NokiaZ (Artifactory)
+	
+	QA SERVERS --- 200 SERVERS
+	
+	100 LINUX
+		25 UB | 25 RHEL | 25 Fb | 25 Suse
+	50	
+		WINDOWS
+	50 MAC
+
+	MSSQL
+	MYSQL
+	ORACLE
+	POST
+
+	TOMCAT
+	JBSS
+	WL
+	WS
+	IIS
+
+	100 OF THE CONFIG
+===============================================
+	10 mins....
+
+	PERL
+	PYTHON
+	C++
+	JAVA ++
+----------------------------------
+	NOT EASY TO LEARN, SHARE, EXTEND, DEBUG, TEST
+
+	BASH SCRIPTING 
+		NOT FOR WINDOWS
+	PS 
+		NOT FOR LINUX
+		
+
+What is the Solutions?
+	PUPPET
+
+OTHER TOOLS - CHef, Ansible, Salt, SCCm
+
+What is Puppet?
+	Config mgmt tool
+
+What is Config mgmt?
+	SERVERS
+
+WHat is there in SERVERS so you manage the config of those items?
+	file
+	directory
+	package
+	services
+	users
+	group
+	yum
+	apt
+	ps
+	batch
+
+
+Why Puppet for these config changes?
+	Puppet has capability to handle large n# of servers config at one time.
+
+	EASY TO LEARN, SHARE, EXTEND, DEBUG, TEST
+
+	IDEMPOTENT
+
+What are the roels in Puppet?
+	Puppet Programmer
+	Puppet Admin
+
+Where you can use Puppet?
+	Large deply in Large# Servers
+	IT Team
+
+How can you become a Programmer?
+
+JAVA | C++ | Puppet 
+JDK    GCC	| Puppet Agent
+------------------------------------
+filename.java | filename.cpp filename.pp (Puppet program & Manifest)
+
+javac filename.java | gcc filename.cpp | agent apply filename.pp
+
+How to install Puppet Agent?
+Install the puppet-agent package:
+$ yum update
+$ sudo rpm -ivh https://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm
+$ sudo yum -y install puppet-agent
+
+How to verify?
+> puppet
+> puppet help
+
+How to write pp Program?
+
+What is Puppet Program?
+Puppet program is a collection of resource declaration?
+
+What is resource declaration?
+Each resource declaration has....
+TYPE - TITLE - ATTRIBUTES  - PROVIDER
+
+===============================
+TYPE		TITLE		Ensure/Attributes/Prorperties	
+-----------------------------------------
+file		name		C |D |M		
+directory	name		C |D |M
+package		name		I U 
+services	name		S S E D 
+
+What are the resources we have?
+https://puppet.com/docs/puppet/5.3/type.html
+
+How to check the validity of the puppet program?
+> puppet parser validate first.pp
+
+PSuCODe
+===============
+create a file 
+
+file { '/opt/file1.txt':
+  ensure                  => present
+}
+
+file { '/opt/file2.txt':
+  ensure => present,
+  content => "This is my first program"
+}
+
+file { '/opt/file1.txt':
+  ensure                  => absent
+}
+
+Creat a Dir
+
+file { '/opt/src':
+  ensure => directory,
+}
+
+Install a httpd web servers - httpd
+
+Cpy the index.html
+Start the website
+
+
+
+
+package { 'httpd':
+  ensure               => installed
+}
+
+
+service { 'httpd':
+  ensure     => running 
+}
+
+file { '/var/www/html/index.html':
+  ensure => present,
+  content => "<h1> Welcome to scmgalaxy.com puppet session</h1>"
+}
+
+=================
+DAY 2
+=================
+1 13.126.190.190
+2 13.126.182.144
+3 13.126.36.102
+4 13.127.107.112
+5 13.126.18.29
+6 13.126.212.80
+7 13.126.21.150
+8 52.66.51.241
+9 13.127.194.114
+10 35.154.250.8
+====================
+11 52.66.14.55
+==================
+12 13.127.175.121
+13 13.126.183.180
+14 13.127.151.58
+15 35.154.134.67
+16 13.127.107.71
+
+================================
+2 Directory which matters a lot in Puppet Agent Server are
+/etc/puppetlabs - CONFIGURATIon of puppet - /etc/puppetlabs/puppet/puppet.conf
+/opt/puppetlabs/ - ALL THE EXECUTABLES REQUIRED FOR THE PUPPET TO WORK
+
+Puppet Directory
+================================
+/opt/puppetlabs/bin
+/opt/puppetlabs/puppet/bin
+
+VERIFY THE PUPPET AGENT
+================================
+puppet agent --version
+
+KNOW THE PUPPET AGENT CONFIG
+================================
+puppet config print
+puppet config print confdir
+puppet config print certname
+puppet config print {confdir rundir ssldir runinterval }
+
+
+==================
+Intro of Puppet Forge
+
+===================
+MODULE LOCATION
+[root@ip-172-31-14-81 puppet]# puppet module list
+/etc/puppetlabs/code/environments/production/modules (no modules installed)
+/etc/puppetlabs/code/modules (no modules installed)
+/opt/puppetlabs/puppet/modules (no modules installed)
+[root@ip-172-31-14-81 puppet]
+
+	
+puppet module install vmware-vmware_lib --version 0.7.0
+puppet module install vmware-vmware_lib 
+
+
+===========================
+puppet describe --list #List all resources
+puppet describe file #List documentation for the file resources
+
+
+=============================================
+Module
+
+How to setup a PE + AGENT
+========================================
+
+Setting up the Puppet enterprise
+=======================================
+IP - 13.127.175.144
+
+1. FQDN	- puppet.example.vm / Change the hostname
+$ hostnamectl set-hostname puppet.example.vm
+$ hostnamectl
+
+
+2. ntp	
+$ sudo yum -y install ntp
+$ sudo systemctl start ntpd
+$ sudo systemctl enable ntpd
+$ sudo ntpd -p
+
+3. Add required entry in host about FQDN
+
+127.0.0.1  puppet.example.vm puppet localhost
+13.127.175.144 puppet.example.vm #public ip
+172.31.11.178 puppet.example.vm #private ip
+
+
+4. Download
+$ yum install wget
+$ wget https://s3.amazonaws.com/pe-builds/released/2017.2.3/puppet-enterprise-2017.2.3-el-7-x86_64.tar.gz
+
+5. installing
+$ tar -zxvf puppet-enterprise-2017.2.3-el-7-x86_64.tar.gz
+$ cd puppet-enterprise-2017.2.3-el-7-x86_64
+$ ./puppet-enterprise-installer
+
+6. Configuring
+BASED ON THE GUI
+https://puppet.example.vm:3000
+
+
+How to change host file in Windows?
+C:\Windows\System32\drivers\etc
+
+1 13.126.111.69
+2 13.127.150.138
+3 13.127.81.137
+4 13.127.166.167
+5 35.154.201.28
+6 35.154.9.93
+7 13.127.193.129
+8 13.127.167.168
+9 13.126.142.94
+10 13.127.227.182
+11 13.127.234.145
+12 13.127.202.200
+13 13.127.199.166
+14 13.127.210.69
+
+NOTE 35.154.185.18
+===========================
+13.127.15.199
+----------------------
+2. ntp	
+$ sudo yum -y install ntp
+$ sudo systemctl start ntpd
+$ sudo systemctl enable ntpd
+$ sudo ntpd -p
+
+Setting up a Puppet Agent
+	1. Install Puppet Agent
+	2. Master IP Address  --> Where? --> puppet.conf
+	3. Start the puppet Agent
+
+13.127.175.144 puppet.example.vm
+curl -k https://puppet.example.vm:8140/packages/current/install.bash | sudo bash
+
+4. This will conntect to Master with Fact info...informng to the master--Manage me
+
+=====================
+AGENT MACHIEN
+
+1 13.127.232.121
+2 13.127.207.144
+3 13.127.233.137
+4 13.127.63.123
+5 13.127.82.170
+6 13.127.75.50
+7 13.127.46.72
+8 13.127.193.71
+9 13.127.21.164
+10 13.127.119.37
+11 13.126.87.231
+12 13.127.188.106
+13 13.127.157.137
+
+
+https://github.com/scmgalaxy/puppet-modules-examples
+
+
+
+

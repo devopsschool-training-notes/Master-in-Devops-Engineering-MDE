@@ -1,0 +1,239 @@
+What is Puppet?
+	Config mgmt tool.
+	interpreted lang
+	From Ruby
+	Version
+		Free ---> Puppet Master
+		Paid ---> Puppet Enterprise
+What is Config mgmt?
+	SERVERS config mgmt
+	-------
+
+What is there in the server so we manages their config?
+HARDWARE
+	CPU - HYPERSIOR(Vmware) --> PUPPET
+	RAM - HYPERSIOR(Vmware) --> PUPPET
+	HDD - HYPERSIOR(Vmware) --> PUPPET
+SOFTWARE
+	Package
+	file
+	dirctory
+	apt
+	yum
+	ps
+PEOPLE	
+	user
+	group
+PROCESS
+	policy
+	events
+	hostfile
+
+Why Puppet?
+	JAVA+CC+Ryuby+Perl+Python
+	Diff to learn/test/debug/extend/share comapre to Puppet
+
+	Shell + PS
+	Cross Platform Scripting
+
+	Ability to manage larger number of servers....
+	1 Dep  X 10 == 10
+	100 X 10 == 1000 mins...
+	100 X 10 == 10 MINS
+
+	IDEOMPOTENT
+	Traditional - 1 Dep(10 Steps) - 10 MINS
+	Intellgence - 1 Dep(5 Steps) - 5 MINS
+	DESIRE CHANGES ===> ACTUAL CHANGES MADE ONLY IF ITS NOT THERE.....
+
+What are the other tools
+Puppet -> Ansible -> Chef -> Salt
+
+Roles in Puppet?
+	Pupppet Developers - Who write puppet program
+	Puppet Admin - Who apply puppet program in infra...n manage the servers
+
+How can we become a programmers?
+
+JDK -> LEARNING PROGRAMMING -> .JAVA -> .CLASS ->JAR(CLASSES) -->APP SERVER(Deployments)
+PUPPET-CLIENT --> LEARN   --> .pp   -->        --> Modules    --> ADMIN --> SERVERS
+
+$ sudo -s
+$ sudo rpm -ivh https://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm
+$ yum update -y
+$ sudo yum -y install puppet-agent
+
+You need to rememer 2 things....
+1. Puppet install dir - /opt/puppetlabs
+2. Puppet conf dir - /etc/puppetlabs/
+
+Lets Play with some commands....
+
+
+puppet help
+=========================================
+puppet help man
+puppet help config
+puppet help facts
+puppet help resource
+puppet help describe
+puppet help parser
+puppet help apply
+puppet help module
+
+puppet man
+=========================================
+puppet man config
+puppet man facts
+puppet man resource
+puppet man describe
+puppet man parser
+puppet man apply
+puppet man module
+
+puppet config
+=========================================
+puppet config print
+puppet config print confdir
+puppet config print certname
+
+puppet resource
+=========================================
+puppet resource service puppet
+puppet resource package httpd
+
+puppet parser
+=========================================
+puppet parser validate puppet-service.pp
+
+puppet apply
+=========================================
+puppet apply puppet-service.pp
+
+puppet describe
+=========================================
+puppet describe --list #List all resources
+puppet describe file #List documentation for the file resources
+
+puppet man
+=========================================
+puppet man agent             
+puppet man apply
+
+puppet facts
+=========================================
+puppet facts
+
+puppet module
+=========================================
+puppet module list
+puppet module install theurbanpenguin/puppet_vim
+puppet module list
+
+
+---------------------------------------
+How to write a .pp(puppet program == manifest)?
+
+=======.pp is collecion of resource declaration.
+======= Each resource declaration is a combincation of
+TYPE - TITLE - ATTRIBUTES - PROVIDER
+
+What is TYPE?
+https://puppet.com/docs/puppet/5.3/type.html
+	file
+	package
+	service
+What is TITLE?
+	What you need it??
+	TYPE		TITLE
+---------------------------------------
+	file		file1.txt
+	package		httpd
+	service		httpd
+What is ATTRIBUTES?
+	Refer each resource type attributes tables....
+	ensure === ACTION
+
+file1.pp
+
+resource dec 1
+---------------
+TYPE "title"
+{
+	ATTRIBUTES
+}
+
+resource dec 2
+---------------
+TYPE "title"
+{
+	ATTRIBUTES
+}
+
+resource dec 1
+---------------
+TYPE "title"
+{
+	ATTRIBUTES
+}
+	
+
+Create a file???
+file { '/opt/file1.txt':
+  ensure => present
+}
+
+file { '/opt/src':
+  ensure => directory
+}
+
+package { 'httpd':
+  ensure               => present 
+}
+
+service { 'httpd':
+  ensure     => running
+}
+
+
+$$ puppet apply file1.pp
+
+What is Modules?
+	Packages .pp in ddefined way.
+	
+	1. Create your own
+	2. https://forge.puppet.com
+===========================
+Craete a Modules?
+puppet module generate scmgalaxy/webserver
+puppet module install puppetlabs-tomcat
+
+running a mode
+$ puppet apply -e "include webserver"
+puppet apply -e "include tomcat"
+ 
+
+----------------
+How to setup Puppet Master
+
+How to setup Puppet Agent?
+	- Installl puppet agent
+	- IP addres of Puppet Master
+	- Certificate
+		---> Puppet.conf of the node.
+
+	/etc/puppetlabs/puppet/puppet.conf
+
+	$ RUN IT
+
+	curl -k https://puppet.example.vm:8140/packages/current/install.bash | sudo bash
+
+13.232.136.97
+13.232.119.119
+
+
+13.127.197.4 puppet.example.vm
+
+Modules --- init.pp
+Env -- site.pp
+

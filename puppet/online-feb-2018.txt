@@ -1,0 +1,191 @@
+What is Puppet?
+	Config mgmt tool
+	Dev using Ruby
+	
+Release
+	FREE -- COMMAND LINE
+	PAID -- GUI --
+
+What is Config mgmt?
+	SERVERS config mgmt
+
+What is there is SERVERS to manage their cnfig?
+	file
+	directory
+	package
+	service
+	batch
+	bash
+	apt
+	yum
+
+What are other tools similar to puppet
+	Chef		FREE + PAID
+	Ansible		FREE + PAID
+	
+	SAlt
+
+Why Puppet?
+	JAVA
+	C++
+	PY
+	PERL
+	RUBY
+	
+	DIFFICULT TO 	LEARN
+			EXTEND
+			DUEBG
+			TEST
+			SHARE
+
+	BASH
+	BATCH	
+			CROSS PLATFORM
+
+CAPABILITY MANAGE THE LARGE NUMBERS OF SERVERS 
+
+IDEOPOTENT
+	CHECK THE DESIRE STATE WITH ACTUAL
+	DESIRE STATE = ACTUAL STATE
+
+How?
+
+Roles in Puppet?
+	Puppet Programmer - Manifest file --> Module
+	Puppet Admin - Apply the modules in SERVERS n MANAGE the servers
+
+How to become a Programmer?
+
+Compiler ---> first file --> compile --(FILES) --> Package  --> Delivery
+JDK            file.java     -------    FILES   ---- JAR    ---> DELIVER
+
+puppet agent  --> file.pp  -- converse  MUL PP ---> modules ---> DELIVER
+
+How to write file.pp (puppet program?
+	
+file.pp --> DESIRE(What resources you wnt to modify?
+
+SETTING UP A WEB SERER
+------------------------
+create a file -> file
+create a dir -> file
+install httpd  -> package
+run httpd -->service 
+create a file called index.html > file
+
+Where you can find the list of Resources?
+https://puppet.com/docs/puppet/4.8/type.html
+
+What is a Puppet program(.pp)
+	collection of Resource declaration
+
+What it contains in each resource declaration?
+	TYPE  --> file
+	TITLE --> file1.txt
+	ATTRIBUTES
+
+How to write?
+file { '/opt/file1.txt':
+	 ensure => present
+}
+
+file { '/opt/src':
+	 ensure => directory
+}
+
+file { '/opt/file4.txt':
+	 ensure => present
+}
+
+
+	
+package { 'httpd':
+  ensure               => installed  
+}
+	
+	
+service { 'httpd':
+  ensure     => running 
+}
+
+file { '/var/www/html/index.html':
+	 ensure => present,
+	 content => "<h1> Welcome to scmGalaxy.com </h1>"
+}
+========================
+EX1 - 
+
+bmw(bmw.war) --> 1000 SERVERS
+	
+	--> VMS - 1000 VMS
+	--> install jdk
+	    download from xyz
+	    extract it
+	    copy 
+	--> add env JAVA_HOME
+		CPU
+	--> TOMCAT 5.6
+	--> TOMCAT CNOG --> bmw config
+	--> Install bmw.war -->//tomcat//fds
+	--> start this tomcat
+	--> Check the status
+	
+
+
+
+
+FOR COMMANDS ----
+module and classes.txt
+commands-collections.txt
+
+
+Load JAR file -- Which first class file gets loadeded?
+		main class
+			 --> other class
+1. Generate the ske of the module
+2. Copy the pp program into manifest dir
+3. Conver each manifest into the class
+4. Add "contain 
+module ---> init.pp
+		--> file1.pp
+		--> file2.pp
+
+puppet apply -e 'include test'
+
+EXAMPE MODULE - ntp
+
+
+
+include 'file1.pp'
+include 'file2.pp'
+
+
+puppet apply -e 'include scmgalaxy/test'
+==========================================================
+
+Puppet Master ===> Should Apply the Modules into Nodes
+
+
+Node should ask the changes from The puppet Master
+
+
+========================================================
+
+How to add a node
+	> Install puppet agent
+	> Config puppet.conf
+
+curl -k https://puppet.example.vm:8140/packages/current/install.bash | sudo bash
+13.126.246.134 puppet.example.vm
+
+include test
+
+
+
+Module - init.pp
+
+envrionemrnt --> site.pp
+
+			
+
+	
