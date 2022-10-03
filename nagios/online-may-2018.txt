@@ -1,0 +1,138 @@
+World of Monitoring in DevOps?
+=========================================
+DEVOPS - http://www.devopsschool.com/video/devops/DevOps-Essentials.html
+
+What is Monitoring?
+	is a machanism using you know the status of your needful resources is avaialble for the desired task or not.
+	
+PILLAR OF THE DEVOPS
+---------------------------
+	CULTURE
+	AUTOMATION
+	MONITRING == 
+	SHARING   ==
+	
+	
+What are the Kinds of Monitoring?
+	INFRA MONITORING (PRE PROD + PROD)
+			SERVERS
+			SERVICES
+	LOG Monitoring	(Production)
+			SYSTEMS LOG
+			EVENTS LOG
+			NETWORK LOG
+			APP LOG
+			WEB SERVER LOG 
+			APP SERVER LOG 
+	Performance Monitoring (Production)
+			How your app is performance
+
+How can we do it?
+	INFRA MONITORING - Nagios, NewRelic Infra, Datadog(Cloud)
+	LOG Monitoring - Splunk, ELBK(Elastic, LogStash, Beats, Kibana)	
+	Performance Monitoring - NewRelic APM,	Appdynamics
+
+What is Nagios?
+	Nagios is infra monitoring tools
+
+What are the kind of release we have?
+	Nagios Core - OSS - Free 
+	Nagios XI  - Paid
+
+Release of Nagios?
+	Nagios Core 
+		- Command Line Based tool
+		- Free
+		- Open Source
+	Nagiox XI
+	Notice: This trial copy of Nagios XI will expire in 60 days. Purchase a License Now or Enter your license key.
+		- GUI
+		- Paid
+		- Enterprise
+
+Nagios Architecture?
+	SERVER
+		Alert
+		Dashboard
+	AGENT
+		Which is installed in Each server which you want to monitor.
+		Which runs on the servers.
+
+	Agentless monitoring can be possible through protocol
+		LINUX -> SNMP
+		Windows -> WMI
+
+How Nagios Work- Two Kind of Monitoring
+	Active Monitoring	Xi Server --> Agents -> XI server
+	Passive Monitoring 	Agent --> Xi Server
+	
+
+PRE of Setting up the Nagios Xi Server
+	RHEL 5/6/7 BUT RHNS Registered only
+	or
+	Centos 5/6/7
+DemoRelease of Nagios?
+	Nagios Core 
+		- Command Line Based tool
+		- Free
+		- Open Source
+	Nagiox XI
+	Notice: This trial copy of Nagios XI will expire in 60 days. Purchase a License Now or Enter your license key.
+		- GU
+		- Paid
+		- Enterprise
+
+Nagios Architecture?
+	SERVER
+		Alert
+		Dashboard
+	AGENT
+		Which is installed in Each server which you want to monitor.
+		Which runs on the servers.
+
+	Agentless monitoring can be possible through protocol
+		LINUX -> SNMP
+		Windows -> WMI
+
+How Nagios Work- Two Kind of Monitoring
+	Active Monitoring	Xi Server --> Agents -> XI server
+	Passive Monitoring 	Agent --> Xi Server
+	
+
+PRE of Setting up the Nagios Xi Server
+	RHEL 5/6/7 BUT RHNS Registered only
+	or
+	Centos 5/6/7
+Demo
+========================
+Nagios XI Server  - 13.127.199.178
+centos
+
+How to install Nagios XI server?
+
+> yum update -y 
+> sudo -s
+> cd 
+> yum install wget -y
+> wget https://assets.nagios.com/downloads/nagiosxi/5/xi-5.4.13.tar.gz
+> tar -zxvf xi-5.4.13.tar.gz
+> cd nagiosxi
+> ./fullinstall
+
+
+http://13.127.199.178/nagiosxi/
+nagiosadmin
+f$rcQtV8dDN3YGmoZKQD
+
+========================================
+LINUX
+WINDOWS
+HTTPD SERVER
+FOLDER
+DOMAIN
+
+
+
+
+			
+	

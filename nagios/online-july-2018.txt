@@ -1,0 +1,89 @@
+What is Nagios?
+	SERVERS monitoring tools.
+	Version
+		Nagios Core - Free - Command Line Based
+		Nagios XI - Paid - GUI
+
+What r the kind of Monitoring we do?
+	SERVERS Monitoring	- Nagios, Datadog
+	LOG   "			- ELBK, Splunk
+	Performance Monitoring	- New Relic
+-----------------------------------------
+SERVERS  - CPU, RAM, HDD, SERVICES, NETWORK, DOMAIN == Nagios
+
+Nagios Arch
+===================
+SERVER - CLIENT
+
+Nagios Can do monitoring
+	With Agent
+	Agent Less
+
+	Auto Discovering
+
+How to install Nagios?
+RHEL ---- DO NOT USE
+UB+CENTOS
+
+
+======================================================
+1. Download, Setup, Configure Nagios Serer XI
+======================================================
+Nagios XI Serer
+	35.154.226.185 / root
+http://35.154.226.185/nagiosxi/
+
+> yum update -y 
+> sudo -s
+> cd 
+> yum install wget -y
+> wget https://assets.nagios.com/downloads/nagiosxi/5/xi-5.4.13.tar.gz
+> tar -zxvf xi-5.4.13.tar.gz
+> cd nagiosxi
+> ./fullinstall
+
+
+http://172.31.27.165/nagiosxi/
+http://13.126.209.14/nagiosxi/
+	
+nagiosadmin
+9d^&K6nWqK!ImYtZESv,
+
+COMMON TASK....
+Change your account settings
+	Change your account password and general preferences.
+Change your notifications settings
+	Change how and when you receive alert notifications.
+Configure your monitoring setup
+	Add or modify items to be monitored with easy-to-use wizards.
+
+
+How to install agent
+https://assets.nagios.com/downloads/nagiosxi/agents/linux-nrpe-agent.tar.gz
+
+HOW TO INSTALL AGENT?
+			$ yum update
+			$ /opt
+			$ yum install wget -y
+			$ wget https://assets.nagios.com/downloads/nagiosxi/agents/linux-nrpe-agent.tar.gz
+			$ tar -zxvf linux-nrpe-agent.tar.gz
+			$ cd linux-nrpe-agent
+			$ ./fullinstall
+
+
+NOTICE:
+Your firewall configuration was skipped
+You need to manually open ports 5666 for TCP traffic
+MBP8P7wcDawciJnC
+
+AWS -> AWS WATCH
+
+
+DEVOPS
+	CULTURE/MINDSET
+	AUTO --->
+	SHARING
+	MONIROTING -
+
+
+

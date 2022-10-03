@@ -1,0 +1,202 @@
+Monitoring
+	SERVERS			- Nagios Core + Nagios XI + NewRelic Infra
+		CPU
+		RAM
+		DISK
+		NETWORK
+		SERVICEES
+	Log 			- Splunk + ELBK
+		App Log
+		Service Log
+		Process Log
+		System Log
+		Network Log
+	App Performace
+				New Relic
+	
+What is Nagios?
+	INFRA Monitoring tools
+		Servers
+		Services
+
+Why Nagios?	
+	Monitoring everything
+
+Release of Nagios?
+	Nagios Core 
+		- Command Line Based tool
+		- Free
+		- Open Source
+	Nagiox XI
+	Notice: This trial copy of Nagios XI will expire in 60 days. Purchase a License Now or Enter your license key.
+		- GU
+		- Paid
+		- Enterprise
+
+Nagios Architecture?
+	SERVER
+		Alert
+		Dashboard
+	AGENT
+		Which is installed in Each server which you want to monitor.
+		Which runs on the servers.
+
+	Agentless monitoring can be possible through protocol
+		LINUX -> SNMP
+		Windows -> WMI
+
+How Nagios Work- Two Kind of Monitoring
+	Active Monitoring	Xi Server --> Agents -> XI server
+	Passive Monitoring 	Agent --> Xi Server
+	
+
+PRE of Setting up the Nagios Xi Server
+	RHEL 5/6/7 BUT RHNS Registered only
+	or
+	Centos 5/6/7
+Demo
+======================================================
+1. Download, Setup, Configure Nagios Serer XI
+======================================================
+Nagios XI Serer
+	13.126.209.14
+
+> yum update -y 
+> sudo -s
+> cd 
+> yum install wget -y
+> wget https://assets.nagios.com/downloads/nagiosxi/5/xi-5.4.13.tar.gz
+> tar -zxvf xi-5.4.13.tar.gz
+> cd nagiosxi
+> ./fullinstall
+
+
+http://172.31.27.165/nagiosxi/
+http://13.126.209.14/nagiosxi/
+	
+nagiosadmin
+m5UhbMVKjEMEV!5jcU^9
+
+
+
+Administrative Tasks
+
+1. Configure mail settings
+http://13.127.199.178/nagiosxi/admin/ -> Configure system settings
+
+2. Configure system settings
+http://13.127.199.178/nagiosxi/admin/ -> Configure mail settings
+
+Ongoing Tasks:
+	Monitor Servers
+	Monitor Service
+
+1. Configure -> Configuration Wizards
+		LINUX SERVER
+			52.66.129.177
+			HOW TO INSTALL AGENT?
+			$ yum update
+			$ /opt
+			$ yum install wget -y
+			$ wget https://assets.nagios.com/downloads/nagiosxi/agents/linux-nrpe-agent.tar.gz
+			$ tar -zxvf linux-nrpe-agent.tar.gz
+			$ cd linux-nrpe-agent
+			$ ./fullinstall
+		WINDOWS SERVER
+		DOMAINS EXPIRATION
+		HTTP	
+		FOLDER
+
+
+NOTIFICATION SETUp
+==================
+Core Config Manager -> Nagios Contact 
+Core Config Manager -> Nagios Contact Group
+
+
+Host Groups & Service Groups
+================================
+jenkins-server == Group
+chef aget  == Group
+
+======================================================
+2. Download, Setup, Configure Nagios Agent
+======================================================
+How Agent and Server Interact ?
+You need to manually open ports 5666 for TCP traffic
+
+
+How to setup a agent in Linux? - NRPE
+
+
+How to setup a agent in Windows? - NSCClient
+
+
+
+	
+Question - Is Nagios Will help you to do the Auto Discovering and monitor
+	- YES
+BUT LIMITED
+
+Question What is Diff between Nagios & Splunk
+Nagios - Infa Monitoring Tools - Servers/Services
+Splunk - Log Monitoring - Logs of the Application/Servers/Networkig
+
+
+
+
+
+Core Config Manager
+======================
+1. Host Groups
+2. Sercice Groups
+============================
+
+
+
+ERRROR
+=====================================================
+[root@ip-172-31-16-214 nagiosxi]# ./fullinstall
+========================
+Nagios XI Full Installer
+========================
+
+This script will do a complete install of Nagios XI by executing all necessary sub-scripts.
+
+IMPORTANT: This script should only be used on a 'clean' install of CentOS or RedHat. Do NOT
+use this on a system that has been tasked with other purposes or has an existing install
+of Nagios Core. To create such a clean install you should have selected ONLY the 'Base'
+package in the OS installer.
+Do you want to continue? [Y/n] y
+Proceeding with installation...
+Checking MySQL credentials...
+MySQL not yet installed - that's okay.
+Running './0-repos'...
+Configuring Repos...
+Passed New Subscription Check
+package centos-release is not installed
+An error has occurred:
+ERROR: can not find RHNS CA file: /usr/share/rhn/RHN-ORG-TRUSTED-SSL-CERT
+See /var/log/up2date for more information
+ERROR: Please add the 'Optional' channel to your Red Hat systems subscriptions.
+       You can do so in the Redhat Network web interface or using the rhn-channel command.
+       or, install the yum-utils package and use the following command:
+       yum-config-manager --enable rhel-7-server-optional-rpms
+RESULT=1
+
+===================
+INSTALLATION ERROR!
+===================
+Installation step failed - exiting.
+Check for error messages in the install log (install.log).
+
+If you require assistance in resolving the issue, please include install.log
+in your communications with Nagios XI technical support.
+
+The script that failed was: './0-repos'
+
+
+
+
+
+
