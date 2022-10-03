@@ -1,0 +1,113 @@
+Cloud Computing
+=========================
+CLOUD
+	AS MUCH YOU WANT
+	Pay for what you use.
+
+COMPUTING
+	- RAM
+	- CPU
+	- OS
+	- STOARGE
+------------------------------
+2 TYPES
+	PUBLIC - ANYONE
+		AWS - AZURE - GC 
+	PRIVATE - ONLY SELECTED
+		VMWARE - OPENSTAKE
+
+======================================
+CLOUD DELIVERY MODEL
+======================================
+IAAS
+PAAS
+SAAS
+
+IAAS
+==================================================
+FOUNDATION SERVICES
+------------------------
+How can you get a access in AWS?
+IAM
+https://devopsschool.signin.aws.amazon.com/console
+july
+Kdu93'D6fT(5
+
+
+	MASTER ACCOUNT
+	
+USING IAM
+	USER
+	GROUP
+	PLOICY
+
+COMPUTE
+	EC2 == VM
+	- On Demand Instance
+	- Spot Instance
+	- Reserved Instance
+	- Dedicated Instance
+	
+OS -> CPU / RAM -> NETWORK -> FIREWALL -> KEY
+==========================================
+ami-5b673c34
+RHEL-7.5_HVM_GA-20180322-x86_64-1-Hourly2-GP2
+
+
+How to access EC2 Instance?
+===================================
+PUBLIC IP	- 13.235.51.14
+WINDOWS  --> PPK file
+LINUX ---> PEM
+
+
+STORAGE
+	EMPHERAL - TEMPORARY
+	PERISISTANCE - PERMAMENT
+	
+	BLOCK STORAGE === LAPTOP STORAGE
+		EBS - LAPTOP STORAGE -  LOCALLY CONNECTED
+	CREAtE --> ATTACH -> FORMAT -> MOUNT -> USE
+	https://www.devopsschool.com/notes/aws/notes/EBS-mount.txt
+		
+		EFS - LAPTOP STORAGE -  NETWORK CONNECTED
+
+
+
+	OBJECT STORAGE === GOOGLE DRIVE
+	fs-df51b90e.efs.ap-south-1.amazonaws.com	
+	https://www.devopsschool.com/notes/aws/notes/EFS.txt
+
+	sudo mount -t nfs -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2 fs-df51b90e.efs.ap-south-1.amazonaws.com:/   /efs 
+
+
+NETWORKING
+===================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FREE TIER ACCOUNT
+==============================
+https://aws.amazon.com/free/?all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc
+ANY ONE 
+	For 1 YEAR
+	CAN USE ONLY LIMITED RESOURCES
+
+=======================================================
+AWS INFRA
+============================================================
+
+
+
+

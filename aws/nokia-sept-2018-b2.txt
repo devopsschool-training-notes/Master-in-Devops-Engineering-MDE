@@ -1,0 +1,42 @@
+What is AWS?
+	- Public Cloud Platform
+
+INFRA
+	MULTIPLE REGION -15
+				AT LEAST OF 2 AV Zone
+
+
+CLOUD MODEL
+IAAS PAAS SAAS
+
+FREE ACCOUNT 
+--------------------
+=---
+IAM
+
+	COMPUTE		- EC2
+	STORAGE		-  BLOCK(EBS+EFS) + OBJECT(s3)
+	https://www.devopsschool.com/notes/aws/notes/EBS-mount.txt
+	DB
+	NETOWKING
+
+https://scmgalaxy.signin.aws.amazon.com/console
+nokia
+Nokia#12345
+
+
+NETWORKING
+========================
+VPC
+	SUBNETS
+	ROUTE TABLES
+	INTERGATWAEY
+	IP 
+		PRIVATE
+		PUBLIC 
+	
+
+
+
+
+

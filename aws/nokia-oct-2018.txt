@@ -1,0 +1,140 @@
+https://devopsschool.com/notes
+
+What is cloud Computing?
+What is AWS? - DONE
+What is Region? DONE
+What is AZ? DONE
+what is Edge Locatioon? DONE
+========================================
+Identity and Access Management
+--------------------------------------
+Authentication - IAM
+Master Access - Has access of everything
+
+https://scmgalaxy.signin.aws.amazon.com/console
+Authorization - 
+IAM - 	
+	USER --> GROUP --> POLICY
+	ROLES
+
+USERNAME - nokiaoct
+PASSWORD - Nokiaoct$123
+
+AKIAJN6SF7KTI6O4ZZ5Q
+HJETxHl0tpDA56KDb6edAVMWT/6pxbT5UMYhNnv
+
+Foudation Services of AWS
+	EC2	 === Virtual Machine
+		1. ON DEMAND --- COSTLIER COMPARE TO SPOT & Reserved
+		2. SPOT --- CHEAPTEST ONE BUT ephemeral
+		3. Reserved --- 
+		4. Dedicated --- MOST EXPENSIVE
+
+AWS ESTIMATION & Cost
+https://calculator.s3.amazonaws.com/index.html
+
+ON DEMAND
+	LINUX
+		SSH using .pEM
+		Putty --- .pem to .ppk using puttygen
+		HOW TO ENABLE PASSWORD IN LINUX?
+			/etc/ssh/sshd_config
+			PasswordAuthentication 
+			service sshd restart | systemctl restart sshd 
+	WINDOWS
+		RDP
+
+IP Address
+	PRIVATE
+	PUBLIC
+		POOL
+		EIP
+
+
+
+Lab 1
+Create a EC2 Linux RHEL 7.5 Instance and access it using Putty.
+		Need to look into Keys
+		Need to look into Security groups
+		Need to look into AMIs
+		Need to look into START | STOP | REBOOT behaviours
+		Need to look into Public IP address | Private IP Address | EIP
+Create a EC2 Windows 2016 base Instance and access it using RDP.
+		Need to look into Keys
+		Need to look into Security groups
+		Need to look into AMIs
+		Need to look into START | STOP | REBOOT behaviours
+		Need to look into Public IP address | Private IP Address | EIP
+
+
+How to push your own images?
+Explain T2 Unlimited
+
+Storage
+	Block Storage
+		Empheral
+		EBS
+			GP SSD
+			PIOPS SD
+			Magnetic
+			Cold HDD
+			TIOPS HDD
+		LAB  - 
+		https://www.devopsschool.com/notes/aws/notes/EBS-mount.txt
+
+		EFS
+		https://www.devopsschool.com/notes/aws/notes/EFS.txt
+	Object Storage
+	Archive
+	gateway
+
+
+
+How to increase a EBS vol?
+How to enable Snapstop set interval ?
+How to encrypt the volume?
+Life cycle state
+================================================================
+VPC	 raj_pvc 192.168.0.0/16
+
+	PUBLIC SUBNETS	raj_pub_svt	192.168.1.0/24
+	PRIVATE SUBNETS raj_pvt_svt	192.168.2.0/24
+INTERNET GATEWAY raj_igw
+
+ROUTE TABLE
+
+-------------------------------
+https://www.devopsschool.com/notes/aws/notes/VPC-Setup-Manually.txt
+
+NAT
+	NAT Instance
+	NAT Gateway
+
+
+NAT
+VPN
+ROUTE53
+
+
+=================
+RDS
+
+https://www.devopsschool.com/notes/wamp/wamp-server.txt
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

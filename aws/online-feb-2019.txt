@@ -1,0 +1,87 @@
+What is AWS?	
+	Amazon Web Services
+	Cloud Based
+		IAAS - Compute - Storage - Netowkroking = FOUNDATION SERVICE
+		PAAS - Compute - Storage - Netowkroking - RUN TIME
+		SAAS - Compute - Storage - Netowkroking - RUN TIME - App
+		FAAS - 
+===============================
+	4000+
+===========================
+How to regiter? - https://aws.amazon.com/free/
+	GUI - AWS Management Console
+	API - 
+
+INFRA STRUCTURE OF AWS
+============================
+
+Access Managment - IAM
+	----------------
+	POLICY - ec2 + rds + s3 + vpc
+	GROUP - sunday
+	USER - dev
+
+IAAS = 
+	Compute = EC2 == Virtual Machine
+	Storage = 
+		EBS
+		S3
+	Database = RDBMS
+	NETOWORKING = VPC
+	----------------------
+
+EC2
+	On Demand Instance - NOW - Costly
+	Dedicated Instance - FIXED - DEDCIATED - MOST COSTLY
+	Reserved Instance - 10 Machine/1 year- Cheaper than on Demand
+	SPOT Instance - LESS COSTLY COMPARE TO ALL BUT Its Temp
+
+	LINUX - RHEL 7.5
+	WINDOWS 2016
+
+Storage
+	BLOCK 	= LAPTOP STORAGE === EBS
+	 
+	OBJECT STOAGE == GOOGLE DRIVE ===S3
+		1 - 15Gb
+		BUCKET(S) - EACH BUCKET IS YOUR GOOGLE DRIVE
+		HTTP	
+		CANT MOUNT
+		BUT SYNC
+
+	EBS.
+		TEMP = EMPHRAL == EC2
+		PERM 
+			VOLUME
+		ONE EBS CAN NOT TO MULTIPLE INSTANCE
+	
+	EFS ===== NFS	
+		EFS CAN BE MOUNTED TO MULTIPLE
+	https://www.devopsschool.com/notes/aws/notes/EFS.txt
+
+DATABASE
+--------------
+		DNS
+		USER
+		PASS
+		PORT
+
+VPC = NETWORKING
+-------------------------------
+	VPC
+		WEB SUBNET 1
+		WEB SUBMET 2
+	Internet gateway
+		
+	Route 
+		PUB
+		PVT
+https://www.devopsschool.com/notes/aws/notes/VPC-Setup-Manually.txt
+
+	
+
+
+Auto Scaling
+
+Route 53
+	

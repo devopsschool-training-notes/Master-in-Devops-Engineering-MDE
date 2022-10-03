@@ -1,0 +1,79 @@
+Compute
+	EC2	- Virtual Machines
+		LINUX - RHEL
+		WINDOWS - WIndows 16
+
+	PEM ----> SSH
+	ssh -i "online.pem" ec2-user@ec2-13-233-4-11.ap-south-1.compute.amazonaws.com
+	WINDOWS --> PUTTY -> PPK(PEM -> PPK)
+				Puttygen
+
+172.31.20.38
+172.31.27.22
+
+Storage
+	- EBS	- block Storage like your laptop storage
+		- Temporary - EC2 Free of Cost
+		- Persistent - Pay for it....
+	https://www.devopsschool.com/notes/aws/notes/EBS-mount.txt
+	
+	- S3    - Object Storage Like your Google Drive
+
+	LINUX - https://www.devopsschool.com/notes/aws/notes/EBS-mount.txt
+	
+	NFS - EFS --->
+	https://www.devopsschool.com/notes/aws/notes/EFS.txt
+
+
+
+
+Networking
+	- VPC   - Virutal Private Network. 
+			Setting up your own data  centers or Company at AWS.
+	
+	https://www.devopsschool.com/notes/aws/notes/VPC-Setup-Manually.txt
+	VPC -	
+		
+	SUBNET - 
+		PUBLIC - WITH INTERNET
+		PRIVATE - NO INTERNET
+	INTERNET GWATEWAY ---> 	
+
+	Attach IGW - to VPC	
+
+	ROUTE TABLES -- INTERNET GWATEWAY --> PUBLIC SUBNET
+			PVT ROUTE
+
+	ONE MACHINE -- PUB SUBNET - INTER
+	ONE MACHINE  - PVT SUB - NO INT
+		
+
+	13.232.85.37 - INT
+13.232.219.237 - NOT INT
+
+	
+https://www.devopsschool.com/video/aws/
+
+Security
+	IAM - Authentication and Authorization on AWS
+
+	Mater Account - Which has access to everything.
+	amit  - EC2
+
+	Policies (what access ) --> GROUP --> user
+API
+
+Public DNS	ec2-13-233-140-12.ap-south-1.compute.amazonaws.com
+User name	Administrator
+Password	
+beUpMEMl4XJ!HOpyt$He&xq3Gtvs7M=L 
+
+CloudWatch
+
+
+DevOps@RajeshKumar.xyz
+rajesh@scmgalaxy.com
+
+	
+	
+

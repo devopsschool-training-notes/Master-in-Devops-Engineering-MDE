@@ -1,0 +1,61 @@
+- Quick Demo of EC2
+
+1 SERVER - LINUX - Some Basic Operations
+
+User Name - rajesh@scmgalaxy.com
+Pass - I dont know
+===========================================
+IAM 
+https://scmgalaxy.signin.aws.amazon.com/console
+user name - astra
+password - Astra$123
+
+1. Create a user - DONE
+2. Create a Group - DONE
+3. Assign a policies to user - Done
+
+
+How can you create a virtual machine AKA servers AKA vms AKS Instance?
+
+How to setup a web server?
+httpd - RHEL 7
+> yum install httpd
+> systemctl start httpd
+> http://XXXXX
+
+vi /var/www/html/index.html
+
+WINDOWS
+IP - 13.127.17.211
+USER - Administrator
+PASS - 6q$LAafaupqpH2u7.Y.D%xHmwiFY*Kh3
+
+Demo 1- AWS EC2 INSTANCE
+
+LAB 1 - Computing - 20 MINS
+==================================
+https://goo.gl/rfxMse
+
+Note Location - 
+https://goo.gl/FjJ8Lt
+
+Demo 2- AWS EC2 ADVANCE
+Elastic IP Add
+Creating AMIs
+
+- 13.127.102.168
+- 13.127.92.255
+
+13.126.67.254-
+i-02e23a0c9b0698f74
+
+systemctl start http
+
+Demo 3- S3 Demo
+
+Demo 4 - EBS Demo
+
+LAB 1
+===================
+Create a Volume --> Attach - > Foramt -Mount
+http://www.devopsschool.com/notes/aws/EBS-mount.txt

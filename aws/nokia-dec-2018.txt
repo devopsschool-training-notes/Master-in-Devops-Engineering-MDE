@@ -1,0 +1,164 @@
+Compute
+===============================
+1. EC2 Instance === VIRTUAL MACHINE
+	On Demand Instance
+	Reserverd Instance
+	Dedicated Instance
+	Spot Instance
+
+How to get a access in AWS.
+============================
+1. Console Way
+2. API
+
+IAM 
+	POLICY - EC2 FULL ACCESS
+	GROUP  - nokiagroup
+	USERS  - nokiauser / Nokia$4ser
+
+	POLICY(S) -> GROUP(S) -> USER(S)
+https://scmgalaxy.signin.aws.amazon.com/console
+	
+Instance == Virtual Machine
+
+IP Address
+	PUBLIC	
+		FREE - 
+			ONLY TILL YOU ARE RUNNING A INSTANCE
+			INSTANCE STOP - PUB IP IS RELEASED
+		PAID - ELASTIC IP ADDRESS
+			PAID ONLY TILL INSTANCE IS NOT RUNNING
+	PRIVATE 
+
+EC2 Instance
+	LINUX   RHEL 7.5
+	WINDOWS WINDOWS 2016
+
+
+STOARGE - BLOCK STORAGE
+		-- TEMP - EMPHERAL
+		-- PERM - PERSISTENCE
+
+How can you access EC2 Instance?
+	Key
+		PUB
+		PVT
+
+PUB 13.233.138.62
+PVT - 172.31.16.17
+
+ssh -i "rajesh-nokiar-key.pem" ec2-user@ec2-13-233-138-62.ap-south-1.compute.amazonaws.com
+
+
+PUTTY - (PEM-PPK using puttygen)
+
+[root@ip-172-31-16-17 ec2-user]# history
+$ sudo -s
+    1  yum install httpd -y
+    2  git
+    3  yum install git -y
+    4  git
+    5  systectl start httpd
+    6  systemctl start httpd
+    7  ps -eaf | grep httpd
+    8  history
+
+https://www.devopsschool.com/notes/aws
+https://www.devopsschool.com/notes/aws/2018/nokia-dec-2018.txt
+
+
+EBS
+=====================
+EBS - PERSISTANCE
+	https://www.devopsschool.com/notes/aws/notes/EBS-mount.txt
+	
+
+EFS
+https://www.devopsschool.com/notes/aws/notes/EFS.txt
+
+sudo mount -t nfs -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2 fs-cf529007.efs.eu-west-1.amazonaws.com:/   /efs
+==========================================================
+NETWORKING
+====================================================
+VPC		CIDR	192.168.0.0/16	raj-vpc	vpc-039f68c9848187d8f
+
+SUBNET - PUB	CIDR	192.168.1.0/24	raj-pub-sub	
+subnet-0697862a38f544414
+
+SUBNET - PVT	CIDR	192.168.2.0/24  raj-pvt-sub
+subnet-0852b10c159b77f18
+
+
+INTERNET GATEWAY	raj-igw
+igw-040fe347e1b461955
+
+	ATTACH TO VPC
+
+ROUTE TABLE
+
+
+PUB EC2 - 
+PUB IP - 13.233.181.136
+PVT IP - 192.168.1.152
+
+PVT EC2 - 
+PUB IP - 13.232.244.177
+PVT IP - 192.168.2.137
+
+=================================================
+NAT
+	NAT Instance
+	NAT Gateway
+	
+
+
+==================================
+VPC PEERING
+==============================================================================================================================================================
+raj-nokia
+VPC - 11.0.0.0/16
+SUB1 - 11.0.0.0/24
+SUB2 - 11.0.1.0/24
+
+raj-vel
+VPC - 10.0.0.0/16
+SUB1 - 10.0.0.0/24
+SUB2 - 10.0.1.0/24
+
+
+13.232.49.153 - vel
+52.66.209.242 - Nokia
+=========================================
+DATABASE
+=========================================
+PHP BASED APP - WORDPRESS
+MYSQL
+APACHE
+
+===================
+1. EC2 
+2. 1 RDS - MYSQL
+
+rajwprajesh
+
+wpuser123S
+wpuser$123S
+
+
+Database name - wprajdataname
+
+HOw to install WAMP and WORDPRESS
+https://www.devopsschool.com/notes/aws/lab/wamp-server.txt
+
+====================
+
+ROLES DEMO
+How to install aws cli?
+
+# Python Script - Install and configure the AWS CLI on Linux
+$ curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
+$ sudo python get-pip.py
+$ sudo pip install awscli
+
+
+

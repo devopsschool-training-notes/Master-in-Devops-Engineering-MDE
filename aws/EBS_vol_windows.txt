@@ -1,0 +1,49 @@
+= = = = = = = = = = = = = = = = = =
+
+DISKPART.EXE
+
+DISKPART> san
+
+SAN Policy : Offline Shared
+
+= = = = = = = = = = = = = = = = = =
+
+Once you have verified that the applied policy is Offline Shared, you have two options to set the disk to Online.
+
+The first one is to log in to your system as an Administrator, click Computer Management > Storage > Disk Management, right-click the disk and choose Online.
+
+The second one is to make a SAN policy change, then select the offline disk, force a clear of its readonly flag and bring it online. Follow these steps:
+
+= = = = = = = = = = = = = = = = = =
+
+DISKPART> san policy=OnlineAll
+
+DiskPart successfully changed the SAN policy for the current operating system.
+
+DISKPART> LIST DISK
+
+Disk ### Status Size Free Dyn Gpt
+-------- ------------- ------- ------- --- ---
+Disk 0 Online 40 GB 0 B
+* Disk 1 Offline 10 GB 1024 KB
+
+DISKPART>; select disk 1
+
+Disk 1 is now the selected disk.
+
+DISKPART> ATTRIBUTES DISK CLEAR READONLY
+
+Disk attributes cleared successfully.
+
+DISKPART> attributes disk
+Current Read-only State : No
+Read-only : No
+Boot Disk : No
+Pagefile Disk : No
+Hibernation File Disk : No
+Crashdump Disk : No
+Clustered Disk : No
+
+DISKPART> ONLINE DISK
+
+DiskPart successfully onlined the selected disk.

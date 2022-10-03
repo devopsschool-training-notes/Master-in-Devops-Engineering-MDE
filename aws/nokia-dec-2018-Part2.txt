@@ -1,0 +1,22 @@
+Step 1 - Create a Access in IAM
+	https://devopsschool.signin.aws.amazon.com/console
+	nokia
+	Nokia$12345
+
+EC2
+	Spot
+	Reserved
+	On Demand	
+	Dedicated 
+
+IP 
+	Private
+	Public IP - Keep Changesion Ec2 Stop -Start...
+			Elastic IP
+
+
+	VM - RHEL 
+	VM - WINDOWS
+
+
+EC2 - KEYPAIR - Security Group

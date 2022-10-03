@@ -1,0 +1,209 @@
+Master Account
+rajesh@
+-------------------------
+IAM
+	PERMISION(S)==POLICY -> GROUP -> USER
+
+https://scmgalaxy.signin.aws.amazon.com/console
+nokia
+Nokia$123
+
+AKIAIVUTSMY4YKC2XJGA
+7ZjKY6bTqemdEFxI3AMZKI3mWtPN7WguRH6/gZcC 
+
+=========================
+EC2
+=========================
+MUST - EVERYONE SHOULD WORK IN MUMBAI REGION.
+
+LINUX	
+WINDOWS	
+
+Instance Type
+	Spot
+	On Demand
+	Dedicated
+	Reserved
+
+IP ADDRESS IN AWS
+	PUBLIC IP - FREE but changed when EC2 Instance stop-> start
+	PRIVATE IP ( BY VPC)
+	ELASTIC IP - PAID but free when EC2 is running.
+	
+
+
+How to access?
+username - ec2-user	
+password  | key
+
+ssh -i "nokia.pem" ec2-user@ec2-13-232-188-248.ap-south-1.compute.amazonaws.com
+
+nokia.pem --> nokia.ppk using puttygen
+
+PUBLIC - 13.232.188.248
+PRIVATE - 172.31.22.134
+
+How to enabled password?
+vi /etc/ssh/sshd_config
+PasswordAuthentication yes
+passwd
+sudo systemctl restart sshd
+
+----------------------------------
+
+How to create your own AWS AMI?
+
+WINDOWS
+
+
+============================
+STORAGE
+	EBS - EMPHERAL STORAGE 
+	EBS - Persistance 
+		EBS GPSSD
+		EBS PRO
+		Magnetic
+http://www.devopsschool.com/notes/aws/notes/EBS-mount.txt
+	S3 - Object Storage
+	EFS - NFS
+	Glasior - Lazy Storage
+
+==================================
+
+Database
+=============================
+RDS
+	MYSQL
+	ORACLE
+	POST
+	MS SQL
+	AURORA
+
+
+LAB 
+http://www.devopsschool.com/notes/aws/lab/wamp-server.txt
+
+==================================================================
+NETWORKING
+
+1. VPC  - raj_vpc			vpc-004fa5355ffe9b5ca
+	192.168.0.0/16
+
+2. SUBNET -
+	raj_pub_sub	192.168.1.0/24	subnet-0db3777c2dae8091a
+	raj_pvt_sub	192.168.2.0/24	subnet-08d5b1db54db51b55
+3. internet gateway	
+	raj_igw				igw-0ad91ad8070b80ecd
+4. Router -
+	raj_route_pub
+	raj_route_pvt
+
+ANY TO IGW --> SUB
+
+
+1. Crate a VPC
+2. CREATE A PUB SUBNET
+3. CREATE A PVT SUBNET
+4. CREATE A INTERNET GATE
+5. ATTACH IGW TO VPC
+6. ROUTE  TABLE FROM 0.0.0.0/0 to IGW && public subnets
+
+
+13.232.192.96 - PUB SUB
+192.168.1.118
+
+13.232.8.52 - PVT SUB
+192.168.2.62
+
+------------------------
+
+NAT INSTANCE
+
+
+NAT GATEWAY
+
+ELB
+=====================
+13.126.143.176 - ap-south-1a 
+
+13.232.93.243 ap-south-1b
+
+$ yum install httpd -y
+$ systemctl start httpd
+vi /var/www/html/index.html
+
+i-0bd049eebb7869924
+i-0219a465319c44c4b
+
+
+rajesh-1541545352.ap-south-1.elb.amazonaws.com
+
+
+AUTO SCALING
+=======================
+
+
+
+LOAD BALANCER - DONE
+
+
+
+Command Line with AWS
+===============================
+
+1. Insall AWS CLI
+13.232.96.229
+
+
+EC2
+-----------------
+SECURITY GROUP
+PEM
+
+$ aws configure
+S3
+EBS
+
+
+   19  aws help s3
+   20  aws s3 help
+   22  aws s3 ls
+   28  aws s3 ls
+   29  aws s3 sync s3//cluster1.copart.rajeshkumar.xyz copart
+   30  aws s3 sync s3://cluster1.copart.rajeshkumar.xyz copart
+   41* aws s3 l
+   42  aws s3 sync s3://devopsschool devopsschool
+   57  aws s3 sync devopsschool s3://devopsschool
+   59  aws s3 cp s3://devopsschool/get-pip.py .
+
+aws ec2 create-security-group --group-name raj1 --description "Tis is for demo"
+
+aws ec2 run-instances --image-id ami-5b673c34 --key-name final --security-groups raj1 --instance-type t2.micro --placement AvailabilityZone=ap-south-1a --block-device-mappings DeviceName=/dev/sdh,Ebs={VolumeSize=100} --count 1
+
+
+CLOUDWATH
+TERRAFORM
+
+=======================
+DOCKER SWARM
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,28 @@
+Code Build - 
+Pre 1 - Role with CodeBuild type and attach policy with 
+	AWSCodebuildAdminAccess
+	Ec2Fulll
+	AWSCodeCommitAdminAccess
+	AmazonEc2ContainerRegistryFullAcces
+	S3
+	CloudWatch
+	AWSKeyManagementServicePowerUser
+Pre 2 - s3 Bucket
+
+Code Build -
+Pre 1 - Choose a Deployment Typ
+Pre 2 - Create a Security Group
+Pre 3 - Create a Key Pair
+Pre 4 - Create 3 Ec2 instance with Ubuntu 16.X
+	1. Create a role "RoleEC2ForCodeDeploy" with type "Amazon Ec2" with access
+		EC2 Full
+		S3
+		Container
+	2. Create a role "RoleCodeDeploy4ForCodeDeploy" with type "Amazon Code Deploy" with access
+		AwsCodeDeployRole
+Pre 5 - Create a  Deployment Instance with
+		RoleEC2ForCodeDeploy
+		USER DATA #CodeDeployAgent
+		Tags	# For Deployment
+		
+

@@ -1,0 +1,26 @@
+==================XAMPP SERVER == APP SERVER =====================
+> sudo -s
+> yum install wget -y
+> wget https://www.apachefriends.org/xampp-files/5.6.32/xampp-linux-x64-5.6.32-0-installer.run
+> chmod 755 xampp-linux-x64-5.6.32-0-installer.run
+> ./xampp-linux-x64-5.6.32-0-installer.run
+
+> sudo /opt/lampp/lampp start
+
+===================WORDPRESS ===================
+wget https://wordpress.org/latest.zip
+yum install unzip -y
+unzip latest.zip
+cp -rf wordpress /opt/lampp/htdocs/
+cd /opt/lampp/htdocs/
+chown -R daemon:daemon wordpress
+
+TO BE BROWSED
+============================
+http://35.154.48.255/wordpress/
+
+
+
+How to login database?
+cd /opt/lampp/bin
+$ ./mysql -h rajwprajesh.cik80c7hymay.ap-south-1.rds.amazonaws.com -P 3306 -u wpuser123S -p

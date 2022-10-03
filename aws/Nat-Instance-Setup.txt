@@ -1,0 +1,15 @@
+1. Setup a VPC with public and Private subnets
+2. Create a Security group called "NAT-SG" and allowed ssh,http and https access
+
+3. Create a Instance using "amzn-ami-vpc-nat" AMI and Name with "NAT-INS"
+		- Instance must have PUBLIC IP Address
+		- Instance must be to Public Subnet
+		- Instance must be assigned to security group "NAT-SG"
+4. Select the NAT instance and 	Disable Source/Destination Check [ Which will make instance eligible for NAT"
+
+5. Create a Route Table "NAT-RT" and add route to
+0.0.0.0/0 - NAT-INS
+&
+Assign a subnet to Private subnets
+
+NOTE - Make sure that there should not be duplicate route table to over rides the access of private subnets

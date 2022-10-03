@@ -1,0 +1,29 @@
+NAT Instance
+===============
+EC2 Instance
+- AMAZON NAT
+- Get a Instance in WEB
+- SSh + http + https
+
+Change Source/Destination - Disable on NAT Instance - To get a NAT
+
+
+Create a route table for NAT
+------
+Go to Route tables  and select the NAT ec2 instance with.
+
+0.0.0.0/0 - NAT EC2
+
+and Assign Subnet for DB4
+
+-------------
+NAT GATEWAY
+----------------
+Creatng a Net gateway
+Select the Route Table and edit and select the NAT Gateway
+
+ 
+
+
+
+

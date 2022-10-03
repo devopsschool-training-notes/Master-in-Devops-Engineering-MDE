@@ -1,0 +1,39 @@
+How to attach AWS EBS to multiple Instance?
+==============================================================
+NO. We should start looking at the new Amazon Elastic File System (EFS), which is designed to be multiply attached in exactly the way you are wanting. The key difference between EFS and EBS is that they provide different abstractions: EFS exposes the NFSv4 protocol, whereas EBS provides raw block IO access
+
+Why is this a bad idea? ... The reason you can't attach a volume to more than one instance is that EBS provides a "block storage" abstraction upon which customers run a filesystem like ext2/ext3/etc. Most of these filesystems (eg, ext2/3, FAT, NTFS, etc) are written assuming they have exclusive access to the block device. Two instances accessing the same filesystem would almost certainly end in tears and data corruption.
+https://stackoverflow.com/questions/841240/can-you-attach-amazon-ebs-to-multiple-instances
+
+Difference Between EBS VS S3 Vs EFS
+https://stackoverflow.com/questions/29575877/aws-efs-vs-ebs-vs-s3-differences-when-to-use
+
+
+Question
+What is difference between EBS, EFS and S3?
+What is difference between Block level storage and Object Level Storage?
+What is differnce between 
+
+General Purpose SSD (GP2)
+Provsioned IOPS SSD (IO1)
+Cold HDD SC1
+Throughout Optmized HDD (ST1)
+Magnetic
+
+Load Balancers across region?
+Using Global server load balancers. ELB is only region based. Citrix NetScaler use as appliances in AWS can be act like a Global server load balancers across a region.
+
+
+If the IP address is same in 2 Sep Network. How the transmission of packat taking place.
+
+1. Physical Network
+2. AWS 
+
+How to calculate the capacity needed for NAT?
+
+Port forwarding using ELB?
+
+End to end Encyrption with ELB is possible with AWS or not?
+
+Senario Based Questions for 
+

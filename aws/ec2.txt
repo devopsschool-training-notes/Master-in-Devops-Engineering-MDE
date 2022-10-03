@@ -1,0 +1,10 @@
+USER DATA
+===============
+#!/bin/bash
+yum update -y
+yum install -y httpd
+
+http://34.245.177.224/phpinfo.php
+
+LOG  - /var/log/cloud-init-output.log
+	/var/log/cloud-init.log

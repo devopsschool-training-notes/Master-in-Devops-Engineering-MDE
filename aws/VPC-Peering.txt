@@ -1,0 +1,29 @@
+Senario #1
+
+Create a single subnet VPC with CIDR name with "VPC1"  - 192.168.1.0/24
+Create a single subnet VPC with CIDR name with "VPC1"  - 192.168.2.0/24
+Create a one Instance in VPC1 and VPC2
+Login to EC2 Instance of VPC1 and ping private address of EC2 VPC2. And it shouild not be pingable.
+Now - Create a VPC peering and Activate it.
+
+Modify the route table and To send traffic from your instance to an instance in a peer VPC using private IPv4 addresses, you must add a route to the route table that's associated with the subnet in which the instance resides. The route points to the CIDR block (or portion of the CIDR block) of the other VPC in the VPC peering connection.
+
+
+
+
+
+VPC1 - CIDR RANGE - vpc-73c7431a
+192.168.1.0/24
+35.182.72.2
+192.168.1.184
+
+VPC2 - CIDR RANGE - vpc-eac04483
+192.168.2.0/24
+35.182.87.169
+c	
+
+VPC3 - CIDR RANGE - 	 vpc-25c1454c
+192.168.2.0/24
+
+
+

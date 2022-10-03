@@ -1,0 +1,84 @@
+==============================================
+Code Build
+==============================================
+
+Step 1 - Create a IAM group "developer" with policy "AWSCodeCommitFullAccess.
+
+Step 2 - Create IAM user "dev1" dedicated for a person who is going to use CodeCommit and assign "developer".
+
+Step 3 - Login using dev1 and go to "Developer Tools >> CodeCommit"
+   
+Step 4 - Create a repo
+		
+Step 5 - Go to "My security credentials" under your user account of AWS and click on "AWS CodeCommit Credentials" and upload your laptop SSH public into "SSH keys" section and Generate a http password using"HTTPS Git credentials for AWS CodeCommit"
+
+Step 5 - To Back to "Developer Tools >> CodeCommit >> Repositories" and copy a git repo url and clone it in your laptop and start working on
+
+==============================================
+Code Deploy - 
+==============================================
+Pre 1 - Create a Role named with "CodeBuild" with "CodeBuild" type and attach policy with... 
+		AWSCodeBuildAdminAccess 
+		AWS Managed Policy AmazonEC2FullAccess 
+ 		AWS Managed Policy AWSCodeCommitFullAccess 
+	 	AWS Managed Policy AmazonEC2ContainerRegistryFullAccess 
+ 		AWS Managed Policy AmazonS3FullAccess 
+ 		AWS Managed Policy CloudWatchFullAccess 
+ 		AWS Managed Policy AWSKeyManagementServicePowerUser 
+
+Pre 2 - s3 Bucket
+
+
+
+
+dEv1$123
+
+
+AKIAILVJCCDRAJCIF2XQ
+cTjqCqbrf2oldx/Yx4t2KxDQ+NUKgwqHPROaSu+p Hide
+
+
+User name
+dev1-at-625097054767
+Password
+qhlpP6WtReA/86vEUPODH8pevNdTnNOZK2UCg+qUgS4= 
+  506  clear
+  507  git clone https://git-codecommit.us-east-2.amazonaws.com/v1/repos/rubberduckey
+  508  ls
+  509  cd rubberduckey/
+  510  git log
+  511  ls -la
+  512  start .
+  513  git add .
+  514  clear
+  515  ls
+  516  git config user.name "Rajesh Kumar"
+  517  git config user.email "DevOps@RajeshKumar.xyz"
+  518  git commit -m"adding first version of software"
+  519  clear
+  520  ls
+  521  git push origin master
+  522  git push origin master
+  523  ls
+  524  git push origin master
+  525  git push ssh://git-codecommit.us-east-2.amazonaws.com/v1/repos/rubberduckey master
+  526  clear
+  527  more .git/config
+  528  cat .git/config
+  529  clear
+  530  ls
+  531  git push https://git-codecommit.us-east-2.amazonaws.com/v1/repos/rubberduckey master
+  532  git push origin master
+  533  start .
+  534  git branch -a
+  535  git pull origin fea1
+  536  vi .git/config
+  537  start .
+  538  git pull origin master
+  539  git branch -a
+  540  git pull origin fea1
+  541  git branch -a
+  542  git checkout -b remotes/origin/fea1
+  543  git branch -a
+  544  history
+

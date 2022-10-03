@@ -1,0 +1,184 @@
+Network Access Control (NACL)
+DynamoDB
+Code Pipeline
+Lambda in detail
+API Gateway
+===================================
+REGION == IRELAND
+==================================
+IAM
+	https://devopsschool.signin.aws.amazon.com/console
+	GROUP  = bravura
+	USER = bravura	/ Bravura$1234
+
+Network Access Control (NACL)
+	What is Securty Group?
+		in/out bound for ec2 instance
+
+	What is Network Access Control?
+	https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html
+
+
+	VPC
+		subnet
+			EC2 instance
+	ACLS
+=======================================================
+Security Group vs Network ACLs
+
+Security groups are stateful — if you send a request from your instance, the response traffic for that request is allowed to flow in regardless of inbound security group rules. Responses to allowed inbound traffic are allowed to flow out, regardless of outbound rules.
+
+Network ACLs are stateless; responses to allowed inbound traffic are subject to the rules for outbound traffic (and vice versa).
+
+
+Dynamo DB
+======================
+
+Table = rajesh
+
+
+Step 1 - Create a Table
+
+Step 2 - install node
+   1  yum install -y gcc-c++ make
+    2  curl -sL https://rpm.nodesource.com/setup_10.x | sudo -E bash -
+    3  yum install nodejs -y
+
+Step 3 - install aws cli
+$ curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
+$ python get-pip.py
+$ sudo pip install awscli
+#Verify that the AWS CLI installed correctly by running aws --version.
+$ aws --version
+$ aws help
+
+$aws configure
+AKIAILMKW6372OA5GNAQ
+1wYibZr9Bngf3d51GZALQHWySaFcNw8XGtAWSe0S
+eu-west-1
+
+
+Step 4
+   9  cd /opt/
+   10  ls
+   11  git clone https://github.com/awslabs/aws-nodejs-sample.git
+   12  yum install git -y
+   13  git clone https://github.com/awslabs/aws-nodejs-sample.git
+
+$ cd aws-nodejs-sample/
+$ npm install
+
+Step 5
+https://aws.amazon.com/developers/getting-started/nodejs/
+npm install aws-sdk
+node sample.js
+
+Step 6
+yum install wget -y
+yum install unzip -y
+wget https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/samples/moviedata.zip
+
+# Install JAVA
+$ wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+$ rpm -ivh jdk-8u131-linux-x64.rpm
+
+$ cd /opt
+$ wget https://s3-us-west-2.amazonaws.com/dynamodb-local/dynamodb_local_latest.zip
+$ unzip  dynamodb_local_latest.zip
+$ java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -sharedDb
+
+New Console
+$ aws dynamodb list-tables --endpoint-url http://localhost:8000
+
+
+Create a table using SDK
+vi MoviesCreateTable.js
+======================================================
+var AWS = require("aws-sdk");
+
+AWS.config.update({
+  region: "eu-west-1",
+  endpoint: "http://localhost:8000"
+});
+
+var dynamodb = new AWS.DynamoDB();
+
+var params = {
+    TableName : "Rajesh1",
+    KeySchema: [       
+        { AttributeName: "year", KeyType: "HASH"},  //Partition key
+        { AttributeName: "title", KeyType: "RANGE" }  //Sort key
+    ],
+    AttributeDefinitions: [       
+        { AttributeName: "year", AttributeType: "N" },
+        { AttributeName: "title", AttributeType: "S" }
+    ],
+    ProvisionedThroughput: {       
+        ReadCapacityUnits: 10, 
+        WriteCapacityUnits: 10
+    }
+};
+
+dynamodb.createTable(params, function(err, data) {
+    if (err) {
+        console.error("Unable to create table. Error JSON:", JSON.stringify(err, null, 2));
+    } else {
+        console.log("Created table. Table description JSON:", JSON.stringify(data, null, 2));
+    }
+});
+======================================================
+To run the program, type the following command:
+$ node MoviesCreateTable.js
+
+
+
+LOAD DATA INTO Dynamo DB table
+
+vi MoviesLoadData.js
+====================================================
+var AWS = require("aws-sdk");
+var fs = require('fs');
+
+AWS.config.update({
+    region: "eu-west-1",
+    endpoint: "http://localhost:8000"
+});
+
+var docClient = new AWS.DynamoDB.DocumentClient();
+
+console.log("Importing movies into DynamoDB. Please wait.");
+
+var allMovies = JSON.parse(fs.readFileSync('moviedata.json', 'utf8'));
+allMovies.forEach(function(movie) {
+    var params = {
+        TableName: "rajesh",
+        Item: {
+            "year":  movie.year,
+            "title": movie.title,
+            "info":  movie.info
+        }
+    };
+
+    docClient.put(params, function(err, data) {
+       if (err) {
+           console.error("Unable to add movie", movie.title, ". Error JSON:", JSON.stringify(err, null, 2));
+       } else {
+           console.log("PutItem succeeded:", movie.title);
+       }
+    });
+});
+====================================================
+REFER
+https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GettingStarted.NodeJs.html
+
+
+Code Pipeline
+============================
+	CodeCommit == GITHUB
+	CodeBuild  == MAVEN
+	CodeDeploy == Ansible + Hypervisor
+	CodePipeline == Jenkins
+
+Sample Source Code
+https://github.com/aws-samples/aws-codebuild-samples
+

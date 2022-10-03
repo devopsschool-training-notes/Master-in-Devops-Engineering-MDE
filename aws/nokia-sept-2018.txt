@@ -1,0 +1,380 @@
+Step 1 - Open a account
+		ACCOUNT ID 
+		EMAIL ID
+		CREDIT CARD
+Step 2 - Understand Free Tier 
+
+Step 3 - IAM
+Group - nokia-sept
+		Policy  - EC2
+
+625097054767
+https://scmgalaxy.signin.aws.amazon.com/console
+USER  - nokia-user	Nokia-User#123	
+
+Instance 
+	On Demand
+	Dedicated
+	Reservex`
+	SPOT
+
+How to access EC2 instance?
+	IP address - 52.66.163.21
+	USER ID  ec2-user
+	PASSWORD + KEY
+$ ssh -i "nokia-user1.pem" ec2-user@ec2-52-66-163-21.ap-south-1.compute.amazonaws.com
+$ ssh -i "nokia-user1.pem" ec2-user@52.66.163.21
+
+PUTTY - PEM -->PPK (PuttyGEN
+========================================
+https://aws.amazon.com/premiumsupport/knowledge-center/ec2-password-login/
+
+https://www.devopsschool.com/notes/aws/
+====================================================================
+
+
+Public DNS 	ec2-13-232-175-62.ap-south-1.compute.amazonaws.com
+User name 	Administrator
+Password 	
+DFKM42uA;3jv-s!WB(;XPtOuBHG)zdqT
+
+EBS Mount
+https://www.devopsschool.com/notes/aws/notes/EBS-mount.txt
+
+
+DB instance identifier
+nokia-rds
+
+Master username
+nokiamaster
+
+Pass -
+nOk44master
+
+Database
+nokiadbname
+
+===================
+Use case with EC2+EBS+RDS
+https://www.devopsschool.com/notes/aws/lab/wamp-server.txt
+========================================
+
+SETTING UP THE VPC
+------------------------------
+S1- Create a VPC
+		CIDR  - 192.168.0.0/16
+
+S2 - 
+	PUBLIC	 - 192.168.1.0/24
+	PVT 	 - 192.168.2.0/24
+
+IGW
+		rajesh-igw
+
+		ATTACHED TO VPC
+
+ROUTE TABLES
+		0.0.0.0/0
+
+13.232.236.7	subnet-0faa0e2f422b03c55	PVT
+Public IP 	13.232.236.7
+User name 	Administrator
+Password 	
+RKahR2NLPAc&ki95HjudHk6zQdx6YeB5 
+
+
+13.127.211.207	subnet-0ad7e1058d4548c68	PUBLIC
+Public IP 	13.127.211.207 / 192.168.2.166
+User name 	Administrator
+Password 	
+9.Lsrc3=jcqJR$Qqe(KQRnCQ@Ngix$DA
+
+==========================================
+NAT
+	NAT INSTANCE
+	NAT GATWAY
+
+
+13.233.63.55
+13.233.51.246 == 192.168.2.52
+
+
+DAY 3 OF AWS..........		
+===============================
+AUTOSCALIG
+EFS
+------------------
+VPC-
+ECS
+EFS
+CLOUDWATCH
+VPN
+RUTE53
+SES
+SNS
+SQS
+AWS CLI
+CloudFormation
+=====================
+DOCKER --> KUBER(
+
+
+
+{
+	"AWSTemplateFormatVersion": "2010-09-09",
+	"Description": "Simple Wordpress",
+	"Parameters": {
+		"VPC": {
+			"Description": "The default VPC",
+			"Type": "AWS::EC2::VPC::Id"
+		},
+		"Subnets": {
+			"Description": "At least two public subnets from default VPC.",
+			"Type": "List<AWS::EC2::Subnet::Id>"
+		}
+	},
+	"Mappings": {
+		"RegionMap": {
+			"eu-west-1": {"AMI": "ami-bff32ccc"},
+			"ap-southeast-1": {"AMI": "ami-c9b572aa"},
+			"ap-southeast-2": {"AMI": "ami-48d38c2b"},
+			"eu-central-1": {"AMI": "ami-bc5b48d0"},
+			"ap-northeast-2": {"AMI": "ami-249b554a"},
+			"ap-northeast-1": {"AMI": "ami-383c1956"},
+			"us-east-1": {"AMI": "ami-60b6c60a"},
+			"sa-east-1": {"AMI": "ami-6817af04"},
+			"us-west-1": {"AMI": "ami-d5ea86b5"},
+			"us-west-2": {"AMI": "ami-f0091d91"},
+			"ap-south-1": {"AMI": "ami-5b673c34"}
+
+		}
+	},
+	"Resources": {
+		"EC2Instance": {
+			"Type": "AWS::EC2::Instance",
+			"Properties": {
+				"ImageId": {"Fn::FindInMap": ["RegionMap", {"Ref": "AWS::Region"}, "AMI"]},
+				"InstanceType": "t2.nano",
+				"NetworkInterfaces": [{
+					"AssociatePublicIpAddress": "true",
+					"DeviceIndex": "0",
+					"GroupSet": [{"Ref": "WebserverSecurityGroup"}],
+					"SubnetId": {"Fn::Select": ["0", {"Ref": "Subnets"}]}
+				}],
+				"Tags": [{
+					"Key": "Name",
+					"Value": "simple-wordpress"
+				}],
+				"UserData": {"Fn::Base64": {"Fn::Join": ["", [
+					"#!/bin/bash -ex\n",
+					"yum install -y php php-mysql mysql httpd\n",
+					"cd /var/www/html\n",
+					"curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar\n",
+					"php wp-cli.phar core download\n",
+					"php wp-cli.phar core config --dbname=wordpress --dbuser=wordpress --dbpass=wordpress --dbhost=", {"Fn::GetAtt": ["Database", "Endpoint.Address"]}, "\n",
+					"php wp-cli.phar core install --url=http://$(curl http://169.254.169.254/latest/meta-data/public-hostname) --title=DevOps School -Blog --admin_user=admin --admin_password=UBeDzefeX3jihRQUkrGwj2qYWnyBcp --admin_email=adam@globomatics.com --skip-email\n",
+					"rm wp-cli.phar\n",
+					"service httpd start\n"
+				]]}}
+			}
+		},
+		"DBSubnetGroup": {
+			"Type": "AWS::RDS::DBSubnetGroup",
+			"Properties": {
+				"DBSubnetGroupDescription": "DB subnet group",
+				"SubnetIds": {"Ref": "Subnets"}
+			}
+		},
+		"Database": {
+			"Type": "AWS::RDS::DBInstance",
+			"Properties": {
+				"AllocatedStorage": "5",
+				"DBInstanceClass": "db.t2.micro",
+				"DBInstanceIdentifier": "simple-wordpress",
+				"DBName": "wordpress",
+				"Engine": "MySQL",
+				"MasterUsername": "wordpress",
+				"MasterUserPassword": "wordpress",
+				"VPCSecurityGroups": [{"Fn::GetAtt": ["DatabaseSecurityGroup", "GroupId"]}],
+				"DBSubnetGroupName": {"Ref": "DBSubnetGroup"},
+				"StorageType": "gp2"
+			}
+		},
+		"WebserverSecurityGroup": {
+			"Type": "AWS::EC2::SecurityGroup",
+			"Properties": {
+				"GroupDescription": "simple-wordpress-webserver",
+				"VpcId": {"Ref": "VPC"},
+				"SecurityGroupIngress": [{
+					"CidrIp": "0.0.0.0/0",
+					"FromPort": 80,
+					"IpProtocol": "tcp",
+					"ToPort": 80
+				}]
+			}
+		},
+		"DatabaseSecurityGroup": {
+			"Type": "AWS::EC2::SecurityGroup",
+			"Properties": {
+				"GroupDescription": "simple-wordpress-database",
+				"VpcId": {"Ref": "VPC"},
+				"SecurityGroupIngress": [{
+					"IpProtocol": "tcp",
+					"FromPort": "3306",
+					"ToPort": "3306",
+					"SourceSecurityGroupId": {"Ref": "WebserverSecurityGroup"}
+				}]
+			}
+		}
+	},
+	"Outputs": {
+		"WordpressURL": {
+			"Description": "The URL of the simple Wordpress environment.",
+			"Value": {"Fn::Join": ["", ["http://", {"Fn::GetAtt": ["EC2Instance", "PublicIp"]}]]}
+		}
+	}
+}
+===============================================
+https://www.devopsschool.com/tutorial/kubernetes/kops-configuration-procedures.html
+
+AKIAJ35ZP7OEHRSOE4MA
+A5hKJc6/mwdsN2gdwkWb+2vMKI0iDt0ex0PlHk9A
+ap-south-1
+
+# Python Script - Install and configure the AWS CLI on Linux
+$ curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
+$ python get-pip.py
+$ sudo pip install awscli
+
+$ export CLUSTER_NAME="k8nokia.rajeshkumar.xyz"
+$ export KUBERNETES_VERSION="https://storage.googleapis.com/kubernetes-release/release/v1.9.0/"
+$ export AWS_DEFAULT_REGION=${AWS_DEFAULT_REGION:-ap-south-1}
+$ export AWS_AVAILABILITY_ZONES="$(aws ec2 describe-availability-zones --query 'AvailabilityZones[].ZoneName' --output text | awk -v OFS="," '$1=$1')"
+$ export KOPS_STATE_STORE=s3://rajn8.rajeshkumar.xyz
+$ export NODE_SIZE=${NODE_SIZE:-t2.small}
+$ export MASTER_SIZE=${MASTER_SIZE:-t2.medium}
+
+cp ~/.ssh/authorized_keys ~/.ssh/id_rsa.pub
+
+kops create cluster --name $CLUSTER_NAME --zones $AWS_AVAILABILITY_ZONES --kubernetes-version $KUBERNETES_VERSION --node-size  $NODE_SIZE --master-size $MASTER_SIZE --node-count 1 --yes
+
+
+
+
+kops delete cluster --name=k8nokia.rajeshkumar.xyz --yes
+
+
+
+$ kubectl get pods
+$ kubectl get deployments
+$ kubectl get nodes
+$ kubectl get replicationcontrollers
+$ kubectl get services
+$ kubectl config get-clusters
+$ kubectl config current-context
+
+$ kubectl run hello-nginx --image=nginx --port=80
+
+EXPOSE TO SERVICE VIA
+	node port
+	clust
+	ELB
+
+kubectl expose deployment hello-nginx --type=NodePort
+
+
+kubectl expose deployment hello-nginx --name hello-nginx-raj --port 80 --target-port=80 --type=LoadBalancer
+
+
+https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.11/
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hello-pod
+spec:
+  containers:
+  - name: hello-ctr
+    image: nginx
+    ports:
+    - containerPort: 80
+
+
+
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: helloworld-controller
+spec:
+  replicas: 2
+  selector:
+    app: helloworld
+  template:
+    metadata:
+      labels:
+        app: helloworld
+    spec:
+      containers:
+      - name: k8s-demo
+        image: nginx
+        ports:
+        - name: nodejs-port
+          containerPort: 80
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: hello-deploy
+spec:
+  replicas: 2
+  minReadySeconds: 10
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  template:
+    metadata:
+      labels:
+        app: hello-world
+    spec:
+      containers:
+      - name: hello-pod
+        image: nginx
+        ports:
+        - containerPort: 80
+
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: helloworld-ng-service
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+  selector:
+    app: hello-world
+  type: NodePort
+
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: helloworld-service
+spec:
+  ports:
+  - port: 80
+    targetPort: hello-deploy
+    protocol: TCP
+  selector:
+    app: hello-world
+  type: LoadBalancer
+
+
+
+
+
+
+
+

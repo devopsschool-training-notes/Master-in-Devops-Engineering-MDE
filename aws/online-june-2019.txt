@@ -1,0 +1,76 @@
+What is AWS?
+	Amazon Web Services...
+
+What is Services?
+	Foundation
+			Computing
+				Ec2
+			Networking
+				VPC
+			Storage
+				EMP
+				PER
+	Platform
+			Database
+	Serverless
+=======================================
+Cloud Services Provider
+	IAAS -  Getting a Virtual Machine in Cloud
+	PAAS -  Database managed by Cloud Service Provider 
+		INFRA + RUN TIME ====
+	FAAS - Lambda
+		
+	SAAS - Gmail...
+		INFRA + RUN TIME + App + Data =====
+==============================================
+
+Step 1- Register & Login on AWS
+	https://aws.amazon.com/free/
+	Free Tier
+
+Step 2-  How can we work with AWS
+	- AWS Management Console
+	- API - CMD
+
+	How to get a ACCESS?
+	MASTER ACCOUNT
+
+	for others
+	IAM
+		POLICIES ==> GROUPS  => USERS
+
+Step 3- How to get Vm on AWS?
+	== EC2
+		PUB IP
+		PVT IP
+	
+	TYPE
+		DEDICATED
+
+		ON DEMAND		
+		RESERVED
+		SPOT
+
+
+How to access a Instance
+	KEY
+		PRIVATE -->.PEM (Linux) --> .PPK(WIDOWS)
+		PUBLIC ====> EC2 Instance
+
+=====================================================
+		AWS Infra
+=====================================================
+Regions + Availability zone
+
+
+Storage
+=======================================
+	Empheral
+	Persistance
+
+EBS  - BLOCK 
+
+S3  - OBJECT
+
+https://www.devopsschool.com/video/
+https://www.youtube.com/watch?v=K704yzCo6Lc&list=PLDhScTEBdP8xgOtU6u2eSm3DzYXOPtTDn

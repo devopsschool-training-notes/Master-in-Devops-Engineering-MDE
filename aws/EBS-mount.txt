@@ -1,0 +1,38 @@
+Step 1
+==================================
+Login to your ec2 instance and list the available disks using the following command.
+> lsblk
+The above command will list the disk you attached to your instance.
+
+Step 2
+==================================
+Check if the volume has any data using the following command.
+> sudo file -s /dev/xvdf
+If the above command output shows “/dev/xvdf: data”, it means your volume is empty.
+
+Step 3
+==================================
+Format the volume to ext4 filesystem  using the following command.
+> sudo mkfs -t ext4 /dev/xvdf
+
+Step 4
+==================================
+Create a directory of your choice to mount our new ext4 volume. I am using the name “newvolume”
+> sudo mkdir /newvolume
+
+Step 5
+==================================
+Mount the volume to “newvolume” directory using the following command.
+> sudo mount /dev/xvdf /newvolume/
+
+sudo mount /dev/xvdf /harman-data
+
+Step 6
+==================================
+cd into newvolume directory and check the disk space for confirming the volume mount.
+> cd /newvolume
+> df -h .
+
+Step 7
+==================================
+> umount /dev/xvdf

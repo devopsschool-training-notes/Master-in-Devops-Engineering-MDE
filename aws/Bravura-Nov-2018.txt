@@ -1,0 +1,548 @@
+DEVOPS 
+==================
+https://www.devopsschool.com/video/devops/DevOps-Essentials.html
+https://www.devopsschool.com/video/devops/Complete-CICD-Implementation-from-Scratch.html
+
+https://DevOpsSchool.com/notes/aws/2018
+
+How to access AWS?
+	Console - https://aws.amazon.com/
+	API - Commmd line....
+
+IAM - Idenity and Access Mgmt
+===================================
+Step 1 - Register your account on AWS. - MASTER ACCOUNT
+
+Step 2 - IAM
+	Create Permission==Polcies(s) -> Create Group(s) -> Create user(s)
+https://aws.amazon.com/
+
+Group name - bravura
+User - bravura / Bravura$123
+https://scmgalaxy.signin.aws.amazon.com/console
+		
+=====================================================
+EC2  ==== Virtual Machine
+============
+
+TYPES OF EC2 Instance
+	ON DEMAND ======== 
+	RESERVED 
+	DEDICATED	
+	SPOT
+
+Demo - 1
+Create a EC2 Instance - New Security Group - New Key
+Login using putty 
+$ sudo -s
+$ yum install httpd -y
+$ systemctl start httpd
+
+
+IP ADDRESS CONCEPT AWS
+=============================
+	PUBLIC IP ADDRESS
+	PRIVATE IP ADDRESS
+	ELASTIC IP ADDRESS ---> ATTACHED TO RUNNING EC2 Instance - FREE
+
+
+WINDOWS -->PUTTY --SSH--> LINUX
+	.pem (.ppk) using Puttygen
+
+ssh -i "bravura-raj.pem" ec2-user@ec2-13-232-243-50.ap-south-1.compute.amazonaws.com
+
+
+===============================================
+VERIFY
+================
+Limitations of Volumes you can attach to one instance?
+
+
+Volume
+===============
+EBS --GP SSD----
+https://www.devopsschool.com/notes/aws/notes/EBS-mount.txt
+
+===========================
+VPC
+=====================================================
+Step 1 - Create a VPC
+		CIDR RANGE - 192.168.0.0/16	
+	raj-vpc - vpc-027a811615309e6db
+
+	
+
+Step 2		
+	SUBNET 1	CICR RANGE - 192.168.1.0/24 - raj-sub-pub
+	SUBNET 2	CICR RANGE - 192.168.2.0/24 - raj-sub-pvt	
+
+Step 3 - Creating a internet gateway -- 100% Managed services-99.
+	raj-igw 
+	& 
+	Attached to VPC
+
+Step 4 - 	
+	Route Table - 1 - raj-rt-pub --> 
+					PUB SUBNET
+					IGW
+	Route Table - 2 - raj-rt-pvt
+				    --> PVT SUBNET
+
+=====================================
+NAT
+	NAT Instance
+	NAT Gateway
+	
+
+RDS
+======================================
+DB instance identifier - rajinstance 
+
+Master username - rajuname
+Master password - Raju$Name3
+Database name - rajwordpsss
+HOSTNAME - rajinstance.cik80c7hymay.ap-south-1.rds.amazonaws.com
+3306
+
+
+How to install WAMP / XAMPP / LAMP
+$ sudo -s
+> yum install wget -y
+> wget https://www.apachefriends.org/xampp-files/5.6.32/xampp-linux-x64-5.6.32-0-installer.run
+> chmod 755 xampp-linux-x64-5.6.32-0-installer.run
+> ./xampp-linux-x64-5.6.32-0-installer.run
+
+> sudo /opt/lampp/lampp start
+
+13.233.167.249
+
+$ cd /opt
+$ wget https://wordpress.org/latest.zip
+$ yum install unzip -y
+$ unzip latest.zip
+$ mv wordpress lampp/htdocs/
+$ chown -R daemon:daemon wordpress
+
+http://13.233.167.249/wordpress/
+
+======================================================
+AWS Infra - 
+Foundation Services- 	Practical + 	Theory
+COMPUTE
+--------------------------------------
+IAM
+   POLICY	        DONE
+   GROUP		DONE
+   USERS		DONE
+
+EC2
+   Instance		DONE
+   Security Groups	DONE
+   AMI			DONE
+   KEY			DONE
+
+STORAGE
+--------------------------------------
+
+BLOCK STORAGE
+   EBS
+      EMPERAL(Temporary) 
+      VOLUME
+OBJECT Storage
+   S3 
+
+NETWORKING
+--------------------------------------
+
+	VPC		DONE
+	SUBNET		DONE
+	IGW		DONE
+	RT		DONE		
+	NAT INSTANCE	DONE
+	NAT GATEWAY	DONE
+
+DATABSE
+--------------------------------------
+ RDS
+	mysql
+
+
+================================================================
+ARCHITECT 		DEVELOPMENT		ADMIN
+2			6			0
+			-------------------------------
+					
+EFS === NFS 
+using RHEL
+https://www.devopsschool.com/notes/aws/notes/EFS.txt
+
+
+sudo mount -t nfs -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2 mount-target-DNS:/   /efs
+sudo mount -t nfs -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2 fs-d5aa531d.efs.eu-west-1.amazonaws.com:/   /efs 
+	
+
+
+
+====================
+DAY 3
+
+
+EC2
+	User Data
+
+#!/usr/bin/bash
+sudo yum install httpd -y
+sudo systemctl start httpd
+
+
+<powershell>
+$file = $env:SystemRoot + "\Temp\" + (Get-Date).ToString("MM-dd-yy-hh-mm")
+New-Item $file -ItemType file
+</powershell>
+<persist>true</persist>
+
+User data log location - 
+/var/log/cloud-init-output.log
+ If your script did not accomplish the tasks you were expecting it to, or if you just want to verify that your script completed without errors, examine the cloud-init output log file at /var/log/cloud-init-output.log
+
+With EC2Launch, the log file is C:\ProgramData\Amazon\EC2-Windows\Launch\Log\UserdataExecution.log
+
+/var/log/messages
+
+------------------------------------------------------
+LOAD BALANCING  - CLASSIC LOAD BALANCERS
+
+yum install httpd -y
+sudo systemctl start httpd
+vi /var/www/html/index.html
+
+<html>
+<head>
+<title>
+Welcome to DevOpsSchool.com
+</title>
+</head>
+<body bgcolor=red>
+<h1> This is Server 1 </h1>
+</body>
+</html>
+
+
+<html>
+<head>
+<title>
+Welcome to DevOpsSchool.com
+</title>
+</head>
+<body bgcolor=blue>
+<h1> This is Server 2 </h1>
+</body>
+</html>
+
+raj-elb-706565112.ap-south-1.elb.amazonaws.com 
+
+
+
+
+Auto Scaling
+===========================================================
+Iam
+	AWS Roles
+---------------------------
+http://devopsschool.com/tutorial/aws/how-to-do/install-and-configure-aws-cli.html
+
+$ aws s3 mb s3://sdfskdfhksjdhfjhskfhksdhkfhkjs
+$ aws s3 ls
+
+
+$ aws configure
+AKIAJLGM6LV463BFTPTQ
+fChz2yzMH29tjHpDlSpp5nTVFJju84D/B7HVm01U
+
+==================================
+eks
+Eks$1287q873
+
+bravuraeksclustor
+
+https://DC6D3F8C9BFAB212927DC3D70898A87C.yl4.us-west-2.eks.amazonaws.com
+
+LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUN5RENDQWJDZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwcmRXSmwKY201bGRHVnpNQjRYRFRFNE1URXlOVEExTWpNd00xb1hEVEk0TVRFeU1qQTFNak13TTFvd0ZURVRNQkVHQTFVRQpBeE1LYTNWaVpYSnVaWFJsY3pDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBTkgvCm8wN3l0NkZqSlJ0QUFtbFNOSG9nR0pHdW0wZEhicjBpajhQc3dsUGZjQUIxRDRBYi9iTlFiZDZqMkV4bG1wb2sKREV3eFVTREs1TXMxeWdQY0QyTVVwRXVlMjZiNklJaW1maGhBdDgxdW1OTUlsSGs2TlBPZUFjanhoR0ljOGFoOAo5dWQyQ0hQRFVOQi9seHJFNE8vNXBBb0tvdzN0TWIyRzR3dUVERDEyNGFsNTJaTUQ3SUFqTUpZWmMwdVNkYnBhCm5qdDdEUFJmU0NjWkZZWmgvcWNpME93ekQ0c2RRNzNYYVM3NjZIajVNYWxQNENZT3VUa1Z5MkNWanhtdDVRZU0KNGJCZ044OTVtV0FFZHZvUllCRGFDYSs0MEwxVWVTNE1UdThKejlETFkxTHY4UENxMWtRbDhMWng3cUpjY2JBMQpmNjBlU25NYm82MWFDaDFITnVNQ0F3RUFBYU1qTUNFd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWRFd0VCCi93UUZNQU1CQWY4d0RRWUpLb1pJaHZjTkFRRUxCUUFEZ2dFQkFNNjdhNU1BU2JTTlpIVkRXTjRpK2E2T296NTUKdlc2SGljZnZ5UzJSY2dDQnZLZ3RkN1dnWHJORWhuUTA3OXJQTGRISVVKbkVNMXNUZ0dnMmtKbnZXd1dUaVBmdQpVbW9XYjY2UU50YnQ5SmRDaXQzV3pRaGUra2srU2o2RkhNZW9sSFdNc3p2eVl6VFpXUGdHU3o3d1VxTTNGMHlRCkV6MGJkVEJYdkZZMXRqMWRqNUwwcmFKN2Z1YjJqek1zaE1nMXROYXQ3ekNhclFydm5PRnkyNHJUVUo5MGE5aE0KcC84ZjYzWTBPWVpuRnIycW9WNVBJTHNZVlRMSDVwaldTZkpoSkxwSG9ybStuWjA3ejYvemtWTkR2UEszSXN6YgpoRjBuT2xVVnpmZFlOWFB4bHhpTENla1RNSzFlaWdPaEhvUy9zRFhyQ0ZxSENNODZ5SHJsQU9aUWFMVT0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=
+
+"LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUN5RENDQWJDZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwcmRXSmwKY201bGRHVnpNQjRYRFRFNE1URXlOVEExTWpNd00xb1hEVEk0TVRFeU1qQTFNak13TTFvd0ZURVRNQkVHQTFVRQpBeE1LYTNWaVpYSnVaWFJsY3pDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBTkgvCm8wN3l0NkZqSlJ0QUFtbFNOSG9nR0pHdW0wZEhicjBpajhQc3dsUGZjQUIxRDRBYi9iTlFiZDZqMkV4bG1wb2sKREV3eFVTREs1TXMxeWdQY0QyTVVwRXVlMjZiNklJaW1maGhBdDgxdW1OTUlsSGs2TlBPZUFjanhoR0ljOGFoOAo5dWQyQ0hQRFVOQi9seHJFNE8vNXBBb0tvdzN0TWIyRzR3dUVERDEyNGFsNTJaTUQ3SUFqTUpZWmMwdVNkYnBhCm5qdDdEUFJmU0NjWkZZWmgvcWNpME93ekQ0c2RRNzNYYVM3NjZIajVNYWxQNENZT3VUa1Z5MkNWanhtdDVRZU0KNGJCZ044OTVtV0FFZHZvUllCRGFDYSs0MEwxVWVTNE1UdThKejlETFkxTHY4UENxMWtRbDhMWng3cUpjY2JBMQpmNjBlU25NYm82MWFDaDFITnVNQ0F3RUFBYU1qTUNFd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWRFd0VCCi93UUZNQU1CQWY4d0RRWUpLb1pJaHZjTkFRRUxCUUFEZ2dFQkFNNjdhNU1BU2JTTlpIVkRXTjRpK2E2T296NTUKdlc2SGljZnZ5UzJSY2dDQnZLZ3RkN1dnWHJORWhuUTA3OXJQTGRISVVKbkVNMXNUZ0dnMmtKbnZXd1dUaVBmdQpVbW9XYjY2UU50YnQ5SmRDaXQzV3pRaGUra2srU2o2RkhNZW9sSFdNc3p2eVl6VFpXUGdHU3o3d1VxTTNGMHlRCkV6MGJkVEJYdkZZMXRqMWRqNUwwcmFKN2Z1YjJqek1zaE1nMXROYXQ3ekNhclFydm5PRnkyNHJUVUo5MGE5aE0KcC84ZjYzWTBPWVpuRnIycW9WNVBJTHNZVlRMSDVwaldTZkpoSkxwSG9ybStuWjA3ejYvemtWTkR2UEszSXN6YgpoRjBuT2xVVnpmZFlOWFB4bHhpTENla1RNSzFlaWdPaEhvUy9zRFhyQ0ZxSENNODZ5SHJsQU9aUWFMVT0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo="
+
+export KUBECONFIG=$KUBECONFIG:~/.kube/config
+echo 'export KUBECONFIG=$KUBECONFIG:~/.kube/config' >> ~/.bashrc
+
+aws eks describe-cluster --name bravuraeksclustor  --query cluster.endpoint
+aws eks describe-cluster --name bravuraeksclustor  --query cluster.certificateAuthority.data
+
+VPC
+	VPC PEERING
+vpc-044beb04a5e32fe12	raj1	192.168.1.0/24 --> VPC PEERING
+vpc-025b98556562c8f02	raj2	192.168.2.0/24	--> VPC PEERING
+
+
+export EKS_WORKER_ROLE=arn:aws:iam::625097054767:role/node-worker-NodeInstanceRole-1BP4WD1R7DBCJ
+export EKS_WORKER_ROLE=arn:aws:iam::625097054767:role/woker-NodeInstanceRole-KFVQZ0IDBOUP
+arn:aws:iam::625097054767:role/woker-NodeInstanceRole-KFVQZ0IDBOUP
+
+
+arn:aws:iam::625097054767:role/woker-NodeInstanceRole-KFVQZ0IDBOUP
+
+Containers world on AWS
+============================================
+Microservices --> Containers -->
+				 Docker Engine
+				 RKT
+
+Limitation of Docker?
+Docker Can not scale...
+Method 1 - Docker Engine
+		Go get a EC2 Instance
+		Install Docker
+		Use it.
+
+Method 2 - DEV - QA - Runing containers in multiple machine ----
+	Docker Machine
+		ECS
+WHhere can you store docker images?
+		Public Repo
+				https://hub.docker.com
+				https://store.docker.com/
+			
+		Private Repo
+				Nexus
+				Artifactory
+				ECR
+Method 3 - 
+NEXT PROBMELm
+	AUTO LINKING
+	SCALING
+	HEALH CHECK	
+		ACTION
+	-------------------------
+	KUBERNETES OR SWARM
+	
+	EKS  - 2 REGION
+
+Method 4 - AWS Fargate
+
+DEMO - EKS
+--------------------------
+
+httpd -->	change source ->dockerfile -> BUILD -> RUN -> CONT_ID --> DEL	
+bravura ->	change source ->dockerfile -> BUILD -> RUN -> CONT_ID-> DEL	
+jboss -->	change source ->dockerfil -> BUILD -> RUN -> CONT_ID-> DEL	
+mysql  ->	change source ->dockerfile -> BUILD -> RUN -> CONT_ID -> DEL	
+			===========================================================
+							12 COMMANDS
+						SHELL SCRIPT -NAME
+					1. ONE COMMAND  DOCKEr COMPOSE
+					1.
+
+-----------------------------
+
+EKS
+AKIAJKJ3NZPC2JYRZZ5A
+xXHMQF9qCCap2edLZ/c4MXZTPoTY+1RGMZ9iOQJQ
+
+
+
+
+
+
+
+ECS-EKS
+ECR
+Cloud Watch
+CloudFormation
+
+Terraform
+
+
+Developer Tools
+	CodeCommit
+	CodeBuild
+	CodeDeploy
+
+
+
+
+Customer Engagement
+		SES
+	
+https://www.devopsschool.com/blog/understand-docker-volume-from-beginner-to-deep-dive-level/
+
+
+
+POD - NGINX
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hello-pod
+spec:
+  containers:
+  - name: hello-ctr
+    image: nginx
+    ports:
+    - containerPort: 80
+
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: hello-deploy
+spec:
+  replicas: 30
+  minReadySeconds: 10
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  template:
+    metadata:
+      labels:
+        app: hello-world
+    spec:
+      containers:
+      - name: hello-pod
+        image: nginx
+        ports:
+        - containerPort: 80
+
+
+kubectl expose deployment hello-deploy --type=Loadbalancer
+
+a40db7c76f07911e88456065870f0599-2123367767.us-west-2.elb.amazonaws.com
+==========================================================================
+
+
+TERRAFORM
+=================================================
+What is Terraform?
+How it workS?
+Why it came?
+
+
+How to install Terraform?
+=====================================
+13.233.16.45
+
+  5  yum install wget -y
+    6  wget https://releases.hashicorp.com/terraform/0.11.10/terraform_0.11.10_linux_amd64.zip
+    7  clear
+    8  ls
+    9  clear
+   10  ls
+   11  unzip terraform_0.11.10_linux_amd64.zip
+   12  yum install unzip -y
+   13  clear
+   14  ls
+   15  unzip terraform_0.11.10_linux_amd64.zip
+   16  clear
+   17  ls
+   18  terraform
+   19  ./terraform
+   20  clear
+   21  ls
+   22  chmod 755 terraform
+   23  echo $PATH
+   24  mv terraform /usr/bin
+   25  terraform
+   26  history
+
+
+==================================
+.tf
+
+-----What resources you want to create 
+
+PROVIDER	RESOURCES	ATTRIBUTES	PROPERTY	ACTION(Provisionor)
+AWS		ec2
+				ami		
+		aws_instance	instance_type
+							      Connect->DO SOMTING --
+		
+
+	GIT
+AKIAJ23UGKYY6GBNASYQ
+jYndP0ckad1OcvpsZ6apEh9ZAx8Od6odB6eveKbB
+
+
+
+provider "aws" {
+  access_key = "AKIAJ23UGKYY6GBNASYQ"
+  secret_key = "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"
+  region     = "ap-south-1"
+}
+
+
+provider "aws" {
+  access_key = "AKIAJ23UGKYY6GBNASYQ"
+  secret_key = "jYndP0ckad1OcvpsZ6apEh9ZAx8Od6odB6eveKbB"
+  region     = "ap-south-1"
+}
+
+resource "aws_instance" "example" {
+  ami           = "ami-5b673c34"
+  instance_type = "t2.micro"
+}
+
+
+
+https://www.devopsschool.com/tutorial/terraform/lab/example-program1.html
+https://www.devopsschool.com/tutorial/terraform/lab/example-program2.html
+
+Variables
+============================
+	String
+	list
+	map
+
+terraform init
+terraform plan
+terraform apply
+terraform destroy
+
+
+
+=====================================================================
+Wrapping up process?
+
+Where can you find a Dump...
+https://www.devopsschool.com/lms/
+
+How to get certificates?
+http://www.devopscertification.co/
+
+
+Subject - BRAVUA - Aws Certified Administrator
+
+Full Name 
+Personal Email - 
+Official Email - 
+Mobile 
+Role - 
+
+
+TO - Mantosh@DevOpsSchool.com
+CC - vikas@DevOpsSchool.com
+=====================================
+DEVOPS SCHOOL
+
+About me?
+http://rajeshkumar.xyz/
+
+=================================
+FEEDBACK
+
+
+
+
+
+
+
+

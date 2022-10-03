@@ -1,0 +1,2 @@
+aws s3 cp hackerrank.tar s3://hacker-rank-devops-dev/
+aws s3 cp s3://hacker-rank-devops-dev/hackerrank.tar .

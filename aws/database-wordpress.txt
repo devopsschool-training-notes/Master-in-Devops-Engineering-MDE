@@ -1,0 +1,34 @@
+Create a mysql free tier database
+Create a ec2 instance
+
+> cd /opt/
+> mkdir software
+> cd software/
+> yum install wget -y
+> wget https://www.apachefriends.org/xampp-files/5.6.30/xampp-linux-x64-5.6.30-1-installer.run
+> chmod 755 xampp-linux-x64-5.6.30-1-installer.run
+> ./xampp-linux-x64-5.6.30-1-installer.run
+> /opt/lampp/lampp stop
+> /opt/lampp/lampp restart
+
+> wget https://wordpress.org/latest.zip
+> cp latest.zip /opt/lampp/htdocs
+> yum install unzip -y
+> cd /opt/lampp/htdocs
+> unzip latest.zip
+> chmod 777 wordpress
+
+BROWSERS = http://X.X.X.X/wordpress/
+
+
+HOW TO TEST DATASE?
+cd /opt/lampp/bin
+> mysql -u haradmin -h harman-dbi-id.cik80c7hymay.ap-south-1.rds.amazonaws.com harmanwordpress -p
+
+> show databases;
+
+> show tables;
+
+> describe <<tablename>>;
+
+> select * from <<tablename>>;

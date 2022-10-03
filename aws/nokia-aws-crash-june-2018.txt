@@ -1,0 +1,21 @@
+1. IAM  - DEMO
+https://aws.amazon.com/?nc2=h_lg
+
+https://scmgalaxy.signin.aws.amazon.com/console
+- group
+- user - nokia-training / No-training%123
+
+
+2. EC2 == Server
+
+LINUX 	
+WINDOWS
+
+
+3. EBS
+http://www.devopsschool.com/notes/aws/notes/EBS-mount.txt
+
+4. S3
+
+5. VPC
+http://www.devopsschool.com/notes/aws/notes/VPC-Setup-Manually.txt

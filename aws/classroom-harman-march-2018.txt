@@ -1,0 +1,139 @@
+1. Get a Linux RHEL 7 VM with X CPU X RAM X STORE
+1. Get a Windows VM with X CPU X RAM X STORE
+
+
+DNS - ec2-13-126-238-246.ap-south-1.compute.amazonaws.com
+PUB IP - 13.126.238.246
+
+INT IP - 172.31.26.0
+
+ssh -i "harman-key1.pem" ec2-user@ec2-13-127-197-143.ap-south-1.compute.amazonaws.com
+
+yum install httpd
+systemctl start httpd
+
+Public DNS	ec2-13-126-93-140.ap-south-1.compute.amazonaws.com
+User name	Administrator
+Password	
+x$l3M3re94g.-Vxj$2ehB&yE3ybtetA$
+====================================
+
+SERVER1 - 13.126.238.246	13.126.238.39		STP
+SERVER2 - 13.127.197.143	13.127.197.143		REBOOT
+
+i-07af75a3ab287dc2c
+13.127.238.211
+
+SER1-172.31.26.0
+SER2- 172.31.26.79
+
+Lab 1
+==================================
+1. Assign Elastic IP address
+2. Create a Volume and follow
+http://www.devopsschool.com/notes/aws/EBS-mount.txt
+
+=======================SETTING UP A AWS NETWORKING====================
+=======================================================================
+
+1. Setup a VPC with 192.168.0.0/16
+
+name=harman-vpc
+ID - vpc-20078e46
+
+2. Create a 2 Subnet
+	1. Public - harman-sub-pub	- 192.168.1.0/24
+	2. Private - harman-sub-pvt - 192.168.2.0/24
+
+3. Create a Gateway
+name - harman-gw
+
+4. Attached a gateway using UI
+
+5. Create a 2 route....
+	1. harman-rt-pub
+	2. harman-rt-pvt
+
+6. Writting a Route Tables Rules
+	harman-rt-pub Should recieve the internet from anywhere to gateways
+							0.0.0.0/0
+	gateways should to pub subnet
+
+
+
+
+
+WITH INTERNET - 34.242.2.23
+Public IP	34.242.2.23
+User name	Administrator
+Password	
+NcCyOh2TEq!5qbt3*3gNOZ?r?Vw)CCbH
+
+
+WITHOUT INTERNET - 34.252.18.173
+
+===============================================
+Setting up a NAT
+
+1. Setup a VPC with public and Private subnets
+2. Create a Security group called "NAT-SG" and allowed ssh,http and https access
+
+3. Create a Instance using "amzn-ami-vpc-nat" AMI and Name with "NAT-INS"
+		- Instance must have PUBLIC IP Address
+		- Instance must be to Public Subnet
+		- Instance must be assigned to security group "NAT-SG"
+4. Select the NAT instance and 	Disable Source/Destination Check [ Which will make instance eligible for NAT"
+
+5. Create a Route Table "NAT-RT" and add route to
+0.0.0.0/0 - NAT-INS
+&
+Assign a subnet to Private subnets
+
+NOTE - Make sure that there should not be duplicate route table to over rides the access of private subnets
+
+
+=======================================AWS CLI=============================================
+sudo apt-get install awscli
+OR
+sudo apt-get install python-pip
+sudo pip install awscli
+OR
+sudo yum -y update
+sudo yum install wget -y
+wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+yum install epel-release-latest-7.noarch.rpm
+sudo yum -y install python-pip
+sudo pip install awscli
+OR
+curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
+python get-pip.py
+sudo pip install awscli
+
+> aws
+> aws help
+> aws ec2 help 	
+
+Questions?
+From Where aws read your authentication?
+	CURR/.aws/
+	USER_HOME/.aws/
+aws configure
+
+AWS Access Key ID
+AWS Secret Access Key
+Default region name
+
+aws ec2 describe-regions
+aws ec2 describe-availability-zones --region ap-south-1
+
+aws s3 sync b1 s3://cluster-1.raj.rajeshkumar.xyz/
+aws s3 sync . s3://cluster-1.raj.rajeshkumar.xyz/
+aws s3 ls --recursive s3://cluster-1.raj.rajeshkumar.xyz/
+aws s3 sync . s3://cluster-1.raj.rajeshkumar.xyz/ --delete
+
+
+
+
+
+
+

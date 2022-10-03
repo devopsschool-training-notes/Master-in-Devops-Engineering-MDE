@@ -1,0 +1,18 @@
+1. get a Twitter account and API  keyy
+	consumer key
+	Consumer Secret ket
+	Acccess token
+	Access token secret
+
+	create a IAM user and programm access
+	-AdministratorAccess policy
+	- Download CSV
+2. Setup  Twython and Sparrow
+
+2. Write our function
+- Modify the sparrow skeleton
+- Test locally
+
+Deplying Our Bot
+- Creating a function Package
+- Triggers and  Configuration

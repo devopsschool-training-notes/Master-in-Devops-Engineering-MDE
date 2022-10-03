@@ -1,0 +1,43 @@
+1. Create a EC2 Instance with RHEL 7.2. 
+2. Create a AWS Database instance with mysql and capture the following
+		End Points
+		Database Name
+		User Name
+		Password
+		Port
+3. Login to EC2 insance and Sudo to root
+4. Understand and Running Following Commands.
+> cd /opt/
+> mkdir software
+> cd software/
+> yum install wget
+> wget https://www.apachefriends.org/xampp-files/5.6.30/xampp-linux-x64-5.6.30-1-installer.run
+> chmod 755 xampp-linux-x64-5.6.30-1-installer.run
+> ./xampp-linux-x64-5.6.30-1-installer.run
+> /opt/lampp/lampp stop
+> /opt/lampp/lampp restart
+
+Verify  Xmapp serices are running or not?
+http://ec2-ip-address/
+
+Notes: 
+Xampp will be installed in /opt/lampp/
+Download location of Xampp https://www.apachefriends.org/index.html
+
+Now follow following steps..
+> cd /opt/lampp/htdocs
+> mkdir harman
+> chmod 777 harman
+> cd harman
+
+Download the Latest Joomla package from https://downloads.joomla.org/
+> wget https://downloads.joomla.org/cms/joomla3/3-7-5/Joomla_3-7.5-Stable-Full_Package.zip
+> yum install unzip
+> unzip Joomla_3-7.5-Stable-Full_Package.zip
+
+
+Start Joomla Installation with http://ec2-ip-address/harman &
+Follow the instructions.
+
+
+At last, delete the "installer" directory.

@@ -1,0 +1,31 @@
+Step 1 - Setup a vpc
+CIDR - 192.168.0.0/16
+
+Subnet
+PUB - AZ-a | WEB | 192.168.1.0/24
+pvt - AZ-b | DB | 192.168.2.0/24
+
+IGW
+Create and Attached First
+
+Route Tables
+Routes-
+0.0.0.0/0 - to gateways
+Subnets
+select what the name of WEB subnetsa
+
+
+Setting up the VPC
+
+1. Create a VPC with CIDR range 192.168.0.0/16
+2. Create a 2 Subnets 
+	DB - PRIVATE	CIDR - 192.168.2.0/24
+	WEB - PUBLIC	CIDR - 192.168.1.0/24
+3. Create a Internet Gateway and assign to VPC
+4. Create a Route table assign 0.0.0.0/0 to internet gatway under "Routes" tab
+5. Edit a router table and asign Public subnet to Route
+
+# Notes - Make sure the pvt subnet should not assign with Internet gateway as part of Route
+
+
+

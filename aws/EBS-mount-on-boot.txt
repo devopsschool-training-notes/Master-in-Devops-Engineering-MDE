@@ -1,0 +1,45 @@
+EBS Automount On Reboot
+
+By default on every reboot the  EBS volumes other than root volume will get unmounted. To enable automount, you need to make an entry in the /etc/fstab file.
+
+Step 1
+===================================
+Back up the /etc/fstab file.
+
+> sudo cp /etc/fstab /etc/fstab.bak
+
+Step 2
+===================================
+Open /etc/fstab file and make an entry in the following format.
+
+Step 3
+===================================
+
+EFS
+=============
+mount-target-DNS:/ efs-mount-point nfs4 nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,_netdev 0 0
+
+
+EBS
+=============
+To mount this EBS volume on every system reboot, add an entry for the device to the /etc/fstab file.
+
+Step 1 - IMPRTANT - BACKUP - 
+> sudo cp /etc/fstab /etc/fstab.orig
+
+Step 2 - Add a new line to the end of the file(/etc/fstab) for your volume using the following format:
+FORMAT- device_name  mount_point  file_system_type  fs_mntops  fs_freq  fs_passno  
+
+Step 2 - To find the UUID of a device, first display the available devices:
+> df
+> sudo file -s /dev/xvda
+> ls -al /dev/disk/by-uuid/
+
+EXAMPLE
+UUID=de9a1ccd-a2dd-44f1-8be8-0123456abcdef       /data   ext4    defaults,nofail        0       2
+
+Step 3 -  After you've added the new entry to /etc/fstab, you need to check that your entry works. Run the sudo mount -a command to mount all file systems in /etc/fstab.
+
+> sudo mount -a
+
+Now, on every reboot the extra EBS volumes will get mounted automatically.

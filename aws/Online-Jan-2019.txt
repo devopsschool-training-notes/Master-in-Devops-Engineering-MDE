@@ -1,0 +1,38 @@
+Demo
+	Region
+	AZ
+
+IAAS
+	IAM
+		USERS
+		GROUP
+	COMPUTE
+		EC2 = VMs
+			On Demand
+				LINUX
+				WINDOWS
+			Reserverd
+			Dedicated
+			SPOT
+	STORAGE
+		EBS == BLOCK STORAGE
+			TEMP -
+			PERSISTANCE
+			https://www.devopsschool.com/notes/aws/notes/EBS-mount.txt
+		S3 = OBJECT STORAGE	
+		EFS = NFS
+		https://www.devopsschool.com/notes/aws/notes/EFS.txt
+	NETWORKING
+		IP 
+			PUBLIC IP
+			PVT
+		VPC
+
+
+
+
+
+
+
+tuesday
+Ufuw&SFR5nP2

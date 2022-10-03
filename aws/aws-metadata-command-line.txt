@@ -1,0 +1,12 @@
+Instance metadata is data about your instance that you can use to configure or manage the running instance. Instance metadata is divided into categories. 
+
+To view all categories of instance metadata from within a running instance, use the following URI:
+http://169.254.169.254/latest/meta-data/
+> curl http://169.254.169.254/latest/meta-data/
+> curl http://169.254.169.254/latest/meta-data/    
+> curl http://169.254.169.254/latest/meta-data/ami-id
+> curl http://169.254.169.254/latest/meta-data/public-keys/0/openssh-key
+> curl http://169.254.169.254/latest/user-data
+> curl http://169.254.169.254/latest/meta-data/placement/availability-zone
+
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html

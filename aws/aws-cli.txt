@@ -1,0 +1,38 @@
+#Install in Windows using mSI
+ps>aws
+ps>
+
+#Install in Linux ubuntu
+> sudo apt-get install python-pip
+> sudo pip install awscli
+> aws
+> aws configure
+> aws ec2 describe-instances
+
+> complete -C '/usr/local/bin/aws_completer' aws
+> aws ec2 describe-
+> aws ec2 describe-in
+
+> sudo pip install aws-shell
+> aws-shell 
+aws> 
+
+> aws s3 sync . s3://.....
+> aws s3 sync . s3 ://.....
+> aws s3 ls --recursie s3://.....
+> aws s3 sync . s3 ://..... --delete
+> aws s3 sync . s3 ://..... --delete --acl public-read
+> 
+
+#copy my-file.txt to the to the "data" directory located in my-s3-bucket 
+aws s3 cp my-file.txt s3://my-s3-bucket/data/
+aws s3 cp boot.sh s3://hacker-rank-devops-dev
+
+#copy all files in my-data-dir into the "data" directory located in my-s3-bucket 
+aws s3 cp my-data-dir/ s3://my-s3-bucket/data/ --recursive
+
+# Sync s3 bucket to "hacker-rank-devops-dev" directory
+aws s3 sync s3://hacker-rank-devops-dev hacker-rank-devops-dev
+
+# Sync "hacker-rank-devops-dev" directory to s3 bucket
+aws s3 sync hacker-rank-devops-dev s3://hacker-rank-devops-dev

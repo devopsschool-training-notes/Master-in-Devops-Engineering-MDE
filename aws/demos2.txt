@@ -1,0 +1,14 @@
+aws s3 sync <local directory> s3://<bucket name>/
+aws s3 ls --recursive s3://<bucket name>/
+
+aws s3 sync . s3://<bucket name>/
+aws s3 sync . s3://<bucket name>/ --delete
+aws s3 sync . s3://<bucket name>/ --delete --acl public-read
+
+aws s3api get-object-acl --bucket <bucket name> --key <object keyname>
+
+aws s3 sync s3://<bucket 1>/ s3://<bucket 2>/ --delete
+aws s3 sync s3://<bucket 1>/ s3://<bucket 2>/ --delete --region <bucket 2 region>
+
+aws s3 sync s3://<local acct bucket>/ s3://<remote account bucket>/ --delete --acl bucket-owner-full-control
+

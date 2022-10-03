@@ -1,0 +1,41 @@
+How to mount EFS to EC2 Instance?
+=================================
+PRE
+Public DNS name of the Amazon EC2 instance
+The File system ID value for the mount target for your Amazon EFS file system
+
+Step 1
+==================================
+Connect to your Amazon EC2 instance
+
+Step 2
+==================================
+After you've connected, install the NFS client.
+> sudo yum -y install nfs-utils
+> sudo apt-get -y install nfs-common
+
+Step 3
+===================================
+Make a directory for the mount point with the following command
+> sudo mkdir efs
+
+Step 4
+===================================
+Mount the Amazon EFS file system to the directory that you created. Use the following command and replace the file-system-id and aws-region placeholders with your File System ID value and AWS Region, respectively.
+
+> sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2 file-system-id.efs.aws-region.amazonaws.com:/ efs
+
+> sudo mount -t nfs -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2 fs-045ceecd.efs.eu-west-1.amazonaws.com:/   /efs 
+
+EXAMPLE
+sudo mount -t nfs -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2 mount-target-DNS:/   /efs
+
+REPLACE  - "mount-target-DNS" with EFS DNS
+
+WHERE "/efs " should be with real locaation of ec2
+
+Step 5
+=================================
+Change directories to the new directory that you created with the following command.
+>  cd efs
+
