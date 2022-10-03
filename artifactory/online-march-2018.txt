@@ -1,0 +1,120 @@
+What is Artifactory?
+	Repository mgmt for Artifacts | Packages
+	Written in Java
+	From Jfrog
+	Support Maven, Ruby, python, Docker etc
+	Docker
+	NPM
+	RPM
+	Debian
+	Helm
+	PHP
+	Conan
+	GitLFS
+	PyPi
+	Chef
+	Puppet
+	Cocoapods
+	Gems
+	NuGet
+	Vagrant
+	Opkg
+	P2
+	Bower
+
+	Maven
+	Gradle
+	Ant+Ivy
+	SBT
+	MS Build
+
+VERSION
+	Community - FREE
+	PRO - PAID
+
+Why We need it?
+	Vs FTP + Share Drives
+	
+	Security of packages
+	Integrity of Packages(md5, sha1)
+	Easy Admin activity
+		Backup
+		Usr mgmt
+		Restre
+		Cleanup
+	Process Driven
+	Integration with wide tools
+	https://www.sonatype.com/nexus-repository-oss-vs.-pro-features
+	Availability
+
+Other Tools
+Nexus, Nuget, Choclate
+
+How to Install it?
+JRE OR JDK
+JRE - Java Run Time 
+JDK - Dev Kit + Jre
+wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+
+Download n Install Articatory
+
+wget https://bintray.com/jfrog/artifactory-pro/download_file?file_path=org%2Fartifactory%2Fpro%2Fjfrog-artifactory-pro%2F5.9.1%2Fjfrog-artifactory-pro-5.9.1.zip
+
+unzip
+
+cd /opt/artifactor/bin
+
+http://13.127.143.65:8081
+
+admin/password
+
+How to change port -
+Although we highly discourage it, it is possible to change the listening port of Artifactory to listen on port 80 by making sure that the user that runs Artifactory has “admin” permissions and modifying the 'server.xml' file that is situated at: '$ARTIFACTORY_HOME/tomcat/conf/server.xml'.
+
+
+APPLY THE TRIAL LICENSE
+https://jfrog.com/artifactory/free-trial/
+
+
+Repo TYpe
+--------------------
+Local  	== HOSTED
+Remote  == PROXY
+Virtual 
+
+Security
+=======================
+Permission - All the permission 
+
+
+group - List of Permission
+
+Create a user and Assign to Group
+
+<distributionManagement>
+    <repository>
+        <id>central</id>
+        <name>ip-172-31-12-28.ap-south-1.compute.internal-releases</name>
+        <url>http://13.127.143.65:8081/artifactory/release-maven</url>
+    </repository>
+    <snapshotRepository>
+        <id>snapshots</id>
+        <name>ip-172-31-12-28.ap-south-1.compute.internal-snapshots</name>
+        <url>http://13.127.143.65:8081/artifactory/snapshot-maven</url>
+    </snapshotRepository>
+</distributionManagement>
+
+
+dep
+dep123456
+
+JArtifactory command line
+https://www.jfrog.com/confluence/display/CLI/CLI+for+JFrog+Artifactory
+
+Artifactory Plugins
+Artifactory Command Lines
+Artifactory tasks
+Artifactory
+Build+Integration
+
+

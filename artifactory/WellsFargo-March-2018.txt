@@ -1,0 +1,324 @@
+LAB DEMO REPO
+=============================
+https://github.com/scmgalaxy/helloworld-java-maven
+https://github.com/scmgalaxy/artifactory
+https://github.com/scmgalaxy/artifactory-maven-example
+https://github.com/scmgalaxy/artifactory-bash-example
+https://github.com/scmgalaxy/artifactory-msbuild-example
+https://github.com/scmgalaxy/artifactory-gradle-example
+
+Product name - WFX
+Mgr - Mgrx
+====================
+GOAL - 
+	CI = CD (DevOps)
+----------------------------------
+Hiring
+	
+Architect 	- 2		--->
+Dev		- 20		20 Module
+QA		- 10
+IT		- 2
+DB		- 1
+BR		- 2
+OPS		- 2
+NETWORK		- 1
+LEADS		- 3
+=================================
+
+Architect -> JIRA - TRELL -
+Dev -->
+	Code Collab ------ Git, SVN
+
+Build - WIND | L
+	C++ JAVA
+	Downloaded SRC
+	Download 3rd Dep
+	Set Compilers + Setting
+	Creating Dir
+	+
+	+
+	+
+	+
+=========================
+	20 TIMES IN DAY
+
+	Solution - Ant, Maven, Makefile, Gradle, MSBUILD
+
+UT -----> JUNIT, NUNIT
+
+
+Packaging 
+	SYSTEM - 
+	APP -
+
+Repostory mgmt system for Packages- Artifactory | NEXUS | NUGET | CHOC
+
+Deployment
+		FEEDBACK TIME - 20 mins
+		TESTING - 18
+		DEPLOY - 2 mins
+		=============================
+		200 SERVERS
+		100 LINUX
+		50 W
+		50 W
+
+		50 MY
+		50 MS
+		50 POST
+		50 ORA
+
+		50 TOM
+		50 JBOSS
+		50 WL
+		50 IIS
+
+		100 CONFIG
+==================================
+		PUPPET, CHEF, ANSIBLE  - 2 MINS
+		DOCKER 			- 2 sec
+
+==============AT
+		
+
+Code Coverage ---- JACOCO NCOVER COBUR
+=============================================
+	CI
+	CD
+======================================================================
+
+GIT Vs ARTIFACTORY
+
+===============================
+GIT - Stogring the Source Code
+
+
+===========================================================================
+What is Artifactory?
+	repository mgmt for your packages?
+	Use for
+		storing/managing the packages, artifactacts
+	from Jfrog
+	Default database Derby
+	
+
+Why Artifactory?
+	Security 
+	Integrity of the packages
+	Integrations
+	Process & Layouts
+	Cleanup
+	Backup
+	MIRRORING
+
+What are the other tools we have?
+	Nexus, Artifactory, Nuget, Choc, Archiva
+
+Release 
+	OSS - PRO - SAAS - ENTRERPRISE
+http://www.devopsschool.com/compare/tools/artifactory.html UPDATES
+
+How to Install Artifactory?
+	JDK OR JRE
+	Download the Artifactory OSS
+
+> wget https://api.bintray.com/content/jfrog/artifactory/jfrog-artifactory-oss-$latest.zip;bt_package=jfrog-artifactory-oss-zip
+
+cd /opt
+unzip jfrog-artifactory-oss-5.9.1.zip
+cd artifactory-related-dir
+cd bin
+./artifactory.sh
+
+LINUX
+http://13.127.94.210:8081
+admin/password
+
+========================================================
+pom.xml
+setting.xml	Is the config file of MAVEN
+		MAVEN_HOME/conf
+
+What is the goal name?
+
+Add a Repository name in the pom.xml	DONE
+Add a user/password - setting.xml	
+> mvn deploy
+
+
+How to create a repo inn art?
+	LOCAL
+	REMOTE
+	VIRTUAL
+	
+How to create local repo
+	wellsfargo - SNAPSHOT - http://13.127.94.210:8081/artifactory/list/wellsfargo/
+	wellsfargo-release - RELESE - http://13.127.94.210:8081/artifactory/list/wellsfargo-release/
+
+How to create user?	deploy/deploy123
+
+How to set the permission?
+
+SAMPLE URL - https://github.com/scmgalaxy/helloworld-java-maven
+
+<distributionManagement>
+    <repository>
+        <id>4df46e30af4e</id>
+        <name>4df46e30af4e-releases</name>
+        <url>http://13.126.215.67:8090/artifactory/ext-release-local</url>
+    </repository>
+</distributionManagement>
+
+=============================================
+SNAPSHOT && RELEASE
+http://13.127.94.210:8081
+admin/password
+
+RELEAE - rajesh-release
+SNAP  - rajesh-snapshot
+
+USER - rajesh-user
+G - rajesh-group
+P - rajesh-p
+
+
+<distributionManagement>
+	<repository>
+		<id>tata</id>
+		<name>Internal Releases</name>
+		<url>http://13.127.94.210:8081/artifactory/list/rajesh-release/</url>
+	</repository>
+ 
+	<snapshotRepository>
+		<id>tata</id>
+		<name>Internal Releases</name>
+		<url>http://13.127.94.210:8081/artifactory/list/rajesh-snapshot/</url>
+	</snapshotRepository>
+</distributionManagement>
+
+
+EXAMPLE - https://github.com/scmgalaxy/helloworld-java-maven
+=====================================================================
+Next Topics
+==================================================
+
+How to Consume the Lib using Maven??
+============================================
+Create a another projects in maven and build it with another version?
+Make a dep of another projects in old projects
+Create one remote repo?
+Create one virtual repo?
+modify setting.xml with mirrors
+do 
+mvn deploy
+
+Gradle Crash Course
+Gradle Setup
+Gradle sample Projets Running
+Jenkins Installations
+
+
+Remote Repo -http://repo.maven.apache.org/maven2/
+
+======================================
+DAY3
+==============================================
+Artifactory Pro
+yum install wget -y
+yum install unzip -y 
+wget https://bintray.com/jfrog/artifactory-pro/download_file?file_path=org%2Fartifactory%2Fpro%2Fjfrog-artifactory-pro%2F5.9.1%2Fjfrog-artifactory-pro-5.9.1.zip
+
+wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+
+How to start pro?
+./artifactory.sh start
+
+How to start pro with service?
+./installService.sh
+
+systemctl status artifactory.service
+systemctl stop artifactory.service
+systemctl start artifactory.service
+
+http://13.127.229.164:8081
+admin
+password
+
+
+
+Uploading using gradle
+Uploading using msbuild
+Uploading using Nuget
+ploading using Bash
+Uplaoding using API/commands
+Artifactory Integrations with jenkins
+
+Overview of Artifactory?
+Admin actvitity
+	
+========================================
+
+rajesh1 using maven
+rajesh2 using maven
+
+rajesh1 is dependent on rajesh2
+
+1. Create a virtual repo using snapshot/release/remote
+2. update a setting.xml with mirror
+3. update a <<<rajesh1>>> pom.xml and create dependency of <<rajesh2>>
+4. Clear your .m2/repository
+4. mvn deploy
+
+Reference - https://github.com/scmgalaxy/helloworld-java-maven
+
+
+===========FIX FOR WINDOWS=================
+<properties>
+  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+</properties>
+
+
+=================================
+How to setup Artifactory Command Line?
+
+1. Download the exe from https://jfrog.com/getcli/
+2. C:\Tools\jfrog --> PATH
+
+url 
+admin
+password
+
+C:\Users\Rajesh>jfrog rt config
+Artifactory server ID [Default-Server]: test2
+Artifactory URL: http://13.127.229.164:8081/artifactory
+API key (leave empty for basic authentication):
+User: admin
+Password: [Info] Encrypting password...
+
+
+> jfrog rt upload
+
+
+
+msbuild /t:build
+/p:ArtifactoryPublish=true
+
+msbuild default.msbuild /t:build
+msbuild default.msbuild /t:UploadArtifacts
+
+
+jfrog rt upload --flat=false "HelloCS.exe" jenkins/ --user and --password
+
+jfrog rt u froggy.tgz my-local-repo
+
+jfrog rt u HelloCS.exe jenkins/com/ --url=http://13.127.229.164:8081/artifactory --user=admin --password=password	
+
+
+
+
+
+
+
+ 
+	

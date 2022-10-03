@@ -1,0 +1,334 @@
+Where Artifactory Stands in SDLC?
+==========================================
+Prod - HCLX
+Mgr - Mgrx
+
+-------------------
+	DEVOPS
+		Quality should be high
+		Reduce Cost
+		Imm Release
+==========================
+https://www.devopsschool.com/path/
+Hiring a team
+Architect - 1 -2	= JIRA, Trello, VSTS, Confluence
+Dev - 10  - 10 FE
+	Code Integ --- Git / Gerrit
+	Code Analysis --
+		Peer COde Review - Gerrit
+		Static Code Review - SonarQube
+	Build mgmt	
+		Maven, Ant, MSbuild
+	UT 
+		Junit, NUNIT
+	Packaging - 
+		System - exe, rpm, dmg
+		App - zip, jar, war, tar, dll
+	Artifact mgmt 
+		Artifactory, Nexus 
+	Deployment to Dev | Stag | Pre Prod
+		Ansible, Puppet, Chef, 		
+		Octpus Deploy, UDeploy
+	AT 
+
+	Code Coverage -
+
+	IF EVERYTHING PASSED - RELEASE
+	IF FAILED - REPEAT 
+	========================================================
+				JENKINS
+
+
+What is Artifactry?
+	Artifact mgmt tool
+		using repository
+	Develped in Java
+	From JFROG
+	Release
+		Communnity - FREE
+		OSS - - FREE BUT SOME LIMI
+		Pro -- PAID BUT14 Days Trials
+	Version
+		6.X
+
+Why SCM tools are not good for Binary?
+	- DONE
+Why Artifactory?
+	To Store and version of a Package aka Artifact
+	To Secure a package.
+	Availabililty
+	Easier Admin Activity.
+	Enterprise Friendly feature
+		USERS
+		Groips
+		Permission
+	Integrity mgmt of the package
+	Durability of the package
+	Integ with Build tools
+			Maven
+			gradle
+			msbuild
+			Docker
+			yum
+			
+	Integ with CI tools
+			jenkins
+			teamcity
+	
+Other tools - Nexus, Nuget, Archiva, Choclate
+
+Artifactory Comparison Matrix
+https://www.jfrog.com/confluence/display/RTF/Artifactory+Comparison+Matrix
+
+
+How to install JDK?
+    5  yum install wget -y
+    6  wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+    7  rpm -ivh jdk-8u131-linux-x64.rpm
+    8  history
+
+
+How to install Artifactory?
+ - Downlad	to /opt/
+ - extract	to /opt/
+ - start
+	cd /opt/artifactory/bin
+	./artifactory.sh start
+
+	http://35.200.218.40:8081/
+	admin
+	password | admin123
+
+==============================================
+Jar- War === MAVEN
+Docker Images
+APK - 
+lfs - 
+py - 
+helm 
+==============================
+Maven has how many life cycle?
+What is The diff between PHASE and GOAL?
+What is the diff betwene install and deploy
+
+
+How to build docker images?
+======================================
+What is Maven?
+	Build tool
+	Free
+	OPen Source
+	MAde from Java
+	For JAVA
+
+How to install maven?
+	JDK
+	JAVA_HOME
+	download maven to c:/tool/maven
+	SET c:/tool/maven/bin to PATH
+
+How to verify maven?
+	mvn
+=============================================
+Maven - Everything is AUTOMATED..
+	JUST NEED TO UNDERSTAND
+		HOW MAVEN WORKS!
+
+Maven has 3 lifecycle.
+https://maven.apache.org/ref/3.5.0/maven-core/lifecycles.html
+
+Software -
+DEFAULT
+PHASE		GOAL	
+----------------------
+compile		compile		
+test		test
+package		package
+verify		verify
+install		install
+deploy		deploy
+
+CLEAN
+============================
+clean		clean
+
+
+mvn archetype:generate
+-DgroupId=com.companyname.software
+-DartifactId=financialService
+-DarchetypeArtifactId=maven-archetype-quickstart
+-DinteractiveMode=false
+
+
+mvn archetype:generate -DgroupId=com.companyname.software -DartifactId=financialService -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+=============================================
+Artifactory - Maven Repo ---
+		TYPE OF REPO - 3
+		- Local - Close to Dev - RW - Uplad/Download
+		- Remote  - Proxy of Remote Repo - RO - Download
+		- Virutal
+				Local(s) + Remote(s)
+			
+
+	Maven has what kind of Release?
+				RELEASE 3.3 2.3.3
+				SNAPSHOT 3.3-SNAPSHOT 2.3.3-SNAPSHOT
+
+
+http://35.200.218.40:8081/artifactory/financialService-local/
+http://35.200.218.40:8081/artifactory/financialService-local-snap/
+http://35.200.218.40:8081/artifactory/central-repo/
+http://35.200.218.40:8081/artifactory/group-maven/
+
+=========================================
+admin/password
+
+deploy deploy123
+
+
+How to upload a Package using Maven?
+https://github.com/scmgalaxy/helloworld-java-maven
+1. Modify pom.xml with Distribution Elements
+2. Modify setting.xml with User ID n password
+3. element ID of pom.xml and setting.xml MUST match.
+3. Run mvn deploy.
+
+How to Download a Package using Maven?
+
+
+Prj1 
+
+mvn archetype:generate -DgroupId=com.companyname.software -DartifactId=proj1 -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+SNAPSHOT
+
+Prj2
+
+mvn archetype:generate -DgroupId=com.companyname.software -DartifactId=proj2 -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+RELEASE
+
+=================================================
+What is Docker?
+	Container mgmt tool.
+
+What is Container
+
+Docker Has 4 Important Component
+	Docker Engine
+	Docker Images
+	Docker Registry
+		Artifcatory
+	Docker Container
+		--------
+
+How to install docker Engine?
+https://www.devopsschool.com/tutorial/docker/install-config/docker-install-commuityedition-centos-rhel.html
+
+How to make docker images?
+	Using Dockerfile
+---Dockerfile----
+FROM ubuntu
+MAINTAINER rajesh kumar
+RUN apt-get update && apt-get install git -y
+-------
+command
+$ docker images
+$ docker build -t ub-git .
+
+
+How to setup Docker Registry?
+	Artifactory??? - DONE
+
+How to create a Docker repos in Artifactory registry?
+	- Create a Local docker repo.
+	- Edit -> Advanced -> configure reverse proxy ->
+			or
+		HTTP Settings ==? Repository Path
+
+docker login -u <USER_NAME> -p <USER_PASSWORD> 35.200.218.40:8081
+docker pull 35.200.218.40:8081/<REPOSITORY_KEY>/<IMAGE>:<TAG>
+docker push 35.200.218.40:8081/<REPOSITORY_KEY>/<IMAGE>:<TAG>
+
+docker login -u admin -p password 35.200.218.40:8081
+docker pull 35.200.218.40:8081/<REPOSITORY_KEY>/<IMAGE>:<TAG>
+docker push 35.200.218.40:8081/<REPOSITORY_KEY>/<IMAGE>:<TAG>
+
+How to convert to https to http - docker?
+https://www.devopsschool.com/blog/setup-docker-service-to-use-insecurehttp-registry-instead-of-https/
+
+vi /etc/docker/daemon.json
+{
+"insecure-registries" : ["35.200.218.40:8081"]
+}
+
+systemctl stop docker
+systemctl start docker
+docker login -u admin -p password 35.200.218.40:808
+
+docker push 35.200.218.40:8081/<REPOSITORY_KEY>/<IMAGE>:<TAG>
+docker push 35.200.218.40:8081/ub-git/ub-git:latest
+
+docker tag ub-git 35.200.218.40:8081/ub-git/ub-git:latest
+
+docker images
+
+
+QA Guys
+======================
+docker login -u admin -p password 35.200.218.40:8081
+docker pull 35.200.218.40:8081/ub-git/ub-git:latest
+====================================
+Working with GIT LFS
+========================
+https://www.atlassian.com/git/tutorials/git-lfs
+https://git-lfs.github.com/
+
+  488  cd /d
+  489  mkdir gitlfs
+  490  cd gitlfs/
+  491  start .
+  492  git init
+  493  git config user.name "Rajesh Kumar"
+  494  git config user.email "DevOps@Rajeshkumar.xyz"
+  495  clear
+  496  ls
+  497  cd .git/
+  498  ls
+  499  start .
+  500  clear
+  501  cd /d
+  502  cd gitlfs/
+  503  start .
+  504  git lfs install
+  505  git lfs track
+  506  git lfs track "*.jpg"
+  507  git lfs track
+  508  git status
+  509  clear
+  510  git add .
+  511  git commit -m"adding lfs jepg"
+  512  git log
+  513  history
+==================================================
+How can you get a access of Course Materails?
+SKIP
+How to get Certication
+
+Subject - Artifactory Certified Engineer
+
+Full Name
+Gmail ID Only
+Phone
+Company - HCL
+City - Bangalore
+Role 
+
+Contact@DevOpsSchool.com
+
+feedback
+https://goo.gl/maps/w9v3Ht7a4QAryDCt5
+
+
+
+

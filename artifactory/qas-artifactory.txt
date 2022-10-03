@@ -1,0 +1,115 @@
+==========Q1=======================
+What is basic use of Artifactory?
+1. Binary and Package management system
+2. Source code management system
+3. Configuration management system
+4. Code management system
+
+==========Q2=======================
+What is the JAVA path need to be set before artifactory installation?
+1. JAVA_HOME	
+2. JAVA_PATH
+3. JRE_PATH
+5. JDK_PATH
+
+==========Q3=======================
+What is the use of $ARTIFACTORY_HOME/bin/artifactory.sh file
+1. To Start the Artifactory Services in Linux
+2. To Start the Artifactory Services in Windows
+3. To Start the Artifactory Services in Mac
+4. To Start the Artifactory Services in All Platforms
+
+
+==========Q4=======================
+What is the use of $ARTIFACTORY_HOME/bin/artifactoryctl start
+1. To Start the Artifactory Services in Linux as a daemon process
+2. To Start the Artifactory Services in Windows as a daemon process
+3. To Start the Artifactory Services in Mac as a daemon process
+4. To Start the Artifactory Services in All Platforms as a daemon process
+
+
+==========Q5=======================
+How to access default Artifactory application over the internet browsers?
+1. http://SERVER_DOMAIN:8081/artifactory
+2. http://SERVER_DOMAIN:8080/artifactory
+3. http://SERVER_DOMAIN:8090/artifactory
+4. http://SERVER_DOMAIN:8085/artifactory
+
+==========Q6=======================
+What is the use of "Artifacts" menu in Dashboard?
+1. The Artifacts module is used to browse the repositories in your system and search for artifacts using a number of different methods.
+2. The Artifacts module is used to browse the Artifacts in your system and search for artifacts using a number of different methods.
+3. The Artifacts module is used to browse the Binary in your system and search for artifacts using a number of different methods.
+4. The Artifacts module is used to browse the Plugins in your system and search for artifacts using a number of different methods.
+
+
+==========Q7=======================
+What is the function of "Build" menu in Artifactory Dashboard?
+1. The Build module displays the Build Browser where you can view all the CI server projects that output their builds to Artifactory.
+2. The Build module displays the Artifact Browser where you can view all the Artifact server projects that output their builds to Artifactory.
+3. The Build module displays the repositories Browser where you can view all the repositories server projects that output their builds to Artifactory.  
+4. The Build module displays the binary Browser where you can view all the binary server projects that output their builds to Artifactory.
+
+==========Q8=======================
+What is not a right repostory type is avaiable in Artifactory
+1. Local
+2. Remote
+3. Virtual
+4. Group
+
+==========Q9=======================
+What is not a right terminolgy for bintray?
+1. A global distribution network (CDN)
+2. Extreme throughput and redundancy for downloads
+3. CI servers metadata integration
+4. Product and EULA support
+
+
+  ==========Q10=======================
+Which is the right repository definition should be inserted in pom.xml for uploading snapshot artifactory?
+1. <snapshotRepository>
+2. <releaseRepository>
+3. <snapshotsRepository>
+4. <distributionManagement>
+
+
+==========Q11=======================
+Which is the right repository definition should be inserted in pom.xml for uploading release artifactory?
+1. <snapshotRepository>
+2. <releaseRepository>
+3. <repository>
+4. <distributionManagement>
+
+
+==========Q12=======================
+Which is the right repository definition should be inserted in pom.xml which holds release and snapshot artifactory?
+1. <snapshotRepository>
+2. <releaseRepository>
+3. <distributionManagement>
+4. <repository>
+
+
+==========Q13=======================
+What maven elements should be added in setting.xml to add a artifactory credentials?
+1. <server>
+2. <mirror>
+3. <profile>
+4. <plugins>
+
+==========Q14=======================
+
+Which is right maven goal to upload the package into Artifactory?
+1. mvn deploy
+2. mvn upload
+3. mvn install
+4. mvn download
+
+
+
+==========Q15=======================
+What is the right definition of Local Repository?
+1. Local repositories are physical, locally-managed repositories into which you can deploy artifacts.
+2. A Local repository serves as a caching proxy for a repository managed at a remote URL (which may itself be another Artifactory remote repository).  
+3. A Local repository (or "repository group") aggregates several repositories with the same package type under a common URL.
+4. Local repositories are physical, remote-managed repositories into which you can deploy artifacts.
+

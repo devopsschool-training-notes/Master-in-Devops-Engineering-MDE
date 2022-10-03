@@ -1,0 +1,113 @@
+What is Artifactory?
+	For Images| Binary | Packages | Exec | PDF | Movies
+	Artifact Versioning
+	From JFrog
+	Dev in JAVA
+	Release
+		Community
+		Pro
+	
+Other tool - 
+	Nexus, Archiva, Nuget, Choclate
+
+Why Artifactory?
+	Security
+	Durability of the packages
+	Integrity
+	Enterprise Func	
+		LDAP
+		USERS
+		GROUP
+	Admin Fun
+
+Why not git?
+- Codebase 100 MB + (100 MB X 10)  30 GM + 100 MB
+- Build - 100 MB
+
+=========================
+How to install Artifactory?
+
+JRE & JDK
+   4  ls
+    5  yum install wget -y
+    6  wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+    7  rpm -ivh jdk-8u131-linux-x64.rpm
+    8  history
+
+
+  9  wget https://bintray.com/jfrog/artifactory-pro/download_file?file_path=org%2Fartifactory%2Fpro%2Fjfrog-artifactory-pro%2F5.9.1%2Fjfrog-artifactory-pro-5.9.1.zip
+   10  ls
+   11  yum install zip unzip -y
+   12  ls
+   13  mv download_file\?file_path\=org%2Fartifactory%2Fpro%2Fjfrog-artifactory-pro%2F5.9.1%2Fjfrog-artifactory-pro-5.9.1.zip art.zip
+   14  clear
+   15  s
+   16  ls
+   17  unzip art.zip
+   18  clear
+   19  s
+   20  ls
+   21  pwd
+   22  mv artifactory-pro-5.9.1 /opt/
+   23  ls
+   24  cd /opt/
+   25  ls
+   26  clear
+   27  ls
+   28  ls
+   29  mv artifactory-pro-5.9.1/ artifactory
+   30  cd artifactory/
+   31  ls
+   32  clear
+   33  ls
+   34  clear
+   35  ls
+=======================================
+What is the Package type? 
+Package Type  maven
+
+What are the kind of repo you can create
+	Local	READ + WRITE
+		RELEASE
+		SNAPSHOT
+	Remote	READ oNLy + CACHE
+	Virtual	group of LR + RR
+========================
+PERMISSION
+GROUP
+USER
+
+deploy-user | deploy-user
+==================================
+How to upload packages automatically using maven to artifactory.
+1.  Install JDK
+2. Install Maven & setup
+3. Create a Maven project
+
+Step1 Modify a pom.xml with Local Repo
+
+<distributionManagement>
+    <repository>
+        <id>central</id>
+        <name>ip-172-31-31-171.ap-south-1.compute.internal-releases</name>
+        <url>http://35.154.237.35:8081/artifactory/del-release</url>
+    </repository>
+</distributionManagement>
+
+
+Step2 Modify setting.xml with Acces
+	Make sure element id of pom.xml and setting.xml is matching
+Step3 mvn deploy
+==========================
+
+setting.xml
+<mirror>
+      <id>artifactory</id>
+      <name>artifactory for demont</name>
+      <url>http://35.154.237.35:8081/artifactory/del-group</url>
+      <mirrorOf>*</mirrorOf>
+</mirror>
+
+
+
+

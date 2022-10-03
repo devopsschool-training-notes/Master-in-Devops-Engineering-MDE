@@ -1,0 +1,123 @@
+What is Artifactory?
+	Is a place to store your packages.
+	A Jfrog Product
+	JAVA
+
+Why do we need to store the packages in Artifactory?
+	1. Security of the packages
+	2. Process Driven 
+	3. Dependency mgmt
+			Internal Dep
+			External Dep
+	4. Integrity of the packages
+	5. Admin
+		USER
+		GROUPS
+		PERMISSION
+		AUTH
+	6. Backup and Cleanup Efficiently
+
+What are ther others tool we have domain?
+	Sonatype Nexus		PAID		ANY TECH
+	Artifactry		PAID		ANY TECH
+	Nuget			FREE		MS
+	Archiva			FREE		ANY TECH
+
+
+How to Install Artifactory?
+http://www.devopsschool.com/tutorial/artifactory/artifactory-install-and-configuration.html
+https://www.jfrog.com/confluence/display/RTF/Installing+Artifactory
+
+
+PRE 
+	JAVA
+
+WINDOWS
+LINUX
+MAC
+
+Which Flavors you want?
+	Artifactory OSS		- FREE --> OPEN SOURCE PROJECT/
+	Artifactory Pro		- PAID ---> CAN BE INSTALLED IN YOUR SERVER | BEHIND
+	Artifactory Cloud	- SAAS ---?
+	
+Download?
+----------
+https://bintray.com/jfrog/artifactory-pro/jfrog-artifactory-pro-zip/5.6.3
+
+How to start?
+/opt/artifactory-pro-5.6.3/bin
+./artifactory.sh 
+oR
+./installService.sh
+
+How to access?
+http://13.126.163.162:8081
+admin/password
+
+
+How to Use the Artifactory?
+
+Where do you store the packages?
+Ans - Repo
+
+How many diff kind of repo?
+Local 	->	To Store Your Project Package  
+Remote  ->	PROXY | REMOTE LOCATION
+
+Virtual
+Distribution Repositories  -- GROUP
+
+
+How to create a Local Repo?
+DONE
+
+How to create a Remote Repo?
+DONE
+
+How to upload Artifact in Local Repo using Maven?
+1. Package Name			FROM MAVEN
+2. Permission to Upload		admin/password
+3. Address of local repo	http://13.126.163.162:8081/artifactory/soft-local/
+
+Maven
+	pom.xml		-- REPO LOCATION && Package Name && Version 
+	setting.xml	-- ACCESS
+POM.xml
+===============
+<distributionManagement>
+    <repository>
+        <id>central</id>
+        <name>ip-172-31-20-87.ap-south-1.compute.internal-releases</name>
+        <url>http://13.126.163.162:8081/artifactory/soft-local</url>
+    </repository>
+    <snapshotRepository>
+        <id>central</id>
+        <name>ip-172-31-20-87.ap-south-1.compute.internal-snapshots</name>
+        <url>http://13.126.163.162:8081/artifactory/soft-local</url>
+    </snapshotRepository>
+</distributionManagement>
+
+
+Setting.xml
+================================
+	<server>
+		<id>central</id>
+		<username>admin</username>
+		<password>password</password>
+	</server>
+
+How to use Remote Repo/Local Repo to download?
+
+=====================================================
+<mirror>
+      <id>central</id>
+      <name>Maven Repository Manager running on repo.mycompany.com</name>
+      <url>http://13.126.163.162:8081/artifactory/soft-local</url>
+      <mirrorOf>*</mirrorOf>
+    </mirror>
+
+
+
+SRC --> BINARY --> Package --(TESTING + PROD)
+GIT --> MAVEN --> ZIP, WAR, EXE, Docker images
