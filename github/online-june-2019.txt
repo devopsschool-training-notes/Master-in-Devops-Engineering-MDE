@@ -1,0 +1,57 @@
+What is github?
+	a platform for hosting a git repo
+	very rich GUI
+	WIKI
+	Issue Tracking
+	Integ - Many tools
+		Web Hooks & Applications
+	version
+		Cloud - https://github.com/
+			PUBLIC - Free
+			PRIVATE - FREE(COND Apply) + PAID
+		Enterprise - https://github.com/enterprise
+			- LDAP
+			- AD
+=======================================
+Enterprise
+https://github.com/enterprise
+
+Install usung AWS
+https://help.github.com/en/enterprise/2.17/admin/installation
+
+https://help.github.com/en/enterprise/2.17/admin/installation/installing-github-enterprise-server-on-aws
+
+Verifying the certificate's authenticity
+$ ssh -p122 admin@ec2-13-127-224-215.ap-south-1.compute.amazonaws.com
+$ openssl x509 -fingerprint -in /etc/haproxy/ssl.crt -noout
+# SHA1 Fingerprint=A2:B1:38:6C:D9:31:20:F9:A7:E6:E5:F6:31:7F:2B:C1:3D:DA:ED:A2
+----
+c5.large
+----
+
+AWS instance type
+m5.large detected. GitHub Enterprise requires one of the following:  GitHub Enterprise requires one of the following: c3.2xlarge, c3.4xlarge, c3.8xlarge, c4.2xlarge, c4.4xlarge, c4.8xlarge, c5.large, c5.xlarge, c5.2xlarge, c5.4xlarge, c5.9xlarge, c5.18xlarge, m3.xlarge, m3.2xlarge, m4.xlarge, m4.2xlarge, m4.4xlarge, m4.10xlarge, m4.16xlarge, m5.large, m5.xlarge, m5.2xlarge, m5.4xlarge, m5.12xlarge, m5.24xlarge, r3.large, r3.xlarge, r3.2xlarge, r3.4xlarge, r3.8xlarge, r4.large, r4.xlarge, r4.2xlarge, r4.4xlarge, r4.8xlarge, r4.16xlarge, r5.large, r5.xlarge, r5.2xlarge, r5.4xlarge, r5.12xlarge, r5.24xlarge, x1.16xlarge, x1.32xlarge.
+
+Memory
+14GB of memory required. 8GB available.
+Can be used as a node in a cluster (7GB of memory required).
+Shut down the VM, then adjust the VM settings to meet the minimum requirement. Restart the VM for changes to take effect.
+
+Root device capacity
+8GB of root device capacity required. 98GB available.
+
+
+Block device
+We couldn't find a valid second block device for your configuration and user data. Please attach a second block device with at least 10GB storage to this instance. This page will detect a new block device automatically.
+		
+admin/devops
+DevOpsSchool$123
+
+ssh -p 122 admin@ec2-13-127-224-215.ap-south-1.compute.amazonaws.com
+
+Authorized SSH keys
+ssh-rsa 8a:81:40:e3:24:9e:08:7a:65:45:9f:fe:c6:43:20:3a
+rajesh-mumbai
+
+
+   LDAP    SAML    CAS

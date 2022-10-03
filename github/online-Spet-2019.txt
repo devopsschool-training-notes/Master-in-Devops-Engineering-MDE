@@ -1,0 +1,192 @@
+Github Advance
+====================
+Git Basic
+Github user
+Github Admin
+======================
+
+What is Git?
+	Source Code mgmt tool
+	Versioning tool.
+	From Linus Tovarld
+	Compat with all OS
+	Free
+	Open Source.
+	
+Why?
+	Want to version text based file
+		WHO
+		WHAT
+		WHEN
+		WHERE
+		WHY
+
+Other tools 
+RCS -> CVS -> SVN -> GIT
+Mercury - p4 - CC
+============================================
+
+GIT VS ALL
+-----------------------------
+Distributed VS Server-Client Based
+===================================
+How can i do versioning of the source which i m write in my laptop?
+
+Step 1 - Insatll Git
+		RHEL - sudo yum install git
+		UB - sudo apt-get install git
+		Windows using gitbash - exe frm https://git-scm.com/
+		Mac  frm https://git-scm.com/
+		GUI - SourceTree from Atlassion
+
+
+Step 2 - Create a repo
+$ git init
+Initialized empty Git repository in D:/sunil/.git/
+
+Step 3 - Create a file using IDE
+
+Step 4 - Add a file 
+$ git add file1.txt
+
+==================================
+ONE TME
+$ git config user.name "Rajesh Kumar"
+$ git config user.email "DevOps@RajeshKumar.xyz"
+$ git config --list
+===================================
+Step 5 - Commit a file
+$ git commit -m"This is my first commit"
+
+
+Step 6 - View a commit
+$ git log
+commit 5fe74836586127093360eb62b812f6d7c9ec77d1 (HEAD -> master)
+Author: Rajesh Kumar <DevOps@RajeshKumar.xyz>
+Date:   Tue Sep 17 07:20:24 2019 +0530
+
+    This is my first commit
+
+Rajesh@DESKTOP-ST1GLH0 MINGW64 /d/sunil (master)
+$ git show 5fe74836586127093360eb62b812f6d7c9ec77d1
+
+commit 5fe74836586127093360eb62b812f6d7c9ec77d1 (HEAD -> master)
+Author: Rajesh Kumar <DevOps@RajeshKumar.xyz>
+Date:   Tue Sep 17 07:20:24 2019 +0530
+
+    This is my first commit
+
+diff --git a/file1.txt b/file1.txt
+new file mode 100644
+index 0000000..e69de29
+
+============================
+How git works???
+=================================================================
+WORKING DIR		->	STAGING AREA	->	REPO
+
+DIR/FILE(S)			DIR/FILE(S)		DIR/FILE(S)
+--------------GIT ADD ------------> -----------Commit---------->
+D:\sunil			D:\sunil\.git\index     D:\sunil\.git\objects
+1
+2
+3
+3
+4
+5
+----------------------------------------------------------			
+What is 5fe74836586127093360eb62b812f6d7c9ec77d1?
+This is a commit id..which repreent your files/changes in repository. AKA Checksum
+		Created by SHA1 algo.
+
+why STAGING AREA?
+To track a changes on file which is done in WORKING DIR.
+
+
+How to interact with Staging Area?
+===============================
+$ git status
+
+
+
+
+  501  cd /d
+  502  start .
+  503  mkdir sunil
+  504  cd sunil/
+  505  start .
+  506  git init
+  507  touch file1.txt
+  508  start .
+  509  touch file3.txt
+  510  s
+  511  ls
+  512  git add file1.txt
+  513  git add file1.txt
+  514  git config user.name "Rajesh Kumar"
+  515  git config user.email "DevOps@RajeshKumar.xyz"
+  516  git config --list
+  517  git commit -m"This is my first commit"
+  518  git log
+  519  git show 5fe74836586127093360eb62b812f6d7c9ec77d1
+  520  clear
+  521  git status
+  522  ls
+  523  git add .
+  524  git status
+  525  ls
+  526  ls
+  527  git commit -m"adding al"
+  528  git status
+  529  history
+=================================================
+How to add all files?
+Hoow to commit selective file only?
+How to rename a file?
+How to delete a file?
+How to go in the history of repo?
+
+==============================================
+How to collab?
+=================================
+Using
+	SSH	 - PUBLIC KEY 
+	HTTPS	- USER n PASSWORD
+
+
+What is SSH key?
+=====================
+To connect 2 linux and now a windows also has ssh kye
+	---- PUBLIC KEY
+	---- PVT key
+
+How to generate it?
+$ ssh-keygen
+=========================================
+Github Server		CLOUD + HOSTED
+Gitlab Server		CLOUD + HOSTED
+Bitbucket Server	CLOUD + HOSTED
+Gerrit  Server		CLOUD + HOSTED
+		Git Repo(S) Hosting Solution
+		GUIS
+		ISSUES mgmt
+		WIKI		
+		USERS \ GROIP
+		AUTH and AUTHEN
+===========================================
+Working with Github
+1. regiter 
+2. Login
+3. Creare a repo
+==================================
+S1 - 
+YOU 					GITHUB
+---------------------------------------------------
+NO REPO			YOU DO CLONE
+					create a repo
+					add a alias
+					pull remote
+---------------------------------------------------
+exiting					exiting
+<<<<------------------PULLL ---------------
+-----------------PUSh --------------->>>>>>
