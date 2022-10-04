@@ -1,0 +1,84 @@
+What is SonarQube?
+		Quality mgmt tool
+		From Sonarsource
+		Dev in JAVA
+		Release
+				Community - FREE
+				Dev			- PAID
+				Enterprise	- PAID
+				https://www.sonarqube.org/downloads/
+		Release - Version: 9.6.1
+
+		Quality
+		- Code Quality
+		- Test Quality
+
+How to get Code Quality?
+- Peer Code Review
+- Static Code Review
+		Code would review code
+		Rule would review code
+		RuleS would review code
+		tool would review code
+- https://en.wikipedia.org/wiki/List_of_tools_for_static_code_analysis
+
+How to get Test Quality?
+Unit T --> AT --> Code Coverage
+					-----------
+					Test Quality
+---------------------------------
+How Sonarqube works!!!!
+
+SonarQube server
+----------------------------
+			WEB ----> DB
+
+WEB 
+		HTML - JAVA - CSS - jS
+DB
+		H2 - MSSQL - ORACLE - PS
+Addons
+		Elasticsearch
+----------------------------------------------
+			CAN NOT RUN AS ROOT USER
+
+SonarQube Scanner
+----------------------------
+Which scan a code and generate reports
+
+Source Code
+------------------------
+
+How to install it?
+
+Assignment
+- What is Code Coverage?
+- List of tools for Code Coverage?
+
+How to download
+https://www.devopsschool.com/blog/complete-guide-of-java-installation-in-linux/#Download_and_Install_JDKJRE_11_in_RHELCENTOS
+https://www.sonarqube.org/downloads/
+https://docs.sonarqube.org/latest/analysis/scan/sonarscanner/
+
+config file
+-------------------------------------
+Server - sonar.properties
+Scanner - sonar-scanner.properties
+Code  - sonar-project.properties
+
+Server
+http://192.168.1.8:9000/
+admin
+admin
+
+Server
+http://192.168.1.8:9000/
+admin
+admin123
+
+Scanner
+
+Code
+https://github.com/devopsschool-demo-labs-projects/java-sonarqube-helloworld-src
+
+C:\tools\sonarqube\scanner-windows\bin\sonar-scanner.bat
