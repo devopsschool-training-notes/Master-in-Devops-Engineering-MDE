@@ -1,0 +1,84 @@
+Basic git workflow
+---------------------------------------
+Step 1 - install git
+		https://git-scm.com/
+		Windows - git bash
+
+		yum install git
+		apt install git
+
+		sourcetree
+		IDE plugins
+Step 2 - create a repo
+
+Step 3 - Write a code
+
+Step 4 - Add a code to git
+
+ONE TIME
+------------------------------------------
+git config user.name "Rajesh Kumar"
+git config user.email "devops@rajeshkumar.xyz"
+git config --list
+-----------------------------------------
+
+Step 5 - Commit a file to git
+
+Step 6 - view a version
+
+
+506  mkdir saturday
+  507  cd saturday/
+  508  clear
+  509  start .
+  510  mkdir repo1
+  511  cd repo1/
+  512  clear
+  513  git init
+  514  start .
+  515  start .
+  516  touch file2.java
+  517  touch file2.java
+  518  touch file3.java
+  519  cls
+  520  clear
+  521  git status
+  522  clear
+  523  git add file1.java
+  524  git config user.name "Rajesh Kumar"
+  525  git config user.email "devops@rajeshkumar.xyz"
+  526  git config --list
+  527  clear
+  528  git commit -m"first commit"
+  529  git log
+  530  git show 978843349e0299a58755099192e850551d879e08
+  531  history
+
+
+$ git log
+commit 669bb76adabfaa40b39e78da470bc8813ea1c350 (HEAD -> master)
+Author: Rajesh Kumar <devops@rajeshkumar.xyz>
+Date:   Sat Oct 8 11:19:11 2022 +0530
+
+    second commit
+
+commit 978843349e0299a58755099192e850551d879e08
+Author: Rajesh Kumar <devops@rajeshkumar.xyz>
+Date:   Sat Oct 8 11:07:42 2022 +0530
+
+    first commit
+
+		
+
+
+rajesh@19.2.2.2:c:/raju/repo1
+
+http://19.2.2.2/raju/repo1
+
+
+
+github - gitlab - bitbucket - gerrit - aws - azure - gc
+									 ----
+									CodeCommit
+
+===================================================================
