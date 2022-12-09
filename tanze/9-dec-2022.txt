@@ -1,0 +1,104 @@
+ 1  sudo -s
+    2  clear
+    3  cd
+    4  ls
+    5  https://github.com/vmware-tanzu/community-edition/releases/download/v0.12.1/tce-linux-amd64-v0.12.1.tar.gz
+    6  wget https://github.com/vmware-tanzu/community-edition/releases/download/v0.12.1/tce-linux-amd64-v0.12.1.tar.gz
+    7  clear
+    8  ls
+    9  tanzu
+   10  sudo -s
+   11  cd
+   12  ls
+   13  cd tce-linux-amd64-v0.12.1/
+   14  clear
+   15  ls
+   16  ./install.sh
+   17  clear
+   18  tanzue
+   19  tanzu
+   20  clear
+   21  sudo gpasswd -a ubuntu docker
+   22  clear
+   23  ls
+   24  tanzu
+   25  clear
+   26  tanzu
+   27  tanzu management-cluster -h
+   28  clear
+   29  tanzu
+   30  clear
+   31  tanzu unmanaged-cluster -h
+   32  clear
+   33  tanzu
+   34  clear
+   35  tanzu init -h
+   36  tanzu init
+   37  clear
+   38  ls
+   39  tanzu
+   40  clear
+   41  tanzu config -h
+   42  clear
+   43  tanzu
+   44  clear
+   45  tanzu unmanaged-cluster create dev1
+   46  tanzu unmanaged-cluster create -h
+   47  clear
+   48  tanzu unmanaged-cluster list
+   49  tanzu unmanaged-cluster delete dev1
+   50  tanzu unmanaged-cluster list
+   51  tanzu unmanaged-cluster create dev1
+   52  docker ps
+   53  exit
+   54  docker ps
+   55  clear
+   56  tanzu unmanaged-clusterlist
+   57  tanzu unmanaged-cluster list
+   58* tanzu unmanaged-cluster delete de
+   59  tanzu unmanaged-cluster list
+   60  tanzu unmanaged-cluster create dev1
+   61  docker ps
+   62  tanzu package available list
+   63  tanzu package -h
+   64  clear
+   65  ls
+   66  kubectl config view
+   67  curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+   68  clear
+   69  sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+   70  kubectl config view
+   71  tanzu unmanaged-cluster create dev2
+   72  tanzu unmanaged-cluster list
+   73  kubectl config view
+   74  kubectl get nodes -A
+   75  kubectl get pods -A
+   76  tanzu
+   77  kubectl get nodes
+   78  tanzu unmanaged-cluster
+   79  ls .kube/
+   80  tanzu unmanaged-cluster configure dev2
+   81  tanzu unmanaged-cluster configure
+   82  tanzu unmanaged-cluster configure dev2
+   83  tanzu unmanaged-cluster configure dev1
+   84  tanzu unmanaged-cluster configure dev3
+   85  ls
+   86  more dev3.yaml
+   87  tanzu unmanaged-cluster -h
+   88  docker ps
+   89  tanzu unmanaged-cluster stop dev2
+   90  docker ps
+   91  docker ps -a
+   92  tanzu unmanaged-cluster start dev2
+   93  tanzu unmanaged-cluster list
+   94  tanzu unmanaged-cluster -h
+   95  tanzu unmanaged-cluster delete dev2
+   96  tanzu unmanaged-cluster list
+   97  tanzu unmanaged-cluster delete dev1
+   98  clear
+   99  tanzu -h
+  100  tanzu management-cluster -h
+  101  tanzu management-cluster create -h
+  102  tanzu management-cluster
+  103  tanzu
+  104  history
