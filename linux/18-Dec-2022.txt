@@ -1,0 +1,263 @@
+80%
+===================================
+What is Linux?
+---------------------------------
+		OS
+		- Open Source
+		- Kernel
+		- Father - Linus Tovarld
+
+		Flavour
+		- Centos 7
+		- REDHAT
+		- UBUNTU 20.X
+===================================
+How to get Linux VMs?
+---------------------------
+What is Virtualization
+-----------------------
+		Hypervisor
+		---------------------------
+		vmware workstation
+		virtualbox
+
+		vsphere
+		
+================================
+virtualbox install
+https://www.virtualbox.org/wiki/Downloads
+
+
+How to create a VM?
+--------------------------
+VM Image - http://isoredirect.centos.org/centos/7/isos/x86_64/
+
+Vm ready Creation
+
+Configure
+
+Accesss Putty - https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
+=================================================
+
+How to login linux server using ssh?
+https://www.devopsschool.com/blog/how-to-login-linux-server-using-ssh/
+
+USER COMMANDS in LINUX
+- 40 COMMAND
+https://www.devopsschool.com/blog/linux-commands-for-user/
+
+- find - find a file
+- https://www.devopsschool.com/commands/tools/linux/find
+
+- grep - searching a text in files/dir
+- https://www.devopsschool.com/commands/tools/linux/grep
+
+chmod
+-rw-------. 1 root root 1261 Dec 18 00:09 anaconda-ks.cfg
+https://www.devopsschool.com/commands/tools/linux/chmod
+
+rw- 		--- 			---
+
+OWNER		GROUP			OTHER
+
+r - READ			= 4
+W - write			= 2
+x - execute		= 1
+				------------------
+							7
+
+7 7 7 
+0 0 0
+4 4 4
+4 0 0
+7 5 5
+
+chmod 755 
+
+Retrun Values
+-----------------------------
+
+
+
+
+ADMIN COMMANDS In LINUX
+- 20 COMMANDS
+https://www.devopsschool.com/blog/linux-commands-for-administrator/
+https://www.devopsschool.com/commands
+=================================================
+Automation - Shell Scripting Or Bash Scripting
+======================
+Linux Shell
+	- sh
+	- csh
+	- ksh
+	- bash
+
+Windows
+	- DOS
+	- Powershell
+
+===============================================
+Part - 2 How to write Shell Scripting
+			How to troubelshoot
+=====================================================
+- What is Shell Scripting
+		- collection of linux commands
+					with vars
+					with cond
+					with loop
+
+Vi
+---- 
+READ MODE --> InSERT MODE --> READ MODE
+default				i						esc
+
+	SAVE & EXIT					:wq
+	EXIT WITHOUT SAVE		:q!
+
+1. How to store code?
+2. How to run - hello world
+
+3. How to set var?
+
+4. Operators 
+
+5. How to do condition
+
+#!/bin/bash
+
+a=2
+b=7
+
+
+if [ $a -ge $b ]
+then
+  echo "The variable 'a' is greater than the variable 'b'."
+  echo "The variable 'a' is greater than the variable 'b'."
+else
+  echo "The variable 'b' is greater than the variable 'a'."
+fi
+
+
+
+
+6. How to do looping?
+
+for
+
+#!/bin/bash
+
+for i in 1 2 3 4 5
+do
+   echo "Welcome $i times"
+done
+
+
+
+
+while
+
+
+
+a=0
+
+while [ "$a" -lt 10 ]    # this is loop1
+do
+	echo $a
+   a=`expr $a + 1`
+done
+
+
+
+
+7. How to write function?
+
+
+ #! /bin/bash
+ function print_msg {
+       echo "Hello, World"
+ }
+ print_msg
+
+
+
+function add()
+{
+    sum=$(($1 + $2))
+    echo "Sum = $sum"
+}
+
+a=10
+b=20
+#call the add function and pass the values
+add $a $b
+================================================================
+How to troubleshoot?
+==============================
+RULES - READ 10 TIMES
+-------------------------------
+OS ERROR		- linux
+					CPU
+						ps - top - free - vmstat - iostat - mpstat
+					RAM
+						ps - top - free - vmstat - iostat - mpstat
+					HDDD
+						- iostat - du - df -
+					NETWORK
+						- ping, netstat, sar, dmsg, trace, ip a, 
+					PERMIS	
+						- chown - chmod - ls -lrt			
+
+APP ERROR	- DevOpsSchool
+						app log file - tail -f 
+						app behaviours
+						service - systemctl 
+				
+APP RUN TIME	- JAVA - TOMCAT - APAHE - DB
+							JAVA HEAP ISSUES
+							right version 
+							Tomcat - running
+							Tomcat log
+							
+DEPENDENT SERVICE - EMAIL - PAYMENT - QUEQ - NOT
+
+
+--------------------------------------
+Part - 3 - Vagrant
+=================================================
+		tool		
+		- save time
+		Dev tool
+		Go
+		- Hashicorp
+
+Preq - virtualbox
+
+Why 
+	Automating a task of 
+			- vm creation
+			- vm customization
+			- vm sharing 
+	--------------------------
+		cmd or code
+
+How to install vagrant
+=========================================================
+		- vm creation
+
+Vagrant Image === box
+Download
+Creation
+		init
+		up 
+		ssh
+
+
+
+
+
+
+
+
+
+
