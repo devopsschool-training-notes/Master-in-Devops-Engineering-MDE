@@ -1,0 +1,249 @@
+Kubernetes Master
+========================================
+- API Server 			- POD -> Container -> Google Registry
+		API 1 - namespace
+		API 2 - pid
+		API 3 - service
+- etcd				- POD -> Container -> Google Registry
+- Controller mgr			- POD -> Container -> Google Registry
+- Schedular				- POD -> Container -> Google Registry
+- Kube proxy			- POD -> Container -> Google Registry
+
+Kubelet
+ContainerD
+Docker
+kubectl 
+kubeadm init
+
+
+Kubernetes Worker
+========================================
+- Kube proxy		- POD -> Container -> Google Registry
+
+Kubelet
+ContainerD
+Docker
+kubectl
+kubeadm join
+
+Kubernetes Workstation
+=================================
+- kubectl
+		$HOME/.kube/config
+
+config
+	= API SERVER
+	= USER
+	= CERT
+
+
+
+master = 20.228.241.193
+azureuser
+Ghgdd443$123
+
+
+worker = 137.117.110.198
+azureuser
+Ghgdd443$123
+
+===================================================
+
+CRUD
+
+Create
+		CMD
+			create
+		YAML
+			create -f yaml
+
+Read
+		CMD
+			 get 
+			 describe
+		YAML
+			 get -f yaml
+			 describe -f yaml
+Update 
+		CMD
+			edit 
+		YAML
+			apply -f yaml
+
+Delete
+		CMD
+			delete
+		YAML
+			delete -f yaml
+
+Namespace
+POD
+	
+ReplicationController
+Deployment
+Services
+PV
+pVC
+RBAC
+
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: rajesh
+  labels:
+    app: helloworld
+spec:
+  containers:
+  - name: devopsschool1
+    image: scmgalaxy/nginx-devopsschoolv1
+    ports:
+    - name: nginx-port
+      containerPort: 80
+
+
+Troubleshooting and Debugging Commands:
+
+  logs          Print the logs for a container in a pod
+  attach        Attach to a running container
+  exec          Execute a command in a container
+  port-forward  Forward one or more local ports to a pod
+  cp            Copy files and directories to and from containers
+  auth          Inspect authorization
+  
+
+kubectl port-forward --address 0.0.0.0 pod/rajesh 5555:80
+
+
+  1  clear
+    2  ls
+    3  clear
+    4  ls
+    5  git clone https://github.com/certifications-tutorials/cks-course-environment/
+    6  ls
+    7  cd cks-course-environment
+    8  clear
+    9  ls
+   10  cd cluster-setup
+   11  ls
+   12  cd latest
+   13  clear
+   14  ls
+   15  chmod 755 install_master.sh
+   16  ./install_master.sh
+   17  clear
+   18  ls
+   19  cd
+   20  ls
+   21  ls $HOME/.kube
+   22  more $HOME/.kube/config
+   23  clear
+   24  ls
+   25  kubectl config view
+   26  clear
+   27  kubectl get nodes
+   28  kubectl get pods --all
+   29  kubectl get pods -all
+   30  kubectl get pods --all-namespaces
+   31  cleare
+   32  clear
+   33  ls
+   34  cd
+   35  ls
+   36  clear
+   37  kubectl
+   38  kubectl api-resources
+   39  clear
+   40  kubectl api-resources
+   41  cler
+   42  clear
+   43  kubectl
+   44  kubectl api-versions
+   45  clear
+   46  kubectl
+   47  cledar
+   48  clear
+   49  kubectl get ns
+   50  kubectl create ns dev
+   51  kubectl create ns qa
+   52  kubectl get ns
+   53  kubectl describe ns dev
+   54  clear
+   55  kubectl edit ns dev
+   56  kubectl describe ns dev
+   57  kubectl delete ns dev
+   58  kubectk get pods
+   59  kubectk get ns
+   60  clear
+   61  kubectl get pods
+   62  cd
+   63  lcea
+   64  clear
+   65  ls
+   66  vi pod.yaml
+   67  kubectl get ns
+   68  kubectl get pods
+   69  kubectl get pods -n=qa
+   70  kubectl create -f pod.yaml
+   71  kubectl get pods
+   72  kubectl get pods -n=qa
+   73  kubectl create -f pod.yaml -n=qa
+   74  kubectl get pods -n=qa
+   75  clear
+   76  ls
+   77  kubectl get pods
+   78  kubectl get pods -o wide
+   79  kubectl get -f pod.yaml
+   80  kubectl describe -f pod.yaml
+   81  clear
+   82  vi pod.yaml
+   83  kubectl apply -f pod.yaml
+   84  kubectl describe -f pod.yaml
+   85  clear
+   86  ls
+   87  kubectl get pods
+   88  kubectl delete -f pod.yaml
+   89  kubectl delete -f pod.yaml -n=qa
+   90  kubectl get pods
+   91  kubectl get pods -n=qa
+   92  clear
+   93  ls
+   94  kubectl
+   95  clear
+   96  history
+
+   98  kubectl apply -f pod.yaml
+   99  ls
+  100  kubectl get pods
+  101  kubectl get pods -o wide
+  102  curl http://192.168.1.4
+  103  kubectl exec -it rajesh /bin/bash
+  104  cleart
+  105  clear
+  106  ls
+  107  kubectl logs rajesh
+  108  curl http://192.168.1.4
+  109  kubectl logs rajesh
+  110  kubectl attach rajesh
+  111  clear
+  112  kubectl -h
+  113  clear
+  114  kubectl port-forward -h
+  115  clear
+  116  kubectl port-forward --address 0.0.0.0 pod/rajesh 5555:80
+  117  clear
+  118  ls
+  119  clear
+  120  ls
+  121  kubectl get pods
+  122  kubectl exec rajesh ls /tmp
+  123  kubectl cp pod.yaml rajesh:/tmp
+  124  kubectl exec rajesh ls /tmp
+  125  cleaer
+  126  clear
+  127  kubectl auth
+  128  kubectl auth can-i
+  129  kubectl auth can-i create pod
+  130  kubectl auth can-i create namespace
+  131  history
+
