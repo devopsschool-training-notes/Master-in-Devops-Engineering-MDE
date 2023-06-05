@@ -1,0 +1,217 @@
+Master
+- API server 	-> POD -> Container -> Image -> Google registry
+- Etcd		-> POD -> Container -> Image -> Google registry
+- Controller mgr-> POD -> Container -> Image -> Google registry	
+- Schedular	-> POD -> Container -> Image -> Google registry
+- Proxy 	-> POD -> Container -> Image -> Google registry	
+
+- kubelet
+- docker
+- kubectl
+- kubeadm init
+
+
+Worker
+- kubelet
+- Docker
+- kubeadm join
+kubectl
+- Proxy 	-> POD -> Container -> Image -> Google registry
+
+Workstation
+- kubectl
+
+Step 1 - Create 2 VM
+Step 2 - Install All tools in each vm
+Step 3 - Go to master vm and kubeadm init
+Step 4 - Go to worker vm and run kubeadm join
+====================================================================================
+1 Vm == all component of k8 === minikube
+
+kops
+
+Azure				AWS				GC
+------------------------------------------------------------------
+AKS				EKS				GKE
+
+Step  1 - Setting up a AKS cluster
+Step  2 - Setting up my workstation
+Step  3 - Set into k8s resources
+
+===============================================================
+kubectl
+	$USER_HOME/.kube/config =========> Api server
+	env $KUBECONFIG
+
+config
+-------------------------------
+YAML FILE
+-------------------------------
+Cluster(S)
+	api-server-1
+	api-server-2
+	api-server-3
+
+User(S)
+	user1
+	user2
+	user3
+
+Context(S)
+	context1 = user1 + api-server-3
+	context2 = user2 + api-server-2
+
+curr-context
+
+
+kubectl get nodes --context=context2
+kubectl get pods
+=====================================================================
+What do you want?
+=========================
+ 4  kubectl get nodes
+    5  kubectl get pods -A
+    6  clear
+    7  ls
+    8  ls $HOME/.kube/
+    9  more $HOME/.kube/config
+   10  clear
+   11  kubectl config view
+   12  clear
+   13  kubectl
+   14  kubectl api-resources
+
+=====================================================
+				Azure
+NS				resourcegroup
+POD				vm
+ReplicationController		asg
+Deployment			asg++++
+Services			NLB
+Ingress				ALB
+Storage							
+Security			iam
+======================================================
+C R U D
+
+CREATE
+	CMD	
+		create
+	YAML
+		create -f yaml
+READ
+	CMD
+		get
+		describe
+	YAML
+		get -f yaml
+UPDATE
+	CMD	
+		edit 
+	YAML
+		apply -f yaml
+DELETE
+	CMD
+		delete
+	YAML
+		delete -f yaml
+=================================================
+
+16  clear
+   17  kubectl get ns
+   18  kubectl get pods -A -o wide
+   19  clear
+   20  ls
+   21  kubectl
+   22  clear
+   23  kubectl get ns
+   24  kubectl creare ns rajesh
+   25  kubectl create ns rajesh
+   26  clear
+   27  ls
+   28  kubectl get ns
+   29  kubectl create ns dev
+   30  kubectl get ns
+   31  kubectl describe ns rajesh
+   32  kubectl edit ns rajesh
+   33  kubectl describe ns rajesh
+   34  clear
+   35  kubectl delete ns dev
+   36  kubectl get ns
+   37  history
+=============================================
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: rajesh
+  labels:
+    app: helloworld
+spec:
+  containers:
+  - name: devopsschool1
+    image: scmgalaxy/nginx-devopsschoolv1
+    ports:
+    - name: nginx-port
+      containerPort: 80
+
+
+
+   39  kubectl explain
+   40  kubectl explain pod
+   41  kubectl explain pod.spec
+   42  kubectl explain pod.spec.containers
+
+
+
+  38  clear
+   39  kubectl explain
+   40  kubectl explain pod
+   41  kubectl explain pod.spec
+   42  kubectl explain pod.spec.containers
+   43  history
+   44  clear
+   45  ls
+   46  vi pod.yaml
+   47  kubectl  get pods
+   48  kubectl  get pods -n=rajesh
+   49  kubectl create -f pod.yaml -nrajesh
+   50  kubectl create -f pod.yaml 
+   51  kubectl create -f pod.yaml -nrajesh
+   52  kubectl get pods
+   53  kubectl get pods -o wide
+   54  kubectl describe pod rajesh
+   55  clear
+   56  vi pod.yaml 
+   57  kubectl apply -f pod.yaml 
+   58  kubectl describe pod rajesh
+   59  clear
+   60  kubectl describe pod -h
+   61  clear
+   62  ls
+   63  kubectl delete -f pod.yaml 
+   64  kubectl delete -f pod.yaml -n=rajesh
+   65  history
+
+======================================================================
+======================================================================
+BREAK - 15 mins.
+----------------------
+90 mins Lab time
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
