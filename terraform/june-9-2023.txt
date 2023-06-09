@@ -1,3 +1,59 @@
+Cloud -> AWS + == 2300
+============================
+Start TIME - 6:30 IST
+Lunch - 10 AM IST
+---------------------------
+2 BREAK - Tea 
+====================================================
+What is Terraform?
+-----------------------
+	Infra as a code
+	Coding for Infra
+	From HashiCorp
+			Vagrant - consul - nomad - packer - terraform
+	Written in Go
+	Release
+		community - cli - Free
+		Enterprise - Web - Paid
+		Cloud - 
+	Version
+		1.4.6
+
+
+
+
+What is in Infra?
+--------------------------------
+3250  - https://registry.terraform.io/browse/providers
+
+
+Why Terraform?
+------------------------------
+	Coding for everything
+			Tech for coding
+			Standard for coding
+			Spec for coding
+	------------------------------------
+			ONE
+==========================================
+Workflow # 1
+
+Step 1 - Install Terraform
+
+	$ terraform 
+	$ terraform version
+
+If you do not have access to env.
+# 1 - C:\tools\terraform\terraform.exe
+# 2 - set PATH=%PATH%;C:\tools\terraform
+
+Step 2 - Install Providers
+
+Terraform version	| Providers version
+--------------------------------------------
+
+# 1 - providers.tf
+-------------------------
 terraform {
   required_providers {
     aws = {
@@ -18,3 +74,18 @@ provider "aws" {
 provider "github" {
   # Configuration options
 }
+------------------------
+# 2 - $ terraform init
+
+STep 3 - Write a code
+-------------------------------------------
+#1 - terraform code must be saved *.tf
+#2 - filename can be anything.
+#3 - you can have code in multiple .tf file OR one .tf file. Its same.. ITS ONE PROJECT
+#4 - Code checks
+		$ fmt           Reformat your configuration in the standard style
+
+Step 4 - terraform plan -> terraform apply -> terraform destroy
+Step 5 - Check the stetafile > terraform show
+
+
