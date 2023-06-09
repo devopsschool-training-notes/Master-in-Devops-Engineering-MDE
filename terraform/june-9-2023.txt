@@ -131,3 +131,51 @@ Step 4 - terraform plan -> terraform apply -> terraform destroy
 Step 5 - Check the stetafile > terraform show
 ====================================================
 
+
+OUTPUT Value from STATEFILE?
+---------------------------------
+
+GLOBAL ARGUMENTS FOR ALL RESOURCES = meta Arguments
+======================================
+===================================================================
+What is Module?
+------------------------------
+a directory which contains
+	- tfs file
+	- tfvars
+
+ROOT Module
+	- main.tf
+		mod1
+		mod2
+	mod1
+		- tfs file
+		- tfvars
+	mod2
+		- tfs file
+		- tfvars
+	mod2
+		- tfs file
+		- tfvars
+
+=============================================
+Provisionar
+	file			Once Resources is created - Copy a files to EC2
+	local-exec		Once Resources is created - Run c/s in Host
+	remote-exec		Once Resources is created - Run c/s in Remote
+
+Workspace
+
+
+
+
+
+
+
+
+
+
+
+
+
+
